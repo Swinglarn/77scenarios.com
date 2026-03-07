@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>77 Scenarios — Free Personality Type Test (Scenario-Based MBTI)</title>
+<meta name="description" content="A scenario-based personality test that actually works. Instead of asking you to rate yourself, Mirror puts you in real situations and watches what you choose. Find your Myers-Briggs type across 77 questions.">
+<meta name="keywords" content="personality type test, MBTI test, Myers-Briggs test, free personality quiz, 16 personality types, what personality type am I, scenario based personality test, introvert extrovert test, personality test online">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="77 Scenarios — Free Scenario-Based Personality Test">
+<meta property="og:description" content="77 real scenarios. No self-rating. Just choices. Find your Myers-Briggs personality type the honest way.">
+<meta property="og:url" content="https://77scenarios.com/">
+<meta property="og:site_name" content="77 Scenarios">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="77 Scenarios — What Kind of Person Are You, Really?">
+<meta name="twitter:description" content="A personality test that puts you in real situations instead of asking you to rate yourself. 77 scenarios. 16 possible types.">
+<link rel="canonical" href="https://77scenarios.com/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"77 Scenarios Personality Test","description":"A scenario-based Myers-Briggs personality type test using 77 real situations instead of self-rating questions.","url":"https://77scenarios.com","applicationCategory":"LifestyleApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0c0e10; --surface: #13161a; --surface2: #1a1e24;
+    --gold: #c9a84c; --gold-dim: #8a6d2e; --cream: #ede8df;
+    --muted: #6b6560; --border: #252a30; --radius: 16px;
+  }
+  html, body { height: 100%; background: var(--bg); color: var(--cream); font-family: 'DM Sans', sans-serif; font-weight: 300; overflow-x: hidden; }
+  body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; opacity: 0.6; }
+  .glow { position: fixed; border-radius: 50%; filter: blur(120px); pointer-events: none; z-index: 0; }
+  .glow-1 { width: 600px; height: 600px; top: -200px; left: -150px; background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%); }
+  .glow-2 { width: 500px; height: 500px; bottom: -150px; right: -100px; background: radial-gradient(circle, rgba(120,180,160,0.05) 0%, transparent 70%); }
+  #app { position: relative; z-index: 1; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px 16px; }
+  .screen { display: none; width: 100%; max-width: 720px; animation: fadeUp 0.6s cubic-bezier(0.22,1,0.36,1) both; }
+  .screen.active { display: block; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* SPLASH */
+  .splash-eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 28px; display: flex; align-items: center; gap: 12px; }
+  .splash-eyebrow::before, .splash-eyebrow::after { content: ''; display: block; height: 1px; width: 32px; background: var(--gold-dim); }
+  .splash-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(52px,9vw,88px); font-weight: 300; line-height: 0.92; letter-spacing: -0.02em; color: var(--cream); margin-bottom: 12px; }
+  .splash-title em { font-style: italic; color: var(--gold); }
+  .splash-subtitle { font-size: 15px; color: var(--muted); line-height: 1.7; max-width: 480px; margin: 24px 0 48px; }
+  .splash-meta { display: flex; gap: 32px; margin-bottom: 48px; }
+  .meta-item { text-align: left; }
+  .meta-num { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 300; color: var(--cream); line-height: 1; }
+  .meta-label { font-size: 11px; letter-spacing: 0.1em; color: var(--muted); text-transform: uppercase; margin-top: 4px; }
+  .divider { width: 1px; height: 48px; background: var(--border); align-self: center; }
+
+  /* BUTTONS */
+  .btn-primary { display: inline-flex; align-items: center; gap: 12px; background: var(--gold); color: #0c0e10; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; border: none; border-radius: 60px; padding: 16px 36px; cursor: pointer; transition: all 0.25s ease; }
+  .btn-primary:hover { background: var(--cream); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(201,168,76,0.25); }
+  .btn-primary .arrow { transition: transform 0.25s ease; }
+  .btn-primary:hover .arrow { transform: translateX(4px); }
+
+  /* PROGRESS */
+  .progress-bar-wrap { position: relative; height: 2px; background: var(--border); border-radius: 2px; margin-bottom: 40px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; background: linear-gradient(90deg, var(--gold-dim), var(--gold)); border-radius: 2px; transition: width 0.5s cubic-bezier(0.22,1,0.36,1); }
+  .q-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 36px; }
+  .q-counter { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); }
+  .q-counter span { color: var(--gold); font-weight: 500; }
+  .q-dimension { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; background: var(--surface2); border: 1px solid var(--border); padding: 5px 12px; border-radius: 20px; color: var(--muted); }
+
+  /* SCENARIO */
+  .scenario-scene { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 13px; color: var(--gold); letter-spacing: 0.05em; margin-bottom: 14px; }
+  .scenario-text { font-family: 'Cormorant Garamond', serif; font-size: clamp(20px,3.5vw,29px); font-weight: 300; line-height: 1.5; color: var(--cream); margin-bottom: 40px; }
+
+  /* ANSWERS */
+  .answers { display: flex; flex-direction: column; gap: 14px; }
+  .answer-card { display: flex; align-items: flex-start; gap: 20px; padding: 20px 22px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); cursor: pointer; transition: all 0.2s ease; text-align: left; width: 100%; position: relative; overflow: hidden; }
+  .answer-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(201,168,76,0.06), transparent); opacity: 0; transition: opacity 0.2s ease; }
+  .answer-card:hover { border-color: var(--gold-dim); transform: translateX(6px); box-shadow: -4px 0 20px rgba(201,168,76,0.08); }
+  .answer-card:hover::before { opacity: 1; }
+  .answer-letter { flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; color: var(--muted); transition: all 0.2s ease; margin-top: 2px; }
+  .answer-card:hover .answer-letter { border-color: var(--gold); color: var(--gold); background: rgba(201,168,76,0.08); }
+  .answer-text { font-size: 15px; line-height: 1.65; color: var(--cream); font-weight: 300; }
+
+  /* RESULTS */
+  .result-eyebrow { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+  .result-eyebrow::before { content: ''; display: block; height: 1px; width: 24px; background: var(--gold-dim); }
+  .type-badge { display: inline-flex; gap: 0; margin-bottom: 28px; }
+  .type-letter { font-family: 'Cormorant Garamond', serif; font-size: clamp(60px,12vw,100px); font-weight: 300; line-height: 1; color: var(--cream); letter-spacing: -0.04em; }
+  .type-letter.highlight { color: var(--gold); }
+  .type-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(26px,4.5vw,40px); font-weight: 300; font-style: italic; color: var(--cream); margin-bottom: 6px; }
+  .type-tagline { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
+  .type-description { font-size: 15px; line-height: 1.85; color: #a09890; max-width: 560px; margin-bottom: 36px; }
+  .traits-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
+  .trait { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 7px 14px; border-radius: 30px; border: 1px solid var(--border); color: var(--muted); background: var(--surface); }
+  .spectrum-section { margin-bottom: 44px; }
+  .spectrum-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
+  .spectrum-row { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+  .spectrum-dim { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 400; width: 28px; text-align: right; color: var(--muted); }
+  .spectrum-dim.active { color: var(--cream); }
+  .spectrum-track { flex: 1; height: 4px; background: var(--surface2); border-radius: 4px; overflow: hidden; }
+  .spectrum-fill { height: 100%; background: linear-gradient(90deg, var(--gold-dim), var(--gold)); border-radius: 4px; transition: width 1s cubic-bezier(0.22,1,0.36,1) 0.3s; }
+  .spectrum-info { display: flex; justify-content: space-between; margin-bottom: 6px; }
+  .spectrum-name { font-size: 11px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
+  .spectrum-pct { font-size: 12px; color: var(--gold); font-weight: 500; min-width: 36px; text-align: right; }
+  .sep { width: 100%; height: 1px; background: var(--border); margin: 36px 0; }
+  .result-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--muted); font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid var(--border); border-radius: 60px; padding: 14px 28px; cursor: pointer; transition: all 0.2s ease; }
+  .btn-secondary:hover { border-color: var(--muted); color: var(--cream); }
+  @media (max-width: 480px) { .splash-meta { gap: 20px; } .answer-card { padding: 16px 18px; } .result-actions { flex-direction: column; } .btn-primary, .btn-secondary { width: 100%; justify-content: center; } }
+</style>
+</head>
+<style>
+#t-overlay{position:fixed;inset:0;z-index:9999;pointer-events:none;background:#0c0e10;opacity:1;}
+</style>
+<body>
+<div id="t-overlay"></div>
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+<nav style="position:sticky;top:0;z-index:100;background:rgba(12,14,16,0.85);backdrop-filter:blur(16px);border-bottom:1px solid #252a30;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:56px;">
+  <span style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:#ede8df;">77 Scenarios<span style="color:#c9a84c;">.</span></span>
+  <div style="display:flex;gap:28px;align-items:center;">
+    <a href="types.html" style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#6b6560;text-decoration:none;">16 Types</a>
+    <a href="letters.html" style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#6b6560;text-decoration:none;">8 Letters</a>
+  </div>
+</nav>
+<div id="app">
+
+  <!-- SPLASH -->
+  <div class="screen active" id="screen-splash">
+    <div class="splash-eyebrow">77 Scenarios</div>
+    <div class="splash-title">Who are<br>you <em>really?</em></div>
+    <p class="splash-subtitle">Most personality tests ask you to rate yourself on a scale of one to five. But people are notoriously bad at knowing who they are.<br><br>Mirror is a scenario-based Myers-Briggs test. It puts you in real situations and watches what you choose — no self-assessment, no leading questions. Just choices.</p>
+    <div class="splash-meta">
+      <div class="meta-item"><div class="meta-num">77</div><div class="meta-label">Scenarios</div></div>
+      <div class="divider"></div>
+      <div class="meta-item"><div class="meta-num">~20</div><div class="meta-label">Minutes</div></div>
+      <div class="divider"></div>
+      <div class="meta-item"><div class="meta-num">16</div><div class="meta-label">Possible types</div></div>
+    </div>
+    <button class="btn-primary" onclick="startTest()">Begin <span class="arrow">→</span></button>
+  </div>
+
+  <!-- QUESTION -->
+  <div class="screen" id="screen-question">
+    <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progress-fill" style="width:0%"></div></div>
+    <div class="q-header">
+      <div class="q-counter">Question <span id="q-num">1</span> of 77</div>
+
+    </div>
+    <div class="scenario-scene" id="q-scene"></div>
+    <div class="scenario-text" id="q-text"></div>
+    <div class="answers" id="answers-container"></div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="screen" id="screen-result">
+    <div class="result-eyebrow">Your type</div>
+    <div class="type-badge" id="type-badge"></div>
+    <div class="type-name" id="type-name"></div>
+    <div class="type-tagline" id="type-tagline"></div>
+    <p class="type-description" id="type-description"></p>
+    <div class="traits-grid" id="traits-grid"></div>
+    <div class="sep"></div>
+    <div class="spectrum-section">
+      <div class="spectrum-label">Your spectrum</div>
+      <div id="spectrum-bars"></div>
+    </div>
+    <div class="result-actions">
+      <button class="btn-primary" onclick="retakeTest()">Retake test <span class="arrow">→</span></button>
+      <button class="btn-secondary" onclick="shareResult()">Share result</button>
+      <a id="type-deep-link" href="types.html" class="btn-secondary" style="text-decoration:none;">Deep dive →</a>
+    </div>
+  </div>
+
+</div>
+<script>
+const questions = [
+  // E/I — 20 questions
+  {dim:'EI',scene:'Friday evening',text:"You've had a draining week. A friend invites you to a house party — a mix of people you know and plenty you don't. What do you do?",a:"Go. Being around people is actually how you recharge.",b:"Stay home. You need a quiet evening to refill your tank."},
+  {dim:'EI',scene:'The brainstorm',text:"Your team is generating ideas. The way you naturally contribute is…",a:"Jump in and think out loud — ideas sharpen as you talk.",b:"Listen carefully first, then share once you've processed internally."},
+  {dim:'EI',scene:'Stranger at the wedding',text:"You're a plus-one at a wedding where you know almost no one. Your date disappears for 20 minutes. You…",a:"Find someone interesting nearby and start talking. This could be fun.",b:"Find a quiet spot, check your phone, and wait it out."},
+  {dim:'EI',scene:'Stuck on a problem',text:"You're blocked on a hard work problem. Your instinct is to…",a:"Call or message a colleague — talking it through helps you find the answer.",b:"Take a walk alone. You think better with no one else involved."},
+  {dim:'EI',scene:'Choosing a project',text:"You're offered two equally interesting projects — one with daily team check-ins, one solo with a final presentation. You pick…",a:"The team project. Others' energy keeps you moving.",b:"The solo project. You do your best work controlling your own pace."},
+  {dim:'EI',scene:'Unplanned Saturday',text:"You have a completely free Saturday with no obligations. By mid-morning you'll most likely be…",a:"Out somewhere — a market, a coffee shop, meeting someone, anything social.",b:"Still at home, in your own world, and perfectly happy about it."},
+  {dim:'EI',scene:'Conference networking hour',text:"There's a mandatory networking hour at a conference. Your honest reaction is…",a:"Decent — you usually meet at least one genuinely interesting person.",b:"You tolerate it but count down until you can leave."},
+  {dim:'EI',scene:'The long commute',text:"You have a 45-minute commute. Your preferred way to spend it is…",a:"A podcast you can discuss later, or texting friends to make plans.",b:"Headphones, your own thoughts, or a book — totally undisturbed."},
+  {dim:'EI',scene:'Bad day',text:"You've had a genuinely awful day. What actually helps?",a:"Venting to someone who gets it, or going out to take your mind off it.",b:"Time alone — silence, space, and no one asking you anything."},
+  {dim:'EI',scene:'New job, week one',text:"It's your first week at a new job. Your approach to colleagues is…",a:"You introduce yourself widely, learn names quickly, and suggest lunch early on.",b:"You observe quietly first, then build a few genuine connections gradually."},
+  {dim:'EI',scene:'The group holiday',text:"You're on a group holiday with six friends. By day three you…",a:"Are still energised — the more time together the better.",b:"Are quietly craving an hour completely alone, even if you're enjoying it."},
+  {dim:'EI',scene:'Phone call vs message',text:"A friend needs to talk something through. Your instinct is to…",a:"Call them — it's faster, warmer, and you can think out loud together.",b:"Text first, then call only if it's clearly necessary."},
+  {dim:'EI',scene:'Waiting at the airport',text:"You're stuck at an airport for two hours. You end up…",a:"Striking up a conversation with whoever's nearby — it passes the time.",b:"Headphones in, book open, invisible to the world."},
+  {dim:'EI',scene:'The open office',text:"Honestly, how do you feel about open-plan offices?",a:"Fine — the buzz helps you stay motivated.",b:"Difficult. The constant background noise makes real focus nearly impossible."},
+  {dim:'EI',scene:'Making a decision',text:"You're deciding between two job offers. Your process involves…",a:"Talking it through with multiple people — their reactions help you know what you want.",b:"Sitting with it alone. Outside opinions tend to confuse more than clarify."},
+  {dim:'EI',scene:'The dinner party',text:"You host a dinner party for eight. At the end of the night you feel…",a:"Buzzing. Hosting well is genuinely satisfying.",b:"Glad it went well, but quietly exhausted and relieved it's over."},
+  {dim:'EI',scene:'Public speaking',text:"You're asked to present to a room of 30 people on something you know well. You feel…",a:"A bit nervous but mostly fired up — this is your kind of moment.",b:"Genuinely anxious, even though you know the material cold."},
+  {dim:'EI',scene:'The road trip',text:"Six hours in the car with a close friend. By the end you…",a:"Wish the drive were longer. Great conversations, no distractions.",b:"Are quietly ready for the car to stop and for some space."},
+  {dim:'EI',scene:'Team lunch',text:"Your team suggests a spontaneous group lunch. You…",a:"Are in immediately. An unplanned lunch is one of the better parts of work.",b:"Join, but you'd honestly have been just as happy eating alone."},
+  {dim:'EI',scene:'How others describe you',text:"People who know you well would most naturally describe you as…",a:"Outgoing, warm, someone who fills the room when they arrive.",b:"Thoughtful, private — someone who reveals themselves slowly."},
+
+  // S/N — 20 questions
+  {dim:'SN',scene:'Holiday planning',text:"You're booking a week away. Your approach is…",a:"Research the destination, book accommodation in advance, map the key days.",b:"Book flights and figure out the rest when you land. Over-planning ruins discovery."},
+  {dim:'SN',scene:'New task at work',text:"Your manager gives you a new task with no explanation of how to do it. You…",a:"Ask for a clear method or look for an established process to follow.",b:"Dive in and experiment. You figure things out faster by doing than asking."},
+  {dim:'SN',scene:'Dinner conversation',text:"A good conversation at dinner naturally drifts toward…",a:"Real things — stories, events, people, things that actually happened.",b:"Ideas — what if the world worked differently, theories, the future."},
+  {dim:'SN',scene:'New technology',text:"A new device arrives with a 30-page manual. You…",a:"Read the relevant sections before touching anything.",b:"Plug it in and explore. The manual is a last resort."},
+  {dim:'SN',scene:'Work reputation',text:"Among your colleagues, you're most known as the person who…",a:"Gets things done properly — reliable, detail-oriented, doesn't drop the ball.",b:"Comes up with ideas — connects things others miss and sees around corners."},
+  {dim:'SN',scene:'The expert at dinner',text:"A fascinating expert in their field sits next to you. You're more likely to ask…",a:"What their day-to-day work actually looks like — the reality behind the title.",b:"Where they think their field is heading and what everyone else is missing."},
+  {dim:'SN',scene:'Choosing a novel',text:"You're choosing a novel. Given no other information, you prefer…",a:"Something grounded and character-driven — real feeling, real stakes.",b:"Something ambitious — unusual structure, big ideas, surprising form."},
+  {dim:'SN',scene:'Learning something new',text:"You're learning a new skill. You learn best by…",a:"Step-by-step instruction — mastering the fundamentals before moving on.",b:"Jumping to the interesting part and backfilling the basics as needed."},
+  {dim:'SN',scene:'The interview question',text:"An interviewer asks: 'Where do you see yourself in 10 years?' You…",a:"Give a realistic, grounded answer based on a likely trajectory.",b:"Light up — this is your kind of question. You have a vision."},
+  {dim:'SN',scene:'Reading the news',text:"When you read or watch the news, you gravitate toward…",a:"What happened — the facts, the events, the reported details.",b:"What it means — the patterns, the implications, what comes next."},
+  {dim:'SN',scene:'Decorating a room',text:"You're decorating a room. You're more drawn to…",a:"Clean, functional, everything in its place — comfortable and practical.",b:"Something with character — unusual details, things that spark a question."},
+  {dim:'SN',scene:'The career crossroads',text:"You're making a career decision. You weight it more on…",a:"Concrete factors — salary, title, stability, day-to-day quality.",b:"Potential — where this could lead, who it could make you."},
+  {dim:'SN',scene:'Explaining something',text:"You're explaining something complex. Your instinct is to…",a:"Walk through it clearly with concrete examples and real cases.",b:"Draw the bigger picture first, then let the details fill themselves in."},
+  {dim:'SN',scene:'What bores you',text:"If you're honest, what bores you more quickly is…",a:"Overly abstract conversation that never lands anywhere real.",b:"Conversations stuck in the obvious — no ideas, no surprise, no depth."},
+  {dim:'SN',scene:'Recognising people',text:"When you meet someone again after a while, you most readily remember…",a:"What they look like, specific things they said, concrete details.",b:"The feeling of talking to them — their energy, the impression they left."},
+  {dim:'SN',scene:'Childhood memory',text:"When you think back to being a child, what was most alive in you?",a:"A love of how things worked — building, collecting, observing, doing.",b:"A rich inner world — imagining, inventing, wondering about things no one asked."},
+  {dim:'SN',scene:'Museum of choice',text:"You're in a new city and choose a museum. You pick…",a:"History, natural history, science — things with grounded stories.",b:"Contemporary art, philosophy, or design — things that provoke and question."},
+  {dim:'SN',scene:'The disagreement',text:"Someone challenges your view. You find yourself most persuaded by…",a:"Solid evidence and concrete examples that change the picture.",b:"A reframe — a new way of seeing it that makes your old view feel small."},
+  {dim:'SN',scene:'Dream project',text:"You're given three months and unlimited resources to work on anything. You choose…",a:"Something with a clear deliverable — something you can build, measure, finish.",b:"Something exploratory — a question you want to live inside for a while."},
+  {dim:'SN',scene:'What drains you',text:"At the end of a long week, what's most likely left you depleted?",a:"Endless meetings that went in circles with no decisions made.",b:"Pure execution work — mechanical tasks that required no real thinking."},
+
+  // T/F — 19 questions
+  {dim:'TF',scene:"A friend's mistake",text:"A close friend makes a big financial decision you genuinely think is wrong. They seem happy. You…",a:"Tell them honestly. Real friends give you the truth, even uncomfortably.",b:"Support them. They've decided — what they need now is encouragement, not doubt."},
+  {dim:'TF',scene:'The big decision',text:"When making an important personal decision — job, relationship, a move — you lean more on…",a:"Logic and analysis. You weigh trade-offs and find the most rational answer.",b:"Instinct and feeling. If it doesn't feel right, no logic will convince you."},
+  {dim:'TF',scene:'Project debrief',text:"Your team just finished a hard project. Your first instinct is to…",a:"Debrief what went wrong — celebrating feels premature without learning first.",b:"Celebrate properly. The team worked hard; they need to feel that before any critique."},
+  {dim:'TF',scene:'Online criticism',text:"A stranger says something dismissive about your work online. Your honest response is…",a:"Mild irritation, then nothing. Their opinion is irrelevant and you move on quickly.",b:"It stings more than you'd like, even knowing rationally it shouldn't matter."},
+  {dim:'TF',scene:'What frustrates you',text:"The type of person who most gets under your skin is…",a:"Someone who lets emotion override reason and makes obviously irrational decisions.",b:"Someone so coldly logical they seem unaware of how their words land on others."},
+  {dim:'TF',scene:"The friend's CV",text:"A friend asks you to review their CV. It needs significant work. You…",a:"Give honest, specific feedback — that's what will actually help them.",b:"Focus on the positives and soften the critique — their confidence matters right now."},
+  {dim:'TF',scene:'After a great film',text:"After watching a really good film, what you most want to do is…",a:"Analyse it — structure, themes, what made it work or not.",b:"Sit with how it made you feel — talk about the characters as if they were real."},
+  {dim:'TF',scene:'Team conflict',text:"Two colleagues have been clashing for weeks. You approach it by…",a:"Addressing the functional problem — what's the actual disagreement and what resolves it?",b:"Talking to each person separately first, trying to understand what each person needs."},
+  {dim:'TF',scene:'The compliment',text:"Someone tells you they really admire your work. Honestly, your reaction is…",a:"You appreciate it but want to know specifically what they found valuable.",b:"It genuinely moves you — knowing your work meant something to someone matters."},
+  {dim:'TF',scene:'Hiring decision',text:"Two candidates are neck-and-neck on skill. You tip toward…",a:"The one whose reasoning in the interview was sharper and more structured.",b:"The one who seemed more genuinely passionate and would fit the team better."},
+  {dim:'TF',scene:'Breaking bad news',text:"You have to tell a colleague their project is being cancelled. You…",a:"Tell them clearly and quickly — directness is more respectful than dancing around it.",b:"Think carefully about how to deliver it, prioritising how they'll feel during the conversation."},
+  {dim:'TF',scene:'Argument with a friend',text:"You and a close friend disagree sharply. What matters more to you at the end?",a:"Whether the right position was reached — feelings can be repaired, but bad conclusions cause damage.",b:"Whether the friendship feels intact — being right is hollow if someone you care about is hurt."},
+  {dim:'TF',scene:'Leadership style',text:"As a leader, your natural style is more…",a:"Set clear goals, define accountability, measure outcomes. Warm but objective.",b:"Build trust first, understand people's situations, then align goals around them."},
+  {dim:'TF',scene:'The unfair rule',text:"A rule at work is technically unfair in a specific edge case. You tend to think…",a:"Rules exist for good reasons. Consistent application matters more than individual comfort.",b:"Context matters. The spirit of a rule should override its letter when the outcome is clearly unfair."},
+  {dim:'TF',scene:'Watching a difficult conversation',text:"You're observing a tense conversation between two people. You're most aware of…",a:"The logic of their positions — who has the stronger argument and why.",b:"The emotional temperature — who's hurting, who feels unheard, where the real wound is."},
+  {dim:'TF',scene:'Receiving feedback',text:"Someone gives you critical feedback. Your first internal move is to…",a:"Assess whether they're right. If the logic holds, you update. If not, you discard it.",b:"Feel it first, then reason about it later once the sting has passed."},
+  {dim:'TF',scene:'The tearful colleague',text:"A colleague starts crying in a work conversation. You…",a:"Feel slightly uncomfortable — you want to help but aren't sure what to do.",b:"Shift mode immediately — the work stuff can wait, this person needs something from you now."},
+  {dim:'TF',scene:'Planning a speech',text:"You're giving a speech at a close friend's wedding. You craft it to be…",a:"Witty, well-structured, memorable — you want people to talk about it.",b:"Deeply sincere — you want your friend to feel how much they mean to you."},
+  {dim:'TF',scene:'The tie-breaker',text:"Two equally good options, no clear right answer. Your final deciding factor is…",a:"Whichever survives logical scrutiny slightly better — a marginal rational edge.",b:"Whichever you feel better about when you imagine yourself a year from now."},
+
+  // J/P — 18 questions
+  {dim:'JP',scene:'Open week',text:"It's Sunday night. The week ahead has no fixed plans. You feel…",a:"Mildly uneasy. You function better with structure and a clear shape to the week.",b:"Quietly good. An open week feels like possibility, not chaos."},
+  {dim:'JP',scene:'Your workspace',text:"Describe the current state of your desk or living space honestly.",a:"Organised with a clear system — a place for everything, things go back there.",b:"Covered in active layers — looks messy but you know exactly where everything is."},
+  {dim:'JP',scene:'The deadline',text:"You have a deadline in five days. When do you do the work?",a:"Start now. Finishing early removes the pressure — last-minute stress is the worst.",b:"It'll get done — probably in a focused burst the day before. Pressure sharpens you."},
+  {dim:'JP',scene:'Switching tasks mid-flow',text:"You're deep in an important task when something interesting and unplanned comes up. You…",a:"Finish what you started first. You can't relax on the new thing until the old one is closed.",b:"Switch. You'll come back — rigid task order kills momentum and joy for you."},
+  {dim:'JP',scene:'The road trip',text:"Planning a road trip with friends. Your ideal version is…",a:"Route mapped, stops picked, accommodation booked. Spontaneity is overrated on the road.",b:"A direction and a couple of nights booked. Everything else decided when you get there."},
+  {dim:'JP',scene:'The grocery run',text:"You need to do a grocery shop. Your approach is…",a:"You write a list, organise it by section, and stick to it.",b:"You go in with a vague idea and see what looks good."},
+  {dim:'JP',scene:'The project kick-off',text:"You're starting a large, complex project. Your first instinct is to…",a:"Break it into phases, set milestones, create a timeline. Structure first.",b:"Start doing the interesting parts and let the structure emerge as you go."},
+  {dim:'JP',scene:'Plans cancelled last minute',text:"Your plans for tonight get cancelled with 30 minutes' notice. You feel…",a:"Irritated — you'd arranged your day around this and now it's wasted.",b:"Secretly a little relieved — a free evening appeared from nowhere."},
+  {dim:'JP',scene:'Getting dressed',text:"When you're getting dressed, how do you decide what to wear?",a:"You have a rough system — certain clothes for certain occasions, not much deliberation.",b:"You decide based on how you feel that morning — it varies a lot."},
+  {dim:'JP',scene:'The to-do list',text:"Your relationship with to-do lists is…",a:"Essential. You keep one, work through it, and find real satisfaction crossing things off.",b:"Theoretical. You start them occasionally but mostly run on what feels most urgent."},
+  {dim:'JP',scene:'Holiday packing',text:"You're packing for a two-week trip. You pack…",a:"Days in advance, with a list, folded properly, nothing forgotten.",b:"The night before, quickly, with the logic that you can buy anything you forget."},
+  {dim:'JP',scene:'Long-term plans',text:"Your relationship with long-term planning is…",a:"You have one. 1-year, 5-year — at least a directional sense of where you're heading.",b:"You resist it. Life changes too much; over-planning feels like limiting yourself."},
+  {dim:'JP',scene:'Completing things',text:"You have four interesting projects on the go. You naturally…",a:"Work to finish one before moving to the next. Loose ends quietly bother you.",b:"Rotate between them based on energy — parallel progress feels more alive."},
+  {dim:'JP',scene:'Morning routine',text:"Your mornings are…",a:"Consistent — roughly the same sequence, same time, same rhythm.",b:"Variable — you go by feel; some mornings long and slow, others short and sharp."},
+  {dim:'JP',scene:'The spontaneous invitation',text:"A friend calls at 7pm: 'Come out tonight — starts in an hour.' You…",a:"Need a moment to recalibrate. You had a plan for tonight and this disrupts it.",b:"Are up for it. Unplanned evenings are sometimes the best ones."},
+  {dim:'JP',scene:'School report',text:"Growing up, reports from teachers most likely included something like…",a:"'Diligent, organised, always meets deadlines.'",b:"'Talented but inconsistent — does best work when genuinely engaged.'"},
+  {dim:'JP',scene:'Decision speed',text:"When making decisions generally, you tend to…",a:"Decide and move. Keeping options open longer than necessary creates drag.",b:"Keep options open as long as possible — a better answer might still appear."},
+  {dim:'JP',scene:'Finishing a good book',text:"You finish a book you loved. You feel…",a:"Satisfied. Completion is the point — a closed thing is a good thing.",b:"Slightly sad. You liked living inside it; finished means it's over."}
+];
+
+const typeData = {
+  ISTJ:{name:"The Inspector",tagline:"Duty, precision, integrity",description:"You are the person who can actually be counted on. Where others talk about standards, you live by them. You approach life methodically — gathering facts before acting, honouring commitments without fanfare, and finding deep satisfaction in work done properly. You have little patience for chaos or shortcuts, and you're often the quiet backbone of every institution you're part of.",traits:["Dependable","Meticulous","Principled","Patient","Private"]},
+  ISFJ:{name:"The Protector",tagline:"Quiet care, fierce loyalty",description:"You notice what others miss — the colleague who seems off today, the friend who's running on empty. You care deeply and show it through action: the favour done without being asked, the detail remembered months later. Loyal to a fault and disarmingly selfless, you are the person others instinctively lean on in hard times.",traits:["Warm","Observant","Loyal","Reliable","Selfless"]},
+  INFJ:{name:"The Counselor",tagline:"Rare vision, quiet resolve",description:"You are the rarest type — and the hardest to read. You see patterns in people and situations long before anyone else does, and you hold onto ideals with a grip that surprises those who mistake your quietness for passivity. You're not just empathetic; you're strategic about it, investing deeply in the few rather than performing warmth for the many.",traits:["Insightful","Idealistic","Empathetic","Determined","Enigmatic"]},
+  INTJ:{name:"The Architect",tagline:"Strategic mind, relentless standard",description:"You already have a better plan. You're not arrogant about it — you just see structural flaws and inefficiencies that others walk past. You hold yourself to an impossible standard and find it genuinely difficult to respect those who don't hold themselves to any. Independence isn't a preference; it's a requirement. You build systems, visions, and long games.",traits:["Strategic","Independent","High-standards","Decisive","Visionary"]},
+  ISTP:{name:"The Craftsman",tagline:"Cool head, skilled hands",description:"When things go wrong, you're the calmest person in the room — and usually the most useful. You're a natural problem-solver who trusts what you can observe and test over theory and abstraction. You learn by doing, resist rules that don't make sense, and find most social performance deeply unnecessary. You respect competence above everything else.",traits:["Calm","Analytical","Practical","Adaptable","Skilled"]},
+  ISFP:{name:"The Artist",tagline:"Present, free, deeply feeling",description:"You live closer to your senses than most. The right music in the right moment genuinely moves you; beauty in unexpected places stops you short. You resist being put in boxes, defy categories quietly, and hold your values intensely while appearing flexible to the outside world. You give people space because you need it too.",traits:["Gentle","Authentic","Spontaneous","Sensitive","Creative"]},
+  INFP:{name:"The Mediator",tagline:"Deep ideals, quiet fire",description:"You carry a rich inner world that most people never get to see. You feel the gap between how things are and how they should be more acutely than almost anyone, and that tension drives you — toward art, toward advocacy, toward depth in everything you do. You give people the benefit of the doubt and believe fiercely in human potential.",traits:["Idealistic","Empathetic","Creative","Thoughtful","Principled"]},
+  INTP:{name:"The Thinker",tagline:"Curious, precise, quietly unconventional",description:"Your mind doesn't switch off. You pull ideas apart to see how they work, find inconsistencies that others breeze past, and lose hours in rabbit holes that turn out to be more interesting than whatever you were supposed to be doing. You're not antisocial — you're selective. The right conversation with the right person? You'll stay for hours.",traits:["Analytical","Curious","Precise","Independent","Unconventional"]},
+  ESTP:{name:"The Dynamo",tagline:"Bold, perceptive, always in motion",description:"You read rooms the way other people read books — fast, fluently, and with retention. You're perceptive about people, energised by action, and at your absolute best when you're improvising in real time. Plans are fine until they meet reality; you're better at handling reality than most. You make things happen by deciding and moving.",traits:["Perceptive","Bold","Energetic","Pragmatic","Charismatic"]},
+  ESFP:{name:"The Performer",tagline:"Alive, generous, contagiously present",description:"You don't just enter a room — you raise its temperature. You're genuinely interested in people, spontaneous in the best way, and you have a gift for making others feel seen and included. You are fully present in a way that's increasingly rare. Life isn't something to optimise; it's something to experience, and you do it more fully than most.",traits:["Enthusiastic","Generous","Spontaneous","Social","Warm"]},
+  ENFP:{name:"The Champion",tagline:"Restless possibility, magnetic energy",description:"You see potential everywhere — in ideas, in people, in situations that others have written off. Your enthusiasm is genuine and contagious, and you make everyone around you feel like they're more interesting than they thought. Ideas come fast and often; follow-through is the harder discipline. At your best, there is no one more inspiring.",traits:["Creative","Enthusiastic","Empathetic","Curious","Inspiring"]},
+  ENTP:{name:"The Visionary",tagline:"Sharp, provocative, relentlessly curious",description:"You enjoy a good argument the way other people enjoy good food — it sharpens the mind, tests the idea, and reveals who can keep up. You're never just curious; you're sceptically curious, probing the weak point in every assumption. You're most alive when you're in uncharted territory, and you get bored at the same speed most people get comfortable.",traits:["Quick-witted","Innovative","Debater","Strategic","Adaptable"]},
+  ESTJ:{name:"The Director",tagline:"Order, results, accountability",description:"You have a very clear picture of how things should work, and you're not shy about bringing them in line with that picture. You're organised, decisive, and you hold people to their commitments — including yourself. Others can read this as demanding; you read it as basic respect for standards. You build structures that last because you build them properly.",traits:["Organised","Direct","Decisive","Reliable","Driven"]},
+  ESFJ:{name:"The Caregiver",tagline:"Community, warmth, unstoppable care",description:"You are the connective tissue of every group you're part of. You remember birthdays, notice when something's off, and make sure no one is left out. You have a gift for creating the kind of warmth that makes people feel safe. Harmony isn't just nice to have for you — it's something you actively work toward every single day.",traits:["Caring","Social","Loyal","Organised","Generous"]},
+  ENFJ:{name:"The Teacher",tagline:"Charisma with purpose",description:"You have a gift that's hard to explain — you make people feel simultaneously fully seen and gently challenged to be more. You lead not through authority but through genuine belief in others. You're a natural at reading people and even better at inspiring them. The people in your life are often more capable than they were before they knew you.",traits:["Charismatic","Empathetic","Inspiring","Decisive","Perceptive"]},
+  ENTJ:{name:"The Commander",tagline:"Vision, control, momentum",description:"You see the destination before others see the problem. Your confidence isn't performance — it comes from having already run the scenarios in your head and knowing which one wins. You lead because you can't stand watching things be done poorly when they could be done well. You are demanding, ambitious, and exactly the person you'd want on your side in a crisis.",traits:["Strategic","Confident","Direct","Driven","Decisive"]}
+};
+
+let current = 0;
+let scores = {};
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  const el = document.getElementById(id);
+  el.classList.add('active');
+  el.style.animation = 'none'; el.offsetHeight; el.style.animation = '';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function startTest() {
+  current = 0;
+  scores = { E:0, I:0, S:0, N:0, T:0, F:0, J:0, P:0 };
+  renderQuestion();
+  showScreen('screen-question');
+}
+
+const dimLabels = { EI:'Energy', SN:'Perception', TF:'Judgement', JP:'Lifestyle' };
+
+function renderQuestion() {
+  const q = questions[current];
+  const pct = (current / questions.length) * 100;
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('q-num').textContent = current + 1;
+
+  document.getElementById('q-scene').textContent = q.scene;
+  document.getElementById('q-text').textContent = q.text;
+
+  const container = document.getElementById('answers-container');
+  container.innerHTML = '';
+  [q.a, q.b].forEach((text, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'answer-card';
+    btn.innerHTML = `<div class="answer-letter">${i===0?'A':'B'}</div><div class="answer-text">${text}</div>`;
+    btn.style.opacity = '0'; btn.style.transform = 'translateY(16px)';
+    btn.style.transition = `opacity 0.35s ease ${i*0.1+0.1}s, transform 0.35s ease ${i*0.1+0.1}s`;
+    btn.addEventListener('click', () => selectAnswer(i===0?'A':'B'));
+    container.appendChild(btn);
+    requestAnimationFrame(() => requestAnimationFrame(() => { btn.style.opacity='1'; btn.style.transform='translateY(0)'; }));
+  });
+}
+
+function selectAnswer(choice) {
+  const q = questions[current];
+  scores[choice==='A' ? q.dim[0] : q.dim[1]]++;
+  current++;
+  if (current < questions.length) renderQuestion(); else showResults();
+}
+
+function getType() {
+  return (scores.E>=scores.I?'E':'I')+(scores.S>=scores.N?'S':'N')+(scores.T>=scores.F?'T':'F')+(scores.J>=scores.P?'J':'P');
+}
+
+function showResults() {
+  const type = getType();
+  const data = typeData[type];
+  document.getElementById('type-badge').innerHTML = type.split('').map((l,i)=>`<span class="type-letter${i%2===0?'':' highlight'}">${l}</span>`).join('');
+  document.getElementById('type-name').textContent = data.name;
+  document.getElementById('type-tagline').textContent = data.tagline;
+  document.getElementById('type-description').textContent = data.description;
+  document.getElementById('traits-grid').innerHTML = data.traits.map(t=>`<span class="trait">${t}</span>`).join('');
+
+  const dims = [{a:'E',b:'I',la:'Extrovert',lb:'Introvert'},{a:'S',b:'N',la:'Sensing',lb:'Intuitive'},{a:'T',b:'F',la:'Thinking',lb:'Feeling'},{a:'J',b:'P',la:'Judging',lb:'Perceiving'}];
+  const barsEl = document.getElementById('spectrum-bars');
+  barsEl.innerHTML = '';
+  dims.forEach(d => {
+    const total = scores[d.a] + scores[d.b];
+    const aWins = scores[d.a] >= scores[d.b];
+    const winner = aWins ? d.a : d.b;
+    const winLabel = aWins ? d.la : d.lb;
+    const pct = total===0 ? 50 : Math.round(((aWins?scores[d.a]:scores[d.b])/total)*100);
+    const row = document.createElement('div');
+    row.innerHTML = `<div class="spectrum-row"><div class="spectrum-dim active">${winner}</div><div style="flex:1"><div class="spectrum-info"><span class="spectrum-name">${winLabel}</span><span class="spectrum-pct">${pct}%</span></div><div class="spectrum-track"><div class="spectrum-fill" style="width:0%" data-target="${pct}"></div></div></div></div>`;
+    barsEl.appendChild(row);
+  });
+
+  document.getElementById('progress-fill').style.width = '100%';
+  const deepLink = document.getElementById('type-deep-link');
+  if (deepLink) deepLink.href = `type.html?t=${type}`;
+  showScreen('screen-result');
+  setTimeout(() => document.querySelectorAll('.spectrum-fill').forEach(el => el.style.width = el.dataset.target+'%'), 200);
+}
+
+function retakeTest() { showScreen('screen-splash'); }
+
+// ── PAGE TRANSITION SYSTEM ──
+(function(){
+  const ov = document.getElementById('t-overlay');
+  // Reveal on load
+  ov.animate([{opacity:1},{opacity:0}],{duration:500,delay:80,easing:'cubic-bezier(0.22,1,0.36,1)',fill:'forwards'});
+  // Intercept navigation
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href]');
+    if (!a) return;
+    const href = a.getAttribute('href');
+    if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('javascript') || href.startsWith('mailto')) return;
+    e.preventDefault();
+    ov.animate([{opacity:0},{opacity:1}],{duration:350,easing:'cubic-bezier(0.76,0,0.24,1)',fill:'forwards'}).finished.then(()=>{ window.location.href=href; });
+  });
+})();
+
+function shareResult() {
+  const type = getType();
+  const text = `I took the Mirror personality test and got ${type} — ${typeData[type].name}. "${typeData[type].tagline}"`;
+  if (navigator.share) navigator.share({ title: 'My Mirror result', text });
+  else if (navigator.clipboard) navigator.clipboard.writeText(text).then(() => {
+    const btn = event.currentTarget; const orig = btn.textContent;
+    btn.textContent = 'Copied ✓'; setTimeout(() => btn.textContent = orig, 2000);
+  });
+}
+</script>
+</body>
+</html>
