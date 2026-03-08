@@ -66,18 +66,12 @@
   .fn-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
   @media(max-width:580px){.fn-pair{grid-template-columns:1fr;}}
 
-  .fncard{display:block;text-decoration:none;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px 28px;position:relative;overflow:hidden;transition:border-color 0.2s,transform 0.25s,box-shadow 0.25s;}
-  .fncard::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,0.06),transparent);opacity:0;transition:opacity 0.25s;}
-  .fncard:hover{border-color:var(--gold-dim);transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,0.4);}
-  .fncard:hover::after{opacity:1;}
-  .fncard-code{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:300;line-height:1;color:var(--cream);letter-spacing:-0.04em;margin-bottom:12px;transition:color 0.25s;}
-  .fncard:hover .fncard-code{color:var(--gold);}
+  .fncard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px 28px;position:relative;overflow:hidden;}
+  .fncard-code{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:300;line-height:1;color:var(--gold);letter-spacing:-0.04em;margin-bottom:12px;}
   .fncard-name{font-size:13px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--cream);margin-bottom:8px;}
   .fncard-tagline{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:18px;}
   .fncard-types{display:flex;flex-wrap:wrap;gap:6px;}
   .mini-type{font-size:10px;letter-spacing:0.06em;font-weight:500;padding:3px 10px;border-radius:20px;border:1px solid var(--border);color:var(--muted);background:var(--surface2);}
-  .fncard-arrow{position:absolute;top:24px;right:22px;font-size:13px;color:var(--gold-dim);transition:all 0.2s;}
-  .fncard:hover .fncard-arrow{color:var(--gold);transform:translateX(3px);}
 
   .dim-sep{height:1px;background:var(--border);margin:0 0 72px;}
 
@@ -128,24 +122,22 @@
       <div class="group-desc">Pattern recognition and meaning-making. <em>How you sense what isn't directly in front of you — possibilities, implications, what something really means beneath the surface.</em></div>
     </div>
     <div class="fn-pair">
-      <a class="fncard r" data-d="5" href="/functions?fn=Ni">
-        <div class="fncard-arrow">→</div>
+      <div class="fncard r" data-d="5">
         <div class="fncard-code">Ni</div>
         <div class="fncard-name">Introverted Intuition</div>
         <div class="fncard-tagline">A quiet internal compass. You arrive at conclusions you can't always explain — a deep knowing that turns out to be right.</div>
         <div class="fncard-types">
           <span class="mini-type">INTJ</span><span class="mini-type">INFJ</span><span class="mini-type">ENTJ</span><span class="mini-type">ENFJ</span>
         </div>
-      </a>
-      <a class="fncard r" data-d="6" href="/functions?fn=Ne">
-        <div class="fncard-arrow">→</div>
+      </div>
+      <div class="fncard r" data-d="6">
         <div class="fncard-code">Ne</div>
         <div class="fncard-name">Extraverted Intuition</div>
         <div class="fncard-tagline">An outward antenna for possibility. Your mind jumps between ideas constantly, finding unexpected connections others miss.</div>
         <div class="fncard-types">
           <span class="mini-type">ENTP</span><span class="mini-type">ENFP</span><span class="mini-type">INTP</span><span class="mini-type">INFP</span>
         </div>
-      </a>
+      </div>
     </div>
   </div>
 
@@ -159,24 +151,22 @@
       <div class="group-desc">Concrete information and direct experience. <em>How you engage with what is real, present and tangible — facts, details, the physical world as it actually is.</em></div>
     </div>
     <div class="fn-pair">
-      <a class="fncard r" data-d="9" href="/functions?fn=Si">
-        <div class="fncard-arrow">→</div>
+      <div class="fncard r" data-d="9">
         <div class="fncard-code">Si</div>
         <div class="fncard-name">Introverted Sensing</div>
         <div class="fncard-tagline">A rich internal library of past experience. You remember how things felt and use that to navigate the present with precision.</div>
         <div class="fncard-types">
           <span class="mini-type">ISTJ</span><span class="mini-type">ISFJ</span><span class="mini-type">ESTJ</span><span class="mini-type">ESFJ</span>
         </div>
-      </a>
-      <a class="fncard r" data-d="10" href="/functions?fn=Se">
-        <div class="fncard-arrow">→</div>
+      </div>
+      <div class="fncard r" data-d="10">
         <div class="fncard-code">Se</div>
         <div class="fncard-name">Extraverted Sensing</div>
         <div class="fncard-tagline">Full immersion in the present moment. You notice everything happening right now — the energy, the details, what's in the room.</div>
         <div class="fncard-types">
           <span class="mini-type">ESTP</span><span class="mini-type">ESFP</span><span class="mini-type">ISTP</span><span class="mini-type">ISFP</span>
         </div>
-      </a>
+      </div>
     </div>
   </div>
 
@@ -190,24 +180,22 @@
       <div class="group-desc">Logic and systematic reasoning. <em>How you evaluate ideas and make decisions — through objective analysis, cause and effect, what is true regardless of how it feels.</em></div>
     </div>
     <div class="fn-pair">
-      <a class="fncard r" data-d="13" href="/functions?fn=Ti">
-        <div class="fncard-arrow">→</div>
+      <div class="fncard r" data-d="13">
         <div class="fncard-code">Ti</div>
         <div class="fncard-name">Introverted Thinking</div>
         <div class="fncard-tagline">Building airtight internal logic. You construct precise frameworks to understand how things work and can't commit until they hold up.</div>
         <div class="fncard-types">
           <span class="mini-type">INTP</span><span class="mini-type">ISTP</span><span class="mini-type">ENTP</span><span class="mini-type">ESTP</span>
         </div>
-      </a>
-      <a class="fncard r" data-d="14" href="/functions?fn=Te">
-        <div class="fncard-arrow">→</div>
+      </div>
+      <div class="fncard r" data-d="14">
         <div class="fncard-code">Te</div>
         <div class="fncard-name">Extraverted Thinking</div>
         <div class="fncard-tagline">Organising the world to make things work. You build systems, set clear standards, and drive toward results as efficiently as possible.</div>
         <div class="fncard-types">
           <span class="mini-type">ENTJ</span><span class="mini-type">ESTJ</span><span class="mini-type">INTJ</span><span class="mini-type">ISTJ</span>
         </div>
-      </a>
+      </div>
     </div>
   </div>
 
@@ -221,24 +209,22 @@
       <div class="group-desc">Values and human meaning. <em>How you evaluate decisions through what matters, what feels right, and the impact on people — including yourself.</em></div>
     </div>
     <div class="fn-pair">
-      <a class="fncard r" data-d="17" href="/functions?fn=Fi">
-        <div class="fncard-arrow">→</div>
+      <div class="fncard r" data-d="17">
         <div class="fncard-code">Fi</div>
         <div class="fncard-name">Introverted Feeling</div>
         <div class="fncard-tagline">A private but unshakeable value system. You know what you stand for and make decisions from there, even when it's hard to explain to others.</div>
         <div class="fncard-types">
           <span class="mini-type">INFP</span><span class="mini-type">ISFP</span><span class="mini-type">ENFP</span><span class="mini-type">ESFP</span>
         </div>
-      </a>
-      <a class="fncard r" data-d="18" href="/functions?fn=Fe">
-        <div class="fncard-arrow">→</div>
+      </div>
+      <div class="fncard r" data-d="18">
         <div class="fncard-code">Fe</div>
         <div class="fncard-name">Extraverted Feeling</div>
         <div class="fncard-tagline">Reading and managing the emotional atmosphere. You pick up on how people are feeling and naturally adapt to keep things harmonious.</div>
         <div class="fncard-types">
           <span class="mini-type">ENFJ</span><span class="mini-type">ESFJ</span><span class="mini-type">INFJ</span><span class="mini-type">ISFJ</span>
         </div>
-      </a>
+      </div>
     </div>
   </div>
 
