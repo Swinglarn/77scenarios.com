@@ -377,8 +377,14 @@ function retakeTest() { showScreen('screen-splash'); }
 // ── PAGE TRANSITION SYSTEM ──
 (function(){
   const ov = document.getElementById('t-overlay');
+  function fadeIn() {
+    ov.style.opacity = '1';
+    ov.animate([{opacity:1},{opacity:0}],{duration:500,delay:80,easing:'cubic-bezier(0.22,1,0.36,1)',fill:'forwards'});
+  }
   // Reveal on load
-  ov.animate([{opacity:1},{opacity:0}],{duration:500,delay:80,easing:'cubic-bezier(0.22,1,0.36,1)',fill:'forwards'});
+  fadeIn();
+  // Also reveal when navigating back (bfcache restore)
+  window.addEventListener('pageshow', e => { if (e.persisted) fadeIn(); });
   // Intercept navigation
   document.addEventListener('click', e => {
     const a = e.target.closest('a[href]');
