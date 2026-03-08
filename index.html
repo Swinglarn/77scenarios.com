@@ -168,6 +168,7 @@
       <button class="btn-primary" onclick="retakeTest()">Retake test <span class="arrow">→</span></button>
       <button class="btn-secondary" onclick="shareResult()">Share result</button>
       <a id="type-deep-link" href="/types" class="btn-secondary" style="text-decoration:none;">Deep dive →</a>
+      <a id="functions-link" href="/functions" class="btn-secondary" style="text-decoration:none;">Explore functions →</a>
     </div>
   </div>
 
@@ -368,6 +369,8 @@ function showResults() {
   document.getElementById('progress-fill').style.width = '100%';
   const deepLink = document.getElementById('type-deep-link');
   if (deepLink) deepLink.href = `type.html?t=${type}`;
+  const fnLink = document.getElementById('functions-link');
+  if (fnLink) fnLink.href = `/functions?t=${type}`;
   showScreen('screen-result');
   setTimeout(() => document.querySelectorAll('.spectrum-fill').forEach(el => el.style.width = el.dataset.target+'%'), 200);
 }
