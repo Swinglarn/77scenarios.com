@@ -1,0 +1,8 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/type", "destination": "/type.html" },
+    { "source": "/letter", "destination": "/letter.html" }
+  ]
+}
