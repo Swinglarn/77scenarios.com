@@ -198,7 +198,7 @@
         <input type="email" id="eb3" style="width:100%;background:#0c0e10;border:1px solid #252a30;border-radius:10px;padding:14px 18px;font-family:'DM Sans',sans-serif;font-size:14px;color:#ede8df;outline:none;margin-bottom:16px;" placeholder="your@email.com" autocomplete="email">
         <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:20px;">
           <input type="checkbox" id="eb4" style="flex-shrink:0;width:16px;height:16px;margin-top:2px;accent-color:#c9a84c;cursor:pointer;">
-          <label for="eb4" style="font-size:12px;color:#6b6560;line-height:1.6;cursor:pointer;">I confirm my email and result can be stored. To be removed email <span style="color:#c9a84c;">privacy@77scenarios.com</span>.</label>
+          <label for="eb4" style="font-size:12px;color:#6b6560;line-height:1.6;cursor:pointer;">I confirm my email and result can be stored. To be removed email <span style="color:#c9a84c;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dcacaeb5aabdbfa59cebebafbfb9b2bdaeb5b3aff2bfb3b1">[email&#160;protected]</a></span>.</label>
         </div>
         <button class="btn-save" onclick="saveResult()">Save result</button>
       </div>
@@ -211,7 +211,7 @@
   </div>
 
 </div>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const questions = [
   // E/I 20 questions
   {dim:'EI',scene:'Friday evening',text:"You've had a draining week. A friend invites you to a house party, a mix of people you know and plenty you don't. What do you do?",a:"Go.",b:"Stay home."},
@@ -523,6 +523,10 @@ async function saveResult() {
 
 function shareResult() {
   const type = getType();
-  const text = `I took the 77 Scenarios personality test and got ${type} ${typeData[type].name}. "${typeData[type].tagline}"`;
-  if (navigator.share) navigator.share({ title: 'My 77 Scenarios result', text });
-  else if (navi
+  const text = `I took the 77 Scenarios personality test and got ${type} — ${typeData[type].name}. "${typeData[type].tagline}"`;
+  if (navigator.share) navigator.share({ title: 'My 77 Scenarios result', text, url: 'https://77scenarios.com' });
+  else { navigator.clipboard.writeText(text + ' https://77scenarios.com'); alert('Copied to clipboard!'); }
+}
+</script>
+</body>
+</html>
