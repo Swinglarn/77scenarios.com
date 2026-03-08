@@ -102,6 +102,24 @@
   .btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--muted); font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid var(--border); border-radius: 60px; padding: 14px 28px; cursor: pointer; transition: all 0.2s ease; }
   .btn-secondary:hover { border-color: var(--muted); color: var(--cream); }
   @media (max-width: 480px) { .splash-meta { gap: 20px; } .answer-card { padding: 16px 18px; } .result-actions { flex-direction: column; } .btn-primary, .btn-secondary { width: 100%; justify-content: center; } }
+
+  /* EMAIL CAPTURE */
+  .email-capture { margin-top: 40px; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
+  .email-capture-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .email-capture-sub { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 24px; }
+  .email-input { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--cream); outline: none; transition: border-color 0.2s; margin-bottom: 16px; }
+  .email-input:focus { border-color: var(--gold-dim); }
+  .email-input::placeholder { color: var(--muted); }
+  .gdpr-row { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 20px; }
+  .gdpr-checkbox { flex-shrink: 0; width: 16px; height: 16px; margin-top: 2px; accent-color: var(--gold); cursor: pointer; }
+  .gdpr-label { font-size: 12px; color: var(--muted); line-height: 1.6; cursor: pointer; }
+  .gdpr-label a { color: var(--gold); text-decoration: none; }
+  .btn-save { background: var(--gold); color: #0c0e10; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; border: none; border-radius: 60px; padding: 14px 32px; cursor: pointer; transition: background 0.2s; }
+  .btn-save:hover { background: var(--cream); }
+  .btn-save:disabled { opacity: 0.5; cursor: not-allowed; }
+  .success-icon { font-size: 28px; color: var(--gold); margin-bottom: 10px; }
+  .success-text { font-size: 14px; color: var(--cream); }
+  .email-error { font-size: 13px; color: #e07070; margin-top: 12px; }
 </style>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -170,6 +188,25 @@
       <button class="btn-secondary" onclick="shareResult()">Share result</button>
       <a id="type-deep-link" href="/types" class="btn-secondary" style="text-decoration:none;">Deep dive →</a>
       <a id="functions-link" href="/functions" class="btn-secondary" style="text-decoration:none;">Explore functions →</a>
+    </div>
+
+    <!-- EMAIL SAVE -->
+    <div class="email-capture" id="email-capture">
+      <div class="email-capture-label">Save your result</div>
+      <p class="email-capture-sub">Enter your email to save your type and revisit it anytime.</p>
+      <div class="email-form" id="email-form">
+        <input type="email" id="email-input" class="email-input" placeholder="your@email.com" autocomplete="email">
+        <div class="gdpr-row">
+          <input type="checkbox" id="gdpr-checkbox" class="gdpr-checkbox">
+          <label for="gdpr-checkbox" class="gdpr-label">I agree to my email and result being stored. No spam, no third parties. You can ask to be removed at any time by emailing <a href="mailto:privacy@77scenarios.com">privacy@77scenarios.com</a>.</label>
+        </div>
+        <button class="btn-save" onclick="saveResult()">Save result</button>
+      </div>
+      <div class="email-success" id="email-success" style="display:none;">
+        <div class="success-icon">✓</div>
+        <div class="success-text">Saved. Your result has been stored.</div>
+      </div>
+      <div class="email-error" id="email-error" style="display:none;"></div>
     </div>
   </div>
 
@@ -376,7 +413,78 @@ function showResults() {
   setTimeout(() => document.querySelectorAll('.spectrum-fill').forEach(el => el.style.width = el.dataset.target+'%'), 200);
 }
 
-function retakeTest() { showScreen('screen-splash'); }
+function retakeTest() {
+  document.getElementById('email-input').value = '';
+  document.getElementById('gdpr-checkbox').checked = false;
+  document.getElementById('email-form').style.display = 'block';
+  document.getElementById('email-success').style.display = 'none';
+  document.getElementById('email-error').style.display = 'none';
+  showScreen('screen-splash');
+}
+
+// ── SUPABASE EMAIL SAVE ──
+const SUPA_URL = 'https://rttomfnfyjjssdqfzkaj.supabase.co';
+const SUPA_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw';
+
+async function saveResult() {
+  const email = document.getElementById('email-input').value.trim();
+  const consent = document.getElementById('gdpr-checkbox').checked;
+  const errorEl = document.getElementById('email-error');
+  const btn = document.querySelector('.btn-save');
+
+  errorEl.style.display = 'none';
+  errorEl.textContent = '';
+
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    errorEl.textContent = 'Please enter a valid email address.';
+    errorEl.style.display = 'block';
+    return;
+  }
+  if (!consent) {
+    errorEl.textContent = 'Please tick the consent box to continue.';
+    errorEl.style.display = 'block';
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Saving...';
+
+  try {
+    const res = await fetch(`${SUPA_URL}/rest/v1/subscribers`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': SUPA_KEY,
+        'Authorization': `Bearer ${SUPA_KEY}`,
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify({
+        email,
+        personality_type: getType(),
+        gdpr_consent: true
+      })
+    });
+
+    if (res.ok) {
+      document.getElementById('email-form').style.display = 'none';
+      document.getElementById('email-success').style.display = 'block';
+    } else {
+      const data = await res.json();
+      // Handle duplicate email gracefully
+      if (data?.code === '23505') {
+        document.getElementById('email-form').style.display = 'none';
+        document.getElementById('email-success').style.display = 'block';
+      } else {
+        throw new Error('Something went wrong.');
+      }
+    }
+  } catch (e) {
+    errorEl.textContent = 'Something went wrong. Please try again.';
+    errorEl.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'Save result';
+  }
+}
 
 // ── PAGE TRANSITION SYSTEM ──
 (function(){
