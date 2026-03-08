@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>77 Scenarios — Free Personality Type Test (Scenario-Based MBTI)</title>
-<meta name="description" content="A scenario-based personality test that actually works. Instead of asking you to rate yourself, Mirror puts you in real situations and watches what you choose. Find your Myers-Briggs type across 77 questions.">
+<meta name="description" content="A scenario-based personality test that actually works. Instead of asking you to rate yourself, 77 Scenarios puts you in real situations and watches what you choose. Find your Myers-Briggs type across 77 questions.">
 <meta name="keywords" content="personality type test, MBTI test, Myers-Briggs test, free personality quiz, 16 personality types, what personality type am I, scenario based personality test, introvert extrovert test, personality test online">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
@@ -380,8 +380,8 @@ function retakeTest() { showScreen('screen-splash'); }
 
 function shareResult() {
   const type = getType();
-  const text = `I took the Mirror personality test and got ${type} — ${typeData[type].name}. "${typeData[type].tagline}"`;
-  if (navigator.share) navigator.share({ title: 'My Mirror result', text });
+  const text = `I took the 77 Scenarios personality test and got ${type} — ${typeData[type].name}. "${typeData[type].tagline}"`;
+  if (navigator.share) navigator.share({ title: 'My 77 Scenarios result', text });
   else if (navigator.clipboard) navigator.clipboard.writeText(text).then(() => {
     const btn = event.currentTarget; const orig = btn.textContent;
     btn.textContent = 'Copied ✓'; setTimeout(() => btn.textContent = orig, 2000);
