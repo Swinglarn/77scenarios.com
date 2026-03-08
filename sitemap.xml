@@ -3,35 +3,36 @@
 
   <!-- Core pages -->
   <url><loc>https://77scenarios.com/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://77scenarios.com/types.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://77scenarios.com/letters.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://77scenarios.com/types</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://77scenarios.com/letters</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://77scenarios.com/about</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- 16 Type pages -->
-  <url><loc>https://77scenarios.com/type.html?t=INTJ</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://77scenarios.com/type.html?t=INTP</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://77scenarios.com/type.html?t=ENTJ</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://77scenarios.com/type.html?t=ENTP</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://77scenarios.com/type.html?t=INFJ</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://77scenarios.com/type.html?t=INFP</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://77scenarios.com/type.html?t=ENFJ</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://77scenarios.com/type.html?t=ENFP</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://77scenarios.com/type.html?t=ISTJ</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://77scenarios.com/type.html?t=ISFJ</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://77scenarios.com/type.html?t=ESTJ</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://77scenarios.com/type.html?t=ESFJ</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://77scenarios.com/type.html?t=ISTP</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://77scenarios.com/type.html?t=ISFP</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://77scenarios.com/type.html?t=ESTP</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://77scenarios.com/type.html?t=ESFP</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/type?t=INTJ</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/type?t=INTP</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/type?t=ENTJ</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/type?t=ENTP</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/type?t=INFJ</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/type?t=INFP</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/type?t=ENFJ</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/type?t=ENFP</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/type?t=ISTJ</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/type?t=ISFJ</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/type?t=ESTJ</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/type?t=ESFJ</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/type?t=ISTP</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/type?t=ISFP</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/type?t=ESTP</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/type?t=ESFP</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- 8 Letter pages -->
-  <url><loc>https://77scenarios.com/letter.html?l=E</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://77scenarios.com/letter.html?l=I</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://77scenarios.com/letter.html?l=S</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://77scenarios.com/letter.html?l=N</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://77scenarios.com/letter.html?l=T</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://77scenarios.com/letter.html?l=F</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://77scenarios.com/letter.html?l=J</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://77scenarios.com/letter.html?l=P</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://77scenarios.com/letter?l=E</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://77scenarios.com/letter?l=I</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://77scenarios.com/letter?l=S</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://77scenarios.com/letter?l=N</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://77scenarios.com/letter?l=T</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://77scenarios.com/letter?l=F</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://77scenarios.com/letter?l=J</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://77scenarios.com/letter?l=P</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
 </urlset>
