@@ -111,12 +111,13 @@
 <div id="t-overlay"></div>
 <div class="glow glow-1"></div>
 <div class="glow glow-2"></div>
-<nav style="position:sticky;top:0;z-index:100;background:rgba(12,14,16,0.85);backdrop-filter:blur(16px);border-bottom:1px solid #252a30;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:56px;">
-  <span style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:#ede8df;">77 Scenarios<span style="color:#c9a84c;">.</span></span>
-  <div style="display:flex;gap:28px;align-items:center;">
-    <a href="types.html" style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#6b6560;text-decoration:none;">16 Types</a>
-    <a href="letters.html" style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#6b6560;text-decoration:none;">8 Letters</a>
+<nav style="position:sticky;top:0;z-index:100;background:rgba(12,14,16,0.85);backdrop-filter:blur(16px);border-bottom:1px solid #252a30;padding:0 32px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:56px;">
+  <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:#ede8df;">77scenarios.com<span style="color:#c9a84c;">.</span></span>
+  <div style="display:flex;gap:32px;align-items:center;">
+    <a href="/types" style="font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:#6b6560;text-decoration:none;">16 Types</a>
+    <a href="/letters" style="font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:#6b6560;text-decoration:none;">8 Letters</a>
   </div>
+  <div></div>
 </nav>
 <div id="app">
 
@@ -124,7 +125,7 @@
   <div class="screen active" id="screen-splash">
     <div class="splash-eyebrow">77 Scenarios</div>
     <div class="splash-title">Who are<br>you <em>really?</em></div>
-    <p class="splash-subtitle">Most personality tests ask you to rate yourself on a scale of one to five. But people are notoriously bad at knowing who they are.<br><br>Mirror is a scenario-based Myers-Briggs test. It puts you in real situations and watches what you choose — no self-assessment, no leading questions. Just choices.</p>
+    <p class="splash-subtitle">Most personality tests ask you to rate yourself on a scale of one to five. But people are notoriously bad at knowing who they are.<br><br>77 Scenarios is a scenario-based Myers-Briggs test. It puts you in real situations and watches what you choose — no self-assessment, no leading questions. Just choices.</p>
     <div class="splash-meta">
       <div class="meta-item"><div class="meta-num">77</div><div class="meta-label">Scenarios</div></div>
       <div class="divider"></div>
@@ -163,7 +164,7 @@
     <div class="result-actions">
       <button class="btn-primary" onclick="retakeTest()">Retake test <span class="arrow">→</span></button>
       <button class="btn-secondary" onclick="shareResult()">Share result</button>
-      <a id="type-deep-link" href="types.html" class="btn-secondary" style="text-decoration:none;">Deep dive →</a>
+      <a id="type-deep-link" href="/types" class="btn-secondary" style="text-decoration:none;">Deep dive →</a>
     </div>
   </div>
 

@@ -20,11 +20,11 @@
   .glow{position:fixed;border-radius:50%;filter:blur(140px);pointer-events:none;z-index:0;}
   .glow-1{width:600px;height:600px;top:-200px;left:-150px;background:radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%);}
   .glow-2{width:400px;height:400px;bottom:-100px;right:-100px;background:radial-gradient(circle,rgba(120,180,160,0.05) 0%,transparent 70%);}
-  nav{position:sticky;top:0;z-index:100;background:rgba(12,14,16,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:56px;}
-  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--cream);text-decoration:none;}
+  nav{position:sticky;top:0;z-index:100;background:rgba(12,14,16,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 32px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:56px;}
+  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--cream);text-decoration:none;}
   .nav-logo span{color:var(--gold);}
-  .nav-links{display:flex;gap:28px;align-items:center;}
-  .nav-links a{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+  .nav-links{display:flex;gap:36px;align-items:center;}
+  .nav-links a{font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;}
   .nav-links a:hover{color:var(--cream);}
   .nav-cta{background:var(--gold);color:#0c0e10 !important;padding:8px 18px;border-radius:30px;font-weight:500 !important;transition:background 0.2s !important;}
   .nav-cta:hover{background:var(--cream) !important;}
@@ -98,16 +98,16 @@
 <div class="glow glow-1"></div>
 <div class="glow glow-2"></div>
 <nav>
-  <a href="index.html" class="nav-logo">77 Scenarios<span>.</span></a>
-  <div class="nav-links">
-    <a href="index.html" class="hide-sm">Take the Test</a>
-    <a href="types.html">16 Types</a>
-    <a href="letters.html">8 Letters</a>
-    <a href="index.html" class="nav-cta">Begin →</a>
+  <a href="/" class="nav-logo">77scenarios.com<span>.</span></a>
+  <div class="nav-links" style="justify-self:center;">
+    <a href="/" class="hide-sm">Take the Test</a>
+    <a href="/types">16 Types</a>
+    <a href="/letters">8 Letters</a>
+    <a href="/" class="nav-cta">Begin →</a>
   </div>
 </nav>
 <main>
-  <a href="letters.html" class="back-link r" data-d="0">← All letters</a>
+  <a href="/letters" class="back-link r" data-d="0">← All letters</a>
   <div id="content"></div>
 </main>
 
@@ -231,7 +231,7 @@ function render(){
   document.getElementById('letter-schema').textContent=JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":`${l} in Myers-Briggs: ${d.name} Explained`,"description":seoDesc,"url":`https://77scenarios.com/letter.html?l=${l}`,"publisher":{"@type":"Organization","name":"77 Scenarios","url":"https://77scenarios.com"}});
 
   const typesHTML=d.types.map(t=>`
-    <a href="type.html?t=${t}" class="type-mini">
+    <a href="/type?t=${t}" class="type-mini">
       <div class="mini-code">${t.split('').map(c=>c===l?`<span class="hi">${c}</span>`:c).join('')}</div>
       <div class="mini-name">${d.typeNames[t]||''}</div>
     </a>`).join('');
@@ -242,7 +242,7 @@ function render(){
       <div class="hero-right">
         <div class="hero-dim">${d.dim} dimension</div>
         <div class="hero-name">${d.name}</div>
-        <div class="hero-opp">Opposite: <a href="letter.html?l=${d.opp}">${d.opp} · ${d.oppName}</a></div>
+        <div class="hero-opp">Opposite: <a href="/letter?l=${d.opp}">${d.opp} · ${d.oppName}</a></div>
       </div>
     </div>
     <div class="section r" data-d="2"><div class="section-label">What it means</div><p class="body-text">${d.p1}</p><p class="body-text">${d.p2}</p></div>
@@ -261,12 +261,12 @@ function render(){
           <div class="opp-letter">${d.opp}</div>
           <div><div class="opp-name">${d.oppName}</div><div class="opp-sub">${d.oppDesc}</div></div>
         </div>
-        <a href="letter.html?l=${d.opp}" class="btn-outline">Explore ${d.opp} →</a>
+        <a href="/letter?l=${d.opp}" class="btn-outline">Explore ${d.opp} →</a>
       </div>
     </div>
     <div class="cta-block r" data-d="9">
       <div class="cta-text">Find out <em>your</em> letters<br>through real scenarios.</div>
-      <a href="index.html" class="btn-gold">Take the test →</a>
+      <a href="/" class="btn-gold">Take the test →</a>
     </div>`;
 
   document.querySelectorAll('.r').forEach(el=>obs.observe(el));
