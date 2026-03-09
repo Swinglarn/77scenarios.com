@@ -37,6 +37,12 @@
   .screen.active { display: block; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
 
+  /* NAV */
+  .site-nav { position: sticky; top: 0; z-index: 100; background: rgba(12,14,16,0.85); backdrop-filter: blur(16px); border-bottom: 1px solid #252a30; padding: 0 32px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; height: 56px; }
+  .nav-links { display: flex; gap: 32px; align-items: center; }
+  .nav-links a { font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: #6b6560; text-decoration: none; white-space: nowrap; }
+  .nav-links a:hover { color: #ede8df; }
+
   /* SPLASH */
   .splash-eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 28px; display: flex; align-items: center; gap: 12px; }
   .splash-eyebrow::before, .splash-eyebrow::after { content: ''; display: block; height: 1px; width: 32px; background: var(--gold-dim); }
@@ -104,6 +110,82 @@
   .btn-secondary:hover { border-color: var(--muted); color: var(--cream); }
   @media (max-width: 480px) { .splash-meta { gap: 20px; } .answer-card { padding: 16px 18px; } .result-actions { flex-direction: column; } .btn-primary, .btn-secondary { width: 100%; justify-content: center; } }
 
+  /* ── TABLET (max 768px) ── */
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    #app { padding: 20px 16px; align-items: flex-start; padding-top: 32px; }
+    .screen { max-width: 100%; }
+
+    /* Splash */
+    .splash-eyebrow { margin-bottom: 20px; }
+    .splash-subtitle { font-size: 14px; margin: 20px 0 36px; }
+    .splash-meta { gap: 24px; margin-bottom: 36px; }
+    .meta-num { font-size: 30px; }
+
+    /* Question */
+    .progress-bar-wrap { margin-bottom: 28px; }
+    .q-header { margin-bottom: 24px; }
+    .scenario-scene { font-size: 18px; margin-bottom: 10px; }
+    .scenario-text { font-size: clamp(18px, 4vw, 24px); margin-bottom: 28px; }
+    .answer-card { gap: 16px; padding: 18px 20px; }
+    .answer-text { font-size: 14px; }
+
+    /* Results */
+    .type-name { margin-bottom: 4px; }
+    .type-description { font-size: 14px; }
+    .result-actions { gap: 12px; flex-wrap: wrap; }
+    .btn-secondary { padding: 12px 20px; font-size: 11px; }
+  }
+
+  /* ── MOBILE (max 480px) ── */
+  @media (max-width: 480px) {
+    nav { padding: 0 16px; height: 50px; }
+    nav span { font-size: 17px; }
+    .nav-links { gap: 16px; }
+    .nav-links a { font-size: 11px; letter-spacing: 0.04em; }
+    /* Hide less important nav links on very small screens */
+    .nav-links a:nth-child(2), .nav-links a:nth-child(4) { display: none; }
+
+    #app { padding: 16px 14px; padding-top: 24px; }
+
+    /* Splash */
+    .splash-eyebrow { margin-bottom: 16px; font-size: 9px; }
+    .splash-title { line-height: 0.9; margin-bottom: 8px; }
+    .splash-subtitle { font-size: 14px; line-height: 1.65; margin: 16px 0 28px; }
+    .splash-meta { gap: 16px; margin-bottom: 28px; flex-wrap: wrap; }
+    .meta-num { font-size: 28px; }
+    .meta-label { font-size: 10px; }
+    .divider { height: 36px; }
+    .btn-primary { width: 100%; justify-content: center; padding: 16px; }
+
+    /* Question */
+    .progress-bar-wrap { margin-bottom: 24px; }
+    .q-header { margin-bottom: 20px; }
+    .q-counter { font-size: 10px; }
+    .scenario-scene { font-size: 17px; margin-bottom: 8px; }
+    .scenario-text { font-size: clamp(17px, 5vw, 22px); line-height: 1.45; margin-bottom: 22px; }
+    .answers { gap: 10px; }
+    .answer-card { gap: 14px; padding: 14px 16px; border-radius: 12px; }
+    .answer-letter { width: 26px; height: 26px; font-size: 10px; }
+    .answer-text { font-size: 13px; line-height: 1.6; }
+
+    /* Results */
+    .result-eyebrow { margin-bottom: 16px; }
+    .type-badge { margin-bottom: 16px; }
+    .type-tagline { font-size: 11px; margin-bottom: 16px; }
+    .type-description { font-size: 14px; line-height: 1.75; margin-bottom: 24px; }
+    .traits-grid { gap: 8px; margin-bottom: 28px; }
+    .trait { font-size: 10px; padding: 6px 12px; }
+    .spectrum-section { margin-bottom: 32px; }
+    .sep { margin: 24px 0; }
+    .result-actions { flex-direction: column; gap: 10px; }
+    .btn-primary, .btn-secondary, .btn-save { width: 100%; justify-content: center; }
+    .btn-secondary { padding: 14px; }
+
+    /* Save box */
+    #eb1 { padding: 22px 18px; margin-top: 28px; }
+  }
+
   /* EMAIL SAVE */
   .result-save-box { margin-top: 40px; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
   .save-box-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
@@ -132,13 +214,13 @@
 <div id="t-overlay"></div>
 <div class="glow glow-1"></div>
 <div class="glow glow-2"></div>
-<nav style="position:sticky;top:0;z-index:100;background:rgba(12,14,16,0.85);backdrop-filter:blur(16px);border-bottom:1px solid #252a30;padding:0 32px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:56px;">
+<nav class="site-nav">
   <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:#ede8df;">77scenarios.com</span>
-  <div style="display:flex;gap:32px;align-items:center;">
-    <a href="/types" style="font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:#6b6560;text-decoration:none;">16 Types</a>
-    <a href="/letters" style="font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:#6b6560;text-decoration:none;">8 Letters</a>
-    <a href="/cognitive-functions" style="font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:#6b6560;text-decoration:none;">Functions</a>
-    <a href="/about" style="font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:#6b6560;text-decoration:none;">About</a>
+  <div class="nav-links">
+    <a href="/types">16 Types</a>
+    <a href="/letters">8 Letters</a>
+    <a href="/cognitive-functions">Functions</a>
+    <a href="/about">About</a>
   </div>
   <div></div>
 </nav>
