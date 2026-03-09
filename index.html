@@ -279,7 +279,6 @@
         Back
       </button>
       <div class="q-counter">Question <span id="q-num">1</span> of 77</div>
-      <div class="q-dimension" id="q-dim"></div>
     </div>
     <div class="scenario-scene" id="q-scene"></div>
     <div class="scenario-text" id="q-text"></div>
@@ -463,14 +462,12 @@ function startTest() {
   showScreen('screen-question');
 }
 
-const dimLabels = { EI:'Energy', SN:'Perception', TF:'Judgement', JP:'Lifestyle' };
 
 function renderQuestion() {
   const q = orderedQuestions[current];
   const pct = (current / orderedQuestions.length) * 100;
   document.getElementById('progress-fill').style.width = pct + '%';
   document.getElementById('q-num').textContent = current + 1;
-  document.getElementById('q-dim').textContent = dimLabels[q.dim];
   document.getElementById('q-scene').textContent = q.scene;
   document.getElementById('q-text').textContent = q.text;
 
