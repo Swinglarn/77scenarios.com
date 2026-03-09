@@ -337,7 +337,7 @@ const questions = [
   {dim:'EI',scene:'Choosing a project',text:"You're offered two equally interesting projects, one with daily team check-ins and one solo with a final presentation. You pick…",a:"The team project.",b:"The solo project."},
   {dim:'EI',scene:'Unplanned Saturday',text:"You have a completely free Saturday with no obligations. By mid-morning you'll most likely be…",a:"Out somewhere. A market, a coffee shop, meeting someone. Anything social.",b:"Still at home, in your own world. Perfectly happy about it."},
   {dim:'EI',scene:'Conference networking hour',text:"There's a mandatory networking hour at a conference. Your honest reaction is…",a:"Decent enough. You usually meet at least one genuinely interesting person.",b:"You tolerate it but count down until you can leave."},
-  {dim:'EI',scene:'The long commute',text:"Would you rather spend your daily commute texting friends and making plans, or headphones in, completely in your own world?",a:"Texting friends, making plans. The commute is dead time worth using.",b:"Headphones on, something good to listen to or read. Leave me alone."},
+  {dim:'EI',scene:'The long commute',text:"Would you rather spend your daily commute texting friends and making plans, or headphones on, completely in your own world?",a:"Texting friends, making plans. The commute is dead time worth using.",b:"Headphones on, something good to listen to or read. Leave me alone."},
   {dim:'EI',scene:'Bad day',text:"You've had a genuinely awful day. What actually helps?",a:"Venting to someone who gets it. Going out to take your mind off it.",b:"Time alone. Silence, space, and no one asking you anything."},
   {dim:'EI',scene:'New job, week one',text:"First day at a new job. You don't know anyone. What do you do at lunch?",a:"Ask someone nearby if they want to grab food together.",b:"Head out alone. You need the break and you'll get to know people at your own pace."},
   {dim:'EI',scene:'The group holiday',text:"You're on a group holiday with six friends. By day three you…",a:"Still energised. The more time together the better.",b:"Are quietly craving an hour completely alone, even if you're enjoying it."},
@@ -347,7 +347,7 @@ const questions = [
   {dim:'EI',scene:'Making a decision',text:"You're deciding between two job offers. Your process involves…",a:"Talking it through with people. Other perspectives help you figure out what you actually want.",b:"Sitting with it alone. Too many opinions pull you away from your own instincts."},
   {dim:'EI',scene:'The dinner party',text:"You've just spent four hours hosting eight people for dinner. Be honest, how do you actually feel?",a:"Energised. Genuinely. A good evening with good people fills you up.",b:"Drained in the best possible way, but drained nonetheless. You need tomorrow to recover."},
   {dim:'EI',scene:'How much do you talk',text:"People who know you well would say…",a:"You talk a lot. You fill silences, you carry conversations, and you're rarely the quiet one in the room.",b:"You're a good listener. You speak when you have something to say, not just to fill the space."},
-  {dim:'EI',scene:'The road trip',text:"Six hours in the car with a close friend. By the end you…",a:"Wish the drive were longer. As long as the energy is good you could go forever.",b:"Glad it was a good trip, but after six hours in a car any person needs some quiet."},
+  {dim:'EI',scene:'The road trip',text:"Six hours in the car with a close friend. By the end you…",a:"Wish the drive was longer. As long as the energy is good you could go forever.",b:"Glad it was a good trip, but after six hours in a car any person needs some quiet."},
   {dim:'EI',scene:'Telling a story',text:"Someone asks you to tell a story about your weekend. You…",a:"Launch straight into it. The details come as you talk, the story builds itself as you go.",b:"Take a brief moment to figure out where to start. You'd rather tell it well than tell it fast."},
   {dim:'EI',scene:'How others describe you',text:"Someone who loves you is asked to describe you in three words. They pick…",a:"Warm, loud, unforgettable.",b:"Deep, private, worth knowing."},
 
@@ -668,9 +668,23 @@ async function saveResult() {
 
 function shareResult() {
   const type = getType();
-  const text = `I took the 77 Scenarios personality test and got ${type} — ${typeData[type].name}. "${typeData[type].tagline}"`;
-  if (navigator.share) navigator.share({ title: 'My 77 Scenarios result', text, url: 'https://77scenarios.com' });
-  else { navigator.clipboard.writeText(text + ' https://77scenarios.com'); alert('Copied to clipboard!'); }
+  const url = `https://77scenarios.com/type?t=${type}`;
+  const dims = [
+    {a:'E',b:'I',la:'Extroverted',lb:'Introverted'},
+    {a:'S',b:'N',la:'Sensing',lb:'Intuitive'},
+    {a:'T',b:'F',la:'Thinking',lb:'Feeling'},
+    {a:'J',b:'P',la:'Judging',lb:'Perceiving'}
+  ];
+  const lines = dims.map(d => {
+    const total = scores[d.a] + scores[d.b];
+    const aWins = scores[d.a] >= scores[d.b];
+    const pct = total === 0 ? 50 : Math.round(((aWins ? scores[d.a] : scores[d.b]) / total) * 100);
+    const label = aWins ? d.la : d.lb;
+    return `${aWins ? d.a : d.b} — ${pct}% ${label}`;
+  }).join('\n');
+  const text = `I got ${type} — ${typeData[type].name} on 77 Scenarios.\n\n${lines}\n\n${url}`;
+  if (navigator.share) navigator.share({ title: `I got ${type} — ${typeData[type].name}`, text });
+  else { navigator.clipboard.writeText(text); alert('Copied to clipboard!'); }
 }
 </script>
 </body>
