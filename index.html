@@ -668,23 +668,28 @@ async function saveResult() {
 
 function shareResult() {
   const type = getType();
-  const url = `https://77scenarios.com/type?t=${type}`;
   const dims = [
-    {a:'E',b:'I',la:'Extroverted',lb:'Introverted'},
-    {a:'S',b:'N',la:'Sensing',lb:'Intuitive'},
-    {a:'T',b:'F',la:'Thinking',lb:'Feeling'},
-    {a:'J',b:'P',la:'Judging',lb:'Perceiving'}
+    {a:'E',b:'I',key:'ei',la:'Extroverted',lb:'Introverted'},
+    {a:'S',b:'N',key:'sn',la:'Sensing',lb:'Intuitive'},
+    {a:'T',b:'F',key:'tf',la:'Thinking',lb:'Feeling'},
+    {a:'J',b:'P',key:'jp',la:'Judging',lb:'Perceiving'}
   ];
+  const params = new URLSearchParams({ t: type });
   const lines = dims.map(d => {
     const total = scores[d.a] + scores[d.b];
     const aWins = scores[d.a] >= scores[d.b];
     const pct = total === 0 ? 50 : Math.round(((aWins ? scores[d.a] : scores[d.b]) / total) * 100);
-    const label = aWins ? d.la : d.lb;
-    return `${aWins ? d.a : d.b} — ${pct}% ${label}`;
-  }).join('\n');
-  const text = `I got ${type} — ${typeData[type].name} on 77 Scenarios.\n\n${lines}\n\n${url}`;
-  if (navigator.share) navigator.share({ title: `I got ${type} — ${typeData[type].name}`, text });
-  else { navigator.clipboard.writeText(text); alert('Copied to clipboard!'); }
+    params.set(d.key, pct + (aWins ? d.a : d.b));
+    return `${aWins ? d.a : d.b} ${pct}% ${aWins ? d.la : d.lb}`;
+  });
+  const url = `https://77scenarios.com/type?${params.toString()}`;
+  const text = `I got ${type} — ${typeData[type].name} on 77 Scenarios.\n${lines.join(' · ')}`;
+  if (navigator.share) {
+    navigator.share({ title: `I got ${type} on 77 Scenarios`, text, url });
+  } else {
+    navigator.clipboard.writeText(text + '\n' + url);
+    alert('Copied to clipboard!');
+  }
 }
 </script>
 </body>

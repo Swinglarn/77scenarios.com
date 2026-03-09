@@ -345,6 +345,40 @@ function render(){
   if(!d){document.getElementById('content').innerHTML='<p style="color:var(--muted)">Type not found.</p>';return;}
   document.title=`${t} Personality Type · ${d.name} — 77 Scenarios`;
 
+  // Read optional score params (e.g. ei=72E, sn=65N, tf=81T, jp=60J)
+  const scoreKeys = ['ei','sn','tf','jp'];
+  const dimDefs = [
+    {a:'E',b:'I',la:'Extroverted',lb:'Introverted'},
+    {a:'S',b:'N',la:'Sensing',lb:'Intuitive'},
+    {a:'T',b:'F',la:'Thinking',lb:'Feeling'},
+    {a:'J',b:'P',la:'Judging',lb:'Perceiving'}
+  ];
+  let spectrumHTML = '';
+  const hasScores = scoreKeys.every(k => p.get(k));
+  if (hasScores) {
+    const bars = scoreKeys.map((k,i) => {
+      const val = p.get(k);
+      const pct = parseInt(val);
+      const letter = val.slice(-1).toUpperCase();
+      const dd = dimDefs[i];
+      const label = letter === dd.a ? dd.la : dd.lb;
+      return `<div style="margin-bottom:18px">
+        <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+          <span style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)">${label}</span>
+          <span style="font-size:12px;color:var(--gold);font-weight:500">${letter} · ${pct}%</span>
+        </div>
+        <div style="height:4px;background:var(--surface2);border-radius:4px;overflow:hidden">
+          <div style="height:100%;width:${pct}%;background:linear-gradient(90deg,var(--gold-dim),var(--gold));border-radius:4px;transition:width 1s cubic-bezier(0.22,1,0.36,1) 0.2s"></div>
+        </div>
+      </div>`;
+    }).join('');
+    spectrumHTML = `<div class="section r" data-d="1b" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px 32px;margin-bottom:36px">
+      <div class="section-label" style="margin-bottom:20px">Their scores</div>
+      ${bars}
+      <p style="font-size:12px;color:var(--muted);margin-top:16px;line-height:1.6">Shared from a completed 77 Scenarios test. <a href="/" style="color:var(--gold);text-decoration:none">Take it yourself →</a></p>
+    </div>`;
+  }
+
   // Dynamic SEO
   const desc=`The ${t} personality type (${d.name}): ${d.tagline}. Full description, strengths, blind spots, and famous examples of the ${t} Myers-Briggs type.`;
   let dm=document.querySelector('meta[name="description"]');
@@ -367,6 +401,7 @@ function render(){
 
   document.getElementById('content').innerHTML=`
     <div class="r" data-d="1"><div class="type-code">${code}</div><div class="type-name">${d.name}</div><div class="type-tagline">${d.tagline}</div><div class="letter-pills">${pills}</div></div>
+    ${spectrumHTML}
     <div class="section r" data-d="2"><div class="section-label">Overview</div><p class="body-text">${d.p1}</p><p class="body-text">${d.p2}</p></div>
     <div class="fd-row section r" data-d="3">
       <div class="fd-box"><div class="fd-label">Core desire</div><div class="fd-text">${d.desire}</div></div>
