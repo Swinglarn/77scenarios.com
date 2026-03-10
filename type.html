@@ -338,6 +338,30 @@ const types = {
 
 const typeNames={ISTJ:"Inspector",ISFJ:"Protector",INFJ:"Counselor",INTJ:"Architect",ISTP:"Craftsman",ISFP:"Artist",INFP:"Mediator",INTP:"Thinker",ESTP:"Dynamo",ESFP:"Performer",ENFP:"Champion",ENTP:"Visionary",ESTJ:"Director",ESFJ:"Caregiver",ENFJ:"Teacher",ENTJ:"Commander"};
 
+
+const typeStacks = {
+  INTJ:['Ni','Te','Fi','Se'],INTP:['Ti','Ne','Si','Fe'],
+  ENTJ:['Te','Ni','Se','Fi'],ENTP:['Ne','Ti','Fe','Si'],
+  INFJ:['Ni','Fe','Ti','Se'],INFP:['Fi','Ne','Si','Te'],
+  ENFJ:['Fe','Ni','Se','Ti'],ENFP:['Ne','Fi','Te','Si'],
+  ISTJ:['Si','Te','Fi','Ne'],ISFJ:['Si','Fe','Ti','Ne'],
+  ESTJ:['Te','Si','Ne','Fi'],ESFJ:['Fe','Si','Ne','Ti'],
+  ISTP:['Ti','Se','Ni','Fe'],ISFP:['Fi','Se','Ni','Te'],
+  ESTP:['Se','Ti','Fe','Ni'],ESFP:['Se','Fi','Te','Ni']
+};
+const fnMeta = {
+  Ni:{name:'Introverted Intuition',tagline:'Sees the pattern beneath the surface'},
+  Ne:{name:'Extraverted Intuition',tagline:'Sees possibilities everywhere'},
+  Si:{name:'Introverted Sensing',tagline:'Anchored in lived experience'},
+  Se:{name:'Extraverted Sensing',tagline:'Fully alive to the present moment'},
+  Ti:{name:'Introverted Thinking',tagline:'Builds precise internal frameworks'},
+  Te:{name:'Extraverted Thinking',tagline:'Organises the world for results'},
+  Fi:{name:'Introverted Feeling',tagline:'Guided by deep personal values'},
+  Fe:{name:'Extraverted Feeling',tagline:'Attuned to the emotions of others'}
+};
+const posLabels = ['1st · Dominant','2nd · Auxiliary','3rd · Tertiary','4th · Inferior'];
+const posKeys = ['dominant','auxiliary','tertiary','inferior'];
+
 function render(){
   const p=new URLSearchParams(window.location.search);
   const t=(p.get('t')||'INTJ').toUpperCase();
@@ -414,11 +438,35 @@ function render(){
     </div>
     <div class="section r" data-d="6"><div class="section-label">Notable examples</div><div class="famous-grid">${d.famous.map(f=>`<div class="famous-card"><div class="famous-name">${f.name}</div><div class="famous-ctx">${f.ctx}</div></div>`).join('')}</div></div>
     <div class="section r" data-d="7"><div class="section-label">Similar types</div><div class="similar-row">${simCards}</div></div>
+    <div class="section r" data-d="7b" style="margin-top:0">
+      <div class="section-label">Cognitive functions</div>
+      <p class="body-text" style="margin-bottom:24px;font-size:14px;">Every type runs on four mental functions in a set order. Your first is almost effortless. Your fourth is your weak spot.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;" id="fn-stack-inline"></div>
+      <a href="/functions?t=${t}" style="display:inline-block;margin-top:20px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;">See your full function breakdown &#8594;</a>
+    </div>
     <div class="sep r" data-d="8"></div>
     <div class="cta-block r" data-d="9">
       <div class="cta-text">Not sure if you're <em>${t}</em>?<br>Let the scenarios decide.</div>
       <a href="/" class="btn-gold">Take the test →</a>
     </div>`;
+
+
+  // Build inline function stack
+  const stackEl = document.getElementById('fn-stack-inline');
+  if(stackEl && typeStacks[t]){
+    typeStacks[t].forEach((fn,i)=>{
+      const m=fnMeta[fn];
+      const isFirst=i===0;
+      stackEl.innerHTML+=`<div style="display:flex;align-items:center;gap:16px;padding:16px 20px;background:${isFirst?'rgba(201,168,76,0.06)':'var(--surface)'};border:1px solid ${isFirst?'rgba(201,168,76,0.25)':'var(--border)'};border-radius:10px;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:${isFirst?'var(--gold)':'var(--cream)'};min-width:32px;text-align:center;">${fn}</div>
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:${isFirst?'var(--gold)':'var(--muted)'};margin-bottom:3px;">${posLabels[i]}</div>
+          <div style="font-size:14px;color:var(--cream);font-weight:400;">${m.name}</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:2px;">${m.tagline}</div>
+        </div>
+      </div>`;
+    });
+  }
 
   // Observe newly injected elements
   document.querySelectorAll('.r').forEach(el=>obs.observe(el));
