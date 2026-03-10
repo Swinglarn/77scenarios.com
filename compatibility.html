@@ -23,7 +23,7 @@
   a{color:inherit;text-decoration:none;}
   :root{
     --bg:#0c0e10;--surface:#13161a;--surface2:#1a1e24;
-    --gold:#c9a84c;--gold-dim:#8a6d2e;--cream:#ede8df;--muted:#9a938c;--border:#252a30;--radius:14px;
+    --gold:#c9a84c;--gold-dim:#8a6d2e;--cream:#ede8df;--muted:#b5ada6;--border:#252a30;--radius:14px;
     --c1:#c0392b;--c2:#c0702b;--c3:#b8972a;--c4:#4a7c59;--c5:#2e6b4f;
   }
   html,body{background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
@@ -35,13 +35,12 @@
 
   /* NAV */
   nav,.site-nav{position:sticky;top:0;z-index:200;background:rgba(12,14,16,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 32px;display:flex;justify-content:space-between;align-items:center;height:56px;}
-  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:var(--cream);letter-spacing:0.04em;}
-  .nav-logo em{color:var(--gold);font-style:italic;}
+  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--cream);text-decoration:none;}
   .nav-links{display:flex;gap:32px;align-items:center;}
   .nav-links a{font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;white-space:nowrap;}
   .nav-links a:hover,.nav-links a.active{color:var(--cream);}
   .nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
-  .nav-burger span{display:block;width:22px;height:1.5px;background:#9a938c;transition:all 0.3s ease;transform-origin:center;}
+  .nav-burger span{display:block;width:22px;height:1.5px;background:#b5ada6;transition:all 0.3s ease;transform-origin:center;}
   .nav-burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);background:var(--gold);}
   .nav-burger.open span:nth-child(2){opacity:0;}
   .nav-burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);background:var(--gold);}
@@ -50,9 +49,9 @@
   .nav-drawer{position:fixed;top:0;right:-100%;width:min(320px,85vw);height:100%;background:#13161a;border-left:1px solid #252a30;z-index:400;transition:right 0.35s cubic-bezier(0.22,1,0.36,1),visibility 0s linear 0.35s;display:flex;flex-direction:column;pointer-events:none;visibility:hidden;}
   .nav-drawer.open{right:0;pointer-events:auto;visibility:visible;transition:right 0.35s cubic-bezier(0.22,1,0.36,1),visibility 0s linear 0s;}
   .nav-drawer-header{display:flex;justify-content:space-between;align-items:center;padding:0 24px;height:56px;border-bottom:1px solid #252a30;flex-shrink:0;}
-  .nav-close{background:none;border:none;color:#9a938c;font-size:18px;cursor:pointer;padding:4px;}
+  .nav-close{background:none;border:none;color:#b5ada6;font-size:18px;cursor:pointer;padding:4px;}
   .nav-drawer-links{display:flex;flex-direction:column;padding:16px 0;}
-  .nav-drawer-links a{font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:#9a938c;text-decoration:none;padding:18px 24px;border-bottom:1px solid #1e2227;transition:all 0.15s ease;}
+  .nav-drawer-links a{font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:#b5ada6;text-decoration:none;padding:18px 24px;border-bottom:1px solid #1e2227;transition:all 0.15s ease;}
   .nav-drawer-links a:hover{color:var(--gold);padding-left:32px;}
   .nav-drawer-links a:first-child{color:var(--gold);}
   @media(max-width:480px){nav,.site-nav{padding:0 16px;height:52px;}.nav-links{display:none;}.nav-burger{display:flex;}.nav-overlay{display:block;pointer-events:none;}}
@@ -62,19 +61,19 @@
 
   /* HEADER */
   .page-header{margin-bottom:48px;}
-  .page-label{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+  .page-label{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
   h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,6vw,56px);font-weight:300;line-height:1.1;margin-bottom:16px;}
   h1 em{font-style:italic;color:var(--gold);}
   .page-sub{font-size:15px;color:var(--muted);line-height:1.7;max-width:600px;}
 
   /* TYPE SELECTOR */
   .type-selector{margin-bottom:40px;}
-  .selector-label{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
+  .selector-label{font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
   .temperament-groups{display:flex;flex-wrap:wrap;gap:16px;}
   .tg-group{display:flex;flex-direction:column;gap:6px;}
-  .tg-label{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);padding-left:2px;}
+  .tg-label{font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);padding-left:2px;}
   .tg-pills{display:flex;gap:6px;flex-wrap:wrap;}
-  .type-pill{font-size:11px;letter-spacing:0.07em;font-weight:500;padding:5px 11px;border-radius:6px;border:1px solid var(--border);color:var(--muted);background:var(--surface);cursor:pointer;transition:all 0.15s ease;font-family:'DM Sans',sans-serif;}
+  .type-pill{font-size:12px;letter-spacing:0.07em;font-weight:500;padding:5px 11px;border-radius:6px;border:1px solid var(--border);color:var(--muted);background:var(--surface);cursor:pointer;transition:all 0.15s ease;font-family:'DM Sans',sans-serif;}
   .type-pill:hover{color:var(--cream);border-color:var(--muted);}
   .type-pill.active{color:var(--gold);border-color:var(--gold-dim);background:rgba(201,168,76,0.08);}
 
@@ -91,9 +90,9 @@
 
   /* Corner & headers */
   .corner{background:transparent;}
-  .col-head,.row-head{font-size:9px;letter-spacing:0.06em;font-weight:500;color:var(--muted);display:flex;align-items:center;justify-content:center;padding:4px 2px;transition:color 0.2s;}
-  .col-head{aspect-ratio:auto;height:40px;writing-mode:vertical-lr;text-orientation:mixed;transform:rotate(180deg);font-size:8.5px;}
-  .row-head{aspect-ratio:auto;width:52px;font-size:9.5px;justify-content:flex-end;padding-right:6px;}
+  .col-head,.row-head{font-size:12px;letter-spacing:0.06em;font-weight:500;color:var(--muted);display:flex;align-items:center;justify-content:center;padding:4px 2px;transition:color 0.2s;}
+  .col-head{aspect-ratio:auto;height:40px;writing-mode:vertical-lr;text-orientation:mixed;transform:rotate(180deg);font-size:12px;}
+  .row-head{aspect-ratio:auto;width:52px;font-size:12px;justify-content:flex-end;padding-right:6px;}
 
   /* Dim when a type is selected */
   .chart-grid.has-selection .cell:not(.highlighted){opacity:0.08;}
@@ -131,7 +130,7 @@
   .detail-empty-text{font-size:14px;color:var(--muted);text-align:center;line-height:1.7;}
   .detail-pair{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;margin-bottom:6px;}
   .detail-pair em{font-style:italic;color:var(--gold);}
-  .detail-score-label{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:12px;}
+  .detail-score-label{font-size:12px;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:12px;}
   .detail-score-label.sc1{color:var(--c1);}
   .detail-score-label.sc2{color:var(--c2);}
   .detail-score-label.sc3{color:var(--c3);}
@@ -139,7 +138,7 @@
   .detail-score-label.sc5{color:rgba(60,140,220,0.95);}
   .detail-desc{font-size:14px;color:var(--muted);line-height:1.75;max-width:560px;}
   .detail-links{margin-top:16px;display:flex;gap:16px;flex-wrap:wrap;}
-  .detail-link{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;transition:opacity 0.15s;}
+  .detail-link{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;transition:opacity 0.15s;}
   .detail-link:hover{opacity:0.7;}
 
   /* NOTE */
@@ -175,7 +174,7 @@
     main{padding:40px 16px 72px;}
     .detail{padding:20px;}
     .legend{gap:10px;}
-    .legend-item{font-size:11px;}
+    .legend-item{font-size:12px;}
     .temperament-groups{gap:12px;}
   }
 </style>
@@ -186,7 +185,7 @@
 <div class="glow glow-2"></div>
 
 <nav class="site-nav">
-  <a href="/" class="nav-logo">77 <em>Scenarios</em></a>
+  <a href="/" class="nav-logo">77scenarios.com</a>
   <div class="nav-links">
     <a href="/">Take the Test</a>
     <a href="/types">16 Types</a>
@@ -201,7 +200,7 @@
 <div class="nav-overlay" id="nav-overlay" onclick="toggleMenu()"></div>
 <div class="nav-drawer" id="nav-drawer">
   <div class="nav-drawer-header">
-    <a href="/" class="nav-logo">77 <em>Scenarios</em></a>
+    <a href="/" class="nav-logo">77scenarios.com</a>
     <button class="nav-close" onclick="toggleMenu()">&#10005;</button>
   </div>
   <nav class="nav-drawer-links">

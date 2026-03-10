@@ -25,7 +25,7 @@
   :root {
     --bg: #0c0e10; --surface: #13161a; --surface2: #1a1e24;
     --gold: #c9a84c; --gold-dim: #8a6d2e; --cream: #ede8df;
-    --muted: #9a938c; --border: #252a30; --radius: 16px;
+    --muted: #b5ada6; --border: #252a30; --radius: 16px;
   }
   html, body { height: 100%; background: var(--bg); color: var(--cream); font-family: 'DM Sans', sans-serif; font-weight: 300; overflow-x: hidden; }
   body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; opacity: 0.6; }
@@ -41,10 +41,10 @@
   .site-nav { position: sticky; top: 0; z-index: 200; background: rgba(12,14,16,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid #252a30; padding: 0 32px; display: flex; justify-content: space-between; align-items: center; height: 56px; }
   .nav-logo { text-decoration: none; }
   .nav-links { display: flex; gap: 32px; align-items: center; }
-  .nav-links a { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #9a938c; text-decoration: none; white-space: nowrap; transition: color 0.2s; }
+  .nav-links a { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #b5ada6; text-decoration: none; white-space: nowrap; transition: color 0.2s; }
   .nav-links a:hover { color: #ede8df; }
   .nav-burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
-  .nav-burger span { display: block; width: 22px; height: 1.5px; background: #9a938c; transition: all 0.3s ease; transform-origin: center; }
+  .nav-burger span { display: block; width: 22px; height: 1.5px; background: #b5ada6; transition: all 0.3s ease; transform-origin: center; }
   .nav-burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); background: #c9a84c; }
   .nav-burger.open span:nth-child(2) { opacity: 0; }
   .nav-burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); background: #c9a84c; }
@@ -55,10 +55,10 @@
   .nav-drawer { position: fixed; top: 0; right: -100%; width: min(320px, 85vw); height: 100%; background: #13161a; border-left: 1px solid #252a30; z-index: 400; transition: right 0.35s cubic-bezier(0.22,1,0.36,1), visibility 0s linear 0.35s; display: flex; flex-direction: column; padding: 0; pointer-events: none; visibility: hidden; }
   .nav-drawer.open { right: 0; pointer-events: auto; visibility: visible; transition: right 0.35s cubic-bezier(0.22,1,0.36,1), visibility 0s linear 0s; }
   .nav-drawer-header { display: flex; justify-content: space-between; align-items: center; padding: 0 24px; height: 56px; border-bottom: 1px solid #252a30; flex-shrink: 0; }
-  .nav-close { background: none; border: none; color: #9a938c; font-size: 18px; cursor: pointer; padding: 4px; transition: color 0.2s; }
+  .nav-close { background: none; border: none; color: #b5ada6; font-size: 18px; cursor: pointer; padding: 4px; transition: color 0.2s; }
   .nav-close:hover { color: #ede8df; }
   .nav-drawer-links { display: flex; flex-direction: column; padding: 16px 0; }
-  .nav-drawer-links a { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #9a938c; text-decoration: none; padding: 18px 24px; border-bottom: 1px solid #1e2227; transition: all 0.15s ease; }
+  .nav-drawer-links a { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #b5ada6; text-decoration: none; padding: 18px 24px; border-bottom: 1px solid #1e2227; transition: all 0.15s ease; }
   .nav-drawer-links a:hover { color: #c9a84c; padding-left: 32px; }
   .nav-drawer-links a:first-child { color: #c9a84c; }
 
@@ -308,14 +308,14 @@
     </div>
 
     <div id="eb1" style="margin-top:40px;background:#13161a;border:1px solid #252a30;border-radius:16px;padding:32px;">
-      <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#c9a84c;margin-bottom:10px;">Save your result</div>
-      <p style="font-size:14px;color:#9a938c;line-height:1.6;margin-bottom:8px;">Enter your email to save your type and revisit it anytime.</p>
-      <p style="font-size:11px;color:#9a938c;line-height:1.6;margin-bottom:20px;">Using an ad blocker? You may need to disable it on this page to see the full form.</p>
+      <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#c9a84c;margin-bottom:10px;">Save your result</div>
+      <p style="font-size:14px;color:#b5ada6;line-height:1.6;margin-bottom:8px;">Enter your email to save your type and revisit it anytime.</p>
+      <p style="font-size:12px;color:#b5ada6;line-height:1.6;margin-bottom:20px;">Using an ad blocker? You may need to disable it on this page to see the full form.</p>
       <div id="eb2">
         <input type="email" id="eb3" style="width:100%;background:#0c0e10;border:1px solid #252a30;border-radius:10px;padding:14px 18px;font-family:'DM Sans',sans-serif;font-size:14px;color:#ede8df;outline:none;margin-bottom:16px;" placeholder="your@email.com" autocomplete="email">
         <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:20px;">
           <input type="checkbox" id="eb4" style="flex-shrink:0;width:16px;height:16px;margin-top:2px;accent-color:#c9a84c;cursor:pointer;">
-          <label for="eb4" style="font-size:12px;color:#9a938c;line-height:1.6;cursor:pointer;">I confirm my email and result can be stored. To be removed email <span style="color:#c9a84c;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dcacaeb5aabdbfa59cebebafbfb9b2bdaeb5b3aff2bfb3b1">[email&#160;protected]</a></span>.</label>
+          <label for="eb4" style="font-size:12px;color:#b5ada6;line-height:1.6;cursor:pointer;">I confirm my email and result can be stored. To be removed email <span style="color:#c9a84c;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dcacaeb5aabdbfa59cebebafbfb9b2bdaeb5b3aff2bfb3b1">[email&#160;protected]</a></span>.</label>
         </div>
         <button class="btn-save" onclick="saveResult()">Save result</button>
       </div>
