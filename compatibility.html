@@ -106,7 +106,7 @@
   .s3{background:rgba(170,150,40,0.08);box-shadow:inset 0 0 0 1px rgba(170,150,40,0.35),0 0 6px rgba(170,150,40,0.1);}
   .s4{background:rgba(60,140,90,0.08);box-shadow:inset 0 0 0 1px rgba(60,140,90,0.35),0 0 6px rgba(60,140,90,0.1);}
   .s5{background:rgba(60,140,220,0.1);box-shadow:inset 0 0 0 1px rgba(60,140,220,0.5),0 0 10px rgba(60,140,220,0.15);}
-  .s-self{background:rgba(255,255,255,0.03);box-shadow:inset 0 0 0 1px rgba(255,255,255,0.06);cursor:default;border-radius:3px;}
+  .s-self{cursor:pointer;border-radius:3px;outline:1px dashed rgba(255,255,255,0.15);outline-offset:-2px;}
 
   .s1:hover{background:rgba(180,50,40,0.22);box-shadow:inset 0 0 0 1px rgba(180,50,40,0.7),0 0 14px rgba(180,50,40,0.3);}
   .s2:hover{background:rgba(180,110,40,0.22);box-shadow:inset 0 0 0 1px rgba(180,110,40,0.7),0 0 14px rgba(180,110,40,0.3);}
@@ -288,6 +288,25 @@ const scoreLabels = {
   5:'Often an Ideal Match'
 };
 
+const selfDesc = {
+  'INFP': 'Two INFPs understand each other at a depth that is rare, but neither naturally provides the external grounding or structure the other needs. The connection is genuine and often profound, but the relationship may drift in beautiful circles without anyone steering it toward the concrete.',
+  'ENFP': 'Two ENFPs will spark off each other endlessly, full of ideas, possibilities, and warmth. The relationship is rarely boring. The risk is that excitement becomes a substitute for depth, and neither one naturally steps back to create stability when things get hard.',
+  'INFJ': 'Two INFJs understand each other\'s inner world with unusual ease. There is real depth here, and a shared need for meaning. The relationship can become insular though, with both retreating inward during difficulty rather than opening outward to resolve it.',
+  'ENFJ': 'Two ENFJs are warm, driven, and intensely focused on the people they love. They understand each other well. The tension is that both are used to being the one who holds others together, and when they both need support at the same time, no one naturally steps in.',
+  'INTJ': 'Two INTJs respect each other\'s independence and share a love of depth and systems. They are unlikely to be clingy or overemotional. The challenge is emotional distance. Both tend to retreat inward under pressure, and neither naturally creates the warmth a close relationship needs.',
+  'ENTJ': 'Two ENTJs are capable, driven, and clear. The relationship will be productive and intellectually sharp. The difficulty is that both are used to leading and neither yields easily. Without real effort to step back, the relationship can become a quiet power struggle.',
+  'INTP': 'Two INTPs will understand each other\'s minds almost effortlessly and build an intellectually rich world together. The emotional layer is thin though. Neither is naturally attuned to the other\'s feelings, and both may neglect the relationship\'s emotional needs without realising it.',
+  'ENTP': 'Two ENTPs will debate, challenge, and push each other constantly, which is both the appeal and the risk. The relationship is never dull. But ENTPs can argue for sport, and two of them together may find it hard to build the stable emotional foundation a long-term relationship needs.',
+  'ISFP': 'Two ISFPs create a relationship that is gentle, authentic, and deeply respectful of each other\'s freedom. There is little conflict because both avoid it. The risk is exactly that. Difficult things go unaddressed because neither wants to disturb the peace.',
+  'ESFP': 'Two ESFPs are warm, spontaneous, and genuinely fun together. The relationship has real energy. The challenge is that both live in the present, and the practical and emotional maintenance a relationship needs over time can be neglected by both in favour of what is happening right now.',
+  'ISTP': 'Two ISTPs give each other the space and independence they both value, and neither will pressure the other emotionally. It is a low-drama pairing. The limitation is that neither is naturally oriented toward emotional connection, and the relationship may stay functional without ever becoming truly intimate.',
+  'ESTP': 'Two ESTPs are bold, direct, and action-oriented. They will respect each other\'s confidence. The problem is that both are competitive, both are blunt, and neither naturally backs down. The same traits that make them admire each other can make conflict escalate quickly.',
+  'ISFJ': 'Two ISFJs are warm, reliable, and deeply committed. The relationship is stable and caring. Both are attentive to each other\'s needs. The risk is that both tend to suppress their own needs to keep the peace, and resentment can build quietly if neither learns to express what they actually want.',
+  'ESFJ': 'Two ESFJs are warm, sociable, and highly attentive to each other. There is real harmony here in the day-to-day. The challenge is that both care deeply what others think, and if the relationship hits difficulty, both may perform wellness rather than address what is actually wrong.',
+  'ISTJ': 'Two ISTJs create a relationship built on reliability, shared values, and quiet commitment. It is stable and dependable. Neither is likely to create unnecessary drama. The limitation is that both tend toward routine and neither naturally pushes the other toward growth or new experience.',
+  'ESTJ': 'Two ESTJs are organised, direct, and hardworking. They understand each other\'s drive and respect each other\'s standards. The tension is around control. Both have strong opinions about how things should be done, and disagreements about practical matters can become more loaded than they need to be.',
+};
+
 const pairDesc = {
   // NF-NF
   'INFP-ENFJ':'A deeply resonant pairing. The ENFJ draws the INFP out of their inner world with warmth and genuine care, and the INFP offers the ENFJ a rare depth of authenticity. Both are driven by meaning and values.',
@@ -325,6 +344,7 @@ const pairDesc = {
 };
 
 function getDesc(a, b) {
+  if (a === b) return selfDesc[a] || null;
   const key1 = `${a}-${b}`;
   const key2 = `${b}-${a}`;
   return pairDesc[key1] || pairDesc[key2] || null;
@@ -419,7 +439,7 @@ function showDetail(row, col, cellEl) {
 
   panel.innerHTML = `
     <div>
-      <div class="detail-pair"><em>${a}</em> &amp; <em>${b}</em></div>
+      <div class="detail-pair"><em>${a}</em> ${a === b ? "+" : "&amp;"} <em>${b}</em>${a === b ? " <span style=\"font-size:13px;color:var(--muted);font-family:'DM Sans',sans-serif;font-weight:300;\">· Same type</span>" : ""}</div>
       <div class="detail-score-label sc${score}">${scoreLabels[score]}</div>
       <div class="detail-desc">${desc || defaultDesc[score]}</div>
       <div class="detail-links">
@@ -479,8 +499,14 @@ function buildGrid() {
       }
       const cell = document.createElement('div');
       if (row === col) {
-        cell.className = 'cell s-self';
-        cell.title = rowType;
+        const score = matrix[row][col];
+        cell.className = `cell s-self s${score}`;
+        cell.title = `${rowType} + ${rowType}: Same type pairing`;
+        cell.dataset.row = row;
+        cell.dataset.col = col;
+        cell.addEventListener('mouseenter', () => setCrosshair(row, col, true));
+        cell.addEventListener('mouseleave', () => setCrosshair(row, col, false));
+        cell.onclick = () => showDetail(row, col, cell);
       } else {
         const score = matrix[row][col];
         cell.className = `cell s${score}`;
