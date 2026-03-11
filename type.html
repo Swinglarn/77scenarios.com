@@ -492,9 +492,7 @@ document.addEventListener('click',e=>{
   ov.animate([{opacity:0},{opacity:1}],{duration:320,easing:'cubic-bezier(0.76,0,0.24,1)',fill:'forwards'}).finished.then(()=>{window.location.href=h;});
 });
 
-render();
-
-// Reveal observer — must run after render() populates the DOM
+// Reveal observer — defined before render() so obs.observe() works inside render()
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(en=>{
     if(!en.isIntersecting)return;
@@ -503,7 +501,8 @@ const obs=new IntersectionObserver(entries=>{
     obs.unobserve(en.target);
   });
 },{threshold:0.155});
-document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+
+render();
 </script>
 
 <script>
