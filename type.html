@@ -492,7 +492,9 @@ document.addEventListener('click',e=>{
   ov.animate([{opacity:0},{opacity:1}],{duration:320,easing:'cubic-bezier(0.76,0,0.24,1)',fill:'forwards'}).finished.then(()=>{window.location.href=h;});
 });
 
-// Reveal observer
+render();
+
+// Reveal observer — must run after render() populates the DOM
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(en=>{
     if(!en.isIntersecting)return;
@@ -502,8 +504,6 @@ const obs=new IntersectionObserver(entries=>{
   });
 },{threshold:0.155});
 document.querySelectorAll('.r').forEach(el=>obs.observe(el));
-
-render();
 </script>
 
 <script>
