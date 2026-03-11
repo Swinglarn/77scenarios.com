@@ -7,6 +7,7 @@
 <title>Personality Type Profile — 77Scenarios</title>
 <meta name="robots" content="index, follow">
 <meta property="og:site_name" content="77 Scenarios">
+<meta property="og:image" content="https://77scenarios.com/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" id="canonical-url" href="https://77scenarios.com/type.html">
 <script type="application/ld+json" id="type-schema">{"@context":"https://schema.org","@type":"Article","name":"Personality Type","publisher":{"@type":"Organization","name":"77 Scenarios","url":"https://77scenarios.com"}}</script>
@@ -417,8 +418,7 @@ function render(){
   if(!km){km=document.createElement('meta');km.name='keywords';document.head.appendChild(km);}
   km.content=`${t} personality, ${t} personality type, ${t} Myers-Briggs, ${d.name} personality, MBTI ${t}, ${t} strengths weaknesses, ${t} famous people`;
   document.querySelector('meta[property="og:title"]')?.setAttribute('content',`${t} · ${d.name}, 77 Scenarios`)||
-    (()=>
-<meta property="og:image" content="https://77scenarios.com/og-image.png">{const m=document.createElement('meta');m.setAttribute('property','og:title');m.content=`${t} · ${d.name}, 77 Scenarios`;document.head.appendChild(m);})();
+    (()=>{const m=document.createElement('meta');m.setAttribute('property','og:title');m.content=`${t} · ${d.name}, 77 Scenarios`;document.head.appendChild(m);})();
   document.getElementById('canonical-url')?.setAttribute('href',`https://77scenarios.com/type.html?t=${t}`);
   document.getElementById('type-schema').textContent=JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":`${t} Personality Type: ${d.name}`,"description":desc,"url":`https://77scenarios.com/type.html?t=${t}`,"publisher":{"@type":"Organization","name":"77 Scenarios","url":"https://77scenarios.com"}});
 
