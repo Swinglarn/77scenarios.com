@@ -4,10 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The 16 Personality Types: 77Scenarios</title>
-<meta name="description" content="All 16 Myers-Briggs personality types explained in depth: from INTJ to ESFP. Grouped by temperament, with full descriptions, strengths, blind spots, and famous examples for each type.">
+<meta name="description" content="All 16 Myers-Briggs personality types explained in depth. Descriptions, strengths, blind spots, and famous examples — from INTJ to ESFP.">
 <meta name="keywords" content="16 personality types, Myers-Briggs types, MBTI types, personality type descriptions, INTJ INFP ENFP ENTP personality, all personality types, Myers-Briggs explained">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://77scenarios.com/og-image.png">
 <meta property="og:title" content="The 16 Personality Types: 77 Scenarios">
 <meta property="og:description" content="All 16 Myers-Briggs personality types explained. Find yours or explore the full map.">
 <meta property="og:url" content="https://77scenarios.com/types.html">
@@ -15,7 +16,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The 16 Personality Types: 77 Scenarios">
 <meta name="twitter:description" content="All 16 Myers-Briggs personality types with full descriptions, strengths, and blind spots.">
-<link rel="canonical" href="https://77scenarios.com/types.html">
+<link rel="canonical" href="https://77scenarios.com/types">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"The 16 Myers-Briggs Personality Types","description":"All 16 Myers-Briggs personality types explained in depth, grouped by temperament.","url":"https://77scenarios.com/types.html","isPartOf":{"@type":"WebSite","name":"77 Scenarios","url":"https://77scenarios.com"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
@@ -55,7 +56,7 @@
   main{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:72px 32px 96px;}
 
   /* REVEAL SYSTEM */
-  .r{opacity:0;transform:translateY(28px);transition:opacity 0.7s cubic-bezier(0.22,1,0.36,1),transform 0.7s cubic-bezier(0.22,1,0.36,1);}
+  .r{opacity:0;transform:translateY(12px);transition:opacity 0.45s cubic-bezier(0.22,1,0.36,1),transform 0.45s cubic-bezier(0.22,1,0.36,1);}
   .r.in{opacity:1;transform:none;}
 
   .page-eyebrow{font-size:12px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:12px;}
@@ -216,10 +217,10 @@ const obs=new IntersectionObserver(entries=>{
   entries.forEach(en=>{
     if(!en.isIntersecting)return;
     const d=parseFloat(en.target.dataset.d||0);
-    setTimeout(()=>en.target.classList.add('in'), d*55);
+    setTimeout(()=>en.target.classList.add('in'), d*25);
     obs.unobserve(en.target);
   });
-},{threshold:0.08});
+},{threshold:0.155});
 document.querySelectorAll('.r').forEach(el=>obs.observe(el));
 </script>
 

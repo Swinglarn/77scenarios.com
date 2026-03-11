@@ -7,6 +7,7 @@
 <meta name="description" id="page-desc" content="Discover the four cognitive functions behind your personality type. Simple explanations and real-life examples of how your mind actually works.">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="article">
+<meta property="og:image" content="https://77scenarios.com/og-image.png">
 <meta property="og:title" content="Personality Functions: 77Scenarios">
 <meta property="og:site_name" content="77 Scenarios">
 <link rel="canonical" id="canonical-url" href="https://77scenarios.com/functions">
@@ -117,6 +118,16 @@
   footer a{color:var(--muted);text-decoration:none;transition:color 0.2s;}
   footer a:hover{color:var(--cream);}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Your Cognitive Functions",
+  "description": "Discover the four cognitive functions behind your personality type.",
+  "url": "https://77scenarios.com/functions",
+  "isPartOf": {"@type": "WebSite", "url": "https://77scenarios.com", "name": "77 Scenarios"}
+}
+</script>
 </head>
 <body>
 <div id="t-overlay"></div>
@@ -423,10 +434,10 @@ const obs=new IntersectionObserver(entries=>{
   entries.forEach(en=>{
     if(!en.isIntersecting)return;
     const d=parseFloat(en.target.dataset.d||0);
-    setTimeout(()=>en.target.classList.add('in'),d*120);
+    setTimeout(()=>en.target.classList.add('in'),d*45);
     obs.unobserve(en.target);
   });
-},{threshold:0.1});
+},{threshold:0.15});
 document.querySelectorAll('.r').forEach(el=>obs.observe(el));
 </script>
 

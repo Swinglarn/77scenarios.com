@@ -8,6 +8,7 @@
 <meta name="keywords" content="MBTI compatibility chart, personality type compatibility, Myers-Briggs relationship compatibility, INFP ENFJ compatible, personality match">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://77scenarios.com/og-image.png">
 <meta property="og:title" content="Personality Compatibility Chart · 77 Scenarios">
 <meta property="og:description" content="How do the 16 personality types match with each other? Interactive compatibility chart for all MBTI pairings.">
 <meta property="og:url" content="https://77scenarios.com/compatibility">
@@ -178,6 +179,16 @@
     .temperament-groups{gap:12px;}
   }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Personality Type Compatibility Chart",
+  "description": "Interactive MBTI personality type compatibility chart. See how all 16 Myers-Briggs types pair with each other.",
+  "url": "https://77scenarios.com/compatibility",
+  "isPartOf": {"@type": "WebSite", "url": "https://77scenarios.com", "name": "77 Scenarios"}
+}
+</script>
 </head>
 <body>
 <div id="t-overlay"></div>
@@ -537,7 +548,7 @@ const obs = new IntersectionObserver(en => {
       obs.unobserve(e.target);
     }
   });
-},{threshold:0.05});
+},{threshold:0.12});
 document.querySelectorAll('.r').forEach(el => obs.observe(el));
 </script>
 

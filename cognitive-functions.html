@@ -8,6 +8,7 @@
 <meta name="keywords" content="cognitive functions MBTI, Myers-Briggs cognitive functions, Ni Ne Si Se Ti Te Fi Fe explained, introverted intuition, extraverted feeling, cognitive functions personality">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://77scenarios.com/og-image.png">
 <meta property="og:title" content="The 8 Cognitive Functions: 77Scenarios">
 <meta property="og:description" content="All 8 cognitive functions behind the Myers-Briggs types explained clearly. What each one is, how it works, and which types use it.">
 <meta property="og:url" content="https://77scenarios.com/cognitive-functions">
@@ -284,10 +285,10 @@ const obs=new IntersectionObserver(entries=>{
   entries.forEach(en=>{
     if(!en.isIntersecting)return;
     const d=parseFloat(en.target.dataset.d||0);
-    setTimeout(()=>en.target.classList.add('in'),d*120);
+    setTimeout(()=>en.target.classList.add('in'),d*45);
     obs.unobserve(en.target);
   });
-},{threshold:0.1});
+},{threshold:0.15});
 document.querySelectorAll('.r').forEach(el=>obs.observe(el));
 </script>
 
