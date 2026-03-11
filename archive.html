@@ -106,6 +106,12 @@
   .r{opacity:0;transform:translateY(18px);transition:opacity 0.55s cubic-bezier(0.22,1,0.36,1),transform 0.55s cubic-bezier(0.22,1,0.36,1);}
   .r.in{opacity:1;transform:none;}
   @media(max-width:600px){main{padding:40px 16px 72px;}.db-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;}.modal{padding:24px;}.modal-type{font-size:36px;}}
+  .modal-header-row{display:flex;align-items:center;gap:16px;margin-bottom:4px;}
+  .modal-avatar{width:72px;height:72px;border-radius:50%;object-fit:cover;flex-shrink:0;opacity:0;transition:opacity 0.3s ease;border:1px solid var(--border);}
+  .modal-avatar.loaded{opacity:1;}
+  .modal-header-info{flex:1;min-width:0;}
+  .modal-header-info .modal-type{margin-bottom:4px;}
+  .modal-header-info .modal-ctx{margin-bottom:0;}
 </style>
 </head>
 <body>
@@ -2417,7 +2423,7 @@ function openModal(p){
   const ps=slug(p.name);
   document.getElementById('modal-content').innerHTML=`
     <div class="modal-header-row">
-      ${p.wiki?`<img id="modal-avatar" class="modal-avatar" alt="${p.name}" src="">`:''}
+      ${p.wiki?`<img id="modal-avatar" class="modal-avatar" alt="${p.name}">`:''}
       <div class="modal-header-info">
         <div class="modal-type">${p.type}</div>
         <div class="modal-name">${p.name}</div>
