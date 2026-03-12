@@ -108,6 +108,7 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 <body>
+<h1 class="sr-only" id="page-h1">77 Scenarios Personality Type</h1>
 <div id="t-overlay"></div>
 <div class="glow glow-1"></div>
 <div class="glow glow-2"></div>
@@ -420,6 +421,11 @@ function render(){
   document.querySelector('meta[property="og:title"]')?.setAttribute('content',`${t} · ${d.name}, 77 Scenarios`)||
     (()=>{const m=document.createElement('meta');m.setAttribute('property','og:title');m.content=`${t} · ${d.name}, 77 Scenarios`;document.head.appendChild(m);})();
   document.getElementById('canonical-url')?.setAttribute('href',`https://77scenarios.com/type.html?t=${t}`);
+  const h1el=document.getElementById('page-h1');if(h1el)h1el.textContent=`${t} Personality Type — ${d.name}`;
+  document.querySelector('meta[property="og:description"]')?.setAttribute('content',desc)||
+    (()=>{const m=document.createElement('meta');m.setAttribute('property','og:description');m.content=desc;document.head.appendChild(m);})();
+  document.querySelector('meta[property="og:url"]')?.setAttribute('content',`https://77scenarios.com/type?t=${t}`)||
+    (()=>{const m=document.createElement('meta');m.setAttribute('property','og:url');m.content=`https://77scenarios.com/type?t=${t}`;document.head.appendChild(m);})();
   document.getElementById('type-schema').textContent=JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":`${t} Personality Type: ${d.name}`,"description":desc,"url":`https://77scenarios.com/type.html?t=${t}`,"publisher":{"@type":"Organization","name":"77 Scenarios","url":"https://77scenarios.com"}});
 
   const code=t.split('').map((l,i)=>(i%2===1)?`<span class="hi">${l}</span>`:l).join('');

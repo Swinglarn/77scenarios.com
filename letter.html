@@ -111,6 +111,7 @@
 
 <meta property="og:image" content="https://77scenarios.com/og-image.png"></head>
 <body>
+<h1 class="sr-only" id="page-h1">77 Scenarios — Myers-Briggs Letter Guide</h1>
 <div id="t-overlay"></div>
 <div class="glow glow-1"></div>
 <div class="glow glow-2"></div>
@@ -266,6 +267,13 @@ function render(){
   if(!km){km=document.createElement('meta');km.name='keywords';document.head.appendChild(km);}
   km.content=`${l} personality, ${d.name.toLowerCase()} MBTI, ${d.name.toLowerCase()} meaning, Myers-Briggs ${l}, ${keyPhrases[l]||''}`;
   document.getElementById('canonical-url')?.setAttribute('href',`https://77scenarios.com/letter.html?l=${l}`);
+  document.querySelector('meta[property="og:title"]')?.setAttribute('content',`${l} · ${d.name} in Myers-Briggs, 77 Scenarios`)||
+    (()=>{const m=document.createElement('meta');m.setAttribute('property','og:title');m.content=`${l} · ${d.name} in Myers-Briggs, 77 Scenarios`;document.head.appendChild(m);})();
+  document.querySelector('meta[property="og:description"]')?.setAttribute('content',seoDesc)||
+    (()=>{const m=document.createElement('meta');m.setAttribute('property','og:description');m.content=seoDesc;document.head.appendChild(m);})();
+  document.querySelector('meta[property="og:url"]')?.setAttribute('content',`https://77scenarios.com/letter?l=${l}`)||
+    (()=>{const m=document.createElement('meta');m.setAttribute('property','og:url');m.content=`https://77scenarios.com/letter?l=${l}`;document.head.appendChild(m);})();
+  const h1el=document.getElementById('page-h1');if(h1el)h1el.textContent=`${l} · ${d.name} in Myers-Briggs`;
   document.getElementById('letter-schema').textContent=JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":`${l} in Myers-Briggs: ${d.name} Explained`,"description":seoDesc,"url":`https://77scenarios.com/letter.html?l=${l}`,"publisher":{"@type":"Organization","name":"77 Scenarios","url":"https://77scenarios.com"}});
 
   const typesHTML=d.types.map(t=>`
