@@ -144,6 +144,7 @@
   .result-link:hover{text-decoration:underline;}
   .loading{color:var(--muted);font-size:0.9rem;padding:24px 0;}
   .profile-avatar{width:72px;height:72px;border-radius:50%;object-fit:cover;border:1px solid var(--border);flex-shrink:0;}
+  .profile-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,3.2rem);font-weight:600;color:var(--cream);line-height:1.1;margin:40px 0 32px;}
   .profile-username{color:var(--gold);font-size:0.9rem;margin-top:2px;}
   .settings-link{background:transparent;border:1px solid var(--border);color:var(--muted);font-family:'DM Sans',sans-serif;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;border-radius:60px;padding:10px 20px;cursor:pointer;transition:all 0.2s;white-space:nowrap;text-decoration:none;display:inline-block;}
   .settings-link:hover{border-color:var(--muted);color:var(--cream);}
@@ -192,10 +193,9 @@
   <div class="profile-wrap">
 
     <div class="profile-header r" data-d="0">
-      <div style="display:flex;align-items:center;gap:16px;">
+      <div style="display:flex;align-items:center;gap:14px;">
         <img id="profile-avatar" class="profile-avatar" src="" alt="Profile picture">
         <div>
-          <div class="profile-title">Your<br><em>results.</em></div>
           <div class="profile-username" id="profile-username"></div>
           <div class="profile-email" id="profile-email"></div>
         </div>
@@ -206,8 +206,10 @@
       </div>
     </div>
 
-    <div class="section-label r" data-d="1">Result history</div>
-    <div id="results-container" class="r" data-d="2">
+    <div class="profile-title r" data-d="1">Your<br><em>results.</em></div>
+
+    <div class="section-label r" data-d="2">Result history</div>
+    <div id="results-container" class="r" data-d="3">
       <div class="loading">Loading…</div>
     </div>
 
