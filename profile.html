@@ -294,6 +294,20 @@ async function load() {
   const { data: { session } } = await sb.auth.getSession();
   if (!session) { window.location.href = '/login'; return; }
   document.getElementById('profile-email').textContent = session.user.email;
+  // Show Profile as active in nav
+  const links = document.querySelector('.nav-links');
+  const drawerLinks = document.querySelector('.nav-drawer-links');
+  if (links) {
+    const a = document.createElement('a');
+    a.href = '/profile'; a.textContent = 'Profile';
+    a.style.cssText = 'background:var(--gold);color:#0c0e10;padding:7px 16px;border-radius:60px;font-weight:500;font-size:0.82rem;letter-spacing:0.04em;';
+    links.appendChild(a);
+  }
+  if (drawerLinks) {
+    const a = document.createElement('a');
+    a.href = '/profile'; a.textContent = 'Profile';
+    drawerLinks.appendChild(a);
+  }
   const { data: results, error } = await sb
     .from('results')
     .select('*')
