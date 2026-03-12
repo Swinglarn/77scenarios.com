@@ -445,7 +445,6 @@ const typeData = {
 function shuffle(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 let current = 0;
 let scores = {};
-  fnScores = {Se:0,Si:0,Ne:0,Ni:0,Te:0,Ti:0,Fe:0,Fi:0};
 let fnScores = {Se:0,Si:0,Ne:0,Ni:0,Te:0,Ti:0,Fe:0,Fi:0};
 let history = [];
 let orderedQuestions = [];
@@ -468,6 +467,7 @@ function startTest() {
   for(let i=0;i<_max;i++){if(_ei[i])orderedQuestions.push(_ei[i]);if(_sn[i])orderedQuestions.push(_sn[i]);if(_tf[i])orderedQuestions.push(_tf[i]);if(_jp[i])orderedQuestions.push(_jp[i]);}
   current = 0;
   scores = { E:0, I:0, S:0, N:0, T:0, F:0, J:0, P:0 };
+  fnScores = {Se:0,Si:0,Ne:0,Ni:0,Te:0,Ti:0,Fe:0,Fi:0};
   history = [];
   renderQuestion();
   showScreen('screen-question');
