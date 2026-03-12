@@ -60,14 +60,19 @@ footer{padding:2rem;text-align:center;font-size:.8rem;color:var(--muted);border-
 
 <header>
   <a href="/" class="logo">77Scenarios</a>
-  <nav class="desktop-nav">
+  <nav class="site-nav">
+  <a href="/" class="nav-logo">77scenarios.com</a>
+  <div class="nav-links">
+    <a href="/">Take the Test</a>
     <a href="/types">16 Types</a>
     <a href="/letters">8 Letters</a>
     <a href="/cognitive-functions">Functions</a>
     <a href="/compatibility">Compatibility</a>
     <a href="/archive">Archive</a>
     <a href="/about">About</a>
-  </nav>
+  </div>
+  <button class="nav-burger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
   <div class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" role="button" tabindex="0">
     <span></span><span></span><span></span>
   </div>
