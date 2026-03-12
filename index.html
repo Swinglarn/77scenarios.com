@@ -553,6 +553,7 @@ function showResults() {
     }
   }, 300);
 }
+  if (window._sbSaveResult) window._sbSaveResult(type, scores);
 
 function retakeTest() {
   history = [];
@@ -694,6 +695,47 @@ function shareResult() {
     alert('Copied to clipboard!');
   }
 }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(function() {
+  const { createClient } = supabase;
+  const sb = createClient('https://rttomfnfyjjssdqfzkaj.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw');
+
+  // Update nav: show Profile link if logged in
+  async function updateNav() {
+    const { data: { session } } = await sb.auth.getSession();
+    const links = document.querySelector('.nav-links');
+    const drawerLinks = document.querySelector('.nav-drawer .drawer-links');
+    if (session && links) {
+      const a = document.createElement('a');
+      a.href = '/profile';
+      a.textContent = 'Profile';
+      links.appendChild(a);
+    }
+    if (session && drawerLinks) {
+      const a = document.createElement('a');
+      a.href = '/profile';
+      a.textContent = 'Profile';
+      drawerLinks.appendChild(a);
+    }
+  }
+  updateNav();
+
+  // Auto-save result when results screen is shown
+  window._sbSaveResult = async function(type, sc) {
+    const { data: { session } } = await sb.auth.getSession();
+    if (!session) return;
+    await sb.from('results').insert({
+      user_id: session.user.id,
+      personality_type: type,
+      ei_e: sc.E||0, ei_i: sc.I||0,
+      sn_s: sc.S||0, sn_n: sc.N||0,
+      tf_t: sc.T||0, tf_f: sc.F||0,
+      jp_j: sc.J||0, jp_p: sc.P||0,
+    });
+  };
+})();
 </script>
 </body>
 </html>
