@@ -214,6 +214,23 @@
   .save-done-icon { font-size: 28px; color: var(--gold); margin-bottom: 10px; }
   .save-done-text { font-size: 14px; color: var(--cream); }
   .save-box-err { font-size: 13px; color: #e07070; margin-top: 12px; }
+
+  /* Mode selection screen */
+  .mode-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:40px 24px;text-align:center;}
+  .mode-eyebrow{font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:16px;}
+  .mode-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,6vw,3.8rem);font-weight:600;color:var(--cream);line-height:1.08;margin-bottom:16px;}
+  .mode-title em{color:var(--gold);font-style:italic;}
+  .mode-subtitle{color:var(--muted);font-size:0.95rem;max-width:480px;line-height:1.7;margin-bottom:48px;}
+  .mode-cards{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;max-width:860px;width:100%;}
+  .mode-card{background:#13161a;border:1px solid var(--border);border-radius:12px;padding:32px 24px;flex:1;min-width:220px;max-width:260px;cursor:pointer;text-align:center;transition:border-color 0.2s,background 0.2s,transform 0.15s;display:flex;flex-direction:column;align-items:center;gap:12px;}
+  .mode-card:hover{border-color:var(--gold-dim);background:#161a1f;transform:translateY(-2px);}
+  .mode-card.selected{border-color:var(--gold);background:#1a1c14;}
+  .mode-card-both{border-style:dashed;}
+  .mode-card-icon{font-size:1.8rem;line-height:1;}
+  .mode-card-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--cream);}
+  .mode-card-desc{font-size:0.82rem;color:var(--muted);line-height:1.6;}
+  @media(max-width:600px){.mode-cards{flex-direction:column;align-items:center;}.mode-card{max-width:100%;width:100%;}}
+
 </style>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -263,7 +280,7 @@
   <!-- SPLASH -->
   <div class="screen active" id="screen-splash">
     <div class="splash-eyebrow">77 Scenarios</div>
-    <div class="splash-title">Who are<br>you <em>really?</em></div>
+    <div class="splash-title">Not who you think<br>you are. Who you <em>actually</em> are.</div>
     <p class="splash-subtitle">Most personality tests ask you to rate yourself on a scale of one to five. But people are notoriously bad at knowing who they are.<br><br>77 Scenarios is a scenario-based Myers-Briggs test. It puts you in real situations and watches what you choose no self-assessment, no leading questions. Just choices.</p>
     <div class="splash-meta">
       <div class="meta-item"><div class="meta-num">77</div><div class="meta-label">Scenarios</div></div>
@@ -272,7 +289,34 @@
       <div class="divider"></div>
       <div class="meta-item"><div class="meta-num">16</div><div class="meta-label">Possible types</div></div>
     </div>
-    <button class="btn-primary" onclick="startTest()">Begin <span class="arrow">→</span></button>
+    <button class="btn-primary" onclick="showScreen('screen-mode')">Begin <span class="arrow">→</span></button>
+  </div>
+
+
+  <!-- MODE SELECTION SCREEN -->
+  <div class="screen" id="screen-mode">
+    <div class="mode-wrap">
+      <div class="mode-eyebrow">Before you begin</div>
+      <div class="mode-title">Choose your<br><em>world.</em></div>
+      <p class="mode-subtitle">The same questions can be asked in different worlds. Choose the one you want to be put in.</p>
+      <div class="mode-cards">
+        <button class="mode-card" onclick="selectMode('myth')">
+          <div class="mode-card-icon">⚔</div>
+          <div class="mode-card-name">Mythical</div>
+          <div class="mode-card-desc">Ancient roads. Prophecies. Kingdoms at the edge of ruin. You are always in the middle of something larger than yourself.</div>
+        </button>
+        <button class="mode-card" onclick="selectMode('normal')">
+          <div class="mode-card-icon">☕</div>
+          <div class="mode-card-name">Everyday</div>
+          <div class="mode-card-desc">Airports. Offices. Bad weeks and good news. The ordinary moments that turn out not to be ordinary at all.</div>
+        </button>
+        <button class="mode-card mode-card-both" onclick="selectMode('both')">
+          <div class="mode-card-icon">◎</div>
+          <div class="mode-card-name">Both Worlds</div>
+          <div class="mode-card-desc">You do not want to choose. Some things are true in every world.</div>
+        </button>
+      </div>
+    </div>
   </div>
 
   <!-- QUESTION -->
@@ -332,49 +376,129 @@
 
 </div>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-const questions = [
+const questionsNormal = [
+  {dim:'EI',scene:'The Return Home',fn:'Se/Ni',text:"You have been away for two weeks. Work trip, long flights, bad hotel coffee. You are standing outside your front door with your bags. The lights are on inside.",a:"You don't stop. You push the door open and call out to whoever is in there.",b:"You put your bags down for a second. Just a moment before it starts again."},
+  {dim:'EI',scene:'The Last Night',fn:'Fe/Fi',text:"It is the last night before your close group of friends splits up. New cities, new jobs. You are all at a table together and it will not happen like this again.",a:"You move around the table. There is something you need to say to each person before the night is over.",b:"You stay where you are. There is one person here who needs to hear something from you, and you are already next to them."},
+  {dim:'EI',scene:'The Work Party',fn:'Se/Ni',text:"Your company is throwing a big end of year party. Open bar, loud music, people you half-know everywhere. You walk through the door.",a:"You walk straight into it. Find a drink, find someone to talk to. You have been looking forward to this.",b:"You grab a drink and find a good spot. You like knowing who is in the room before you start working it."},
+  {dim:'EI',scene:'The Commute',fn:'Se/Si',text:"You have been doing this commute for two years. Same road, same time. You have got your headphones in and forty minutes ahead of you.",a:"You call someone. You have forty minutes and nothing to do with them.",b:"You put something on and go somewhere in your own head. This is some of the only real quiet time you get."},
+  {dim:'EI',scene:'The Surprise',fn:'Se/Ti',text:"You get home and your flat is full of people. Friends, some you haven't seen in years. Someone got them all here without telling you.",a:"You drop your bag and ask who wants a drink.",b:"You ask what is going on before you take your coat off."},
+  {dim:'EI',scene:'The Long Project',fn:'Fe/Fi',text:"You are three months into a long and difficult work project. The hours are long and the end is still far away.",a:"What keeps you going is the team. Seeing them every day, the group chat, the shared frustration. You run on other people.",b:"What keeps you going is something in you that has nothing to do with anyone else. A reason that is yours alone."},
+  {dim:'EI',scene:'The Promotion',fn:'Se/Ni',text:"You got the promotion you have been working toward. Your manager announces it in the team meeting. People clap.",a:"You feel something rise in you immediately. You want to celebrate with the people in the room.",b:"You smile and thank everyone. But what you really want is five minutes to just sit with it."},
+  {dim:'EI',scene:'The Neighbour',fn:'Fe/Te',text:"You run into your neighbour in the car park. You have a bag of shopping and somewhere to be. They stop and say hello.",a:"You stop properly. How long has it been. You have a few minutes.",b:"You say hi, check in quickly, and keep moving. You will catch up properly another time."},
+  {dim:'EI',scene:'The Airport',fn:'Fe/Fi',text:"You are dropping someone close to you at the airport. They are moving abroad. You have thirty minutes in the drop-off area.",a:"You talk. There is so much that never got said and this is the last real chance.",b:"You find yourself going quiet. The time you have left feels more important than filling it."},
+  {dim:'EI',scene:'The Offer',fn:'Se/Fi',text:"Someone offers you a ticket to a big event tonight. Last minute. It was not in your plans but it is a good offer.",a:"You feel the pull before you feel the doubt. You are already half-saying yes.",b:"You feel nothing. This was not the thing you were looking for."},
+  {dim:'EI',scene:'The New City',fn:'Se/Si',text:"You moved to a new city three months ago. You have a week off and no plans.",a:"You have already filled the week. New places, new people, there is still so much to see.",b:"You are finally starting to feel at home. Leaving the flat feels like being pulled away too soon."},
+  {dim:'EI',scene:'The Catch Up',fn:'Si/Fi',text:"An old friend asks how you have been. It has been a long time. You have a lot to say.",a:"You start from the beginning and you do not leave anything out.",b:"You give them the short version. Something true and light. You will save the real story for when it is the right moment."},
+  {dim:'EI',scene:'The Good News',fn:'Fe/Ni',text:"You get a call with life-changing news. Good news. The kind you have been waiting for.",a:"You hang up and immediately call someone. You need to tell someone right now.",b:"You hang up and sit down. You need to be alone with it before you can say a word."},
+  {dim:'EI',scene:'The Offer Abroad',fn:'Si/Ne',text:"A job offer arrives from another country. Good money, interesting work. But it means starting over.",a:"What you keep coming back to is what you would be leaving. The people, the routines, the life you have built.",b:"What you keep coming back to is the question itself. What does the life look like if you say no."},
+  {dim:'EI',scene:'The Hard Day',fn:'Fe/Fi',text:"Someone close to you has had a very bad day. They are sitting on the couch and they have not said much.",a:"You move closer. You find small things to do. You keep the space between you warm.",b:"You sit down nearby and stay. You do not reach for anything. You are just there."},
+  {dim:'EI',scene:'The Spotlight',fn:'Se/Fi',text:"Your name is called out in front of a large group. Everyone turns to look at you. It is meant to be a good thing.",a:"Something in you rises to meet it. This is your kind of moment.",b:"You feel all the eyes and your instinct is to shrink. But underneath that, something quieter: you are glad they noticed."},
+  {dim:'EI',scene:'The Team',fn:'Fe/Ti',text:"You are part of a big team working toward a shared goal. The kind of project that takes months and involves a lot of people.",a:"The scale of it feeds you. Everyone pulling in the same direction. You work best like this.",b:"You find your part of it and go deep into it. That is where you do your best work."},
+  {dim:'EI',scene:'The Bad Week',fn:'Fe/Si',text:"It has been a hard week. You are drained. Friday evening, nothing planned.",a:"You text someone. Warmth and noise and a friend who will listen. That is what you need.",b:"You find somewhere quiet at home. Silence is the only thing that will actually help tonight."},
+  {dim:'EI',scene:'The Barbecue',fn:'Se/Ni',text:"It is a summer evening and your neighbours are having a barbecue. It is loud and warm and the fire is going.",a:"You pull up a chair and get into it. The food and the voices and the warmth of other people is exactly what you want.",b:"You drift to the edge of the garden. The fire is enough. You watch the evening and you are happy enough being on the outside of it."},
+  {dim:'EI',scene:'The Messenger',fn:'Fe/Si',text:"A mutual friend has had a death in the family. You have not seen them in over a year. You could text. Or you could go.",a:"You go. News like this should not arrive without a face behind it.",b:"You send a message. What matters is that they know. The distance is not the point."},
+  {dim:'SN',scene:'The New Tool',fn:'Se/Ni',text:"Someone shows you a new piece of technology. It does something genuinely useful. They are excited about it and they want to know what you think.",a:"You want to know how it actually works. What it does, what it costs, what happens when it breaks.",b:"You want to know what it means. What gets replaced, what gets lost, where this ends up."},
+  {dim:'SN',scene:'The Map',fn:'Si/Ne',text:"You are planning a trip and you have spread a map out on the table.",a:"You study the routes and distances. You want to understand how to actually get from one place to another.",b:"You go straight to the edges. The places the roads do not reach yet."},
+  {dim:'SN',scene:'The Forecast',fn:'Ti/Ni',text:"An analyst presents a prediction about where your industry is heading. They are confident. The numbers back them up.",a:"You want to understand the assumptions. A forecast is only as good as what it is built on.",b:"Something in you already knows whether this is right before you can explain why. The numbers are almost beside the point."},
+  {dim:'SN',scene:'The Old Street',fn:'Si/Ni',text:"You are walking through a part of town that used to be full of life. Most of the shops are closed now.",a:"You try to picture what a Tuesday morning looked like here fifteen years ago. The regulars, the routines.",b:"You try to picture the last day. What closed first, what stayed too long."},
+  {dim:'SN',scene:'The Conversation',fn:'Si/Ni',text:"A friend asks you to tell them about a trip you took that really affected you. You think about how to answer.",a:"You describe what happened. The places, the people, the sequence of it.",b:"You describe what it did to you. How you understood things differently after."},
+  {dim:'SN',scene:'The Old Photo',fn:'Se/Ni',text:"You find an old photograph in a box. Black and white. People you do not recognise.",a:"You look at the clothes, the setting, the quality of the print. You try to date it from the details.",b:"You want to know who these people were to each other. What the day was. What happened to them after."},
+  {dim:'SN',scene:'The Expert',fn:'Si/Ne',text:"You are sitting with someone who is genuinely excellent at their craft. You have an hour to ask them anything.",a:"You ask about the actual work. The early years, the mistakes, the things that do not make it into the interviews.",b:"You ask where they think it is all going. What everyone else is missing."},
+  {dim:'SN',scene:'The Instructions',fn:'Si/Ne',text:"You have bought something that needs assembling. There is a twelve-step manual in the box.",a:"You follow it step by step. Skipping ahead is how things go wrong.",b:"You skim it once and get started. You will figure it out as you go."},
+  {dim:'SN',scene:'The Bookshop',fn:'Si/Ne',text:"You are in a bookshop with time to kill and nothing you have to buy.",a:"You go looking for something specific. A subject you already care about, a gap you want to fill.",b:"You look for something you have never thought about before. You want to leave knowing something unexpected."},
+  {dim:'SN',scene:'The Story',fn:'Si/Ni',text:"Someone close to you went through a difficult breakup and is now on the other side of it. You ask how they are doing. They want to tell you about it.",a:"You listen for the facts of what happened. The timeline, the reasons.",b:"You listen for what changed in them. How they see things now that they did not before."},
+  {dim:'SN',scene:'The Lottery',fn:'Se/Fi',text:"Someone asks you what you would do if you won a large amount of money. You think about it seriously.",a:"You think practically. Where would it go, what would change, what would stay the same.",b:"You think about what it would feel like to never have to worry about money again. What that version of your life looks like."},
+  {dim:'SN',scene:'The Sunrise',fn:'Se/Ni',text:"You wake up early and see a genuinely spectacular sunrise from your window. You stop what you are doing.",a:"You feel the light coming through the glass. You watch the colour change. You are in it.",b:"Something in you goes quiet. It is beautiful in a way that feels like it is trying to tell you something."},
+  {dim:'SN',scene:'The Feedback',fn:'Te/Ni',text:"Your manager gives you feedback that is positive but vague. You did well but they cannot quite say what specifically was good.",a:"You push for more. Vague praise is hard to build on. You want to know what to repeat.",b:"You sit with it. The ambiguity is not the problem. You already have a sense of what it was."},
+  {dim:'SN',scene:'The Presentation',fn:'Ti/Ni',text:"A colleague gives a presentation with a strong central argument. You disagree with part of it.",a:"You focus on the specific claim you want to challenge. The rest can stand.",b:"You think about the whole shape of what they were saying. There is a deeper assumption underneath the one they stated."},
+  {dim:'SN',scene:'The Diagnosis',fn:'Si/Ni',text:"Someone you care about gets an unexpected medical diagnosis. Not critical but serious.",a:"You want to understand what it actually means before you decide how to feel. You start looking into it.",b:"You already feel the weight of it. The details will come but something has already shifted."},
+  {dim:'SN',scene:'The New Place',fn:'Se/Ni',text:"You arrive in a new city for the first time. You have checked in and you have the afternoon free.",a:"You are already out the door. You want to walk it, see it, feel it under your feet.",b:"You stand at the window for a while first. You want to hold the impression before it gets replaced by detail."},
+  {dim:'SN',scene:'The Proposal',fn:'Te/Ni',text:"Someone pitches you an ambitious idea. Big scope, high risk, genuinely interesting.",a:"You want to know if it is actually possible. The practical questions come first.",b:"The practical questions can wait. What you want to know is what it looks like if it works."},
+  {dim:'SN',scene:'The Park',fn:'Ne/Si',text:"You are sitting in a park you have walked through hundreds of times. You have some time to think.",a:"You think about what this area is becoming. The new buildings, where it is all heading.",b:"You think about how long this park has been here. What it looked like before the city grew around it."},
+  {dim:'SN',scene:'The Old House',fn:'Se/Ni',text:"You are walking through a house that has been empty for years. You have been asked to assess it.",a:"You go through every room. The structure, the damp, what has held and what has not.",b:"You keep thinking about the last family that lived here. What a normal morning looked like in these rooms."},
+  {dim:'SN',scene:'The Gift',fn:'Si/Ne',text:"Someone gives you a gift that is not quite right. It is thoughtful but it misses slightly.",a:"You think about the thing itself. What you will do with it, whether you can exchange it.",b:"You think about what the choice says. What they think about you, what they were trying to give you."},
+  {dim:'TF',scene:'The Dispute',fn:'Te/Fe',text:"Two colleagues disagree about who deserves credit for a piece of work. Both have a case. You have been asked to weigh in.",a:"You ask for the timeline and the documentation. The truth is in there somewhere.",b:"You watch how each of them talks about it. The answer is already in how they behave."},
+  {dim:'TF',scene:'The Exception',fn:'Te/Fi',text:"Someone asks you to make an exception to a policy for them. The policy exists for a reason. Their situation is genuinely difficult.",a:"You hold the line. The moment you bend it for one person you have made it meaningless for everyone.",b:"You make the exception. The policy exists to help people, and following it here would do the opposite."},
+  {dim:'TF',scene:'The Colleague',fn:'Te/Fe',text:"A colleague you are close to gets some very bad personal news during the working day. They are visibly struggling.",a:"You check what they need practically. Are they okay to drive, should someone call someone, what is the next step.",b:"You sit with them. They do not need logistics right now. They need to know someone is there."},
+  {dim:'TF',scene:'The Review',fn:'Te/Fe',text:"You have to give someone feedback that is going to be hard to hear. Their work is not good enough.",a:"You say it plainly and without delay. Softening it too much makes it harder to hear, not easier.",b:"You choose your moment and your words carefully. The truth does not change but how it lands matters."},
+  {dim:'TF',scene:'The Two Candidates',fn:'Te/Fe',text:"You are hiring for a role and you have two strong final candidates. One is more talented but works alone. The other is slightly less skilled but makes everyone around them better.",a:"You hire the first one. Talent is the whole point.",b:"You hire the second one. A team that cannot function together eventually stops working at all."},
+  {dim:'TF',scene:'The Warning',fn:'Te/Fe',text:"A friend is about to make a decision you think they will regret. They have not asked for your opinion.",a:"You tell them what you think, clearly. A warning delivered too gently is not a warning at all.",b:"You find the right moment and the right words. A warning badly delivered gets dismissed."},
+  {dim:'TF',scene:'The Tension',fn:'Te/Fe',text:"Two people on your team are in conflict. It has been going on for weeks and it is affecting the whole group.",a:"You sit them both down and tell them plainly what their problem is costing the team.",b:"You speak to each of them separately first. You want to understand what each of them actually needs."},
+  {dim:'TF',scene:'The Credit',fn:'Ti/Fi',text:"A project went well. Your manager asks who deserves the recognition. One person did most of the visible work. The other held the whole thing together quietly and nobody really noticed.",a:"You name the one with the visible output. Recognition should follow results, not invisible effort.",b:"You name the one who held it together. You were the only one who saw what it actually cost them."},
+  {dim:'TF',scene:'The Apology',fn:'Ti/Fi',text:"Someone who hurt you badly wants to make things right. They have changed. You can see it. The question is whether what they did is something you can move past.",a:"You can move forward, but the relationship is different now. What happened is part of the record.",b:"You let it go completely. Holding the ledger open is its own kind of damage."},
+  {dim:'TF',scene:'The Failing Project',fn:'Te/Fe',text:"A project you are part of is clearly failing. Nobody has said it out loud yet. Your manager pulls you aside and asks what you honestly think.",a:"You tell them straight. The longer it stays unspoken, the more it costs everyone.",b:"You think about the people in the room first. How you say this matters as much as what you say."},
+  {dim:'TF',scene:'The Allocation',fn:'Te/Fi',text:"You have limited resources and two competing needs. One has the bigger impact on paper. The other is a person in front of you who is struggling.",a:"You go where the impact is biggest. That is what the resource is for.",b:"You go where the person needs it. You cannot weigh a number against a face."},
+  {dim:'TF',scene:'The Reference',fn:'Te/Fi',text:"Someone asks you for a reference for a person who made a serious mistake years ago but has clearly changed since.",a:"You give an honest account of what you know, including the mistake. A reference is only worth something if it is accurate.",b:"You focus on who they are now. People are more than the worst thing they did."},
+  {dim:'TF',scene:'The Secret',fn:'Fi/Fe',text:"You know that a friend did something they are not proud of. They do not know you know. It is over and nobody was seriously hurt.",a:"You say nothing. It is not yours to bring up.",b:"You find a quiet moment with them. Not to accuse. Just so they know someone knows and still thinks the same of them."},
+  {dim:'TF',scene:'The Will',fn:'Te/Fi',text:"A family member has left their estate unevenly. The person who got less was clearly there more. The will is legal and clear.",a:"You follow it as written. It was theirs to give as they chose.",b:"You find a way to make sure the person who got less knows their years were seen, even if the numbers do not show it."},
+  {dim:'TF',scene:'The Confession',fn:'Te/Fe',text:"A friend tells you something they have been carrying for a long time. They feel guilty about it. They are not asking for advice.",a:"You tell them what you think they should do. Carrying it alone will not make it better.",b:"You listen and sit with it alongside them. They told you because they needed someone to know."},
+  {dim:'TF',scene:'The Competition',fn:'Te/Fi',text:"You are competing for something you want against someone you respect. You have a move that would probably work but that you are not proud of.",a:"You use it. Winning is the point.",b:"You do not use it. The cost is not worth it."},
+  {dim:'TF',scene:'The Struggle',fn:'Fi/Fe',text:"Someone you know is clearly struggling. They have not said anything and they have not asked for help.",a:"You wait. If they wanted your help they would ask. Offering without being asked can feel like an intrusion.",b:"You find a way in. Just a door left open so they know they are not alone."},
+  {dim:'TF',scene:'The Record',fn:'Ti/Fe',text:"You are writing a report on something difficult that happened. You have all the facts. The question is how much human detail to include.",a:"You include what is true and necessary. The record must be accurate or it means nothing.",b:"You include all of it. The people involved deserve to be in the story, not just the decisions."},
+  {dim:'TF',scene:'The Apprentice',fn:'Te/Fe',text:"The person you have been mentoring for two years has made a serious mistake in front of the team. Not careless. A real misunderstanding of something fundamental.",a:"You correct it plainly and in full, in front of the others. They will all face the same situation one day.",b:"You pull them aside. The lesson needs to land, not the audience."},
+  {dim:'JP',scene:'The Road Trip',fn:'Te/Ne',text:"You and a friend are planning a long road trip. No deadline, just the two of you.",a:"You plan the route before you go. The distances, the stops, the rough shape of it.",b:"You get in the car and figure it out as you go. That is the point."},
+  {dim:'JP',scene:'The Deadline',fn:'Te/Ni',text:"You have a project due in three weeks. You have everything you need to start. More information might still come in.",a:"You start now. The worst thing is to need more time and not have it.",b:"You wait a few more days. Acting on incomplete information wastes the work."},
+  {dim:'JP',scene:'The Handover',fn:'Si/Ne',text:"You are taking over a project halfway through. There are detailed notes from the previous person.",a:"You read everything before you touch anything. You need to understand what was intended.",b:"You start working and use the notes to answer questions as they come up. The best way to understand a plan is to work with it."},
+  {dim:'JP',scene:'The Dinner Party',fn:'Te/Ne',text:"You are hosting a dinner for eight people. It is three weeks away.",a:"You start planning today. A dinner this size does not come together on short notice.",b:"You know from experience that the best dinners have room to breathe. You will sort it closer to the time."},
+  {dim:'JP',scene:'The Argument',fn:'Te/Ne',text:"You are in the middle of a disagreement that has been going on for an hour. You are not getting anywhere. You have somewhere else to be.",a:"You do not leave until it is resolved one way or another. You will not carry an open thing.",b:"You call it. This conversation is not going anywhere right now. You can come back to it."},
+  {dim:'JP',scene:'The Walk',fn:'Te/Ne',text:"You have a free afternoon and you feel like going for a long walk. You do not have to be anywhere.",a:"You decide roughly where you are going before you leave. A walk with no shape is just wandering.",b:"You pick a direction and go. The whole point is not knowing where it ends."},
+  {dim:'JP',scene:'The Cancelled Plans',fn:'Si/Ne',text:"You have been looking forward to something for weeks and it falls through at the last minute.",a:"You feel the waste of it. The preparation, the expectation, all of it for nothing.",b:"You look at what is suddenly open. You were here anyway. Something else is possible now."},
+  {dim:'JP',scene:'The Shortcut',fn:'Si/Se',text:"You need to get somewhere and there is a route you have never taken before. It might be faster.",a:"You check it on the map first. You want to know what you are committing to before you turn off.",b:"You take it. You will know soon enough if it was the right call."},
+  {dim:'JP',scene:'The Brief',fn:'Te/Ne',text:"You are starting a big piece of writing. Something substantial.",a:"You decide the structure and the limits before you write a word. Without edges it never ends.",b:"You start writing and let the piece show you what it needs to be."},
+  {dim:'JP',scene:'The Trip',fn:'Si/Se',text:"You are going away for a week tomorrow.",a:"You pack tonight with a list. Everything in the bag has a reason.",b:"You pack in the morning. You know roughly what you need."},
+  {dim:'JP',scene:'The Vacancy',fn:'Te/Ni',text:"Someone important leaves your team. You have a decent internal candidate who is not quite right, and you could wait for someone better.",a:"You fill it now. A gap this size costs more every week it sits open.",b:"You wait. A rushed hire is worse than no hire."},
+  {dim:'JP',scene:'The Two Options',fn:'Te/Ne',text:"You are choosing between two good options for something important. You have thought about it enough.",a:"You pick the one that fits best with what you know and commit. Any decision is better than none.",b:"You test both a little before you decide. One of them will feel right when you are actually in it."},
+  {dim:'JP',scene:'The Gap',fn:'Si/Ne',text:"You are asked to work on something where some of the information you need is missing.",a:"You work out what is missing before you begin. Starting without the full picture wastes the effort.",b:"You begin with what you have. The missing parts will become clear when you need them."},
+  {dim:'JP',scene:'The Night Before',fn:'Si/Ni',text:"Big day tomorrow. Interview, presentation, something that matters. You have done everything you can.",a:"You go through it one more time. You want to know every part of it before morning.",b:"You go to sleep. You have done what you can. The rest belongs to tomorrow."},
+  {dim:'JP',scene:'The New Neighbourhood',fn:'Te/Se',text:"You have just moved somewhere new and you want to get to know the area.",a:"You map it out first. You divide it into sections and work through it systematically.",b:"You pick a direction and start walking. The neighbourhood will show you what it is."},
+  {dim:'JP',scene:'The Finish Line',fn:'Ne/Fi',text:"You have just finished a long and difficult project. It went well. Now there is nothing immediately next.",a:"You feel the pull to find the next thing. Open space without a direction feels like waste.",b:"You feel something close to peace. This quiet is what you were working toward."},
+  {dim:'JP',scene:'The Better Route',fn:'Si/Ne',text:"You are halfway through a plan and someone suggests a genuinely better approach.",a:"You need a real reason before you abandon what was agreed. Changing for change's sake costs more than it saves.",b:"You hear them out. A better plan is a better plan, whatever was decided at the start."},
+  {dim:'JP',scene:'The Turning',fn:'Te/Ne',text:"You are in a meeting that was called to make a specific decision. Everyone agreed on the process. But halfway through, new information comes out that makes the original plan look wrong. The room goes quiet.",a:"You hold to the process. Changing course mid-meeting based on one new data point is how decisions fall apart.",b:"You call it out. The plan was made without this information. Now you have it and you cannot pretend otherwise."}
+];
+
+const questionsMyth = [
   // E/I
   {dim:'EI',scene:'The Return',fn:'Se/Ni',text:"You have been gone for a long time, and the road was hard, and there were days you did not think you would see home again. But the journey is over now, and you are standing at the door, and everything you left behind is on the other side of it.",a:"You do not stop at the door. You push through it and find whoever is inside.",b:"You stand there for a moment. The quiet is yours and you take it before it ends."},
   {dim:'EI',scene:'The Last Supper',fn:'Fe/Fi',text:"You are sitting at a long table with the people you love most, and the wine is good and the fire is warm and the night is slow. Somewhere in the back of your mind you know, though no one has said it, that this is the last time all of you will sit together like this.",a:"You move around the table, person to person. There is something you need to say to each of them before the night is over.",b:"You stay. There is one person here you came for, and you are already sitting next to them."},
   {dim:'EI',scene:'The Great Gathering',fn:'Se/Ni',text:"Word has gone out and people have come from every direction, kings and travellers and strangers from far lands. The hall is full and loud and alive with voices.",a:"You walk straight into the middle of it.",b:"You find the highest point in the room and watch."},
-  {dim:'EI',scene:'The Desert Road',fn:'Se/Si',text:"Three days of walking alone. No towns, no voices, only the sound of your own footsteps and the wind. The silence is complete. Tomorrow you will reach people again.",a:"You feel it pulling at you. You walk faster without meaning to.",b:"You slow down. One more morning of this before it is gone."},
+  {dim:'EI',scene:'The Desert Road',fn:'Se/Si',text:"Three days of walking alone and on the second night you come across another traveller's camp. The fire is still going. They wave you over.",a:"You drop your pack and get into it. You ask where they are from, where they are going. Two days of silence and now there is a voice to talk to.",b:"You sit down and share the fire but you keep mostly to yourself. A nod and a few words. The company is enough without filling it."},
   {dim:'EI',scene:'The Unexpected Party',fn:'Se/Ti',text:"You come home and find the door already open, and inside there are strangers at your table and someone you know is laughing loudly, and the room smells of food and drink and other people.",a:"You drop your bag and ask who is hungry.",b:"You ask what is going on before you take your coat off."},
-  {dim:'EI',scene:'The Long March',fn:'Fe/Fi',text:"You have been marching with an army for six weeks and you have seen the same faces every morning and worked beside the same people every day. The mission is long and the end is not yet in sight.",a:"The people around you are what keep you going each morning. You run on company.",b:"You like them. But what keeps you moving is something inside you that has nothing to do with them."},
+  {dim:'EI',scene:'The Long March',fn:'Fe/Fi',text:"Six weeks of marching and you are finally in a town with a free afternoon. The others are already spilling into the tavern, loud and ready. Someone grabs your arm on the way in.",a:"You go in. Six weeks of nothing but road and these people. You want the noise and the warmth and the mess of it.",b:"You find an excuse and slip away. You need an hour to yourself."},
   {dim:'EI',scene:'The Feast of Victories',fn:'Se/Ni',text:"The war is over and against everything you won, and the great hall has been thrown open and it is full of noise and music and celebration. Someone hands you a cup.",a:"You raise it and find someone to drink with. You want to be in the loudest part of the room.",b:"You drink it and find somewhere to stand where you can see all of it."},
   {dim:'EI',scene:'The Crossing',fn:'Fe/Te',text:"You are crossing a wide plain and there are no landmarks and the road is empty in both directions, and then, far off, a lone traveller appears coming the other way.",a:"You stop. A conversation out here is worth more than it would be anywhere else.",b:"You exchange what is useful, water and distance and any warnings, and keep moving."},
   {dim:'EI',scene:"The Prodigal's Return",text:"Someone you love left badly, years ago, and the parting was not clean, and you had stopped waiting to see them again. But there they are, standing at the edge of the road, thin and changed and smaller than you remembered.",a:"You call out. You want everyone to see this.",b:"You go to them alone first. The rest of the world can have them later."},
   {dim:'EI',scene:'The Departure',fn:'Fe/Fi',text:"Everyone you have been travelling with is going a different direction at the crossroads. There is still an hour before you all part ways.",a:"You make the most of it. You talk about everything that did not get talked about on the road. You want to leave nothing unsaid.",b:"You find yourself going quiet. The time that is left feels more important than filling it."},
-  {dim:'EI',scene:'The Temptation',fn:'Se/Fi',text:"A figure comes to you and makes an offer. Not wealth and not power but this: the love and admiration of everyone around you, always, for the rest of your life.",a:"You feel the pull before you feel the doubt.",b:"You feel nothing. This was never the thing you wanted."},
-  {dim:'EI',scene:'The Ancient City',fn:'Se/Si',text:"You have been given a week alone in a city of great beauty, and the streets are old and the light is warm and there is no one making demands on you. The week is over now.",a:"You filled every day. The city gave you energy and you used all of it.",b:"You are only just settled. Leaving now feels like being pulled away too soon."},
+  {dim:'EI',scene:'The Temptation',fn:'Se/Fi',text:"You have been travelling under a false name for years. Tonight someone in the hall recognises you and says it aloud. The room goes quiet. The lord at the head of the table is looking at you.",a:"You stand up. If this is the moment, you meet it standing.",b:"You hold still. Being named is not the same as being ready. The room can wait."},
+  {dim:'EI',scene:'The Ancient City',fn:'Se/Si',text:"You have one free evening in the greatest city you have ever seen. A local offers to take you to a gathering where half the city seems to be. Or you can have the streets to yourself.",a:"You go with them. A city comes alive through its people and you want to be inside that.",b:"You take the streets alone. A city this old deserves quiet and so do you."},
   {dim:'EI',scene:'The Homecoming',fn:'Si/Fi',text:"You have been somewhere extraordinary and now you are back, and the people around you have gathered and they want to know everything and they are looking at you with open faces.",a:"You start from the beginning and you do not leave anything out.",b:"You give them something true and short, and save the real story for later."},
   {dim:'EI',scene:'The Calling',fn:'Fe/Ni',text:"Something has been placed in your hands, a task and a purpose larger than anything you have faced before. You are alone with it for now and the weight of it is real.",a:"You go and find people. Something this size needs more than one pair of hands.",b:"You go quiet. You need to be alone with it before you can say a word about it."},
-  {dim:'EI',scene:'The Letter',fn:'Si/Ne',text:"A letter arrives offering you something you have wanted for a long time, but it will mean leaving behind the people and the life you have built. You sit with the letter for a day.",a:"You feel the weight of what you would be leaving behind most. The people, the routines, the warmth of the known.",b:"You feel the weight of the question itself most. The life unlived if you say no."},
+  {dim:'EI',scene:'The Letter',fn:'Si/Ne',text:"A letter arrives with an offer you have wanted for years. You must reply by tonight. You sit down to write and your hand stops. The people you would be leaving are in the next room.",a:"You go and talk to them first. You cannot make this decision without the room.",b:"You write the reply alone. This is yours to decide and you already know what it says."},
   {dim:'EI',scene:'The Storm',fn:'Fe/Fi',text:"Someone you love is falling apart, and they are not asking for help or solutions or answers. They just need someone there, in the room, close by.",a:"You move closer. You find small things to do. You keep the space between you warm.",b:"You sit down and stay. You do not reach for anything. You are just there, in the room with them."},
-  {dim:'EI',scene:'The Crowning',fn:'Se/Fi',text:"You have done something remarkable and the recognition has come, public and loud and larger than you expected. There are many eyes on you.",a:"Something in you rises to meet it. This is exactly the kind of moment you were built for.",b:"All the eyes make you want to disappear. But underneath that, something quieter: you are glad."},
-  {dim:'EI',scene:'The Great Work',fn:'Fe/Ti',text:"There is a great tower being built, something so vast and bold that it has drawn thousands of workers from across the land, all of them moving toward the same thing.",a:"The size of it feeds you. All of this, together, toward one end.",b:"You find your part of it and go deep into it. That is where you do your best work."},
+  {dim:'EI',scene:'The Crowning',fn:'Se/Fi',text:"The war is over. The crown has just been placed on your head and the great hall is silent waiting for you to speak. Thousands of eyes. The people who bled for this are in the front row.",a:"You find your voice and you fill the hall. This moment belongs to all of them and you are going to make sure they know it.",b:"You keep it short. You say what needs to be said, you name the people who carried you here, and then you step down and go to them. The crown can wait."},
+  {dim:'EI',scene:'The Great Work',fn:'Fe/Ti',text:"You are deep into a great project and your section is done. You can move to where the work needs you most, out in the middle of everything, or stay and push further into what you already know.",a:"You move. You want to be where the energy is, where things are still being figured out.",b:"You stay and go deeper. The work you do best happens when you are not being pulled in every direction."},
   {dim:'EI',scene:'The Cave',fn:'Fe/Si',text:"Something enormous has just happened, a victory or a loss or something in between that does not have a name yet, and you need to deal with it.",a:"You find people. Warmth and noise and someone who will listen.",b:"You find somewhere alone. Silence is the only thing that will work right now."},
   {dim:'EI',scene:'The Fire',fn:'Se/Ni',text:"The long day is over and the camp is settling and someone has built a fire and a group has gathered around it. You are tired but the night is still young.",a:"You pull up a log and stay. The fire and the voices and the warmth of other people is exactly what the end of a day like this needs.",b:"You find a spot on the edge of it and sit. The fire is enough company. You watch the flames and let the voices wash over you, and by the time the others turn in, you are still there."},
   {dim:'EI',scene:'The Messenger',fn:'Fe/Si',text:"A message arrives that changes things. Not for you. For someone you know, someone you have not seen in a long time. You could pass it on and leave it at that. Or you could go yourself.",a:"You go. News like this should not arrive without a face behind it.",b:"You send word. What matters is that they know. The distance is not the point."},
   // S/N
-  {dim:'SN',scene:'The Apple',fn:'Se/Ni',text:"You are standing in a garden and there is a tree at the centre of it, and the fruit on it is unlike anything you have seen before, and there is a rule that says you must not eat it. Your mind goes to...",a:"What it is. What it tastes like. What would actually happen if you ate it.",b:"Why the rule exists. What is being protected. What the fruit stands for."},
-  {dim:'SN',scene:'The Map',fn:'Si/Ne',text:"You have been handed a map of a land no living person has ever seen, and it is old and detailed and somewhere on it there is a mark that no one can read. What draws your attention first?",a:"You study the roads and the rivers and the distances. You want to understand how to actually get there.",b:"You go straight to where the map runs out. The blank edges are the most interesting part."},
-  {dim:'SN',scene:'The Prophet',fn:'Ti/Ni',text:"A man comes down from the mountain and he has seen something and his face is changed and he speaks in strange words that are hard to understand. How do you feel?",a:"Uncertain. You want to know what he actually saw before you decide how to feel about it.",b:"Something moves in you. Even before you understand the words, something in you has already responded."},
-  {dim:'SN',scene:'The Ruins',fn:'Si/Ni',text:"You are walking through what is left of a great city and the stones are old and the streets are empty and the silence is complete. What fills your mind?",a:"You try to picture the morning here. The bread, the children, the ordinary noise of a day.",b:"You try to picture the last day. What broke first, what people carried when they ran."},
-  {dim:'SN',scene:'The Dream',fn:'Si/Ni',text:"You wake from a dream that was vivid and strange and you can still feel it even though the pictures are already fading. What do you reach for first?",a:"What happened. The order of it, the people, the places, as clearly as you can hold them.",b:"What it felt like. And what you think it might mean."},
-  {dim:'SN',scene:'The Sign',fn:'Se/Ni',text:"You are travelling through a forest and you come to a place where three roads meet, and someone long ago carved a mark into the tree at the centre. What draws you?",a:"The carving itself. How deep it goes, which direction it faces, what it might be made of.",b:"What it meant to the person who cut it. What they were trying to say."},
-  {dim:'SN',scene:'The Language',fn:'Ti/Ne',text:"You have come across the writing of a people whose language no one living can read. There are patterns in it, and something about the marks feels ordered and intentional.",a:"You look for repeating marks and structures. If there is a pattern, the pattern can be cracked.",b:"You look at the shapes and the spaces between them. Before you can read it you want to feel what kind of mind made it."},
+  {dim:'SN',scene:'The Council',fn:'Se/Ni',text:"Two scouts have returned from enemy territory with conflicting reports. One gives you hard numbers: positions, troop counts, supply lines. The other says the numbers are right but something is wrong. Armies do not move like this before a battle. You must advise the council.",a:"You present the numbers. A council makes decisions on what can be verified.",b:"You present the pattern. The numbers are what they are. What they mean is something else."},
+  {dim:'SN',scene:'The Map',fn:'Si/Ne',text:"You have been handed a map of unknown land and told to find the safest route through it before nightfall. The centre is well charted. The edges are blank.",a:"You work from the centre outward. The known roads are the foundation. You build from what is solid.",b:"You start at the edges. The blank parts are where the real answer is."},
+  {dim:'SN',scene:'The Prophet',fn:'Ti/Ni',text:"A man comes down from the mountain saying he has seen what is coming. Half the town is already moving on his word. He is standing in front of you and asking if you are with them.",a:"You ask him what exactly he saw. You will not move until the claim can bear some weight.",b:"You are already deciding. Something in what he said is true and you knew it before you could explain why."},
+  {dim:'SN',scene:'The Last Village',fn:'Si/Ni',text:"You ride into a village on the road ahead and find it emptied in a hurry. Fires still warm. Food left on tables. Whatever came through here did so fast and people ran. You have an hour before your company arrives and needs a report.",a:"You go building to building. You want to know exactly what happened here before you say anything.",b:"You already know what this means. You have seen this pattern before. You ride back to warn them now."},
+  {dim:'SN',scene:'The Vision',fn:'Si/Ni',text:"A seer grants you a glimpse of something coming. The image is vivid but brief and already starting to blur. Your companions are waiting for you to tell them what you saw.",a:"You describe it exactly as it appeared. The details are what your companions can act on.",b:"You describe some of what you saw, but mostly what it means. The meaning is what they need."},
+  {dim:'SN',scene:'The Tracker',fn:'Se/Ni',text:"Your company has been ambushed and driven back. You are the first to return to the site the next morning. The ground is torn up, weapons left behind, trails going in three directions. Your captain needs to know what happened here.",a:"You read the ground. Boot prints, drag marks, blood trails. You build the picture from what is there.",b:"You read the pattern. The ambush was too precise. Someone knew your route. That is the more important question."},
+  {dim:'SN',scene:'The Language',fn:'Ti/Ne',text:"You have found a written message in a language no one can read and you are told it may contain the directions you need. You have an hour. Two scholars offer different methods: one wants to map the patterns, one wants to feel out the meaning.",a:"You work on the patterns. Structure is the only reliable way in.",b:"You try to read it whole before breaking it apart. The feel of it will tell you more than the analysis."},
   {dim:'SN',scene:'The Expert',fn:'Si/Ne',text:"You are sitting next to one of the great masters of their craft at a long dinner, and you have their attention for the whole evening. What do you ask about?",a:"What the work actually looks like. The hours, the failures, the parts nobody talks about.",b:"Where they think it is all going. What everyone else is missing."},
-  {dim:'SN',scene:'The Parable',fn:'Si/Ne',text:"A teacher tells a story about a farmer and some seeds and different kinds of ground. Most people around you are nodding. Where is your mind?",a:"On what kind of ground actually grows a good crop, and why.",b:"Already somewhere else. The story opened something and you followed it."},
-  {dim:'SN',scene:'The Library',fn:'Si/Ne',text:"You are given one hour alone in a library so vast you could never read even a small part of it. You move through the shelves and your hand stops on something.",a:"Something specific. A subject you already care about, a question you have been carrying.",b:"Something you have never thought about before. You want to leave knowing something unexpected."},
-  {dim:'SN',scene:'The Flood',fn:'Si/Ni',text:"The waters are gone and everything has been saved that could be saved and you are standing in what is left. Someone asks you what it was like.",a:"You describe what happened. The water level, the things you lost, how long it took.",b:"You describe what it did to you. How you understood things differently after."},
-  {dim:'SN',scene:'The Sword in the Stone',fn:'Se/Fi',text:"Everyone has tried and failed. You walk up to it alone. Before you reach for it, your mind is on...",a:"The grip. The weight of the stone. The question of how anyone would actually pull it free.",b:"What it would mean. Not for the kingdom. For you."},
-  {dim:'SN',scene:'The First Light',fn:'Se/Ni',text:"You are standing on a cliff at the edge of the ocean and it is the hour before sunrise and the sky is beginning to change. You watch it happen.",a:"You feel the cold and the wind and the way the light moves across the water in front of you.",b:"Something in you goes quiet. It is beautiful in a way that feels like more than beauty."},
+  {dim:'SN',scene:'The Parable',fn:'Si/Ne',text:"A teacher finishes a story and asks the room what they took from it. The person next to you wants to know what you think before you give your answer to the group.",a:"You tell them what the story literally argues. You want to test the claim before you follow it anywhere.",b:"You tell them where the story took you. The literal meaning is not really the point."},
+  {dim:'SN',scene:'The Library',fn:'Si/Ne',text:"You are given one hour alone in a library so vast you could never read even a small part of it. You move through the shelves. You look for...",a:"Something specific. A subject you already care about, a question you have been carrying.",b:"Something you have never thought about before. You want to leave knowing something unexpected."},
+  {dim:'SN',scene:'The Flood',fn:'Si/Ni',text:"The flood is receding and you have an hour before the water closes again. You can reach one of two things: the full record of everything that was here before, or the person who can tell you what it means for what comes next.",a:"You go for the record. What was here is the foundation for what comes after.",b:"You go for the person. Understanding what changed matters more than preserving what was."},
+  {dim:'SN',scene:'The Sword in the Stone',fn:'Se/Fi',text:"Everyone has tried and failed and they are watching you approach. Before you reach for it you have a choice: test the stone to understand the mechanism, or simply try.",a:"You study it first. The angle of the blade, the gap, the material. There is a physical answer here.",b:"You reach for it without analysis. If it is meant to move it will move."},
+  {dim:'SN',scene:'The First Light',fn:'Se/Ni',text:"You are standing on a cliff watching the sunrise with someone who keeps trying to talk. They want to share the experience. The light is changing fast and will be gone in minutes.",a:"You let them talk. Being in it with someone else is the point.",b:"You ask them to hold it a moment. You want to be inside it before it becomes a conversation about it."},
   {dim:'SN',scene:'The Oracle',fn:'Te/Ni',text:"You have travelled far to ask the oracle one question and you are finally here and the answer comes, and it is true but it is not clear.",a:"You ask for more. A true answer that cannot be acted on is only half an answer.",b:"You sit with it. The lack of clarity is not a failure. It is asking you to bring something to it."},
-  {dim:'SN',scene:'The Sermon',fn:'Ti/Ni',text:"A great speaker speaks for an hour to a crowd of thousands and the words are powerful and the room is moved. Afterwards, what stays with you?",a:"Something specific they said. One point you want to test or push back on.",b:"The whole shape of it. The deeper thing they were really talking about underneath all the words."},
-  {dim:'SN',scene:'The Empty Tomb',fn:'Si/Ni',text:"You arrive somewhere and find that something which was here is no longer here, and no one can explain it, and the absence is complete.",a:"You want to understand what actually happened before you decide what it means.",b:"You already feel the weight of it. The facts will come later, or they will not, but something has changed."},
+  {dim:'SN',scene:'The Sermon',fn:'Ti/Ni',text:"A great speaker finishes and the crowd is moved and someone is gathering people to act on what was said right now, tonight. They are asking if you are in.",a:"You want to talk through the argument first. Acting on something before you have tested it is how mistakes get made.",b:"You are already in. The logic can follow. You know what this was pointing at."},
+  {dim:'SN',scene:'The Empty Tomb',fn:'Si/Ni',text:"You arrive to find that something which was here is gone and no one can explain it. Others are already drawing conclusions. Someone is asking you to stand with them publicly before the investigation is complete.",a:"You hold back. You will not stand behind something you cannot yet account for.",b:"You stand with them. You already know what this is. The evidence will catch up."},
   {dim:'SN',scene:'The New Land',fn:'Se/Ni',text:"You have sailed for months and there is land on the horizon that no one from your world has ever seen before. The ship is quiet.",a:"You want to get ashore. To walk on it, to touch it, to find out what it actually is.",b:"You stand at the front of the ship and look at it from a distance first. You want to hold the moment before it becomes ordinary."},
-  {dim:'SN',scene:'The Tower',fn:'Te/Ni',text:"A tower is being built so tall that some say it will reach the sky itself. You are asked if it can be done.",a:"It depends on the materials and the structure. Those are questions that can be answered.",b:"The question is not whether it can be built. The question is what happens if it is."},
-  {dim:'SN',scene:'The River',fn:'Ne/Si',text:"You have been walking along a river for days and it is wide and slow and you do not know where it ends. You find yourself wondering...",a:"Where it goes. What it flows into. How far the water has come.",b:"How long it has been here. What this place looked like before anyone ever walked beside it."},
+  {dim:'SN',scene:'The Tower',fn:'Te/Ni',text:"You are being asked to approve the final phase of a tower that has never been built this high before. The engineers say it is sound. Something in the numbers is nagging at you.",a:"You approve it. The calculations have been checked. You work with what can be verified.",b:"You pause it. The calculations may be right and something is still wrong. You need to understand what that is."},
+  {dim:'SN',scene:'The River',fn:'Ne/Si',text:"You are following a river and the path splits. One way follows the river forward toward wherever it ends. The other cuts back through old country the river has shaped over centuries.",a:"You follow the river forward. Where it goes is the question worth answering.",b:"You take the old country route. What the river has done over time matters more than where it ends."},
   {dim:'SN',scene:'The Ruin',fn:'Se/Ni',text:"You find a building so old that no one you know has any record of who built it or why. It is still standing, mostly. You have an afternoon to spend with it.",a:"You go over every part of it you can reach — the stones, the doorways, what has held and what has fallen. By the end of the afternoon you know the place.",b:"You find yourself thinking about the last day it was used. What was ordinary then that is gone now. What the people who walked through here every day would make of you standing in it."},
   // T/F
   {dim:'TF',scene:'The Judgment of Solomon',fn:'Te/Fe',text:"Two people stand before you and both claim the same child, and the child cannot speak for itself, and you are the one who must decide.",a:"You ask for the records. Birth, witnesses, dates. The truth is in there somewhere.",b:"You watch their faces when you say you will cut the child in two. The answer is already there."},
@@ -410,12 +534,12 @@ const questions = [
   {dim:'JP',scene:'The Chronicle',fn:'Te/Ne',text:"You are writing the history of a great kingdom. There is more material than you could ever use and no one has told you where it ends.",a:"You decide the shape and limits before you write a word. Without edges the thing will never be finished.",b:"You begin and let the history show you what it needs. The story knows its own shape."},
   {dim:'JP',scene:'The Long Road',fn:'Si/Ne',text:"You are three days into a journey and someone in the group wants to change the route entirely. The new way might be better.",a:"You need a real reason before you leave the plan you set out with. Changing without cause is just noise.",b:"You hear them out. A better road is a better road, whatever was agreed at the start."},
   {dim:'JP',scene:'The Wardrobe',fn:'Si/Se',text:"You are preparing for a long journey and you must decide what to bring and there is more you could take than you can carry.",a:"You make a list the night before and pack to it. Everything in the bag has a reason for being there.",b:"You pack the morning you leave. You know roughly what you need and you will sort the rest as you go."},
-  {dim:'JP',scene:'The Empty Throne',fn:'Te/Ni',text:"A great kingdom has no king and the council is divided and nothing has been decided and weeks are going by and people are starting to lose faith.",a:"You feel the weight of the empty seat. Something this important should not be left open.",b:"You feel that the right answer is worth waiting for. A rushed choice is worse than no choice."},
+  {dim:'JP',scene:'The Empty Throne',fn:'Te/Ni',text:"The kingdom has no leader and the council is divided and someone is filling the vacuum by acting as if they already hold the seat. They are asking you to back them publicly before a formal decision is made.",a:"You back them. The vacuum is the real danger. A decision now, even an imperfect one, is better than none.",b:"You refuse. Whoever takes this seat should do it properly or not at all."},
   {dim:'JP',scene:'The Two Roads',fn:'Te/Ne',text:"You come to a fork in the road and both ways are equally unknown and you must choose one and keep moving.",a:"You pick the one that fits best with what you know and commit to it. Any choice is better than standing still.",b:"You walk a little way down each before you choose. One of them will feel right when you are in it."},
   {dim:'JP',scene:'The Scroll',fn:'Si/Ne',text:"You have been given a scroll with a great task written on it but the instructions are not complete and some of what you need is not there.",a:"You work out what is missing before you begin. Starting without the full picture wastes effort and time.",b:"You begin with what you have. The missing parts will become clear when you need them."},
   {dim:'JP',scene:'The Night Before Battle',fn:'Si/Ni',text:"The battle is tomorrow and there is nothing left to prepare and the camp is quiet and the fire is low.",a:"You go through it one more time in your head. You want to know every part of it before morning comes.",b:"You sleep. You have done what you can and the rest belongs to tomorrow."},
   {dim:'JP',scene:'The Uncharted Shore',fn:'Te/Se',text:"Your ship has landed somewhere no map shows. There is no path, no plan, and no one who has ever been here before. The land ahead is open and unknown.",a:"You mark the shore, divide the group, and give each person a direction. You need to know what is out there before you move.",b:"You pick a direction that feels right and start walking. The land itself will tell you what you need to know."},
-  {dim:'JP',scene:'The Open Road',fn:'Ne/Fi',text:"The quest is over and you are free and there is no one asking anything of you and the road goes in every direction and there is no one waiting for you anywhere.",a:"You feel the pull to find the next thing. Freedom without a purpose is just noise.",b:"You feel something close to peace. This is the thing you were working toward without knowing it."},
+  {dim:'JP',scene:'The Open Road',fn:'Ne/Fi',text:"The work is done and someone is offering you two paths forward: take the next assignment now while the momentum is there, or take a month with no obligations before deciding anything.",a:"You take the next assignment. Momentum is harder to rebuild than to maintain.",b:"You take the month. You have not stopped in years and you do not yet know what you actually want next."},
   {dim:'JP',scene:'The Turning',fn:'Te/Ne',text:"You were sent to bring a man to trial. Three days of riding. A clear order. But when you get there, the man who was meant to oversee the arrest is about to kill him. No trial. No justice. Just an ending. You have seconds.",a:"You do nothing. The moment you go off-plan, you are the problem. Hold the line.",b:"You step in. The plan was made without this moment in mind. This moment changes it."},
 ];
 
@@ -446,6 +570,7 @@ let scores = {};
 let fnScores = {Se:0,Si:0,Ne:0,Ni:0,Te:0,Ti:0,Fe:0,Fi:0};
 let history = [];
 let orderedQuestions = [];
+let testMode = 'myth'; // 'myth' | 'normal' | 'both'
 
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
@@ -455,17 +580,46 @@ function showScreen(id) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+function selectMode(mode) {
+  testMode = mode;
+  // Highlight selected card
+  document.querySelectorAll('.mode-card').forEach(c => c.classList.remove('selected'));
+  event.currentTarget.classList.add('selected');
+  // Short delay for visual feedback then start
+  setTimeout(() => startTest(), 280);
+}
+
 function startTest() {
-  const _ei=shuffle(questions.filter(q=>q.dim==='EI'));
-  const _sn=shuffle(questions.filter(q=>q.dim==='SN'));
-  const _tf=shuffle(questions.filter(q=>q.dim==='TF'));
-  const _jp=shuffle(questions.filter(q=>q.dim==='JP'));
+  let pool;
+  if(testMode==='normal'){
+    pool = questionsNormal;
+  } else if(testMode==='myth'){
+    pool = questionsMyth;
+  } else {
+    // Both Worlds: 50/50 mix per dimension
+    const dims = ['EI','SN','TF','JP'];
+    pool = [];
+    dims.forEach(dim => {
+      const myth = shuffle(questionsMyth.filter(q=>q.dim===dim));
+      const norm = shuffle(questionsNormal.filter(q=>q.dim===dim));
+      const half = Math.ceil(myth.length / 2);
+      pool.push(...myth.slice(0, half), ...norm.slice(0, myth.length - half));
+    });
+  }
+  const _ei=shuffle(pool.filter(q=>q.dim==='EI'));
+  const _sn=shuffle(pool.filter(q=>q.dim==='SN'));
+  const _tf=shuffle(pool.filter(q=>q.dim==='TF'));
+  const _jp=shuffle(pool.filter(q=>q.dim==='JP'));
   orderedQuestions.length=0;
   const _max=Math.max(_ei.length,_sn.length,_tf.length,_jp.length);
   for(let i=0;i<_max;i++){if(_ei[i])orderedQuestions.push(_ei[i]);if(_sn[i])orderedQuestions.push(_sn[i]);if(_tf[i])orderedQuestions.push(_tf[i]);if(_jp[i])orderedQuestions.push(_jp[i]);}
   current = 0;
   scores = { E:0, I:0, S:0, N:0, T:0, F:0, J:0, P:0 };
   fnScores = {Se:0,Si:0,Ne:0,Ni:0,Te:0,Ti:0,Fe:0,Fi:0};
+  // Mode bonus
+  if(testMode==='myth'){ scores.N++; fnScores.Ni++; }
+  else if(testMode==='normal'){ scores.S++; fnScores.Si++; }
+  else { fnScores.Fe++; } // 'both'
   history = [];
   renderQuestion();
   showScreen('screen-question');
@@ -498,16 +652,33 @@ function renderQuestion() {
   });
 }
 
+// Cross-dimensional function pole map
+const FN_POLES = {
+  Se:['E','S'], Si:['I','S'],
+  Ne:['E','N'], Ni:['I','N'],
+  Te:['T','J'], Ti:['T','P'],
+  Fe:['F','E'], Fi:['F','I']
+};
+
+function getSecondaryPole(fnTag, dim) {
+  const poles = FN_POLES[fnTag];
+  if (!poles) return null;
+  return poles.find(p => p !== dim[0] && p !== dim[1]) || null;
+}
+
 function goBack() {
   if (current === 0) return;
-  const lastLetter = history.pop();
-  scores[lastLetter]--;
-  // Undo function scoring
+  const last = history.pop();
+  scores[last.letter] -= 0.7;
   const prevQ = orderedQuestions[current-1];
   if(prevQ.fn){
-    const [fa,fb]=prevQ.fn.split('/');
-    const wasA=(lastLetter===prevQ.dim[0]);
-    fnScores[wasA?fa:fb]--;
+    const [fa,fb] = prevQ.fn.split('/');
+    const fn = last.choice==='A' ? fa : fb;
+    fnScores[fn]--;
+    const sec = getSecondaryPole(fn, prevQ.dim);
+    if(sec) scores[sec] -= 0.3;
+  } else {
+    scores[last.letter] -= 0.3;
   }
   current--;
   renderQuestion();
@@ -516,10 +687,17 @@ function goBack() {
 function selectAnswer(choice) {
   const q = orderedQuestions[current];
   const letter = choice==='A' ? q.dim[0] : q.dim[1];
-  scores[letter]++;
-  // Function scoring
-  if(q.fn){const [fa,fb]=q.fn.split('/');fnScores[choice==='A'?fa:fb]++;}
-  history.push(letter);
+  scores[letter] += 0.7;
+  if(q.fn){
+    const [fa,fb] = q.fn.split('/');
+    const fn = choice==='A' ? fa : fb;
+    fnScores[fn]++;
+    const sec = getSecondaryPole(fn, q.dim);
+    if(sec) scores[sec] += 0.3;
+  } else {
+    scores[letter] += 0.3;
+  }
+  history.push({choice, letter});
   current++;
   if (current < orderedQuestions.length) renderQuestion(); else showResults();
 }
