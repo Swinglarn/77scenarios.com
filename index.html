@@ -318,17 +318,17 @@
       <div class="mode-title">Choose your<br><em>world.</em></div>
       <p class="mode-subtitle">The same questions can be asked in different worlds. Choose the one you want to be put in.</p>
       <div class="mode-cards">
-        <button class="mode-card" onclick="selectMode('myth')">
+        <button class="mode-card" onclick="selectMode(this,'myth')">
           <div class="mode-card-icon">⚔</div>
           <div class="mode-card-name">Mythical</div>
           <div class="mode-card-desc">Ancient roads. Prophecies. Kingdoms at the edge of ruin. You are always in the middle of something larger than yourself.</div>
         </button>
-        <button class="mode-card" onclick="selectMode('normal')">
+        <button class="mode-card" onclick="selectMode(this,'normal')">
           <div class="mode-card-icon">☕</div>
           <div class="mode-card-name">Everyday</div>
           <div class="mode-card-desc">Airports. Offices. Bad weeks and good news. The ordinary moments that turn out not to be ordinary at all.</div>
         </button>
-        <button class="mode-card mode-card-both" onclick="selectMode('both')">
+        <button class="mode-card mode-card-both" onclick="selectMode(this,'both')">
           <div class="mode-card-icon">◎</div>
           <div class="mode-card-name">Both Worlds</div>
           <div class="mode-card-desc">You do not want to choose. Some things are true in every world.</div>
@@ -656,12 +656,10 @@ function showScreen(id) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function selectMode(mode) {
+function selectMode(el, mode) {
   testMode = mode;
-  // Highlight selected card
   document.querySelectorAll('.mode-card').forEach(c => c.classList.remove('selected'));
-  event.currentTarget.classList.add('selected');
-  // Short delay for visual feedback then start
+  el.classList.add('selected');
   setTimeout(() => startTest(), 280);
 }
 
@@ -848,9 +846,10 @@ function showResultsActual() {
 
   document.getElementById('progress-fill').style.width = '100%';
   const deepLink = document.getElementById('type-deep-link');
-  if (deepLink) deepLink.href = `type.html?t=${type}`;
+  if (deepLink) deepLink.href = `/type?t=${type}`;
   const fnLink = document.getElementById('functions-link');
   if (fnLink) fnLink.href = `/functions?t=${type}`;
+  if (window._sbSaveResult) window._sbSaveResult(type, scores);
   showScreen('screen-result');
   setTimeout(() => document.querySelectorAll('.spectrum-fill').forEach(el => el.style.width = el.dataset.target+'%'), 200);
   setTimeout(() => {
@@ -859,8 +858,6 @@ function showResultsActual() {
       document.getElementById('eb7').style.display = 'block';
     }
   }, 300);
-}
-  if (window._sbSaveResult) window._sbSaveResult(type, scores);
 
 function retakeTest() {
   history = [];

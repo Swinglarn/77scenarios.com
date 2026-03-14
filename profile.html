@@ -4,20 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Your Profile — 77 Scenarios</title>
-<meta name="description" content="How 77 Scenarios works, where Myers-Briggs comes from, and why scenario-based testing is more accurate than self-rating questionnaires.">
-<meta name="keywords" content="how is MBTI scored, is Myers-Briggs accurate, Myers-Briggs criticism, personality test methodology, MBTI reliability, scenario based personality test, how personality tests work, Big Five vs MBTI">
-<meta name="robots" content="index, follow">
-<meta property="og:type" content="article">
-<meta property="og:image" content="https://77scenarios.com/og-image.png">
-<meta property="og:title" content="About: 77Scenarios">
-<meta property="og:description" content="How the scoring works, where the Myers-Briggs framework comes from, and what the science actually says about personality testing.">
-<meta property="og:url" content="https://77scenarios.com/about">
-<meta property="og:site_name" content="77 Scenarios">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="About 77 Scenarios: How the Test Works">
-<meta name="twitter:description" content="The scoring logic, the history of MBTI, and an honest look at what personality tests can and can't tell you.">
-<link rel="canonical" href="https://77scenarios.com/about">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"About the 77 Scenarios Personality Test","description":"How the test is scored, where Myers-Briggs comes from, and what the research says about personality type testing.","url":"https://77scenarios.com/about","publisher":{"@type":"Organization","name":"77 Scenarios","url":"https://77scenarios.com"}}</script>
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://77scenarios.com/profile">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
@@ -346,6 +334,7 @@ async function load() {
   const { data: results, error } = await sb
     .from('results')
     .select('*')
+    .eq('user_id', session.user.id)
     .order('created_at', { ascending: false });
   const container = document.getElementById('results-container');
   if (error || !results || results.length === 0) {
