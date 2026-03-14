@@ -53,6 +53,14 @@
     {
       "source": "/archive",
       "destination": "/archive.html"
+    },
+    {
+      "source": "/forum",
+      "destination": "/forum.html"
+    },
+    {
+      "source": "/forum-thread",
+      "destination": "/forum-thread.html"
     }
   ],
   "headers": [
