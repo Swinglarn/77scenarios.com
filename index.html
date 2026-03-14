@@ -231,6 +231,22 @@
   .mode-card-desc{font-size:0.82rem;color:var(--muted);line-height:1.6;}
   @media(max-width:600px){.mode-cards{flex-direction:column;align-items:center;}.mode-card{max-width:100%;width:100%;}}
 
+
+  /* Demographics screen */
+  .demo-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:48px 24px;text-align:center;}
+  .demo-eyebrow{font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:14px;}
+  .demo-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,3.4rem);font-weight:600;color:var(--cream);line-height:1.1;margin-bottom:14px;}
+  .demo-title em{color:var(--gold);font-style:italic;}
+  .demo-subtitle{color:var(--muted);font-size:0.9rem;max-width:480px;line-height:1.7;margin-bottom:40px;}
+  .demo-fields{width:100%;max-width:640px;display:flex;flex-direction:column;gap:28px;text-align:left;}
+  .demo-field{display:flex;flex-direction:column;gap:10px;}
+  .demo-label{font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);}
+  .demo-options{display:flex;flex-wrap:wrap;gap:8px;}
+  .demo-opt{background:transparent;border:1px solid var(--border);border-radius:6px;padding:8px 16px;font-size:0.85rem;color:var(--muted);cursor:pointer;transition:border-color 0.15s,color 0.15s,background 0.15s;font-family:'DM Sans',sans-serif;}
+  .demo-opt:hover{border-color:var(--gold-dim);color:var(--cream);}
+  .demo-opt.selected{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,0.08);}
+  .demo-actions{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap;justify-content:center;}
+
 </style>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -319,6 +335,64 @@
     </div>
   </div>
 
+
+  <!-- DEMOGRAPHICS SCREEN -->
+  <div class="screen" id="screen-demo">
+    <div class="demo-wrap">
+      <div class="demo-eyebrow">Anonymous · Optional</div>
+      <div class="demo-title">Help us understand<br>the <em>data.</em></div>
+      <p class="demo-subtitle">We publish aggregate statistics about personality types across different groups. Your answers are anonymous and never tied to your identity.</p>
+
+      <div class="demo-fields">
+
+        <div class="demo-field">
+          <label class="demo-label">Age</label>
+          <div class="demo-options" id="opt-age">
+            <button class="demo-opt" data-group="age" data-val="under_18">Under 18</button>
+            <button class="demo-opt" data-group="age" data-val="18_24">18 – 24</button>
+            <button class="demo-opt" data-group="age" data-val="25_34">25 – 34</button>
+            <button class="demo-opt" data-group="age" data-val="35_44">35 – 44</button>
+            <button class="demo-opt" data-group="age" data-val="45_54">45 – 54</button>
+            <button class="demo-opt" data-group="age" data-val="55_plus">55+</button>
+          </div>
+        </div>
+
+        <div class="demo-field">
+          <label class="demo-label">Gender</label>
+          <div class="demo-options" id="opt-gender">
+            <button class="demo-opt" data-group="gender" data-val="male">Male</button>
+            <button class="demo-opt" data-group="gender" data-val="female">Female</button>
+          </div>
+        </div>
+
+        <div class="demo-field">
+          <label class="demo-label">Ethnicity</label>
+          <div class="demo-options" id="opt-ethnicity">
+            <button class="demo-opt" data-group="ethnicity" data-val="northern_european">Northern European</button>
+            <button class="demo-opt" data-group="ethnicity" data-val="western_european">Western European</button>
+            <button class="demo-opt" data-group="ethnicity" data-val="eastern_european">Eastern European</button>
+            <button class="demo-opt" data-group="ethnicity" data-val="southern_european">Southern European</button>
+            <button class="demo-opt" data-group="ethnicity" data-val="anglo_saxon">Anglo-Saxon</button>
+            <button class="demo-opt" data-group="ethnicity" data-val="middle_eastern">Middle Eastern</button>
+            <button class="demo-opt" data-group="ethnicity" data-val="sub_saharan_african">Sub-Saharan African</button>
+            <button class="demo-opt" data-group="ethnicity" data-val="east_asian">East Asian</button>
+            <button class="demo-opt" data-group="ethnicity" data-val="south_asian">South Asian</button>
+            <button class="demo-opt" data-group="ethnicity" data-val="indian">Indian</button>
+            <button class="demo-opt" data-group="ethnicity" data-val="north_american">North American</button>
+            <button class="demo-opt" data-group="ethnicity" data-val="south_american">South American</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="demo-actions">
+        <button class="btn-primary" id="demo-submit-btn" onclick="submitDemographics()">Submit <span class="arrow">→</span></button>
+        <button class="btn-secondary" onclick="showScreen('screen-result')">Skip</button>
+      </div>
+      <div id="demo-status" style="display:none;text-align:center;color:var(--gold);font-size:0.9rem;margin-top:16px;"></div>
+    </div>
+  </div>
+
   <!-- QUESTION -->
   <div class="screen" id="screen-question">
     <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progress-fill" style="width:0%"></div></div>
@@ -350,6 +424,7 @@
     <div class="result-actions">
       <button class="btn-primary" onclick="retakeTest()">Retake test <span class="arrow">→</span></button>
       <button class="btn-secondary" onclick="shareResult()">Share result</button>
+      <button class="btn-secondary" onclick="showScreen('screen-demo')">Help us research →</button>
       <a id="type-deep-link" href="/types" class="btn-secondary" style="text-decoration:none;">Deep dive →</a>
       <a id="functions-link" href="/functions" class="btn-secondary" style="text-decoration:none;">Explore functions →</a>
     </div>
@@ -740,6 +815,7 @@ function getBlendedScores() {
 
 function showResults() {
   const type = getType();
+  window._resultType = type;
   const data = typeData[type];
   document.getElementById('type-badge').innerHTML = type.split('').map((l,i)=>`<span class="type-letter${i%2===0?'':' highlight'}">${l}</span>`).join('');
   document.getElementById('type-name').textContent = data.name;
@@ -987,6 +1063,47 @@ function shareResult() {
     });
   };
 })();
+
+// Demographics
+const demoSelections = {age: null, gender: null, ethnicity: null};
+
+document.addEventListener('click', e => {
+  const btn = e.target.closest('.demo-opt');
+  if (!btn) return;
+  const group = btn.dataset.group;
+  const val = btn.dataset.val;
+  demoSelections[group] = val;
+  document.querySelectorAll(`.demo-opt[data-group="${group}"]`).forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+});
+
+async function submitDemographics() {
+  const btn = document.getElementById('demo-submit-btn');
+  const status = document.getElementById('demo-status');
+  btn.disabled = true;
+  btn.textContent = 'Saving…';
+  try {
+    const {error} = await _supa.from('demographics').insert({
+      personality_type: window._resultType || '',
+      age_range: demoSelections.age,
+      gender: demoSelections.gender,
+      ethnicity: demoSelections.ethnicity,
+      test_mode: testMode
+    });
+    if (error) throw error;
+    status.style.display = 'block';
+    status.textContent = 'Thank you. Your data has been recorded.';
+    btn.style.display = 'none';
+    setTimeout(() => showScreen('screen-result'), 1800);
+  } catch(err) {
+    btn.disabled = false;
+    btn.innerHTML = 'Submit <span class="arrow">→</span>';
+    status.style.display = 'block';
+    status.style.color = '#e07070';
+    status.textContent = 'Something went wrong. Try again or skip.';
+  }
+}
+
 </script>
 </body>
 </html>
