@@ -40,6 +40,13 @@
   .nav-drawer-links a:hover{color:#c9a84c;padding-left:32px;}
   @media(max-width:480px){nav,.site-nav{padding:0 16px;height:52px;}.nav-links{display:none;}.nav-burger{display:flex;}.nav-overlay{display:block;pointer-events:none;}}
 
+
+  /* Vote buttons */
+  .vote-btn{background:none;border:none;color:var(--muted);cursor:pointer;padding:4px;font-size:14px;line-height:1;transition:color 0.15s;border-radius:4px;}
+  .vote-btn:hover{color:var(--gold);}
+  .vote-btn.up.active{color:var(--gold);}
+  .vote-btn.down.active{color:#e07070;}
+
   .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
   main{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:48px 32px 96px;}
@@ -166,9 +173,33 @@
   const threadId = params.get('id');
   let currentUser = null;
   let thread = null;
+  let userVotes = {}; // replyId -> vote
+
+  function errStr(e) {
+    if (!e) return 'Unknown error';
+    if (typeof e === 'string') return e;
+    // Supabase JS v2 error shape
+    if (e.message) return e.message;
+    if (e.error_description) return e.error_description;
+    if (e.error) return typeof e.error === 'string' ? e.error : 'Unknown error';
+    if (e.details) return e.details;
+    if (e.hint) return e.hint;
+    if (e.code) return 'Code: ' + e.code;
+    try { return JSON.stringify(e); } catch { return 'Unknown error'; }
+  }
 
   function escHtml(s) {
     return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function formatDate(ts) {
+    return new Date(ts).toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric' });
+  }
+
+  function formatDateTime(ts) {
+    const d = new Date(ts);
+    return d.toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric' }) +
+      ' at ' + d.toLocaleTimeString('en-GB', { hour:'2-digit', minute:'2-digit' });
   }
 
   function timeAgo(ts) {
@@ -180,28 +211,24 @@
     if (h < 24) return `${h}h ago`;
     const d = Math.floor(h / 24);
     if (d < 30) return `${d}d ago`;
-    return new Date(ts).toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric'});
+    return formatDate(ts);
   }
 
-  
-function errStr(e) {
-  if (!e) return 'Unknown error';
-  if (typeof e === 'string') return e;
-  return e.message || e.error_description || e.error || JSON.stringify(e, Object.getOwnPropertyNames(e)) || 'Unknown error';
-}
-async function init() {
+  async function init() {
     const { data } = await sb.auth.getUser();
     currentUser = data?.user || null;
 
     if (!threadId) { renderNotFound(); return; }
 
-    const { data: t, error } = await sb.from('forum_threads')
-      .select('*, author_username')
-      .eq('id', threadId)
-      .single();
+    const [{ data: t, error }, { data: votes }] = await Promise.all([
+      sb.from('forum_threads').select('*').eq('id', threadId).single(),
+      currentUser ? sb.from('forum_votes').select('reply_id, vote').eq('user_id', currentUser.id).not('reply_id', 'is', null) : Promise.resolve({ data: [] })
+    ]);
 
     if (error || !t) { renderNotFound(); return; }
     thread = t;
+
+    if (votes) votes.forEach(v => { userVotes[v.reply_id] = v.vote; });
 
     document.title = `${t.title} — 77 Scenarios Forum`;
     document.getElementById('page-h1').textContent = t.title;
@@ -210,15 +237,45 @@ async function init() {
     await loadReplies();
     renderReplyForm();
 
-    // Reveal
+    if (currentUser) {
+      const { data: prof } = await sb.from('profiles').select('username, avatar_url').eq('id', currentUser.id).single();
+      injectNavAuth(prof);
+    }
+
     const ro = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } });
     }, { threshold: 0.05 });
     document.querySelectorAll('.r').forEach(el => ro.observe(el));
   }
 
+  function injectNavAuth(prof) {
+    const links = document.querySelector('.nav-links');
+    const drawerLinks = document.querySelector('.nav-drawer-links');
+    const avatarSrc = (prof && prof.avatar_url) || 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 80 80%27%3E%3Ccircle cx=%2740%27 cy=%2740%27 r=%2740%27 fill=%27%23252a30%27/%3E%3Ccircle cx=%2740%27 cy=%2732%27 r=%2714%27 fill=%27%238a6d2e%27/%3E%3Cellipse cx=%2740%27 cy=%2772%27 rx=%2724%27 ry=%2716%27 fill=%27%238a6d2e%27/%3E%3C/svg%3E';
+    const username = (prof && prof.username) || 'Profile';
+    if (links) {
+      const wrap = document.createElement('a');
+      wrap.href = '/profile';
+      wrap.style.cssText = 'display:flex;align-items:center;gap:8px;text-decoration:none;';
+      const img = document.createElement('img');
+      img.src = avatarSrc;
+      img.style.cssText = 'width:30px;height:30px;border-radius:50%;object-fit:cover;border:1.5px solid var(--gold-dim);';
+      const pill = document.createElement('span');
+      pill.textContent = username;
+      pill.style.cssText = 'font-size:13px;color:var(--gold);letter-spacing:0.06em;text-transform:uppercase;';
+      wrap.appendChild(img); wrap.appendChild(pill);
+      links.appendChild(wrap);
+    }
+    if (drawerLinks) {
+      const a = document.createElement('a');
+      a.href = '/profile'; a.textContent = username; a.style.color = 'var(--gold)';
+      drawerLinks.insertBefore(a, drawerLinks.firstChild);
+    }
+  }
+
   function renderThread(t) {
     const username = t.author_username || 'Anonymous';
+    const dateStr = formatDateTime(t.created_at);
     document.getElementById('main-content').innerHTML = `
       <a href="/forum" class="back-link r">← Back to Forum</a>
       <div class="thread-head r">
@@ -226,8 +283,10 @@ async function init() {
         <div class="thread-title-large">${escHtml(t.title)}</div>
         <div class="thread-author-line">
           <span class="thread-author-name">${escHtml(username)}</span>
-          <span>${timeAgo(t.created_at)}</span>
+          <span title="${dateStr}">${dateStr}</span>
           <span>💬 ${t.reply_count} ${t.reply_count === 1 ? 'reply' : 'replies'}</span>
+          <span>▲ ${t.vote_score}</span>
+          ${currentUser && currentUser.id === t.user_id ? `<button class="reply-action-btn" style="margin-left:8px;" onclick="deleteThread('${t.id}')">Delete thread</button>` : ''}
         </div>
       </div>
       <div class="post-body r">${escHtml(t.body)}</div>
@@ -242,7 +301,7 @@ async function init() {
     if (!list) return;
 
     const { data: replies, error } = await sb.from('forum_replies')
-      .select('id, body, user_id, is_deleted, created_at, author_username')
+      .select('id, body, user_id, is_deleted, created_at, author_username, vote_score')
       .eq('thread_id', threadId)
       .order('created_at', { ascending: true });
 
@@ -253,43 +312,69 @@ async function init() {
 
     list.innerHTML = '';
     replies.forEach(r => {
-      const div = document.createElement('div');
-      div.className = 'reply-card';
-      div.id = `reply-${r.id}`;
+      const card = document.createElement('div');
+      card.className = 'reply-card';
+      card.id = `reply-${r.id}`;
       const username = r.author_username || 'Anonymous';
       const isOwn = currentUser && currentUser.id === r.user_id;
-      div.innerHTML = `
+      const myVote = userVotes[r.id] || 0;
+      const dateStr = formatDateTime(r.created_at);
+
+      card.innerHTML = `
         <div class="reply-header">
-          <span class="reply-author">${escHtml(username)}</span>
-          <span class="reply-time">${timeAgo(r.created_at)}</span>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="display:flex;align-items:center;gap:6px;">
+              <button class="vote-btn up ${myVote===1?'active':''}" data-rid="${r.id}" data-v="1" style="font-size:12px;padding:2px 4px;">▲</button>
+              <span style="font-size:0.8rem;color:var(--cream);min-width:16px;text-align:center;" id="rvs-${r.id}">${r.vote_score}</span>
+              <button class="vote-btn down ${myVote===-1?'active':''}" data-rid="${r.id}" data-v="-1" style="font-size:12px;padding:2px 4px;">▼</button>
+            </div>
+            <span class="reply-author">${escHtml(username)}</span>
+          </div>
+          <span class="reply-time" title="${dateStr}">${dateStr}</span>
         </div>
         ${r.is_deleted
           ? '<div class="reply-deleted">This reply has been deleted.</div>'
-          : `<div class="reply-body">${escHtml(r.body)}</div>`
-        }
-        ${isOwn && !r.is_deleted ? `
-        <div class="reply-actions">
-          <button class="reply-action-btn" onclick="deleteReply('${r.id}')">Delete</button>
-        </div>` : ''}
+          : `<div class="reply-body">${escHtml(r.body)}</div>`}
+        ${isOwn && !r.is_deleted ? `<div class="reply-actions"><button class="reply-action-btn" onclick="deleteReply('${r.id}')">Delete</button></div>` : ''}
       `;
-      list.appendChild(div);
+
+      card.querySelectorAll('.vote-btn').forEach(btn => {
+        btn.addEventListener('click', () => handleReplyVote(r.id, parseInt(btn.dataset.v)));
+      });
+
+      list.appendChild(card);
     });
+  }
+
+  async function handleReplyVote(replyId, v) {
+    if (!currentUser) { window.location.href = '/login'; return; }
+    const existing = userVotes[replyId];
+
+    if (existing === v) {
+      await sb.from('forum_votes').delete().eq('user_id', currentUser.id).eq('reply_id', replyId);
+      delete userVotes[replyId];
+    } else {
+      if (existing) await sb.from('forum_votes').delete().eq('user_id', currentUser.id).eq('reply_id', replyId);
+      const { error } = await sb.from('forum_votes').insert({ user_id: currentUser.id, reply_id: replyId, vote: v });
+      if (error) { console.error('Vote error:', errStr(error)); return; }
+      userVotes[replyId] = v;
+    }
+
+    const { data } = await sb.from('forum_replies').select('vote_score').eq('id', replyId).single();
+    if (data) {
+      const el = document.getElementById(`rvs-${replyId}`);
+      if (el) el.textContent = data.vote_score;
+      document.querySelectorAll(`.vote-btn[data-rid="${replyId}"]`).forEach(btn => {
+        btn.classList.toggle('active', userVotes[replyId] === parseInt(btn.dataset.v));
+      });
+    }
   }
 
   function renderReplyForm() {
     const wrap = document.getElementById('reply-form-wrap');
     if (!wrap) return;
-
-    if (thread?.is_locked) {
-      wrap.innerHTML = '<div class="auth-notice">This thread is locked.</div>';
-      return;
-    }
-
-    if (!currentUser) {
-      wrap.innerHTML = '<div class="auth-notice"><a href="/login">Sign in</a> or <a href="/signup">create an account</a> to reply.</div>';
-      return;
-    }
-
+    if (thread?.is_locked) { wrap.innerHTML = '<div class="auth-notice">This thread is locked.</div>'; return; }
+    if (!currentUser) { wrap.innerHTML = '<div class="auth-notice"><a href="/login">Sign in</a> or <a href="/signup">create an account</a> to reply.</div>'; return; }
     wrap.innerHTML = `
       <div class="reply-form">
         <div class="reply-form-title">Your reply</div>
@@ -298,53 +383,47 @@ async function init() {
         <div class="reply-form-actions">
           <button class="btn-primary" id="reply-submit-btn" onclick="submitReply()">Post reply →</button>
         </div>
-      </div>
-    `;
+      </div>`;
   }
 
   async function submitReply() {
     const body = document.getElementById('reply-body').value.trim();
-    if (!body) {
-      document.getElementById('reply-error').style.display = 'block';
-      return;
-    }
+    if (!body) { document.getElementById('reply-error').style.display = 'block'; return; }
     document.getElementById('reply-error').style.display = 'none';
-
     const btn = document.getElementById('reply-submit-btn');
-    btn.disabled = true;
-    btn.textContent = 'Posting…';
+    btn.disabled = true; btn.textContent = 'Posting…';
 
     const { data: profile } = await sb.from('profiles').select('username').eq('id', currentUser.id).single();
     const replyUsername = profile?.username || 'Anonymous';
 
     const { error } = await sb.from('forum_replies').insert({
-      thread_id: threadId,
-      user_id: currentUser.id,
-      body,
-      author_username: replyUsername
+      thread_id: threadId, user_id: currentUser.id, body, author_username: replyUsername
     });
 
     if (error) {
-      btn.disabled = false;
-      btn.innerHTML = 'Post reply →';
-      document.getElementById('reply-error').textContent = 'Something went wrong. Try again.';
+      document.getElementById('reply-error').textContent = 'Error: ' + errStr(error);
       document.getElementById('reply-error').style.display = 'block';
+      btn.disabled = false; btn.innerHTML = 'Post reply →';
       return;
     }
 
     document.getElementById('reply-body').value = '';
-    btn.disabled = false;
-    btn.innerHTML = 'Post reply →';
+    btn.disabled = false; btn.innerHTML = 'Post reply →';
     await loadReplies();
-    // Scroll to bottom of replies
-    const list = document.getElementById('reply-list');
-    if (list) list.lastElementChild?.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    document.getElementById('reply-list').lastElementChild?.scrollIntoView({ behavior:'smooth', block:'end' });
   }
 
   async function deleteReply(id) {
     if (!confirm('Delete this reply?')) return;
     await sb.from('forum_replies').update({ is_deleted: true }).eq('id', id).eq('user_id', currentUser.id);
     await loadReplies();
+  }
+
+  async function deleteThread(id) {
+    if (!confirm('Delete this thread and all its replies?')) return;
+    const { error } = await sb.from('forum_threads').delete().eq('id', id).eq('user_id', currentUser.id);
+    if (error) { alert('Error: ' + errStr(error)); return; }
+    window.location.href = '/forum';
   }
 
   function renderNotFound() {
@@ -355,17 +434,12 @@ async function init() {
       </div>`;
   }
 
-  // Nav
   function toggleMenu() {
-    const b = document.querySelector('.nav-burger');
-    const d = document.getElementById('nav-drawer');
-    const o = document.getElementById('nav-overlay');
-    b.classList.toggle('open');
-    d.classList.toggle('open');
-    o.classList.toggle('open');
+    document.querySelector('.nav-burger').classList.toggle('open');
+    document.getElementById('nav-drawer').classList.toggle('open');
+    document.getElementById('nav-overlay').classList.toggle('open');
   }
 
-  // Page transitions
   const ov = document.getElementById('t-overlay');
   window.addEventListener('pageshow', () => {
     requestAnimationFrame(() => { ov.style.transition = 'opacity 0.45s ease'; ov.style.opacity = '0'; });
@@ -377,12 +451,12 @@ async function init() {
     if (!href || href.startsWith('#') || href.startsWith('mailto') || a.target === '_blank') return;
     if (new URL(a.href, location.origin).origin !== location.origin) return;
     e.preventDefault();
-    ov.style.transition = 'opacity 0.3s ease';
-    ov.style.opacity = '1';
+    ov.style.transition = 'opacity 0.3s ease'; ov.style.opacity = '1';
     setTimeout(() => { window.location.href = href; }, 310);
   });
 
   init();
+
 </script>
 </body>
 </html>

@@ -58,6 +58,15 @@
   .forum-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3rem);font-weight:600;color:var(--cream);line-height:1.05;}
   .forum-title em{color:var(--gold);font-style:italic;}
 
+
+  /* Vote buttons */
+  .vote-col{position:absolute;left:0;top:0;bottom:0;width:52px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-right:1px solid var(--border);padding:12px 0;}
+  .vote-btn{background:none;border:none;color:var(--muted);cursor:pointer;padding:4px;font-size:14px;line-height:1;transition:color 0.15s;display:flex;align-items:center;justify-content:center;border-radius:4px;}
+  .vote-btn:hover{color:var(--gold);}
+  .vote-btn.up.active{color:var(--gold);}
+  .vote-btn.down.active{color:#e07070;}
+  .vote-score{font-size:0.82rem;font-weight:500;color:var(--cream);min-width:20px;text-align:center;}
+
   /* New thread button */
   .btn-primary{background:var(--gold);color:#0c0e10;border:none;padding:10px 22px;border-radius:8px;font-size:0.85rem;font-weight:500;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:opacity 0.15s;font-family:'DM Sans',sans-serif;white-space:nowrap;}
   .btn-primary:hover{opacity:0.88;}
@@ -72,7 +81,7 @@
 
   /* Thread list */
   .thread-list{display:flex;flex-direction:column;gap:2px;}
-  .thread-item{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;cursor:pointer;transition:border-color 0.15s,background 0.15s;text-decoration:none;display:block;color:inherit;}
+  .thread-item{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px 20px 68px;cursor:pointer;transition:border-color 0.15s,background 0.15s;text-decoration:none;display:block;color:inherit;position:relative;}
   .thread-item:hover{border-color:var(--gold-dim);background:#161a1e;}
   .thread-item-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:8px;}
   .thread-cat-badge{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-dim);flex-shrink:0;margin-top:2px;}
@@ -105,6 +114,10 @@
   .form-select option{background:#13161a;}
   .form-error{font-size:0.8rem;color:#e07070;margin-top:-12px;margin-bottom:8px;display:none;}
   .modal-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:8px;}
+
+  /* Thread delete button */
+  .thread-delete-btn{position:absolute;top:12px;right:12px;background:none;border:none;color:var(--muted);font-size:14px;cursor:pointer;padding:4px 8px;border-radius:4px;transition:color 0.15s,background 0.15s;z-index:2;}
+  .thread-delete-btn:hover{color:#e07070;background:rgba(224,112,112,0.1);}
 
   /* Auth notice */
   .auth-notice{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;text-align:center;color:var(--muted);font-size:0.88rem;margin-bottom:24px;}
@@ -166,8 +179,15 @@
     <a href="/login">Sign in</a> or <a href="/signup">create an account</a> to start a thread or reply.
   </div>
 
+
+  <div class="cat-bar r" style="margin-bottom:12px;">
+    <button class="sort-pill cat-pill active" onclick="setSort(this,'hot')">🔥 Hot</button>
+    <button class="sort-pill cat-pill" onclick="setSort(this,'top')">⬆ Top</button>
+    <button class="sort-pill cat-pill" onclick="setSort(this,'new')">✦ New</button>
+  </div>
+
   <div class="cat-bar r">
-    <button class="cat-pill active" data-cat="all" onclick="filterCat(this,'all')">All</button>
+    <button class="cat-pill active" data-cat="all" onclick="filterCat(this,'all')">All</button> onclick="filterCat(this,'all')">All</button>
     <button class="cat-pill" data-cat="general" onclick="filterCat(this,'general')">General</button>
     <button class="cat-pill" data-cat="type_discussion" onclick="filterCat(this,'type_discussion')">Type Discussion</button>
     <button class="cat-pill" data-cat="relationships" onclick="filterCat(this,'relationships')">Relationships</button>
@@ -229,54 +249,102 @@
   const sb = createClient('https://rttomfnfyjjssdqfzkaj.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw');
 
   const CAT_LABELS = {
-    general: 'General',
-    type_discussion: 'Type Discussion',
-    relationships: 'Relationships',
-    cognitive_functions: 'Cognitive Functions',
-    ask_the_forum: 'Ask the Forum',
-    off_topic: 'Off Topic'
+    general: 'General', type_discussion: 'Type Discussion',
+    relationships: 'Relationships', cognitive_functions: 'Cognitive Functions',
+    ask_the_forum: 'Ask the Forum', off_topic: 'Off Topic'
   };
 
   let currentCat = 'all';
   let currentUser = null;
+  let userVotes = {}; // threadId -> 1 or -1
   let page = 0;
   const PAGE_SIZE = 20;
+  let sortMode = 'hot'; // 'hot' | 'top' | 'new'
   let hasMore = false;
 
-  // Auth check
-  sb.auth.getUser().then(({ data }) => {
+  function errStr(e) {
+    if (!e) return 'Unknown error';
+    if (typeof e === 'string') return e;
+    // Supabase JS v2 error shape
+    if (e.message) return e.message;
+    if (e.error_description) return e.error_description;
+    if (e.error) return typeof e.error === 'string' ? e.error : 'Unknown error';
+    if (e.details) return e.details;
+    if (e.hint) return e.hint;
+    if (e.code) return 'Code: ' + e.code;
+    try { return JSON.stringify(e); } catch { return 'Unknown error'; }
+  }
+
+  // Auth check + load user votes
+  async function initAuth() {
+    const { data } = await sb.auth.getUser();
     currentUser = data?.user || null;
     if (!currentUser) {
       document.getElementById('auth-notice').style.display = 'block';
+      return;
     }
-  });
+    // Load user's votes on threads
+    const { data: votes } = await sb.from('forum_votes')
+      .select('thread_id, vote')
+      .eq('user_id', currentUser.id)
+      .not('thread_id', 'is', null);
+    if (votes) votes.forEach(v => { userVotes[v.thread_id] = v.vote; });
+    // Nav avatar
+    const { data: prof } = await sb.from('profiles').select('username, avatar_url').eq('id', currentUser.id).single();
+    injectNavAuth(prof);
+  }
 
-  
-function errStr(e) {
-  if (!e) return 'Unknown error';
-  if (typeof e === 'string') return e;
-  return e.message || e.error_description || e.error || JSON.stringify(e, Object.getOwnPropertyNames(e)) || 'Unknown error';
-}
-async function loadThreads(reset = true) {
+  function injectNavAuth(prof) {
+    const links = document.querySelector('.nav-links');
+    const drawerLinks = document.querySelector('.nav-drawer-links');
+    const avatarSrc = (prof && prof.avatar_url) || 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 80 80%27%3E%3Ccircle cx=%2740%27 cy=%2740%27 r=%2740%27 fill=%27%23252a30%27/%3E%3Ccircle cx=%2740%27 cy=%2732%27 r=%2714%27 fill=%27%238a6d2e%27/%3E%3Cellipse cx=%2740%27 cy=%2772%27 rx=%2724%27 ry=%2716%27 fill=%27%238a6d2e%27/%3E%3C/svg%3E';
+    const username = (prof && prof.username) || 'Profile';
+    if (links) {
+      const wrap = document.createElement('a');
+      wrap.href = '/profile';
+      wrap.style.cssText = 'display:flex;align-items:center;gap:8px;text-decoration:none;';
+      const img = document.createElement('img');
+      img.src = avatarSrc;
+      img.style.cssText = 'width:30px;height:30px;border-radius:50%;object-fit:cover;border:1.5px solid var(--gold-dim);';
+      const pill = document.createElement('span');
+      pill.textContent = username;
+      pill.style.cssText = 'font-size:13px;color:var(--gold);letter-spacing:0.06em;text-transform:uppercase;';
+      wrap.appendChild(img); wrap.appendChild(pill);
+      links.appendChild(wrap);
+    }
+    if (drawerLinks) {
+      const a = document.createElement('a');
+      a.href = '/profile'; a.textContent = username; a.style.color = 'var(--gold)';
+      drawerLinks.insertBefore(a, drawerLinks.firstChild);
+    }
+  }
+
+  async function loadThreads(reset = true) {
     if (reset) {
       page = 0;
       document.getElementById('thread-list').innerHTML = '<div class="loading-row"></div><div class="loading-row"></div><div class="loading-row"></div>';
     }
 
     let query = sb.from('forum_threads')
-      .select('id, title, category, reply_count, is_pinned, last_activity_at, created_at, author_username')
-      .order('is_pinned', { ascending: false })
-      .order('last_activity_at', { ascending: false })
+      .select('id, title, category, reply_count, is_pinned, vote_score, last_activity_at, created_at, user_id, author_username')
       .range(page * PAGE_SIZE, page * PAGE_SIZE + PAGE_SIZE);
 
     if (currentCat !== 'all') query = query.eq('category', currentCat);
 
+    if (sortMode === 'top') {
+      query = query.order('is_pinned', { ascending: false }).order('vote_score', { ascending: false });
+    } else if (sortMode === 'new') {
+      query = query.order('is_pinned', { ascending: false }).order('created_at', { ascending: false });
+    } else {
+      // hot: pinned first, then last activity
+      query = query.order('is_pinned', { ascending: false }).order('last_activity_at', { ascending: false });
+    }
+
     const { data, error } = await query;
-    if (error) { console.error(error); return; }
+    if (error) { document.getElementById('thread-list').innerHTML = '<div class="empty-state"><div class="empty-state-title">Could not load threads.</div><p>' + errStr(error) + '</p></div>'; return; }
 
     hasMore = data.length === PAGE_SIZE + 1;
     const threads = hasMore ? data.slice(0, PAGE_SIZE) : data;
-
     const list = document.getElementById('thread-list');
     if (reset) list.innerHTML = '';
 
@@ -286,37 +354,121 @@ async function loadThreads(reset = true) {
       return;
     }
 
-    threads.forEach(t => {
-      const a = document.createElement('a');
-      a.className = 'thread-item';
-      a.href = `/forum-thread?id=${t.id}`;
-      const ago = timeAgo(t.last_activity_at);
-      const username = t.author_username || 'Anonymous';
-      a.innerHTML = `
-        <div class="thread-item-top">
-          <div class="thread-title">${escHtml(t.title)}</div>
-          <div class="thread-cat-badge">${CAT_LABELS[t.category] || t.category}</div>
-        </div>
-        <div class="thread-meta">
-          ${t.is_pinned ? '<span class="thread-pinned">📌 Pinned</span>' : ''}
-          <span class="thread-meta-author">${escHtml(username)}</span>
-          <span>${ago}</span>
-          <span class="thread-replies">💬 ${t.reply_count}</span>
-        </div>`;
-      list.appendChild(a);
-    });
-
+    threads.forEach(t => renderThread(t, list));
     document.getElementById('load-more-wrap').style.display = hasMore ? 'block' : 'none';
   }
 
-  function loadMore() {
-    page++;
-    loadThreads(false);
+  function renderThread(t, list) {
+    const username = t.author_username || 'Anonymous';
+    const myVote = userVotes[t.id] || 0;
+    const dateStr = formatDate(t.created_at);
+    const agoStr = timeAgo(t.last_activity_at);
+
+    const wrapper = document.createElement('div');
+    wrapper.style.cssText = 'position:relative;';
+
+    // Vote column (stops click propagation so it doesn't open the thread)
+    const voteCol = document.createElement('div');
+    voteCol.className = 'vote-col';
+    voteCol.innerHTML = `
+      <button class="vote-btn up ${myVote === 1 ? 'active' : ''}" data-id="${t.id}" data-v="1" title="Upvote">▲</button>
+      <span class="vote-score" id="vs-${t.id}">${t.vote_score}</span>
+      <button class="vote-btn down ${myVote === -1 ? 'active' : ''}" data-id="${t.id}" data-v="-1" title="Downvote">▼</button>
+    `;
+    voteCol.querySelectorAll('.vote-btn').forEach(btn => {
+      btn.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); handleVote(t.id, null, parseInt(btn.dataset.v)); });
+    });
+
+    const a = document.createElement('a');
+    a.className = 'thread-item';
+    a.href = `/forum-thread?id=${t.id}`;
+    a.innerHTML = `
+      <div class="thread-item-top">
+        <div class="thread-title">${escHtml(t.title)}</div>
+        <div class="thread-cat-badge">${CAT_LABELS[t.category] || t.category}</div>
+      </div>
+      <div class="thread-meta">
+        ${t.is_pinned ? '<span class="thread-pinned">📌 Pinned</span>' : ''}
+        <span class="thread-meta-author">${escHtml(username)}</span>
+        <span title="${new Date(t.created_at).toLocaleString()}">${dateStr}</span>
+        <span>💬 ${t.reply_count}</span>
+        <span>🕐 ${agoStr}</span>
+      </div>`;
+
+    // Delete button for own threads
+    if (currentUser && t.user_id === currentUser.id) {
+      const delBtn = document.createElement('button');
+      delBtn.className = 'thread-delete-btn';
+      delBtn.textContent = '✕';
+      delBtn.title = 'Delete thread';
+      delBtn.onclick = e => { e.preventDefault(); e.stopPropagation(); deleteThread(t.id); };
+      wrapper.appendChild(delBtn);
+    }
+
+    wrapper.appendChild(voteCol);
+    wrapper.appendChild(a);
+    list.appendChild(wrapper);
   }
+
+  async function handleVote(threadId, replyId, v) {
+    if (!currentUser) { window.location.href = '/login'; return; }
+    const isThread = threadId !== null;
+    const key = isThread ? threadId : replyId;
+    const existing = userVotes[key];
+
+    if (existing === v) {
+      // Remove vote
+      const col = isThread ? 'thread_id' : 'reply_id';
+      await sb.from('forum_votes').delete().eq('user_id', currentUser.id).eq(col, key);
+      delete userVotes[key];
+    } else {
+      if (existing) {
+        // Remove old vote first
+        const col = isThread ? 'thread_id' : 'reply_id';
+        await sb.from('forum_votes').delete().eq('user_id', currentUser.id).eq(col, key);
+      }
+      // Add new vote
+      const payload = { user_id: currentUser.id, vote: v };
+      if (isThread) payload.thread_id = threadId; else payload.reply_id = replyId;
+      const { error } = await sb.from('forum_votes').insert(payload);
+      if (error) { console.error('Vote error:', errStr(error)); return; }
+      userVotes[key] = v;
+    }
+
+    // Refresh score display
+    if (isThread) {
+      const { data } = await sb.from('forum_threads').select('vote_score').eq('id', threadId).single();
+      if (data) {
+        const el = document.getElementById(`vs-${threadId}`);
+        if (el) el.textContent = data.vote_score;
+        // Update button states
+        document.querySelectorAll(`.vote-btn[data-id="${threadId}"]`).forEach(btn => {
+          const bv = parseInt(btn.dataset.v);
+          btn.classList.toggle('active', userVotes[threadId] === bv);
+        });
+      }
+    }
+  }
+
+  async function deleteThread(id) {
+    if (!confirm('Delete this thread and all its replies?')) return;
+    const { error } = await sb.from('forum_threads').delete().eq('id', id).eq('user_id', currentUser.id);
+    if (error) { alert('Error: ' + errStr(error)); return; }
+    loadThreads();
+  }
+
+  function loadMore() { page++; loadThreads(false); }
 
   function filterCat(el, cat) {
     currentCat = cat;
     document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+    el.classList.add('active');
+    loadThreads();
+  }
+
+  function setSort(el, mode) {
+    sortMode = mode;
+    document.querySelectorAll('.sort-pill').forEach(p => p.classList.remove('active'));
     el.classList.add('active');
     loadThreads();
   }
@@ -330,9 +482,7 @@ async function loadThreads(reset = true) {
     document.getElementById('new-thread-modal').classList.remove('open');
     document.getElementById('thread-title').value = '';
     document.getElementById('thread-body').value = '';
-    document.getElementById('title-error').style.display = 'none';
-    document.getElementById('body-error').style.display = 'none';
-    document.getElementById('thread-post-error').style.display = 'none';
+    ['title-error','body-error','thread-post-error'].forEach(id => document.getElementById(id).style.display = 'none');
   }
 
   async function submitThread() {
@@ -340,20 +490,15 @@ async function loadThreads(reset = true) {
     const body = document.getElementById('thread-body').value.trim();
     const cat = document.getElementById('thread-cat').value;
     let valid = true;
-
     if (title.length < 3) { document.getElementById('title-error').style.display = 'block'; valid = false; }
     else document.getElementById('title-error').style.display = 'none';
-
     if (body.length < 10) { document.getElementById('body-error').style.display = 'block'; valid = false; }
     else document.getElementById('body-error').style.display = 'none';
-
     if (!valid) return;
 
     const btn = document.getElementById('submit-thread-btn');
-    btn.disabled = true;
-    btn.textContent = 'Posting…';
+    btn.disabled = true; btn.textContent = 'Posting…';
 
-    // Get username from profile
     const { data: profile } = await sb.from('profiles').select('username').eq('id', currentUser.id).single();
     const username = profile?.username || 'Anonymous';
 
@@ -363,14 +508,17 @@ async function loadThreads(reset = true) {
 
     if (error) {
       document.getElementById('thread-post-error').style.display = 'block';
-      document.getElementById('thread-post-error').textContent = 'Error: ' + (errStr(error));
-      btn.disabled = false;
-      btn.innerHTML = 'Post thread →';
+      document.getElementById('thread-post-error').textContent = 'Error: ' + errStr(error);
+      btn.disabled = false; btn.innerHTML = 'Post thread →';
       return;
     }
-
     closeModal();
     window.location.href = `/forum-thread?id=${data.id}`;
+  }
+
+  function formatDate(ts) {
+    const d = new Date(ts);
+    return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
   }
 
   function timeAgo(ts) {
@@ -382,32 +530,26 @@ async function loadThreads(reset = true) {
     if (h < 24) return `${h}h ago`;
     const d = Math.floor(h / 24);
     if (d < 30) return `${d}d ago`;
-    return new Date(ts).toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric'});
+    return formatDate(ts);
   }
 
   function escHtml(s) {
     return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
 
-  // Nav
   function toggleMenu() {
-    const b = document.querySelector('.nav-burger');
-    const d = document.getElementById('nav-drawer');
-    const o = document.getElementById('nav-overlay');
-    b.classList.toggle('open');
-    d.classList.toggle('open');
-    o.classList.toggle('open');
+    document.querySelector('.nav-burger').classList.toggle('open');
+    document.getElementById('nav-drawer').classList.toggle('open');
+    document.getElementById('nav-overlay').classList.toggle('open');
   }
 
-  // Reveal
   const ro = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } });
   }, { threshold: 0.1 });
   document.querySelectorAll('.r').forEach(el => ro.observe(el));
 
-  // Page transitions
   const ov = document.getElementById('t-overlay');
-  window.addEventListener('pageshow', e => {
+  window.addEventListener('pageshow', () => {
     requestAnimationFrame(() => { ov.style.transition = 'opacity 0.45s ease'; ov.style.opacity = '0'; });
   });
   document.addEventListener('click', e => {
@@ -417,13 +559,12 @@ async function loadThreads(reset = true) {
     if (!href || href.startsWith('#') || href.startsWith('mailto') || a.target === '_blank') return;
     if (new URL(a.href, location.origin).origin !== location.origin) return;
     e.preventDefault();
-    ov.style.transition = 'opacity 0.3s ease';
-    ov.style.opacity = '1';
+    ov.style.transition = 'opacity 0.3s ease'; ov.style.opacity = '1';
     setTimeout(() => { window.location.href = href; }, 310);
   });
 
-  // Init
-  loadThreads();
+  initAuth().then(() => loadThreads());
+
 </script>
 </body>
 </html>
