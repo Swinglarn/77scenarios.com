@@ -111,8 +111,9 @@
   .not-found{text-align:center;padding:80px 24px;}
   .not-found-title{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--cream);margin-bottom:10px;}
 
-  .nav-user-wrap{position:relative;}
+  .nav-user-wrap{position:relative;display:flex;align-items:center;}
   .nav-user-btn{display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;padding:0;}
+  #nav-user-dropdown{display:none;position:absolute;right:0;top:calc(100% + 8px);background:#13161a;border:1px solid var(--border);border-radius:10px;min-width:160px;z-index:9000;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.5);}
   #nav-user-dropdown .dd-link{display:block;padding:12px 18px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--border);transition:color 0.15s,background 0.15s;}
   #nav-user-dropdown .dd-link:hover{color:var(--cream);background:rgba(255,255,255,0.04);}
   #nav-user-dropdown .dd-signout{display:block;width:100%;text-align:left;padding:12px 18px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#e07070;background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.15s;}
@@ -257,10 +258,10 @@
   }
 
     function injectNavAuth(prof) {
-    const links = document.querySelector('.nav-links');
-    const drawerLinks = document.querySelector('.nav-drawer-links');
-    if(links){ links.appendChild(buildNavUser((prof&&prof.username)||'Profile', (prof&&prof.avatar_url)||'')); }
-    if(drawerLinks){ const _da=document.createElement('a');_da.href='/profile';_da.textContent=(prof&&prof.username)||'Profile';_da.style.color='var(--gold)';drawerLinks.appendChild(_da); }
+    var links = document.querySelector('.nav-links');
+    var drawerLinks = document.querySelector('.nav-drawer-links');
+    if(links){ links.appendChild(buildNavUser((prof&&prof.username)||'Profile',(prof&&prof.avatar_url)||'')); }
+    if(drawerLinks){ var _da=document.createElement('a');_da.href='/profile';_da.textContent=(prof&&prof.username)||'Profile';_da.style.color='var(--gold)';drawerLinks.appendChild(_da); }
   }
 
   function renderThread(t) {
@@ -415,7 +416,13 @@
     if (actionsEl) actionsEl.style.display = 'none';
     const editor = document.createElement('div');
     editor.id = `edit-wrap-${id}`;
-    editor.innerHTML = `<textarea class="form-textarea" id="edit-ta-${id}" style="margin-top:10px;min-height:80px;"></textarea><div style="display:flex;gap:8px;margin-top:8px;justify-content:flex-end;"><button class="btn-secondary" style="padding:6px 14px;font-size:0.78rem;" onclick="cancelEdit('${id}')">Cancel</button><button class="btn-primary" style="padding:6px 14px;font-size:0.78rem;" onclick="saveEdit('${id}')">Save</button></div><div id="edit-err-${id}" style="color:#e07070;font-size:0.78rem;margin-top:6px;display:none;"></div>`;
+    editor.innerHTML = `
+      <textarea class="form-textarea" id="edit-ta-${id}" style="margin-top:10px;min-height:80px;"></textarea>
+      <div style="display:flex;gap:8px;margin-top:8px;justify-content:flex-end;">
+        <button class="btn-secondary" style="padding:6px 14px;font-size:0.78rem;" onclick="cancelEdit('${id}')">Cancel</button>
+        <button class="btn-primary" style="padding:6px 14px;font-size:0.78rem;" onclick="saveEdit('${id}')">Save</button>
+      </div>
+      <div id="edit-err-${id}" style="color:#e07070;font-size:0.78rem;margin-top:6px;display:none;"></div>`;
     card.appendChild(editor);
     document.getElementById(`edit-ta-${id}`).value = current;
     document.getElementById(`edit-ta-${id}`).focus();
@@ -428,7 +435,8 @@
     if (bodyEl) bodyEl.style.display = '';
     const actionsEl = card.querySelector('.reply-actions');
     if (actionsEl) actionsEl.style.display = '';
-    document.getElementById(`edit-wrap-${id}`)?.remove();
+    const ew = document.getElementById(`edit-wrap-${id}`);
+    if (ew) ew.remove();
   }
 
   async function saveEdit(id) {
@@ -493,25 +501,23 @@
 
 
   function buildNavUser(username, avatarSrc) {
-    const FALLBACK = 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 80 80%27%3E%3Ccircle cx=%2740%27 cy=%2740%27 r=%2740%27 fill=%27%23252a30%27/%3E%3Ccircle cx=%2740%27 cy=%2732%27 r=%2714%27 fill=%27%238a6d2e%27/%3E%3Cellipse cx=%2740%27 cy=%2772%27 rx=%2724%27 ry=%2716%27 fill=%27%238a6d2e%27/%3E%3C/svg%3E';
+    const FB = 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 80 80%27%3E%3Ccircle cx=%2740%27 cy=%2740%27 r=%2740%27 fill=%27%23252a30%27/%3E%3Ccircle cx=%2740%27 cy=%2732%27 r=%2714%27 fill=%27%238a6d2e%27/%3E%3Cellipse cx=%2740%27 cy=%2772%27 rx=%2724%27 ry=%2716%27 fill=%27%238a6d2e%27/%3E%3C/svg%3E';
     const wrap = document.createElement('div');
     wrap.className = 'nav-user-wrap';
-    wrap.style.cssText = 'position:relative;';
     const btn = document.createElement('button');
     btn.className = 'nav-user-btn';
-    btn.style.cssText = 'display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;padding:0;';
-    btn.onclick = (e) => { e.stopPropagation(); const d=document.getElementById('nav-user-dropdown'); if(d) d.style.display=d.style.display==='none'?'block':'none'; };
+    btn.setAttribute('aria-label', 'User menu');
+    btn.onclick = function(e) { e.stopPropagation(); var d=document.getElementById('nav-user-dropdown'); if(d){d.style.display=d.style.display==='block'?'none':'block';} };
     const img = document.createElement('img');
-    img.src = avatarSrc || FALLBACK;
+    img.src = avatarSrc || FB;
     img.style.cssText = 'width:30px;height:30px;border-radius:50%;object-fit:cover;border:1.5px solid var(--gold-dim);flex-shrink:0;';
-    img.onerror = () => { img.src = FALLBACK; };
+    img.onerror = function(){ this.src=FB; };
     const pill = document.createElement('span');
     pill.textContent = username || 'Profile';
     pill.style.cssText = 'background:var(--gold);color:#0c0e10;padding:7px 16px;border-radius:60px;font-weight:500;font-size:0.82rem;letter-spacing:0.04em;white-space:nowrap;';
     btn.appendChild(img); btn.appendChild(pill); wrap.appendChild(btn);
     const dd = document.createElement('div');
     dd.id = 'nav-user-dropdown';
-    dd.style.cssText = 'display:none;position:absolute;right:0;top:calc(100% + 8px);background:#13161a;border:1px solid var(--border);border-radius:10px;min-width:160px;z-index:9000;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.5);';
     dd.innerHTML = '<a href="/profile" class="dd-link">Profile</a><a href="/settings" class="dd-link">Settings</a><button class="dd-signout" onclick="navSignOut()">Sign out</button>';
     wrap.appendChild(dd);
     return wrap;
@@ -520,9 +526,9 @@
     await sb.auth.signOut();
     window.location.href = '/';
   }
-  document.addEventListener('click', e => {
+  document.addEventListener('click', function(e) {
     if (!e.target.closest('.nav-user-wrap')) {
-      const d = document.getElementById('nav-user-dropdown');
+      var d = document.getElementById('nav-user-dropdown');
       if (d) d.style.display = 'none';
     }
   });
