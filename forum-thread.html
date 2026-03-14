@@ -110,6 +110,14 @@
   /* Not found */
   .not-found{text-align:center;padding:80px 24px;}
   .not-found-title{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--cream);margin-bottom:10px;}
+
+  .nav-user-wrap{position:relative;}
+  .nav-user-btn{display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;padding:0;}
+  #nav-user-dropdown .dd-link{display:block;padding:12px 18px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--border);transition:color 0.15s,background 0.15s;}
+  #nav-user-dropdown .dd-link:hover{color:var(--cream);background:rgba(255,255,255,0.04);}
+  #nav-user-dropdown .dd-signout{display:block;width:100%;text-align:left;padding:12px 18px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#e07070;background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.15s;}
+  #nav-user-dropdown .dd-signout:hover{background:rgba(224,112,112,0.08);}
+
 </style>
 </head>
 <body>
@@ -248,29 +256,11 @@
     document.querySelectorAll('.r').forEach(el => ro.observe(el));
   }
 
-  function injectNavAuth(prof) {
+    function injectNavAuth(prof) {
     const links = document.querySelector('.nav-links');
     const drawerLinks = document.querySelector('.nav-drawer-links');
-    const avatarSrc = (prof && prof.avatar_url) || 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 80 80%27%3E%3Ccircle cx=%2740%27 cy=%2740%27 r=%2740%27 fill=%27%23252a30%27/%3E%3Ccircle cx=%2740%27 cy=%2732%27 r=%2714%27 fill=%27%238a6d2e%27/%3E%3Cellipse cx=%2740%27 cy=%2772%27 rx=%2724%27 ry=%2716%27 fill=%27%238a6d2e%27/%3E%3C/svg%3E';
-    const username = (prof && prof.username) || 'Profile';
-    if (links) {
-      const wrap = document.createElement('a');
-      wrap.href = '/profile';
-      wrap.style.cssText = 'display:flex;align-items:center;gap:8px;text-decoration:none;';
-      const img = document.createElement('img');
-      img.src = avatarSrc;
-      img.style.cssText = 'width:30px;height:30px;border-radius:50%;object-fit:cover;border:1.5px solid var(--gold-dim);';
-      const pill = document.createElement('span');
-      pill.textContent = username;
-      pill.style.cssText = 'font-size:13px;color:var(--gold);letter-spacing:0.06em;text-transform:uppercase;';
-      wrap.appendChild(img); wrap.appendChild(pill);
-      links.appendChild(wrap);
-    }
-    if (drawerLinks) {
-      const a = document.createElement('a');
-      a.href = '/profile'; a.textContent = username; a.style.color = 'var(--gold)';
-      drawerLinks.insertBefore(a, drawerLinks.firstChild);
-    }
+    if(links){ links.appendChild(buildNavUser((prof&&prof.username)||'Profile', (prof&&prof.avatar_url)||'')); }
+    if(drawerLinks){ const _da=document.createElement('a');_da.href='/profile';_da.textContent=(prof&&prof.username)||'Profile';_da.style.color='var(--gold)';drawerLinks.appendChild(_da); }
   }
 
   function renderThread(t) {
@@ -413,54 +403,47 @@
     document.getElementById('reply-list').lastElementChild?.scrollIntoView({ behavior:'smooth', block:'end' });
   }
 
+
   async function editReply(id) {
     const card = document.getElementById(`reply-${id}`);
+    if (!card) return;
     const bodyEl = card.querySelector('.reply-body');
     if (!bodyEl) return;
     const current = bodyEl.textContent;
-
-    // Swap body for inline editor
     bodyEl.style.display = 'none';
     const actionsEl = card.querySelector('.reply-actions');
     if (actionsEl) actionsEl.style.display = 'none';
-
     const editor = document.createElement('div');
     editor.id = `edit-wrap-${id}`;
-    editor.innerHTML = `
-      <textarea class="form-textarea" id="edit-ta-${id}" style="margin-top:10px;min-height:80px;">${escHtml(current)}</textarea>
-      <div style="display:flex;gap:8px;margin-top:8px;justify-content:flex-end;">
-        <button class="btn-secondary" style="padding:6px 14px;font-size:0.78rem;" onclick="cancelEdit('${id}')">Cancel</button>
-        <button class="btn-primary" style="padding:6px 14px;font-size:0.78rem;" onclick="saveEdit('${id}')">Save</button>
-      </div>
-      <div id="edit-err-${id}" style="color:#e07070;font-size:0.78rem;margin-top:6px;display:none;"></div>`;
+    editor.innerHTML = `<textarea class="form-textarea" id="edit-ta-${id}" style="margin-top:10px;min-height:80px;"></textarea><div style="display:flex;gap:8px;margin-top:8px;justify-content:flex-end;"><button class="btn-secondary" style="padding:6px 14px;font-size:0.78rem;" onclick="cancelEdit('${id}')">Cancel</button><button class="btn-primary" style="padding:6px 14px;font-size:0.78rem;" onclick="saveEdit('${id}')">Save</button></div><div id="edit-err-${id}" style="color:#e07070;font-size:0.78rem;margin-top:6px;display:none;"></div>`;
     card.appendChild(editor);
+    document.getElementById(`edit-ta-${id}`).value = current;
     document.getElementById(`edit-ta-${id}`).focus();
   }
 
   function cancelEdit(id) {
     const card = document.getElementById(`reply-${id}`);
-    card.querySelector('.reply-body').style.display = '';
+    if (!card) return;
+    const bodyEl = card.querySelector('.reply-body');
+    if (bodyEl) bodyEl.style.display = '';
     const actionsEl = card.querySelector('.reply-actions');
     if (actionsEl) actionsEl.style.display = '';
     document.getElementById(`edit-wrap-${id}`)?.remove();
   }
 
   async function saveEdit(id) {
-    const body = document.getElementById(`edit-ta-${id}`).value.trim();
+    const ta = document.getElementById(`edit-ta-${id}`);
     const errEl = document.getElementById(`edit-err-${id}`);
+    const body = ta ? ta.value.trim() : '';
     if (!body) { errEl.textContent = 'Reply cannot be empty.'; errEl.style.display = 'block'; return; }
     errEl.style.display = 'none';
-
     const { error } = await sb.from('forum_replies')
-      .update({ body, updated_at: new Date().toISOString() })
+      .update({ body })
       .eq('id', id)
       .eq('user_id', currentUser.id);
-
     if (error) { errEl.textContent = 'Error: ' + errStr(error); errEl.style.display = 'block'; return; }
-
-    // Update displayed body and close editor
     const card = document.getElementById(`reply-${id}`);
-    card.querySelector('.reply-body').textContent = body;
+    if (card) { const bodyEl = card.querySelector('.reply-body'); if (bodyEl) bodyEl.textContent = body; }
     cancelEdit(id);
   }
 
@@ -507,6 +490,42 @@
   });
 
   init();
+
+
+  function buildNavUser(username, avatarSrc) {
+    const FALLBACK = 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 80 80%27%3E%3Ccircle cx=%2740%27 cy=%2740%27 r=%2740%27 fill=%27%23252a30%27/%3E%3Ccircle cx=%2740%27 cy=%2732%27 r=%2714%27 fill=%27%238a6d2e%27/%3E%3Cellipse cx=%2740%27 cy=%2772%27 rx=%2724%27 ry=%2716%27 fill=%27%238a6d2e%27/%3E%3C/svg%3E';
+    const wrap = document.createElement('div');
+    wrap.className = 'nav-user-wrap';
+    wrap.style.cssText = 'position:relative;';
+    const btn = document.createElement('button');
+    btn.className = 'nav-user-btn';
+    btn.style.cssText = 'display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;padding:0;';
+    btn.onclick = (e) => { e.stopPropagation(); const d=document.getElementById('nav-user-dropdown'); if(d) d.style.display=d.style.display==='none'?'block':'none'; };
+    const img = document.createElement('img');
+    img.src = avatarSrc || FALLBACK;
+    img.style.cssText = 'width:30px;height:30px;border-radius:50%;object-fit:cover;border:1.5px solid var(--gold-dim);flex-shrink:0;';
+    img.onerror = () => { img.src = FALLBACK; };
+    const pill = document.createElement('span');
+    pill.textContent = username || 'Profile';
+    pill.style.cssText = 'background:var(--gold);color:#0c0e10;padding:7px 16px;border-radius:60px;font-weight:500;font-size:0.82rem;letter-spacing:0.04em;white-space:nowrap;';
+    btn.appendChild(img); btn.appendChild(pill); wrap.appendChild(btn);
+    const dd = document.createElement('div');
+    dd.id = 'nav-user-dropdown';
+    dd.style.cssText = 'display:none;position:absolute;right:0;top:calc(100% + 8px);background:#13161a;border:1px solid var(--border);border-radius:10px;min-width:160px;z-index:9000;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.5);';
+    dd.innerHTML = '<a href="/profile" class="dd-link">Profile</a><a href="/settings" class="dd-link">Settings</a><button class="dd-signout" onclick="navSignOut()">Sign out</button>';
+    wrap.appendChild(dd);
+    return wrap;
+  }
+  async function navSignOut() {
+    await sb.auth.signOut();
+    window.location.href = '/';
+  }
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.nav-user-wrap')) {
+      const d = document.getElementById('nav-user-dropdown');
+      if (d) d.style.display = 'none';
+    }
+  });
 
 </script>
 </body>
