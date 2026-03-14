@@ -388,8 +388,8 @@
       </div>
 
       <div class="demo-actions">
-        <button class="btn-primary" id="demo-submit-btn" onclick="submitDemographics()">Submit <span class="arrow">→</span></button>
-        <button class="btn-secondary" onclick="showScreen('screen-result')">Skip</button>
+        <button class="btn-primary" id="demo-submit-btn" onclick="submitDemographics()">See my results <span class="arrow">→</span></button>
+        <button class="btn-secondary" id="demo-skip-btn" onclick="skipDemographics()" style="display:none;">Skip</button>
       </div>
       <div id="demo-status" style="display:none;text-align:center;color:var(--gold);font-size:0.9rem;margin-top:16px;"></div>
     </div>
@@ -426,7 +426,6 @@
     <div class="result-actions">
       <button class="btn-primary" onclick="retakeTest()">Retake test <span class="arrow">→</span></button>
       <button class="btn-secondary" onclick="shareResult()">Share result</button>
-      <button class="btn-secondary" onclick="showScreen('screen-demo')">Help us research →</button>
       <a id="type-deep-link" href="/types" class="btn-secondary" style="text-decoration:none;">Deep dive →</a>
       <a id="functions-link" href="/functions" class="btn-secondary" style="text-decoration:none;">Explore functions →</a>
     </div>
@@ -439,7 +438,7 @@
         <input type="email" id="eb3" style="width:100%;background:#0c0e10;border:1px solid #252a30;border-radius:10px;padding:14px 18px;font-family:'DM Sans',sans-serif;font-size:14px;color:#ede8df;outline:none;margin-bottom:16px;" placeholder="your@email.com" autocomplete="email">
         <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:20px;">
           <input type="checkbox" id="eb4" style="flex-shrink:0;width:16px;height:16px;margin-top:2px;accent-color:#c9a84c;cursor:pointer;">
-          <label for="eb4" style="font-size:12px;color:#b5ada6;line-height:1.6;cursor:pointer;">I confirm my email and result can be stored. To be removed email <span style="color:#c9a84c;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dcacaeb5aabdbfa59cebebafbfb9b2bdaeb5b3aff2bfb3b1">[email&#160;protected]</a></span>.</label>
+          <label for="eb4" style="font-size:12px;color:#b5ada6;line-height:1.6;cursor:pointer;">I confirm my email and result can be stored. To request removal contact&#58; <span style="color:#c9a84c;">noreply&#64;77scenarios&#46;com</span></label>
         </div>
         <button class="btn-save" onclick="saveResult()">Save result</button>
       </div>
@@ -818,6 +817,13 @@ function getBlendedScores() {
 function showResults() {
   const type = getType();
   window._resultType = type;
+  // Show demographics screen before results
+  showScreen('screen-demo');
+  return;
+}
+
+function showResultsActual() {
+  const type = window._resultType;
   const data = typeData[type];
   document.getElementById('type-badge').innerHTML = type.split('').map((l,i)=>`<span class="type-letter${i%2===0?'':' highlight'}">${l}</span>`).join('');
   document.getElementById('type-name').textContent = data.name;
@@ -1084,26 +1090,28 @@ async function submitDemographics() {
   const status = document.getElementById('demo-status');
   btn.disabled = true;
   btn.textContent = 'Saving…';
-  try {
-    const {error} = await _supa.from('demographics').insert({
-      personality_type: window._resultType || '',
-      age_range: demoSelections.age,
-      gender: demoSelections.gender,
-      ethnicity: demoSelections.ethnicity,
-      test_mode: testMode
-    });
-    if (error) throw error;
-    status.style.display = 'block';
-    status.textContent = 'Thank you. Your data has been recorded.';
-    btn.style.display = 'none';
-    setTimeout(() => showScreen('screen-result'), 1800);
-  } catch(err) {
+  const { error } = await sb.from('demographics').insert({
+    personality_type: window._resultType || '',
+    age_range: demoSelections.age,
+    gender: demoSelections.gender,
+    ethnicity: demoSelections.ethnicity,
+    test_mode: testMode
+  });
+  if (error) {
+    console.error('Demographics error:', error);
     btn.disabled = false;
     btn.innerHTML = 'Submit <span class="arrow">→</span>';
     status.style.display = 'block';
     status.style.color = '#e07070';
-    status.textContent = 'Something went wrong. Try again or skip.';
+    status.textContent = 'Something went wrong (' + (error.message || 'unknown error') + '). You can skip for now.';
+    document.getElementById('demo-skip-btn').style.display = 'inline-flex';
+    return;
   }
+  showResultsActual();
+}
+
+function skipDemographics() {
+  showResultsActual();
 }
 
 </script>
