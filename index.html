@@ -1012,8 +1012,9 @@ function shareResult() {
     const links = document.querySelector('.nav-links');
     const drawerLinks = document.querySelector('.nav-drawer-links');
     if (session) {
-      sb.from('profiles').select('avatar_url').eq('id', session.user.id).single().then(({data: prof}) => {
+      sb.from('profiles').select('avatar_url,username').eq('id', session.user.id).single().then(({data: prof}) => {
         const avatarSrc = (prof && prof.avatar_url) || 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 80 80%27%3E%3Ccircle cx=%2740%27 cy=%2740%27 r=%2740%27 fill=%27%23252a30%27/%3E%3Ccircle cx=%2740%27 cy=%2732%27 r=%2714%27 fill=%27%238a6d2e%27/%3E%3Cellipse cx=%2740%27 cy=%2772%27 rx=%2724%27 ry=%2716%27 fill=%27%238a6d2e%27/%3E%3C/svg%3E';
+        const navUsername = (prof && prof.username) || 'Profile';
         if (links) {
           const wrap = document.createElement('a');
           wrap.href = '/profile';
@@ -1023,7 +1024,7 @@ function shareResult() {
           img.style.cssText = 'width:30px;height:30px;border-radius:50%;object-fit:cover;border:1px solid var(--border);flex-shrink:0;';
           img.onerror = () => { img.src = 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 80 80%27%3E%3Ccircle cx=%2740%27 cy=%2740%27 r=%2740%27 fill=%27%23252a30%27/%3E%3Ccircle cx=%2740%27 cy=%2732%27 r=%2714%27 fill=%27%238a6d2e%27/%3E%3Cellipse cx=%2740%27 cy=%2772%27 rx=%2724%27 ry=%2716%27 fill=%27%238a6d2e%27/%3E%3C/svg%3E'; };
           const label = document.createElement('span');
-          label.textContent = 'Profile';
+          label.textContent = navUsername;
           label.style.cssText = 'background:var(--gold);color:#0c0e10;padding:7px 16px;border-radius:60px;font-weight:500;font-size:0.82rem;letter-spacing:0.04em;';
           wrap.appendChild(img);
           wrap.appendChild(label);
@@ -1031,7 +1032,7 @@ function shareResult() {
         }
         if (drawerLinks) {
           const a = document.createElement('a');
-          a.href = '/profile'; a.textContent = 'Profile';
+          a.href = '/profile'; a.textContent = navUsername;
           drawerLinks.appendChild(a);
         }
       });

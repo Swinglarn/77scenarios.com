@@ -335,7 +335,7 @@
         ${r.is_deleted
           ? '<div class="reply-deleted">This reply has been deleted.</div>'
           : `<div class="reply-body">${escHtml(r.body)}</div>`}
-        ${isOwn && !r.is_deleted ? `<div class="reply-actions"><button class="reply-action-btn" onclick="deleteReply('${r.id}')">Delete</button></div>` : ''}
+        ${isOwn && !r.is_deleted ? `<div class="reply-actions"><button class="reply-action-btn" onclick="editReply('${r.id}')">Edit</button><button class="reply-action-btn" onclick="deleteReply('${r.id}')">Delete</button></div>` : ''}
       `;
 
       card.querySelectorAll('.vote-btn').forEach(btn => {
@@ -411,6 +411,57 @@
     btn.disabled = false; btn.innerHTML = 'Post reply →';
     await loadReplies();
     document.getElementById('reply-list').lastElementChild?.scrollIntoView({ behavior:'smooth', block:'end' });
+  }
+
+  async function editReply(id) {
+    const card = document.getElementById(`reply-${id}`);
+    const bodyEl = card.querySelector('.reply-body');
+    if (!bodyEl) return;
+    const current = bodyEl.textContent;
+
+    // Swap body for inline editor
+    bodyEl.style.display = 'none';
+    const actionsEl = card.querySelector('.reply-actions');
+    if (actionsEl) actionsEl.style.display = 'none';
+
+    const editor = document.createElement('div');
+    editor.id = `edit-wrap-${id}`;
+    editor.innerHTML = `
+      <textarea class="form-textarea" id="edit-ta-${id}" style="margin-top:10px;min-height:80px;">${escHtml(current)}</textarea>
+      <div style="display:flex;gap:8px;margin-top:8px;justify-content:flex-end;">
+        <button class="btn-secondary" style="padding:6px 14px;font-size:0.78rem;" onclick="cancelEdit('${id}')">Cancel</button>
+        <button class="btn-primary" style="padding:6px 14px;font-size:0.78rem;" onclick="saveEdit('${id}')">Save</button>
+      </div>
+      <div id="edit-err-${id}" style="color:#e07070;font-size:0.78rem;margin-top:6px;display:none;"></div>`;
+    card.appendChild(editor);
+    document.getElementById(`edit-ta-${id}`).focus();
+  }
+
+  function cancelEdit(id) {
+    const card = document.getElementById(`reply-${id}`);
+    card.querySelector('.reply-body').style.display = '';
+    const actionsEl = card.querySelector('.reply-actions');
+    if (actionsEl) actionsEl.style.display = '';
+    document.getElementById(`edit-wrap-${id}`)?.remove();
+  }
+
+  async function saveEdit(id) {
+    const body = document.getElementById(`edit-ta-${id}`).value.trim();
+    const errEl = document.getElementById(`edit-err-${id}`);
+    if (!body) { errEl.textContent = 'Reply cannot be empty.'; errEl.style.display = 'block'; return; }
+    errEl.style.display = 'none';
+
+    const { error } = await sb.from('forum_replies')
+      .update({ body, updated_at: new Date().toISOString() })
+      .eq('id', id)
+      .eq('user_id', currentUser.id);
+
+    if (error) { errEl.textContent = 'Error: ' + errStr(error); errEl.style.display = 'block'; return; }
+
+    // Update displayed body and close editor
+    const card = document.getElementById(`reply-${id}`);
+    card.querySelector('.reply-body').textContent = body;
+    cancelEdit(id);
   }
 
   async function deleteReply(id) {
