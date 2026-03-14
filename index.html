@@ -1085,6 +1085,12 @@ document.addEventListener('click', e => {
   btn.classList.add('selected');
 });
 
+
+function errStr(e) {
+  if (!e) return 'Unknown error';
+  if (typeof e === 'string') return e;
+  return e.message || e.error_description || e.error || JSON.stringify(e, Object.getOwnPropertyNames(e)) || 'Unknown error';
+}
 async function submitDemographics() {
   const btn = document.getElementById('demo-submit-btn');
   const status = document.getElementById('demo-status');
@@ -1103,7 +1109,7 @@ async function submitDemographics() {
     btn.innerHTML = 'Submit <span class="arrow">→</span>';
     status.style.display = 'block';
     status.style.color = '#e07070';
-    status.textContent = 'Something went wrong (' + (error.message || 'unknown error') + '). You can skip for now.';
+    status.textContent = 'Error: ' + (errStr(error)) + '. You can skip.';
     document.getElementById('demo-skip-btn').style.display = 'inline-flex';
     return;
   }

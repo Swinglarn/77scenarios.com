@@ -251,14 +251,20 @@
     }
   });
 
-  async function loadThreads(reset = true) {
+  
+function errStr(e) {
+  if (!e) return 'Unknown error';
+  if (typeof e === 'string') return e;
+  return e.message || e.error_description || e.error || JSON.stringify(e, Object.getOwnPropertyNames(e)) || 'Unknown error';
+}
+async function loadThreads(reset = true) {
     if (reset) {
       page = 0;
       document.getElementById('thread-list').innerHTML = '<div class="loading-row"></div><div class="loading-row"></div><div class="loading-row"></div>';
     }
 
     let query = sb.from('forum_threads')
-      .select('id, title, category, reply_count, is_pinned, last_activity_at, created_at, user_id, profiles:profiles!user_id(username)')
+      .select('id, title, category, reply_count, is_pinned, last_activity_at, created_at, author_username')
       .order('is_pinned', { ascending: false })
       .order('last_activity_at', { ascending: false })
       .range(page * PAGE_SIZE, page * PAGE_SIZE + PAGE_SIZE);
@@ -285,7 +291,7 @@
       a.className = 'thread-item';
       a.href = `/forum-thread?id=${t.id}`;
       const ago = timeAgo(t.last_activity_at);
-      const username = t.profiles?.username || 'Anonymous';
+      const username = t.author_username || 'Anonymous';
       a.innerHTML = `
         <div class="thread-item-top">
           <div class="thread-title">${escHtml(t.title)}</div>
@@ -347,13 +353,17 @@
     btn.disabled = true;
     btn.textContent = 'Posting…';
 
+    // Get username from profile
+    const { data: profile } = await sb.from('profiles').select('username').eq('id', currentUser.id).single();
+    const username = profile?.username || 'Anonymous';
+
     const { data, error } = await sb.from('forum_threads').insert({
-      title, body, category: cat, user_id: currentUser.id
+      title, body, category: cat, user_id: currentUser.id, author_username: username
     }).select('id').single();
 
     if (error) {
       document.getElementById('thread-post-error').style.display = 'block';
-      document.getElementById('thread-post-error').textContent = 'Something went wrong. Try again.';
+      document.getElementById('thread-post-error').textContent = 'Error: ' + (errStr(error));
       btn.disabled = false;
       btn.innerHTML = 'Post thread →';
       return;
