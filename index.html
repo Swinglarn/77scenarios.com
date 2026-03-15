@@ -247,14 +247,6 @@
   .demo-opt.selected{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,0.08);}
   .demo-actions{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap;justify-content:center;}
 
-
-  .nav-user-wrap{position:relative;}
-  .nav-user-btn{display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;padding:0;}
-  #nav-user-dropdown .dd-link{display:block;padding:12px 18px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--border);transition:color 0.15s,background 0.15s;}
-  #nav-user-dropdown .dd-link:hover{color:var(--cream);background:rgba(255,255,255,0.04);}
-  #nav-user-dropdown .dd-signout{display:block;width:100%;text-align:left;padding:12px 18px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#e07070;background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.15s;}
-  #nav-user-dropdown .dd-signout:hover{background:rgba(224,112,112,0.08);}
-
 </style>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -326,17 +318,17 @@
       <div class="mode-title">Choose your<br><em>world.</em></div>
       <p class="mode-subtitle">The same questions can be asked in different worlds. Choose the one you want to be put in.</p>
       <div class="mode-cards">
-        <button class="mode-card" onclick="selectMode(this,'myth')">
+        <button class="mode-card" onclick="selectMode('myth')">
           <div class="mode-card-icon">⚔</div>
           <div class="mode-card-name">Mythical</div>
           <div class="mode-card-desc">Ancient roads. Prophecies. Kingdoms at the edge of ruin. You are always in the middle of something larger than yourself.</div>
         </button>
-        <button class="mode-card" onclick="selectMode(this,'normal')">
+        <button class="mode-card" onclick="selectMode('normal')">
           <div class="mode-card-icon">☕</div>
           <div class="mode-card-name">Everyday</div>
           <div class="mode-card-desc">Airports. Offices. Bad weeks and good news. The ordinary moments that turn out not to be ordinary at all.</div>
         </button>
-        <button class="mode-card mode-card-both" onclick="selectMode(this,'both')">
+        <button class="mode-card mode-card-both" onclick="selectMode('both')">
           <div class="mode-card-icon">◎</div>
           <div class="mode-card-name">Both Worlds</div>
           <div class="mode-card-desc">You do not want to choose. Some things are true in every world.</div>
@@ -664,11 +656,11 @@ function showScreen(id) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function selectMode(el, mode) {
+function selectMode(mode) {
   testMode = mode;
   // Highlight selected card
   document.querySelectorAll('.mode-card').forEach(c => c.classList.remove('selected'));
-  el.classList.add('selected');
+  event.currentTarget.classList.add('selected');
   // Short delay for visual feedback then start
   setTimeout(() => startTest(), 280);
 }
@@ -704,6 +696,8 @@ function startTest() {
   if(testMode==='myth'){ scores.N++; fnScores.Ni++; }
   else if(testMode==='normal'){ scores.S++; fnScores.Si++; }
   else { fnScores.Fe++; } // 'both'
+  // Cap to 77 questions — myth pool has 80, this trims the excess evenly
+  if(orderedQuestions.length > 77) orderedQuestions.length = 77;
   history = [];
   renderQuestion();
   showScreen('screen-question');
@@ -859,7 +853,6 @@ function showResultsActual() {
   if (deepLink) deepLink.href = `/type?t=${type}`;
   const fnLink = document.getElementById('functions-link');
   if (fnLink) fnLink.href = `/functions?t=${type}`;
-  if (window._sbSaveResult) window._sbSaveResult(type, scores);
   showScreen('screen-result');
   setTimeout(() => document.querySelectorAll('.spectrum-fill').forEach(el => el.style.width = el.dataset.target+'%'), 200);
   setTimeout(() => {
@@ -868,7 +861,9 @@ function showResultsActual() {
       document.getElementById('eb7').style.display = 'block';
     }
   }, 300);
+  if (window._sbSaveResult) window._sbSaveResult(type, scores);
 }
+
 function retakeTest() {
   history = [];
   document.getElementById('eb3').value = '';
@@ -1022,11 +1017,28 @@ function shareResult() {
     const links = document.querySelector('.nav-links');
     const drawerLinks = document.querySelector('.nav-drawer-links');
     if (session) {
-      sb.from('profiles').select('avatar_url,username').eq('id', session.user.id).single().then(({data: prof}) => {
-        const avatarSrc = (prof && prof.avatar_url) || '';
-        const navUsername = (prof && prof.username) || 'Profile';
-        if (links) { links.appendChild(buildNavUser(navUsername, avatarSrc)); }
-        if (drawerLinks) { const _da=document.createElement('a');_da.href='/profile';_da.textContent=navUsername;_da.style.color='var(--gold)';drawerLinks.appendChild(_da); }
+      sb.from('profiles').select('avatar_url').eq('id', session.user.id).single().then(({data: prof}) => {
+        const avatarSrc = (prof && prof.avatar_url) || 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 80 80%27%3E%3Ccircle cx=%2740%27 cy=%2740%27 r=%2740%27 fill=%27%23252a30%27/%3E%3Ccircle cx=%2740%27 cy=%2732%27 r=%2714%27 fill=%27%238a6d2e%27/%3E%3Cellipse cx=%2740%27 cy=%2772%27 rx=%2724%27 ry=%2716%27 fill=%27%238a6d2e%27/%3E%3C/svg%3E';
+        if (links) {
+          const wrap = document.createElement('a');
+          wrap.href = '/profile';
+          wrap.style.cssText = 'display:flex;align-items:center;gap:8px;text-decoration:none;';
+          const img = document.createElement('img');
+          img.src = avatarSrc;
+          img.style.cssText = 'width:30px;height:30px;border-radius:50%;object-fit:cover;border:1px solid var(--border);flex-shrink:0;';
+          img.onerror = () => { img.src = 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 80 80%27%3E%3Ccircle cx=%2740%27 cy=%2740%27 r=%2740%27 fill=%27%23252a30%27/%3E%3Ccircle cx=%2740%27 cy=%2732%27 r=%2714%27 fill=%27%238a6d2e%27/%3E%3Cellipse cx=%2740%27 cy=%2772%27 rx=%2724%27 ry=%2716%27 fill=%27%238a6d2e%27/%3E%3C/svg%3E'; };
+          const label = document.createElement('span');
+          label.textContent = 'Profile';
+          label.style.cssText = 'background:var(--gold);color:#0c0e10;padding:7px 16px;border-radius:60px;font-weight:500;font-size:0.82rem;letter-spacing:0.04em;';
+          wrap.appendChild(img);
+          wrap.appendChild(label);
+          links.appendChild(wrap);
+        }
+        if (drawerLinks) {
+          const a = document.createElement('a');
+          a.href = '/profile'; a.textContent = 'Profile';
+          drawerLinks.appendChild(a);
+        }
       });
     } else {
       if (links) {
@@ -1083,68 +1095,31 @@ function errStr(e) {
 }
 async function submitDemographics() {
   const btn = document.getElementById('demo-submit-btn');
-  const status = document.getElementById('demo-status');
   btn.disabled = true;
   btn.textContent = 'Saving…';
-  const { error } = await sb.from('demographics').insert({
-    personality_type: window._resultType || '',
-    age_range: demoSelections.age,
-    gender: demoSelections.gender,
-    ethnicity: demoSelections.ethnicity,
-    test_mode: testMode
-  });
-  if (error) {
-    console.error('Demographics error:', error);
-    btn.disabled = false;
-    btn.innerHTML = 'Submit <span class="arrow">→</span>';
-    status.style.display = 'block';
-    status.style.color = '#e07070';
-    status.textContent = 'Error: ' + (errStr(error)) + '. You can skip.';
-    document.getElementById('demo-skip-btn').style.display = 'inline-flex';
-    return;
-  }
+  // Fire-and-forget — demographics is optional, never block the user
+  fetch(SUPA_URL + '/rest/v1/demographics', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'apikey': SUPA_KEY,
+      'Authorization': 'Bearer ' + SUPA_KEY,
+      'Prefer': 'return=minimal'
+    },
+    body: JSON.stringify({
+      personality_type: window._resultType || '',
+      age_range: demoSelections.age,
+      gender: demoSelections.gender,
+      ethnicity: demoSelections.ethnicity,
+      test_mode: testMode
+    })
+  }).catch(() => {});
   showResultsActual();
 }
 
 function skipDemographics() {
   showResultsActual();
 }
-
-
-  function buildNavUser(username, avatarSrc) {
-    const FALLBACK = 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 80 80%27%3E%3Ccircle cx=%2740%27 cy=%2740%27 r=%2740%27 fill=%27%23252a30%27/%3E%3Ccircle cx=%2740%27 cy=%2732%27 r=%2714%27 fill=%27%238a6d2e%27/%3E%3Cellipse cx=%2740%27 cy=%2772%27 rx=%2724%27 ry=%2716%27 fill=%27%238a6d2e%27/%3E%3C/svg%3E';
-    const wrap = document.createElement('div');
-    wrap.className = 'nav-user-wrap';
-    wrap.style.cssText = 'position:relative;';
-    const btn = document.createElement('button');
-    btn.className = 'nav-user-btn';
-    btn.style.cssText = 'display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;padding:0;';
-    btn.onclick = (e) => { e.stopPropagation(); const d=document.getElementById('nav-user-dropdown'); if(d) d.style.display=d.style.display==='none'?'block':'none'; };
-    const img = document.createElement('img');
-    img.src = avatarSrc || FALLBACK;
-    img.style.cssText = 'width:30px;height:30px;border-radius:50%;object-fit:cover;border:1.5px solid var(--gold-dim);flex-shrink:0;';
-    img.onerror = () => { img.src = FALLBACK; };
-    const pill = document.createElement('span');
-    pill.textContent = username || 'Profile';
-    pill.style.cssText = 'background:var(--gold);color:#0c0e10;padding:7px 16px;border-radius:60px;font-weight:500;font-size:0.82rem;letter-spacing:0.04em;white-space:nowrap;';
-    btn.appendChild(img); btn.appendChild(pill); wrap.appendChild(btn);
-    const dd = document.createElement('div');
-    dd.id = 'nav-user-dropdown';
-    dd.style.cssText = 'display:none;position:absolute;right:0;top:calc(100% + 8px);background:#13161a;border:1px solid var(--border);border-radius:10px;min-width:160px;z-index:9000;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.5);';
-    dd.innerHTML = '<a href="/profile" class="dd-link">Profile</a><a href="/settings" class="dd-link">Settings</a><button class="dd-signout" onclick="navSignOut()">Sign out</button>';
-    wrap.appendChild(dd);
-    return wrap;
-  }
-  async function navSignOut() {
-    await sb.auth.signOut();
-    window.location.href = '/';
-  }
-  document.addEventListener('click', e => {
-    if (!e.target.closest('.nav-user-wrap')) {
-      const d = document.getElementById('nav-user-dropdown');
-      if (d) d.style.display = 'none';
-    }
-  });
 
 </script>
 </body>
