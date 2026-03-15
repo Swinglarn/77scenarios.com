@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>77Scenarios — Test de Personalidad Gratis Basado en Escenarios</title>
+<meta name="description" content="Un test de personalidad Myers-Briggs gratuito con 77 situaciones reales. En lugar de calificarte, tomas decisiones — y revelamos tu tipo de personalidad.">
+<meta name="keywords" content="test de personalidad, test MBTI en español, Myers-Briggs español, test de personalidad gratis, 16 tipos de personalidad, cuál es mi tipo de personalidad, test de personalidad por escenarios, introvertido extrovertido test, test de personalidad online">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://77scenarios.com/og-image.png">
+<meta property="og:title" content="77 Scenarios — Test de Personalidad Gratis Basado en Escenarios">
+<meta property="og:description" content="77 escenarios reales. Sin autoevaluación. Solo decisiones. Descubre tu tipo de personalidad Myers-Briggs de verdad.">
+<meta property="og:url" content="https://77scenarios.com/es/">
+<meta property="og:site_name" content="77 Scenarios">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="77 Scenarios — ¿Quién eres realmente?">
+<meta name="twitter:description" content="Un test de personalidad que te pone en situaciones reales en lugar de pedirte que te califiques. 77 escenarios. 16 tipos posibles.">
+<link rel="canonical" href="https://77scenarios.com/es/">
+<link rel="alternate" hreflang="en" href="https://77scenarios.com/">
+<link rel="alternate" hreflang="es" href="https://77scenarios.com/es/">
+<meta name="google-adsense-account" content="ca-pub-9210546368748348">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"77 Scenarios Personality Test","description":"Un test de personalidad Myers-Briggs basado en escenarios con 77 situaciones reales en lugar de preguntas de autoevaluación.","url":"https://77scenarios.com/es","applicationCategory":"LifestyleApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+  :root {
+    --bg: #0c0e10; --surface: #13161a; --surface2: #1a1e24;
+    --gold: #c9a84c; --gold-dim: #8a6d2e; --cream: #ede8df;
+    --muted: #b5ada6; --border: #252a30; --radius: 16px;
+  }
+  html, body { height: 100%; background: var(--bg); color: var(--cream); font-family: 'DM Sans', sans-serif; font-weight: 300; overflow-x: hidden; }
+  body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; opacity: 0.6; }
+  .glow { position: fixed; border-radius: 50%; filter: blur(120px); pointer-events: none; z-index: 0; }
+  .glow-1 { width: 600px; height: 600px; top: -200px; left: -150px; background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%); }
+  .glow-2 { width: 500px; height: 500px; bottom: -150px; right: -100px; background: radial-gradient(circle, rgba(120,180,160,0.05) 0%, transparent 70%); }
+  #app { position: relative; z-index: 1; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px 16px; }
+  .screen { display: none; width: 100%; max-width: 720px; animation: fadeUp 0.6s cubic-bezier(0.22,1,0.36,1) both; }
+  .screen.active { display: block; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* NAV */
+  .site-nav { position: sticky; top: 0; z-index: 200; background: rgba(12,14,16,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid #252a30; padding: 0 32px; display: flex; justify-content: space-between; align-items: center; height: 56px; }
+  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--cream);text-decoration:none;}
+  .nav-links { display: flex; gap: 32px; align-items: center; }
+  .nav-links a { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #b5ada6; text-decoration: none; white-space: nowrap; transition: color 0.2s; }
+  .nav-links a:hover { color: #ede8df; }
+  .nav-burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+  .nav-burger span { display: block; width: 22px; height: 1.5px; background: #b5ada6; transition: all 0.3s ease; transform-origin: center; }
+  .nav-burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); background: #c9a84c; }
+  .nav-burger.open span:nth-child(2) { opacity: 0; }
+  .nav-burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); background: #c9a84c; }
+
+  /* DRAWER */
+  .nav-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 300; opacity: 0; transition: opacity 0.3s ease; pointer-events: none; }
+  .nav-overlay.open { opacity: 1; pointer-events: auto; }
+  .nav-drawer { position: fixed; top: 0; right: -100%; width: min(320px, 85vw); height: 100%; background: #13161a; border-left: 1px solid #252a30; z-index: 400; transition: right 0.35s cubic-bezier(0.22,1,0.36,1), visibility 0s linear 0.35s; display: flex; flex-direction: column; padding: 0; pointer-events: none; visibility: hidden; }
+  .nav-drawer.open { right: 0; pointer-events: auto; visibility: visible; transition: right 0.35s cubic-bezier(0.22,1,0.36,1), visibility 0s linear 0s; }
+  .nav-drawer-header { display: flex; justify-content: space-between; align-items: center; padding: 0 24px; height: 56px; border-bottom: 1px solid #252a30; flex-shrink: 0; }
+  .nav-close { background: none; border: none; color: #b5ada6; font-size: 18px; cursor: pointer; padding: 4px; transition: color 0.2s; }
+  .nav-close:hover { color: #ede8df; }
+  .nav-drawer-links { display: flex; flex-direction: column; padding: 16px 0; }
+  .nav-drawer-links a { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #b5ada6; text-decoration: none; padding: 18px 24px; border-bottom: 1px solid #1e2227; transition: all 0.15s ease; }
+  .nav-drawer-links a:hover { color: #c9a84c; padding-left: 32px; }
+  .nav-drawer-links a:first-child { color: #c9a84c; }
+
+  /* SPLASH */
+  .splash-eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 28px; display: flex; align-items: center; gap: 12px; }
+  .splash-eyebrow::before, .splash-eyebrow::after { content: ''; display: block; height: 1px; width: 32px; background: var(--gold-dim); }
+  .splash-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(52px,9vw,88px); font-weight: 300; line-height: 0.92; letter-spacing: -0.02em; color: var(--cream); margin-bottom: 12px; }
+  .splash-title em { font-style: italic; color: var(--gold); }
+  .splash-subtitle { font-size: 15px; color: var(--muted); line-height: 1.7; max-width: 480px; margin: 24px 0 48px; }
+  .splash-meta { display: flex; gap: 32px; margin-bottom: 48px; }
+  .meta-item { text-align: left; }
+  .meta-num { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 300; color: var(--cream); line-height: 1; }
+  .meta-label { font-size: 11px; letter-spacing: 0.1em; color: var(--muted); text-transform: uppercase; margin-top: 4px; }
+  .divider { width: 1px; height: 48px; background: var(--border); align-self: center; }
+
+  /* BUTTONS */
+  .btn-primary { display: inline-flex; align-items: center; gap: 12px; background: var(--gold); color: #0c0e10; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; border: none; border-radius: 60px; padding: 16px 36px; cursor: pointer; transition: all 0.25s ease; }
+  .btn-primary:hover { background: var(--cream); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(201,168,76,0.25); }
+  .btn-primary .arrow { transition: transform 0.25s ease; }
+  .btn-primary:hover .arrow { transform: translateX(4px); }
+
+  /* BACK BUTTON */
+  .btn-back { display: inline-flex; align-items: center; gap: 6px; background: none; border: none; color: var(--muted); font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; padding: 4px 0; transition: color 0.2s ease; }
+  .btn-back:hover { color: var(--cream); }
+  .btn-back:disabled { opacity: 0; pointer-events: none; }
+
+  /* PROGRESS */
+  .progress-bar-wrap { position: relative; height: 2px; background: var(--border); border-radius: 2px; margin-bottom: 40px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; background: linear-gradient(90deg, var(--gold-dim), var(--gold)); border-radius: 2px; transition: width 0.5s cubic-bezier(0.22,1,0.36,1); }
+  .q-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 36px; }
+  .q-counter { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); }
+  .q-counter span { color: var(--gold); font-weight: 500; }
+  .q-dimension { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; background: var(--surface2); border: 1px solid var(--border); padding: 5px 12px; border-radius: 20px; color: var(--muted); }
+
+  /* SCENARIO */
+  .scenario-scene { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 22px; color: var(--gold); letter-spacing: 0.05em; margin-bottom: 14px; }
+  .scenario-text { font-family: 'Cormorant Garamond', serif; font-size: clamp(20px,3.5vw,29px); font-weight: 300; line-height: 1.5; color: var(--cream); margin-bottom: 40px; }
+
+  /* ANSWERS */
+  .answers { display: flex; flex-direction: column; gap: 14px; }
+  .answer-card { display: flex; align-items: flex-start; gap: 20px; padding: 20px 22px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); cursor: pointer; transition: all 0.2s ease; text-align: left; width: 100%; position: relative; overflow: hidden; }
+  .answer-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(201,168,76,0.06), transparent); opacity: 0; transition: opacity 0.2s ease; }
+  .answer-card:hover { border-color: var(--gold-dim); transform: translateX(6px); box-shadow: -4px 0 20px rgba(201,168,76,0.08); }
+  .answer-card:hover::before { opacity: 1; }
+  .answer-letter { flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; color: var(--muted); transition: all 0.2s ease; margin-top: 2px; }
+  .answer-card:hover .answer-letter { border-color: var(--gold); color: var(--gold); background: rgba(201,168,76,0.08); }
+  .answer-text { font-size: 15px; line-height: 1.65; color: var(--cream); font-weight: 300; }
+
+  /* RESULTS */
+  .result-eyebrow { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+  .result-eyebrow::before { content: ''; display: block; height: 1px; width: 24px; background: var(--gold-dim); }
+  .type-badge { display: inline-flex; gap: 0; margin-bottom: 28px; }
+  .type-letter { font-family: 'Cormorant Garamond', serif; font-size: clamp(60px,12vw,100px); font-weight: 300; line-height: 1; color: var(--cream); letter-spacing: -0.04em; }
+  .type-letter.highlight { color: var(--gold); }
+  .type-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(26px,4.5vw,40px); font-weight: 300; font-style: italic; color: var(--cream); margin-bottom: 6px; }
+  .type-tagline { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
+  .type-description { font-size: 15px; line-height: 1.85; color: #a09890; max-width: 560px; margin-bottom: 36px; }
+  .traits-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
+  .trait { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 7px 14px; border-radius: 30px; border: 1px solid var(--border); color: var(--muted); background: var(--surface); }
+  .spectrum-section { margin-bottom: 44px; }
+  .spectrum-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
+  .spectrum-row { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+  .spectrum-dim { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 400; width: 28px; text-align: right; color: var(--muted); }
+  .spectrum-dim.active { color: var(--cream); }
+  .spectrum-track { flex: 1; height: 4px; background: var(--surface2); border-radius: 4px; overflow: hidden; }
+  .spectrum-fill { height: 100%; background: linear-gradient(90deg, var(--gold-dim), var(--gold)); border-radius: 4px; transition: width 1s cubic-bezier(0.22,1,0.36,1) 0.3s; }
+  .spectrum-info { display: flex; justify-content: space-between; margin-bottom: 6px; }
+  .spectrum-name { font-size: 11px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
+  .spectrum-pct { font-size: 12px; color: var(--gold); font-weight: 500; min-width: 36px; text-align: right; }
+  .sep { width: 100%; height: 1px; background: var(--border); margin: 36px 0; }
+  .result-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--muted); font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid var(--border); border-radius: 60px; padding: 14px 28px; cursor: pointer; transition: all 0.2s ease; }
+  .btn-secondary:hover { border-color: var(--muted); color: var(--cream); }
+  @media (max-width: 480px) { .splash-meta { gap: 20px; } .answer-card { padding: 16px 18px; } .result-actions { flex-direction: column; } .btn-primary, .btn-secondary { width: 100%; justify-content: center; } }
+
+  /* ── TABLET (max 768px) ── */
+  @media (max-width: 768px) {
+    .site-nav { padding: 0 20px; }
+    .nav-links { gap: 20px; }
+    .nav-links a { font-size: 12px; }
+    #app { padding: 20px 16px; align-items: flex-start; padding-top: 32px; }
+    .screen { max-width: 100%; }
+    .splash-eyebrow { margin-bottom: 20px; }
+    .splash-subtitle { font-size: 14px; margin: 20px 0 36px; }
+    .splash-meta { gap: 24px; margin-bottom: 36px; }
+    .meta-num { font-size: 30px; }
+    .progress-bar-wrap { margin-bottom: 28px; }
+    .q-header { margin-bottom: 24px; }
+    .scenario-scene { font-size: 18px; margin-bottom: 10px; }
+    .scenario-text { font-size: clamp(18px, 4vw, 24px); margin-bottom: 28px; }
+    .answer-card { gap: 16px; padding: 18px 20px; }
+    .answer-text { font-size: 14px; }
+    .type-description { font-size: 14px; }
+    .result-actions { gap: 12px; flex-wrap: wrap; }
+    .btn-secondary { padding: 12px 20px; font-size: 11px; }
+  }
+
+  /* ── MOBILE (max 480px) ── */
+  @media (max-width: 480px) {
+    .site-nav { padding: 0 16px; height: 52px; }
+    .nav-links { display: none; }
+    .nav-burger { display: flex; }
+    .nav-overlay { display: block; pointer-events: none; }
+
+    #app { padding: 16px 14px; padding-top: 24px; }
+    .splash-eyebrow { margin-bottom: 16px; font-size: 9px; }
+    .splash-title { line-height: 0.9; margin-bottom: 8px; }
+    .splash-subtitle { font-size: 14px; line-height: 1.65; margin: 16px 0 28px; }
+    .splash-meta { gap: 16px; margin-bottom: 28px; }
+    .meta-num { font-size: 28px; }
+    .meta-label { font-size: 10px; }
+    .divider { height: 36px; }
+    .btn-primary { width: 100%; justify-content: center; padding: 16px; }
+    .progress-bar-wrap { margin-bottom: 24px; }
+    .q-header { margin-bottom: 20px; }
+    .q-counter { font-size: 10px; }
+    .scenario-scene { font-size: 17px; margin-bottom: 8px; }
+    .scenario-text { font-size: clamp(17px, 5vw, 22px); line-height: 1.45; margin-bottom: 22px; }
+    .answers { gap: 10px; }
+    .answer-card { gap: 14px; padding: 14px 16px; border-radius: 12px; }
+    .answer-letter { width: 26px; height: 26px; font-size: 10px; }
+    .answer-text { font-size: 13px; line-height: 1.6; }
+    .result-eyebrow { margin-bottom: 16px; }
+    .type-badge { margin-bottom: 16px; }
+    .type-tagline { font-size: 11px; margin-bottom: 16px; }
+    .type-description { font-size: 14px; line-height: 1.75; margin-bottom: 24px; }
+    .traits-grid { gap: 8px; margin-bottom: 28px; }
+    .trait { font-size: 10px; padding: 6px 12px; }
+    .spectrum-section { margin-bottom: 32px; }
+    .sep { margin: 24px 0; }
+    .result-actions { flex-direction: column; gap: 10px; }
+    .btn-primary, .btn-secondary, .btn-save { width: 100%; justify-content: center; }
+    .btn-secondary { padding: 14px; }
+    #eb1 { padding: 22px 18px; margin-top: 28px; }
+  }
+
+  /* EMAIL SAVE */
+  .result-save-box { margin-top: 40px; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
+  .save-box-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .save-box-sub { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 24px; }
+  .save-email-input { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--cream); outline: none; transition: border-color 0.2s; margin-bottom: 16px; }
+  .save-email-input:focus { border-color: var(--gold-dim); }
+  .save-email-input::placeholder { color: var(--muted); }
+  .save-agree-row { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 20px; }
+  .save-agree-check { flex-shrink: 0; width: 16px; height: 16px; margin-top: 2px; accent-color: var(--gold); cursor: pointer; }
+  .save-agree-text { font-size: 12px; color: var(--muted); line-height: 1.6; cursor: pointer; }
+  .save-agree-text a { color: var(--gold); text-decoration: none; }
+  .btn-save { background: var(--gold); color: #0c0e10; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; border: none; border-radius: 60px; padding: 14px 32px; cursor: pointer; transition: background 0.2s; }
+  .btn-save:hover { background: var(--cream); }
+  .btn-save:disabled { opacity: 0.5; cursor: not-allowed; }
+  .save-done-icon { font-size: 28px; color: var(--gold); margin-bottom: 10px; }
+  .save-done-text { font-size: 14px; color: var(--cream); }
+  .save-box-err { font-size: 13px; color: #e07070; margin-top: 12px; }
+
+  /* Mode selection screen */
+  .mode-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:40px 24px;text-align:center;}
+  .mode-eyebrow{font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:16px;}
+  .mode-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,6vw,3.8rem);font-weight:600;color:var(--cream);line-height:1.08;margin-bottom:16px;}
+  .mode-title em{color:var(--gold);font-style:italic;}
+  .mode-subtitle{color:var(--muted);font-size:0.95rem;max-width:480px;line-height:1.7;margin-bottom:48px;}
+  .mode-cards{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;max-width:860px;width:100%;}
+  .mode-card{background:#13161a;border:1px solid var(--border);border-radius:12px;padding:32px 24px;flex:1;min-width:220px;max-width:260px;cursor:pointer;text-align:center;transition:border-color 0.2s,background 0.2s,transform 0.15s;display:flex;flex-direction:column;align-items:center;gap:12px;}
+  .mode-card:hover{border-color:var(--gold-dim);background:#161a1f;transform:translateY(-2px);}
+  .mode-card.selected{border-color:var(--gold);background:#1a1c14;}
+  .mode-card-both{border-style:dashed;}
+  .mode-card-icon{font-size:1.8rem;line-height:1;}
+  .mode-card-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--cream);}
+  .mode-card-desc{font-size:0.82rem;color:var(--muted);line-height:1.6;}
+  @media(max-width:600px){.mode-cards{flex-direction:column;align-items:center;}.mode-card{max-width:100%;width:100%;}}
+
+
+  /* Demographics screen */
+  .demo-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:48px 24px;text-align:center;}
+  .demo-eyebrow{font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:14px;}
+  .demo-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,3.4rem);font-weight:600;color:var(--cream);line-height:1.1;margin-bottom:14px;}
+  .demo-title em{color:var(--gold);font-style:italic;}
+  .demo-subtitle{color:var(--muted);font-size:0.9rem;max-width:480px;line-height:1.7;margin-bottom:40px;}
+  .demo-fields{width:100%;max-width:640px;display:flex;flex-direction:column;gap:28px;text-align:left;}
+  .demo-field{display:flex;flex-direction:column;gap:10px;}
+  .demo-label{font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);}
+  .demo-options{display:flex;flex-wrap:wrap;gap:8px;}
+  .demo-opt{background:transparent;border:1px solid var(--border);border-radius:6px;padding:8px 16px;font-size:0.85rem;color:var(--muted);cursor:pointer;transition:border-color 0.15s,color 0.15s,background 0.15s;font-family:'DM Sans',sans-serif;}
+  .demo-opt:hover{border-color:var(--gold-dim);color:var(--cream);}
+  .demo-opt.selected{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,0.08);}
+  .demo-actions{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap;justify-content:center;}
+
+</style>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<style>
+#t-overlay{position:fixed;inset:0;z-index:9999;pointer-events:none;background:#0c0e10;opacity:1;}
+</style>
+<body>
+<h1 class="sr-only">77 Scenarios — Test de Personalidad Gratis Basado en Escenarios</h1>
+<div id="t-overlay"></div>
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+<nav class="site-nav">
+  <a href="/es/" class="nav-logo">77scenarios.com</a>
+  <div class="nav-links">
+    <a href="/es/types">16 Tipos</a>
+    <a href="/es/letters">8 Letras</a>
+    <a href="/es/cognitive-functions">Funciones</a>
+    <a href="/es/compatibility">Compatibilidad</a>
+    <a href="/es/archive">Archivo</a>
+    <a href="/es/forum">Foro</a>
+    <a href="/es/about">Acerca de</a>
+  </div>
+  <button class="nav-burger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU OVERLAY -->
+<div class="nav-overlay" id="nav-overlay" onclick="toggleMenu()"></div>
+<div class="nav-drawer" id="nav-drawer">
+  <div class="nav-drawer-header">
+    <span style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:#ede8df;">77scenarios.com</span>
+    <button class="nav-close" onclick="toggleMenu()">✕</button>
+  </div>
+  <nav class="nav-drawer-links">
+    <a href="/es/">Hacer el Test</a>
+    <a href="/es/types">16 Tipos</a>
+    <a href="/es/letters">8 Letras</a>
+    <a href="/es/cognitive-functions">Funciones</a>
+    <a href="/es/compatibility">Compatibilidad</a>
+    <a href="/es/archive">Archivo</a>
+    <a href="/es/forum">Foro</a>
+    <a href="/es/about">Acerca de</a>
+  </nav>
+</div>
+<div id="app">
+
+  <!-- SPLASH -->
+  <div class="screen active" id="screen-splash">
+    <div class="splash-eyebrow">77 Escenarios</div>
+    <div class="splash-title">No quien crees<br>que eres. Quien <em>realmente</em> eres.</div>
+    <p class="splash-subtitle">La mayoría de los tests de personalidad te piden que te califiques en una escala del uno al cinco. Pero las personas son notoriamente malas en conocerse a sí mismas.<br><br>77 Escenarios es un test Myers-Briggs basado en escenarios. Te sitúa en situaciones reales y observa lo que eliges — sin autoevaluación, sin preguntas tendenciosas. Solo decisiones.</p>
+    <div class="splash-meta">
+      <div class="meta-item"><div class="meta-num">77</div><div class="meta-label">Escenarios</div></div>
+      <div class="divider"></div>
+      <div class="meta-item"><div class="meta-num">~20</div><div class="meta-label">Minutos</div></div>
+      <div class="divider"></div>
+      <div class="meta-item"><div class="meta-num">16</div><div class="meta-label">Tipos posibles</div></div>
+    </div>
+    <button class="btn-primary" onclick="showScreen('screen-mode')">Comenzar <span class="arrow">→</span></button>
+  </div>
+
+
+  <!-- MODE SELECTION SCREEN -->
+  <div class="screen" id="screen-mode">
+    <div class="mode-wrap">
+      <div class="mode-eyebrow">Antes de empezar</div>
+      <div class="mode-title">Elige tu<br><em>mundo.</em></div>
+      <p class="mode-subtitle">Las mismas preguntas pueden hacerse en mundos diferentes. Elige en cuál quieres estar.</p>
+      <div class="mode-cards">
+        <button class="mode-card" onclick="selectMode('myth')">
+          <div class="mode-card-icon">⚔</div>
+          <div class="mode-card-name">Mítico</div>
+          <div class="mode-card-desc">Caminos antiguos. Profecías. Reinos al borde de la ruina. Siempre estás en medio de algo más grande que tú.</div>
+        </button>
+        <button class="mode-card" onclick="selectMode('normal')">
+          <div class="mode-card-icon">☕</div>
+          <div class="mode-card-name">Cotidiano</div>
+          <div class="mode-card-desc">Aeropuertos. Oficinas. Malas semanas y buenas noticias. Los momentos ordinarios que resultan no serlo en absoluto.</div>
+        </button>
+        <button class="mode-card mode-card-both" onclick="selectMode('both')">
+          <div class="mode-card-icon">◎</div>
+          <div class="mode-card-name">Ambos Mundos</div>
+          <div class="mode-card-desc">No quieres elegir. Algunas cosas son ciertas en cualquier mundo.</div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- DEMOGRAPHICS SCREEN -->
+  <div class="screen" id="screen-demo">
+    <div class="demo-wrap">
+      <div class="demo-eyebrow">Anónimo · Opcional</div>
+      <div class="demo-title">Ayúdanos a entender<br>los <em>datos.</em></div>
+      <p class="demo-subtitle">Publicamos estadísticas agregadas sobre tipos de personalidad en diferentes grupos. Tus respuestas son anónimas y nunca están vinculadas a tu identidad.</p>
+
+      <div class="demo-fields">
+
+        <div class="demo-field">
+          <label class="demo-label">Edad</label>
+          <div class="demo-options" id="opt-age">
+            <button class="demo-opt" data-group="age" data-val="under_18">Menor de 18</button>
+            <button class="demo-opt" data-group="age" data-val="18_24">18 – 24</button>
+            <button class="demo-opt" data-group="age" data-val="25_34">25 – 34</button>
+            <button class="demo-opt" data-group="age" data-val="35_44">35 – 44</button>
+            <button class="demo-opt" data-group="age" data-val="45_54">45 – 54</button>
+            <button class="demo-opt" data-group="age" data-val="55_plus">55+</button>
+          </div>
+        </div>
+
+        <div class="demo-field">
+          <label class="demo-label">Género</label>
+          <div class="demo-options" id="opt-gender">
+            <button class="demo-opt" data-group="gender" data-val="male">Masculino</button>
+            <button class="demo-opt" data-group="gender" data-val="female">Femenino</button>
+          </div>
+        </div>
+
+        <div class="demo-field">
+          <label class="demo-label">Etnicidad</label>
+          <div class="demo-options" id="opt-ethnicity">
+            <button class="demo-opt" data-group="ethnicity" data-val="northern_european">Norte de Europa</button>
+            <button class="demo-opt" data-group="ethnicity" data-val="western_european">Europa Occidental</button>
+            <button class="demo-opt" data-group="ethnicity" data-val="eastern_european">Europa del Este</button>
+            <button class="demo-opt" data-group="ethnicity" data-val="southern_european">Europa del Sur</button>
+            <button class="demo-opt" data-group="ethnicity" data-val="anglo_saxon">Anglosajón</button>
+            <button class="demo-opt" data-group="ethnicity" data-val="middle_eastern">Oriente Medio</button>
+            <button class="demo-opt" data-group="ethnicity" data-val="sub_saharan_african">África Subsahariana</button>
+            <button class="demo-opt" data-group="ethnicity" data-val="east_asian">Asia Oriental</button>
+            <button class="demo-opt" data-group="ethnicity" data-val="south_asian">Asia del Sur</button>
+            <button class="demo-opt" data-group="ethnicity" data-val="indian">Indio/a</button>
+            <button class="demo-opt" data-group="ethnicity" data-val="north_american">Norteamérica</button>
+            <button class="demo-opt" data-group="ethnicity" data-val="south_american">Sudamérica</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="demo-actions">
+        <button class="btn-primary" id="demo-submit-btn" onclick="submitDemographics()">Ver mis resultados <span class="arrow">→</span></button>
+        <button class="btn-secondary" id="demo-skip-btn" onclick="skipDemographics()" style="display:none;">Omitir</button>
+      </div>
+      <div id="demo-status" style="display:none;text-align:center;color:var(--gold);font-size:0.9rem;margin-top:16px;"></div>
+    </div>
+  </div>
+
+  <!-- QUESTION -->
+  <div class="screen" id="screen-question">
+    <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progress-fill" style="width:0%"></div></div>
+    <div class="q-header">
+      <button class="btn-back" id="btn-back" onclick="goBack()" aria-label="Go back">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back
+      </button>
+      <div class="q-counter">Pregunta <span id="q-num">1</span> de 77</div>
+    </div>
+    <div class="scenario-scene" id="q-scene"></div>
+    <div class="scenario-text" id="q-text"></div>
+    <div class="answers" id="answers-container"></div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="screen" id="screen-result">
+    <div class="result-eyebrow">Tu tipo</div>
+    <div class="type-badge" id="type-badge"></div>
+    <div class="type-name" id="type-name"></div>
+    <div class="type-tagline" id="type-tagline"></div>
+    <p class="type-description" id="type-description"></p>
+    <div class="traits-grid" id="traits-grid"></div>
+    <div class="sep"></div>
+    <div class="spectrum-section">
+      <div class="spectrum-label">Tu espectro</div>
+      <div id="spectrum-bars"></div>
+    </div>
+    <div class="result-actions">
+      <button class="btn-primary" onclick="retakeTest()">Repetir el test <span class="arrow">→</span></button>
+      <button class="btn-secondary" onclick="shareResult()">Compartir resultado</button>
+      <a id="type-deep-link" href="/types" class="btn-secondary" style="text-decoration:none;">Explorar tipo →</a>
+      <a id="functions-link" href="/functions" class="btn-secondary" style="text-decoration:none;">Explorar funciones →</a>
+    </div>
+
+    <div id="eb1" style="margin-top:40px;background:#13161a;border:1px solid #252a30;border-radius:16px;padding:32px;">
+      <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#c9a84c;margin-bottom:10px;">Guardar tu resultado</div>
+      <p style="font-size:14px;color:#b5ada6;line-height:1.6;margin-bottom:8px;">Introduce tu email para guardar tu tipo y consultarlo cuando quieras.</p>
+      <p style="font-size:12px;color:#b5ada6;line-height:1.6;margin-bottom:20px;">¿Usas un bloqueador de anuncios? Puede que necesites desactivarlo en esta página para ver el formulario completo.</p>
+      <div id="eb2">
+        <input type="email" id="eb3" style="width:100%;background:#0c0e10;border:1px solid #252a30;border-radius:10px;padding:14px 18px;font-family:'DM Sans',sans-serif;font-size:14px;color:#ede8df;outline:none;margin-bottom:16px;" placeholder="your@email.com" autocomplete="email">
+        <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:20px;">
+          <input type="checkbox" id="eb4" style="flex-shrink:0;width:16px;height:16px;margin-top:2px;accent-color:#c9a84c;cursor:pointer;">
+          <label for="eb4" style="font-size:12px;color:#b5ada6;line-height:1.6;cursor:pointer;">Confirmo que mi email y resultado pueden almacenarse. Para solicitar su eliminación contacta&#58; <span style="color:#c9a84c;">noreply&#64;77scenarios&#46;com</span></label>
+        </div>
+        <button class="btn-save" onclick="saveResult()">Guardar resultado</button>
+      </div>
+      <div id="eb5" style="display:none;">
+        <div style="font-size:28px;color:#c9a84c;margin-bottom:10px;">✓</div>
+        <div style="font-size:14px;color:#ede8df;">Guardado. Tu resultado ha sido almacenado.</div>
+      </div>
+      <div id="eb6" style="display:none;font-size:13px;color:#e07070;margin-top:12px;"></div>
+    </div>
+  </div>
+
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const questionsNormal = [
+  {dim:'EI',scene:'El Regreso a Casa',fn:'Se/Ni',text:"Has estado fuera dos semanas. Viaje de trabajo, vuelos largos, mal café de hotel. Estás de pie frente a la puerta de casa con tus maletas. Las luces están encendidas dentro.",a:"No te detienes. Abres la puerta y llamas a quien esté dentro.",b:"Dejas las maletas un momento. Solo un instante antes de que todo vuelva a empezar."},
+  {dim:'EI',scene:'La Última Noche',fn:'Fe/Fi',text:"Es la última noche antes de que tu grupo cercano de amigos se separe. Nuevas ciudades, nuevos trabajos. Estáis todos sentados juntos y esto no volverá a pasar.",a:"Te mueves por la mesa. Hay algo que necesitas decirle a cada persona antes de que acabe la noche.",b:"Te quedas donde estás. Hay una persona aquí que necesita escuchar algo tuyo, y ya estás sentado/a a su lado."},
+  {dim:'EI',scene:'La Fiesta del Trabajo',fn:'Se/Ni',text:"Tu empresa organiza una gran fiesta de fin de año. Barra libre, música alta, gente que medio conoces por todas partes. Cruzas la puerta.",a:"Entras directamente. Encuentras una copa, encuentras a alguien con quien hablar. Llevabas tiempo esperando esto.",b:"Coges una copa y encuentras un buen sitio. Te gusta saber quién está en la sala antes de empezar."},
+  {dim:'EI',scene:'El Trayecto',fn:'Se/Si',text:"Llevas dos años haciendo este trayecto. Misma carretera, misma hora. Tienes los auriculares puestos y cuarenta minutos por delante.",a:"Llamas a alguien. Tienes cuarenta minutos y nada que hacer con ellos.",b:"Pones algo y te vas a tu propio mundo. Este es uno de los pocos momentos de silencio real que tienes."},
+  {dim:'EI',scene:'La Sorpresa',fn:'Se/Ti',text:"Llegas a casa y está llena de gente. Amigos, algunos que no habías visto en años. Alguien los reunió sin decírtelo.",a:"Dejas la bolsa y preguntas quién quiere una copa.",b:"Preguntas qué está pasando antes de quitarte el abrigo."},
+  {dim:'EI',scene:'El Proyecto Largo',fn:'Fe/Fi',text:"Llevas tres meses en un proyecto de trabajo largo y difícil. Las horas son largas y el final aún está lejos.",a:"Lo que te mantiene en marcha es el equipo. Verlos cada día, el chat del grupo, la frustración compartida. Funcionas con otras personas.",b:"Lo que te mantiene es algo dentro de ti que no tiene nada que ver con nadie más. Una razón que es solo tuya."},
+  {dim:'EI',scene:'El Ascenso',fn:'Se/Ni',text:"Acabas de conseguir el ascenso. Tu jefe lo anuncia y la sala aplaude. Alguien te arrastra inmediatamente hacia un grupo de compañeros que quieren celebrarlo ahora mismo, en la oficina, a lo grande.",a:"Vas con ellos. Este es exactamente el tipo de momento en el que quieres estar en el centro.",b:"Sonríes y te unes brevemente, luego encuentras una excusa para alejarte. Necesitas diez minutos a solas con esto antes de que se convierta en fiesta."},
+  {dim:'EI',scene:'El Vecino',fn:'Fe/Te',text:"Te encuentras con tu vecino en el aparcamiento. Llevas una bolsa de la compra y tienes adónde ir. Se para y dice hola.",a:"Te paras de verdad. ¿Cuánto tiempo ha pasado? Tienes unos minutos.",b:"Dices hola, preguntas brevemente cómo está y sigues. Ya os pondréis al día en otro momento."},
+  {dim:'EI',scene:'El Aeropuerto',fn:'Fe/Fi',text:"Estás llevando a alguien cercano al aeropuerto. Se va a vivir al extranjero. Tienes treinta minutos en la zona de llegadas.",a:"Habláis. Hay tanto que nunca se dijo y esta es la última oportunidad real.",b:"Te encuentras callado/a. El tiempo que os queda parece más importante que llenarlo."},
+  {dim:'EI',scene:'La Oferta',fn:'Se/Fi',text:"Alguien te ofrece una entrada para un gran evento esta noche. A última hora. No estaba en tus planes pero es una buena oferta.",a:"Sientes el impulso antes de sentir la duda. Ya estás casi diciendo que sí.",b:"No sientes nada. Esto no era lo que buscabas."},
+  {dim:'EI',scene:'La Nueva Ciudad',fn:'Se/Si',text:"Llevas tres días en la nueva ciudad y un compañero te invita a un gran evento social esta noche. No conoces a nadie allí. Aún estás orientándote.",a:"Vas. Conocer gente es exactamente cómo te orientas.",b:"Pasas. Aún estás asentándote y necesitas tu propio espacio antes de llenarlo con otras personas."},
+  {dim:'EI',scene:'El Reencuentro',fn:'Si/Fi',text:"Un viejo amigo pregunta cómo has estado. Ha pasado mucho tiempo. Tienes mucho que decir.",a:"Empiezas desde el principio y no te dejas nada.",b:"Le das la versión corta. Algo cierto y ligero. Guardarás la historia real para cuando sea el momento adecuado."},
+  {dim:'EI',scene:'La Buena Noticia',fn:'Fe/Ni',text:"Recibes una llamada con noticias que cambian tu vida. Buenas noticias. Las que llevabas esperando.",a:"Cuelgas y llamas a alguien de inmediato. Necesitas contárselo a alguien ahora mismo.",b:"Cuelgas y te sientas. Necesitas estar solo/a con esto antes de poder decir una palabra."},
+  {dim:'EI',scene:'La Oferta en el Extranjero',fn:'Si/Ne',text:"La oferta de trabajo en el extranjero tiene una fecha límite a medianoche. Has estado pensando en ello todo el día. Tienes el teléfono en la mano. Las personas más afectadas están a una llamada.",a:"Les llamas. No puedes decidir esto sin las personas a las que afecta.",b:"Dejas el teléfono y tomas la decisión solo/a. Esta es tuya."},
+  {dim:'EI',scene:'El Día Difícil',fn:'Fe/Fi',text:"Alguien cercano a ti ha tenido un día muy malo. Están sentados en el sofá y no han dicho mucho.",a:"Te acercas. Encuentras pequeñas cosas que hacer. Mantienes el espacio entre vosotros cálido.",b:"Te sientas cerca y te quedas. No buscas nada. Simplemente estás ahí."},
+  {dim:'EI',scene:'El Primer Plano',fn:'Se/Fi',text:"Tu nombre se llama frente a toda la empresa. Todos se giran. Tu jefe te hace señas para que subas y digas unas palabras.",a:"Subes. Tienes algo que decir y este es el momento.",b:"Te levantas, les das las gracias desde donde estás y vuelves a sentarte. No necesitas el frente de la sala."},
+  {dim:'EI',scene:'El Equipo',fn:'Fe/Ti',text:"El proyecto está en su recta final y tu parte ha terminado antes de lo previsto. Puedes incorporarte donde el equipo está luchando, en plena faena, o usar el tiempo para profundizar en tu propio trabajo.",a:"Te incorporas. Haces tu mejor trabajo cuando estás en medio de las cosas.",b:"Profundizas en tu propio trabajo. Es donde más contribuirás realmente."},
+  {dim:'EI',scene:'La Semana Mala',fn:'Fe/Si',text:"Ha sido una semana dura. Estás agotado/a. Viernes por la tarde, sin planes.",a:"Le escribes a alguien. Calidez, ruido y un amigo que escuche. Eso es lo que necesitas.",b:"Encuentras un sitio tranquilo en casa. El silencio es lo único que ayudará de verdad esta noche."},
+  {dim:'EI',scene:'La Barbacoa',fn:'Se/Ni',text:"Es una tarde de verano y los vecinos están haciendo una barbacoa. Hay ruido, calor y el fuego está encendido.",a:"Arrastras una silla y te metes de lleno. La comida, las voces y el calor de otras personas es exactamente lo que quieres.",b:"Te vas al borde del jardín. El fuego es suficiente. Observas la tarde y estás bastante bien desde fuera."},
+  {dim:'EI',scene:'El Mensajero',fn:'Fe/Si',text:"Un amigo en común ha tenido una muerte en la familia. No le has visto en más de un año. Podrías mandar un mensaje. O podrías ir.",a:"Vas. Las noticias así no deberían llegar sin una cara detrás.",b:"Mandas un mensaje. Lo importante es que sepa. La distancia no es el problema."},
+  {dim:'SN',scene:'La Nueva Herramienta',fn:'Se/Ni',text:"Tu empresa está adoptando un nuevo sistema y te han pedido que lo evalúes antes de implementarlo. Tienes una tarde con él.",a:"Lo pruebas. Velocidad, puntos de fallo, qué se rompe bajo presión. Quieres saber con qué estás trabajando realmente.",b:"Piensas en lo que cambia. La herramienta funciona bien. La pregunta es qué hace con la forma en que trabaja la gente."},
+  {dim:'SN',scene:'El Mapa',fn:'Si/Ne',text:"Estás planeando un viaje y has extendido un mapa sobre la mesa.",a:"Estudias las rutas y distancias. Quieres entender cómo ir realmente de un lugar a otro.",b:"Vas directo a los bordes. Los lugares a los que los caminos aún no llegan."},
+  {dim:'SN',scene:'La Previsión',fn:'Ti/Ni',text:"Un analista presenta una predicción segura sobre hacia dónde va el mercado. Los datos son sólidos. Tu instinto dice que algo en el modelo está mal antes de que puedas decir qué. El equipo está listo para actuar.",a:"Pides los supuestos antes de que nadie se mueva. Un modelo solo vale lo que tiene por debajo.",b:"Comunicas tu lectura al grupo. Aún no puedes señalar el problema exacto, pero te has equivocado antes al ignorar este presentimiento."},
+  {dim:'SN',scene:'La Calle Antigua',fn:'Si/Ni',text:"Estás caminando por un barrio que antes estaba lleno de vida. La mayoría de las tiendas están cerradas. Un promotor te pide tu opinión sobre si puede recuperarse.",a:"Miras lo que queda. Los cimientos del lugar, qué negocios sobrevivieron, cuál es el tráfico real de personas.",b:"Le dices que lo físico tiene arreglo. La pregunta es si la esencia del lugar ha desaparecido. Eso es lo más difícil de recuperar."},
+  {dim:'SN',scene:'La Conversación',fn:'Si/Ni',text:"Un amigo que acaba de salir de dos años difíciles te pide que le ayudes a entenderlo. Quiere comprender qué pasó.",a:"Le ayudas a reconstruir la cronología. Qué pasó, en qué orden, qué causó qué. Trabajas desde los hechos hacia afuera.",b:"Saltas a lo que cambió en ellos. Los hechos ya pasaron. Lo que importa es lo que significan de cara al futuro."},
+  {dim:'SN',scene:'La Foto Antigua',fn:'Se/Ni',text:"Encuentras una fotografía antigua mientras vacías una casa. En blanco y negro. Personas que no reconoces. Un compañero te pregunta qué piensas.",a:"Lees la imagen. La ropa, el entorno, la calidad de la impresión. Puedes datarla y situarla con los detalles.",b:"Quieres saber la historia detrás. Quiénes eran estas personas entre sí y qué les pasó después."},
+  {dim:'SN',scene:'El Experto',fn:'Si/Ne',text:"Estás sentado con alguien genuinamente excelente en su oficio. Tienes una hora para preguntarle lo que quieras.",a:"Preguntas sobre el trabajo real. Los primeros años, los errores, las cosas que no aparecen en las entrevistas.",b:"Preguntas hacia dónde cree que va todo. Qué se está perdiendo todo el mundo."},
+  {dim:'SN',scene:'Las Instrucciones',fn:'Si/Ne',text:"Has comprado algo que hay que montar. En la caja hay un manual de doce pasos.",a:"Lo sigues paso a paso. Saltarse pasos es como se estropean las cosas.",b:"Lo ojeas una vez y empiezas. Ya lo irás descubriendo sobre la marcha."},
+  {dim:'SN',scene:'La Librería',fn:'Si/Ne',text:"Estás en una librería con tiempo libre y nada que tengas que comprar.",a:"Buscas algo específico. Un tema que ya te importa, un hueco que quieres llenar.",b:"Buscas algo en lo que nunca has pensado antes. Quieres irte sabiendo algo inesperado."},
+  {dim:'SN',scene:'La Historia',fn:'Si/Ni',text:"Alguien cercano pasó por una ruptura difícil y ya está del otro lado. Le preguntas cómo está. Quiere contártelo.",a:"Escuchas los hechos de lo que pasó. La cronología, las razones.",b:"Escuchas qué cambió en ellos. Cómo ven las cosas ahora que antes no veían."},
+  {dim:'SN',scene:'La Lotería',fn:'Se/Fi',text:"Acaban de decirte que has ganado una cantidad de dinero que cambia tu vida. Tienes 24 horas antes de que se haga público. Te sientas a pensar qué hacer.",a:"Empiezas con las preguntas prácticas. Impuestos, a dónde va, qué cambia y qué sigue igual.",b:"Te quedas con lo que significa realmente. Has pasado años preocupándote por el dinero. Esa versión de tu vida se acabó. Necesitas un momento con eso primero."},
+  {dim:'SN',scene:'El Amanecer',fn:'Se/Ni',text:"Te has levantado temprano la mañana de algo importante. Sales y el cielo es extraordinario. Tienes cinco minutos antes de tener que irte.",a:"Te quedas en él. La luz, el aire, la calidad específica de esta mañana. Estás aquí y lo absorbes.",b:"Te encuentras pensando en lo que significa el día más que mirando el cielo. El momento te lleva a otro lugar."},
+  {dim:'SN',scene:'El Feedback',fn:'Te/Ni',text:"Tu jefe te da feedback positivo después de una gran presentación pero no puede decir exactamente qué funcionó. Quieres saber qué repetir.",a:"Insistes en los detalles. No puedes construir sobre un elogio que no puedes definir.",b:"Lo dejas estar. Ya tienes una idea de lo que funcionó. No necesitas que lo nombren."},
+  {dim:'SN',scene:'La Presentación',fn:'Ti/Ni',text:"Un compañero termina una presentación con un argumento sólido. Estás en desacuerdo pero la sala asiente. Tienes treinta segundos para decidir si hablas.",a:"Rebates la afirmación específica. Tienes una objeción concreta y la sala debería escucharla.",b:"Levantas la mano y cuestionas la premisa detrás del argumento. La afirmación específica no es el verdadero problema."},
+  {dim:'SN',scene:'El Diagnóstico',fn:'Si/Ni',text:"Alguien cercano recibe un diagnóstico médico inesperado. Están asustados y te miran. Acabas de enterarte y están esperando tu respuesta.",a:"Haces las preguntas prácticas. Qué significa, cuáles son los próximos pasos, qué necesitan ahora mismo.",b:"Vas hacia ellos primero. La información puede esperar. Necesitan saber que estás firme antes de todo lo demás."},
+  {dim:'SN',scene:'El Nuevo Lugar',fn:'Se/Ni',text:"Llegas a una ciudad que nunca has visitado y te registras en el hotel. Tienes la tarde libre. Sales a la calle.",a:"Caminas hasta que algo te detenga. Quieres la ciudad en los pies antes de saber qué pensar de ella.",b:"Te quedas un momento en la calle antes de moverte. Quieres sostener la primera impresión antes de que los detalles la reemplacen."},
+  {dim:'SN',scene:'La Propuesta',fn:'Te/Ni',text:"Alguien te presenta una idea ambiciosa en una reunión. La sala está interesada. Te preguntan si estás dentro antes de que hayas tenido tiempo de pensar.",a:"Haces las preguntas prácticas primero. Qué requiere realmente, cuál es el plazo, cuál es el punto de fallo.",b:"Dices que estás dentro. Las preguntas prácticas se responderán. La pregunta más grande es si esto es lo correcto y ya sabes la respuesta."},
+  {dim:'SN',scene:'El Parque',fn:'Ne/Si',text:"Estás matando el tiempo antes de una reunión en una parte de la ciudad que conoces bien. Acabas sentado/a en un banco de un parque por el que has pasado cien veces.",a:"Te encuentras pensando en lo que se está convirtiendo este barrio. Los nuevos edificios, lo que viene.",b:"Te encuentras pensando en cuánto tiempo lleva este lugar aquí. Cómo era antes de que se construyera todo lo que lo rodea."},
+  {dim:'SN',scene:'La Casa Antigua',fn:'Se/Ni',text:"Te encargan evaluar una propiedad que lleva años vacía. Entras por primera vez.",a:"La recorres metódicamente. La estructura, la humedad, lo que aguanta y lo que no. Trabajas desde lo que puedes ver.",b:"Te encuentras pensando en las últimas personas que vivieron aquí antes de haber terminado la primera habitación. Cómo sería una mañana normal en esta casa."},
+  {dim:'SN',scene:'El Regalo',fn:'Si/Ne',text:"Alguien te da un regalo que es detallado pero no del todo acertado. Te están mirando abrir y esperando tu reacción.",a:"Te centras en el objeto. Ya pensarás qué hacer con él más tarde.",b:"Te centras en lo que dice la elección. Intentaban decirte algo sobre cómo te ven."},
+  {dim:'TF',scene:'La Disputa',fn:'Te/Fe',text:"Dos compañeros discrepan sobre quién merece el reconocimiento por un trabajo. Los dos tienen argumentos. Te han pedido que opines.",a:"Pides la cronología y la documentación. La verdad está en algún lugar de ahí.",b:"Observas cómo habla cada uno de ello. La respuesta ya está en cómo se comportan."},
+  {dim:'TF',scene:'La Excepción',fn:'Te/Fi',text:"Alguien te pide que hagas una excepción a una política. La política existe por una razón. Su situación es genuinamente difícil.",a:"Mantienes la línea. En el momento en que la doblas para una persona la has hecho irrelevante para todos.",b:"Haces la excepción. La política existe para ayudar a las personas, y seguirla aquí haría lo contrario."},
+  {dim:'TF',scene:'El Compañero',fn:'Te/Fe',text:"Un compañero cercano recibe muy malas noticias personales durante la jornada laboral. Está claramente afectado.",a:"Compruebas qué necesita prácticamente. ¿Puede conducir, hay que llamar a alguien, cuál es el siguiente paso?",b:"Te sientas con él/ella. Ahora mismo no necesita logística. Necesita saber que hay alguien."},
+  {dim:'TF',scene:'La Evaluación',fn:'Te/Fe',text:"Tienes que darle feedback a alguien que va a ser difícil de escuchar. Su trabajo no es suficientemente bueno.",a:"Lo dices directamente y sin demora. Suavizarlo demasiado lo hace más difícil de escuchar, no más fácil.",b:"Eliges el momento y las palabras con cuidado. La verdad no cambia pero cómo llega importa."},
+  {dim:'TF',scene:'Los Dos Candidatos',fn:'Te/Fe',text:"Estás contratando para un puesto y tienes dos finalistas fuertes. Uno tiene más talento pero trabaja solo. El otro tiene menos habilidad pero hace que todos a su alrededor sean mejores.",a:"Contratas al primero. El talento es el objetivo.",b:"Contratas al segundo. Un equipo que no puede funcionar junto acaba dejando de funcionar."},
+  {dim:'TF',scene:'La Advertencia',fn:'Te/Fe',text:"Un amigo está a punto de tomar una decisión que crees que lamentará. No te ha pedido tu opinión.",a:"Le dices lo que piensas, con claridad. Una advertencia demasiado suave no es una advertencia.",b:"Encuentras el momento y las palabras adecuadas. Una advertencia mal entregada se descarta."},
+  {dim:'TF',scene:'La Tensión',fn:'Te/Fe',text:"Dos personas de tu equipo están en conflicto. Lleva semanas y está afectando a todo el grupo.",a:"Los sientas a los dos y les dices directamente lo que su problema le está costando al equipo.",b:"Hablas con cada uno por separado primero. Quieres entender qué necesita cada uno realmente."},
+  {dim:'TF',scene:'El Mérito',fn:'Ti/Fi',text:"El proyecto salió bien. Tu jefe pregunta quién merece el reconocimiento. Una persona hizo la mayor parte del trabajo visible. La otra sostuvo todo en silencio y nadie lo notó realmente.",a:"Nombras al del resultado visible. El reconocimiento debe seguir a los resultados, no al esfuerzo invisible.",b:"Nombras al que lo sostuvo todo. Eras el único que veía lo que les costó realmente."},
+  {dim:'TF',scene:'La Disculpa',fn:'Ti/Fi',text:"Alguien que te hizo daño quiere arreglar las cosas. Ha cambiado. Puedes verlo. La pregunta es si lo que hizo es algo con lo que puedes pasar página.",a:"Puedes avanzar, pero la relación es diferente ahora. Lo que pasó forma parte del registro.",b:"Lo dejas ir completamente. Mantener el libro de cuentas abierto es su propio tipo de daño."},
+  {dim:'TF',scene:'El Proyecto que Falla',fn:'Te/Fe',text:"Un proyecto del que formas parte está claramente fallando. Nadie lo ha dicho en voz alta todavía. Tu jefe te lleva a un lado y te pregunta qué piensas de verdad.",a:"Se lo dices directamente. Cuanto más tiempo pasa sin decirse, más le cuesta a todos.",b:"Piensas primero en las personas de la sala. Cómo dices esto importa tanto como lo que dices."},
+  {dim:'TF',scene:'La Asignación',fn:'Te/Fi',text:"Tienes recursos limitados y dos necesidades en competencia. Una tiene más impacto sobre el papel. La otra es una persona frente a ti que está luchando.",a:"Vas donde el impacto es mayor. Para eso son los recursos.",b:"Vas donde la persona lo necesita. No puedes poner un número frente a una cara."},
+  {dim:'TF',scene:'La Referencia',fn:'Te/Fi',text:"Alguien te pide una referencia para una persona que cometió un error grave hace años pero que claramente ha cambiado desde entonces.",a:"Das un relato honesto de lo que sabes, incluido el error. Una referencia solo vale algo si es precisa.",b:"Te centras en quién es ahora. Las personas son más que lo peor que hicieron."},
+  {dim:'TF',scene:'El Secreto',fn:'Fi/Fe',text:"Sabes que un amigo hizo algo de lo que no está orgulloso. Ellos no saben que lo sabes. Ya pasó y nadie resultó gravemente perjudicado.",a:"No dices nada. No te corresponde sacarlo.",b:"Buscas un momento tranquilo con ellos. No para acusar. Solo para que sepan que alguien lo sabe y sigue pensando igual de ellos."},
+  {dim:'TF',scene:'El Testamento',fn:'Te/Fi',text:"Un familiar ha dejado su herencia de forma desigual. La persona que recibió menos estuvo claramente más presente. El testamento es legal y claro.",a:"Lo sigues como está escrito. Era suyo para dar como eligiera.",b:"Encuentras la manera de asegurarte de que la persona que recibió menos sepa que sus años fueron vistos, aunque los números no lo muestren."},
+  {dim:'TF',scene:'La Confesión',fn:'Te/Fe',text:"Un amigo te cuenta algo que ha estado cargando mucho tiempo. Se siente culpable. No está pidiendo consejo.",a:"Le dices lo que crees que debería hacer. Cargarlo solo no lo mejorará.",b:"Escuchas y lo sostienes junto a él/ella. Te lo contó porque necesitaba que alguien lo supiera."},
+  {dim:'TF',scene:'La Competencia',fn:'Te/Fi',text:"Compites por algo que quieres contra alguien que respetas. Tienes un movimiento que probablemente funcionaría pero del que no te sientes orgulloso/a.",a:"Lo usas. Ganar es el objetivo.",b:"No lo usas. El coste no merece la pena."},
+  {dim:'TF',scene:'La Lucha',fn:'Fi/Fe',text:"Alguien que conoces está claramente sufriendo. No ha dicho nada y no ha pedido ayuda.",a:"Esperas. Si quisiera tu ayuda lo pediría. Ofrecerla sin que te la pidan puede sentirse como una intrusión.",b:"Encuentras la manera de acercarte. Solo una puerta abierta para que sepan que no están solos."},
+  {dim:'TF',scene:'El Informe',fn:'Ti/Fe',text:"Estás escribiendo un informe sobre algo difícil que ocurrió. Tienes todos los hechos. La pregunta es cuánto detalle humano incluir.",a:"Incluyes lo que es verdadero y necesario. El registro debe ser preciso o no significa nada.",b:"Lo incluyes todo. Las personas involucradas merecen estar en la historia, no solo las decisiones."},
+  {dim:'TF',scene:'El Aprendiz',fn:'Te/Fe',text:"La persona que has estado mentorizando durante dos años ha cometido un error serio frente al equipo. No fue descuido. Un malentendido real de algo fundamental.",a:"Lo corriges directamente y por completo, delante de los demás. Todos se enfrentarán a la misma situación algún día.",b:"Los llevas aparte. La lección necesita llegar, no el público."},
+  {dim:'JP',scene:'El Viaje por Carretera',fn:'Te/Ne',text:"Tú y un amigo estáis planeando un largo viaje por carretera. Sin fecha límite, solo vosotros dos.",a:"Planificáis la ruta antes de salir. Las distancias, las paradas, la forma aproximada.",b:"Montáis en el coche y lo vais descubriendo. Ese es el punto."},
+  {dim:'JP',scene:'El Plazo',fn:'Te/Ni',text:"Tienes un proyecto que entregar en tres semanas. Tienes todo lo necesario para empezar. Puede que llegue más información.",a:"Empiezas ahora. Lo peor es necesitar más tiempo y no tenerlo.",b:"Esperas unos días más. Actuar con información incompleta desperdicia el trabajo."},
+  {dim:'JP',scene:'El Traspaso',fn:'Si/Ne',text:"Estás tomando un proyecto a medias. Hay notas detalladas de la persona anterior.",a:"Lees todo antes de tocar nada. Necesitas entender qué se pretendía.",b:"Empiezas a trabajar y usas las notas para responder preguntas según surgen. La mejor manera de entender un plan es trabajar con él."},
+  {dim:'JP',scene:'La Cena',fn:'Te/Ne',text:"Organizas una cena para ocho personas. Es dentro de tres semanas.",a:"Empiezas a planificar hoy. Una cena de este tamaño no se organiza en el último momento.",b:"Sabes por experiencia que las mejores cenas tienen margen para respirar. Lo organizarás cuando se acerque la fecha."},
+  {dim:'JP',scene:'La Discusión',fn:'Te/Ne',text:"Estás en medio de una discusión que lleva una hora. No llegáis a ningún lado. Tienes que estar en otro sitio.",a:"No te vas hasta que se resuelva de una manera u otra. No te llevarás una cosa abierta.",b:"Lo zanja. Esta conversación no va a ningún lado ahora mismo. Podéis volver a ello."},
+  {dim:'JP',scene:'El Paseo',fn:'Te/Ne',text:"Tienes una tarde libre y te apetece dar un largo paseo. No tienes que estar en ningún sitio.",a:"Decides más o menos adónde vas antes de salir. Un paseo sin forma es solo vagabundear.",b:"Eliges una dirección y vas. El punto es no saber dónde termina."},
+  {dim:'JP',scene:'Los Planes Cancelados',fn:'Si/Ne',text:"Has estado esperando algo durante semanas y se cae en el último momento.",a:"Sientes el desperdicio. La preparación, la expectativa, todo para nada.",b:"Miras lo que de repente está abierto. De todos modos estabas aquí. Ahora es posible otra cosa."},
+  {dim:'JP',scene:'El Atajo',fn:'Si/Se',text:"Necesitas llegar a algún sitio y hay una ruta que nunca has tomado. Puede que sea más rápida.",a:"Lo compruebas en el mapa primero. Quieres saber a qué te comprometes antes de girar.",b:"La tomas. Sabrás pronto si fue la decisión correcta."},
+  {dim:'JP',scene:'El Encargo',fn:'Te/Ne',text:"Estás empezando un texto importante. Algo sustancial.",a:"Decides la estructura y los límites antes de escribir una palabra. Sin bordes nunca termina.",b:"Empiezas a escribir y dejas que el texto te muestre lo que necesita ser."},
+  {dim:'JP',scene:'El Viaje',fn:'Si/Se',text:"Mañana te vas una semana fuera.",a:"Haces la maleta esta noche con una lista. Todo lo que va dentro tiene una razón.",b:"Haces la maleta por la mañana. Sabes más o menos lo que necesitas."},
+  {dim:'JP',scene:'La Vacante',fn:'Te/Ni',text:"Alguien importante deja tu equipo. Tienes un candidato interno decente que no es del todo adecuado, y podrías esperar a alguien mejor.",a:"La cubres ahora. Un hueco de este tamaño cuesta más cada semana que sigue abierto.",b:"Esperas. Contratar con prisa es peor que no contratar."},
+  {dim:'JP',scene:'Las Dos Opciones',fn:'Te/Ne',text:"Estás eligiendo entre dos buenas opciones para algo importante. Ya has pensado suficiente.",a:"Eliges la que mejor encaja con lo que sabes y te comprometes. Cualquier decisión es mejor que ninguna.",b:"Pruebas un poco ambas antes de decidir. Una de ellas se sentirá bien cuando estés realmente dentro.",},
+  {dim:'JP',scene:'El Hueco',fn:'Si/Ne',text:"Te piden trabajar en algo donde falta parte de la información que necesitas.",a:"Averiguas qué falta antes de empezar. Empezar sin el panorama completo desperdicia el esfuerzo.",b:"Empiezas con lo que tienes. Las partes que faltan se aclararán cuando las necesites."},
+  {dim:'JP',scene:'La Noche Antes',fn:'Si/Ni',text:"Gran día mañana. Entrevista, presentación, algo que importa. Has hecho todo lo que podías.",a:"Lo repasas una vez más. Quieres conocer cada parte antes de que llegue la mañana.",b:"Te vas a dormir. Has hecho lo que podías. El resto pertenece a mañana."},
+  {dim:'JP',scene:'El Nuevo Barrio',fn:'Te/Se',text:"Acabas de mudarte a algún sitio nuevo y quieres conocer el barrio.",a:"Lo mapeas primero. Lo divides en secciones y lo recorres sistemáticamente.",b:"Eliges una dirección y empiezas a caminar. El barrio te mostrará lo que es."},
+  {dim:'JP',scene:'La Meta',fn:'Ne/Fi',text:"Acabas de terminar un proyecto largo y difícil. Salió bien. Ahora no hay nada inmediatamente siguiente.",a:"Sientes el impulso de encontrar lo próximo. El espacio abierto sin dirección se siente como desperdicio.",b:"Sientes algo parecido a la paz. Este silencio es por lo que trabajabas."},
+  {dim:'JP',scene:'La Ruta Mejor',fn:'Si/Ne',text:"Estás a mitad de un plan y alguien sugiere un enfoque genuinamente mejor.",a:"Necesitas una razón real antes de abandonar lo acordado. Cambiar por cambiar cuesta más de lo que ahorra.",b:"Les escuchas. Un plan mejor es un plan mejor, sea lo que sea lo que se decidió al principio."},
+  {dim:'JP',scene:'El Giro',fn:'Te/Ne',text:"Estás en una reunión convocada para tomar una decisión específica. Todos acordaron el proceso. Pero a la mitad, sale información nueva que hace que el plan original parezca equivocado. La sala se queda en silencio.",a:"Mantienes el proceso. Cambiar de rumbo a mitad de reunión por un nuevo dato es como se derrumban las decisiones.",b:"Lo dices. El plan se hizo sin esta información. Ahora la tienes y no puedes fingir que no."}
+];
+
+const questionsMyth = [
+  // E/I
+  {dim:'EI',scene:'El Regreso',fn:'Se/Ni',text:"Has estado fuera mucho tiempo, el camino fue duro, y hubo días en que no creías volver a ver tu hogar. Pero el viaje ha terminado, y estás de pie ante la puerta, y todo lo que dejaste atrás está al otro lado.",a:"No te detienes en la puerta. La empujas y encuentras a quien esté dentro.",b:"Te quedas un momento. El silencio es tuyo y lo tomas antes de que acabe."},
+  {dim:'EI',scene:'La Última Cena',fn:'Fe/Fi',text:"Estás sentado/a en una larga mesa con las personas que más quieres, el vino es bueno y el fuego cálido y la noche es lenta. En algún rincón de tu mente sabes, aunque nadie lo haya dicho, que esta es la última vez que os sentaréis todos juntos así.",a:"Te mueves por la mesa, persona a persona. Hay algo que necesitas decirle a cada una antes de que acabe la noche.",b:"Te quedas. Hay una persona aquí por la que viniste, y ya estás sentado/a a su lado."},
+  {dim:'EI',scene:'El Gran Conclave',fn:'Se/Ni',text:"Ha corrido la voz y la gente ha llegado desde todas las direcciones, reyes y viajeros y extranjeros de tierras lejanas. El salón está lleno de ruido y voces.",a:"Caminas directo al centro de todo.",b:"Encuentras el punto más alto de la sala y observas."},
+  {dim:'EI',scene:'El Camino del Desierto',fn:'Se/Si',text:"Tres días caminando solo/a y en la segunda noche te topas con el campamento de otro viajero. El fuego sigue encendido. Te hacen señas para que te acerques.",a:"Dejas la mochila y te metes en la conversación. Preguntas de dónde vienen, adónde van. Dos días de silencio y ahora hay una voz con quien hablar.",b:"Te sientas y compartes el fuego pero en su mayoría guardas silencio. Un gesto y pocas palabras. La compañía es suficiente sin llenarlo."},
+  {dim:'EI',scene:'La Fiesta Inesperada',fn:'Se/Ti',text:"Llegas a casa y encuentras la puerta ya abierta, dentro hay extraños en tu mesa y alguien que conoces ríe a carcajadas, y la habitación huele a comida y bebida y otras personas.",a:"Dejas la bolsa y preguntas quién tiene hambre.",b:"Preguntas qué está pasando antes de quitarte el abrigo."},
+  {dim:'EI',scene:'La Larga Marcha',fn:'Fe/Fi',text:"Seis semanas de marcha y por fin estáis en un pueblo con una tarde libre. Los demás ya se están volcando en la taberna, ruidosos y listos. Alguien te agarra del brazo al entrar.",a:"Entras. Seis semanas de nada más que camino y estas personas. Quieres el ruido, el calor y el desorden de todo.",b:"Buscas una excusa y te escabulles. Necesitas una hora para ti."},
+  {dim:'EI',scene:'El Festín de la Victoria',fn:'Se/Ni',text:"La guerra ha terminado y contra todo pronóstico habéis ganado, y el gran salón se ha abierto y está lleno de ruido, música y celebración. Alguien te pone una copa en la mano.",a:"La levantas y encuentras a alguien con quien beber. Quieres estar en la parte más ruidosa de la sala.",b:"La bebes y encuentras un sitio donde puedas verlo todo.",},
+  {dim:'EI',scene:'El Cruce',fn:'Fe/Te',text:"Estás cruzando una llanura amplia sin puntos de referencia y el camino está vacío en ambas direcciones, y entonces, a lo lejos, aparece un viajero solitario que viene en la otra dirección.",a:"Te paras. Una conversación aquí vale más que en cualquier otro lugar.",b:"Intercambiáis lo útil — agua y distancia y alguna advertencia — y seguís cada uno vuestro camino."},
+  {dim:'EI',scene:'El Regreso del Pródigo',text:"Alguien a quien quieres se fue mal, hace años, y la despedida no fue limpia, y habías dejado de esperar volver a verlo. Pero ahí están, de pie al borde del camino, delgados y cambiados y más pequeños de lo que recordabas.",a:"Llamas en voz alta. Quieres que todos vean esto.",b:"Vas hacia ellos solo/a primero. El resto del mundo puede tenerlos después."},
+  {dim:'EI',scene:'La Partida',fn:'Fe/Fi',text:"Todos con quienes has viajado toman caminos diferentes en el cruce. Todavía queda una hora antes de que os separéis.",a:"Lo aprovechas. Habláis de todo lo que no se habló en el camino. No quieres dejar nada sin decir.",b:"Te encuentras callado/a. El tiempo que queda parece más importante que llenarlo."},
+  {dim:'EI',scene:'La Tentación',fn:'Se/Fi',text:"Has viajado con un nombre falso durante años. Esta noche alguien en el salón te reconoce y lo dice en voz alta. La sala se queda en silencio. El señor a la cabeza de la mesa te está mirando.",a:"Te levantas. Si este es el momento, lo afrontas de pie.",b:"Te quedas quieto/a. Que te nombren no es lo mismo que estar listo/a. La sala puede esperar."},
+  {dim:'EI',scene:'La Ciudad Antigua',fn:'Se/Si',text:"Tienes una noche libre en la ciudad más grande que hayas visto jamás. Un local te ofrece llevarte a un encuentro donde parece estar media ciudad. O puedes tener las calles para ti.",a:"Vas con él/ella. Una ciudad cobra vida a través de su gente y quieres estar dentro de eso.",b:"Tomas las calles solo/a. Una ciudad tan antigua merece silencio, y tú también."},
+  {dim:'EI',scene:'El Regreso al Hogar',fn:'Si/Fi',text:"Has estado en algún lugar extraordinario y ahora has vuelto, y las personas a tu alrededor se han reunido y quieren saberlo todo y te miran con caras abiertas.",a:"Empiezas desde el principio y no te dejas nada.",b:"Les das algo verdadero y breve, y guardas la historia real para más tarde."},
+  {dim:'EI',scene:'El Llamado',fn:'Fe/Ni',text:"Algo ha sido puesto en tus manos — una tarea y un propósito más grande que cualquier cosa que hayas enfrentado antes. Estás solo/a con ello por ahora y el peso es real.",a:"Vas a buscar personas. Algo de este tamaño necesita más que un par de manos.",b:"Te quedas en silencio. Necesitas estar solo/a con esto antes de poder decir una palabra."},
+  {dim:'EI',scene:'La Carta',fn:'Si/Ne',text:"Llega una carta con una oferta que has querido durante años. Debes responder antes de esta noche. Te sientas a escribir y tu mano se detiene. Las personas que dejarías están en la habitación de al lado.",a:"Vas a hablar con ellos primero. No puedes tomar esta decisión sin la sala.",b:"Escribes la respuesta solo/a. Esta es tuya y ya sabes lo que dice."},
+  {dim:'EI',scene:'La Tormenta',fn:'Fe/Fi',text:"Alguien a quien quieres se está derrumbando, y no pide ayuda ni soluciones ni respuestas. Solo necesita que alguien esté ahí, en la habitación, cerca.",a:"Te acercas. Encuentras pequeñas cosas que hacer. Mantienes el espacio entre vosotros cálido.",b:"Te sientas y te quedas. No buscas nada. Simplemente estás ahí, en la habitación con ellos."},
+  {dim:'EI',scene:'La Coronación',fn:'Fe/Fi',text:"La guerra ha terminado. Acaban de colocarte la corona y el gran salón está en silencio esperando que hables. Miles de ojos. Los que sangraron por esto están en la primera fila.",a:"Encuentras la voz y llenas el salón. Este momento pertenece a todos ellos y vas a asegurarte de que lo sepan.",b:"Lo mantienes breve. Dices lo que hay que decir, nombras a las personas que te sostuvieron, y bajas y vas hacia ellos. La corona puede esperar."},
+  {dim:'EI',scene:'La Gran Obra',fn:'Fe/Ti',text:"Estás inmerso/a en una gran empresa y tu sección ha terminado. Puedes moverte a donde el trabajo más te necesite, en el centro de todo, o quedarte y profundizar en lo que ya conoces.",a:"Te mueves. Haces tu mejor trabajo cuando estás en medio de las cosas, donde aún se está descubriendo todo.",b:"Te quedas y profundizas. El trabajo que haces mejor ocurre cuando no te tiran en todas las direcciones."},
+  {dim:'EI',scene:'La Cueva',fn:'Fe/Si',text:"Algo enorme acaba de pasar — una victoria, una pérdida, o algo intermedio que aún no tiene nombre — y necesitas procesarlo.",a:"Buscas personas. Calor, ruido y alguien que escuche.",b:"Buscas un lugar solo/a. El silencio es lo único que funcionará ahora mismo."},
+  {dim:'EI',scene:'El Fuego',fn:'Se/Ni',text:"El largo día ha terminado y el campamento se asienta y alguien ha encendido un fuego y un grupo se ha reunido alrededor. Estás cansado/a pero la noche aún es joven.",a:"Arrastras un tronco y te quedas. El fuego, las voces y el calor de otras personas es exactamente lo que necesita el final de un día así.",b:"Encuentras un sitio en el borde y te sientas. El fuego es suficiente compañía. Observas las llamas y dejas que las voces pasen sobre ti."},
+  {dim:'EI',scene:'El Mensajero',fn:'Fe/Si',text:"Llega un mensaje que lo cambia todo. No para ti. Para alguien que conoces, alguien que no has visto en mucho tiempo. Podrías transmitirlo y dejarlo ahí. O podrías ir tú.",a:"Vas. Noticias así no deberían llegar sin una cara detrás.",b:"Mandas aviso. Lo que importa es que lo sepan. La distancia no es el punto."},
+  // S/N
+  {dim:'SN',scene:'El Consejo',fn:'Se/Ni',text:"Dos exploradores han vuelto de territorio enemigo con informes contradictorios. Uno te da números precisos: posiciones, recuentos de tropas, líneas de suministro. El otro dice que los números son correctos pero que algo va mal. Los ejércitos no se mueven así antes de una batalla. Debes asesorar al consejo.",a:"Presentas los números. Un consejo toma decisiones sobre lo que se puede verificar.",b:"Presentas el patrón. Los números son lo que son. Lo que significan es otra cosa."},
+  {dim:'SN',scene:'El Mapa',fn:'Si/Ne',text:"Te han entregado un mapa de tierra desconocida y te dicen que encuentres la ruta más segura antes del anochecer. El centro está bien cartografiado. Los bordes están en blanco.",a:"Trabajas desde el centro hacia afuera. Los caminos conocidos son la base. Construyes desde lo sólido.",b:"Empiezas por los bordes. Las partes en blanco son donde está la respuesta real."},
+  {dim:'SN',scene:'El Profeta',fn:'Ti/Ni',text:"Un hombre baja de la montaña diciendo que ha visto lo que viene. La mitad del pueblo ya se está moviendo según su palabra. Está de pie ante ti preguntando si estás con ellos.",a:"Le preguntas qué vio exactamente. No te moverás hasta que la afirmación pueda aguantar algo de peso.",b:"Ya estás decidiendo. Algo de lo que dijo es verdad y lo sabías antes de poder explicarlo."},
+  {dim:'SN',scene:'El Último Pueblo',fn:'Si/Ni',text:"Entras al pueblo en el camino y lo encuentras evacuado de prisa. Fuegos aún calientes. Comida dejada en las mesas. Lo que sea que pasó por aquí lo hizo rápido y la gente huyó. Tienes una hora antes de que llegue tu compañía y necesite un informe.",a:"Vas casa por casa. Quieres saber exactamente qué pasó aquí antes de decir nada.",b:"Ya sabes lo que significa. Has visto este patrón antes. Montas para advertirles ahora."},
+  {dim:'SN',scene:'La Visión',fn:'Si/Ni',text:"Un vidente te concede un destello de algo que viene. La imagen es vívida pero breve y ya empieza a difuminarse. Tus compañeros esperan que les cuentes lo que viste.",a:"Lo describes exactamente como apareció. Los detalles son en lo que pueden actuar tus compañeros.",b:"Describes parte de lo que viste, pero sobre todo lo que significa. El significado es lo que necesitan."},
+  {dim:'SN',scene:'El Rastreador',fn:'Se/Ni',text:"Tu compañía ha sido emboscada y rechazada. Eres el/la primero/a en volver al lugar a la mañana siguiente. El terreno está destrozado, armas abandonadas, rastros yendo en tres direcciones. Tu capitán necesita saber qué pasó.",a:"Lees el terreno. Huellas de botas, marcas de arrastre, rastros de sangre. Construyes la imagen desde lo que hay.",b:"Lees el patrón. La emboscada fue demasiado precisa. Alguien conocía tu ruta. Esa es la pregunta más importante."},
+  {dim:'SN',scene:'La Lengua',fn:'Ti/Ne',text:"Has encontrado un mensaje escrito en una lengua que nadie puede leer y te dicen que puede contener las indicaciones que necesitas. Tienes una hora. Dos eruditos ofrecen métodos distintos: uno quiere mapear los patrones, el otro quiere sentir el significado.",a:"Trabajas con los patrones. La estructura es la única entrada fiable.",b:"Intentas leerlo entero antes de descomponerlo. La sensación te dirá más que el análisis."},
+  {dim:'SN',scene:'El Experto',fn:'Si/Ne',text:"Estás sentado/a al lado de uno de los grandes maestros de su oficio en una larga cena, y tienes su atención durante toda la velada. ¿Qué preguntas?",a:"Cómo es el trabajo realmente. Las horas, los fracasos, las partes de las que nadie habla.",b:"Hacia dónde creen que va todo. Lo que todo el mundo está pasando por alto."},
+  {dim:'SN',scene:'La Parábola',fn:'Si/Ne',text:"Un maestro termina una historia y pregunta a la sala qué sacaron de ella. La persona a tu lado quiere saber lo que piensas antes de que des tu respuesta al grupo.",a:"Le dices lo que la historia literalmente argumenta. Quieres poner a prueba la afirmación antes de seguirla.",b:"Le dices adónde te llevó la historia. El significado literal no es realmente el punto."},
+  {dim:'SN',scene:'La Biblioteca',fn:'Si/Ne',text:"Te conceden una hora a solas en una biblioteca tan vasta que nunca podrías leer ni una pequeña parte de ella. Te mueves entre las estanterías. Buscas...",a:"Algo específico. Un tema que ya te importa, una pregunta que llevas contigo.",b:"Algo en lo que nunca hayas pensado antes. Quieres irte sabiendo algo inesperado."},
+  {dim:'SN',scene:'La Inundación',fn:'Si/Ni',text:"El rey se muere y dos cuervos han llegado la misma noche. Uno trae un relato completo de los movimientos de tropas en la frontera norte, detallado y verificado. El otro trae una sola línea de una fuente que nunca se ha equivocado: la amenaza real no viene del norte. Debes informar al consejo al amanecer.",a:"Los informas sobre los movimientos de tropas. Trabajas con lo documentado y lo que tienes delante.",b:"Los informas sobre la advertencia. Los números verificados no significan nada si miran en la dirección equivocada."},
+  {dim:'SN',scene:'La Espada en la Piedra',fn:'Se/Fi',text:"Todos han intentado y fallado y te observan acercarte. Antes de llegar a ella tienes una elección: examinar la piedra para entender el mecanismo, o simplemente intentarlo.",a:"La estudias primero. El ángulo de la hoja, el espacio, el material. Aquí hay una respuesta física.",b:"Tiendes la mano sin análisis. Si está destinada a moverse, se moverá."},
+  {dim:'SN',scene:'La Primera Luz',fn:'Se/Ni',text:"Rompe el alba y el centinela te despierta. En el horizonte, una columna de humo donde debería estar el pueblo oriental. Tu capitán pregunta qué ves.",a:"Describes lo que hay. El tamaño de la columna, la dirección del viento, cuánto lleva ardiendo. Trabajas con lo que puedes ver.",b:"Le dices lo que significa. Alguien está enviando una señal, o alguien está huyendo, o el pueblo ya se ha ido. El humo no es el punto."},
+  {dim:'SN',scene:'El Oráculo',fn:'Te/Ni',text:"Tu general más fiel viene a medianoche y dice que el enemigo se moverá al amanecer. No tiene nueva inteligencia. No hay informes. Nada ha cambiado sobre el papel. Pero los ha combatido antes y algo le dice que esta noche es la noche. Te está pidiendo que muevas todo el ejército ahora.",a:"Le preguntas qué cambió. No puedes mover un ejército solo por instinto.",b:"Das la orden. Nunca se ha equivocado antes y no hay tiempo para averiguar por qué tiene razón."},
+  {dim:'SN',scene:'El Sermón',fn:'Ti/Ni',text:"Un gran orador acaba de terminar. La sala está conmovida. De camino de vuelta, tu compañero pregunta qué te pareció.",a:"Analizas el argumento. Hay dos afirmaciones que quieres examinar antes de decidir qué hacer con todo ello.",b:"Le dices de qué trataba realmente. Debajo de las palabras había algo más que se estaba diciendo y esa es la parte que importa."},
+  {dim:'SN',scene:'La Tumba Vacía',fn:'Si/Ni',text:"El prisionero que debías ejecutar estaba en su celda anoche. Esta mañana la celda está vacía, la puerta cerrada desde fuera, y los dos guardias no recuerdan nada. La mitad de la guarnición ya dice que fueron los dioses. Tu comandante necesita un informe antes del mediodía.",a:"Documentas lo que puedes verificar. La puerta cerrada, los guardias, la cronología. No escribirás lo que no puedes explicar.",b:"Escribes que el hombre se ha ido y que el cómo no importa aún. Sea lo que sea esto, es mayor que una fuga y la guarnición necesita estar lista para lo que viene."},
+  {dim:'SN',scene:'La Nueva Tierra',fn:'Se/Ni',text:"Tras meses en el mar tu barco llega a tierra que nadie de tu mundo ha tocado jamás. La tripulación está lista para desembarcar. Tu segundo al mando pregunta cómo quieres proceder.",a:"Entráis y lo leéis sobre la marcha. De qué está hecha la tierra, qué crece aquí, si hay agua. La tierra os dirá lo que es.",b:"Le dices que algo no te cuadra de la costa. No las rocas ni los árboles. Algo en la forma de todo el conjunto. Quieres navegar la costa antes de que alguien desembarque."},
+  {dim:'SN',scene:'El Cuervo',fn:'Te/Ni',text:"Un cuervo llega confirmando que uno de tus aliados más antiguos ha firmado un tratado con tu enemigo. Sobre el papel es un acuerdo comercial. Nada en la carta es una amenaza directa. Tus asesores dicen que esperes y observes. Algo en ti dice que esto no es sobre comercio.",a:"Esperas. Una carta no es razón para actuar. Necesitas más antes de moverte.",b:"Empiezas a prepararte. Un movimiento así no ocurre en aislamiento. Algo mayor ya está en marcha."},
+  {dim:'SN',scene:'El Último Erudito',fn:'Ne/Si',text:"Eres el/la último/a erudito/a en un archivo quemado. Sobrevivió un cofre. Dentro hay dos versiones de cómo cayó el reino — el registro oficial, detallado y con referencias cruzadas, y una sola carta de alguien que estaba allí, nunca destinada a encontrarse, que contradice todo. Tienes una noche antes de que confisquen el cofre.",a:"Copias el registro oficial. Es el relato más completo que existe y preservarlo es tu trabajo.",b:"Copias la carta. Cualquiera puede reconstruir la historia oficial. Lo que esta carta apunta no sobrevivirá si no lo tomas."},
+  {dim:'SN',scene:'La Reliquia',fn:'Se/Ni',text:"Un moribundo te pone en la mano un anillo antiguo y dice que es la razón por la que han perseguido a su familia durante tres generaciones. Muere antes de poder decir más. Lo tienes en la mano.",a:"Lo examinas. El peso, las marcas, el metal. Sea lo que sea esto, empieza por lo que realmente puedes ver.",b:"Cierras la mano a su alrededor. El objeto importa menos que la historia en la que está. Necesitas entender esa historia antes que nada."},
+  // T/F
+  {dim:'TF',scene:'El Juicio de Salomón',fn:'Te/Fe',text:"Dos personas se presentan ante ti y ambas reclaman al mismo niño, y el niño no puede hablar por sí mismo, y tú eres quien debe decidir.",a:"Pides los registros. Nacimiento, testigos, fechas. La verdad está en algún lugar de ahí.",b:"Observas sus caras cuando dices que cortarás al niño en dos. La respuesta ya está ahí."},
+  {dim:'TF',scene:'El Juicio',fn:'Te/Fi',text:"Traen a un hombre ante el consejo y la ley dice que es culpable, pero tú estuviste allí y conoces toda la historia. La ley es clara. El error también.",a:"Argumentas la ley. En el momento en que la doblas para una persona la has roto para todos.",b:"Argumentas por el hombre. La ley existe para proteger a las personas, y seguirla aquí haría lo contrario."},
+  {dim:'TF',scene:'El Rey Caído',fn:'Te/Fe',text:"Un gran rey ha caído en batalla y está vivo pero muy herido y yace inmóvil en el suelo frente a ti.",a:"Examinas la herida. Necesitas saber con qué estás tratando antes que nada.",b:"Le tomas la mano. Necesita saber que alguien está con él antes que nada."},
+  {dim:'TF',scene:'El Veredicto',fn:'Te/Fe',text:"Te han pedido que pronuncies un veredicto que va a herir a alguien que te importa. La evidencia es clara. No hay otra respuesta honesta.",a:"Lo dices directamente y sin demora. Prolongarlo solo lo empeora.",b:"Eliges el momento y las palabras con cuidado. La verdad no cambia pero cómo llega sí importa."},
+  {dim:'TF',scene:'Los Dos Sirvientes',fn:'Te/Fe',text:"Eres responsable de dos trabajadores. Uno hace un trabajo excelente y envenena cada sala por la que pasa. El otro es mediocre y todos a su alrededor mejoran.",a:"Te quedas con el primero. Los resultados son el objetivo.",b:"Te quedas con el segundo. Un grupo que no puede trabajar junto acaba dejando de trabajar."},
+  {dim:'TF',scene:'El Consejo',fn:'Te/Fe',text:"Un hombre que respetas camina hacia algo que lo destruirá, y no puede verlo, y tú eres el único en posición de decir algo.",a:"Se lo dices directamente. Una advertencia demasiado suavizada no es una advertencia.",b:"Encuentras el momento y las palabras adecuadas. Una advertencia mal entregada se ignora."},
+  {dim:'TF',scene:'El Campamento Roto',fn:'Te/Fe',text:"Dos líderes han discutido mal y el campamento está dividido y el trabajo sufre y todos esperan que alguien haga algo.",a:"Vas a los dos y les dices directamente lo que les está costando su discusión.",b:"Vas a los dos y averiguas qué necesita cada uno realmente."},
+  {dim:'TF',scene:'La Ciudad en Llamas',fn:'Ti/Fi',text:"La ciudad arde. Has hecho todo lo que podías y estás en una encrucijada. A la izquierda está el último registro del conocimiento humano. A la derecha hay una calle donde puede que alguien siga vivo.",a:"Vas a la izquierda. Las personas tuvieron su oportunidad y el registro no.",b:"Vas a la derecha. No te irás mientras haya todavía una posibilidad."},
+  {dim:'TF',scene:'El Hijo Pródigo',fn:'Ti/Fi',text:"Alguien que te hizo mucho daño ha vuelto. Ha cambiado y lo lamenta y está de pie frente a ti esperando.",a:"Le dejas entrar. Pero abrir la puerta no es lo mismo que que las cosas sean como eran.",b:"Le dejas entrar. En el momento en que viste su cara ya sabías que lo harías."},
+  {dim:'TF',scene:'El Rey Moribundo',fn:'Ti/Fi',text:"Un gran rey se muere y te pregunta honestamente: ¿cómo lo recordará la historia? Conoces la respuesta y no es sencilla.",a:"Le dices la verdad. La pidió y se la ha ganado.",b:"Le dices lo bueno y dejas ir el resto. ¿Para qué sirve el resto ahora?"},
+  {dim:'TF',scene:'El Barco que se Hunde',fn:'Te/Fi',text:"El barco se está hundiendo y hay dos personas en el agua y solo puedes llegar a una. Una es un sanador que ha salvado a cientos. La otra es alguien que no conoces.",a:"Alcanzas al sanador. Una vida que salva a cientos no es lo mismo que una vida.",b:"Alcanzas al que está más cerca. No puedes pesar una vida frente a ti contra un número."},
+  {dim:'TF',scene:'El Exilio',fn:'Te/Fi',text:"Un hombre fue desterrado de su hogar hace años por algo que hizo. Ha cumplido su tiempo y ha cambiado y pide volver. La mitad de la gente quiere dejarlo regresar. La otra quiere mantener la frontera cerrada.",a:"Miras qué hizo, qué se sirvió, y si se han cumplido las condiciones de regreso. La decisión debe seguir los hechos.",b:"Miras al hombre frente a ti, no al registro. Las personas son más que lo peor que hicieron."},
+  {dim:'TF',scene:'El Soldado que Regresa',fn:'Fi/Fe',text:"Un soldado regresa después de una larga guerra y todos lo llaman héroe y hay festines y celebraciones y discursos. Pero tú sabes algo sobre lo que hizo para sobrevivir.",a:"No dices nada. Lo que hicieron para sobrevivir es entre ellos y la guerra. Ya terminó.",b:"Buscas un momento tranquilo con ellos. No para acusar. Solo para que sepan que alguien sabe, y se quedó."},
+  {dim:'TF',scene:'La Herencia',fn:'Te/Fi',text:"Un moribundo ha dejado su riqueza desigualmente entre sus dos hijos. Uno trabajó junto a él durante años y recibió casi nada. El otro se fue y rara vez regresó y recibió casi todo. Tú eres quien debe explicarlo.",a:"Lees el testamento como está escrito. Fueran cuales fueran sus razones, era suyo para dar como eligió.",b:"Te aseguras de que quien se quedó sepa lo que valieron sus años, aunque los números no lo muestren."},
+  {dim:'TF',scene:'La Elección del Sanador',text:"Un sanador tiene dos pacientes y solo medicina para uno. Están igualmente enfermos e igualmente desconocidos para ti. Te han pedido que decidas.",a:"Averiguas todo lo que puedes sobre los dos antes de dar una respuesta.",b:"Le preguntas al sanador cuál cree que tiene una voluntad de vivir más fuerte."},
+  {dim:'TF',scene:'La Confesión',fn:'Te/Fe',text:"Un amigo te cuenta que ha hecho algo malo, algo que dañó a otra persona, y nadie más lo sabe. No está preguntando qué hacer. Solo necesitaba decírselo a alguien.",a:"Le dices lo que crees que debería hacer. Cargarlo solo no hará que desaparezca.",b:"Escuchas y lo sostienes con él/ella. Te lo contó porque necesitaba que alguien lo supiera, no un juez."},
+  {dim:'TF',scene:'El Enemigo Caído',fn:'Te/Fi',text:"Tu enemigo está en el suelo, vencido, la batalla ha terminado y te están mirando desde abajo.",a:"Lo acabas.",b:"Bajas tu arma y te alejas."},
+  {dim:'TF',scene:'El Peso',fn:'Fi/Fe',text:"Alguien cercano a ti lleva algo pesado desde hace mucho tiempo. No ha pedido ayuda y puede que no la quiera.",a:"Esperas. Si quisiera tu ayuda lo pediría. Ofrecerla sin que te la pidan puede sentirse como presión.",b:"Encuentras la manera. No un desafío directo. Solo una puerta abierta para que sepan que no están solos."},
+  {dim:'TF',scene:'La Crónica',fn:'Ti/Fe',text:"Estás escribiendo la historia de una gran guerra y debes decidir cuánto del coste humano incluir, y con qué honestidad.",a:"Incluyes lo que es verdadero y necesario. El registro debe ser honesto o no significa nada.",b:"Lo incluyes todo. Las personas que sufrieron merecen estar en la historia, no solo las decisiones."},
+  {dim:'TF',scene:'El Aprendiz',fn:'Te/Fe',text:"El aprendiz que has estado formando durante dos años ha cometido un error grave. No fue descuido. Un malentendido real de algo fundamental. Los demás observan para ver qué haces.",a:"Lo corriges directamente y por completo, delante de los demás. Todos se enfrentarán a la misma decisión algún día.",b:"Los llevas aparte. La lección necesita llegar, no el público."},
+  // J/P
+  {dim:'JP',scene:'La Misión',fn:'Te/Ne',text:"Te han encomendado una gran misión y el camino es largo y el destino es claro pero la manera de llegar es desconocida y nadie ha pasado por ahí antes.",a:"Presentas lo que sabes. Los caminos, las distancias, los peligros. Quieres una forma antes de moverte.",b:"Ya te estás moviendo. La forma vendrá del propio camino."},
+  {dim:'JP',scene:'El Arca',fn:'Te/Ni',text:"Ha llegado la noticia de que se acerca una gran inundación y nadie sabe cuándo. El cielo sigue despejado y la tierra seca y no hay señales todavía.",a:"Empiezas a construir ahora. Lo peor es necesitar la estructura y no tenerla lista.",b:"Primero observas el cielo. Actuar demasiado pronto ante noticias inciertas desperdicia lo que tienes."},
+  {dim:'JP',scene:'El Encargo',fn:'Si/Ne',text:"Te han pedido que completes una gran obra que otra persona comenzó y dejó sin terminar. La visión original no está del todo clara y quien la empezó ya no está.",a:"Dedicas tiempo a entender la intención original antes de añadir nada. No construirás sobre una base que no entiendes.",b:"Empiezas donde lo dejaron y dejas que la obra te guíe. La mejor manera de entender la visión de alguien es continuarla."},
+  {dim:'JP',scene:'El Consejo del Rey',text:"Estás en un consejo que lleva tres días debatiendo la misma cuestión y no se ha tomado ninguna decisión y la gente empieza a decir las mismas cosas otra vez.",a:"Sientes la necesidad de cerrarlo. Una decisión tomada ahora y cambiada después es mejor que ninguna decisión.",b:"Esperas. La respuesta correcta aún no ha llegado y forzar una ahora podría empeorar las cosas."},
+  {dim:'JP',scene:'El Festín de Reyes',fn:'Te/Ne',text:"Te han dado a cargo un gran festín y reyes y señores vendrán de todo el reino y faltan muchos meses.",a:"Empiezas a organizar hoy. Un festín de este tamaño no se organiza a última hora.",b:"Sabes por experiencia que los mejores festines tienen margen para respirar. Lo prepararás cuando se acerque el momento."},
+  {dim:'JP',scene:'El Sitio Roto',fn:'Te/Ne',text:"Estás dirigiendo un sitio y las murallas no han caído y llega la noticia de que alguien que te necesita está en otro lugar y la situación es urgente.",a:"No te vas hasta que esto se resuelva de una manera u otra. No te llevarás algo inacabado.",b:"Vas. Un sitio que está costando tanto ya está perdido. El verdadero combate está en otro lugar."},
+  {dim:'JP',scene:'El Errante',fn:'Te/Ne',text:"Te han dado toda una temporada sin obligaciones y sin un lugar fijo. Un camino se abre ante ti y nada te dice adónde lleva.",a:"Decides dónde termina antes de recorrerlo. Un viaje sin destino no es realmente un viaje.",b:"Lo recorres y ves adónde lleva. Ese es todo el punto."},
+  {dim:'JP',scene:'El Consejo Cancelado',fn:'Si/Ne',text:"Has viajado tres días para asistir a un consejo de señores y cuando llegas te dicen que ha sido cancelado y todos se están dispersando.",a:"Sientes el desperdicio. El camino, la preparación, la expectativa, todo para nada.",b:"Miras a las personas que ahora están sin adónde ir. De todos modos estás aquí. Ellos también."},
+  {dim:'JP',scene:'El Cruce del Río',fn:'Si/Se',text:"Necesitas cruzar un río ancho y rápido. No hay puente. Hay varios posibles puntos de cruce pero no puedes verlos todos desde donde estás.",a:"Caminas la orilla hasta haber encontrado el mejor cruce antes de entrar al agua.",b:"Eliges el punto más probable desde donde estás y vas. Sabrás pronto si te equivocaste."},
+  {dim:'JP',scene:'La Crónica',fn:'Te/Ne',text:"Estás escribiendo la historia de un gran reino. Hay más material del que nunca podrías usar y nadie te ha dicho dónde termina.",a:"Decides la forma y los límites antes de escribir una palabra. Sin bordes la cosa nunca terminará.",b:"Empiezas y dejas que la historia te muestre lo que necesita. La historia conoce su propia forma."},
+  {dim:'JP',scene:'El Largo Camino',fn:'Si/Ne',text:"Llevas tres días de viaje y alguien del grupo quiere cambiar la ruta completamente. El nuevo camino podría ser mejor.",a:"Necesitas una razón real antes de abandonar el plan con el que saliste. Cambiar sin causa es solo ruido.",b:"Les escuchas. Un camino mejor es un camino mejor, sea lo que sea lo que se acordó al principio."},
+  {dim:'JP',scene:'El Equipaje',fn:'Si/Se',text:"Te estás preparando para un largo viaje y debes decidir qué llevar y hay más de lo que puedes cargar.",a:"Haces una lista la noche anterior y empacas según ella. Todo lo que va en la bolsa tiene una razón para estar ahí.",b:"Empacas la mañana que te vas. Sabes más o menos lo que necesitas y ordenarás el resto sobre la marcha."},
+  {dim:'JP',scene:'El Trono Vacío',fn:'Te/Ni',text:"El reino no tiene líder y el consejo está dividido y alguien está llenando el vacío actuando como si ya tuviera el asiento. Te piden que les respaldes públicamente antes de que se tome una decisión formal.",a:"Les respaldas. El vacío es el verdadero peligro. Una decisión ahora, aunque imperfecta, es mejor que ninguna.",b:"Te niegas. Quien tome este asiento debería hacerlo correctamente o no hacerlo en absoluto."},
+  {dim:'JP',scene:'Las Dos Sendas',fn:'Te/Ne',text:"Llegas a un cruce y ambos caminos son igualmente desconocidos y debes elegir uno y seguir moviéndote.",a:"Eliges el que mejor encaja con lo que sabes y te comprometes. Cualquier elección es mejor que quedarse quieto.",b:"Caminas un poco por cada uno antes de elegir. Uno de ellos se sentirá bien cuando estés dentro."},
+  {dim:'JP',scene:'El Pergamino',fn:'Si/Ne',text:"Te han dado un pergamino con una gran tarea escrita pero las instrucciones no están completas y parte de lo que necesitas no está ahí.",a:"Averiguas qué falta antes de empezar. Empezar sin el panorama completo desperdicia esfuerzo y tiempo.",b:"Empiezas con lo que tienes. Las partes que faltan se aclararán cuando las necesites."},
+  {dim:'JP',scene:'La Noche Antes de la Batalla',fn:'Si/Ni',text:"La batalla es mañana y no queda nada que preparar y el campamento está en silencio y el fuego está bajo.",a:"Lo repasas una vez más en tu cabeza. Quieres conocer cada parte antes de que llegue la mañana.",b:"Duermes. Has hecho lo que podías y el resto pertenece a mañana."},
+  {dim:'JP',scene:'La Costa Inexplorada',fn:'Te/Se',text:"Tu barco ha llegado a algún lugar que no aparece en ningún mapa. No hay camino, ni plan, y nadie ha estado aquí antes. La tierra de adelante está abierta y desconocida.",a:"Marcas la costa, divides el grupo y das a cada persona una dirección. Necesitas saber qué hay antes de moverte.",b:"Eliges una dirección que se siente bien y empiezas a caminar. La tierra misma te dirá lo que necesitas saber."},
+  {dim:'JP',scene:'El Camino Abierto',fn:'Ne/Fi',text:"El trabajo está hecho y alguien te ofrece dos caminos: tomar el próximo encargo ahora mientras hay impulso, o tomar un mes sin obligaciones antes de decidir nada.",a:"Tomas el próximo encargo. El impulso es más difícil de reconstruir que de mantener.",b:"Tomas el mes. No has parado en años y aún no sabes lo que realmente quieres después."},
+  {dim:'JP',scene:'El Giro',fn:'Te/Ne',text:"Fuiste enviado a llevar a un hombre a juicio. Tres días de cabalgata. Una orden clara. Pero cuando llegas, el hombre encargado de supervisar el arresto está a punto de matarlo. Sin juicio. Sin justicia. Solo un fin. Tienes segundos.",a:"No haces nada. En el momento en que te sales del plan, eres el problema. Mantén la línea.",b:"Intervienes. El plan se hizo sin este momento en mente. Este momento lo cambia."}
+];
+
+
+const typeData = {
+  ISTJ:{name:"El Inspector",tagline:"Deber, precisión, integridad",description:"Eres la persona en quien realmente se puede confiar. Donde otros hablan de estándares, tú los vives. Abordas la vida metódicamente — reuniendo hechos antes de actuar, cumpliendo compromisos sin alardear, y encontrando profunda satisfacción en el trabajo bien hecho. Tienes poca paciencia para el caos o los atajos, y sueles ser la columna vertebral silenciosa de cada institución de la que formas parte.",traits:["Confiable","Meticuloso/a","Íntegro/a","Paciente","Reservado/a"]},
+  ISFJ:{name:"El Protector",tagline:"Cuidado silencioso, lealtad feroz",description:"Notas lo que otros pasan por alto — el compañero que parece estar mal hoy, el amigo que está al límite. Te preocupas profundamente y lo demuestras con acciones: el favor dado sin que te lo pidan, el detalle recordado meses después. Leal hasta la médula e irremediablemente generoso/a, eres la persona en quien otros se apoyan instintivamente en los momentos difíciles.",traits:["Cálido/a","Observador/a","Leal","Confiable","Generoso/a"]},
+  INFJ:{name:"El Consejero",tagline:"Visión escasa, determinación tranquila",description:"Eres el tipo más raro y el más difícil de descifrar. Ves patrones en personas y situaciones mucho antes de que los demás los perciban, y te aferras a tus ideales con una firmeza que sorprende a quienes confunden tu quietud con pasividad. No eres simplemente empático/a — eres estratégico/a al respecto, invirtiendo profundamente en los pocos en lugar de interpretar la calidez para muchos.",traits:["Perspicaz","Idealista","Empático/a","Determinado/a","Enigmático/a"]},
+  INTJ:{name:"El Arquitecto",tagline:"Mente estratégica, estándar implacable",description:"Ya tienes un plan mejor. No es arrogancia — simplemente ves fallas estructurales e ineficiencias que otros pasan por alto. Te exiges un estándar imposible y te resulta genuinamente difícil respetar a quienes no se exigen ninguno. La independencia no es una preferencia; es un requisito. Construyes sistemas, visiones y estrategias a largo plazo.",traits:["Estratégico/a","Independiente","Exigente","Decisivo/a","Visionario/a"]},
+  ISTP:{name:"El Artesano",tagline:"Cabeza fría, manos hábiles",description:"Cuando algo falla, eres la persona más calmada en la sala y normalmente la más útil. Eres un solucionador de problemas natural que confía en lo que puede observar y probar más que en la teoría y la abstracción. Aprendes haciendo, rechazas las reglas que no tienen sentido, y encuentras la mayor parte de la actuación social profundamente innecesaria. Respetas la competencia por encima de todo.",traits:["Calmado/a","Analítico/a","Práctico/a","Adaptable","Hábil"]},
+  ISFP:{name:"El Artista",tagline:"Presente, libre, profundamente sensible",description:"Vives más cerca de tus sentidos que la mayoría. La música adecuada en el momento adecuado te conmueve genuinamente; la belleza en lugares inesperados te detiene. Resistes ser encasillado/a, desafías las categorías en silencio, y mantienes tus valores intensamente mientras aparentas ser flexible ante el mundo exterior. Das espacio a las personas porque tú también lo necesitas.",traits:["Amable","Auténtico/a","Espontáneo/a","Sensible","Creativo/a"]},
+  INFP:{name:"El Mediador",tagline:"Ideales profundos, fuego silencioso",description:"Llevas un rico mundo interior que la mayoría de las personas nunca llega a ver. Sientes la brecha entre cómo son las cosas y cómo deberían ser más agudamente que casi nadie, y esa tensión te impulsa hacia el arte, la defensa, la profundidad en todo lo que haces. Das a las personas el beneficio de la duda y crees fervientemente en el potencial humano.",traits:["Idealista","Empático/a","Creativo/a","Reflexivo/a","Íntegro/a"]},
+  INTP:{name:"El Pensador",tagline:"Curioso, preciso, tranquilamente no convencional",description:"Tu mente no se apaga. Desmontas las ideas para ver cómo funcionan, encuentras inconsistencias que otros ignoran, y pierdes horas en madrigueras que resultan más interesantes que lo que se supone que debías hacer. No eres antisocial — eres selectivo/a. ¿La conversación correcta con la persona correcta? Te quedarías horas.",traits:["Analítico/a","Curioso/a","Preciso/a","Independiente","No convencional"]},
+  ESTP:{name:"El Dinamo",tagline:"Audaz, perceptivo, siempre en movimiento",description:"Lees las habitaciones como otras personas leen los libros — rápido, con fluidez y con retención. Eres perceptivo/a con las personas, te llena la acción, y estás en tu mejor momento cuando improvisas en tiempo real. Los planes están bien hasta que se encuentran con la realidad; tú eres mejor manejando la realidad que la mayoría. Haces que las cosas sucedan decidiendo y moviéndote.",traits:["Perceptivo/a","Audaz","Enérgico/a","Pragmático/a","Carismático/a"]},
+  ESFP:{name:"El Animador",tagline:"Vivo/a, generoso/a, contagiosamente presente",description:"No solo entras a una sala — elevas su temperatura. Estás genuinamente interesado/a en las personas, eres espontáneo/a de la mejor manera, y tienes el don de hacer que los demás se sientan vistos e incluidos. Estás completamente presente de una manera que es cada vez más rara. La vida no es algo que optimizar; es algo que experimentar, y lo haces más plenamente que la mayoría.",traits:["Entusiasta","Generoso/a","Espontáneo/a","Social","Cálido/a"]},
+  ENFP:{name:"El Campeón",tagline:"Posibilidad inquieta, energía magnética",description:"Ves potencial en todas partes — en ideas, en personas, en situaciones que otros han descartado. Tu entusiasmo es genuino y contagioso, y haces que todos a tu alrededor sientan que son más interesantes de lo que pensaban. Las ideas llegan rápido y con frecuencia; el seguimiento es la disciplina más difícil. En tu mejor momento, no hay nadie más inspirador.",traits:["Creativo/a","Entusiasta","Empático/a","Curioso/a","Inspirador/a"]},
+  ENTP:{name:"El Visionario",tagline:"Agudo/a, provocador/a, incansablemente curioso/a",description:"Disfrutas de un buen debate como otras personas disfrutan de la buena comida — afila la mente, pone a prueba la idea, y revela quién puede seguir el ritmo. Nunca eres simplemente curioso/a; eres escépticamente curioso/a, probando el punto débil de cada suposición. Estás más vivo/a cuando estás en territorio desconocido, y te aburres a la misma velocidad que la mayoría de las personas se sienten cómodas.",traits:["Ingenioso/a","Innovador/a","Debatidor/a","Estratégico/a","Adaptable"]},
+  ESTJ:{name:"El Director",tagline:"Orden, resultados, responsabilidad",description:"Tienes una imagen muy clara de cómo deberían funcionar las cosas, y no te cortas en alinearlas con esa imagen. Estás organizado/a, eres decisivo/a, y mantienes a las personas en sus compromisos — incluido a ti mismo/a. Los demás pueden leer esto como exigente; tú lo lees como respeto básico por los estándares. Construyes estructuras que duran porque las construyes correctamente.",traits:["Organizado/a","Directo/a","Decisivo/a","Confiable","Determinado/a"]},
+  ESFJ:{name:"El Cuidador",tagline:"Comunidad, calidez, cuidado imparable",description:"Eres el tejido conectivo de cada grupo del que formas parte. Recuerdas los cumpleaños, notas cuando algo va mal, y te aseguras de que nadie quede excluido. Tienes el don de crear el tipo de calidez que hace que las personas se sientan seguras. La armonía no es solo agradable para ti — es algo en lo que trabajas activamente todos los días.",traits:["Cariñoso/a","Social","Leal","Organizado/a","Generoso/a"]},
+  ENFJ:{name:"El Maestro",tagline:"Carisma con propósito",description:"Tienes un don difícil de explicar — haces que las personas se sientan simultáneamente completamente vistas y gentilmente desafiadas a ser más. Lideras no a través de la autoridad sino a través de la creencia genuina en los demás. Eres natural leyendo a las personas y aún mejor inspirándolas. Las personas en tu vida suelen ser más capaces de lo que eran antes de conocerte.",traits:["Carismático/a","Empático/a","Inspirador/a","Decisivo/a","Perspicaz"]},
+  ENTJ:{name:"El Comandante",tagline:"Visión, control, impulso",description:"Ves el destino antes de que los demás vean el problema. Tu confianza no es una actuación — viene de haber corrido ya los escenarios en tu cabeza y saber cuál gana. Lideras porque no puedes soportar ver las cosas hacerse mal cuando podrían hacerse bien. Eres exigente, ambicioso/a, y exactamente la persona que querrías de tu lado en una crisis.",traits:["Estratégico/a","Seguro/a","Directo/a","Determinado/a","Decisivo/a"]}
+};
+
+// Shuffle each dimension block, then interleave so test feels varied
+function shuffle(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+let current = 0;
+let scores = {};
+let fnScores = {Se:0,Si:0,Ne:0,Ni:0,Te:0,Ti:0,Fe:0,Fi:0};
+let history = [];
+let orderedQuestions = [];
+let testMode = 'myth'; // 'myth' | 'normal' | 'both'
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  const el = document.getElementById(id);
+  el.classList.add('active');
+  el.style.animation = 'none'; el.offsetHeight; el.style.animation = '';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function selectMode(mode) {
+  testMode = mode;
+  // Highlight selected card
+  document.querySelectorAll('.mode-card').forEach(c => c.classList.remove('selected'));
+  event.currentTarget.classList.add('selected');
+  // Short delay for visual feedback then start
+  setTimeout(() => startTest(), 280);
+}
+
+function startTest() {
+  let pool;
+  if(testMode==='normal'){
+    pool = questionsNormal;
+  } else if(testMode==='myth'){
+    pool = questionsMyth;
+  } else {
+    // Both Worlds: 50/50 mix per dimension
+    const dims = ['EI','SN','TF','JP'];
+    pool = [];
+    dims.forEach(dim => {
+      const myth = shuffle(questionsMyth.filter(q=>q.dim===dim));
+      const norm = shuffle(questionsNormal.filter(q=>q.dim===dim));
+      const half = Math.ceil(myth.length / 2);
+      pool.push(...myth.slice(0, half), ...norm.slice(0, myth.length - half));
+    });
+  }
+  const _ei=shuffle(pool.filter(q=>q.dim==='EI'));
+  const _sn=shuffle(pool.filter(q=>q.dim==='SN'));
+  const _tf=shuffle(pool.filter(q=>q.dim==='TF'));
+  const _jp=shuffle(pool.filter(q=>q.dim==='JP'));
+  orderedQuestions.length=0;
+  const _max=Math.max(_ei.length,_sn.length,_tf.length,_jp.length);
+  for(let i=0;i<_max;i++){if(_ei[i])orderedQuestions.push(_ei[i]);if(_sn[i])orderedQuestions.push(_sn[i]);if(_tf[i])orderedQuestions.push(_tf[i]);if(_jp[i])orderedQuestions.push(_jp[i]);}
+  current = 0;
+  scores = { E:0, I:0, S:0, N:0, T:0, F:0, J:0, P:0 };
+  fnScores = {Se:0,Si:0,Ne:0,Ni:0,Te:0,Ti:0,Fe:0,Fi:0};
+  // Mode bonus
+  if(testMode==='myth'){ scores.N++; fnScores.Ni++; }
+  else if(testMode==='normal'){ scores.S++; fnScores.Si++; }
+  else { fnScores.Fe++; } // 'both'
+  if(orderedQuestions.length > 77) orderedQuestions.length = 77;
+  history = [];
+  renderQuestion();
+  showScreen('screen-question');
+}
+
+
+function renderQuestion() {
+  const q = orderedQuestions[current];
+  const pct = (current / orderedQuestions.length) * 100;
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('q-num').textContent = current + 1;
+  document.getElementById('q-scene').textContent = q.scene;
+  document.getElementById('q-text').textContent = q.text;
+
+  // Show/hide back button
+  const backBtn = document.getElementById('btn-back');
+  backBtn.disabled = current === 0;
+
+  const container = document.getElementById('answers-container');
+  container.innerHTML = '';
+  [q.a, q.b].forEach((text, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'answer-card';
+    btn.innerHTML = `<div class="answer-letter">${i===0?'A':'B'}</div><div class="answer-text">${text}</div>`;
+    btn.style.opacity = '0'; btn.style.transform = 'translateY(16px)';
+    btn.style.transition = `opacity 0.35s ease ${i*0.1+0.1}s, transform 0.35s ease ${i*0.1+0.1}s`;
+    btn.addEventListener('click', () => selectAnswer(i===0?'A':'B'));
+    container.appendChild(btn);
+    requestAnimationFrame(() => requestAnimationFrame(() => { btn.style.opacity='1'; btn.style.transform='translateY(0)'; }));
+  });
+}
+
+// Cross-dimensional function pole map
+const FN_POLES = {
+  Se:['E','S'], Si:['I','S'],
+  Ne:['E','N'], Ni:['I','N'],
+  Te:['T','J'], Ti:['T','P'],
+  Fe:['F','E'], Fi:['F','I']
+};
+
+function getSecondaryPole(fnTag, dim) {
+  const poles = FN_POLES[fnTag];
+  if (!poles) return null;
+  return poles.find(p => p !== dim[0] && p !== dim[1]) || null;
+}
+
+function goBack() {
+  if (current === 0) return;
+  const last = history.pop();
+  scores[last.letter] -= 0.7;
+  const prevQ = orderedQuestions[current-1];
+  if(prevQ.fn){
+    const [fa,fb] = prevQ.fn.split('/');
+    const fn = last.choice==='A' ? fa : fb;
+    fnScores[fn]--;
+    const sec = getSecondaryPole(fn, prevQ.dim);
+    if(sec) scores[sec] -= 0.3;
+  } else {
+    scores[last.letter] -= 0.3;
+  }
+  current--;
+  renderQuestion();
+}
+
+function selectAnswer(choice) {
+  const q = orderedQuestions[current];
+  const letter = choice==='A' ? q.dim[0] : q.dim[1];
+  scores[letter] += 0.7;
+  if(q.fn){
+    const [fa,fb] = q.fn.split('/');
+    const fn = choice==='A' ? fa : fb;
+    fnScores[fn]++;
+    const sec = getSecondaryPole(fn, q.dim);
+    if(sec) scores[sec] += 0.3;
+  } else {
+    scores[letter] += 0.3;
+  }
+  history.push({choice, letter});
+  current++;
+  if (current < orderedQuestions.length) renderQuestion(); else showResults();
+}
+
+function getType() {
+  return blendedType();
+}
+
+function blendedType() {
+  // Dimension percentages
+  const totalEI=scores.E+scores.I||1, totalSN=scores.S+scores.N||1;
+  const totalTF=scores.T+scores.F||1, totalJP=scores.J+scores.P||1;
+  const dimE=scores.E/totalEI, dimS=scores.S/totalSN, dimT=scores.T/totalTF, dimJ=scores.J/totalJP;
+  // Function-derived percentages
+  const extTotal=(fnScores.Se+fnScores.Ne+fnScores.Fe+fnScores.Te+fnScores.Si+fnScores.Ni+fnScores.Fi+fnScores.Ti)||1;
+  const fnE=(fnScores.Se+fnScores.Ne+fnScores.Fe+fnScores.Te)/extTotal;
+  const snTotal=fnScores.Se+fnScores.Si+fnScores.Ne+fnScores.Ni||1;
+  const fnS=(fnScores.Se+fnScores.Si)/snTotal;
+  const tfTotal=fnScores.Te+fnScores.Ti+fnScores.Fe+fnScores.Fi||1;
+  const fnT=(fnScores.Te+fnScores.Ti)/tfTotal;
+  const jpExtTotal=fnScores.Te+fnScores.Fe+fnScores.Se+fnScores.Ne||1;
+  const fnJ=(fnScores.Te+fnScores.Fe)/jpExtTotal;
+  // Blend 65% dimension / 35% function
+  const W=0.65,WF=0.35;
+  window._blend={E:dimE*W+fnE*WF,S:dimS*W+fnS*WF,T:dimT*W+fnT*WF,J:dimJ*W+fnJ*WF};
+  return (window._blend.E>=0.5?'E':'I')+(window._blend.S>=0.5?'S':'N')+(window._blend.T>=0.5?'T':'F')+(window._blend.J>=0.5?'J':'P');
+}
+
+function getBlendedScores() {
+  const b=window._blend||{E:0.5,S:0.5,T:0.5,J:0.5};
+  const totalEI=scores.E+scores.I||1, totalSN=scores.S+scores.N||1;
+  const totalTF=scores.T+scores.F||1, totalJP=scores.J+scores.P||1;
+  return {
+    E:Math.round(b.E*totalEI), I:Math.round((1-b.E)*totalEI),
+    S:Math.round(b.S*totalSN), N:Math.round((1-b.S)*totalSN),
+    T:Math.round(b.T*totalTF), F:Math.round((1-b.T)*totalTF),
+    J:Math.round(b.J*totalJP), P:Math.round((1-b.J)*totalJP)
+  };
+}
+
+function showResults() {
+  const type = getType();
+  window._resultType = type;
+  // Show demographics screen before results
+  showScreen('screen-demo');
+  return;
+}
+
+function showResultsActual() {
+  const type = window._resultType;
+  const data = typeData[type];
+  document.getElementById('type-badge').innerHTML = type.split('').map((l,i)=>`<span class="type-letter${i%2===0?'':' highlight'}">${l}</span>`).join('');
+  document.getElementById('type-name').textContent = data.name;
+  document.getElementById('type-tagline').textContent = data.tagline;
+  document.getElementById('type-description').textContent = data.description;
+  document.getElementById('traits-grid').innerHTML = data.traits.map(t=>`<span class="trait">${t}</span>`).join('');
+
+  const dims = [{a:'E',b:'I',la:'Extrovertido',lb:'Introvertido'},{a:'S',b:'N',la:'Sensorial',lb:'Intuitivo'},{a:'T',b:'F',la:'Racional',lb:'Emocional'},{a:'J',b:'P',la:'Calificador',lb:'Perceptivo'}];
+  const barsEl = document.getElementById('spectrum-bars');
+  barsEl.innerHTML = '';
+  const bs = getBlendedScores();
+  dims.forEach(d => {
+    const total = bs[d.a] + bs[d.b];
+    const aWins = bs[d.a] >= bs[d.b];
+    const winner = aWins ? d.a : d.b;
+    const winLabel = aWins ? d.la : d.lb;
+    const pct = total===0 ? 50 : Math.round(((aWins?bs[d.a]:bs[d.b])/total)*100);
+    const row = document.createElement('div');
+    row.innerHTML = `<div class="spectrum-row"><div class="spectrum-dim active">${winner}</div><div style="flex:1"><div class="spectrum-info"><span class="spectrum-name">${winLabel}</span><span class="spectrum-pct">${pct}%</span></div><div class="spectrum-track"><div class="spectrum-fill" style="width:0%" data-target="${pct}"></div></div></div></div>`;
+    barsEl.appendChild(row);
+  });
+
+  document.getElementById('progress-fill').style.width = '100%';
+  const deepLink = document.getElementById('type-deep-link');
+  if (deepLink) deepLink.href = `/es/type?t=${type}`;
+  const fnLink = document.getElementById('functions-link');
+  if (fnLink) fnLink.href = `/es/functions?t=${type}`;
+  showScreen('screen-result');
+  setTimeout(() => document.querySelectorAll('.spectrum-fill').forEach(el => el.style.width = el.dataset.target+'%'), 200);
+  setTimeout(() => {
+    const cb = document.getElementById('eb4');
+    if (!cb || cb.offsetParent === null || getComputedStyle(cb).display === 'none' || getComputedStyle(cb).visibility === 'hidden') {
+      document.getElementById('eb7').style.display = 'block';
+    }
+  }, 300);
+  if (window._sbSaveResult) window._sbSaveResult(type, scores);
+}
+
+function retakeTest() {
+  history = [];
+  document.getElementById('eb3').value = '';
+  document.getElementById('eb4').checked = false;
+  document.getElementById('eb2').style.display = 'block';
+  document.getElementById('eb5').style.display = 'none';
+  document.getElementById('eb6').style.display = 'none';
+  showScreen('screen-splash');
+}
+
+// ── MOBILE MENU ──
+function toggleMenu() {
+  const drawer = document.getElementById('nav-drawer');
+  const overlay = document.getElementById('nav-overlay');
+  const burger = document.querySelector('.nav-burger');
+  const isOpen = drawer.classList.contains('open');
+  drawer.classList.toggle('open', !isOpen);
+  overlay.classList.toggle('open', !isOpen);
+  burger.classList.toggle('open', !isOpen);
+  document.body.style.overflow = isOpen ? '' : 'hidden';
+}
+
+// ── SUPABASE EMAIL SAVE ──
+const SUPA_URL = 'https://rttomfnfyjjssdqfzkaj.supabase.co';
+const SUPA_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw';
+
+async function saveResult() {
+  const email = document.getElementById('eb3').value.trim();
+  const agreed = document.getElementById('eb4').checked;
+  const errorEl = document.getElementById('eb6');
+  const btn = document.querySelector('.btn-save');
+
+  errorEl.style.display = 'none';
+  errorEl.textContent = '';
+
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    errorEl.textContent = 'Por favor introduce un email válido.';
+    errorEl.style.display = 'block';
+    return;
+  }
+  if (!agreed) {
+    const cb = document.getElementById('eb4');
+    const blocked = !cb || cb.offsetParent === null || getComputedStyle(cb).display === 'none';
+    errorEl.textContent = blocked
+      ? 'Tu bloqueador de anuncios está ocultando la casilla. Por favor desactívalo en esta página.'
+      : 'Por favor marca la casilla para continuar.';
+    errorEl.style.display = 'block';
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Guardando...';
+
+  try {
+    const res = await fetch(`${SUPA_URL}/rest/v1/subscribers`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': SUPA_KEY,
+        'Authorization': `Bearer ${SUPA_KEY}`,
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify({
+        email,
+        personality_type: getType(),
+        gdpr_consent: true,
+        ei_e: bs.E||scores.E, ei_i: bs.I||scores.I,
+        sn_s: bs.S||scores.S, sn_n: bs.N||scores.N,
+        tf_t: bs.T||scores.T, tf_f: bs.F||scores.F,
+        jp_j: bs.J||scores.J, jp_p: bs.P||scores.P
+      })
+    });
+
+    if (res.ok) {
+      document.getElementById('eb2').style.display = 'none';
+      document.getElementById('eb5').style.display = 'block';
+    } else {
+      const data = await res.json();
+      if (data?.code === '23505') {
+        document.getElementById('eb2').style.display = 'none';
+        document.getElementById('eb5').style.display = 'block';
+      } else {
+        throw new Error('Something went wrong.');
+      }
+    }
+  } catch (e) {
+    errorEl.textContent = 'Algo salió mal. Por favor inténtalo de nuevo.';
+    errorEl.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'Guardar resultado';
+  }
+}
+
+// ── PAGE TRANSITION SYSTEM ──
+(function(){
+  const ov = document.getElementById('t-overlay');
+  function fadeIn() {
+    ov.style.opacity = '1';
+    ov.animate([{opacity:1},{opacity:0}],{duration:500,delay:80,easing:'cubic-bezier(0.22,1,0.36,1)',fill:'forwards'});
+  }
+  // Reveal on load
+  fadeIn();
+  // Also reveal when navigating back (bfcache restore)
+  window.addEventListener('pageshow', e => { if (e.persisted) fadeIn(); });
+  // Intercept navigation
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href]');
+    if (!a) return;
+    const href = a.getAttribute('href');
+    if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('javascript') || href.startsWith('mailto')) return;
+    e.preventDefault();
+    ov.animate([{opacity:0},{opacity:1}],{duration:350,easing:'cubic-bezier(0.76,0,0.24,1)',fill:'forwards'}).finished.then(()=>{ window.location.href=href; });
+  });
+})();
+
+function shareResult() {
+  const type = getType();
+  const dims = [
+    {a:'E',b:'I',key:'ei',la:'Extrovertido',lb:'Introvertido'},
+    {a:'S',b:'N',key:'sn',la:'Sensorial',lb:'Intuitivo'},
+    {a:'T',b:'F',key:'tf',la:'Racional',lb:'Emocional'},
+    {a:'J',b:'P',key:'jp',la:'Calificador',lb:'Perceptivo'}
+  ];
+  const params = new URLSearchParams({ t: type });
+  const lines = dims.map(d => {
+    const total = scores[d.a] + scores[d.b];
+    const aWins = scores[d.a] >= scores[d.b];
+    const pct = total === 0 ? 50 : Math.round(((aWins ? scores[d.a] : scores[d.b]) / total) * 100);
+    params.set(d.key, pct + (aWins ? d.a : d.b));
+    return `${aWins ? d.a : d.b} ${pct}% ${aWins ? d.la : d.lb}`;
+  });
+  const url = `https://77scenarios.com/es/type?${params.toString()}`;
+  const text = `Obtuve ${type} — ${typeData[type].name} en 77 Scenarios.\n${lines.join(' · ')}`;
+  if (navigator.share) {
+    navigator.share({ title: `Obtuve ${type} en 77 Scenarios`, text, url });
+  } else {
+    navigator.clipboard.writeText(text + '\n' + url);
+    alert('Copied to clipboard!');
+  }
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(function() {
+  const { createClient } = supabase;
+  const sb = createClient('https://rttomfnfyjjssdqfzkaj.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw');
+  function buildNavUser(username, avatarSrc) {
+    var F='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 80 80%27%3E%3Ccircle cx=%2740%27 cy=%2740%27 r=%2740%27 fill=%27%23252a30%27/%3E%3Ccircle cx=%2740%27 cy=%2732%27 r=%2714%27 fill=%27%238a6d2e%27/%3E%3Cellipse cx=%2740%27 cy=%2772%27 rx=%2724%27 ry=%2716%27 fill=%27%238a6d2e%27/%3E%3C/svg%3E';
+    var wrap=document.createElement('div');wrap.className='nav-user-wrap';wrap.style.cssText='position:relative;';
+    var btn=document.createElement('button');btn.className='nav-user-btn';btn.style.cssText='display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;padding:0;';
+    btn.onclick=function(e){e.stopPropagation();var d=document.getElementById('nav-user-dropdown');if(d)d.style.display=d.style.display==='none'?'block':'none';};
+    var img=document.createElement('img');img.src=avatarSrc||F;img.style.cssText='width:30px;height:30px;border-radius:50%;object-fit:cover;border:1.5px solid var(--gold-dim);flex-shrink:0;';img.onerror=function(){img.src=F;};
+    var pill=document.createElement('span');pill.textContent=username||'Perfil';pill.style.cssText='background:var(--gold);color:#0c0e10;padding:7px 16px;border-radius:60px;font-weight:500;font-size:0.82rem;letter-spacing:0.04em;white-space:nowrap;';
+    btn.appendChild(img);btn.appendChild(pill);wrap.appendChild(btn);
+    var dd=document.createElement('div');dd.id='nav-user-dropdown';dd.style.cssText='display:none;position:absolute;right:0;top:calc(100% + 8px);background:#13161a;border:1px solid var(--border);border-radius:10px;min-width:160px;z-index:9000;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.5);';
+    dd.innerHTML='<a href="/profile" class="dd-link">Perfil</a><a href="/settings" class="dd-link">Ajustes</a><button class="dd-signout" onclick="navSignOut()">Cerrar sesión</button>';
+    wrap.appendChild(dd);return wrap;
+  }
+  function navSignOut(){sb.auth.signOut().then(function(){window.location.href='/es/';});}
+  document.addEventListener('click',function(e){if(!e.target.closest('.nav-user-wrap')){var d=document.getElementById('nav-user-dropdown');if(d)d.style.display='none';}});
+
+
+  // Update nav based on auth state
+  async function updateNav() {
+    const { data: { session } } = await sb.auth.getSession();
+    const links = document.querySelector('.nav-links');
+    const drawerLinks = document.querySelector('.nav-drawer-links');
+    if (session) {
+      sb.from('profiles').select('avatar_url').eq('id', session.user.id).single().then(({data: prof}) => {
+        const avatarSrc = (prof && prof.avatar_url) || 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 80 80%27%3E%3Ccircle cx=%2740%27 cy=%2740%27 r=%2740%27 fill=%27%23252a30%27/%3E%3Ccircle cx=%2740%27 cy=%2732%27 r=%2714%27 fill=%27%238a6d2e%27/%3E%3Cellipse cx=%2740%27 cy=%2772%27 rx=%2724%27 ry=%2716%27 fill=%27%238a6d2e%27/%3E%3C/svg%3E';
+        if (links) {
+          const wrap = document.createElement('a');
+          wrap.href = '/profile';
+          wrap.style.cssText = 'display:flex;align-items:center;gap:8px;text-decoration:none;';
+          const img = document.createElement('img');
+          img.src = avatarSrc;
+          img.style.cssText = 'width:30px;height:30px;border-radius:50%;object-fit:cover;border:1px solid var(--border);flex-shrink:0;';
+          img.onerror = () => { img.src = 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 80 80%27%3E%3Ccircle cx=%2740%27 cy=%2740%27 r=%2740%27 fill=%27%23252a30%27/%3E%3Ccircle cx=%2740%27 cy=%2732%27 r=%2714%27 fill=%27%238a6d2e%27/%3E%3Cellipse cx=%2740%27 cy=%2772%27 rx=%2724%27 ry=%2716%27 fill=%27%238a6d2e%27/%3E%3C/svg%3E'; };
+          const label = document.createElement('span');
+          label.textContent = 'Profile';
+          label.style.cssText = 'background:var(--gold);color:#0c0e10;padding:7px 16px;border-radius:60px;font-weight:500;font-size:0.82rem;letter-spacing:0.04em;';
+          wrap.appendChild(img);
+          wrap.appendChild(label);
+          links.appendChild(wrap);
+        }
+        if (drawerLinks) {
+          const a = document.createElement('a');
+          a.href = '/profile'; a.textContent = 'Profile';
+          drawerLinks.appendChild(a);
+        }
+      });
+    } else {
+      if (links) {
+        const a = document.createElement('a');
+        a.href = '/login'; a.textContent = 'Sign in';
+        a.style.cssText = 'border:1px solid var(--border);padding:7px 16px;border-radius:60px;font-size:0.82rem;color:var(--cream);';
+        links.appendChild(a);
+      }
+      if (drawerLinks) {
+        const a = document.createElement('a');
+        a.href = '/login'; a.textContent = 'Sign in';
+        drawerLinks.appendChild(a);
+        const b = document.createElement('a');
+        b.href = '/signup'; b.textContent = 'Create account';
+        drawerLinks.appendChild(b);
+      }
+    }
+  }
+  updateNav();
+
+  // Auto-save result when results screen is shown
+  window._sbSaveResult = async function(type, sc) {
+    const { data: { session } } = await sb.auth.getSession();
+    if (!session) return;
+    await sb.from('results').insert({
+      user_id: session.user.id,
+      personality_type: type,
+      ei_e: sc.E||0, ei_i: sc.I||0,
+      sn_s: sc.S||0, sn_n: sc.N||0,
+      tf_t: sc.T||0, tf_f: sc.F||0,
+      jp_j: sc.J||0, jp_p: sc.P||0,
+    });
+  };
+})();
+
+// Demographics
+const demoSelections = {age: null, gender: null, ethnicity: null};
+
+document.addEventListener('click', e => {
+  const btn = e.target.closest('.demo-opt');
+  if (!btn) return;
+  const group = btn.dataset.group;
+  const val = btn.dataset.val;
+  demoSelections[group] = val;
+  document.querySelectorAll(`.demo-opt[data-group="${group}"]`).forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+});
+
+
+function errStr(e) {
+  if (!e) return 'Unknown error';
+  if (typeof e === 'string') return e;
+  return e.message || e.error_description || e.error || JSON.stringify(e, Object.getOwnPropertyNames(e)) || 'Unknown error';
+}
+async function submitDemographics() {
+  const btn = document.getElementById('demo-submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Guardando…';
+  fetch(SUPA_URL + '/rest/v1/demographics', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'apikey': SUPA_KEY,
+      'Authorization': 'Bearer ' + SUPA_KEY,
+      'Prefer': 'return=minimal'
+    },
+    body: JSON.stringify({
+      personality_type: window._resultType || '',
+      age_range: demoSelections.age,
+      gender: demoSelections.gender,
+      ethnicity: demoSelections.ethnicity,
+      test_mode: testMode
+    })
+  }).catch(() => {});
+  showResultsActual();
+}
+
+function skipDemographics() {
+  showResultsActual();
+}
+
+</script>
+</body>
+</html>
