@@ -124,15 +124,13 @@
   .auth-notice a{color:var(--gold);text-decoration:none;}
   .auth-notice a:hover{text-decoration:underline;}
 
-  .nav-user-wrap{position:relative;display:inline-flex;}
+  .nav-user-wrap{position:relative;}
   .nav-user-btn{display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;padding:0;}
-  .nav-user-pill{background:var(--gold);color:#0c0e10;padding:7px 16px;border-radius:60px;font-weight:500;font-size:0.82rem;letter-spacing:0.04em;white-space:nowrap;}
-  .nav-user-avatar{width:30px;height:30px;border-radius:50%;object-fit:cover;border:1.5px solid var(--gold-dim);flex-shrink:0;}
-  .nav-user-dropdown{display:none;position:absolute;right:0;top:calc(100% + 8px);background:#13161a;border:1px solid var(--border);border-radius:10px;min-width:160px;z-index:9000;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.5);}
-  .nav-user-dropdown a{display:block;padding:12px 18px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--border);transition:color 0.15s,background 0.15s;}
-  .nav-user-dropdown a:hover{color:var(--cream);background:rgba(255,255,255,0.04);}
-  .nav-user-dropdown .dd-signout{display:block;width:100%;text-align:left;padding:12px 18px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#e07070;background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.15s;}
-  .nav-user-dropdown .dd-signout:hover{background:rgba(224,112,112,0.08);}
+  #nav-user-dropdown .dd-link{display:block;padding:12px 18px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--border);transition:color 0.15s,background 0.15s;}
+  #nav-user-dropdown .dd-link:hover{color:var(--cream);background:rgba(255,255,255,0.04);}
+  #nav-user-dropdown .dd-signout{display:block;width:100%;text-align:left;padding:12px 18px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#e07070;background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.15s;}
+  #nav-user-dropdown .dd-signout:hover{background:rgba(224,112,112,0.08);}
+
 </style>
 </head>
 <body>
@@ -197,7 +195,7 @@
   </div>
 
   <div class="cat-bar r">
-    <button class="cat-pill active" data-cat="all" onclick="filterCat(this,'all')">All</button>
+    <button class="cat-pill active" data-cat="all" onclick="filterCat(this,'all')">All</button> onclick="filterCat(this,'all')">All</button>
     <button class="cat-pill" data-cat="general" onclick="filterCat(this,'general')">General</button>
     <button class="cat-pill" data-cat="type_discussion" onclick="filterCat(this,'type_discussion')">Type Discussion</button>
     <button class="cat-pill" data-cat="relationships" onclick="filterCat(this,'relationships')">Relationships</button>
@@ -255,48 +253,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-(function() {
-  const FALLBACK_AV = 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 80 80%27%3E%3Ccircle cx=%2740%27 cy=%2740%27 r=%2740%27 fill=%27%23252a30%27/%3E%3Ccircle cx=%2740%27 cy=%2732%27 r=%2714%27 fill=%27%238a6d2e%27/%3E%3Cellipse cx=%2740%27 cy=%2772%27 rx=%2724%27 ry=%2716%27 fill=%27%238a6d2e%27/%3E%3C/svg%3E';
-  window.buildNavUser = function(username, avatarSrc) {
-    const wrap = document.createElement('div');
-    wrap.className = 'nav-user-wrap';
-    const btn = document.createElement('button');
-    btn.className = 'nav-user-btn';
-    const img = document.createElement('img');
-    img.className = 'nav-user-avatar';
-    img.src = avatarSrc || FALLBACK_AV;
-    img.onerror = function() { this.src = FALLBACK_AV; };
-    const pill = document.createElement('span');
-    pill.className = 'nav-user-pill';
-    pill.textContent = username || 'Profile';
-    btn.appendChild(img); btn.appendChild(pill);
-    btn.onclick = function(e) {
-      e.stopPropagation();
-      const dd = wrap.querySelector('.nav-user-dropdown');
-      if (dd) dd.style.display = dd.style.display === 'block' ? 'none' : 'block';
-    };
-    const dd = document.createElement('div');
-    dd.className = 'nav-user-dropdown';
-    dd.innerHTML = '<a href="/profile">Profile</a><a href="/settings">Settings</a><button class="dd-signout" onclick="window._navSignOut()">Sign out</button>';
-    wrap.appendChild(btn); wrap.appendChild(dd);
-    return wrap;
-  };
-  window._navSignOut = async function() {
-    try {
-      const { createClient } = supabase;
-      const _c = createClient('https://rttomfnfyjjssdqfzkaj.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw');
-      await _c.auth.signOut();
-    } catch(e) { console.warn('signout error', e); }
-    window.location.href = '/';
-  };
-  document.addEventListener('click', function(e) {
-    if (!e.target.closest('.nav-user-wrap')) {
-      document.querySelectorAll('.nav-user-dropdown').forEach(function(d) { d.style.display = 'none'; });
-    }
-  });
-})();
-</script>
-<script>
   const { createClient } = supabase;
   const sb = createClient('https://rttomfnfyjjssdqfzkaj.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw');
 
@@ -342,15 +298,33 @@
       .not('thread_id', 'is', null);
     if (votes) votes.forEach(v => { userVotes[v.thread_id] = v.vote; });
     // Nav avatar
-    const { data: prof } = await sb.from('profiles').select('username,avatar_url').eq('id', currentUser.id).single();
+    const { data: prof } = await sb.from('profiles').select('username, avatar_url').eq('id', currentUser.id).single();
     injectNavAuth(prof);
   }
 
-    function injectNavAuth(prof) {
+  function injectNavAuth(prof) {
     const links = document.querySelector('.nav-links');
     const drawerLinks = document.querySelector('.nav-drawer-links');
-    if (links) { links.appendChild(window.buildNavUser((prof&&prof.username)||'Profile', (prof&&prof.avatar_url)||'')); }
-    if (drawerLinks) { const _da=document.createElement('a');_da.href='/profile';_da.textContent=(prof&&prof.username)||'Profile';_da.style.color='var(--gold)';drawerLinks.appendChild(_da); }
+    const avatarSrc = (prof && prof.avatar_url) || 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 80 80%27%3E%3Ccircle cx=%2740%27 cy=%2740%27 r=%2740%27 fill=%27%23252a30%27/%3E%3Ccircle cx=%2740%27 cy=%2732%27 r=%2714%27 fill=%27%238a6d2e%27/%3E%3Cellipse cx=%2740%27 cy=%2772%27 rx=%2724%27 ry=%2716%27 fill=%27%238a6d2e%27/%3E%3C/svg%3E';
+    const username = (prof && prof.username) || 'Profile';
+    if (links) {
+      const wrap = document.createElement('a');
+      wrap.href = '/profile';
+      wrap.style.cssText = 'display:flex;align-items:center;gap:8px;text-decoration:none;';
+      const img = document.createElement('img');
+      img.src = avatarSrc;
+      img.style.cssText = 'width:30px;height:30px;border-radius:50%;object-fit:cover;border:1.5px solid var(--gold-dim);';
+      const pill = document.createElement('span');
+      pill.textContent = username;
+      pill.style.cssText = 'font-size:13px;color:var(--gold);letter-spacing:0.06em;text-transform:uppercase;';
+      wrap.appendChild(img); wrap.appendChild(pill);
+      links.appendChild(wrap);
+    }
+    if (drawerLinks) {
+      const a = document.createElement('a');
+      a.href = '/profile'; a.textContent = username; a.style.color = 'var(--gold)';
+      drawerLinks.insertBefore(a, drawerLinks.firstChild);
+    }
   }
 
   async function loadThreads(reset = true) {
@@ -598,6 +572,38 @@
   });
 
   initAuth().then(() => loadThreads());
+
+
+  function buildNavUser(username, avatarSrc) {
+    const FALLBACK = 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 80 80%27%3E%3Ccircle cx=%2740%27 cy=%2740%27 r=%2740%27 fill=%27%23252a30%27/%3E%3Ccircle cx=%2740%27 cy=%2732%27 r=%2714%27 fill=%27%238a6d2e%27/%3E%3Cellipse cx=%2740%27 cy=%2772%27 rx=%2724%27 ry=%2716%27 fill=%27%238a6d2e%27/%3E%3C/svg%3E';
+    const wrap = document.createElement('div');
+    wrap.className = 'nav-user-wrap'; wrap.style.cssText = 'position:relative;';
+    const btn = document.createElement('button');
+    btn.className = 'nav-user-btn';
+    btn.style.cssText = 'display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;padding:0;';
+    btn.onclick = (e) => { e.stopPropagation(); const d=document.getElementById('nav-user-dropdown'); if(d) d.style.display=d.style.display==='none'?'block':'none'; };
+    const img = document.createElement('img');
+    img.src = avatarSrc || FALLBACK;
+    img.style.cssText = 'width:30px;height:30px;border-radius:50%;object-fit:cover;border:1.5px solid var(--gold-dim);flex-shrink:0;';
+    img.onerror = () => { img.src = FALLBACK; };
+    const pill = document.createElement('span');
+    pill.textContent = username || 'Profile';
+    pill.style.cssText = 'background:var(--gold);color:#0c0e10;padding:7px 16px;border-radius:60px;font-weight:500;font-size:0.82rem;letter-spacing:0.04em;white-space:nowrap;';
+    btn.appendChild(img); btn.appendChild(pill); wrap.appendChild(btn);
+    const dd = document.createElement('div');
+    dd.id = 'nav-user-dropdown';
+    dd.style.cssText = 'display:none;position:absolute;right:0;top:calc(100% + 8px);background:#13161a;border:1px solid var(--border);border-radius:10px;min-width:160px;z-index:9000;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.5);';
+    dd.innerHTML = '<a href="/profile" class="dd-link">Profile</a><a href="/settings" class="dd-link">Settings</a><button class="dd-signout" onclick="navSignOut()">Sign out</button>';
+    wrap.appendChild(dd);
+    return wrap;
+  }
+  async function navSignOut() { await sb.auth.signOut(); window.location.href = '/'; }
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.nav-user-wrap')) {
+      const d = document.getElementById('nav-user-dropdown');
+      if (d) d.style.display = 'none';
+    }
+  });
 
 </script>
 </body>
