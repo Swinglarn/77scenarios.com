@@ -698,6 +698,7 @@ function startTest() {
   if(testMode==='myth'){ scores.N++; fnScores.Ni++; }
   else if(testMode==='normal'){ scores.S++; fnScores.Si++; }
   else { fnScores.Fe++; } // 'both'
+  if(orderedQuestions.length > 77) orderedQuestions.length = 77;
   history = [];
   renderQuestion();
   showScreen('screen-question');
@@ -850,7 +851,7 @@ function showResultsActual() {
 
   document.getElementById('progress-fill').style.width = '100%';
   const deepLink = document.getElementById('type-deep-link');
-  if (deepLink) deepLink.href = `type.html?t=${type}`;
+  if (deepLink) deepLink.href = `/es/type?t=${type}`;
   const fnLink = document.getElementById('functions-link');
   if (fnLink) fnLink.href = `/es/functions?t=${type}`;
   showScreen('screen-result');
@@ -861,8 +862,8 @@ function showResultsActual() {
       document.getElementById('eb7').style.display = 'block';
     }
   }, 300);
-}
   if (window._sbSaveResult) window._sbSaveResult(type, scores);
+}
 
 function retakeTest() {
   history = [];
@@ -1095,26 +1096,24 @@ function errStr(e) {
 }
 async function submitDemographics() {
   const btn = document.getElementById('demo-submit-btn');
-  const status = document.getElementById('demo-status');
   btn.disabled = true;
-  btn.textContent = 'Saving…';
-  const { error } = await sb.from('demographics').insert({
-    personality_type: window._resultType || '',
-    age_range: demoSelections.age,
-    gender: demoSelections.gender,
-    ethnicity: demoSelections.ethnicity,
-    test_mode: testMode
-  });
-  if (error) {
-    console.error('Demographics error:', error);
-    btn.disabled = false;
-    btn.innerHTML = 'Submit <span class="arrow">→</span>';
-    status.style.display = 'block';
-    status.style.color = '#e07070';
-    status.textContent = 'Error: ' + (errStr(error)) + '. You can skip.';
-    document.getElementById('demo-skip-btn').style.display = 'inline-flex';
-    return;
-  }
+  btn.textContent = 'Guardando…';
+  fetch(SUPA_URL + '/rest/v1/demographics', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'apikey': SUPA_KEY,
+      'Authorization': 'Bearer ' + SUPA_KEY,
+      'Prefer': 'return=minimal'
+    },
+    body: JSON.stringify({
+      personality_type: window._resultType || '',
+      age_range: demoSelections.age,
+      gender: demoSelections.gender,
+      ethnicity: demoSelections.ethnicity,
+      test_mode: testMode
+    })
+  }).catch(() => {});
   showResultsActual();
 }
 
