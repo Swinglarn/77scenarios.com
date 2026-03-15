@@ -164,6 +164,7 @@
 <script>
   const { createClient } = supabase;
   const sb = createClient('https://rttomfnfyjjssdqfzkaj.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw');
+  window._navSb = sb;
 
   const CAT_LABELS = {
     general:'General', type_discussion:'Type Discussion', relationships:'Relationships',
@@ -250,28 +251,9 @@
   }
 
   function injectNavAuth(prof) {
-    const links = document.querySelector('.nav-links');
-    const drawerLinks = document.querySelector('.nav-drawer-links');
     const avatarSrc = (prof && prof.avatar_url) || 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 80 80%27%3E%3Ccircle cx=%2740%27 cy=%2740%27 r=%2740%27 fill=%27%23252a30%27/%3E%3Ccircle cx=%2740%27 cy=%2732%27 r=%2714%27 fill=%27%238a6d2e%27/%3E%3Cellipse cx=%2740%27 cy=%2772%27 rx=%2724%27 ry=%2716%27 fill=%27%238a6d2e%27/%3E%3C/svg%3E';
     const username = (prof && prof.username) || 'Profile';
-    if (links) {
-      const wrap = document.createElement('a');
-      wrap.href = '/profile';
-      wrap.style.cssText = 'display:flex;align-items:center;gap:8px;text-decoration:none;';
-      const img = document.createElement('img');
-      img.src = avatarSrc;
-      img.style.cssText = 'width:30px;height:30px;border-radius:50%;object-fit:cover;border:1.5px solid var(--gold-dim);';
-      const pill = document.createElement('span');
-      pill.textContent = username;
-      pill.style.cssText = 'font-size:13px;color:var(--gold);letter-spacing:0.06em;text-transform:uppercase;';
-      wrap.appendChild(img); wrap.appendChild(pill);
-      links.appendChild(wrap);
-    }
-    if (drawerLinks) {
-      const a = document.createElement('a');
-      a.href = '/profile'; a.textContent = username; a.style.color = 'var(--gold)';
-      drawerLinks.insertBefore(a, drawerLinks.firstChild);
-    }
+    
   }
 
   function renderThread(t) {
