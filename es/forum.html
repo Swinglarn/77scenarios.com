@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foro — 77 Scenarios</title>
+<meta name="description" content="Discuss personality types, cognitive functions, relationships and more with the 77 Scenarios community.">
+<meta property="og:title" content="Forum — 77 Scenarios">
+<meta property="og:description" content="Discuss personality types, cognitive functions, and more.">
+<meta property="og:url" content="https://77scenarios.com/es/forum">
+<meta property="og:site_name" content="77 Scenarios">
+<link rel="canonical" href="https://77scenarios.com/es/forum">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{--bg:#0c0e10;--surface:#13161a;--surface2:#1a1e24;--gold:#c9a84c;--gold-dim:#8a6d2e;--cream:#ede8df;--muted:#b5ada6;--border:#252a30;--radius:14px;}
+  html,body{background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
+  body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:0.6;}
+  #t-overlay{position:fixed;inset:0;z-index:9999;pointer-events:none;background:#0c0e10;opacity:1;}
+  .glow{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0;}
+  .glow-1{width:600px;height:600px;top:-200px;left:-150px;background:radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%);}
+  .glow-2{width:400px;height:400px;bottom:-100px;right:-100px;background:radial-gradient(circle,rgba(120,180,160,0.05) 0%,transparent 70%);}
+
+  nav,.site-nav{position:sticky;top:0;z-index:200;background:rgba(12,14,16,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 32px;display:flex;justify-content:space-between;align-items:center;height:56px;}
+  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--cream);text-decoration:none;}
+  .nav-links{display:flex;gap:32px;align-items:center;}
+  .nav-links a{font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;white-space:nowrap;}
+  .nav-links a:hover,.nav-links a.active{color:var(--cream);}
+  .nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+  .nav-burger span{display:block;width:22px;height:1.5px;background:#b5ada6;transition:all 0.3s ease;transform-origin:center;}
+  .nav-burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);background:#c9a84c;}
+  .nav-burger.open span:nth-child(2){opacity:0;}
+  .nav-burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);background:#c9a84c;}
+  .nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:300;opacity:0;transition:opacity 0.3s ease;pointer-events:none;}
+  .nav-overlay.open{opacity:1;pointer-events:auto;}
+  .nav-drawer{position:fixed;top:0;right:-100%;width:min(320px,85vw);height:100%;background:#13161a;border-left:1px solid #252a30;z-index:400;transition:right 0.35s cubic-bezier(0.22,1,0.36,1),visibility 0s linear 0.35s;display:flex;flex-direction:column;pointer-events:none;visibility:hidden;}
+  .nav-drawer.open{right:0;pointer-events:auto;visibility:visible;transition:right 0.35s cubic-bezier(0.22,1,0.36,1),visibility 0s linear 0s;}
+  .nav-drawer-header{display:flex;justify-content:space-between;align-items:center;padding:0 24px;height:56px;border-bottom:1px solid #252a30;flex-shrink:0;}
+  .nav-close{background:none;border:none;color:#b5ada6;font-size:18px;cursor:pointer;padding:4px;transition:color 0.2s;}
+  .nav-close:hover{color:#ede8df;}
+  .nav-drawer-links{display:flex;flex-direction:column;padding:16px 0;}
+  .nav-drawer-links a{font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:#b5ada6;text-decoration:none;padding:18px 24px;border-bottom:1px solid #1e2227;transition:all 0.15s ease;}
+  .nav-drawer-links a:hover{color:#c9a84c;padding-left:32px;}
+  @media(max-width:480px){nav,.site-nav{padding:0 16px;height:52px;}.nav-links{display:none;}.nav-burger{display:flex;}.nav-overlay{display:block;pointer-events:none;}}
+
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+  main{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:56px 32px 96px;}
+  @media(max-width:600px){main{padding:40px 16px 80px;}}
+
+  .r{opacity:0;transform:translateY(24px);transition:opacity 0.65s cubic-bezier(0.22,1,0.36,1),transform 0.65s cubic-bezier(0.22,1,0.36,1);}
+  .r.in{opacity:1;transform:none;}
+
+  /* Page header */
+  .forum-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;gap:16px;flex-wrap:wrap;}
+  .forum-eyebrow{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:10px;}
+  .forum-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3rem);font-weight:600;color:var(--cream);line-height:1.05;}
+  .forum-title em{color:var(--gold);font-style:italic;}
+
+
+  /* Vote buttons */
+  .vote-col{position:absolute;left:0;top:0;bottom:0;width:52px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-right:1px solid var(--border);padding:12px 0;}
+  .vote-btn{background:none;border:none;color:var(--muted);cursor:pointer;padding:4px;font-size:14px;line-height:1;transition:color 0.15s;display:flex;align-items:center;justify-content:center;border-radius:4px;}
+  .vote-btn:hover{color:var(--gold);}
+  .vote-btn.up.active{color:var(--gold);}
+  .vote-btn.down.active{color:#e07070;}
+  .vote-score{font-size:0.82rem;font-weight:500;color:var(--cream);min-width:20px;text-align:center;}
+
+  /* New thread button */
+  .btn-primary{background:var(--gold);color:#0c0e10;border:none;padding:10px 22px;border-radius:8px;font-size:0.85rem;font-weight:500;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:opacity 0.15s;font-family:'DM Sans',sans-serif;white-space:nowrap;}
+  .btn-primary:hover{opacity:0.88;}
+  .btn-secondary{background:transparent;color:var(--muted);border:1px solid var(--border);padding:10px 22px;border-radius:8px;font-size:0.85rem;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:border-color 0.15s,color 0.15s;font-family:'DM Sans',sans-serif;}
+  .btn-secondary:hover{border-color:var(--gold-dim);color:var(--cream);}
+
+  /* Categories */
+  .cat-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px;}
+  .cat-pill{background:transparent;border:1px solid var(--border);border-radius:20px;padding:6px 14px;font-size:0.78rem;letter-spacing:0.06em;color:var(--muted);cursor:pointer;transition:all 0.15s;font-family:'DM Sans',sans-serif;}
+  .cat-pill:hover{border-color:var(--gold-dim);color:var(--cream);}
+  .cat-pill.active{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,0.07);}
+
+  /* Thread list */
+  .thread-list{display:flex;flex-direction:column;gap:2px;}
+  .thread-item{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px 20px 68px;cursor:pointer;transition:border-color 0.15s,background 0.15s;text-decoration:none;display:block;color:inherit;position:relative;}
+  .thread-item:hover{border-color:var(--gold-dim);background:#161a1e;}
+  .thread-item-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:8px;}
+  .thread-cat-badge{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-dim);flex-shrink:0;margin-top:2px;}
+  .thread-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--cream);line-height:1.3;flex:1;}
+  .thread-meta{display:flex;align-items:center;gap:16px;font-size:0.78rem;color:var(--muted);}
+  .thread-meta-author{color:var(--gold-dim);}
+  .thread-replies{display:flex;align-items:center;gap:4px;}
+  .thread-pinned{color:var(--gold);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;}
+
+  /* Empty state */
+  .empty-state{text-align:center;padding:64px 24px;color:var(--muted);}
+  .empty-state-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--cream);margin-bottom:10px;}
+
+  /* Loading */
+  .loading-row{height:72px;background:var(--surface);border:1px solid var(--border);border-radius:10px;animation:pulse 1.4s ease infinite;}
+  @keyframes pulse{0%,100%{opacity:0.5;}50%{opacity:1;}}
+
+  /* Modal */
+  .modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.72);z-index:500;align-items:center;justify-content:center;padding:24px;}
+  .modal-bg.open{display:flex;}
+  .modal{background:#13161a;border:1px solid var(--border);border-radius:16px;width:100%;max-width:580px;padding:36px;position:relative;}
+  .modal-title{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--cream);margin-bottom:24px;}
+  .modal-close{position:absolute;top:20px;right:20px;background:none;border:none;color:var(--muted);font-size:20px;cursor:pointer;line-height:1;}
+  .modal-close:hover{color:var(--cream);}
+  .form-field{display:flex;flex-direction:column;gap:8px;margin-bottom:20px;}
+  .form-label{font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);}
+  .form-input,.form-select,.form-textarea{background:#0c0e10;border:1px solid var(--border);border-radius:8px;padding:12px 14px;color:var(--cream);font-size:0.9rem;font-family:'DM Sans',sans-serif;width:100%;transition:border-color 0.15s;outline:none;}
+  .form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--gold-dim);}
+  .form-textarea{resize:vertical;min-height:140px;line-height:1.6;}
+  .form-select option{background:#13161a;}
+  .form-error{font-size:0.8rem;color:#e07070;margin-top:-12px;margin-bottom:8px;display:none;}
+  .modal-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:8px;}
+
+  /* Thread delete button */
+  .thread-delete-btn{position:absolute;top:12px;right:12px;background:none;border:none;color:var(--muted);font-size:14px;cursor:pointer;padding:4px 8px;border-radius:4px;transition:color 0.15s,background 0.15s;z-index:2;}
+  .thread-delete-btn:hover{color:#e07070;background:rgba(224,112,112,0.1);}
+
+  /* Auth notice */
+  .auth-notice{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;text-align:center;color:var(--muted);font-size:0.88rem;margin-bottom:24px;}
+  .auth-notice a{color:var(--gold);text-decoration:none;}
+  .auth-notice a:hover{text-decoration:underline;}
+</style>
+
+<link rel="alternate" hreflang="en" href="https://77scenarios.com/forum">
+<link rel="alternate" hreflang="es" href="https://77scenarios.com/es/forum">
+<script src="/nav.js" defer></script>
+</head>
+<body>
+<div id="t-overlay"></div>
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+
+<nav class="site-nav">
+  <a href="/es/" class="nav-logo">77scenarios.com</a>
+  <div class="nav-links" id="nav-links">
+    <a href="/es/">Hacer el Test</a>
+    <a href="/es/types">16 Tipos</a>
+    <a href="/es/letters">8 Letras</a>
+    <a href="/es/cognitive-functions">Funciones</a>
+    <a href="/es/compatibility">Compatibilidad</a>
+    <a href="/es/archive">Archivo</a>
+    <a href="/es/forum" class="active">Foro</a>
+    <a href="/es/about">Acerca de</a>
+  </div>
+  <button class="nav-burger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-overlay" id="nav-overlay" onclick="toggleMenu()"></div>
+<div class="nav-drawer" id="nav-drawer">
+  <div class="nav-drawer-header">
+    <a href="/es/" class="nav-logo">77scenarios.com</a>
+    <button class="nav-close" onclick="toggleMenu()">✕</button>
+  </div>
+  <div class="nav-drawer-links">
+    <a href="/es/">Hacer el Test</a>
+    <a href="/es/types">16 Tipos</a>
+    <a href="/es/letters">8 Letras</a>
+    <a href="/es/cognitive-functions">Funciones</a>
+    <a href="/es/compatibility">Compatibilidad</a>
+    <a href="/es/archive">Archivo</a>
+    <a href="/es/forum">Foro</a>
+    <a href="/es/about">Acerca de</a>
+  </div>
+</div>
+
+<h1 class="sr-only">Forum — 77 Scenarios</h1>
+
+<main>
+  <div class="forum-header r">
+    <div>
+      <div class="forum-eyebrow">Community</div>
+      <div class="forum-title">The <em>forum.</em></div>
+    </div>
+    <button class="btn-primary" id="new-thread-btn" onclick="handleNewThread()">New thread <span>+</span></button>
+  </div>
+
+  <div id="auth-notice" class="auth-notice r" style="display:none;">
+    <a href="/es/login">Iniciar sesión</a> or <a href="/es/signup">create an account</a> to start a thread or reply.
+  </div>
+
+
+  <div class="cat-bar r" style="margin-bottom:12px;">
+    <button class="sort-pill cat-pill active" onclick="setSort(this,'hot')">🔥 Hot</button>
+    <button class="sort-pill cat-pill" onclick="setSort(this,'top')">⬆ Top</button>
+    <button class="sort-pill cat-pill" onclick="setSort(this,'new')">✦ New</button>
+  </div>
+
+  <div class="cat-bar r">
+    <button class="cat-pill active" data-cat="all" onclick="filterCat(this,'all')">Todo</button> onclick="filterCat(this,'all')">Todo</button>
+    <button class="cat-pill" data-cat="general" onclick="filterCat(this,'general')">General</button>
+    <button class="cat-pill" data-cat="type_discussion" onclick="filterCat(this,'type_discussion')">Type Discussion</button>
+    <button class="cat-pill" data-cat="relationships" onclick="filterCat(this,'relationships')">Relationships</button>
+    <button class="cat-pill" data-cat="cognitive_functions" onclick="filterCat(this,'cognitive_functions')">Cognitive Functions</button>
+    <button class="cat-pill" data-cat="ask_the_forum" onclick="filterCat(this,'ask_the_forum')">Ask the Forum</button>
+    <button class="cat-pill" data-cat="off_topic" onclick="filterCat(this,'off_topic')">Off Topic</button>
+  </div>
+
+  <div class="thread-list r" id="thread-list">
+    <div class="loading-row"></div>
+    <div class="loading-row"></div>
+    <div class="loading-row"></div>
+    <div class="loading-row"></div>
+    <div class="loading-row"></div>
+  </div>
+
+  <div style="text-align:center;margin-top:32px;display:none;" id="load-more-wrap">
+    <button class="btn-secondary" onclick="loadMore()">Load more</button>
+  </div>
+</main>
+
+<!-- New Thread Modal -->
+<div class="modal-bg" id="new-thread-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-title">Start a thread</div>
+    <div class="form-field">
+      <label class="form-label">Category</label>
+      <select class="form-select" id="thread-cat">
+        <option value="general">General</option>
+        <option value="type_discussion">Type Discussion</option>
+        <option value="relationships">Relationships</option>
+        <option value="cognitive_functions">Cognitive Functions</option>
+        <option value="ask_the_forum">Ask the Forum</option>
+        <option value="off_topic">Off Topic</option>
+      </select>
+    </div>
+    <div class="form-field">
+      <label class="form-label">Title</label>
+      <input class="form-input" id="thread-title" type="text" placeholder="What is this thread about?" maxlength="200">
+      <div class="form-error" id="title-error">Title must be at least 3 characters.</div>
+    </div>
+    <div class="form-field">
+      <label class="form-label">Body</label>
+      <textarea class="form-textarea" id="thread-body" placeholder="Write your post here..."></textarea>
+      <div class="form-error" id="body-error">Body must be at least 10 characters.</div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-secondary" onclick="closeModal()">Cancel</button>
+      <button class="btn-primary" id="submit-thread-btn" onclick="submitThread()">Post thread →</button>
+    </div>
+    <div id="thread-post-error" style="display:none;color:#e07070;font-size:0.82rem;margin-top:12px;text-align:right;"></div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const { createClient } = supabase;
+  const sb = createClient('https://rttomfnfyjjssdqfzkaj.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw');
+
+  const CAT_LABELS = {
+    general: 'General', type_discussion: 'Type Discussion',
+    relationships: 'Relationships', cognitive_functions: 'Cognitive Functions',
+    ask_the_forum: 'Ask the Forum', off_topic: 'Off Topic'
+  };
+
+  let currentCat = 'all';
+  let currentUser = null;
+  let userVotes = {}; // threadId -> 1 or -1
+  let page = 0;
+  const PAGE_SIZE = 20;
+  let sortMode = 'hot'; // 'hot' | 'top' | 'new'
+  let hasMore = false;
+
+  function errStr(e) {
+    if (!e) return 'Unknown error';
+    if (typeof e === 'string') return e;
+    // Supabase JS v2 error shape
+    if (e.message) return e.message;
+    if (e.error_description) return e.error_description;
+    if (e.error) return typeof e.error === 'string' ? e.error : 'Unknown error';
+    if (e.details) return e.details;
+    if (e.hint) return e.hint;
+    if (e.code) return 'Code: ' + e.code;
+    try { return JSON.stringify(e); } catch { return 'Unknown error'; }
+  }
+
+  // Auth check + load user votes
+  async function initAuth() {
+    const { data } = await sb.auth.getUser();
+    currentUser = data?.user || null;
+    if (!currentUser) {
+      document.getElementById('auth-notice').style.display = 'block';
+      return;
+    }
+    // Load user's votes on threads
+    const { data: votes } = await sb.from('forum_votes')
+      .select('thread_id, vote')
+      .eq('user_id', currentUser.id)
+      .not('thread_id', 'is', null);
+    if (votes) votes.forEach(v => { userVotes[v.thread_id] = v.vote; });
+    // Nav avatar
+    const { data: prof } = await sb.from('profiles').select('username, avatar_url').eq('id', currentUser.id).single();
+    injectNavAuth(prof);
+  }
+
+  function injectNavAuth(prof) {
+    const links = document.querySelector('.nav-links');
+    const drawerLinks = document.querySelector('.nav-drawer-links');
+    const avatarSrc = (prof && prof.avatar_url) || 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 80 80%27%3E%3Ccircle cx=%2740%27 cy=%2740%27 r=%2740%27 fill=%27%23252a30%27/%3E%3Ccircle cx=%2740%27 cy=%2732%27 r=%2714%27 fill=%27%238a6d2e%27/%3E%3Cellipse cx=%2740%27 cy=%2772%27 rx=%2724%27 ry=%2716%27 fill=%27%238a6d2e%27/%3E%3C/svg%3E';
+    const username = (prof && prof.username) || 'Profile';
+    if (links) {
+      const wrap = document.createElement('a');
+      wrap.href = '/profile';
+      wrap.style.cssText = 'display:flex;align-items:center;gap:8px;text-decoration:none;';
+      const img = document.createElement('img');
+      img.src = avatarSrc;
+      img.style.cssText = 'width:30px;height:30px;border-radius:50%;object-fit:cover;border:1.5px solid var(--gold-dim);';
+      const pill = document.createElement('span');
+      pill.textContent = username;
+      pill.style.cssText = 'font-size:13px;color:var(--gold);letter-spacing:0.06em;text-transform:uppercase;';
+      wrap.appendChild(img); wrap.appendChild(pill);
+      links.appendChild(wrap);
+    }
+    if (drawerLinks) {
+      const a = document.createElement('a');
+      a.href = '/profile'; a.textContent = username; a.style.color = 'var(--gold)';
+      drawerLinks.insertBefore(a, drawerLinks.firstChild);
+    }
+  }
+
+  async function loadThreads(reset = true) {
+    if (reset) {
+      page = 0;
+      document.getElementById('thread-list').innerHTML = '<div class="loading-row"></div><div class="loading-row"></div><div class="loading-row"></div>';
+    }
+
+    let query = sb.from('forum_threads')
+      .select('id, title, category, reply_count, is_pinned, vote_score, last_activity_at, created_at, user_id, author_username')
+      .range(page * PAGE_SIZE, page * PAGE_SIZE + PAGE_SIZE);
+
+    if (currentCat !== 'all') query = query.eq('category', currentCat);
+
+    if (sortMode === 'top') {
+      query = query.order('is_pinned', { ascending: false }).order('vote_score', { ascending: false });
+    } else if (sortMode === 'new') {
+      query = query.order('is_pinned', { ascending: false }).order('created_at', { ascending: false });
+    } else {
+      // hot: pinned first, then last activity
+      query = query.order('is_pinned', { ascending: false }).order('last_activity_at', { ascending: false });
+    }
+
+    const { data, error } = await query;
+    if (error) { document.getElementById('thread-list').innerHTML = '<div class="empty-state"><div class="empty-state-title">Could not load threads.</div><p>' + errStr(error) + '</p></div>'; return; }
+
+    hasMore = data.length === PAGE_SIZE + 1;
+    const threads = hasMore ? data.slice(0, PAGE_SIZE) : data;
+    const list = document.getElementById('thread-list');
+    if (reset) list.innerHTML = '';
+
+    if (threads.length === 0 && reset) {
+      list.innerHTML = '<div class="empty-state"><div class="empty-state-title">No threads yet.</div><p>Be the first to start a conversation.</p></div>';
+      document.getElementById('load-more-wrap').style.display = 'none';
+      return;
+    }
+
+    threads.forEach(t => renderThread(t, list));
+    document.getElementById('load-more-wrap').style.display = hasMore ? 'block' : 'none';
+  }
+
+  function renderThread(t, list) {
+    const username = t.author_username || 'Anonymous';
+    const myVote = userVotes[t.id] || 0;
+    const dateStr = formatDate(t.created_at);
+    const agoStr = timeAgo(t.last_activity_at);
+
+    const wrapper = document.createElement('div');
+    wrapper.style.cssText = 'position:relative;';
+
+    // Vote column (stops click propagation so it doesn't open the thread)
+    const voteCol = document.createElement('div');
+    voteCol.className = 'vote-col';
+    voteCol.innerHTML = `
+      <button class="vote-btn up ${myVote === 1 ? 'active' : ''}" data-id="${t.id}" data-v="1" title="Upvote">▲</button>
+      <span class="vote-score" id="vs-${t.id}">${t.vote_score}</span>
+      <button class="vote-btn down ${myVote === -1 ? 'active' : ''}" data-id="${t.id}" data-v="-1" title="Downvote">▼</button>
+    `;
+    voteCol.querySelectorAll('.vote-btn').forEach(btn => {
+      btn.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); handleVote(t.id, null, parseInt(btn.dataset.v)); });
+    });
+
+    const a = document.createElement('a');
+    a.className = 'thread-item';
+    a.href = `/forum-thread?id=${t.id}`;
+    a.innerHTML = `
+      <div class="thread-item-top">
+        <div class="thread-title">${escHtml(t.title)}</div>
+        <div class="thread-cat-badge">${CAT_LABELS[t.category] || t.category}</div>
+      </div>
+      <div class="thread-meta">
+        ${t.is_pinned ? '<span class="thread-pinned">📌 Pinned</span>' : ''}
+        <span class="thread-meta-author">${escHtml(username)}</span>
+        <span title="${new Date(t.created_at).toLocaleString()}">${dateStr}</span>
+        <span>💬 ${t.reply_count}</span>
+        <span>🕐 ${agoStr}</span>
+      </div>`;
+
+    // Delete button for own threads
+    if (currentUser && t.user_id === currentUser.id) {
+      const delBtn = document.createElement('button');
+      delBtn.className = 'thread-delete-btn';
+      delBtn.textContent = '✕';
+      delBtn.title = 'Delete thread';
+      delBtn.onclick = e => { e.preventDefault(); e.stopPropagation(); deleteThread(t.id); };
+      wrapper.appendChild(delBtn);
+    }
+
+    wrapper.appendChild(voteCol);
+    wrapper.appendChild(a);
+    list.appendChild(wrapper);
+  }
+
+  async function handleVote(threadId, replyId, v) {
+    if (!currentUser) { window.location.href = '/login'; return; }
+    const isThread = threadId !== null;
+    const key = isThread ? threadId : replyId;
+    const existing = userVotes[key];
+
+    if (existing === v) {
+      // Remove vote
+      const col = isThread ? 'thread_id' : 'reply_id';
+      await sb.from('forum_votes').delete().eq('user_id', currentUser.id).eq(col, key);
+      delete userVotes[key];
+    } else {
+      if (existing) {
+        // Remove old vote first
+        const col = isThread ? 'thread_id' : 'reply_id';
+        await sb.from('forum_votes').delete().eq('user_id', currentUser.id).eq(col, key);
+      }
+      // Add new vote
+      const payload = { user_id: currentUser.id, vote: v };
+      if (isThread) payload.thread_id = threadId; else payload.reply_id = replyId;
+      const { error } = await sb.from('forum_votes').insert(payload);
+      if (error) { console.error('Vote error:', errStr(error)); return; }
+      userVotes[key] = v;
+    }
+
+    // Refresh score display
+    if (isThread) {
+      const { data } = await sb.from('forum_threads').select('vote_score').eq('id', threadId).single();
+      if (data) {
+        const el = document.getElementById(`vs-${threadId}`);
+        if (el) el.textContent = data.vote_score;
+        // Update button states
+        document.querySelectorAll(`.vote-btn[data-id="${threadId}"]`).forEach(btn => {
+          const bv = parseInt(btn.dataset.v);
+          btn.classList.toggle('active', userVotes[threadId] === bv);
+        });
+      }
+    }
+  }
+
+  async function deleteThread(id) {
+    if (!confirm('Delete this thread and all its replies?')) return;
+    const { error } = await sb.from('forum_threads').delete().eq('id', id).eq('user_id', currentUser.id);
+    if (error) { alert('Error: ' + errStr(error)); return; }
+    loadThreads();
+  }
+
+  function loadMore() { page++; loadThreads(false); }
+
+  function filterCat(el, cat) {
+    currentCat = cat;
+    document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+    el.classList.add('active');
+    loadThreads();
+  }
+
+  function setSort(el, mode) {
+    sortMode = mode;
+    document.querySelectorAll('.sort-pill').forEach(p => p.classList.remove('active'));
+    el.classList.add('active');
+    loadThreads();
+  }
+
+  function handleNewThread() {
+    if (!currentUser) { window.location.href = '/login'; return; }
+    document.getElementById('new-thread-modal').classList.add('open');
+  }
+
+  function closeModal() {
+    document.getElementById('new-thread-modal').classList.remove('open');
+    document.getElementById('thread-title').value = '';
+    document.getElementById('thread-body').value = '';
+    ['title-error','body-error','thread-post-error'].forEach(id => document.getElementById(id).style.display = 'none');
+  }
+
+  async function submitThread() {
+    const title = document.getElementById('thread-title').value.trim();
+    const body = document.getElementById('thread-body').value.trim();
+    const cat = document.getElementById('thread-cat').value;
+    let valid = true;
+    if (title.length < 3) { document.getElementById('title-error').style.display = 'block'; valid = false; }
+    else document.getElementById('title-error').style.display = 'none';
+    if (body.length < 10) { document.getElementById('body-error').style.display = 'block'; valid = false; }
+    else document.getElementById('body-error').style.display = 'none';
+    if (!valid) return;
+
+    const btn = document.getElementById('submit-thread-btn');
+    btn.disabled = true; btn.textContent = 'Posting…';
+
+    const { data: profile } = await sb.from('profiles').select('username').eq('id', currentUser.id).single();
+    const username = profile?.username || 'Anonymous';
+
+    const { data, error } = await sb.from('forum_threads').insert({
+      title, body, category: cat, user_id: currentUser.id, author_username: username
+    }).select('id').single();
+
+    if (error) {
+      document.getElementById('thread-post-error').style.display = 'block';
+      document.getElementById('thread-post-error').textContent = 'Error: ' + errStr(error);
+      btn.disabled = false; btn.innerHTML = 'Post thread →';
+      return;
+    }
+    closeModal();
+    window.location.href = `/forum-thread?id=${data.id}`;
+  }
+
+  function formatDate(ts) {
+    const d = new Date(ts);
+    return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+  }
+
+  function timeAgo(ts) {
+    const diff = Date.now() - new Date(ts).getTime();
+    const m = Math.floor(diff / 60000);
+    if (m < 1) return 'just now';
+    if (m < 60) return `${m}m ago`;
+    const h = Math.floor(m / 60);
+    if (h < 24) return `${h}h ago`;
+    const d = Math.floor(h / 24);
+    if (d < 30) return `${d}d ago`;
+    return formatDate(ts);
+  }
+
+  function escHtml(s) {
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function toggleMenu() {
+    document.querySelector('.nav-burger').classList.toggle('open');
+    document.getElementById('nav-drawer').classList.toggle('open');
+    document.getElementById('nav-overlay').classList.toggle('open');
+  }
+
+  const ro = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.r').forEach(el => ro.observe(el));
+
+  const ov = document.getElementById('t-overlay');
+  window.addEventListener('pageshow', () => {
+    requestAnimationFrame(() => { ov.style.transition = 'opacity 0.45s ease'; ov.style.opacity = '0'; });
+  });
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href]');
+    if (!a) return;
+    const href = a.getAttribute('href');
+    if (!href || href.startsWith('#') || href.startsWith('mailto') || a.target === '_blank') return;
+    if (new URL(a.href, location.origin).origin !== location.origin) return;
+    e.preventDefault();
+    ov.style.transition = 'opacity 0.3s ease'; ov.style.opacity = '1';
+    setTimeout(() => { window.location.href = href; }, 310);
+  });
+
+  initAuth().then(() => loadThreads());
+
+</script>
+</body>
+</html>

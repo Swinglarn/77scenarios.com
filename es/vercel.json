@@ -1,0 +1,130 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/settings",
+      "destination": "/settings.html"
+    },
+    {
+      "source": "/login",
+      "destination": "/login.html"
+    },
+    {
+      "source": "/signup",
+      "destination": "/signup.html"
+    },
+    {
+      "source": "/profile",
+      "destination": "/profile.html"
+    },
+    {
+      "source": "/types",
+      "destination": "/types.html"
+    },
+    {
+      "source": "/type",
+      "destination": "/type.html"
+    },
+    {
+      "source": "/letters",
+      "destination": "/letters.html"
+    },
+    {
+      "source": "/letter",
+      "destination": "/letter.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/functions",
+      "destination": "/functions.html"
+    },
+    {
+      "source": "/cognitive-functions",
+      "destination": "/cognitive-functions.html"
+    },
+    {
+      "source": "/compatibility",
+      "destination": "/compatibility.html"
+    },
+    {
+      "source": "/archive",
+      "destination": "/archive.html"
+    },
+    {
+      "source": "/forum",
+      "destination": "/forum.html"
+    },
+    {
+      "source": "/forum-thread",
+      "destination": "/forum-thread.html"
+    },
+    {
+      "source": "/es",
+      "destination": "/es/index.html"
+    },
+    {
+      "source": "/es/type",
+      "destination": "/es/type.html"
+    },
+    {
+      "source": "/es/types",
+      "destination": "/es/types.html"
+    },
+    {
+      "source": "/es/letters",
+      "destination": "/es/letters.html"
+    },
+    {
+      "source": "/es/letter",
+      "destination": "/es/letter.html"
+    },
+    {
+      "source": "/es/about",
+      "destination": "/es/about.html"
+    },
+    {
+      "source": "/es/archive",
+      "destination": "/es/archive.html"
+    },
+    {
+      "source": "/es/functions",
+      "destination": "/es/functions.html"
+    },
+    {
+      "source": "/es/cognitive-functions",
+      "destination": "/es/cognitive-functions.html"
+    },
+    {
+      "source": "/es/compatibility",
+      "destination": "/es/compatibility.html"
+    },
+    {
+      "source": "/es/forum",
+      "destination": "/es/forum.html"
+    },
+    {
+      "source": "/es/forum-thread",
+      "destination": "/es/forum-thread.html"
+    },
+    {
+      "source": "/es/login",
+      "destination": "/es/login.html"
+    },
+    {
+      "source": "/es/signup",
+      "destination": "/es/signup.html"
+    },
+    {
+      "source": "/es/profile",
+      "destination": "/es/profile.html"
+    },
+    {
+      "source": "/es/settings",
+      "destination": "/es/settings.html"
+    }
+  ]
+}
