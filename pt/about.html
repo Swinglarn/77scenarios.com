@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About 77 Scenarios - Scenario-Based Personality Test</title>
+<meta name="description" content="How 77 Scenarios works, where Myers-Briggs comes from, and why scenario-based testing is more accurate than self-rating questionnaires.">
+<meta name="keywords" content="how is MBTI scored, is Myers-Briggs accurate, Myers-Briggs criticism, personality test methodology, MBTI reliability, scenario based personality test, how personality tests work, Big Five vs MBTI">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://77scenarios.com/og-image.png">
+<meta property="og:title" content="About: 77Scenarios">
+<meta property="og:description" content="How the scoring works, where the Myers-Briggs framework comes from, and what the science actually says about personality testing.">
+<meta property="og:url" content="https://77scenarios.com/about">
+<meta property="og:site_name" content="77 Scenarios">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About 77 Scenarios: How the Test Works">
+<meta name="twitter:description" content="The scoring logic, the history of MBTI, and an honest look at what personality tests can and can't tell you.">
+<link rel="canonical" href="https://77scenarios.com/pt/about">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"About the 77 Scenarios Personality Test","description":"How the test is scored, where Myers-Briggs comes from, and what the research says about personality type testing.","url":"https://77scenarios.com/about","publisher":{"@type":"Organization","name":"77 Scenarios","url":"https://77scenarios.com"}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{--bg:#0c0e10;--surface:#13161a;--surface2:#1a1e24;--gold:#c9a84c;--gold-dim:#8a6d2e;--cream:#ede8df;--muted:#b5ada6;--border:#252a30;--radius:14px;}
+  html,body{background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
+  body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:0.6;}
+  #t-overlay{position:fixed;inset:0;z-index:9999;pointer-events:none;background:#0c0e10;opacity:1;}
+  .glow{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0;}
+  .glow-1{width:600px;height:600px;top:-200px;left:-150px;background:radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%);}
+  .glow-2{width:400px;height:400px;bottom:-100px;right:-100px;background:radial-gradient(circle,rgba(120,180,160,0.05) 0%,transparent 70%);}
+
+    nav, .site-nav{position:sticky;top:0;z-index:200;background:rgba(12,14,16,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 32px;display:flex;justify-content:space-between;align-items:center;height:56px;}
+  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--cream);text-decoration:none;}
+  .nav-links{display:flex;gap:32px;align-items:center;}
+  .nav-links a{font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;white-space:nowrap;}
+  .nav-links a:hover,.nav-links a.active{color:var(--cream);}
+  .nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+  .nav-burger span{display:block;width:22px;height:1.5px;background:#b5ada6;transition:all 0.3s ease;transform-origin:center;}
+  .nav-burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);background:#c9a84c;}
+  .nav-burger.open span:nth-child(2){opacity:0;}
+  .nav-burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);background:#c9a84c;}
+  .nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:300;opacity:0;transition:opacity 0.3s ease;pointer-events:none;}
+  .nav-overlay.open{opacity:1;pointer-events:auto;}
+  .nav-drawer{position:fixed;top:0;right:-100%;width:min(320px,85vw);height:100%;background:#13161a;border-left:1px solid #252a30;z-index:400;transition:right 0.35s cubic-bezier(0.22,1,0.36,1),visibility 0s linear 0.35s;display:flex;flex-direction:column;pointer-events:none;visibility:hidden;}
+  .nav-drawer.open{right:0;pointer-events:auto;visibility:visible;transition:right 0.35s cubic-bezier(0.22,1,0.36,1),visibility 0s linear 0s;}
+  .nav-drawer-header{display:flex;justify-content:space-between;align-items:center;padding:0 24px;height:56px;border-bottom:1px solid #252a30;flex-shrink:0;}
+  .nav-close{background:none;border:none;color:#b5ada6;font-size:18px;cursor:pointer;padding:4px;transition:color 0.2s;}
+  .nav-close:hover{color:#ede8df;}
+  .nav-drawer-links{display:flex;flex-direction:column;padding:16px 0;}
+  .nav-drawer-links a{font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:#b5ada6;text-decoration:none;padding:18px 24px;border-bottom:1px solid #1e2227;transition:all 0.15s ease;}
+  .nav-drawer-links a:hover{color:#c9a84c;padding-left:32px;}
+  .nav-drawer-links a:first-child{color:#c9a84c;}
+  @media(max-width:480px){nav,.site-nav{padding:0 16px;height:52px;}.nav-links{display:none;}.nav-burger{display:flex;}.nav-overlay{display:block;pointer-events:none;}}
+
+  main{position:relative;z-index:1;max-width:740px;margin:0 auto;padding:72px 32px 96px;}
+
+  /* REVEAL */
+  .r{opacity:0;transform:translateY(24px);transition:opacity 0.65s cubic-bezier(0.22,1,0.36,1),transform 0.65s cubic-bezier(0.22,1,0.36,1);}
+  .r.in{opacity:1;transform:none;}
+
+  .page-eyebrow{font-size:12px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:12px;}
+  .page-eyebrow::before{content:'';display:block;height:1px;width:24px;background:var(--gold-dim);}
+
+  h1{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,7vw,68px);font-weight:300;line-height:0.95;letter-spacing:-0.02em;color:var(--cream);margin-bottom:16px;}
+  h1 em{font-style:italic;color:var(--gold);}
+  .page-sub{font-size:15px;color:var(--muted);line-height:1.75;max-width:520px;margin-bottom:72px;}
+
+  .section{margin-bottom:56px;}
+  .section-label{font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+  .section-label::after{content:'';display:block;flex:1;height:1px;background:var(--border);}
+
+  .body-text{font-size:16px;line-height:1.95;color:#a09890;}
+  .body-text+.body-text{margin-top:18px;}
+
+  /* Scoring diagram */
+  .score-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px;}
+  @media(max-width:520px){.score-grid{grid-template-columns:1fr;}}
+  .score-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px 24px;}
+  .score-dim{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+  .score-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+  .score-letters{display:flex;gap:10px;}
+  .score-letter{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--cream);}
+  .score-letter.dim{color:var(--muted);}
+  .score-count{font-size:12px;color:var(--muted);letter-spacing:0.06em;}
+  .score-bar-track{height:4px;background:var(--border);border-radius:4px;overflow:hidden;}
+  .score-bar-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--gold-dim),var(--gold));}
+
+  /* Timeline */
+  .timeline{position:relative;padding-left:28px;margin-top:28px;}
+  .timeline::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:1px;background:var(--border);}
+  .tl-item{position:relative;margin-bottom:32px;}
+  .tl-item:last-child{margin-bottom:0;}
+  .tl-dot{position:absolute;left:-32px;top:6px;width:8px;height:8px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--gold);}
+  .tl-year{font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+  .tl-text{font-size:15px;line-height:1.8;color:#a09890;}
+
+  /* Verdict boxes */
+  .verdict-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px;}
+  @media(max-width:520px){.verdict-grid{grid-template-columns:1fr;}}
+  .verdict-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;}
+  .verdict-box.good{border-left:2px solid var(--gold);}
+  .verdict-box.caution{border-left:2px solid #6b5a3a;}
+  .verdict-title{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:14px;}
+  .verdict-box.good .verdict-title{color:var(--gold);}
+  .verdict-box.caution .verdict-title{color:#8a7040;}
+  .verdict-box ul{list-style:none;}
+  .verdict-box ul li{font-size:14px;color:#a09890;line-height:1.75;padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:10px;align-items:flex-start;}
+  .verdict-box ul li:last-child{border-bottom:none;}
+  .verdict-box.good ul li::before{content:'↑';color:var(--gold-dim);flex-shrink:0;}
+  .verdict-box.caution ul li::before{content:'↓';color:#6b5a3a;flex-shrink:0;}
+
+  .callout{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--gold-dim);border-radius:var(--radius);padding:24px 28px;margin-top:28px;}
+  .callout-text{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:300;font-style:italic;color:var(--cream);line-height:1.55;}
+
+  .sep{height:1px;background:var(--border);margin:56px 0;}
+
+  .cta-block{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:36px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+  .cta-text{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--cream);line-height:1.4;}
+  .cta-text em{font-style:italic;color:var(--gold);}
+  .btn-gold{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:#0c0e10;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;border:none;border-radius:60px;padding:14px 28px;cursor:pointer;text-decoration:none;transition:all 0.25s;}
+  .btn-gold:hover{background:var(--cream);transform:translateY(-2px);}
+</style>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="alternate" hreflang="en" href="https://77scenarios.com/about">
+<link rel="alternate" hreflang="pt-BR" href="https://77scenarios.com/pt/about">
+<script src="/nav.js" defer></script>
+</head>
+<body>
+<div id="t-overlay"></div>
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+
+<nav class="site-nav">
+  <a href="/pt/" class="nav-logo">77scenarios.com</a>
+  <div class="nav-links">
+    <a href="/pt/">Fazer o Teste</a>
+    <a href="/pt/types">16 Tipos</a>
+    <a href="/pt/letters">8 Letras</a>
+    <a href="/pt/cognitive-functions">Funções</a>
+    <a href="/pt/compatibility">Compatibilidade</a>
+    <a href="/pt/archive">Arquivo</a>
+    <a href="/pt/about" class="active">Sobre</a>
+  </div>
+  <button class="nav-burger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="nav-overlay" id="nav-overlay" onclick="toggleMenu()"></div>
+<div class="nav-drawer" id="nav-drawer">
+  <div class="nav-drawer-header">
+    <span style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:#ede8df;">77scenarios.com</span>
+    <button class="nav-close" onclick="toggleMenu()">&#10005;</button>
+  </div>
+  <div class="nav-drawer-links">
+    <a href="/pt/">Fazer o Teste</a>
+    <a href="/pt/types">16 Tipos</a>
+    <a href="/pt/letters">8 Letras</a>
+    <a href="/pt/cognitive-functions">Funções</a>
+    <a href="/pt/compatibility">Compatibilidade</a>
+    <a href="/pt/archive">Arquivo</a>
+    <a href="/pt/forum">Fórum</a>
+    <a href="/pt/about">Sobre</a>
+  </div>
+</div>
+
+<main>
+  <div class="page-eyebrow r" data-d="0">About the test</div>
+  <h1 class="r" data-d="1">77 <em>scenarios.</em><br>No right answers.</h1>
+  <p class="page-sub r" data-d="2">Where the Myers-Briggs framework comes from, what the research actually says, and an honest look at what a personality test can and can't tell you.</p>
+
+  <!-- WHAT THE TEST IS -->
+  <div class="section r" data-d="3">
+    <div class="section-label">O teste</div>
+    <p class="body-text">77 Scenarios puts you inside real situations and asks what you would actually do. Not what you think you should do. Not how you'd describe yourself. Just: you are here, this is happening, which way do you go.</p>
+    <p class="body-text">Each scenario puts you at a crossroads. Two paths, no wrong turn. You pick the one that fits and move on. By the end, the pattern of your choices has said something about you that no single question could.</p>
+    <div class="callout">
+      <div class="callout-text">"The scenarios are drawn from myth, history, and the kind of moments that reveal character. Not who you are at your best — who you are when it counts."</div>
+    </div>
+  </div>
+
+    <!-- WHY SCENARIOS -->
+  <div class="section r" data-d="4">
+    <div class="section-label">Por que cenários em vez de autoavaliação</div>
+    <p class="body-text">Most personality tests ask you to rate statements like "I enjoy meeting new people" on a scale of 1 to 5. The problem is that people are genuinely unreliable narrators of their own behaviour. We answer based on who we think we are, who we want to be, and what we think the question is really asking, all at once.</p>
+    <p class="body-text">Scenarios sidestep this. When you are placed inside a real situation, you are not being asked to self-assess. You are just responding to something in front of you. The answer still reflects who you are, but it gets there without asking you to describe yourself accurately — which is a skill most people do not have reliable access to.</p>
+    <div class="callout">
+      <div class="callout-text">"The gap between who we think we are and how we actually behave is one of the most consistent findings in personality psychology. Scenarios close that gap."</div>
+    </div>
+  </div>
+
+  <!-- HISTORY -->
+  <div class="section r" data-d="5">
+    <div class="section-label">De onde vem o Myers-Briggs</div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1921</div>
+        <div class="tl-text">Carl Jung publishes <em>Psychological Types</em>, proposing that people differ systematically in how they direct energy (inward vs outward), take in information, and make decisions. This is the theoretical foundation everything else builds on.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1940s</div>
+        <div class="tl-text">Isabel Briggs Myers and her mother Katherine Cook Briggs begin developing a practical questionnaire based on Jung's theory. Their goal is applied. Helping people find work suited to their personality during wartime labour shortages. They add a fourth dimension (Judging vs Perceiving) that Jung hadn't formalised.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1962</div>
+        <div class="tl-text">The Myers-Briggs Type Indicator is published by Educational Testing Service. It becomes one of the most widely used psychometric instruments in the world, eventually taken by roughly two million people per year.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1980s–present</div>
+        <div class="tl-text">Academic psychology increasingly moves toward the Big Five (OCEAN) model as its preferred framework. MBTI remains dominant in corporate, coaching, and self-development contexts. The debate about which model is more useful continues, and the honest answer is that it depends on what you're trying to do.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT THE SCIENCE SAYS -->
+  <div class="section r" data-d="6">
+    <div class="section-label">O que a pesquisa realmente diz</div>
+    <p class="body-text">MBTI has been studied extensively, and the findings are mixed in ways that are worth being honest about. It's neither the rigorous science its proponents sometimes claim, nor the worthless pseudoscience its critics sometimes dismiss it as.</p>
+    <div class="verdict-grid">
+      <div class="verdict-box good">
+        <div class="verdict-title">What holds up</div>
+        <ul>
+          <li>The E/I dimension has strong overlap with the well-validated Extraversion dimension in the Big Five</li>
+          <li>People generally find their type descriptions meaningful and behaviourally accurate</li>
+          <li>Useful as a framework for self-reflection and conversation, even if imprecise as measurement</li>
+          <li>Scenario-based formats tend to show better test-retest reliability than self-rating formats</li>
+        </ul>
+      </div>
+      <div class="verdict-box caution">
+        <div class="verdict-title">What's weaker</div>
+        <ul>
+          <li>Test-retest reliability: studies show 30–50% of people get a different type when retested weeks later</li>
+          <li>Treating dimensions as binary (J or P) rather than continuous loses real information</li>
+          <li>Limited predictive validity for job performance compared to other assessment tools</li>
+          <li>The Barnum effect, type descriptions are sometimes broad enough to feel true for almost anyone</li>
+        </ul>
+      </div>
+    </div>
+    <p class="body-text" style="margin-top:28px;">The most useful way to approach your result is as a starting point, not a verdict. If the description is accurate in ways that feel specific rather than flattering, it's probably pointing at something real. If it doesn't fit, that's useful information too.</p>
+  </div>
+
+  <!-- WHAT THIS TEST IS -->
+  <div class="section r" data-d="7">
+    <div class="section-label">O que o 77 Cenários é e não é</div>
+    <p class="body-text">This is a free, independent test built on the publicly documented Myers-Briggs framework. It is not affiliated with, endorsed by, or derived from the official Myers-Briggs Company or CPP Inc. The scenarios are original. The type and letter descriptions are original writing informed by the broad consensus portrait of each type that has built up across decades of use.</p>
+    <p class="body-text">No data is collected. Your answers are scored locally in your browser and never sent anywhere. There is no account, no database, no tracking of results.</p>
+  </div>
+
+  <div class="sep r" data-d="8"></div>
+
+  <div class="cta-block r" data-d="9">
+    <div class="cta-text">Ready to see what<br>the <em>scenarios</em> say?</div>
+    <a href="/pt/" class="btn-gold">Take the test →</a>
+  </div>
+</main>
+
+<script>
+const ov=document.getElementById('t-overlay');
+function fadeIn(){ov.style.opacity='1';ov.animate([{opacity:1},{opacity:0}],{duration:550,delay:60,easing:'cubic-bezier(0.22,1,0.36,1)',fill:'forwards'});}
+fadeIn();
+window.addEventListener('pageshow',e=>{if(e.persisted)fadeIn();});
+document.addEventListener('click',e=>{
+  const a=e.target.closest('a[href]');
+  if(!a)return;
+  const h=a.getAttribute('href');
+  if(!h||h.startsWith('#')||h.startsWith('http')||h.startsWith('javascript')||h.startsWith('mailto'))return;
+  e.preventDefault();
+  ov.animate([{opacity:0},{opacity:1}],{duration:320,easing:'cubic-bezier(0.76,0,0.24,1)',fill:'forwards'}).finished.then(()=>{window.location.href=h;});
+});
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(en=>{
+    if(!en.isIntersecting)return;
+    setTimeout(()=>en.target.classList.add('in'),parseFloat(en.target.dataset.d||0)*80);
+    obs.unobserve(en.target);
+  });
+},{threshold:0.155});
+document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+</script>
+
+<script>
+function toggleMenu(){var d=document.getElementById('nav-drawer'),o=document.getElementById('nav-overlay'),b=document.querySelector('.nav-burger'),isOpen=d.classList.contains('open');d.classList.toggle('open',!isOpen);o.classList.toggle('open',!isOpen);b.classList.toggle('open',!isOpen);document.body.style.overflow=isOpen?'':'hidden';}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(function(){
+  const {createClient}=supabase;
+  const sb=createClient('https://rttomfnfyjjssdqfzkaj.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw');
+  window._navSb = sb;
+})();
+</script>
+</body>
+</html>

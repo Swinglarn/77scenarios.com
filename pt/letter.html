@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="What this Myers-Briggs letter means, how it shows up in real life, and how it pairs with the other dimensions.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Myers-Briggs Letter Explained - 77Scenarios</title>
+<meta name="robots" content="index, follow">
+<meta property="og:site_name" content="77 Scenarios">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" id="canonical-url" href="https://77scenarios.com/letter.html">
+<script type="application/ld+json" id="letter-schema">{"@context":"https://schema.org","@type":"Article","publisher":{"@type":"Organization","name":"77 Scenarios","url":"https://77scenarios.com"}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{--bg:#0c0e10;--surface:#13161a;--surface2:#1a1e24;--gold:#c9a84c;--gold-dim:#8a6d2e;--cream:#ede8df;--muted:#b5ada6;--border:#252a30;--radius:14px;}
+  html,body{background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
+  body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:0.6;}
+  #t-overlay{position:fixed;inset:0;z-index:9999;pointer-events:none;background:#0c0e10;opacity:1;}
+  .glow{position:fixed;border-radius:50%;filter:blur(140px);pointer-events:none;z-index:0;}
+  .glow-1{width:600px;height:600px;top:-200px;left:-150px;background:radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%);}
+  .glow-2{width:400px;height:400px;bottom:-100px;right:-100px;background:radial-gradient(circle,rgba(120,180,160,0.05) 0%,transparent 70%);}
+    nav, .site-nav{position:sticky;top:0;z-index:200;background:rgba(12,14,16,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 32px;display:flex;justify-content:space-between;align-items:center;height:56px;}
+  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--cream);text-decoration:none;}
+  .nav-links{display:flex;gap:32px;align-items:center;}
+  .nav-links a{font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;white-space:nowrap;}
+  .nav-links a:hover,.nav-links a.active{color:var(--cream);}
+  .nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+  .nav-burger span{display:block;width:22px;height:1.5px;background:#b5ada6;transition:all 0.3s ease;transform-origin:center;}
+  .nav-burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);background:#c9a84c;}
+  .nav-burger.open span:nth-child(2){opacity:0;}
+  .nav-burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);background:#c9a84c;}
+  .nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:300;opacity:0;transition:opacity 0.3s ease;pointer-events:none;}
+  .nav-overlay.open{opacity:1;pointer-events:auto;}
+  .nav-drawer{position:fixed;top:0;right:-100%;width:min(320px,85vw);height:100%;background:#13161a;border-left:1px solid #252a30;z-index:400;transition:right 0.35s cubic-bezier(0.22,1,0.36,1),visibility 0s linear 0.35s;display:flex;flex-direction:column;pointer-events:none;visibility:hidden;}
+  .nav-drawer.open{right:0;pointer-events:auto;visibility:visible;transition:right 0.35s cubic-bezier(0.22,1,0.36,1),visibility 0s linear 0s;}
+  .nav-drawer-header{display:flex;justify-content:space-between;align-items:center;padding:0 24px;height:56px;border-bottom:1px solid #252a30;flex-shrink:0;}
+  .nav-close{background:none;border:none;color:#b5ada6;font-size:18px;cursor:pointer;padding:4px;transition:color 0.2s;}
+  .nav-close:hover{color:#ede8df;}
+  .nav-drawer-links{display:flex;flex-direction:column;padding:16px 0;}
+  .nav-drawer-links a{font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:#b5ada6;text-decoration:none;padding:18px 24px;border-bottom:1px solid #1e2227;transition:all 0.15s ease;}
+  .nav-drawer-links a:hover{color:#c9a84c;padding-left:32px;}
+  .nav-drawer-links a:first-child{color:#c9a84c;}
+  @media(max-width:480px){nav,.site-nav{padding:0 16px;height:52px;}.nav-links{display:none;}.nav-burger{display:flex;}.nav-overlay{display:block;pointer-events:none;}}
+  main{position:relative;z-index:1;max-width:820px;margin:0 auto;padding:64px 32px 96px;}
+
+  /* REVEAL */
+  .r{opacity:0;transform:translateY(24px);transition:opacity 0.65s cubic-bezier(0.22,1,0.36,1),transform 0.65s cubic-bezier(0.22,1,0.36,1);}
+  .r.in{opacity:1;transform:none;}
+
+  .back-link{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;margin-bottom:48px;transition:color 0.2s;}
+  .back-link:hover{color:var(--gold);}
+
+  .hero{display:flex;align-items:flex-end;gap:24px;margin-bottom:48px;flex-wrap:wrap;}
+  .hero-letter{font-family:'Cormorant Garamond',serif;font-size:clamp(110px,18vw,160px);font-weight:300;line-height:1;color:var(--gold);letter-spacing:-0.05em;}
+  .hero-right{padding-bottom:14px;}
+  .hero-dim{font-size:12px;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
+  .hero-name{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4.5vw,46px);font-weight:300;color:var(--cream);line-height:1.1;margin-bottom:8px;}
+  .hero-opp{font-size:13px;color:var(--muted);}
+  .hero-opp a{color:var(--gold);text-decoration:none;}
+  .hero-opp a:hover{text-decoration:underline;}
+
+  .section{margin-bottom:48px;}
+  .section-label{font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+  .section-label::after{content:'';display:block;flex:1;height:1px;background:var(--border);}
+  .body-text{font-size:16px;line-height:1.9;color:#a09890;}
+  .body-text+.body-text{margin-top:16px;}
+
+  .traits-row{display:flex;flex-wrap:wrap;gap:10px;}
+  .trait{font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:8px 16px;border-radius:30px;border:1px solid var(--border);color:var(--muted);background:var(--surface);}
+
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media(max-width:580px){.two-col{grid-template-columns:1fr;}}
+  .box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;}
+  .box-title{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+  .box-text{font-size:14px;color:#a09890;line-height:1.85;}
+  .box ul{list-style:none;}
+  .box ul li{font-size:14px;color:#a09890;line-height:1.75;padding:9px 0;border-bottom:1px solid var(--border);display:flex;gap:12px;align-items:flex-start;}
+  .box ul li:last-child{border-bottom:none;}
+  .box ul li::before{content:'–';color:var(--gold-dim);flex-shrink:0;margin-top:2px;}
+
+  .growth-box{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--gold-dim);border-radius:var(--radius);padding:24px 28px;}
+  .growth-box .box-title{color:var(--gold);}
+
+  .types-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+  @media(max-width:580px){.types-grid{grid-template-columns:repeat(2,1fr);}}
+  .type-mini{display:block;text-decoration:none;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;transition:all 0.2s;}
+  .type-mini:hover{border-color:var(--gold-dim);transform:translateY(-2px);}
+  .mini-code{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--cream);letter-spacing:-0.02em;}
+  .mini-code .hi{color:var(--gold);}
+  .mini-name{font-size:12px;color:var(--muted);letter-spacing:0.05em;margin-top:3px;}
+
+  .opp-block{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+  .opp-left{display:flex;align-items:center;gap:18px;}
+  .opp-letter{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;line-height:1;color:var(--muted);}
+  .opp-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--cream);margin-bottom:3px;}
+  .opp-sub{font-size:12px;color:var(--muted);}
+  .btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--muted);font-family:'DM Sans',sans-serif;font-size:12px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;border:1px solid var(--border);border-radius:60px;padding:12px 22px;cursor:pointer;text-decoration:none;transition:all 0.2s;}
+  .btn-outline:hover{border-color:var(--gold-dim);color:var(--gold);}
+
+  .cta-block{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:36px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+  .cta-text{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--cream);line-height:1.4;}
+  .cta-text em{font-style:italic;color:var(--gold);}
+  .btn-gold{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:#0c0e10;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;border:none;border-radius:60px;padding:14px 28px;cursor:pointer;text-decoration:none;transition:all 0.25s;}
+  .btn-gold:hover{background:var(--cream);transform:translateY(-2px);}
+  .sep{height:1px;background:var(--border);margin:48px 0;}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+</style>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<meta property="og:image" content="https://77scenarios.com/og-image.png">
+<link rel="alternate" hreflang="en" href="https://77scenarios.com/letter">
+<link rel="alternate" hreflang="pt-BR" href="https://77scenarios.com/pt/letter">
+<script src="/nav.js" defer></script>
+</head>
+<body>
+<h1 class="sr-only" id="page-h1">77 Scenarios — Myers-Briggs Letter Guide</h1>
+<div id="t-overlay"></div>
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+<nav class="site-nav">
+  <a href="/pt/" class="nav-logo">77scenarios.com</a>
+  <div class="nav-links">
+    <a href="/pt/">Fazer o Teste</a>
+    <a href="/pt/types">16 Tipos</a>
+    <a href="/pt/letters">8 Letras</a>
+    <a href="/pt/cognitive-functions">Funções</a>
+    <a href="/pt/compatibility">Compatibilidade</a>
+    <a href="/pt/archive">Arquivo</a>
+    <a href="/pt/about">Sobre</a>
+  </div>
+  <button class="nav-burger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="nav-overlay" id="nav-overlay" onclick="toggleMenu()"></div>
+<div class="nav-drawer" id="nav-drawer">
+  <div class="nav-drawer-header">
+    <span style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:#ede8df;">77scenarios.com</span>
+    <button class="nav-close" onclick="toggleMenu()">&#10005;</button>
+  </div>
+  <div class="nav-drawer-links">
+    <a href="/pt/">Fazer o Teste</a>
+    <a href="/pt/types">16 Tipos</a>
+    <a href="/pt/letters">8 Letras</a>
+    <a href="/pt/cognitive-functions">Funções</a>
+    <a href="/pt/compatibility">Compatibilidade</a>
+    <a href="/pt/archive">Arquivo</a>
+    <a href="/pt/about">Sobre</a>
+  </div>
+</div>
+
+<main>
+  <a href="/pt/letters" class="back-link r" data-d="0">← All letters</a>
+  <div id="content"></div>
+</main>
+
+<script>
+const letters={
+  E:{
+    name:"Extraversion",dim:"Energy",opp:"I",oppName:"Introversion",
+    oppDesc:"Energised by the inner world, reflection, depth, time alone.",
+    p1:"Extraverts don't just like people, they think through people. The conversation is where ideas get tested and refined, not where finished thoughts get reported. When something is bothering you, talking about it makes it smaller. When something is exciting, saying it out loud makes it more real.",
+    p2:"Wide networks come naturally and you maintain them without effort. Meeting someone new isn't a task to get through; it's usually fine, often good. You take phone calls other people text back. You suggest the group thing. What costs other people social energy, you tend to gain from, which is worth knowing, because it means you can often be the one to make the first move.",
+    traits:["Talkative","Warm","Socially fluent","Action-oriented","Expressive"],
+    strengths:["Builds connections naturally and maintains them without it feeling like maintenance","Communicates ideas with energy, thinking and speaking happen together","Energises groups through presence and engagement","Reads social situations fast and adapts accordingly"],
+    daily:"You take the call rather than texting back. You find out what someone does for a living within the first few minutes. Your best thinking happens in conversation. Weekends with nothing social planned start to feel heavy by Sunday afternoon.",
+    growth:"Some of your best ideas are still forming. Giving them room to develop before other voices enter, before the reactions, the reframes, the group consensus, can make them sharper. The pause before speaking has more value than it usually gets credit for.",
+    types:["ESTJ","ESFJ","ENFJ","ENTJ","ESTP","ESFP","ENFP","ENTP"],
+    typeNames:{ESTJ:"Director",ESFJ:"Caregiver",ENFJ:"Teacher",ENTJ:"Commander",ESTP:"Dynamo",ESFP:"Performer",ENFP:"Champion",ENTP:"Visionary"}
+  },
+  I:{
+    name:"Introversion",dim:"Energy",opp:"E",oppName:"Extraversion",
+    oppDesc:"Energised by the outer world, people, activity, conversation.",
+    p1:"Introversion is not shyness. The distinction matters. Introverts can be confident, compelling, even magnetic, the difference is that social engagement has a cost. After a long evening with people, even people you like, there's a depletion that requires actual recovery time. That time is not avoidance. It's maintenance.",
+    p2:"What you produce alone tends to be more refined than what comes out in real time. You've thought about it longer, turned it around more fully, noticed the weak points. The ideas you share have usually been through several rounds of internal editing that no one sees. This makes your output more considered, and it means the things you say in a room tend to carry more weight, in part because you say fewer of them.",
+    traits:["Reflective","Private","Depth-seeking","Self-sufficient","Deliberate"],
+    strengths:["Independent thinking that doesn't need external validation to develop","Listens with real attention, not waiting to speak, actually listening","Fewer but deeper relationships, invested in fully","Output is typically more refined because of the internal process it goes through first"],
+    daily:"You text before calling. You need a day or two to decompress after a heavy social stretch. Your best ideas come in the shower, on a walk, at 11pm. You've been called 'quiet' by people who hadn't seen you with the right person yet.",
+    growth:"Being known requires being visible. There are relationships and opportunities that only open to people who show up before they feel completely ready, who share the half-formed thought, who are present before they've processed everything. The people worth having in your life are worth some of that discomfort.",
+    types:["ISTJ","ISFJ","INFJ","INTJ","ISTP","ISFP","INFP","INTP"],
+    typeNames:{ISTJ:"Inspector",ISFJ:"Protector",INFJ:"Counselor",INTJ:"Architect",ISTP:"Craftsman",ISFP:"Artist",INFP:"Mediator",INTP:"Thinker"}
+  },
+  S:{
+    name:"Sensing",dim:"Perception",opp:"N",oppName:"Intuition",
+    oppDesc:"Trusts patterns, possibilities, and what can be inferred.",
+    p1:"You trust what you can verify. Not because you're unimaginative, but because the space between theory and practice is where most ideas quietly fall apart, and you've learned to notice that. The concrete details others walk past, the specific wording, the actual number, what exactly happened, tend to stay with you.",
+    p2:"Sensing is the more common preference and it carries the infrastructure of daily life. Plans get executed. Details get remembered. Work gets done to the standard it was supposed to be done to. The people around you benefit from this in ways they often don't fully account for until it's absent.",
+    traits:["Practical","Detail-oriented","Present-focused","Reliable","Observant"],
+    strengths:["Catches errors and inconsistencies that others would have passed over","Executes plans thoroughly without needing the big picture to stay visible","Memory for specifics, exact words, dates, events, that others let blur","Grounded in a way that provides real stability for the people around you"],
+    daily:"You read the terms before signing. You remember what someone said, not just the general impression. You follow a recipe the first time and adjust it the second. You finish what you start before moving to the next thing.",
+    growth:"Some of the most important things haven't happened yet. The pattern that predicts where something is going, the possibility that isn't visible yet, the inference that turns out to be correct, these are real sources of information. A little more trust in what can be inferred, not just observed, opens territory that direct experience alone can't reach.",
+    types:["ISTJ","ISFJ","ESTJ","ESFJ","ISTP","ISFP","ESTP","ESFP"],
+    typeNames:{ISTJ:"Inspector",ISFJ:"Protector",ESTJ:"Director",ESFJ:"Caregiver",ISTP:"Craftsman",ISFP:"Artist",ESTP:"Dynamo",ESFP:"Performer"}
+  },
+  N:{
+    name:"Intuition",dim:"Perception",opp:"S",oppName:"Sensing",
+    oppDesc:"Trusts what's concrete, observable, and present.",
+    p1:"You take in information and immediately start finding the pattern underneath it. Where things are heading, what it connects to, what's implied but not said. The present moment tends to interest you less than what it suggests about the future. This is not a failure to pay attention. It's a different kind of attention.",
+    p2:"Ideas arrive fast and in clusters. You've probably had the experience of seeing something clearly, where a project is going wrong, what a person is really saying, what decision needs to be made, significantly before anyone else in the room has got there. The challenge is usually not the vision. It's staying with the vision long enough for it to become something real.",
+    traits:["Imaginative","Future-focused","Pattern-seeking","Conceptual","Visionary"],
+    strengths:["Sees where things are heading before they get there","Connects ideas across domains in ways that produce genuinely novel conclusions","Asks the question underneath the question that everyone else is answering","Operates naturally at the level of strategy and meaning rather than just execution"],
+    daily:"You read between the lines habitually. You get bored in conversations that stay at the surface. You've started a lot of things that didn't get finished. There's usually something you're working out in the back of your mind.",
+    growth:"The present is also real. The person in front of you, the task in your hands, what's actually true right now, these deserve your full attention too, and they don't always get it. Some of the patterns you see are projections. Not all of them. But enough that staying close to what's verifiable is a useful counterweight.",
+    types:["INFJ","INTJ","ENFJ","ENTJ","INFP","INTP","ENFP","ENTP"],
+    typeNames:{INFJ:"Counselor",INTJ:"Architect",ENFJ:"Teacher",ENTJ:"Commander",INFP:"Mediator",INTP:"Thinker",ENFP:"Champion",ENTP:"Visionary"}
+  },
+  T:{
+    name:"Thinking",dim:"Judgement",opp:"F",oppName:"Feeling",
+    oppDesc:"Decides through values, harmony, and human impact.",
+    p1:"When you evaluate something, you're running it through a framework of logic and consistency. Does this hold up? Is there a contradiction here? What would this principle imply in other cases? This happens fast and largely automatically. What feels like common sense to you is actually a well-developed internal framework that most people don't use the same way.",
+    p2:"Directness is a form of respect in your view. Saying the hard thing clearly is kinder than dancing around it, because dancing around it wastes the other person's time and usually means they still don't get the information they need. You hold yourself to the same standard you hold others, which is genuinely fair, even when it doesn't always feel that way from the outside.",
+    traits:["Analytical","Objective","Direct","Principled","Consistent"],
+    strengths:["Evaluates with precision and doesn't stop at the comfortable answer","Applies standards consistently, no special cases, no exceptions based on who's watching","Stays clear-headed under pressure, when others get reactive","Communication that doesn't make people guess where you stand"],
+    daily:"You give feedback without softening it past usefulness. You expect the same directness back. An argument you find logically weak doesn't become more persuasive because the person making it is upset. You've been told you're blunt by people you were trying to help.",
+    growth:"Logic is powerful and incomplete at the same time. The emotional information in a situation is data, not noise to be filtered. How something lands, what it does to trust over time, what the unspoken layer of a conversation is actually about, these are real, and they affect outcomes. Learning to factor them in doesn't compromise your rigour. It extends it.",
+    types:["ISTJ","INTJ","ESTJ","ENTJ","ISTP","INTP","ESTP","ENTP"],
+    typeNames:{ISTJ:"Inspector",INTJ:"Architect",ESTJ:"Director",ENTJ:"Commander",ISTP:"Craftsman",INTP:"Thinker",ESTP:"Dynamo",ENTP:"Visionary"}
+  },
+  F:{
+    name:"Feeling",dim:"Judgement",opp:"T",oppName:"Thinking",
+    oppDesc:"Decides through logic, objectivity, and consistent principle.",
+    p1:"You make decisions by weighing human impact alongside the facts. Who is affected, what matters to them, whether the outcome is consistent with what you believe is right. This is not a soft process. It requires holding multiple people's experiences in mind simultaneously and finding a path that respects all of them, which is harder than applying a single objective standard.",
+    p2:"The emotional information you pick up on is real information. The shift in someone's tone, the gap between what someone says and how they're holding themselves, what's being avoided in a conversation, you register these things. Sometimes before the person in question is fully aware of them. That's a form of intelligence that doesn't show up on most tests.",
+    traits:["Empathetic","Value-driven","Attuned","Warm","Relational"],
+    strengths:["Reads people with accuracy that feels effortless from the outside","Adjusts tone and approach based on who you're talking to, without needing to think about it","Holds genuine ethical convictions that don't bend easily under social pressure","Motivates others through care rather than authority, which tends to produce more durable commitment"],
+    daily:"You remember how people felt about things, not just what happened. Conflict lingers for you longer than for most. You've given advice that was kinder than it was honest, and you've felt the cost of that afterward.",
+    growth:"Protecting how someone feels in the short term sometimes means withholding what they actually need to hear. The most useful thing you can do for people you care about is sometimes the hardest thing to say. Empathy that avoids the hard conversation is incomplete. The version that includes it is more powerful.",
+    types:["ISFJ","INFJ","ESFJ","ENFJ","ISFP","INFP","ESFP","ENFP"],
+    typeNames:{ISFJ:"Protector",INFJ:"Counselor",ESFJ:"Caregiver",ENFJ:"Teacher",ISFP:"Artist",INFP:"Mediator",ESFP:"Performer",ENFP:"Champion"}
+  },
+  J:{
+    name:"Judging",dim:"Lifestyle",opp:"P",oppName:"Perceiving",
+    oppDesc:"Prefers flexibility, open options, and adapting as things develop.",
+    p1:"Structure isn't a preference for you, it's the condition under which everything else becomes possible. When you know what's happening, when, and what's expected of you, your mind is free to focus on the thing itself. Open loops occupy background mental space. Unresolved decisions create low-level drag. The satisfaction of finishing something, closing it, moving it to done, that's real.",
+    p2:"You get things done. This is more unusual than it sounds. Plans, commitments, timelines, you honour them as a matter of course, without needing external enforcement. The reliability you bring to projects and relationships is something others notice when it's there and feel when it isn't.",
+    traits:["Organised","Decisive","Structured","Reliable","Completion-oriented"],
+    strengths:["Delivers on commitments consistently, without needing reminders","Plans in ways that remove pressure for the people around you","Makes decisions and commits, rather than circling indefinitely","Creates structure that other people can operate inside with confidence"],
+    daily:"You have a packing list. You send the agenda before the meeting. The to-do list is real and you feel something when you cross things off. Sunday evenings are better when the week has some shape to it.",
+    growth:"A decision made before all the information is in can be worse than one made with more patience. Some of the best things that have happened didn't fit the plan. Deliberate flexibility, intentionally leaving room for what hasn't arrived yet, isn't a failure of discipline. It's a more complete kind of planning.",
+    types:["ISTJ","ISFJ","INFJ","INTJ","ESTJ","ESFJ","ENFJ","ENTJ"],
+    typeNames:{ISTJ:"Inspector",ISFJ:"Protector",INFJ:"Counselor",INTJ:"Architect",ESTJ:"Director",ESFJ:"Caregiver",ENFJ:"Teacher",ENTJ:"Commander"}
+  },
+  P:{
+    name:"Perceiving",dim:"Lifestyle",opp:"J",oppName:"Judging",
+    oppDesc:"Prefers structure, closure, and decisions made early.",
+    p1:"Keeping options open is a genuine cognitive strategy, not a failure to decide. The next piece of information might change the picture. The situation might shift. Something better might appear. You stay responsive to all of this in a way that produces real advantages in environments that change faster than any plan could account for.",
+    p2:"You tend to work well under pressure, often better than expected. The deadline is real information, it tells you what the actual shape of the task needs to be, rather than the idealised version. Some of your best output appears at precisely the moment it needs to. The challenge is that this pattern, taken too far, leaves things perpetually unfinished.",
+    traits:["Flexible","Spontaneous","Adaptable","Exploratory","Open-ended"],
+    strengths:["Adapts to changing circumstances without the friction that others experience","Creative in ambiguous situations, treats constraints as interesting problems","Brings fresh energy to things that have become stale for others","Works well under actual pressure, not panicked, focused"],
+    daily:"You pack the night before. What to eat gets decided at the restaurant. You've started things you haven't finished, and you're at peace with more of them than other people would be. You've said 'I'll figure it out' and been right more often than the odds suggested.",
+    growth:"Some things only reveal themselves to people who commit. Relationships, projects, ideas, the deeper layer often isn't visible until you've stayed past the point where you wanted to stay flexible. Deliberately choosing to close, deciding something and holding that decision, is a skill that most Ps have to build consciously, and it pays disproportionately when they do.",
+    types:["ISTP","ISFP","INFP","INTP","ESTP","ESFP","ENFP","ENTP"],
+    typeNames:{ISTP:"Craftsman",ISFP:"Artist",INFP:"Mediator",INTP:"Thinker",ESTP:"Dynamo",ESFP:"Performer",ENFP:"Champion",ENTP:"Visionary"}
+  }
+};
+
+function render(){
+  const p=new URLSearchParams(window.location.search);
+  const l=(p.get('l')||'E').toUpperCase();
+  const d=letters[l];
+  if(!d){document.getElementById('content').innerHTML='<p style="color:var(--muted)">Letter not found.</p>';return;}
+  document.title=`${l} · ${d.name} in Myers-Briggs, 77 Scenarios`;
+
+  // Dynamic SEO
+  const keyPhrases={E:'introvert vs extrovert, extraversion definition, what is extraversion',I:'introversion definition, introvert meaning, what is introversion',S:'sensing personality, what is sensing MBTI, sensing vs intuition',N:'intuition personality type, what is intuition MBTI, sensing vs intuition',T:'thinking personality type, MBTI thinking meaning, thinking vs feeling',F:'feeling personality type, MBTI feeling meaning, thinking vs feeling',J:'judging personality type, MBTI judging meaning, judging vs perceiving',P:'perceiving personality type, MBTI perceiving meaning, judging vs perceiving'};
+  const seoDesc=`What does ${l} (${d.name}) mean in Myers-Briggs? ${d.p1.slice(0,160).replace(/<[^>]+>/g,'')}...`;
+  let dm=document.querySelector('meta[name="description"]');
+  if(!dm){dm=document.createElement('meta');dm.name='description';document.head.appendChild(dm);}
+  dm.content=seoDesc;
+  let km=document.querySelector('meta[name="keywords"]');
+  if(!km){km=document.createElement('meta');km.name='keywords';document.head.appendChild(km);}
+  km.content=`${l} personality, ${d.name.toLowerCase()} MBTI, ${d.name.toLowerCase()} meaning, Myers-Briggs ${l}, ${keyPhrases[l]||''}`;
+  document.getElementById('canonical-url')?.setAttribute('href',`https://77scenarios.com/letter.html?l=${l}`);
+  document.querySelector('meta[property="og:title"]')?.setAttribute('content',`${l} · ${d.name} in Myers-Briggs, 77 Scenarios`)||
+    (()=>{const m=document.createElement('meta');m.setAttribute('property','og:title');m.content=`${l} · ${d.name} in Myers-Briggs, 77 Scenarios`;document.head.appendChild(m);})();
+  document.querySelector('meta[property="og:description"]')?.setAttribute('content',seoDesc)||
+    (()=>{const m=document.createElement('meta');m.setAttribute('property','og:description');m.content=seoDesc;document.head.appendChild(m);})();
+  document.querySelector('meta[property="og:url"]')?.setAttribute('content',`https://77scenarios.com/letter?l=${l}`)||
+    (()=>{const m=document.createElement('meta');m.setAttribute('property','og:url');m.content=`https://77scenarios.com/letter?l=${l}`;document.head.appendChild(m);})();
+  const h1el=document.getElementById('page-h1');if(h1el)h1el.textContent=`${l} · ${d.name} in Myers-Briggs`;
+  document.getElementById('letter-schema').textContent=JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":`${l} in Myers-Briggs: ${d.name} Explained`,"description":seoDesc,"url":`https://77scenarios.com/letter.html?l=${l}`,"publisher":{"@type":"Organization","name":"77 Scenarios","url":"https://77scenarios.com"}});
+
+  const typesHTML=d.types.map(t=>`
+    <a href="/type?t=${t}" class="type-mini">
+      <div class="mini-code">${t.split('').map(c=>c===l?`<span class="hi">${c}</span>`:c).join('')}</div>
+      <div class="mini-name">${d.typeNames[t]||''}</div>
+    </a>`).join('');
+
+  document.getElementById('content').innerHTML=`
+    <div class="hero r" data-d="1">
+      <div class="hero-letter">${l}</div>
+      <div class="hero-right">
+        <div class="hero-dim">${d.dim} dimension</div>
+        <div class="hero-name">${d.name}</div>
+        <div class="hero-opp">Opposite: <a href="/letter?l=${d.opp}">${d.opp} · ${d.oppName}</a></div>
+      </div>
+    </div>
+    <div class="section r" data-d="2"><div class="section-label">What it means</div><p class="body-text">${d.p1}</p><p class="body-text">${d.p2}</p></div>
+    <div class="section r" data-d="3"><div class="section-label">Traits</div><div class="traits-row">${d.traits.map(t=>`<span class="trait">${t}</span>`).join('')}</div></div>
+    <div class="two-col section r" data-d="4">
+      <div class="box"><div class="box-title">Strengths</div><ul>${d.strengths.map(s=>`<li>${s}</li>`).join('')}</ul></div>
+      <div class="box"><div class="box-title">In daily life</div><div class="box-text">${d.daily}</div></div>
+    </div>
+    <div class="growth-box section r" data-d="5"><div class="box-title">Growth edge</div><div class="box-text">${d.growth}</div></div>
+    <div class="section r" data-d="6"><div class="section-label">Types with ${l}</div><div class="types-grid">${typesHTML}</div></div>
+    <div class="sep r" data-d="7"></div>
+    <div class="section r" data-d="8">
+      <div class="section-label">The other side</div>
+      <div class="opp-block">
+        <div class="opp-left">
+          <div class="opp-letter">${d.opp}</div>
+          <div><div class="opp-name">${d.oppName}</div><div class="opp-sub">${d.oppDesc}</div></div>
+        </div>
+        <a href="/letter?l=${d.opp}" class="btn-outline">Explore ${d.opp} →</a>
+      </div>
+    </div>
+    <div class="cta-block r" data-d="9">
+      <div class="cta-text">Find out <em>your</em> letters<br>through real scenarios.</div>
+      <a href="/pt/" class="btn-gold">Fazer o teste →</a>
+    </div>`;
+
+  document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+}
+
+const ov=document.getElementById('t-overlay');
+function fadeIn(){ov.style.opacity='1';ov.animate([{opacity:1},{opacity:0}],{duration:550,delay:60,easing:'cubic-bezier(0.22,1,0.36,1)',fill:'forwards'});}
+fadeIn();
+window.addEventListener('pageshow',e=>{if(e.persisted)fadeIn();});
+document.addEventListener('click',e=>{
+  const a=e.target.closest('a[href]');
+  if(!a)return;
+  const h=a.getAttribute('href');
+  if(!h||h.startsWith('#')||h.startsWith('http')||h.startsWith('javascript')||h.startsWith('mailto'))return;
+  e.preventDefault();
+  ov.animate([{opacity:0},{opacity:1}],{duration:320,easing:'cubic-bezier(0.76,0,0.24,1)',fill:'forwards'}).finished.then(()=>{window.location.href=h;});
+});
+
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(en=>{
+    if(!en.isIntersecting)return;
+    setTimeout(()=>en.target.classList.add('in'),parseFloat(en.target.dataset.d||0)*70);
+    obs.unobserve(en.target);
+  });
+},{threshold:0.155});
+
+render();
+</script>
+
+<script>
+function toggleMenu(){var d=document.getElementById('nav-drawer'),o=document.getElementById('nav-overlay'),b=document.querySelector('.nav-burger'),isOpen=d.classList.contains('open');d.classList.toggle('open',!isOpen);o.classList.toggle('open',!isOpen);b.classList.toggle('open',!isOpen);document.body.style.overflow=isOpen?'':'hidden';}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(function(){
+  const {createClient}=supabase;
+  const sb=createClient('https://rttomfnfyjjssdqfzkaj.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw');
+  window._navSb = sb;
+})();
+</script>
+</body>
+</html>

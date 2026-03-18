@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entrar - 77 Scenarios</title>
+<meta name="description" content="How 77 Scenarios works, where Myers-Briggs comes from, and why scenario-based testing is more accurate than self-rating questionnaires.">
+<meta name="keywords" content="how is MBTI scored, is Myers-Briggs accurate, Myers-Briggs criticism, personality test methodology, MBTI reliability, scenario based personality test, how personality tests work, Big Five vs MBTI">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://77scenarios.com/og-image.png">
+<meta property="og:title" content="About: 77Scenarios">
+<meta property="og:description" content="How the scoring works, where the Myers-Briggs framework comes from, and what the science actually says about personality testing.">
+<meta property="og:url" content="https://77scenarios.com/about">
+<meta property="og:site_name" content="77 Scenarios">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About 77 Scenarios: How the Test Works">
+<meta name="twitter:description" content="The scoring logic, the history of MBTI, and an honest look at what personality tests can and can't tell you.">
+<link rel="canonical" href="https://77scenarios.com/pt/about">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"About the 77 Scenarios Personality Test","description":"How the test is scored, where Myers-Briggs comes from, and what the research says about personality type testing.","url":"https://77scenarios.com/about","publisher":{"@type":"Organization","name":"77 Scenarios","url":"https://77scenarios.com"}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{--bg:#0c0e10;--surface:#13161a;--surface2:#1a1e24;--gold:#c9a84c;--gold-dim:#8a6d2e;--cream:#ede8df;--muted:#b5ada6;--border:#252a30;--radius:14px;}
+  html,body{background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
+  body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:0.6;}
+  #t-overlay{position:fixed;inset:0;z-index:9999;pointer-events:none;background:#0c0e10;opacity:1;}
+  .glow{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0;}
+  .glow-1{width:600px;height:600px;top:-200px;left:-150px;background:radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%);}
+  .glow-2{width:400px;height:400px;bottom:-100px;right:-100px;background:radial-gradient(circle,rgba(120,180,160,0.05) 0%,transparent 70%);}
+
+    nav, .site-nav{position:sticky;top:0;z-index:200;background:rgba(12,14,16,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 32px;display:flex;justify-content:space-between;align-items:center;height:56px;}
+  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--cream);text-decoration:none;}
+  .nav-links{display:flex;gap:32px;align-items:center;}
+  .nav-links a{font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;white-space:nowrap;}
+  .nav-links a:hover,.nav-links a.active{color:var(--cream);}
+  .nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+  .nav-burger span{display:block;width:22px;height:1.5px;background:#b5ada6;transition:all 0.3s ease;transform-origin:center;}
+  .nav-burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);background:#c9a84c;}
+  .nav-burger.open span:nth-child(2){opacity:0;}
+  .nav-burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);background:#c9a84c;}
+  .nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:300;opacity:0;transition:opacity 0.3s ease;pointer-events:none;}
+  .nav-overlay.open{opacity:1;pointer-events:auto;}
+  .nav-drawer{position:fixed;top:0;right:-100%;width:min(320px,85vw);height:100%;background:#13161a;border-left:1px solid #252a30;z-index:400;transition:right 0.35s cubic-bezier(0.22,1,0.36,1),visibility 0s linear 0.35s;display:flex;flex-direction:column;pointer-events:none;visibility:hidden;}
+  .nav-drawer.open{right:0;pointer-events:auto;visibility:visible;transition:right 0.35s cubic-bezier(0.22,1,0.36,1),visibility 0s linear 0s;}
+  .nav-drawer-header{display:flex;justify-content:space-between;align-items:center;padding:0 24px;height:56px;border-bottom:1px solid #252a30;flex-shrink:0;}
+  .nav-close{background:none;border:none;color:#b5ada6;font-size:18px;cursor:pointer;padding:4px;transition:color 0.2s;}
+  .nav-close:hover{color:#ede8df;}
+  .nav-drawer-links{display:flex;flex-direction:column;padding:16px 0;}
+  .nav-drawer-links a{font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:#b5ada6;text-decoration:none;padding:18px 24px;border-bottom:1px solid #1e2227;transition:all 0.15s ease;}
+  .nav-drawer-links a:hover{color:#c9a84c;padding-left:32px;}
+  .nav-drawer-links a:first-child{color:#c9a84c;}
+  @media(max-width:480px){nav,.site-nav{padding:0 16px;height:52px;}.nav-links{display:none;}.nav-burger{display:flex;}.nav-overlay{display:block;pointer-events:none;}}
+
+  main{position:relative;z-index:1;max-width:740px;margin:0 auto;padding:72px 32px 96px;}
+
+  /* REVEAL */
+  .r{opacity:0;transform:translateY(24px);transition:opacity 0.65s cubic-bezier(0.22,1,0.36,1),transform 0.65s cubic-bezier(0.22,1,0.36,1);}
+  .r.in{opacity:1;transform:none;}
+
+  .page-eyebrow{font-size:12px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:12px;}
+  .page-eyebrow::before{content:'';display:block;height:1px;width:24px;background:var(--gold-dim);}
+
+  h1{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,7vw,68px);font-weight:300;line-height:0.95;letter-spacing:-0.02em;color:var(--cream);margin-bottom:16px;}
+  h1 em{font-style:italic;color:var(--gold);}
+  .page-sub{font-size:15px;color:var(--muted);line-height:1.75;max-width:520px;margin-bottom:72px;}
+
+  .section{margin-bottom:56px;}
+  .section-label{font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+  .section-label::after{content:'';display:block;flex:1;height:1px;background:var(--border);}
+
+  .body-text{font-size:16px;line-height:1.95;color:#a09890;}
+  .body-text+.body-text{margin-top:18px;}
+
+  /* Scoring diagram */
+  .score-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px;}
+  @media(max-width:520px){.score-grid{grid-template-columns:1fr;}}
+  .score-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px 24px;}
+  .score-dim{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+  .score-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+  .score-letters{display:flex;gap:10px;}
+  .score-letter{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--cream);}
+  .score-letter.dim{color:var(--muted);}
+  .score-count{font-size:12px;color:var(--muted);letter-spacing:0.06em;}
+  .score-bar-track{height:4px;background:var(--border);border-radius:4px;overflow:hidden;}
+  .score-bar-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--gold-dim),var(--gold));}
+
+  /* Timeline */
+  .timeline{position:relative;padding-left:28px;margin-top:28px;}
+  .timeline::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:1px;background:var(--border);}
+  .tl-item{position:relative;margin-bottom:32px;}
+  .tl-item:last-child{margin-bottom:0;}
+  .tl-dot{position:absolute;left:-32px;top:6px;width:8px;height:8px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--gold);}
+  .tl-year{font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+  .tl-text{font-size:15px;line-height:1.8;color:#a09890;}
+
+  /* Verdict boxes */
+  .verdict-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px;}
+  @media(max-width:520px){.verdict-grid{grid-template-columns:1fr;}}
+  .verdict-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;}
+  .verdict-box.good{border-left:2px solid var(--gold);}
+  .verdict-box.caution{border-left:2px solid #6b5a3a;}
+  .verdict-title{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:14px;}
+  .verdict-box.good .verdict-title{color:var(--gold);}
+  .verdict-box.caution .verdict-title{color:#8a7040;}
+  .verdict-box ul{list-style:none;}
+  .verdict-box ul li{font-size:14px;color:#a09890;line-height:1.75;padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:10px;align-items:flex-start;}
+  .verdict-box ul li:last-child{border-bottom:none;}
+  .verdict-box.good ul li::before{content:'↑';color:var(--gold-dim);flex-shrink:0;}
+  .verdict-box.caution ul li::before{content:'↓';color:#6b5a3a;flex-shrink:0;}
+
+  .callout{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--gold-dim);border-radius:var(--radius);padding:24px 28px;margin-top:28px;}
+  .callout-text{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:300;font-style:italic;color:var(--cream);line-height:1.55;}
+
+  .sep{height:1px;background:var(--border);margin:56px 0;}
+
+  .cta-block{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:36px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+  .cta-text{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--cream);line-height:1.4;}
+  .cta-text em{font-style:italic;color:var(--gold);}
+  .btn-gold{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:#0c0e10;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;border:none;border-radius:60px;padding:14px 28px;cursor:pointer;text-decoration:none;transition:all 0.25s;}
+  .btn-gold:hover{background:var(--cream);transform:translateY(-2px);}
+
+  /* Auth form */
+  .auth-wrap{max-width:440px;margin:0 auto;padding:60px 24px 120px;}
+  .auth-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3rem);font-weight:600;color:var(--cream);line-height:1.15;margin-bottom:8px;}
+  .auth-title em{color:var(--gold);font-style:italic;}
+  .auth-sub{color:var(--muted);font-size:0.95rem;margin-bottom:40px;line-height:1.6;}
+  .auth-form{display:flex;flex-direction:column;gap:16px;}
+  .field-wrap{display:flex;flex-direction:column;gap:6px;}
+  .field-label{color:var(--muted);font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;}
+  .field-input{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:8px;padding:14px 16px;color:var(--cream);font-size:0.95rem;font-family:'DM Sans',sans-serif;outline:none;transition:border-color 0.2s;}
+  .field-input:focus{border-color:var(--gold-dim);}
+  .field-input::placeholder{color:var(--muted);opacity:0.5;}
+  .auth-btn{margin-top:8px;background:var(--gold);color:#0c0e10;font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.9rem;letter-spacing:0.06em;text-transform:uppercase;border:none;border-radius:60px;padding:16px 28px;cursor:pointer;transition:all 0.25s;}
+  .auth-btn:hover{background:var(--cream);transform:translateY(-2px);}
+  .auth-btn:disabled{opacity:0.5;cursor:not-allowed;transform:none;}
+  .auth-switch{text-align:center;margin-top:24px;color:var(--muted);font-size:0.9rem;}
+  .auth-switch a{color:var(--gold);text-decoration:none;}
+  .auth-switch a:hover{text-decoration:underline;}
+  .auth-msg{padding:12px 16px;border-radius:8px;font-size:0.9rem;text-align:center;display:none;}
+  .auth-msg.error{background:rgba(220,60,60,0.12);border:1px solid rgba(220,60,60,0.3);color:#e87070;}
+  .auth-msg.success{background:rgba(100,200,100,0.08);border:1px solid rgba(100,200,100,0.2);color:#7ec47e;}
+  .auth-msg.show{display:block;}
+  .auth-divider{display:flex;align-items:center;gap:12px;margin:4px 0;}
+  .auth-divider::before,.auth-divider::after{content:'';flex:1;height:1px;background:var(--border);}
+  .auth-divider span{color:var(--muted);font-size:0.8rem;}
+
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+</style>
+
+<link rel="alternate" hreflang="en" href="https://77scenarios.com/login">
+<link rel="alternate" hreflang="pt-BR" href="https://77scenarios.com/pt/login">
+<script src="/nav.js" defer></script>
+</head>
+<body>
+<h1 class="sr-only">Sign In · 77 Scenarios</h1>
+<div id="t-overlay"></div>
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+
+<nav class="site-nav">
+  <a href="/pt/" class="nav-logo">77scenarios.com</a>
+  <div class="nav-links">
+    <a href="/pt/">Fazer o Teste</a>
+    <a href="/pt/types">16 Tipos</a>
+    <a href="/pt/letters">8 Letras</a>
+    <a href="/pt/cognitive-functions">Funções</a>
+    <a href="/pt/compatibility">Compatibilidade</a>
+    <a href="/pt/archive">Arquivo</a>
+    <a href="/pt/about">Sobre</a>
+  </div>
+  <button class="nav-burger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="nav-overlay" id="nav-overlay" onclick="toggleMenu()"></div>
+<div class="nav-drawer" id="nav-drawer">
+  <div class="nav-drawer-header">
+    <span style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:#ede8df;">77scenarios.com</span>
+    <button class="nav-close" onclick="toggleMenu()">&#10005;</button>
+  </div>
+  <div class="nav-drawer-links">
+    <a href="/pt/">Fazer o Teste</a>
+    <a href="/pt/types">16 Tipos</a>
+    <a href="/pt/letters">8 Letras</a>
+    <a href="/pt/cognitive-functions">Funções</a>
+    <a href="/pt/compatibility">Compatibilidade</a>
+    <a href="/pt/archive">Arquivo</a>
+    <a href="/pt/about">Sobre</a>
+  </div>
+</div>
+
+
+<main>
+  <div class="auth-wrap">
+    <div class="auth-title r" data-d="0">Welcome<br><em>back.</em></div>
+    <p class="auth-sub r" data-d="1">Sign in to view your saved results.</p>
+
+    <div id="auth-msg" class="auth-msg"></div>
+
+    <div class="auth-form r" data-d="2">
+      <div class="field-wrap">
+        <label class="field-label" for="email">Email</label>
+        <input class="field-input" type="email" id="email" placeholder="you@example.com" autocomplete="email">
+      </div>
+      <div class="field-wrap">
+        <label class="field-label" for="password">Senha</label>
+        <input class="field-input" type="password" id="password" placeholder="••••••••" autocomplete="current-password">
+      </div>
+      <button class="auth-btn" id="login-btn" onclick="handleLogin()">Entrar</button>
+    </div>
+
+    <p class="auth-switch r" data-d="3">No account? <a href="/pt/signup">Create one →</a></p>
+  </div>
+</main>
+
+
+<script>
+const ov=document.getElementById('t-overlay');
+function fadeIn(){ov.style.opacity='1';ov.animate([{opacity:1},{opacity:0}],{duration:550,delay:60,easing:'cubic-bezier(0.22,1,0.36,1)',fill:'forwards'});}
+fadeIn();
+window.addEventListener('pageshow',e=>{if(e.persisted)fadeIn();});
+document.addEventListener('click',e=>{
+  const a=e.target.closest('a[href]');
+  if(!a)return;
+  const h=a.getAttribute('href');
+  if(!h||h.startsWith('#')||h.startsWith('http')||h.startsWith('javascript')||h.startsWith('mailto'))return;
+  e.preventDefault();
+  ov.animate([{opacity:0},{opacity:1}],{duration:320,easing:'cubic-bezier(0.76,0,0.24,1)',fill:'forwards'}).finished.then(()=>{window.location.href=h;});
+});
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(en=>{
+    if(!en.isIntersecting)return;
+    setTimeout(()=>en.target.classList.add('in'),parseFloat(en.target.dataset.d||0)*80);
+    obs.unobserve(en.target);
+  });
+},{threshold:0.155});
+document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+</script>
+
+<script>
+function toggleMenu(){var d=document.getElementById('nav-drawer'),o=document.getElementById('nav-overlay'),b=document.querySelector('.nav-burger'),isOpen=d.classList.contains('open');d.classList.toggle('open',!isOpen);o.classList.toggle('open',!isOpen);b.classList.toggle('open',!isOpen);document.body.style.overflow=isOpen?'':'hidden';}
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const { createClient } = supabase;
+const sb = createClient('https://rttomfnfyjjssdqfzkaj.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw');
+
+// Redirect if already logged in
+sb.auth.getSession().then((({ data }) => {
+  if (data.session) window.location.href = '/profile';
+}));
+
+function msg(text, type) {
+  const el = document.getElementById('auth-msg');
+  el.textContent = text;
+  el.className = 'auth-msg ' + type + ' show';
+}
+
+async function handleLogin() {
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value;
+  const btn = document.getElementById('login-btn');
+  if (!email || !password) { msg('Please fill in all fields.', 'error'); return; }
+  btn.disabled = true;
+  btn.textContent = 'Signing in…';
+  const { error } = await sb.auth.signInWithPassword({ email, password });
+  if (error) {
+    msg(error.message, 'error');
+    btn.disabled = false;
+    btn.textContent = 'Sign in';
+  } else {
+    msg('Signed in. Redirecting…', 'success');
+    setTimeout(() => window.location.href = '/profile', 800);
+  }
+}
+
+document.getElementById('password').addEventListener('keydown', e => {
+  if (e.key === 'Enter') handleLogin();
+});
+</script>
+<script>
+(function(){
+  const {createClient}=supabase;
+  const sb=createClient('https://rttomfnfyjjssdqfzkaj.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw');
+  sb.auth.getSession().then(({data})=>{
+    const links=document.querySelector('.nav-links');
+    const drawerLinks=document.querySelector('.nav-drawer-links');
+    if(links){const a=document.createElement('a');a.href='/login';a.textContent='Sign in';a.style.cssText='border:1px solid var(--border);padding:7px 16px;border-radius:60px;font-size:0.82rem;color:var(--cream);';links.appendChild(a);}
+    if(drawerLinks){const a=document.createElement('a');a.href='/login';a.textContent='Sign in';drawerLinks.appendChild(a);const b=document.createElement('a');b.href='/signup';b.textContent='Create account';drawerLinks.appendChild(b);}
+  });
+})();
+</script>
+</body>
+</html>

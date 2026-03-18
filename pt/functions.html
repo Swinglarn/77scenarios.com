@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">Personality Functions, 77Scenarios</title>
+<meta name="description" id="page-desc" content="Discover the four cognitive functions behind your personality type. Simple explanations and real-life examples of how your mind actually works.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://77scenarios.com/og-image.png">
+<meta property="og:title" content="Your Cognitive Function Stack · 77 Scenarios">
+<meta property="og:description" content="See the four cognitive functions behind your Myers-Briggs personality type - dominant, auxiliary, tertiary, and inferior.">
+<meta property="og:url" content="https://77scenarios.com/functions">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:site_name" content="77 Scenarios">
+<link rel="canonical" id="canonical-url" href="https://77scenarios.com/functions">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{--bg:#0c0e10;--surface:#13161a;--surface2:#1a1e24;--gold:#c9a84c;--gold-dim:#8a6d2e;--cream:#ede8df;--muted:#b5ada6;--border:#252a30;--radius:14px;}
+  html,body{background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
+  body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:0.6;}
+  #t-overlay{position:fixed;inset:0;z-index:9999;pointer-events:none;background:#0c0e10;opacity:1;}
+  .glow{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0;}
+  .glow-1{width:600px;height:600px;top:-200px;left:-150px;background:radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%);}
+  .glow-2{width:400px;height:400px;bottom:-100px;right:-100px;background:radial-gradient(circle,rgba(120,180,160,0.05) 0%,transparent 70%);}
+
+    nav, .site-nav{position:sticky;top:0;z-index:200;background:rgba(12,14,16,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 32px;display:flex;justify-content:space-between;align-items:center;height:56px;}
+  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--cream);text-decoration:none;}
+  .nav-links{display:flex;gap:32px;align-items:center;}
+  .nav-links a{font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;white-space:nowrap;}
+  .nav-links a:hover,.nav-links a.active{color:var(--cream);}
+  .nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+  .nav-burger span{display:block;width:22px;height:1.5px;background:#b5ada6;transition:all 0.3s ease;transform-origin:center;}
+  .nav-burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);background:#c9a84c;}
+  .nav-burger.open span:nth-child(2){opacity:0;}
+  .nav-burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);background:#c9a84c;}
+  .nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:300;opacity:0;transition:opacity 0.3s ease;pointer-events:none;}
+  .nav-overlay.open{opacity:1;pointer-events:auto;}
+  .nav-drawer{position:fixed;top:0;right:-100%;width:min(320px,85vw);height:100%;background:#13161a;border-left:1px solid #252a30;z-index:400;transition:right 0.35s cubic-bezier(0.22,1,0.36,1),visibility 0s linear 0.35s;display:flex;flex-direction:column;pointer-events:none;visibility:hidden;}
+  .nav-drawer.open{right:0;pointer-events:auto;visibility:visible;transition:right 0.35s cubic-bezier(0.22,1,0.36,1),visibility 0s linear 0s;}
+  .nav-drawer-header{display:flex;justify-content:space-between;align-items:center;padding:0 24px;height:56px;border-bottom:1px solid #252a30;flex-shrink:0;}
+  .nav-close{background:none;border:none;color:#b5ada6;font-size:18px;cursor:pointer;padding:4px;transition:color 0.2s;}
+  .nav-close:hover{color:#ede8df;}
+  .nav-drawer-links{display:flex;flex-direction:column;padding:16px 0;}
+  .nav-drawer-links a{font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:#b5ada6;text-decoration:none;padding:18px 24px;border-bottom:1px solid #1e2227;transition:all 0.15s ease;}
+  .nav-drawer-links a:hover{color:#c9a84c;padding-left:32px;}
+  .nav-drawer-links a:first-child{color:#c9a84c;}
+  @media(max-width:480px){nav,.site-nav{padding:0 16px;height:52px;}.nav-links{display:none;}.nav-burger{display:flex;}.nav-overlay{display:block;pointer-events:none;}}
+
+  main{position:relative;z-index:1;max-width:740px;margin:0 auto;padding:72px 32px 96px;}
+
+  .r{opacity:0;transform:translateY(24px);transition:opacity 0.65s cubic-bezier(0.22,1,0.36,1),transform 0.65s cubic-bezier(0.22,1,0.36,1);}
+  .r.in{opacity:1;transform:none;}
+
+  .page-eyebrow{font-size:12px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:12px;}
+  .page-eyebrow::before{content:'';display:block;height:1px;width:24px;background:var(--gold-dim);}
+
+  h1{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,8vw,72px);font-weight:300;line-height:1.05;letter-spacing:-0.02em;color:var(--cream);margin-bottom:24px;}
+  h1 em{font-style:italic;color:var(--gold);}
+  .page-sub{font-size:16px;line-height:1.7;color:var(--muted);max-width:520px;margin-bottom:56px;}
+
+  /* WHAT ARE FUNCTIONS */
+  .intro-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px;margin-bottom:48px;}
+  .intro-box p{font-size:15px;line-height:1.8;color:var(--cream);margin-bottom:14px;}
+  .intro-box p:last-child{margin-bottom:0;}
+
+  /* POSITION LEGEND */
+  .positions-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:56px;}
+  @media(max-width:480px){.positions-grid{grid-template-columns:1fr;}}
+  .position-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;}
+  .position-rank{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  .position-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--cream);margin-bottom:6px;}
+  .position-desc{font-size:13px;line-height:1.6;color:var(--muted);}
+
+  /* SECTION DIVIDER */
+  .section-label{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:28px;display:flex;align-items:center;gap:16px;}
+  .section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+
+  /* FUNCTION STACK */
+  .stack{display:flex;flex-direction:column;gap:20px;margin-bottom:56px;}
+
+  .fn-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:border-color 0.2s;}
+  .fn-card.dominant{border-color:var(--gold-dim);}
+  .fn-card-header{display:flex;align-items:center;gap:20px;padding:22px 24px;cursor:pointer;user-select:none;}
+  .fn-badge{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;flex-shrink:0;}
+  .fn-badge.dominant{background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3);}
+  .fn-badge.auxiliary{background:rgba(201,168,76,0.08);color:var(--gold);border:1px solid rgba(201,168,76,0.15);}
+  .fn-badge.tertiary{background:rgba(255,255,255,0.04);color:var(--cream);border:1px solid var(--border);}
+  .fn-badge.inferior{background:rgba(255,255,255,0.02);color:var(--muted);border:1px solid var(--border);}
+  .fn-header-text{flex:1;}
+  .fn-position{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;}
+  .fn-card.dominant .fn-position{color:var(--gold);}
+  .fn-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--cream);margin-bottom:2px;}
+  .fn-tagline{font-size:13px;color:var(--muted);}
+  .fn-chevron{color:var(--muted);font-size:16px;transition:transform 0.3s;flex-shrink:0;}
+  .fn-card.open .fn-chevron{transform:rotate(180deg);}
+  .fn-body{display:none;padding:0 24px 24px;border-top:1px solid var(--border);}
+  .fn-card.open .fn-body{display:block;}
+  .fn-body-inner{padding-top:20px;}
+  .fn-desc{font-size:14px;line-height:1.8;color:var(--cream);margin-bottom:20px;}
+  .fn-example-label{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+  .fn-example{font-size:13px;line-height:1.7;color:var(--muted);background:var(--surface2);border-left:2px solid var(--gold-dim);border-radius:0 8px 8px 0;padding:14px 16px;}
+
+  /* BACK BUTTON */
+  .back-row{margin-bottom:48px;}
+  .btn-back{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;background:transparent;border:1px solid var(--border);border-radius:30px;padding:10px 20px;transition:all 0.2s;cursor:pointer;}
+  .btn-back:hover{color:var(--cream);border-color:var(--muted);}
+
+  /* TAKE TEST AGAIN */
+  .cta-row{text-align:center;margin-top:64px;padding-top:48px;border-top:1px solid var(--border);}
+  .cta-row p{font-size:14px;color:var(--muted);margin-bottom:20px;}
+  .btn-gold{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:#0c0e10;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;border:none;border-radius:60px;padding:16px 36px;cursor:pointer;text-decoration:none;transition:background 0.2s;}
+  .btn-gold:hover{background:var(--cream);}
+
+  footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:32px;text-align:center;}
+  footer p{font-size:12px;color:var(--muted);letter-spacing:0.05em;}
+  footer a{color:var(--muted);text-decoration:none;transition:color 0.2s;}
+  footer a:hover{color:var(--cream);}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Your Cognitive Functions",
+  "description": "Discover the four cognitive functions behind your personality type.",
+  "url": "https://77scenarios.com/functions",
+  "isPartOf": {"@type": "WebSite", "url": "https://77scenarios.com", "name": "77 Scenarios"}
+}
+</script>
+
+<link rel="alternate" hreflang="en" href="https://77scenarios.com/functions">
+<link rel="alternate" hreflang="pt-BR" href="https://77scenarios.com/pt/functions">
+<script src="/nav.js" defer></script>
+</head>
+<body>
+<div id="t-overlay"></div>
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+
+<nav class="site-nav">
+  <a href="/pt/" class="nav-logo">77scenarios.com</a>
+  <div class="nav-links">
+    <a href="/pt/">Fazer o Teste</a>
+    <a href="/pt/types">16 Tipos</a>
+    <a href="/pt/letters">8 Letras</a>
+    <a href="/pt/cognitive-functions">Funções</a>
+    <a href="/pt/compatibility">Compatibilidade</a>
+    <a href="/pt/archive">Arquivo</a>
+    <a href="/pt/about">Sobre</a>
+  </div>
+  <button class="nav-burger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="nav-overlay" id="nav-overlay" onclick="toggleMenu()"></div>
+<div class="nav-drawer" id="nav-drawer">
+  <div class="nav-drawer-header">
+    <span style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:#ede8df;">77scenarios.com</span>
+    <button class="nav-close" onclick="toggleMenu()">&#10005;</button>
+  </div>
+  <div class="nav-drawer-links">
+    <a href="/pt/">Fazer o Teste</a>
+    <a href="/pt/types">16 Tipos</a>
+    <a href="/pt/letters">8 Letras</a>
+    <a href="/pt/cognitive-functions">Funções</a>
+    <a href="/pt/compatibility">Compatibilidade</a>
+    <a href="/pt/archive">Arquivo</a>
+    <a href="/pt/about">Sobre</a>
+  </div>
+</div>
+
+<main>
+  <div class="back-row r" data-d="0">
+    <a href="/pt/" class="btn-back">← Back to results</a>
+  </div>
+
+  <div class="page-eyebrow r" data-d="1">Going deeper</div>
+  <h1 class="r" data-d="2" id="page-heading">Your <em>functions</em></h1>
+  <p class="page-sub r" data-d="3" id="page-subheading">Loading...</p>
+
+  <!-- WHAT ARE FUNCTIONS -->
+  <div class="intro-box r" data-d="4">
+    <p>Every personality type runs on four mental tools called <strong>cognitive functions</strong>. Think of them like gears in an engine. Each one does a different job, and they fire in a set order.</p>
+    <p>You use all four, but not equally. Your first function feels completely natural, almost effortless. Your second supports it. Your third is less reliable and tends to develop later in life. Your fourth is your weak spot, and often the source of your biggest stress.</p>
+    <p>Understanding your functions doesn't box you in. It just helps you see <em>why</em> certain things feel easy and others feel like work.</p>
+  </div>
+
+  <!-- POSITION LEGEND -->
+  <div class="section-label r" data-d="5">The four positions</div>
+  <div class="positions-grid r" data-d="6">
+    <div class="position-card">
+      <div class="position-rank">1st. Dominant</div>
+      <div class="position-name">Your lead</div>
+      <div class="position-desc">The function you use constantly, almost without noticing. It shapes how you naturally see the world and make decisions.</div>
+    </div>
+    <div class="position-card">
+      <div class="position-rank">2nd. Auxiliary</div>
+      <div class="position-name">Your support</div>
+      <div class="position-desc">Backs up your dominant. It balances you out and kicks in when your lead function alone isn't enough.</div>
+    </div>
+    <div class="position-card">
+      <div class="position-rank">3rd. Tertiary</div>
+      <div class="position-name">Your developing side</div>
+      <div class="position-desc">Present but unreliable. It tends to grow stronger as you get older and often shows up more in relaxed situations.</div>
+    </div>
+    <div class="position-card">
+      <div class="position-rank">4th. Inferior</div>
+      <div class="position-name">Your blind spot</div>
+      <div class="position-desc">The function you struggle with most. Under pressure it can take over in clumsy ways. Learning to work with it is a big part of personal growth.</div>
+    </div>
+  </div>
+
+  <!-- FUNCTION STACK -->
+  <div class="section-label r" data-d="7" id="stack-label">Your stack</div>
+  <div class="stack r" data-d="8" id="fn-stack"></div>
+
+  <div class="cta-row r" data-d="9">
+    <p>Want to explore your full type profile?</p>
+    <a href="/pt/" id="type-link" class="btn-gold">View my type →</a>
+  </div>
+</main>
+
+<footer>
+  <p>
+    <a href="/pt/">Take the test</a> &nbsp;·&nbsp;
+    <a href="/pt/types">16 Tipos</a> &nbsp;·&nbsp;
+    <a href="/pt/letters">8 Letras</a>
+    <a href="/pt/cognitive-functions" class="hide-sm">Funções</a> &nbsp;·&nbsp;
+    <a href="/pt/compatibility">Compatibilidade</a>
+    <a href="/pt/archive">Arquivo</a>
+    <a href="/pt/about">Sobre</a>
+  </p>
+</footer>
+
+<script>
+const fnData = {
+  Ni:{
+    name:'Introverted Intuition',
+    tagline:'Pattern recognition from the inside',
+    desc:'Your brain quietly connects dots in the background and then hands you a conclusion. You don\'t always know how you got there, you just know. It\'s like an internal compass that points toward what\'s coming before anyone else can see it.',
+    examples:{
+      dominant:'You\'re in a meeting and something feels off about a plan. You can\'t explain why yet, but three weeks later it falls apart exactly where you sensed it would. People ask how you saw it coming. You\'re not sure how to answer.',
+      auxiliary:'You don\'t always trust your gut immediately, but when you give it space, it\'s usually right. You\'re good at pausing on a decision and letting a clearer answer rise to the surface overnight.',
+      tertiary:'Occasionally you get strong hunches, but they\'re hit or miss. You\'re learning to tell the difference between real intuition and wishful thinking.',
+      inferior:'Under stress, your gut can feel completely unreliable. You might become anxious about the future or convinced something bad is coming, without real evidence to back it up.'
+    }
+  },
+  Ne:{
+    name:'Extraverted Intuition',
+    tagline:'Seeing possibilities everywhere',
+    desc:'Your mind jumps between ideas constantly, finding unexpected connections. One thought leads to five others. You\'re wired for possibility, new angles, new interpretations, the option nobody else considered. Boredom hits fast when things get too predictable.',
+    examples:{
+      dominant:'Someone describes a problem and you\'ve already thought of six different ways to look at it before they\'ve finished speaking. You\'re genuinely excited by the question, not just the answer.',
+      auxiliary:'You use this to brainstorm and explore, but you can also sit down and execute. It\'s a useful gear for generating ideas, not the only one you have.',
+      tertiary:'You enjoy a good brainstorm and can come up with creative ideas when the mood is right, but you don\'t naturally live in that space.',
+      inferior:'When you\'re stressed or tired, your mind can go to unhelpful places, catastrophising, imagining the worst possible outcome, or jumping between anxious thoughts without landing anywhere.'
+    }
+  },
+  Si:{
+    name:'Introverted Sensing',
+    tagline:'A detailed memory for how things felt',
+    desc:'You store rich impressions of past experiences and use them to navigate the present. More than just remembering facts, you recall how things felt, the texture of a situation, the atmosphere, the details. Past experience is your most reliable reference point.',
+    examples:{
+      dominant:'You try a new restaurant and immediately compare it to every similar place you\'ve been. You remember specific meals, specific moments. This isn\'t nostalgia, it\'s how you make sense of new information.',
+      auxiliary:'You use your memory as a solid anchor. When in unfamiliar situations, you draw on what has worked before rather than winging it. It gives you a reliable baseline.',
+      tertiary:'You appreciate familiarity and can find comfort in routine, but you don\'t rely on it as heavily. You sometimes forget important details or need reminders.',
+      inferior:'When stretched thin, you can become either overly attached to how things have always been done, or forgetful and scattered, losing track of details you\'d normally manage fine.'
+    }
+  },
+  Se:{
+    name:'Extraverted Sensing',
+    tagline:'Fully in the moment',
+    desc:'You\'re tuned into what\'s happening right now. Physical details, the energy in a room, what\'s immediately in front of you, you catch things others miss. You\'re at your best when you\'re active, responding in real time, fully present.',
+    examples:{
+      dominant:'You walk into a party and within seconds you\'ve clocked who\'s tense, where the best conversation is happening, and what song is playing. You\'re not analysing, you\'re just in the room, fully.',
+      auxiliary:'You bring a grounded, practical energy to your instincts. You notice the physical world well and can respond quickly when needed, without being led entirely by impulse.',
+      tertiary:'You enjoy sensory experiences, good food, movement, being outside, but they\'re not the main way you process the world. You dip in and out.',
+      inferior:'Under stress, you might either ignore your body entirely (forgetting to eat, sleep, exercise) or swing the other way, overindulging in physical comfort as a way of coping.'
+    }
+  },
+  Ti:{
+    name:'Introverted Thinking',
+    tagline:'Building airtight internal logic',
+    desc:'You build precise internal frameworks to understand how things work. Before you accept an idea, you need it to hold up under scrutiny. You\'re not trying to be difficult, you just can\'t commit to something that doesn\'t fully make sense to you internally.',
+    examples:{
+      dominant:'Before agreeing with an argument you pull it apart quietly. If there\'s a flaw in the logic, you find it. You don\'t always say this out loud, but it shapes every conclusion you reach.',
+      auxiliary:'You use this to stress-test your instincts. When you have a strong feeling about something, you run it through an internal check to see if it actually holds up.',
+      tertiary:'You can apply logic when needed and you value consistency, but your internal framework isn\'t always fully developed. You sometimes accept reasoning that wouldn\'t fully stand up to scrutiny.',
+      inferior:'Under pressure, you can become overly critical of yourself or others, picking apart every detail and finding it all inadequate. Or the opposite: making decisions that are completely inconsistent with your usual standards.'
+    }
+  },
+  Te:{
+    name:'Extraverted Thinking',
+    tagline:'Organising the world to make things work',
+    desc:'You organise the world around you to make things efficient and effective. Systems, structures, clear accountability, you build them almost without being asked. You want results, and you want them delivered in the most direct way possible.',
+    examples:{
+      dominant:'Your team is stuck and within ten minutes you\'ve mapped the problem, assigned responsibilities, and set a deadline. Not because you took over, because the lack of structure was costing everyone time.',
+      auxiliary:'You apply this when it matters. You can get organised and build a clear plan, but you don\'t run every corner of your life as a productivity system.',
+      tertiary:'You can get things done when you need to, but your organisation is inconsistent. Some areas of your life run well; others are a bit chaotic.',
+      inferior:'When under long-term stress, you might lose your ability to organise at all, missing deadlines, struggling to prioritise, feeling overwhelmed by tasks you\'d usually handle easily.'
+    }
+  },
+  Fi:{
+    name:'Introverted Feeling',
+    tagline:'A private but unshakeable value system',
+    desc:'You have a deep, personal code that rarely bends. You know what matters to you, authenticity, integrity, the things you believe in, and you make decisions from there, even when it\'s hard to explain to others. You feel things deeply but often privately.',
+    examples:{
+      dominant:'A job offer pays well but something about the company\'s values sits wrong with you. You turn it down. People think you\'re being impractical. You know you\'re being honest about what you can and can\'t do in good conscience.',
+      auxiliary:'You have a strong moral compass that shapes your decisions without dominating them. You know what you\'d never compromise on, and that clarity helps you move forward confidently.',
+      tertiary:'You have values you care about, but you don\'t always filter every decision through them. Sometimes you agree to things that quietly don\'t sit right, and notice it only later.',
+      inferior:'Under stress, your values can feel either completely abandoned (doing things that don\'t feel like you at all) or unbearably rigid, unable to tolerate any compromise on what you believe.'
+    }
+  },
+  Fe:{
+    name:'Extraverted Feeling',
+    tagline:'Reading and managing the emotional atmosphere',
+    desc:'You read the emotional climate in a room instinctively and adapt to keep things harmonious. Other people\'s feelings register as immediately real to you, not just information to process, but something you respond to in the moment.',
+    examples:{
+      dominant:'You can tell a friend is upset before they\'ve said a word. You adjust your tone, your posture, your whole approach automatically. You\'re not performing warmth, you\'re genuinely tuned in.',
+      auxiliary:'You bring warmth and social awareness to your interactions without it running every decision. You know how people are feeling and that knowledge informs how you engage.',
+      tertiary:'You can be warm and considerate, but you don\'t always pick up on emotional undercurrents in real time. You sometimes miss cues and catch up after the fact.',
+      inferior:'Under stress, you can either become overly focused on what others think of you, performing rather than connecting, or swing to the other extreme, seeming cold or dismissive in a way that isn\'t really you.'
+    }
+  }
+};
+
+const typeStacks = {
+  INTJ:['Ni','Te','Fi','Se'],
+  INTP:['Ti','Ne','Si','Fe'],
+  ENTJ:['Te','Ni','Se','Fi'],
+  ENTP:['Ne','Ti','Fe','Si'],
+  INFJ:['Ni','Fe','Ti','Se'],
+  INFP:['Fi','Ne','Si','Te'],
+  ENFJ:['Fe','Ni','Se','Ti'],
+  ENFP:['Ne','Fi','Te','Si'],
+  ISTJ:['Si','Te','Fi','Ne'],
+  ISFJ:['Si','Fe','Ti','Ne'],
+  ESTJ:['Te','Si','Ne','Fi'],
+  ESFJ:['Fe','Si','Ne','Ti'],
+  ISTP:['Ti','Se','Ni','Fe'],
+  ISFP:['Fi','Se','Ni','Te'],
+  ESTP:['Se','Ti','Fe','Ni'],
+  ESFP:['Se','Fi','Te','Ni']
+};
+
+const positions = [
+  {key:'dominant', label:'1st. Dominant'},
+  {key:'auxiliary', label:'2nd. Auxiliary'},
+  {key:'tertiary', label:'3rd. Tertiary'},
+  {key:'inferior', label:'4th. Inferior'}
+];
+
+const typeNames = {
+  INTJ:'The Architect',INTP:'The Thinker',ENTJ:'The Commander',ENTP:'The Visionary',
+  INFJ:'The Counselor',INFP:'The Mediator',ENFJ:'The Teacher',ENFP:'The Champion',
+  ISTJ:'The Inspector',ISFJ:'The Protector',ESTJ:'The Director',ESFJ:'The Caregiver',
+  ISTP:'The Craftsman',ISFP:'The Artist',ESTP:'The Dynamo',ESFP:'The Performer'
+};
+
+function buildPage(t) {
+  const stack = typeStacks[t];
+  if (!stack) return;
+
+  const name = typeNames[t] || t;
+
+  document.getElementById('page-heading').innerHTML = `Your <em>functions</em>`;
+  document.getElementById('page-subheading').textContent = `You got ${t}, ${name}. Here are the four cognitive functions that drive how you think, decide, and experience the world.`;
+  document.getElementById('page-title').textContent = `${t} Cognitive Functions, 77Scenarios`;
+  document.getElementById('stack-label').textContent = `Your stack, ${t}`;
+  document.getElementById('type-link').href = `/type?t=${t}`;
+
+  const container = document.getElementById('fn-stack');
+  container.innerHTML = '';
+
+  stack.forEach((fn, i) => {
+    const pos = positions[i];
+    const data = fnData[fn];
+    const card = document.createElement('div');
+    card.className = `fn-card ${pos.key}`;
+
+    card.innerHTML = `
+      <div class="fn-card-header" onclick="toggleCard(this)">
+        <div class="fn-badge ${pos.key}">${fn}</div>
+        <div class="fn-header-text">
+          <div class="fn-position">${pos.label}</div>
+          <div class="fn-name">${data.name}</div>
+          <div class="fn-tagline">${data.tagline}</div>
+        </div>
+        <div class="fn-chevron">↓</div>
+      </div>
+      <div class="fn-body">
+        <div class="fn-body-inner">
+          <p class="fn-desc">${data.desc}</p>
+          <div class="fn-example-label">What this looks like for you</div>
+          <div class="fn-example">${data.examples[pos.key]}</div>
+        </div>
+      </div>
+    `;
+
+    // Auto-open dominant
+    if (i === 0) {
+      card.classList.add('open');
+    }
+
+    container.appendChild(card);
+  });
+}
+
+function toggleCard(header) {
+  const card = header.closest('.fn-card');
+  card.classList.toggle('open');
+}
+
+// Get type from URL
+const params = new URLSearchParams(window.location.search);
+const t = (params.get('t') || '').toUpperCase();
+if (typeStacks[t]) {
+  buildPage(t);
+} else {
+  document.getElementById('page-subheading').textContent = 'Take the test first to see your personal function stack.';
+  document.getElementById('fn-stack').innerHTML = '<p style="color:var(--muted);font-size:14px;">No type found. <a href="/pt/" style="color:var(--gold);">Take the test →</a></p>';
+}
+</script>
+
+<script>
+const ov=document.getElementById('t-overlay');
+function fadeIn(){ov.style.opacity='1';ov.animate([{opacity:1},{opacity:0}],{duration:550,delay:60,easing:'cubic-bezier(0.22,1,0.36,1)',fill:'forwards'});}
+fadeIn();
+window.addEventListener('pageshow',e=>{if(e.persisted)fadeIn();});
+document.addEventListener('click',e=>{
+  const a=e.target.closest('a[href]');
+  if(!a)return;
+  const h=a.getAttribute('href');
+  if(!h||h.startsWith('#')||h.startsWith('http')||h.startsWith('javascript')||h.startsWith('mailto'))return;
+  e.preventDefault();
+  ov.animate([{opacity:0},{opacity:1}],{duration:320,easing:'cubic-bezier(0.76,0,0.24,1)',fill:'forwards'}).finished.then(()=>{window.location.href=h;});
+});
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(en=>{
+    if(!en.isIntersecting)return;
+    const d=parseFloat(en.target.dataset.d||0);
+    setTimeout(()=>en.target.classList.add('in'),d*45);
+    obs.unobserve(en.target);
+  });
+},{threshold:0.15});
+document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+</script>
+
+<script>
+function toggleMenu(){var d=document.getElementById('nav-drawer'),o=document.getElementById('nav-overlay'),b=document.querySelector('.nav-burger'),isOpen=d.classList.contains('open');d.classList.toggle('open',!isOpen);o.classList.toggle('open',!isOpen);b.classList.toggle('open',!isOpen);document.body.style.overflow=isOpen?'':'hidden';}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(function(){
+  const {createClient}=supabase;
+  const sb=createClient('https://rttomfnfyjjssdqfzkaj.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw');
+  window._navSb = sb;
+})();
+</script>
+</body>
+</html>
