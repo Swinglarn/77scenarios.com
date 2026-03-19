@@ -244,7 +244,6 @@ function toggleMenu(){var d=document.getElementById('nav-drawer'),o=document.get
 <script>
 const { createClient } = supabase;
 const sb = createClient('https://rttomfnfyjjssdqfzkaj.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw');
-  window._navSb = sb;
 
 // Redirect if already logged in
 sb.auth.getSession().then((({ data }) => {
@@ -284,7 +283,10 @@ document.getElementById('password').addEventListener('keydown', e => {
   const {createClient}=supabase;
   const sb=createClient('https://rttomfnfyjjssdqfzkaj.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw');
   sb.auth.getSession().then(({data})=>{
-    
+    const links=document.querySelector('.nav-links');
+    const drawerLinks=document.querySelector('.nav-drawer-links');
+    if(links){const a=document.createElement('a');a.href='/login';a.textContent='Sign in';a.style.cssText='border:1px solid var(--border);padding:7px 16px;border-radius:60px;font-size:0.82rem;color:var(--cream);';links.appendChild(a);}
+    if(drawerLinks){const a=document.createElement('a');a.href='/login';a.textContent='Sign in';drawerLinks.appendChild(a);const b=document.createElement('a');b.href='/signup';b.textContent='Create account';drawerLinks.appendChild(b);}
   });
 })();
 </script>

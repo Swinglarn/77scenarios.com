@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="description" content="What this Myers-Briggs letter means, how it shows up in real life, and how it pairs with the other dimensions.">
@@ -110,10 +110,7 @@
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-<meta property="og:image" content="https://77scenarios.com/es/og-image.png">
-<link rel="alternate" hreflang="en" href="https://77scenarios.com/letter">
-<link rel="alternate" hreflang="es" href="https://77scenarios.com/es/letter">
-<script src="/nav.js" defer></script>
+<meta property="og:image" content="https://77scenarios.com/og-image.png"><script src="/nav.js" defer></script>
 </head>
 <body>
 <h1 class="sr-only" id="page-h1">77 Scenarios — Myers-Briggs Letter Guide</h1>
@@ -121,15 +118,15 @@
 <div class="glow glow-1"></div>
 <div class="glow glow-2"></div>
 <nav class="site-nav">
-  <a href="/es/" class="nav-logo">77scenarios.com</a>
+  <a href="/" class="nav-logo">77scenarios.com</a>
   <div class="nav-links">
-    <a href="/es/">Hacer el Test</a>
-    <a href="/es/types">16 Tipos</a>
-    <a href="/es/letters">8 Letras</a>
-    <a href="/es/cognitive-functions">Funciones</a>
-    <a href="/es/compatibility">Compatibilidad</a>
-    <a href="/es/archive">Archivo</a>
-    <a href="/es/about">Acerca de</a>
+    <a href="/">Take the Test</a>
+    <a href="/types">16 Types</a>
+    <a href="/letters">8 Letters</a>
+    <a href="/cognitive-functions">Functions</a>
+    <a href="/compatibility">Compatibility</a>
+    <a href="/archive">Archive</a>
+    <a href="/about">About</a>
   </div>
   <button class="nav-burger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
@@ -141,18 +138,18 @@
     <button class="nav-close" onclick="toggleMenu()">&#10005;</button>
   </div>
   <div class="nav-drawer-links">
-    <a href="/es/">Hacer el Test</a>
-    <a href="/es/types">16 Tipos</a>
-    <a href="/es/letters">8 Letras</a>
-    <a href="/es/cognitive-functions">Funciones</a>
-    <a href="/es/compatibility">Compatibilidad</a>
-    <a href="/es/archive">Archivo</a>
-    <a href="/es/about">Acerca de</a>
+    <a href="/">Take the Test</a>
+    <a href="/types">16 Types</a>
+    <a href="/letters">8 Letters</a>
+    <a href="/cognitive-functions">Functions</a>
+    <a href="/compatibility">Compatibility</a>
+    <a href="/archive">Archive</a>
+    <a href="/about">About</a>
   </div>
 </div>
 
 <main>
-  <a href="/es/letters" class="back-link r" data-d="0">← All letters</a>
+  <a href="/letters" class="back-link r" data-d="0">← All letters</a>
   <div id="content"></div>
 </main>
 
@@ -283,7 +280,7 @@ function render(){
   document.getElementById('letter-schema').textContent=JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":`${l} in Myers-Briggs: ${d.name} Explained`,"description":seoDesc,"url":`https://77scenarios.com/letter.html?l=${l}`,"publisher":{"@type":"Organization","name":"77 Scenarios","url":"https://77scenarios.com"}});
 
   const typesHTML=d.types.map(t=>`
-    <a href="/es/type?t=${t}" class="type-mini">
+    <a href="/type?t=${t}" class="type-mini">
       <div class="mini-code">${t.split('').map(c=>c===l?`<span class="hi">${c}</span>`:c).join('')}</div>
       <div class="mini-name">${d.typeNames[t]||''}</div>
     </a>`).join('');
@@ -294,7 +291,7 @@ function render(){
       <div class="hero-right">
         <div class="hero-dim">${d.dim} dimension</div>
         <div class="hero-name">${d.name}</div>
-        <div class="hero-opp">Opposite: <a href="/es/letter?l=${d.opp}">${d.opp} · ${d.oppName}</a></div>
+        <div class="hero-opp">Opposite: <a href="/letter?l=${d.opp}">${d.opp} · ${d.oppName}</a></div>
       </div>
     </div>
     <div class="section r" data-d="2"><div class="section-label">What it means</div><p class="body-text">${d.p1}</p><p class="body-text">${d.p2}</p></div>
@@ -313,12 +310,12 @@ function render(){
           <div class="opp-letter">${d.opp}</div>
           <div><div class="opp-name">${d.oppName}</div><div class="opp-sub">${d.oppDesc}</div></div>
         </div>
-        <a href="/es/letter?l=${d.opp}" class="btn-outline">Explore ${d.opp} →</a>
+        <a href="/letter?l=${d.opp}" class="btn-outline">Explore ${d.opp} →</a>
       </div>
     </div>
     <div class="cta-block r" data-d="9">
       <div class="cta-text">Find out <em>your</em> letters<br>through real scenarios.</div>
-      <a href="/es/" class="btn-gold">Hacer el test →</a>
+      <a href="/" class="btn-gold">Take the test →</a>
     </div>`;
 
   document.querySelectorAll('.r').forEach(el=>obs.observe(el));

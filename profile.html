@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +8,15 @@
 <meta name="keywords" content="how is MBTI scored, is Myers-Briggs accurate, Myers-Briggs criticism, personality test methodology, MBTI reliability, scenario based personality test, how personality tests work, Big Five vs MBTI">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="article">
-<meta property="og:image" content="https://77scenarios.com/es/og-image.png">
+<meta property="og:image" content="https://77scenarios.com/og-image.png">
 <meta property="og:title" content="About: 77Scenarios">
 <meta property="og:description" content="How the scoring works, where the Myers-Briggs framework comes from, and what the science actually says about personality testing.">
-<meta property="og:url" content="https://77scenarios.com/es/about">
+<meta property="og:url" content="https://77scenarios.com/about">
 <meta property="og:site_name" content="77 Scenarios">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="About 77 Scenarios: How the Test Works">
 <meta name="twitter:description" content="The scoring logic, the history of MBTI, and an honest look at what personality tests can and can't tell you.">
-<link rel="canonical" href="https://77scenarios.com/es/about">
+<link rel="canonical" href="https://77scenarios.com/about">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"About the 77 Scenarios Personality Test","description":"How the test is scored, where Myers-Briggs comes from, and what the research says about personality type testing.","url":"https://77scenarios.com/about","publisher":{"@type":"Organization","name":"77 Scenarios","url":"https://77scenarios.com"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
@@ -151,9 +151,6 @@
 
   .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
 </style>
-
-<link rel="alternate" hreflang="en" href="https://77scenarios.com/profile">
-<link rel="alternate" hreflang="es" href="https://77scenarios.com/es/profile">
 <script src="/nav.js" defer></script>
 </head>
 <body>
@@ -163,15 +160,15 @@
 <div class="glow glow-2"></div>
 
 <nav class="site-nav">
-  <a href="/es/" class="nav-logo">77scenarios.com</a>
+  <a href="/" class="nav-logo">77scenarios.com</a>
   <div class="nav-links">
-    <a href="/es/">Hacer el Test</a>
-    <a href="/es/types">16 Tipos</a>
-    <a href="/es/letters">8 Letras</a>
-    <a href="/es/cognitive-functions">Funciones</a>
-    <a href="/es/compatibility">Compatibilidad</a>
-    <a href="/es/archive">Archivo</a>
-    <a href="/es/about">Acerca de</a>
+    <a href="/">Take the Test</a>
+    <a href="/types">16 Types</a>
+    <a href="/letters">8 Letters</a>
+    <a href="/cognitive-functions">Functions</a>
+    <a href="/compatibility">Compatibility</a>
+    <a href="/archive">Archive</a>
+    <a href="/about">About</a>
   </div>
   <button class="nav-burger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
@@ -183,13 +180,13 @@
     <button class="nav-close" onclick="toggleMenu()">&#10005;</button>
   </div>
   <div class="nav-drawer-links">
-    <a href="/es/">Hacer el Test</a>
-    <a href="/es/types">16 Tipos</a>
-    <a href="/es/letters">8 Letras</a>
-    <a href="/es/cognitive-functions">Funciones</a>
-    <a href="/es/compatibility">Compatibilidad</a>
-    <a href="/es/archive">Archivo</a>
-    <a href="/es/about">Acerca de</a>
+    <a href="/">Take the Test</a>
+    <a href="/types">16 Types</a>
+    <a href="/letters">8 Letters</a>
+    <a href="/cognitive-functions">Functions</a>
+    <a href="/compatibility">Compatibility</a>
+    <a href="/archive">Archive</a>
+    <a href="/about">About</a>
   </div>
 </div>
 
@@ -206,7 +203,7 @@
         </div>
       </div>
       <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-        <a class="settings-link" href="/es/settings">Settings</a>
+        <a class="settings-link" href="/settings">Settings</a>
         <button class="signout-btn" onclick="handleSignOut()">Sign out</button>
       </div>
     </div>
@@ -305,7 +302,7 @@ function renderCard(r) {
           <span>${jp}%</span>
         </div>
       </div>
-      <a class="result-link" href="/es/type?t=${t}">View type →</a>
+      <a class="result-link" href="/type?t=${t}">View type →</a>
     </div>`;
 }
 
@@ -353,7 +350,7 @@ async function load() {
     .order('created_at', { ascending: false });
   const container = document.getElementById('results-container');
   if (error || !results || results.length === 0) {
-    container.innerHTML = `<div class="results-empty">No results saved yet.<br><a href="/es/">Hacer el test →</a></div>`;
+    container.innerHTML = `<div class="results-empty">No results saved yet.<br><a href="/">Take the test →</a></div>`;
     return;
   }
   container.innerHTML = results.map(renderCard).join('');
