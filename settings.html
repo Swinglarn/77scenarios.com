@@ -9,7 +9,7 @@
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://77scenarios.com/og-image.png">
-<meta property="og:title" content="About: 77Scenarios">
+<meta property="og:title" content="About: 77 Scenarios">
 <meta property="og:description" content="How the scoring works, where the Myers-Briggs framework comes from, and what the science actually says about personality testing.">
 <meta property="og:url" content="https://77scenarios.com/about">
 <meta property="og:site_name" content="77 Scenarios">
@@ -283,6 +283,7 @@ function toggleMenu(){var d=document.getElementById('nav-drawer'),o=document.get
 <script>
 const {createClient} = supabase;
 const sb = createClient('https://rttomfnfyjjssdqfzkaj.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw');
+window._navSb = sb;
 
 const PLACEHOLDER_AVATAR = `https://77scenarios.com/og-image.png`;
 
@@ -300,17 +301,7 @@ async function load() {
   if (!session) { window.location.href = '/login'; return; }
   currentUser = session.user;
 
-  // Nav
-  const links = document.querySelector('.nav-links');
-  const drawerLinks = document.querySelector('.nav-drawer-links');
-  const _navAvatar = (profile && profile.avatar_url) || 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 80 80%27%3E%3Ccircle cx=%2740%27 cy=%2740%27 r=%2740%27 fill=%27%23252a30%27/%3E%3Ccircle cx=%2740%27 cy=%2732%27 r=%2714%27 fill=%27%238a6d2e%27/%3E%3Cellipse cx=%2740%27 cy=%2772%27 rx=%2724%27 ry=%2716%27 fill=%27%238a6d2e%27/%3E%3C/svg%3E';
-  if (links) {
-    const wrap = document.createElement('a'); wrap.href = '/profile'; wrap.style.cssText = 'display:flex;align-items:center;gap:8px;text-decoration:none;';
-    const img = document.createElement('img'); img.src = _navAvatar; img.style.cssText = 'width:30px;height:30px;border-radius:50%;object-fit:cover;border:1px solid var(--border);flex-shrink:0;'; img.onerror = () => { img.src = 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 80 80%27%3E%3Ccircle cx=%2740%27 cy=%2740%27 r=%2740%27 fill=%27%23252a30%27/%3E%3Ccircle cx=%2740%27 cy=%2732%27 r=%2714%27 fill=%27%238a6d2e%27/%3E%3Cellipse cx=%2740%27 cy=%2772%27 rx=%2724%27 ry=%2716%27 fill=%27%238a6d2e%27/%3E%3C/svg%3E'; };
-    const label = document.createElement('span'); label.textContent = 'Profile'; label.style.cssText = 'background:var(--gold);color:#0c0e10;padding:7px 16px;border-radius:60px;font-weight:500;font-size:0.82rem;';
-    wrap.appendChild(img); wrap.appendChild(label); links.appendChild(wrap);
-  }
-  if (drawerLinks) { const a = document.createElement('a'); a.href = '/profile'; a.textContent = 'Profile'; drawerLinks.appendChild(a); }
+  
 
   // Load profile
   const { data: profile } = await sb.from('profiles').select('username, avatar_url').eq('id', currentUser.id).single();

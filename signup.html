@@ -9,7 +9,7 @@
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://77scenarios.com/og-image.png">
-<meta property="og:title" content="About: 77Scenarios">
+<meta property="og:title" content="About: 77 Scenarios">
 <meta property="og:description" content="How the scoring works, where the Myers-Briggs framework comes from, and what the science actually says about personality testing.">
 <meta property="og:url" content="https://77scenarios.com/about">
 <meta property="og:site_name" content="77 Scenarios">
@@ -244,6 +244,7 @@ function toggleMenu(){var d=document.getElementById('nav-drawer'),o=document.get
 <script>
 const { createClient } = supabase;
 const sb = createClient('https://rttomfnfyjjssdqfzkaj.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw');
+window._navSb = sb;
 
 sb.auth.getSession().then((({ data }) => {
   if (data.session) window.location.href = '/profile';

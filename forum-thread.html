@@ -3,8 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Forum — 77 Scenarios</title>
+<title id="page-title">Forum Thread — 77 Scenarios</title>
 <meta name="robots" content="index, follow">
+<meta name="description" content="Join the discussion on 77 Scenarios — scenario-based Myers-Briggs personality forum.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Forum — 77 Scenarios">
+<meta property="og:description" content="Join the discussion on 77 Scenarios — scenario-based Myers-Briggs personality forum.">
+<meta property="og:url" content="https://77scenarios.com/forum">
+<meta property="og:site_name" content="77 Scenarios">
 <link rel="canonical" href="https://77scenarios.com/forum-thread">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
@@ -164,6 +170,7 @@
 <script>
   const { createClient } = supabase;
   const sb = createClient('https://rttomfnfyjjssdqfzkaj.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw');
+  window._navSb = sb;
 
   const CAT_LABELS = {
     general:'General', type_discussion:'Type Discussion', relationships:'Relationships',
