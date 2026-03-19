@@ -2,9 +2,9 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="description" content="What this Myers-Briggs letter means, how it shows up in real life, and how it pairs with the other dimensions.">
+<meta name="description" content="What this Myers-Briggs letter means, how it shows up in real life, and how it pairs with the other dimensãos.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Myers-Briggs Letter Explained - 77Scenarios</title>
+<title>Letra {letter} do Myers-Briggs - Significado e Tipos | 77 Scenarios</title>
 <meta name="robots" content="index, follow">
 <meta property="og:site_name" content="77 Scenarios">
 <meta name="twitter:card" content="summary_large_image">
@@ -283,7 +283,7 @@ function render(){
   document.getElementById('letter-schema').textContent=JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":`${l} in Myers-Briggs: ${d.name} Explained`,"description":seoDesc,"url":`https://77scenarios.com/letter.html?l=${l}`,"publisher":{"@type":"Organization","name":"77 Scenarios","url":"https://77scenarios.com"}});
 
   const typesHTML=d.types.map(t=>`
-    <a href="/type?t=${t}" class="type-mini">
+    <a href="/pt/type?t=${t}" class="type-mini">
       <div class="mini-code">${t.split('').map(c=>c===l?`<span class="hi">${c}</span>`:c).join('')}</div>
       <div class="mini-name">${d.typeNames[t]||''}</div>
     </a>`).join('');
@@ -292,28 +292,28 @@ function render(){
     <div class="hero r" data-d="1">
       <div class="hero-letter">${l}</div>
       <div class="hero-right">
-        <div class="hero-dim">${d.dim} dimension</div>
+        <div class="hero-dim">${d.dim} dimensão</div>
         <div class="hero-name">${d.name}</div>
-        <div class="hero-opp">Opposite: <a href="/letter?l=${d.opp}">${d.opp} · ${d.oppName}</a></div>
+        <div class="hero-opp">Oposto: <a href="/pt/letter?l=${d.opp}">${d.opp} · ${d.oppName}</a></div>
       </div>
     </div>
-    <div class="section r" data-d="2"><div class="section-label">What it means</div><p class="body-text">${d.p1}</p><p class="body-text">${d.p2}</p></div>
-    <div class="section r" data-d="3"><div class="section-label">Traits</div><div class="traits-row">${d.traits.map(t=>`<span class="trait">${t}</span>`).join('')}</div></div>
+    <div class="section r" data-d="2"><div class="section-label">O que significa</div><p class="body-text">${d.p1}</p><p class="body-text">${d.p2}</p></div>
+    <div class="section r" data-d="3"><div class="section-label">Traços</div><div class="traits-row">${d.traits.map(t=>`<span class="trait">${t}</span>`).join('')}</div></div>
     <div class="two-col section r" data-d="4">
       <div class="box"><div class="box-title">Strengths</div><ul>${d.strengths.map(s=>`<li>${s}</li>`).join('')}</ul></div>
       <div class="box"><div class="box-title">In daily life</div><div class="box-text">${d.daily}</div></div>
     </div>
     <div class="growth-box section r" data-d="5"><div class="box-title">Growth edge</div><div class="box-text">${d.growth}</div></div>
-    <div class="section r" data-d="6"><div class="section-label">Types with ${l}</div><div class="types-grid">${typesHTML}</div></div>
+    <div class="section r" data-d="6"><div class="section-label">Tipos com ${l}</div><div class="types-grid">${typesHTML}</div></div>
     <div class="sep r" data-d="7"></div>
     <div class="section r" data-d="8">
-      <div class="section-label">The other side</div>
+      <div class="section-label">O outro lado</div>
       <div class="opp-block">
         <div class="opp-left">
           <div class="opp-letter">${d.opp}</div>
           <div><div class="opp-name">${d.oppName}</div><div class="opp-sub">${d.oppDesc}</div></div>
         </div>
-        <a href="/letter?l=${d.opp}" class="btn-outline">Explore ${d.opp} →</a>
+        <a href="/pt/letter?l=${d.opp}" class="btn-outline">Explore ${d.opp} →</a>
       </div>
     </div>
     <div class="cta-block r" data-d="9">

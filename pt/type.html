@@ -437,9 +437,9 @@ function render(){
   const code=t.split('').map((l,i)=>(i%2===1)?`<span class="hi">${l}</span>`:l).join('');
   const pills=t.split('').map((l,i)=>{
     const dims=['Energia','Percepção','Julgamento','Estilo de Vida'];
-    return `<a href="/letter?l=${l}" class="letter-pill">${l} · ${dims[i]}</a>`;
+    return `<a href="/pt/letter?l=${l}" class="letter-pill">${l} · ${dims[i]}</a>`;
   }).join('');
-  const simCards=d.similar.map(c=>`<a href="/type?t=${c}" class="similar-card"><span class="sim-code">${c}</span><span class="sim-name">${typeNames[c]||''}</span></a>`).join('');
+  const simCards=d.similar.map(c=>`<a href="/pt/type?t=${c}" class="similar-card"><span class="sim-code">${c}</span><span class="sim-name">${typeNames[c]||''}</span></a>`).join('');
 
   document.getElementById('content').innerHTML=`
     <div class="r" data-d="1"><div class="type-code">${code}</div><div class="type-name">${d.name}</div><div class="type-tagline">${d.tagline}</div><div class="letter-pills">${pills}</div></div>
@@ -460,7 +460,7 @@ function render(){
       <div class="section-label">Funções cognitivas</div>
       <p class="body-text" style="margin-bottom:24px;font-size:14px;">Todo tipo funciona com quatro funções mentais em uma ordem definida. A primeira é quase sem esforço. A quarta é seu ponto fraco.</p>
       <div style="display:flex;flex-direction:column;gap:12px;" id="fn-stack-inline"></div>
-      <a href="/functions?t=${t}" style="display:inline-block;margin-top:20px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;">Ver a análise completa das suas funções &#8594;</a>
+      <a href="/pt/functions?t=${t}" style="display:inline-block;margin-top:20px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;">Ver a análise completa das suas funções &#8594;</a>
     </div>
     <div class="sep r" data-d="8"></div>
     <div class="cta-block r" data-d="9">
