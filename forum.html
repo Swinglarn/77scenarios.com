@@ -188,7 +188,7 @@
   </div>
 
   <div class="cat-bar r">
-    <button class="cat-pill active" data-cat="all" onclick="filterCat(this,'all')">All</button> onclick="filterCat(this,'all')">All</button>
+    <button class="cat-pill active" data-cat="all" onclick="filterCat(this,'all')">All</button>
     <button class="cat-pill" data-cat="general" onclick="filterCat(this,'general')">General</button>
     <button class="cat-pill" data-cat="type_discussion" onclick="filterCat(this,'type_discussion')">Type Discussion</button>
     <button class="cat-pill" data-cat="relationships" onclick="filterCat(this,'relationships')">Relationships</button>
@@ -247,7 +247,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
   const { createClient } = supabase;
-  const sb = createClient('https://rttomfnfyjjssdqfzkaj.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw');
+  const sb = createClient('https://rttomfnfyjjssdqfzkaj.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw', { auth: { storageKey: '77scenarios-forum', detectSessionInUrl: false } });
 
   const CAT_LABELS = {
     general: 'General', type_discussion: 'Type Discussion',
@@ -267,7 +267,7 @@
     if (!e) return 'Unknown error';
     if (typeof e === 'string') return e;
     // Supabase JS v2 error shape
-    if (e.message) return e.message;
+    if (e.message && e.message.includes('DataClone')) return 'Connection sync error — please refresh.'; if (e.message) return e.message;
     if (e.error_description) return e.error_description;
     if (e.error) return typeof e.error === 'string' ? e.error : 'Unknown error';
     if (e.details) return e.details;
@@ -342,7 +342,28 @@
     }
 
     const { data, error } = await query;
-    if (error) { document.getElementById('thread-list').innerHTML = '<div class="empty-state"><div class="empty-state-title">Could not load threads.</div><p>' + errStr(error) + '</p></div>'; return; }
+    if (error) {
+      // DataCloneError is an internal Supabase BroadcastChannel issue — retry once silently
+      if (error.message && error.message.includes('DataClone')) {
+        await new Promise(r => setTimeout(r, 300));
+        const retry = await query;
+        if (retry.error) {
+          document.getElementById('thread-list').innerHTML = '<div class="empty-state"><div class="empty-state-title">Could not load threads.</div><p>' + errStr(retry.error) + '</p></div>';
+          return;
+        }
+        // retry succeeded — continue with retry.data
+        const data2 = retry.data;
+        hasMore = data2.length === PAGE_SIZE + 1;
+        const threads2 = hasMore ? data2.slice(0, PAGE_SIZE) : data2;
+        const list2 = document.getElementById('thread-list');
+        if (reset) list2.innerHTML = '';
+        if (threads2.length === 0 && reset) { list2.innerHTML = '<div class="empty-state"><div class="empty-state-title">No threads yet.</div><p>Be the first to start a conversation.</p></div>'; document.getElementById('load-more-wrap').style.display = 'none'; return; }
+        threads2.forEach(t => renderThread(t, list2));
+        document.getElementById('load-more-wrap').style.display = hasMore ? 'block' : 'none';
+        return;
+      }
+      document.getElementById('thread-list').innerHTML = '<div class="empty-state"><div class="empty-state-title">Could not load threads.</div><p>' + errStr(error) + '</p></div>'; return;
+    }
 
     hasMore = data.length === PAGE_SIZE + 1;
     const threads = hasMore ? data.slice(0, PAGE_SIZE) : data;
