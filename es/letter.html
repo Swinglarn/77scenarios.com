@@ -283,7 +283,7 @@ function render(){
   document.getElementById('letter-schema').textContent=JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":`${l} in Myers-Briggs: ${d.name} Explained`,"description":seoDesc,"url":`https://77scenarios.com/letter.html?l=${l}`,"publisher":{"@type":"Organization","name":"77 Scenarios","url":"https://77scenarios.com"}});
 
   const typesHTML=d.types.map(t=>`
-    <a href="/type?t=${t}" class="type-mini">
+    <a href="/es/type?t=${t}" class="type-mini">
       <div class="mini-code">${t.split('').map(c=>c===l?`<span class="hi">${c}</span>`:c).join('')}</div>
       <div class="mini-name">${d.typeNames[t]||''}</div>
     </a>`).join('');
@@ -294,7 +294,7 @@ function render(){
       <div class="hero-right">
         <div class="hero-dim">${d.dim} dimension</div>
         <div class="hero-name">${d.name}</div>
-        <div class="hero-opp">Opposite: <a href="/letter?l=${d.opp}">${d.opp} · ${d.oppName}</a></div>
+        <div class="hero-opp">Opposite: <a href="/es/letter?l=${d.opp}">${d.opp} · ${d.oppName}</a></div>
       </div>
     </div>
     <div class="section r" data-d="2"><div class="section-label">What it means</div><p class="body-text">${d.p1}</p><p class="body-text">${d.p2}</p></div>
@@ -313,7 +313,7 @@ function render(){
           <div class="opp-letter">${d.opp}</div>
           <div><div class="opp-name">${d.oppName}</div><div class="opp-sub">${d.oppDesc}</div></div>
         </div>
-        <a href="/letter?l=${d.opp}" class="btn-outline">Explore ${d.opp} →</a>
+        <a href="/es/letter?l=${d.opp}" class="btn-outline">Explore ${d.opp} →</a>
       </div>
     </div>
     <div class="cta-block r" data-d="9">
