@@ -403,7 +403,7 @@
     <div class="q-header">
       <button class="btn-back" id="btn-back" onclick="goBack()" aria-label="Go back">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Back
+        Atrás
       </button>
       <div class="q-counter">Pregunta <span id="q-num">1</span> de 77</div>
     </div>
@@ -449,6 +449,7 @@
         <div style="font-size:14px;color:#ede8df;">Guardado. Tu resultado ha sido almacenado.</div>
       </div>
       <div id="eb6" style="display:none;font-size:13px;color:#e07070;margin-top:12px;"></div>
+      <div id="eb7" style="display:none;font-size:13px;color:#b5ada6;margin-top:12px;">Para guardar tu resultado, desactiva tu bloqueador de anuncios en esta página y recarga.</div>
     </div>
   </div>
 
@@ -716,6 +717,7 @@ function renderQuestion() {
   // Show/hide back button
   const backBtn = document.getElementById('btn-back');
   backBtn.disabled = current === 0;
+  if (current === 0) { backBtn.textContent = ""; } else { backBtn.innerHTML = `<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Atrás`; }
 
   const container = document.getElementById('answers-container');
   container.innerHTML = '';
@@ -1002,7 +1004,7 @@ function shareResult() {
     navigator.share({ title: `Obtuve ${type} en 77 Scenarios`, text, url });
   } else {
     navigator.clipboard.writeText(text + '\n' + url);
-    alert('Copied to clipboard!');
+    alert('¡Copiado al portapapeles!');
   }
 }
 </script>
@@ -1029,7 +1031,7 @@ function shareResult() {
           img.style.cssText = 'width:30px;height:30px;border-radius:50%;object-fit:cover;border:1px solid var(--border);flex-shrink:0;';
           img.onerror = () => { img.src = 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 80 80%27%3E%3Ccircle cx=%2740%27 cy=%2740%27 r=%2740%27 fill=%27%23252a30%27/%3E%3Ccircle cx=%2740%27 cy=%2732%27 r=%2714%27 fill=%27%238a6d2e%27/%3E%3Cellipse cx=%2740%27 cy=%2772%27 rx=%2724%27 ry=%2716%27 fill=%27%238a6d2e%27/%3E%3C/svg%3E'; };
           const label = document.createElement('span');
-          label.textContent = 'Profile';
+          label.textContent = 'Perfil';
           label.style.cssText = 'background:var(--gold);color:#0c0e10;padding:7px 16px;border-radius:60px;font-weight:500;font-size:0.82rem;letter-spacing:0.04em;';
           wrap.appendChild(img);
           wrap.appendChild(label);
@@ -1037,23 +1039,23 @@ function shareResult() {
         }
         if (drawerLinks) {
           const a = document.createElement('a');
-          a.href = '/profile'; a.textContent = 'Profile';
+          a.href = '/profile'; a.textContent = 'Perfil';
           drawerLinks.appendChild(a);
         }
       });
     } else {
       if (links) {
         const a = document.createElement('a');
-        a.href = '/login'; a.textContent = 'Sign in';
+        a.href = '/login'; a.textContent = 'Iniciar sesión';
         a.style.cssText = 'border:1px solid var(--border);padding:7px 16px;border-radius:60px;font-size:0.82rem;color:var(--cream);';
         links.appendChild(a);
       }
       if (drawerLinks) {
         const a = document.createElement('a');
-        a.href = '/login'; a.textContent = 'Sign in';
+        a.href = '/login'; a.textContent = 'Iniciar sesión';
         drawerLinks.appendChild(a);
         const b = document.createElement('a');
-        b.href = '/signup'; b.textContent = 'Create account';
+        b.href = '/signup'; b.textContent = 'Crear cuenta';
         drawerLinks.appendChild(b);
       }
     }
