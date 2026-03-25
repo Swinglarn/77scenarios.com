@@ -844,7 +844,6 @@ const questionsNormal = [
   {dim:'TF',scene:'The Failing Project',fn:'Te/Fe',text:"A project you are part of is clearly failing. Nobody has said it out loud yet. Your manager pulls you aside and asks what you honestly think.",a:"You tell them straight. The longer it stays unspoken, the more it costs everyone.",b:"You think about the people in the room first. How you say this matters as much as what you say."},
   {dim:'TF',scene:'The Allocation',fn:'Te/Fi',text:"Your father needs expensive care. You have the money but it would wipe out what you set aside for your child's education.",a:"Children are the future.",b:"He is your father."},
   {dim:'TF',scene:'The Secret',fn:'Fe/Fi',text:"Your best friend's husband has been cheating on her. You have proof. She is three months pregnant and they just put an offer on a house.",a:"You tell her. She deserves to know.",b:"You say nothing. Not now. Not with everything she has ahead of her."},
-  ,
   {dim:'TF',scene:'The Will',fn:'Ti/Fi',text:"A family member has left their estate unevenly. The person who got less was clearly there more. The will is legal and clear.",a:"You follow it as written. It was theirs to give as they chose.",b:"You find a way to make sure the person who got less knows their years were seen, even if the numbers do not show it."},
   {dim:'TF',scene:'The Son',fn:'Te/Fe',text:"Your teenage son tells you he did something that could get another kid expelled. The other kid is innocent. Your son is terrified.",a:"You tell him to come forward.",b:"You tell him you will figure it out together."},
   {dim:'TF',scene:'The Competition',fn:'Te/Fi',text:"You are competing for something you want against someone you respect. You have a move that would probably work but that you are not proud of.",a:"You use it. Winning is the point.",b:"You do not use it. The cost is not worth it."},
@@ -1012,14 +1011,53 @@ function startTest() {
   } else if(testMode==='myth'){
     pool = questionsMyth;
   } else {
-    // Both Worlds: 50/50 mix per dimension
+    // Both Worlds: balanced mix per dimension
+    // Conflict pairs — if myth scene is selected, exclude its normal counterpart
+    const BOTH_CONFLICTS = {
+      'The Apprentice':  'The Mentee',
+      'The Storm':       'The Hard Day',
+      'The Last Supper': 'The Last Night',
+      'The Letter':      'The Offer Abroad',
+      'The Feast of Kings': 'The Dinner Party',
+    };
+
+    // Sort questions so those with rarer fn pairs (in the OTHER pool) come first.
+    // This maximises function diversity when we slice the first half.
+    function sortByFnDiversity(pool, otherPool) {
+      const otherFnCount = {};
+      otherPool.forEach(q => {
+        const fns = q.fn ? q.fn.split('/') : [];
+        fns.forEach(f => { otherFnCount[f] = (otherFnCount[f] || 0) + 1; });
+      });
+      const scored = pool.map(q => {
+        const fns = q.fn ? q.fn.split('/') : [];
+        // Lower score = rarer in other pool = higher priority
+        const score = fns.reduce((s, f) => s + (otherFnCount[f] || 0), 0);
+        return { q, score };
+      });
+      // Shuffle first for randomness within same score tiers
+      shuffle(scored);
+      scored.sort((a, b) => a.score - b.score);
+      return scored.map(x => x.q);
+    }
+
     const dims = ['EI','SN','TF','JP'];
     pool = [];
     dims.forEach(dim => {
-      const myth = shuffle(questionsMyth.filter(q=>q.dim===dim));
-      const norm = shuffle(questionsNormal.filter(q=>q.dim===dim));
-      const half = Math.ceil(myth.length / 2);
-      pool.push(...myth.slice(0, half), ...norm.slice(0, myth.length - half));
+      // Sort both pools so most-unique-fn questions come first
+      const mythPool = sortByFnDiversity(
+        questionsMyth.filter(q=>q.dim===dim),
+        questionsNormal.filter(q=>q.dim===dim)
+      );
+      const half = Math.ceil(mythPool.length / 2);
+      const selectedMyth = mythPool.slice(0, half);
+      // Build exclusion set from conflict pairs
+      const excluded = new Set(selectedMyth.map(q => BOTH_CONFLICTS[q.scene]).filter(Boolean));
+      const normPool = sortByFnDiversity(
+        questionsNormal.filter(q=>q.dim===dim && !excluded.has(q.scene)),
+        questionsMyth.filter(q=>q.dim===dim)
+      );
+      pool.push(...selectedMyth, ...normPool.slice(0, mythPool.length - half));
     });
   }
   const _ei=shuffle(pool.filter(q=>q.dim==='EI'));
@@ -1033,9 +1071,10 @@ function startTest() {
   scores = { E:0, I:0, S:0, N:0, T:0, F:0, J:0, P:0 };
   fnScores = {Se:0,Si:0,Ne:0,Ni:0,Te:0,Ti:0,Fe:0,Fi:0};
   // Mode bonus
-  if(testMode==='myth'){ scores.N++; fnScores.Ni++; }
-  else if(testMode==='normal'){ scores.S++; fnScores.Si++; }
-  else { fnScores.Fe++; } // 'both'
+  // Mode bonus — gentle nudge only (0.5 rather than 1 full point)
+  if(testMode==='myth'){ scores.N+=0.5; fnScores.Ni+=0.5; }
+  else if(testMode==='normal'){ scores.S+=0.5; fnScores.Si+=0.5; }
+  // 'both' gets no mode bonus — pool diversity handles it
   if(orderedQuestions.length > 77) orderedQuestions.length = 77;
   history = [];
   renderQuestion();
@@ -1285,7 +1324,8 @@ function blendedType() {
   const jpExtTotal=fnScores.Te+fnScores.Fe+fnScores.Se+fnScores.Ne||1;
   const fnJ=(fnScores.Te+fnScores.Fe)/jpExtTotal;
   // Blend 65% dimension / 35% function
-  const W=0.65,WF=0.35;
+  const W = 0.85;
+  const WF = 0.15;
   window._blend={E:dimE*W+fnE*WF,S:dimS*W+fnS*WF,T:dimT*W+fnT*WF,J:dimJ*W+fnJ*WF};
   return (window._blend.E>=0.5?'E':'I')+(window._blend.S>=0.5?'S':'N')+(window._blend.T>=0.5?'T':'F')+(window._blend.J>=0.5?'J':'P');
 }
