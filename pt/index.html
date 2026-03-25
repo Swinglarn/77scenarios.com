@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>77Scenarios - Free Scenario-Based Personality Test</title>
+<title>77 Scenarios - Teste de Personalidade Grátis Baseado em Cenários</title>
 <meta name="description" content="A free scenario-based personality test with 77 real-world situations. Instead of rating yourself, you make choices - and we reveal your Myers-Briggs type.">
 <meta name="keywords" content="teste de personalidade, teste MBTI em português, Myers-Briggs português, teste de personalidade grátis, 16 tipos de personalidade, qual é meu tipo de personalidade, teste de personalidade por cenários, introvertido extrovertido teste, teste de personalidade online">
 <meta name="robots" content="index, follow">
@@ -20,7 +20,7 @@
 <link rel="alternate" hreflang="en" href="https://77scenarios.com/">
 <link rel="alternate" hreflang="pt-BR" href="https://77scenarios.com/pt/">
 <meta name="google-adsense-account" content="ca-pub-9210546368748348">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"77 Scenarios Personality Test","description":"A scenario-based Myers-Briggs personality type test using 77 real situations instead of self-rating questions.","url":"https://77scenarios.com","applicationCategory":"LifestyleApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"77 Scenarios Personality Test","description":"Um teste de personalidade Myers-Briggs baseado em cenários com 77 situações reais em vez de perguntas de autoavaliação.","url":"https://77scenarios.com/pt","applicationCategory":"LifestyleApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
@@ -404,7 +404,7 @@
     <div class="q-header">
       <button class="btn-back" id="btn-back" onclick="goBack()" aria-label="Go back">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Back
+        Voltar
       </button>
       <div class="q-counter">Pergunta <span id="q-num">1</span> de 77</div>
     </div>
@@ -450,6 +450,7 @@
         <div style="font-size:14px;color:#ede8df;">Salvo. Seu resultado foi armazenado.</div>
       </div>
       <div id="eb6" style="display:none;font-size:13px;color:#e07070;margin-top:12px;"></div>
+      <div id="eb7" style="display:none;font-size:13px;color:#b5ada6;margin-top:12px;">Para salvar seu resultado, desative seu bloqueador de anúncios nesta página e recarregue.</div>
     </div>
   </div>
 
@@ -852,7 +853,7 @@ function showResultsActual() {
 
   document.getElementById('progress-fill').style.width = '100%';
   const deepLink = document.getElementById('type-deep-link');
-  if (deepLink) deepLink.href = `type.html?t=${type}`;
+  if (deepLink) deepLink.href = `/pt/type?t=${type}`;
   const fnLink = document.getElementById('functions-link');
   if (fnLink) fnLink.href = `/pt/functions?t=${type}`;
   showScreen('screen-result');
@@ -863,8 +864,8 @@ function showResultsActual() {
       document.getElementById('eb7').style.display = 'block';
     }
   }, 300);
-}
   if (window._sbSaveResult) window._sbSaveResult(type, scores);
+}
 
 function retakeTest() {
   history = [];
@@ -1003,7 +1004,7 @@ function shareResult() {
     navigator.share({ title: `Obtive ${type} no 77 Scenarios`, text, url });
   } else {
     navigator.clipboard.writeText(text + '\n' + url);
-    alert('Copied to clipboard!');
+    alert('Copiado para a área de transferência!');
   }
 }
 </script>
