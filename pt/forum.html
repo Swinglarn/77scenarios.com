@@ -180,7 +180,7 @@
   </div>
 
   <div id="auth-notice" class="auth-notice r" style="display:none;">
-    <a href="/pt/login">Entrar</a> or <a href="/pt/signup">create an account</a> to start a thread or reply.
+    <a href="/pt/login">Entrar</a> or <a href="/pt/signup">criar uma conta</a> para iniciar um tópico ou responder.
   </div>
 
 
@@ -193,7 +193,7 @@
   <div class="cat-bar r">
     <button class="cat-pill active" data-cat="all" onclick="filterCat(this,'all')">Todos</button> onclick="filterCat(this,'all')">Todos</button>
     <button class="cat-pill" data-cat="general" onclick="filterCat(this,'general')">Geral</button>
-    <button class="cat-pill" data-cat="type_discussion" onclick="filterCat(this,'type_discussion')">Type Discussion</button>
+    <button class="cat-pill" data-cat="type_discussion" onclick="filterCat(this,'type_discussion')">Discussão de Tipos</button>
     <button class="cat-pill" data-cat="relationships" onclick="filterCat(this,'relationships')">Relacionamentos</button>
     <button class="cat-pill" data-cat="cognitive_functions" onclick="filterCat(this,'cognitive_functions')">Funções Cognitivas</button>
     <button class="cat-pill" data-cat="ask_the_forum" onclick="filterCat(this,'ask_the_forum')">Perguntar ao Fórum</button>
@@ -222,7 +222,7 @@
       <label class="form-label">Category</label>
       <select class="form-select" id="thread-cat">
         <option value="general">Geral</option>
-        <option value="type_discussion">Type Discussion</option>
+        <option value="type_discussion">Discussão de Tipos</option>
         <option value="relationships">Relacionamentos</option>
         <option value="cognitive_functions">Funções Cognitivas</option>
         <option value="ask_the_forum">Perguntar ao Fórum</option>
@@ -253,8 +253,8 @@
   const sb = createClient('https://rttomfnfyjjssdqfzkaj.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw');
 
   const CAT_LABELS = {
-    general: 'General', type_discussion: 'Type Discussion',
-    relationships: 'Relationships', cognitive_functions: 'Funções Cognitivas',
+    general: 'General', type_discussion: 'Discussão de Tipos',
+    relationships: 'Relacionamentos', cognitive_functions: 'Funções Cognitivas',
     ask_the_forum: 'Perguntar ao Fórum', off_topic: 'Fora do Tema'
   };
 
@@ -345,7 +345,7 @@
     }
 
     const { data, error } = await query;
-    if (error) { document.getElementById('thread-list').innerHTML = '<div class="empty-state"><div class="empty-state-title">Could not load threads.</div><p>' + errStr(error) + '</p></div>'; return; }
+    if (error) { document.getElementById('thread-list').innerHTML = '<div class="empty-state"><div class="empty-state-title">Não foi possível carregar os tópicos.</div><p>' + errStr(error) + '</p></div>'; return; }
 
     hasMore = data.length === PAGE_SIZE + 1;
     const threads = hasMore ? data.slice(0, PAGE_SIZE) : data;
@@ -353,7 +353,7 @@
     if (reset) list.innerHTML = '';
 
     if (threads.length === 0 && reset) {
-      list.innerHTML = '<div class="empty-state"><div class="empty-state-title">No threads yet.</div><p>Be the first to start a conversation.</p></div>';
+      list.innerHTML = '<div class="empty-state"><div class="empty-state-title">Ainda não há tópicos.</div><p>Seja o primeiro a iniciar uma conversa.</p></div>';
       document.getElementById('load-more-wrap').style.display = 'none';
       return;
     }
