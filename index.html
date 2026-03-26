@@ -254,11 +254,16 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: #0c0e10;
+    background: var(--bg);
     padding: 0;
   }
   #screen-burst.active {
+    position: fixed;
+    inset: 0;
+    z-index: 500;
     display: flex;
+    padding: 40px 24px;
+    overflow-y: auto;
   }
   .burst-intro {
     text-align: center;
@@ -1387,8 +1392,8 @@ function showResultsActual() {
       document.getElementById('eb7').style.display = 'block';
     }
   }, 300);
-}
   if (window._sbSaveResult) window._sbSaveResult(type, scores);
+}
 
 function retakeTest() {
   history = [];
@@ -1577,26 +1582,24 @@ function errStr(e) {
 }
 async function submitDemographics() {
   const btn = document.getElementById('demo-submit-btn');
-  const status = document.getElementById('demo-status');
   btn.disabled = true;
   btn.textContent = 'Saving…';
-  const { error } = await sb.from('demographics').insert({
-    personality_type: window._resultType || '',
-    age_range: demoSelections.age,
-    gender: demoSelections.gender,
-    ethnicity: demoSelections.ethnicity,
-    test_mode: testMode
-  });
-  if (error) {
-    console.error('Demographics error:', error);
-    btn.disabled = false;
-    btn.innerHTML = 'Submit <span class="arrow">→</span>';
-    status.style.display = 'block';
-    status.style.color = '#e07070';
-    status.textContent = 'Error: ' + (errStr(error)) + '. You can skip.';
-    document.getElementById('demo-skip-btn').style.display = 'inline-flex';
-    return;
-  }
+  fetch('https://rttomfnfyjjssdqfzkaj.supabase.co/rest/v1/demographics', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw',
+      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw',
+      'Prefer': 'return=minimal'
+    },
+    body: JSON.stringify({
+      personality_type: window._resultType || '',
+      age_range: demoSelections.age,
+      gender: demoSelections.gender,
+      ethnicity: demoSelections.ethnicity,
+      test_mode: testMode
+    })
+  }).catch(() => {});
   showResultsActual();
 }
 
