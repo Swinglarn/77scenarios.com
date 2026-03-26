@@ -148,7 +148,7 @@
   <div class="r" data-d="1">
     <div class="page-label">O Arquivo</div>
     <h1>Quem pensa como <em>você</em>?</h1>
-    <p class="page-sub">Explore os tipos de personalidade MBTI de figuras históricas, cientistas, artistas, personagens fictícios, músicos, atletas e líderes. Clique em qualquer entrada para ver a análise completa.</p>
+    <p class="page-sub">Explore os tipos de personalidade MBTI de <span id="archive-count">500+</span> figuras históricas, cientistas, artistas, personagens fictícios, músicos, atletas e líderes. Clique em qualquer entrada para ver a análise completa.</p>
   </div>
   <div class="controls r" data-d="2">
     <div class="search-wrap">
@@ -2482,6 +2482,7 @@ buildCatFilters();
 buildTypeFilters();
 render();
 checkURLParam();
+document.getElementById("archive-count").textContent=people.length+"+";
 
 const obs=new IntersectionObserver(en=>{
   en.forEach(e=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),parseFloat(e.target.dataset.d||0)*80);obs.unobserve(e.target);}});
