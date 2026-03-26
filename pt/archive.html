@@ -2378,7 +2378,7 @@ function buildCatFilters(){
 function buildTypeFilters(){
   const wrap=document.getElementById('type-filters');
   const all=document.createElement('button');
-  all.className='type-btn active'; all.id='type-all-btn'; all.textContent='All Types';
+  all.className='type-btn active'; all.id='type-all-btn'; all.textContent='Todos os tipos';
   all.onclick=()=>{activeType=null;document.querySelectorAll('.type-btn').forEach(b=>b.classList.remove('active'));all.classList.add('active');render();};
   wrap.appendChild(all);
   types16.forEach(t=>{

@@ -168,15 +168,15 @@
   </div>
 </div>
 
-<h1 class="sr-only">Forum — 77 Scenarios</h1>
+<h1 class="sr-only">Fórum — 77 Scenarios</h1>
 
 <main>
   <div class="forum-header r">
     <div>
-      <div class="forum-eyebrow">Community</div>
-      <div class="forum-title">The <em>forum.</em></div>
+      <div class="forum-eyebrow">Comunidade</div>
+      <div class="forum-title">O <em>fórum.</em></div>
     </div>
-    <button class="btn-primary" id="new-thread-btn" onclick="handleNewThread()">New thread <span>+</span></button>
+    <button class="btn-primary" id="new-thread-btn" onclick="handleNewThread()">Novo tópico <span>+</span></button>
   </div>
 
   <div id="auth-notice" class="auth-notice r" style="display:none;">
@@ -185,19 +185,19 @@
 
 
   <div class="cat-bar r" style="margin-bottom:12px;">
-    <button class="sort-pill cat-pill active" onclick="setSort(this,'hot')">🔥 Hot</button>
-    <button class="sort-pill cat-pill" onclick="setSort(this,'top')">⬆ Top</button>
-    <button class="sort-pill cat-pill" onclick="setSort(this,'new')">✦ New</button>
+    <button class="sort-pill cat-pill active" onclick="setSort(this,'hot')">🔥 Popular</button>
+    <button class="sort-pill cat-pill" onclick="setSort(this,'top')">⬆ Melhor</button>
+    <button class="sort-pill cat-pill" onclick="setSort(this,'new')">✦ Novo</button>
   </div>
 
   <div class="cat-bar r">
-    <button class="cat-pill active" data-cat="all" onclick="filterCat(this,'all')">All</button> onclick="filterCat(this,'all')">All</button>
+    <button class="cat-pill active" data-cat="all" onclick="filterCat(this,'all')">Todos</button> onclick="filterCat(this,'all')">Todos</button>
     <button class="cat-pill" data-cat="general" onclick="filterCat(this,'general')">Geral</button>
     <button class="cat-pill" data-cat="type_discussion" onclick="filterCat(this,'type_discussion')">Type Discussion</button>
-    <button class="cat-pill" data-cat="relationships" onclick="filterCat(this,'relationships')">Relationships</button>
-    <button class="cat-pill" data-cat="cognitive_functions" onclick="filterCat(this,'cognitive_functions')">Cognitive Functions</button>
-    <button class="cat-pill" data-cat="ask_the_forum" onclick="filterCat(this,'ask_the_forum')">Ask the Forum</button>
-    <button class="cat-pill" data-cat="off_topic" onclick="filterCat(this,'off_topic')">Off Topic</button>
+    <button class="cat-pill" data-cat="relationships" onclick="filterCat(this,'relationships')">Relacionamentos</button>
+    <button class="cat-pill" data-cat="cognitive_functions" onclick="filterCat(this,'cognitive_functions')">Funções Cognitivas</button>
+    <button class="cat-pill" data-cat="ask_the_forum" onclick="filterCat(this,'ask_the_forum')">Perguntar ao Fórum</button>
+    <button class="cat-pill" data-cat="off_topic" onclick="filterCat(this,'off_topic')">Fora do Tema</button>
   </div>
 
   <div class="thread-list r" id="thread-list">
@@ -209,7 +209,7 @@
   </div>
 
   <div style="text-align:center;margin-top:32px;display:none;" id="load-more-wrap">
-    <button class="btn-secondary" onclick="loadMore()">Load more</button>
+    <button class="btn-secondary" onclick="loadMore()">Carregar mais</button>
   </div>
 </main>
 
@@ -223,10 +223,10 @@
       <select class="form-select" id="thread-cat">
         <option value="general">Geral</option>
         <option value="type_discussion">Type Discussion</option>
-        <option value="relationships">Relationships</option>
-        <option value="cognitive_functions">Cognitive Functions</option>
-        <option value="ask_the_forum">Ask the Forum</option>
-        <option value="off_topic">Off Topic</option>
+        <option value="relationships">Relacionamentos</option>
+        <option value="cognitive_functions">Funções Cognitivas</option>
+        <option value="ask_the_forum">Perguntar ao Fórum</option>
+        <option value="off_topic">Fora do Tema</option>
       </select>
     </div>
     <div class="form-field">
@@ -236,12 +236,12 @@
     </div>
     <div class="form-field">
       <label class="form-label">Body</label>
-      <textarea class="form-textarea" id="thread-body" placeholder="Write your post here..."></textarea>
+      <textarea class="form-textarea" id="thread-body" placeholder="Escreva seu tópico aqui..."></textarea>
       <div class="form-error" id="body-error">Body must be at least 10 characters.</div>
     </div>
     <div class="modal-actions">
       <button class="btn-secondary" onclick="closeModal()">Cancel</button>
-      <button class="btn-primary" id="submit-thread-btn" onclick="submitThread()">Post thread →</button>
+      <button class="btn-primary" id="submit-thread-btn" onclick="submitThread()">Publicar tópico →</button>
     </div>
     <div id="thread-post-error" style="display:none;color:#e07070;font-size:0.82rem;margin-top:12px;text-align:right;"></div>
   </div>
@@ -254,8 +254,8 @@
 
   const CAT_LABELS = {
     general: 'General', type_discussion: 'Type Discussion',
-    relationships: 'Relationships', cognitive_functions: 'Cognitive Functions',
-    ask_the_forum: 'Ask the Forum', off_topic: 'Off Topic'
+    relationships: 'Relationships', cognitive_functions: 'Funções Cognitivas',
+    ask_the_forum: 'Perguntar ao Fórum', off_topic: 'Fora do Tema'
   };
 
   let currentCat = 'all';
@@ -302,7 +302,7 @@
     const links = document.querySelector('.nav-links');
     const drawerLinks = document.querySelector('.nav-drawer-links');
     const avatarSrc = (prof && prof.avatar_url) || 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 80 80%27%3E%3Ccircle cx=%2740%27 cy=%2740%27 r=%2740%27 fill=%27%23252a30%27/%3E%3Ccircle cx=%2740%27 cy=%2732%27 r=%2714%27 fill=%27%238a6d2e%27/%3E%3Cellipse cx=%2740%27 cy=%2772%27 rx=%2724%27 ry=%2716%27 fill=%27%238a6d2e%27/%3E%3C/svg%3E';
-    const username = (prof && prof.username) || 'Profile';
+    const username = (prof && prof.username) || 'Perfil';
     if (links) {
       const wrap = document.createElement('a');
       wrap.href = '/profile';
@@ -363,7 +363,7 @@
   }
 
   function renderThread(t, list) {
-    const username = t.author_username || 'Anonymous';
+    const username = t.author_username || 'Anônimo';
     const myVote = userVotes[t.id] || 0;
     const dateStr = formatDate(t.created_at);
     const agoStr = timeAgo(t.last_activity_at);
@@ -375,9 +375,9 @@
     const voteCol = document.createElement('div');
     voteCol.className = 'vote-col';
     voteCol.innerHTML = `
-      <button class="vote-btn up ${myVote === 1 ? 'active' : ''}" data-id="${t.id}" data-v="1" title="Upvote">▲</button>
+      <button class="vote-btn up ${myVote === 1 ? 'active' : ''}" data-id="${t.id}" data-v="1" title="Votar a favor">▲</button>
       <span class="vote-score" id="vs-${t.id}">${t.vote_score}</span>
-      <button class="vote-btn down ${myVote === -1 ? 'active' : ''}" data-id="${t.id}" data-v="-1" title="Downvote">▼</button>
+      <button class="vote-btn down ${myVote === -1 ? 'active' : ''}" data-id="${t.id}" data-v="-1" title="Votar contra">▼</button>
     `;
     voteCol.querySelectorAll('.vote-btn').forEach(btn => {
       btn.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); handleVote(t.id, null, parseInt(btn.dataset.v)); });
@@ -385,7 +385,7 @@
 
     const a = document.createElement('a');
     a.className = 'thread-item';
-    a.href = `/forum-thread?id=${t.id}`;
+    a.href = `/pt/forum-thread?id=${t.id}`;
     a.innerHTML = `
       <div class="thread-item-top">
         <div class="thread-title">${escHtml(t.title)}</div>
@@ -404,7 +404,7 @@
       const delBtn = document.createElement('button');
       delBtn.className = 'thread-delete-btn';
       delBtn.textContent = '✕';
-      delBtn.title = 'Delete thread';
+      delBtn.title = 'Excluir tópico';
       delBtn.onclick = e => { e.preventDefault(); e.stopPropagation(); deleteThread(t.id); };
       wrapper.appendChild(delBtn);
     }
@@ -455,7 +455,7 @@
   }
 
   async function deleteThread(id) {
-    if (!confirm('Delete this thread and all its replies?')) return;
+    if (!confirm('Excluir este tópico e todas as respostas?')) return;
     const { error } = await sb.from('forum_threads').delete().eq('id', id).eq('user_id', currentUser.id);
     if (error) { alert('Error: ' + errStr(error)); return; }
     loadThreads();
@@ -501,10 +501,10 @@
     if (!valid) return;
 
     const btn = document.getElementById('submit-thread-btn');
-    btn.disabled = true; btn.textContent = 'Posting…';
+    btn.disabled = true; btn.textContent = 'Publicando…';
 
     const { data: profile } = await sb.from('profiles').select('username').eq('id', currentUser.id).single();
-    const username = profile?.username || 'Anonymous';
+    const username = profile?.username || 'Anônimo';
 
     const { data, error } = await sb.from('forum_threads').insert({
       title, body, category: cat, user_id: currentUser.id, author_username: username
@@ -513,7 +513,7 @@
     if (error) {
       document.getElementById('thread-post-error').style.display = 'block';
       document.getElementById('thread-post-error').textContent = 'Error: ' + errStr(error);
-      btn.disabled = false; btn.innerHTML = 'Post thread →';
+      btn.disabled = false; btn.innerHTML = 'Publicar tópico →';
       return;
     }
     closeModal();
