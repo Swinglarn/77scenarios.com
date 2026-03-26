@@ -148,7 +148,7 @@
   <div class="r" data-d="1">
     <div class="page-label">El Archivo</div>
     <h1>¿Quién piensa como <em>tú</em>?</h1>
-    <p class="page-sub">Explora los tipos de personalidad MBTI de 403+ personas famosas, figuras históricas, científicos, artistas y personajes de ficción. Haz clic en cualquier entrada para el análisis completo.</p>
+    <p class="page-sub">Explora los tipos de personalidad MBTI de <span id="archive-count">500+</span> personas famosas, figuras históricas, científicos, artistas y personajes de ficción. Haz clic en cualquier entrada para el análisis completo.</p>
   </div>
   <div class="controls r" data-d="2">
     <div class="search-wrap">
@@ -2397,7 +2397,7 @@ function buildTypeFilters(){
 
 function filtered(){
   return people.filter(p=>{
-    const matchCat=activeCategory==='All'||p.cat===activeCategory;
+    const matchCat=activeCategory==='Todos'||p.cat===activeCategory;
     const matchType=!activeType||p.type===activeType;
     const q=query.toLowerCase().trim();
     const matchQ=!q||p.name.toLowerCase().includes(q)||p.ctx.toLowerCase().includes(q)||p.type.toLowerCase().includes(q);
@@ -2482,6 +2482,7 @@ buildCatFilters();
 buildTypeFilters();
 render();
 checkURLParam();
+document.getElementById("archive-count").textContent=people.length+"+";
 
 const obs=new IntersectionObserver(en=>{
   en.forEach(e=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),parseFloat(e.target.dataset.d||0)*80);obs.unobserve(e.target);}});
