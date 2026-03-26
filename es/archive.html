@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="description" content="Browse the MBTI personality types of 522+ famous people, fictional characters, and cultural icons. Search by type, category, or name.">
+<meta name="description" content="Explora los tipos de personalidad MBTI de 522+ personas famosas, personajes de ficción e iconos culturales. Busca por tipo, category, or name.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title id="page-title">Personality Type Archive · 77 Scenarios</title>
 <meta id="page-desc" name="description" content="Browse the Myers-Briggs personality types of 400+ famous people, historical figures, fictional characters, world leaders, scientists, and artists. Search by name or filter by type.">
@@ -148,7 +148,7 @@
   <div class="r" data-d="1">
     <div class="page-label">El Archivo</div>
     <h1>¿Quién piensa como <em>tú</em>?</h1>
-    <p class="page-sub">Browse the MBTI personality types of 403+ famous people, historical figures, scientists, artists, and fictional characters. Click any entry for the full breakdown.</p>
+    <p class="page-sub">Explora los tipos de personalidad MBTI de 403+ personas famosas, figuras históricas, científicos, artistas y personajes de ficción. Haz clic en cualquier entrada para el análisis completo.</p>
   </div>
   <div class="controls r" data-d="2">
     <div class="search-wrap">
@@ -161,7 +161,7 @@
   <div class="results-info r" data-d="4" id="results-info"></div>
   <div class="db-grid" id="db-grid"></div>
 </main>
-<footer><p><a href="/es/">Take the test</a> &nbsp;·&nbsp; <a href="/es/types">16 Tipos</a> &nbsp;·&nbsp; <a href="/es/compatibility">Compatibilidad</a> &nbsp;·&nbsp; <a href="/es/archive">Archivo</a> &nbsp;·&nbsp; <a href="/es/about">Acerca de</a></p></footer>
+<footer><p><a href="/es/">Hacer el test</a> &nbsp;·&nbsp; <a href="/es/types">16 Tipos</a> &nbsp;·&nbsp; <a href="/es/compatibility">Compatibilidad</a> &nbsp;·&nbsp; <a href="/es/archive">Archivo</a> &nbsp;·&nbsp; <a href="/es/about">Acerca de</a></p></footer>
 <div class="modal-bg" id="modal-bg" onclick="closeModal(event)">
   <div class="modal" id="modal"><button class="modal-close" onclick="closeModalDirect()">&#10005;</button><div id="modal-content"></div></div>
 </div>
@@ -2411,7 +2411,7 @@ function render(){
   const grid=document.getElementById('db-grid');
   grid.innerHTML='';
   if(!results.length){
-    grid.innerHTML=`<div class="empty-state">No results for <em>"${query}"</em>.<br>Try a different name, type, or clear the filters.</div>`;
+    grid.innerHTML=`<div class="empty-state">Sin resultados para <em>"${query}"</em>.<br>Prueba con otro nombre, tipo o limpia los filtros.</div>`;
     return;
   }
   results.forEach(p=>{

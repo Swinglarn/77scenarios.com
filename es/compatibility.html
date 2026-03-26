@@ -232,9 +232,9 @@
 
 <main>
   <div class="page-header r" data-d="1">
-    <div class="page-label">Relationships</div>
-    <h1>Personality <em>compatibility</em></h1>
-    <p class="page-sub">How the 16 types tend to pair with each other. Select your type to highlight your row, then click any cell to see the pairing detail.</p>
+    <div class="page-label">Compatibilidad</div>
+    <h1>Compatibilidad de <em>personalidad</em></h1>
+    <p class="page-sub">Cómo tienden a emparejarse los 16 tipos entre sí. Selecciona tu tipo para resaltar tu fila, luego haz clic en cualquier celda para ver el detalle.</p>
   </div>
 
   <div class="type-selector r" data-d="2">
@@ -243,11 +243,11 @@
   </div>
 
   <div class="legend r" data-d="3">
-    <div class="legend-item"><div class="legend-dot l5"></div><span>Often an ideal match</span></div>
-    <div class="legend-item"><div class="legend-dot l4"></div><span>Good chance it works</span></div>
-    <div class="legend-item"><div class="legend-dot l3"></div><span>One-sided or uneven</span></div>
-    <div class="legend-item"><div class="legend-dot l2"></div><span>Could work, not ideal</span></div>
-    <div class="legend-item"><div class="legend-dot l1"></div><span>Think this one through</span></div>
+    <div class="legend-item"><div class="legend-dot l5"></div><span>A menudo una combinación ideal</span></div>
+    <div class="legend-item"><div class="legend-dot l4"></div><span>Buenas probabilidades de funcionar</span></div>
+    <div class="legend-item"><div class="legend-dot l3"></div><span>Unilateral o desequilibrada</span></div>
+    <div class="legend-item"><div class="legend-dot l2"></div><span>Puede funcionar, no es ideal</span></div>
+    <div class="legend-item"><div class="legend-dot l1"></div><span>Piénsalo bien</span></div>
   </div>
 
   <div class="chart-wrap r" data-d="4">
@@ -255,15 +255,15 @@
   </div>
 
   <div class="detail empty r" data-d="5" id="detail-panel">
-    <p class="detail-empty-text">Click any cell in the chart to see the pairing detail.<br>Or select your type above to highlight your row.</p>
+    <p class="detail-empty-text">Haz clic en cualquier celda del gráfico para ver el detalle.<br>O selecciona tu tipo arriba para resaltar tu fila.</p>
   </div>
 
-  <p class="note r" data-d="6">Compatibility is based on relationship satisfaction surveys and cognitive function theory. Every relationship is unique. A good match on a chart is not a guarantee and a difficult pairing is not a sentence. Use this as a starting point, not a verdict. <a href="/es/types">Lee sobre ambos tipos</a> before drawing conclusions.</p>
+  <p class="note r" data-d="6">La compatibilidad se basa en encuestas de satisfacción en relaciones y teoría de funciones cognitivas. Cada relación es única. Una buena combinación en un gráfico no es una garantía y una pareja difícil no es una sentencia. Úsalo como punto de partida, no como veredicto. <a href="/es/types">Lee sobre ambos tipos</a> antes de sacar conclusiones.</p>
 </main>
 
 <footer>
   <p>
-    <a href="/es/">Take the test</a> &nbsp;·&nbsp;
+    <a href="/es/">Hacer el test</a> &nbsp;·&nbsp;
     <a href="/es/types">16 Tipos</a> &nbsp;·&nbsp;
     <a href="/es/letters">8 Letras</a> &nbsp;·&nbsp;
     <a href="/es/cognitive-functions">Funciones</a> &nbsp;·&nbsp;
@@ -370,10 +370,10 @@ function getDesc(a, b) {
 
 // Temperament groups (NF, NT, SP, SJ) — order matches matrix
 const temperaments = [
-  {label:'NF · Idealists', types:['INFP','ENFP','INFJ','ENFJ']},
-  {label:'NT · Rationals',  types:['INTJ','ENTJ','INTP','ENTP']},
-  {label:'SP · Artisans',   types:['ISFP','ESFP','ISTP','ESTP']},
-  {label:'SJ · Guardians',  types:['ISFJ','ESFJ','ISTJ','ESTJ']},
+  {label:'NF · Idealistas', types:['INFP','ENFP','INFJ','ENFJ']},
+  {label:'NT · Racionales',  types:['INTJ','ENTJ','INTP','ENTP']},
+  {label:'SP · Artesanos',   types:['ISFP','ESFP','ISTP','ESTP']},
+  {label:'SJ · Guardianes',  types:['ISFJ','ESFJ','ISTJ','ESTJ']},
 ];
 
 let selectedType = null;
