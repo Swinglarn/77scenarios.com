@@ -250,23 +250,18 @@
 
   /* ── BURST SCREEN ────────────────────────────────────────────── */
   #screen-burst {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background: var(--bg);
-    padding: 0;
+    display: none;
   }
   #screen-burst.active {
-    position: fixed;
-    inset: 0;
-    z-index: 500;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 40px 24px;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 500;
     background: var(--bg);
+    padding: 40px 24px;
   }
   .burst-intro {
     text-align: center;
@@ -630,32 +625,6 @@
 
 
 
-  <!-- BURST SCREEN -->
-  <div class="screen" id="screen-burst">
-    <div class="burst-flash" id="burst-flash"></div>
-    <div class="burst-intro" id="burst-intro">
-      <div class="burst-eyebrow">Quick round</div>
-      <div class="burst-heading">No thinking.<br>Just pick.</div>
-      <div class="burst-sub">Ten pairs. First instinct only.</div>
-      <button class="burst-start-btn" onclick="startBurst()">Begin</button>
-    </div>
-    <div class="burst-question-wrap" id="burst-qwrap">
-      <div class="burst-counter" id="burst-counter">1 of 10</div>
-      <div class="burst-timer-ring">
-        <svg viewBox="0 0 48 48">
-          <circle class="burst-timer-bg" cx="24" cy="24" r="22"/>
-          <circle class="burst-timer-progress" id="burst-ring" cx="24" cy="24" r="22"/>
-        </svg>
-        <div class="burst-timer-num" id="burst-timer-num">20</div>
-      </div>
-      <div class="burst-words">
-        <div class="burst-word" id="burst-word-a" onclick="burstPick(0)"></div>
-        <div class="burst-or">or</div>
-        <div class="burst-word" id="burst-word-b" onclick="burstPick(1)"></div>
-      </div>
-      <div class="burst-progress-dots" id="burst-dots"></div>
-    </div>
-  </div>
 
   <!-- DEMOGRAPHICS SCREEN -->
   <div class="screen" id="screen-demo">
@@ -769,6 +738,33 @@
     </div>
   </div>
 
+
+<!-- BURST OVERLAY -->
+<div id="screen-burst">>
+    <div class="burst-flash" id="burst-flash"></div>
+    <div class="burst-intro" id="burst-intro">
+      <div class="burst-eyebrow">Quick round</div>
+      <div class="burst-heading">No thinking.<br>Just pick.</div>
+      <div class="burst-sub">Ten pairs. First instinct only.</div>
+      <button class="burst-start-btn" onclick="startBurst()">Begin</button>
+    </div>
+    <div class="burst-question-wrap" id="burst-qwrap">
+      <div class="burst-counter" id="burst-counter">1 of 10</div>
+      <div class="burst-timer-ring">
+        <svg viewBox="0 0 48 48">
+          <circle class="burst-timer-bg" cx="24" cy="24" r="22"/>
+          <circle class="burst-timer-progress" id="burst-ring" cx="24" cy="24" r="22"/>
+        </svg>
+        <div class="burst-timer-num" id="burst-timer-num">20</div>
+      </div>
+      <div class="burst-words">
+        <div class="burst-word" id="burst-word-a" onclick="burstPick(0)"></div>
+        <div class="burst-or">or</div>
+        <div class="burst-word" id="burst-word-b" onclick="burstPick(1)"></div>
+      </div>
+      <div class="burst-progress-dots" id="burst-dots"></div>
+    </div>
+  </div>
 </div>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const questionsNormal = [
@@ -1180,7 +1176,8 @@ const BURST_CIRCUMFERENCE = 2 * Math.PI * 22; // 138.23
 function triggerBurst() {
   burstDone = false;
   burstIdx = 0;
-  showScreen('screen-burst');
+  // Show burst overlay directly (it lives outside #app)
+  document.getElementById('screen-burst').classList.add('active');
   document.getElementById('burst-intro').style.display = 'block';
   document.getElementById('burst-qwrap').classList.remove('active');
   // Build dots
@@ -1289,6 +1286,7 @@ function advanceBurst() {
     });
     burstDone = true;
     setTimeout(() => {
+      document.getElementById('screen-burst').classList.remove('active');
       showScreen('screen-question');
       renderQuestion();
     }, 400);
