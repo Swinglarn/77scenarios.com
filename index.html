@@ -691,7 +691,7 @@
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         Back
       </button>
-      <div class="q-counter">Question <span id="q-num">1</span> of 77</div>
+      <div class="q-counter">Question <span id="q-num">1</span> of <span id="q-total">77</span></div>
     </div>
     <div class="scenario-scene" id="q-scene"></div>
     <div class="scenario-text" id="q-text"></div>
@@ -880,6 +880,33 @@ const questionsNormal = [
   {dim:'JP',scene:'The Inbox',fn:'Te/Ne',text:"You have 200 unread emails.",a:"That would never happen.",b:"So what?"}
 ];
 
+const questionsBoth = [
+  // SN Si/Ne
+  {dim:'SN',scene:'The New City',fn:'Si/Ne',text:"You've just arrived in Istanbul for a week-long work conference. Your flight landed an hour ago, check-in isn't until 3pm, and you have the morning free. You step outside the hotel.",a:"You pull up what you researched before the trip. You want to move with some bearings.",b:"You put the phone away and just walk. You pick a direction that feels right and let the city show you what it is."},
+  // SN Ti/Ne
+  {dim:'SN',scene:'The Pitch',fn:'Ti/Ne',text:"Your friend Marcus has just walked you through his plan to open a coffee shop in the empty unit next to his flat. He's been talking about it for months and he's finally ready to sign a lease. He asks what you think.",a:"You start working through the numbers in your head. Rent, footfall, margin on a flat white, how many covers he needs per day to break even.",b:"Something about the whole setup reminds you of two other places on that street that didn't last. You can't point to one specific reason yet but the pattern is familiar, and you tell Marcus to hold off on signing anything until he looks into it more."},
+  // TF Fi/Te
+  {dim:'TF',scene:'The Offer',fn:'Fi/Te',text:"A recruiter calls about a senior role at Amazon. The salary is 40% higher than what you earn now, the work is exactly your skill set, and the team has a strong reputation internally. You also know Amazon was investigated three years ago over working conditions in its German fulfilment centres. Nothing illegal was proven but you read the reports at the time.",a:"You decline without interviewing. You don't want to spend your working hours building something for people whose decisions you don't respect.",b:"You go to the interview. A company this size has problems in every corner. You can do good work and be fairly paid without endorsing every decision made above you."},
+  // TF Fe/Fi
+  {dim:'TF',scene:'The Group Chat',fn:'Fe/Fi',text:"Your friend group has turned on someone. Oscar dated someone in the group for two years, it ended badly, and now everyone is piling on in the group chat. You were close to Oscar and what they're saying doesn't match what you saw. No one is asking for your take.",a:"You go along with the general feeling. Your friend is hurting and keeping the group together matters more than your version of events.",b:"You say you saw things differently and that the full picture isn't being told. You know it will land badly but you can't put your name to something you don't believe."},
+  // JP Si/Ni
+  {dim:'JP',scene:'The Slump',fn:'Si/Ni',text:"Your small business has had three bad months in a row. Revenue is down, a few clients have gone quiet, and your business partner wants to sit down and figure out what to do. You spend the evening before the meeting thinking it through.",a:"You go back through the numbers month by month. Which clients dropped off, what changed in each period, what you were doing differently when things were working. You want to understand exactly what shifted before you talk about fixing it.",b:"You don't need the breakdown. You already have a clear sense of where the business needs to go next and what it has been missing for a while. The meeting is about moving forward, not relitigating the last quarter."},
+  // JP Ne/Fi
+  {dim:'JP',scene:'The Acceptance',fn:'Ne/Fi',text:"You have just been told your short film was rejected from the festival you most wanted to get into. You spent eight months making it. A friend immediately texts saying there are three other festivals with deadlines in the next two weeks and she can help you submit tonight.",a:"You say yes. The film exists, the work is done, and keeping it moving is better than sitting with the rejection.",b:"You tell her you're not ready to send it anywhere yet. You need to sit with it for a bit and decide if you even want to keep submitting, or if this one is just done."},
+  // EI Fe/Ni
+  {dim:'EI',scene:'The Diagnosis',fn:'Fe/Ni',text:"Your doctor calls on a Tuesday afternoon to say the test results came back and everything is fine. You had been quietly worried about it for three weeks without telling anyone. You hang up and sit in your car for a moment.",a:"You call your spouse straight away. You have been carrying this alone and now you want to share the relief with someone.",b:"You sit there for a while. Something about the three weeks you just lived through feels important and you want to understand what it taught you before the feeling disappears."},
+  // EI Se/Fi
+  {dim:'EI',scene:'The Ex',fn:'Se/Fi',text:"You are at a house party and you walk into the kitchen to find your ex standing there. You haven't spoken in two years. The split was messy. They look up and see you at the same moment. The room has a few other people in it.",a:"You say hi and walk over. You are both here, it would be stranger to say nothing, and you can handle a five minute conversation.",b:"You give a small nod and find somewhere else to be. You are not ready to perform ease you don't feel."},
+  // SN Ne/Si
+  {dim:'SN',scene:'The Reunion',fn:'Ne/Si',text:"You are back in the town where you grew up for the first time in ten years. You have a free afternoon. Your childhood best friend Anton still lives there and has offered to show you around.",a:"You tell Anton you want to see what the place has become. The new parts, what's changed, what's moved in where the old things used to be.",b:"You ask Anton to take you to the places you actually remember. The school, the park, the route you used to walk. You want to feel what it was like, not see what it is now."},
+  // SN Se/Fi
+  {dim:'SN',scene:'The Box',fn:'Se/Fi',text:"You are clearing out your late grandmother's flat and find a shoebox under her bed. Inside is a bundle of letters tied with string, a handful of old coins, a photograph of a young man you don't recognise, and a ring you have never seen her wear. Your mother is in the next room.",a:"You look at each object carefully. The postmarks on the letters, the dates on the coins, the clothes the man in the photo is wearing. You want to piece together what this actually was.",b:"You sit with it for a moment before you do anything. Whatever was in this box mattered to her enough to keep it hidden, and that is the part that stays with you."},
+  // EI Fe/Ti
+  {dim:'EI',scene:'The Seminar',fn:'Fe/Ti',text:"You are at a two-day industry seminar. The sessions are decent but the most interesting thing happening is the conversations in the breaks. A colleague keeps pulling you into group discussions in the hallway. You also have a stack of notes from this morning that you want to think through properly.",a:"You stay in the hallway. The room is full of people who know things you don't and the conversations are where the real value is.",b:"You find a quiet corner with your notes. You need to actually process what you heard before taking in anything else."},
+  // EI Fe/Si
+  {dim:'EI',scene:'The Holiday',fn:'Fe/Si',text:"Your bathroom has needed renovating for two years and you finally have the money saved to do it. Then a group of friends announces a ten-day trip to Japan and sends you a link to split the cost. It would nearly wipe out what you saved. You have until Friday to decide.",a:"You send the money. The bathroom can wait another year. Japan with that group of people is not something you want to watch from home.",b:"You stay and do the renovation. You have been living with a broken shower and peeling tiles long enough and fixing your own space matters more to you than the trip."},
+];
+
 const questionsMyth = [
   // E/I
   {dim:'EI',scene:'The Return',fn:'Se/Ni',text:"You have been gone for a long time, and the road was hard, and there were days you did not think you would see home again. But the journey is over now, and you are standing at the door, and everything you left behind is on the other side of it.",a:"You do not stop at the door. You push through it and find whoever is inside.",b:"You stand there for a moment. The quiet is yours and you take it before it ends."},
@@ -1021,53 +1048,61 @@ function startTest() {
   } else if(testMode==='myth'){
     pool = questionsMyth;
   } else {
-    // Both Worlds: balanced mix per dimension
-    // Conflict pairs — if myth scene is selected, exclude its normal counterpart
-    const BOTH_CONFLICTS = {
-      'The Apprentice':  'The Mentee',
-      'The Storm':       'The Hard Day',
-      'The Last Supper': 'The Last Night',
-      'The Letter':      'The Offer Abroad',
-      'The Feast of Kings': 'The Dinner Party',
-    };
-
-    // Sort questions so those with rarer fn pairs (in the OTHER pool) come first.
-    // This maximises function diversity when we slice the first half.
-    function sortByFnDiversity(pool, otherPool) {
-      const otherFnCount = {};
-      otherPool.forEach(q => {
-        const fns = q.fn ? q.fn.split('/') : [];
-        fns.forEach(f => { otherFnCount[f] = (otherFnCount[f] || 0) + 1; });
-      });
-      const scored = pool.map(q => {
-        const fns = q.fn ? q.fn.split('/') : [];
-        // Lower score = rarer in other pool = higher priority
-        const score = fns.reduce((s, f) => s + (otherFnCount[f] || 0), 0);
-        return { q, score };
-      });
-      // Shuffle first for randomness within same score tiers
-      shuffle(scored);
-      scored.sort((a, b) => a.score - b.score);
-      return scored.map(x => x.q);
-    }
-
+    // Both Worlds: draw from questionsBoth first (priority pool),
+    // then fill remaining slots from myth/normal with fn-pair diversity.
+    // Total always = 77.
     const dims = ['EI','SN','TF','JP'];
     pool = [];
     dims.forEach(dim => {
-      // Sort both pools so most-unique-fn questions come first
-      const mythPool = sortByFnDiversity(
-        questionsMyth.filter(q=>q.dim===dim),
-        questionsNormal.filter(q=>q.dim===dim)
-      );
-      const half = Math.ceil(mythPool.length / 2);
-      const selectedMyth = mythPool.slice(0, half);
-      // Build exclusion set from conflict pairs
-      const excluded = new Set(selectedMyth.map(q => BOTH_CONFLICTS[q.scene]).filter(Boolean));
-      const normPool = sortByFnDiversity(
-        questionsNormal.filter(q=>q.dim===dim && !excluded.has(q.scene)),
-        questionsMyth.filter(q=>q.dim===dim)
-      );
-      pool.push(...selectedMyth, ...normPool.slice(0, mythPool.length - half));
+      const bothD  = shuffle((questionsBoth || []).filter(q => q.dim === dim));
+      const mythD  = shuffle(questionsMyth.filter(q => q.dim === dim));
+      const normD  = shuffle(questionsNormal.filter(q => q.dim === dim));
+      const target = mythD.length;
+      const MAX_PER_FN = 3;
+      const MAX_MYTH_FN = 2;
+      const MAX_NORM_FN = 2;
+
+      const final = [];
+      const usedFn = {};
+      const usedScenes = new Set();
+
+      // Step 1: take all questionsBoth for this dim (they are priority)
+      bothD.forEach(q => {
+        final.push(q);
+        usedScenes.add(q.scene);
+        usedFn[q.fn||q.scene] = (usedFn[q.fn||q.scene]||0)+1;
+      });
+
+      // Step 2: fill from myth/normal respecting fn cap
+      const mythByFn = {}, normByFn = {};
+      mythD.forEach(q => { const f=q.fn||q.scene; (mythByFn[f]=mythByFn[f]||[]).push(q); });
+      normD.forEach(q => { const f=q.fn||q.scene; (normByFn[f]=normByFn[f]||[]).push(q); });
+      const allFns = [...new Set([...Object.keys(mythByFn), ...Object.keys(normByFn)])];
+
+      allFns.forEach(fn => {
+        const already = usedFn[fn]||0;
+        const mPool = (mythByFn[fn]||[]).filter(q=>!usedScenes.has(q.scene));
+        const nPool = (normByFn[fn]||[]).filter(q=>!usedScenes.has(q.scene));
+        const mTake = Math.max(0, Math.min(mPool.length, MAX_MYTH_FN - already));
+        const nTake = Math.max(0, Math.min(nPool.length, MAX_PER_FN - already - mTake));
+        [...mPool.slice(0, mTake), ...nPool.slice(0, nTake)].forEach(q => {
+          final.push(q); usedScenes.add(q.scene);
+          usedFn[fn] = (usedFn[fn]||0)+1;
+        });
+      });
+
+      // Step 3: trim to target
+      shuffle(final);
+      const trimmed = final.slice(0, target);
+
+      // Step 4: pad if under target
+      const remaining = shuffle([...mythD, ...normD].filter(q => !new Set(trimmed.map(x=>x.scene)).has(q.scene)));
+      for (const q of remaining) {
+        if (trimmed.length >= target) break;
+        trimmed.push(q);
+      }
+
+      pool.push(...trimmed);
     });
   }
   const _ei=shuffle(pool.filter(q=>q.dim==='EI'));
@@ -1097,6 +1132,7 @@ function renderQuestion() {
   const pct = (current / orderedQuestions.length) * 100;
   document.getElementById('progress-fill').style.width = pct + '%';
   document.getElementById('q-num').textContent = current + 1;
+  document.getElementById('q-total').textContent = orderedQuestions.length;
   document.getElementById('q-scene').textContent = q.scene;
   document.getElementById('q-text').textContent = q.text;
 
