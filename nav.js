@@ -3,7 +3,76 @@
   var SUPA_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw';
   var FALLBACK = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Ccircle cx='40' cy='40' r='40' fill='%23252a30'/%3E%3Ccircle cx='40' cy='32' r='14' fill='%238a6d2e'/%3E%3Cellipse cx='40' cy='72' rx='24' ry='16' fill='%238a6d2e'/%3E%3C/svg%3E";
 
-  // Inject dropdown CSS once
+  // Detect language prefix
+  var path = window.location.pathname;
+  var prefix = '';
+  if (path.startsWith('/es')) prefix = '/es';
+  else if (path.startsWith('/pt')) prefix = '/pt';
+
+  var NAV_LINKS = {
+    '': [
+      { href: '/',                    label: 'Take the Test' },
+      { href: '/types',               label: '16 Types'      },
+      { href: '/letters',             label: '8 Letters'     },
+      { href: '/cognitive-functions', label: 'Functions'     },
+      { href: '/compatibility',       label: 'Compatibility' },
+      { href: '/archive',             label: 'Archive'       },
+      { href: '/forum',               label: 'Forum'         },
+      { href: '/about',               label: 'About'         }
+    ],
+    '/es': [
+      { href: '/es/',                    label: 'Hacer el Test'  },
+      { href: '/es/types',               label: '16 Tipos'       },
+      { href: '/es/letters',             label: '8 Letras'       },
+      { href: '/es/cognitive-functions', label: 'Funciones'      },
+      { href: '/es/compatibility',       label: 'Compatibilidad' },
+      { href: '/es/archive',             label: 'Archivo'        },
+      { href: '/es/forum',               label: 'Foro'           },
+      { href: '/es/about',               label: 'Acerca de'      }
+    ],
+    '/pt': [
+      { href: '/pt/',                    label: 'Fazer o Teste'   },
+      { href: '/pt/types',               label: '16 Tipos'        },
+      { href: '/pt/letters',             label: '8 Letras'        },
+      { href: '/pt/cognitive-functions', label: 'Funciones'       },
+      { href: '/pt/compatibility',       label: 'Compatibilidade' },
+      { href: '/pt/archive',             label: 'Arquivo'         },
+      { href: '/pt/forum',               label: 'Fórum'           },
+      { href: '/pt/about',               label: 'Sobre'           }
+    ]
+  };
+
+  var links = NAV_LINKS[prefix] || NAV_LINKS[''];
+
+  function isActive(href) {
+    var p = window.location.pathname.replace(/\/$/, '') || '/';
+    var h = href.replace(/\/$/, '') || '/';
+    return p === h;
+  }
+
+  function injectDesktopNav(nav) {
+    Array.from(nav.querySelectorAll('a')).forEach(function(a) { a.remove(); });
+    var ref = nav.firstChild;
+    links.forEach(function(item) {
+      var a = document.createElement('a');
+      a.href = item.href;
+      a.textContent = item.label;
+      if (isActive(item.href)) a.classList.add('active');
+      nav.insertBefore(a, ref);
+    });
+  }
+
+  function injectDrawerNav(drawer) {
+    drawer.innerHTML = '';
+    links.forEach(function(item) {
+      var a = document.createElement('a');
+      a.href = item.href;
+      a.textContent = item.label;
+      if (isActive(item.href)) a.classList.add('active');
+      drawer.appendChild(a);
+    });
+  }
+
   if (!document.getElementById('nav-dropdown-css')) {
     var style = document.createElement('style');
     style.id = 'nav-dropdown-css';
@@ -19,7 +88,6 @@
     document.head.appendChild(style);
   }
 
-  // Close dropdown on outside click
   document.addEventListener('click', function(e) {
     if (!e.target.closest || !e.target.closest('.nav-user-wrap')) {
       var d = document.getElementById('nav-user-dropdown');
@@ -57,17 +125,16 @@
     dd.id = 'nav-user-dropdown';
 
     var profileLink = document.createElement('a');
-    profileLink.href = '/profile';
+    profileLink.href = prefix + '/profile';
     profileLink.textContent = 'Profile';
 
     var settingsLink = document.createElement('a');
-    settingsLink.href = '/settings';
+    settingsLink.href = prefix + '/settings';
     settingsLink.textContent = 'Settings';
 
     var signOutBtn = document.createElement('button');
     signOutBtn.textContent = 'Sign out';
     signOutBtn.onclick = function() {
-      // Use global sb if available, otherwise create our own
       var client = window._navSb || (function() {
         if (window.supabase && window.supabase.createClient) {
           return window.supabase.createClient(SUPA_URL, SUPA_KEY);
@@ -75,11 +142,9 @@
         return null;
       })();
       if (client) {
-        client.auth.signOut().then(function() {
-          window.location.href = '/';
-        });
+        client.auth.signOut().then(function() { window.location.href = prefix + '/'; });
       } else {
-        window.location.href = '/';
+        window.location.href = prefix + '/';
       }
     };
 
@@ -87,13 +152,12 @@
     dd.appendChild(settingsLink);
     dd.appendChild(signOutBtn);
     wrap.appendChild(dd);
-
     return wrap;
   }
 
   function buildSignIn() {
     var a = document.createElement('a');
-    a.href = '/login';
+    a.href = prefix + '/login';
     a.textContent = 'Sign in';
     a.style.cssText = 'border:1px solid #252a30;padding:7px 16px;border-radius:60px;font-size:0.82rem;color:#ede8df;text-decoration:none;font-family:DM Sans,sans-serif;white-space:nowrap;';
     return a;
@@ -103,11 +167,12 @@
     var desktopNav = document.querySelector('.nav-links');
     var drawerNav = document.querySelector('.nav-drawer-links');
 
-    // Only run if nav exists and hasn't been set up yet
     if (!desktopNav || desktopNav.dataset.navReady) return;
     desktopNav.dataset.navReady = '1';
 
-    // Get sb from page scope if available
+    injectDesktopNav(desktopNav);
+    if (drawerNav) injectDrawerNav(drawerNav);
+
     var sb = window._navSb;
     if (!sb && window.supabase && window.supabase.createClient) {
       sb = window.supabase.createClient(SUPA_URL, SUPA_KEY);
@@ -116,25 +181,24 @@
 
     if (!sb) {
       desktopNav.appendChild(buildSignIn());
+      if (drawerNav) {
+        var a = document.createElement('a'); a.href = prefix + '/login'; a.textContent = 'Sign in';
+        drawerNav.appendChild(a);
+      }
       return;
     }
 
     sb.auth.getSession().then(function(res) {
       var session = res.data && res.data.session;
       if (session) {
-        sb.from('profiles')
-          .select('avatar_url,username')
-          .eq('id', session.user.id)
-          .single()
+        sb.from('profiles').select('avatar_url,username').eq('id', session.user.id).single()
           .then(function(r) {
             var prof = r.data;
-            var username = (prof && prof.username) || 'Profile';
-            var avatar = (prof && prof.avatar_url) || '';
-            desktopNav.appendChild(buildPill(username, avatar));
+            desktopNav.appendChild(buildPill((prof && prof.username) || 'Profile', (prof && prof.avatar_url) || ''));
             if (drawerNav) {
               var a = document.createElement('a');
-              a.href = '/profile';
-              a.textContent = username;
+              a.href = prefix + '/profile';
+              a.textContent = (prof && prof.username) || 'Profile';
               a.style.color = '#c9a84c';
               drawerNav.appendChild(a);
             }
@@ -142,16 +206,13 @@
       } else {
         desktopNav.appendChild(buildSignIn());
         if (drawerNav) {
-          var a = document.createElement('a');
-          a.href = '/login';
-          a.textContent = 'Sign in';
+          var a = document.createElement('a'); a.href = prefix + '/login'; a.textContent = 'Sign in';
           drawerNav.appendChild(a);
         }
       }
     });
   }
 
-  // Run after DOM is ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initNav);
   } else {
