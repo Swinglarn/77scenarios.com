@@ -321,30 +321,6 @@ async function load() {
   } else {
     avatarEl.src = 'https://77scenarios.com/og-image.png';
   }
-  // Show Profile as active in nav
-  const links = document.querySelector('.nav-links');
-  const drawerLinks = document.querySelector('.nav-drawer-links');
-  const _navAvatar = (profile && profile.avatar_url) || 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 80 80%27%3E%3Ccircle cx=%2740%27 cy=%2740%27 r=%2740%27 fill=%27%23252a30%27/%3E%3Ccircle cx=%2740%27 cy=%2732%27 r=%2714%27 fill=%27%238a6d2e%27/%3E%3Cellipse cx=%2740%27 cy=%2772%27 rx=%2724%27 ry=%2716%27 fill=%27%238a6d2e%27/%3E%3C/svg%3E';
-  if (links) {
-    const wrap = document.createElement('a');
-    wrap.href = '/profile';
-    wrap.style.cssText = 'display:flex;align-items:center;gap:8px;text-decoration:none;';
-    const img = document.createElement('img');
-    img.src = _navAvatar;
-    img.style.cssText = 'width:30px;height:30px;border-radius:50%;object-fit:cover;border:1px solid var(--border);flex-shrink:0;';
-    img.onerror = () => { img.src = 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 80 80%27%3E%3Ccircle cx=%2740%27 cy=%2740%27 r=%2740%27 fill=%27%23252a30%27/%3E%3Ccircle cx=%2740%27 cy=%2732%27 r=%2714%27 fill=%27%238a6d2e%27/%3E%3Cellipse cx=%2740%27 cy=%2772%27 rx=%2724%27 ry=%2716%27 fill=%27%238a6d2e%27/%3E%3C/svg%3E'; };
-    const label = document.createElement('span');
-    label.textContent = 'Profile';
-    label.style.cssText = 'background:var(--gold);color:#0c0e10;padding:7px 16px;border-radius:60px;font-weight:500;font-size:0.82rem;letter-spacing:0.04em;';
-    wrap.appendChild(img);
-    wrap.appendChild(label);
-    links.appendChild(wrap);
-  }
-  if (drawerLinks) {
-    const a = document.createElement('a');
-    a.href = '/profile'; a.textContent = 'Profile';
-    drawerLinks.appendChild(a);
-  }
   const { data: results, error } = await sb
     .from('results')
     .select('*')
