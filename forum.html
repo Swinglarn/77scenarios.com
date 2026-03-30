@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Forum — 77 Scenarios</title>
+<title>Forum - 77 Scenarios</title>
 <meta name="description" content="Discuss personality types, cognitive functions, relationships and more with the 77 Scenarios community.">
-<meta property="og:title" content="Forum — 77 Scenarios">
+<meta property="og:title" content="Forum - 77 Scenarios">
 <meta property="og:description" content="Discuss personality types, cognitive functions, and more.">
 <meta property="og:url" content="https://77scenarios.com/forum">
 <meta property="og:site_name" content="77 Scenarios">
@@ -165,7 +165,7 @@
   </div>
 </div>
 
-<h1 class="sr-only">Forum — 77 Scenarios</h1>
+<h1 class="sr-only">Forum - 77 Scenarios</h1>
 
 <main>
   <div class="forum-header r">
@@ -268,7 +268,7 @@
     if (!e) return 'Unknown error';
     if (typeof e === 'string') return e;
     // Supabase JS v2 error shape
-    if (e.message && e.message.includes('DataClone')) return 'Connection sync error — please refresh.'; if (e.message) return e.message;
+    if (e.message && e.message.includes('DataClone')) return 'Connection sync error - please refresh.'; if (e.message) return e.message;
     if (e.error_description) return e.error_description;
     if (e.error) return typeof e.error === 'string' ? e.error : 'Unknown error';
     if (e.details) return e.details;
@@ -319,7 +319,7 @@
 
     const { data, error } = await query;
     if (error) {
-      // DataCloneError is an internal Supabase BroadcastChannel issue — retry once silently
+      // DataCloneError is an internal Supabase BroadcastChannel issue - retry once silently
       if (error.message && error.message.includes('DataClone')) {
         await new Promise(r => setTimeout(r, 300));
         const retry = await query;
@@ -327,7 +327,7 @@
           document.getElementById('thread-list').innerHTML = '<div class="empty-state"><div class="empty-state-title">Could not load threads.</div><p>' + errStr(retry.error) + '</p></div>';
           return;
         }
-        // retry succeeded — continue with retry.data
+        // retry succeeded - continue with retry.data
         const data2 = retry.data;
         hasMore = data2.length === PAGE_SIZE + 1;
         const threads2 = hasMore ? data2.slice(0, PAGE_SIZE) : data2;

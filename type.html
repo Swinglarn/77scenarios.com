@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="description" content="Your Myers-Briggs personality type in full. Strengths, blind spots, cognitive functions, and the famous people who share it.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Personality Type Profile — 77 Scenarios</title>
+<title>Personality Type Profile - 77 Scenarios</title>
 <meta name="robots" content="index, follow">
 <meta property="og:site_name" content="77 Scenarios">
 <meta property="og:image" content="https://77scenarios.com/og-image.png">
@@ -77,7 +77,7 @@
   .box ul{list-style:none;}
   .box ul li{font-size:14px;color:#a09890;line-height:1.75;padding:9px 0;border-bottom:1px solid var(--border);display:flex;gap:12px;align-items:flex-start;}
   .box ul li:last-child{border-bottom:none;}
-  .box ul li::before{content:'–';color:var(--gold-dim);flex-shrink:0;margin-top:2px;}
+  .box ul li::before{content:'-';color:var(--gold-dim);flex-shrink:0;margin-top:2px;}
 
   .fd-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
   @media(max-width:580px){.fd-row{grid-template-columns:1fr;}}
@@ -424,7 +424,7 @@ function render(){
   document.querySelector('meta[property="og:title"]')?.setAttribute('content',`${t} · ${d.name}, 77 Scenarios`)||
     (()=>{const m=document.createElement('meta');m.setAttribute('property','og:title');m.content=`${t} · ${d.name}, 77 Scenarios`;document.head.appendChild(m);})();
   document.getElementById('canonical-url')?.setAttribute('href',`https://77scenarios.com/type.html?t=${t}`);
-  const h1el=document.getElementById('page-h1');if(h1el)h1el.textContent=`${t} Personality Type — ${d.name}`;
+  const h1el=document.getElementById('page-h1');if(h1el)h1el.textContent=`${t} Personality Type - ${d.name}`;
   document.querySelector('meta[property="og:description"]')?.setAttribute('content',desc)||
     (()=>{const m=document.createElement('meta');m.setAttribute('property','og:description');m.content=desc;document.head.appendChild(m);})();
   document.querySelector('meta[property="og:url"]')?.setAttribute('content',`https://77scenarios.com/type?t=${t}`)||
@@ -501,7 +501,7 @@ document.addEventListener('click',e=>{
   ov.animate([{opacity:0},{opacity:1}],{duration:320,easing:'cubic-bezier(0.76,0,0.24,1)',fill:'forwards'}).finished.then(()=>{window.location.href=h;});
 });
 
-// Reveal observer — defined before render() so obs.observe() works inside render()
+// Reveal observer - defined before render() so obs.observe() works inside render()
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(en=>{
     if(!en.isIntersecting)return;
