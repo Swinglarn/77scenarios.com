@@ -18,7 +18,8 @@
       { href: '/compatibility',       label: 'Compatibility' },
       { href: '/archive',             label: 'Archive'       },
       { href: '/forum',               label: 'Forum'         },
-      { href: '/about',               label: 'About'         }
+      { href: '/about',               label: 'About'         },
+      { href: '/store',               label: 'Store'         }
     ],
     '/es': [
       { href: '/es/',                    label: 'Hacer el Test'  },
