@@ -42,42 +42,113 @@
     }
     #t-overlay.active { opacity: 1; pointer-events: all; }
 
-    /* ── Nav ── */
-    nav {
+    /* ── Site Nav ── */
+    .site-nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1.4rem 2.5rem;
+      padding: 1.2rem 2.5rem;
       border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       background: var(--bg);
-      z-index: 100;
+      z-index: 200;
     }
     .nav-logo {
       font-family: var(--font-serif);
-      font-size: 1.35rem;
-      font-weight: 500;
+      font-size: 1.2rem;
+      font-weight: 400;
       color: var(--gold);
       text-decoration: none;
       letter-spacing: 0.04em;
     }
     .nav-links {
       display: flex;
-      gap: 2rem;
-      list-style: none;
+      align-items: center;
+      gap: 1.8rem;
     }
     .nav-links a {
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       font-weight: 400;
       color: var(--muted);
       text-decoration: none;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       transition: color 0.2s;
     }
     .nav-links a:hover,
     .nav-links a.active { color: var(--cream); }
+    .nav-burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-burger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--cream);
+    }
+    .nav-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 300;
+    }
+    .nav-drawer {
+      position: fixed;
+      top: 0; right: 0;
+      width: 260px;
+      height: 100%;
+      background: #13161a;
+      border-left: 1px solid var(--border);
+      z-index: 400;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .nav-drawer.open { transform: translateX(0); }
+    .nav-overlay.open { display: block; }
+    .nav-drawer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 1.4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-close {
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .nav-drawer-links {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem 0;
+    }
+    .nav-drawer-links a {
+      padding: 0.75rem 1.4rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-drawer-links a:hover,
+    .nav-drawer-links a.active { color: var(--cream); }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-burger { display: flex; }
+    }
 
     /* ── Hero ── */
     .hero {
@@ -118,35 +189,51 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 0.3rem;
       position: relative;
       z-index: 1;
+      margin-bottom: 0.5rem;
     }
 
     .brand-lockup .num {
       font-family: var(--font-serif);
-      font-size: clamp(5rem, 18vw, 12rem);
+      font-size: clamp(7rem, 22vw, 15rem);
       font-weight: 300;
-      line-height: 0.9;
-      color: var(--cream);
-      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: transparent;
+      -webkit-text-stroke: 1px var(--cream);
+      letter-spacing: 0.05em;
+      text-align: center;
+      display: block;
+      position: relative;
+      left: 0.05em;
     }
 
-    .brand-lockup .rule {
+    .brand-lockup .wear-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.2rem;
       width: 100%;
+    }
+
+    .brand-lockup .wear-line {
       height: 1px;
-      background: var(--gold);
-      margin: 0.6rem 0;
-      opacity: 0.6;
+      width: 60px;
+      background: linear-gradient(to right, transparent, var(--gold));
+    }
+    .brand-lockup .wear-line.right {
+      background: linear-gradient(to left, transparent, var(--gold));
     }
 
     .brand-lockup .word {
       font-family: var(--font-sans);
-      font-size: clamp(0.6rem, 1.5vw, 0.8rem);
-      font-weight: 300;
-      letter-spacing: 0.55em;
+      font-size: clamp(0.55rem, 1.2vw, 0.72rem);
+      font-weight: 400;
+      letter-spacing: 0.7em;
       text-transform: uppercase;
       color: var(--gold);
+      text-indent: 0.7em; /* optical centering for letter-spacing */
     }
 
     .tagline {
@@ -271,9 +358,6 @@
     }
 
     @media (max-width: 600px) {
-      nav { padding: 1.2rem 1.4rem; }
-      .nav-links { gap: 1.2rem; }
-      .nav-links a { font-size: 0.75rem; }
       .pillars { gap: 1.5rem; }
     }
   </style>
@@ -282,23 +366,31 @@
 
 <div id="t-overlay"></div>
 
-<nav>
-  <a class="nav-logo" href="/index.html">77 scenarios</a>
-  <ul class="nav-links">
-    <li><a href="/index.html">Test</a></li>
-    <li><a href="/archive.html">Archive</a></li>
-    <li><a href="/forum.html">Forum</a></li>
-    <li><a href="/store.html" class="active">Store</a></li>
-  </ul>
+<nav class="site-nav">
+  <div class="nav-links" id="nav-links"></div>
+  <button class="nav-burger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nav-overlay" id="nav-overlay" onclick="toggleMenu()"></div>
+<div class="nav-drawer" id="nav-drawer">
+  <div class="nav-drawer-header">
+    <button class="nav-close" onclick="toggleMenu()">&#10005;</button>
+  </div>
+  <nav class="nav-drawer-links"></nav>
+</div>
+<script src="/nav.js"></script>
 
 <main class="hero">
   <p class="eyebrow">Coming Soon</p>
 
   <div class="brand-lockup">
     <span class="num">77</span>
-    <div class="rule"></div>
-    <span class="word">Wear</span>
+    <div class="wear-row">
+      <div class="wear-line"></div>
+      <span class="word">Wear</span>
+      <div class="wear-line right"></div>
+    </div>
   </div>
 
   <div class="divider"></div>
@@ -315,27 +407,24 @@
   </div>
 
   <div class="pillars">
-    <div class="pillar">
-      <div class="pillar-num">01</div>
-      <div class="pillar-label">Heavyweight<br>fabric</div>
-    </div>
-    <div class="pillar">
-      <div class="pillar-num">02</div>
-      <div class="pillar-label">Gold<br>prints</div>
-    </div>
-    <div class="pillar">
-      <div class="pillar-num">03</div>
-      <div class="pillar-label">Type-specific<br>drops</div>
-    </div>
+    <div class="pillar"><div class="pillar-label">Heavyweight<br>fabric</div></div>
+    <div class="pillar"><div class="pillar-label">Gold<br>prints</div></div>
+    <div class="pillar"><div class="pillar-label">Type-specific<br>drops</div></div>
   </div>
 </main>
 
 <footer>© 2026 77scenarios.com — All rights reserved</footer>
 
 <script>
+  // ── Mobile nav ──
+  function toggleMenu() {
+    document.getElementById('nav-drawer').classList.toggle('open');
+    document.getElementById('nav-overlay').classList.toggle('open');
+  }
+
   // ── Supabase config ──
   const SUPABASE_URL = 'https://rttomfnfyjjssdqfzkaj.supabase.co';
-  const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw';
 
   // ── Page transitions ──
   const overlay = document.getElementById('t-overlay');
