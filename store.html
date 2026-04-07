@@ -56,11 +56,10 @@
     }
     .nav-logo {
       font-family: var(--font-serif);
-      font-size: 1.2rem;
-      font-weight: 400;
-      color: var(--gold);
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--cream);
       text-decoration: none;
-      letter-spacing: 0.04em;
     }
     .nav-links {
       display: flex;
@@ -361,6 +360,7 @@
 <div id="t-overlay"></div>
 
 <nav class="site-nav">
+  <a href="/" class="nav-logo">77scenarios.com</a>
   <div class="nav-links" id="nav-links"></div>
   <button class="nav-burger" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -369,6 +369,7 @@
 <div class="nav-overlay" id="nav-overlay" onclick="toggleMenu()"></div>
 <div class="nav-drawer" id="nav-drawer">
   <div class="nav-drawer-header">
+    <a href="/" class="nav-logo">77scenarios.com</a>
     <button class="nav-close" onclick="toggleMenu()">&#10005;</button>
   </div>
   <nav class="nav-drawer-links"></nav>
