@@ -194,11 +194,11 @@
       margin-bottom: 0.5rem;
     }
 
-    .brand-lockup .num-svg {
+    .brand-lockup .num-canvas {
       display: block;
       position: relative;
       left: 0.05em;
-      width: clamp(200px, 40vw, 500px);
+      width: clamp(280px, 45vw, 600px);
       height: auto;
     }
 
@@ -379,23 +379,9 @@
   <p class="eyebrow">Coming Soon</p>
 
   <div class="brand-lockup">
-    <svg class="num-svg" viewBox="0 0 420 180" xmlns="http://www.w3.org/2000/svg" aria-label="77">
-      <text
-        x="50%"
-        y="155"
-        text-anchor="middle"
-        font-family="Cormorant Garamond, serif"
-        font-size="200"
-        font-weight="300"
-        fill="none"
-        stroke="#ede8df"
-        stroke-width="0.8"
-        letter-spacing="8"
-      >77</text>
-    </svg>
     <div class="wear-row">
       <div class="wear-line"></div>
-      <span class="word">Wear</span>
+      <span class="word">Store</span>
       <div class="wear-line right"></div>
     </div>
   </div>
@@ -500,8 +486,37 @@
     }
   }
 
+  // ── High-DPI canvas 77 ──
+  function render77() {
+    const canvas = document.getElementById('num77');
+    if (!canvas) return;
+    const dpr = window.devicePixelRatio || 1;
+    const cssW = canvas.parentElement.offsetWidth * 0.85;
+    const cssH = cssW * 0.45;
+    canvas.style.width  = cssW + 'px';
+    canvas.style.height = cssH + 'px';
+    canvas.width  = cssW * dpr;
+    canvas.height = cssH * dpr;
+    const ctx = canvas.getContext('2d');
+    ctx.scale(dpr, dpr);
+    ctx.clearRect(0, 0, cssW, cssH);
+    const fontSize = cssH * 0.88;
+    ctx.font = `300 ${fontSize}px "Cormorant Garamond", serif`;
+    ctx.fillStyle = '#c9a84c';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
+    ctx.fillText('77', cssW / 2, cssH / 2);
+  }
+
   document.getElementById('email-input').addEventListener('keydown', e => {
     if (e.key === 'Enter') joinWaitlist();
+  });
+
+  document.fonts.ready.then(() => {
+    render77();
+    window.addEventListener('resize', render77);
   });
 </script>
 
