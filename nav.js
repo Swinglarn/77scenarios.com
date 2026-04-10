@@ -1,4 +1,14 @@
 (function() {
+  // Google Analytics
+  var _gas = document.createElement('script');
+  _gas.async = true;
+  _gas.src = 'https://www.googletagmanager.com/gtag/js?id=G-C0D86PRJJN';
+  document.head.appendChild(_gas);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C0D86PRJJN');
+
   var SUPA_URL = 'https://rttomfnfyjjssdqfzkaj.supabase.co';
   var SUPA_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw';
   var FALLBACK = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Ccircle cx='40' cy='40' r='40' fill='%23252a30'/%3E%3Ccircle cx='40' cy='32' r='14' fill='%238a6d2e'/%3E%3Cellipse cx='40' cy='72' rx='24' ry='16' fill='%238a6d2e'/%3E%3C/svg%3E";
@@ -18,8 +28,7 @@
       { href: '/compatibility',       label: 'Compatibility' },
       { href: '/archive',             label: 'Archive'       },
       { href: '/forum',               label: 'Forum'         },
-      { href: '/about',               label: 'About'         },
-      { href: '/store',               label: 'Store'         }
+      { href: '/about',               label: 'About'         }
     ],
     '/es': [
       { href: '/es/',                    label: 'Hacer el Test'  },
