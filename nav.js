@@ -27,6 +27,7 @@
       { href: '/cognitive-functions', label: 'Functions'     },
       { href: '/compatibility',       label: 'Compatibility' },
       { href: '/archive',             label: 'Archive'       },
+      { href: '/store',               label: 'Store'         },
       { href: '/forum',               label: 'Forum'         },
       { href: '/about',               label: 'About'         }
     ],
