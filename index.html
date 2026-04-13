@@ -15,6 +15,7 @@
 <meta property="og:site_name" content="77 Scenarios">
 <meta name="twitter:card" content="summary_large_image">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1Y5HPZXXVL"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9210546368748348" crossorigin="anonymous"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1Y5HPZXXVL');</script>
 <meta name="twitter:title" content="77 Scenarios What Kind of Person Are You, Really?">
 <meta name="twitter:description" content="A personality test that puts you in real situations instead of asking you to rate yourself. 77 scenarios. 16 possible types.">
@@ -1829,7 +1830,11 @@ async function submitDemographics() {
       age_range: demoSelections.age,
       gender: demoSelections.gender,
       ethnicity: demoSelections.ethnicity,
-      test_mode: testMode
+      test_mode: testMode,
+      ei_e: scores.E||0, ei_i: scores.I||0,
+      sn_s: scores.S||0, sn_n: scores.N||0,
+      tf_t: scores.T||0, tf_f: scores.F||0,
+      jp_j: scores.J||0, jp_p: scores.P||0
     })
   }).catch(() => {});
   showResultsActual();
