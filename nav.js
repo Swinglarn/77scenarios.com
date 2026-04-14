@@ -19,8 +19,8 @@
     lmStyle.id = 'light-mode-css';
     lmStyle.textContent = [
       'body.light-mode{--bg:#f5f5f2;--surface:#ffffff;--surface2:#ebebeb;--gold:#c9a84c;--gold-dim:#a8893a;--cream:#0f0d0a;--muted:#4a4035;--border:#c8c0b4;background:#f5f5f2!important;color:#0f0d0a!important;}',
-      'body.light-mode nav,body.light-mode .site-nav{background:#e8e2d8!important;border-bottom:2px solid #a0917f!important;box-shadow:none!important;}',
-      'body.light-mode header{background:#e8e2d8!important;border-bottom:2px solid #a0917f!important;}',
+      'body.light-mode nav,body.light-mode .site-nav{background:#ffffff!important;border-bottom:1px solid #d4ccc0!important;box-shadow:0 2px 8px rgba(0,0,0,0.08)!important;}',
+      'body.light-mode header{background:#ffffff!important;border-bottom:1px solid #d4ccc0!important;box-shadow:0 2px 8px rgba(0,0,0,0.08)!important;}',
       'body.light-mode .nav-logo,body.light-mode .logo{color:#0f0d0a!important;font-weight:500!important;}',
       'body.light-mode .nav-links a{color:#3a3228!important;}',
       'body.light-mode .nav-links a:hover,body.light-mode .nav-links a.active{color:#c9a84c!important;}',
