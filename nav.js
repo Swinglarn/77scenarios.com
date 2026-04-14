@@ -30,8 +30,8 @@
       '  background:#f5f5f2!important;',
       '  color:#0f0d0a!important;',
       '}',
-      'body.light-mode nav,body.light-mode .site-nav{background:rgba(245,245,242,0.97)!important;border-bottom:1px solid #c8c0b4!important;}',
-      'body.light-mode header{background:#f5f5f2!important;border-bottom:1px solid #c8c0b4!important;}',
+      'body.light-mode nav,body.light-mode .site-nav{background:#ffffff!important;border-bottom:2px solid #d4ccc0!important;box-shadow:0 1px 0 #e0d8d0!important;}',
+      'body.light-mode header{background:#ffffff!important;border-bottom:2px solid #d4ccc0!important;}',
       'body.light-mode .nav-logo,body.light-mode .logo{color:#0f0d0a!important;font-weight:500!important;}',
       'body.light-mode .nav-links a{color:#3a3228!important;}',
       'body.light-mode .nav-links a:hover,body.light-mode .nav-links a.active{color:#c9a84c!important;}',
@@ -65,7 +65,7 @@
       'body.light-mode .group-label,.group-name{color:#0f0d0a!important;}',
       'body.light-mode .group-desc{color:#4a4035!important;}',
       'body.light-mode body::before{opacity:0!important;}',
-      '#theme-toggle-wrap{padding:4px 0 0 0;}',
+      '#theme-toggle-wrap{padding:4px 0 0 0;}@media(max-width:768px){#theme-toggle-wrap{display:none;}}',
       '#theme-toggle{display:flex;align-items:center;gap:6px;background:none;border:none;cursor:pointer;padding:5px 0 5px 2rem;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#b5ada6;font-family:"DM Sans",sans-serif;opacity:0.7;transition:opacity 0.2s;}',
       '#theme-toggle:hover{opacity:1;}',
       'body.light-mode #theme-toggle{color:#4a4035;}'
@@ -73,13 +73,15 @@
     document.head.appendChild(lmStyle);
   }
 
+  var MOON_SVG = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  var SUN_SVG = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
+
   function applyTheme(isLight) {
     document.body.classList.toggle('light-mode', isLight);
     var btn = document.getElementById('theme-toggle');
-    if (!btn) return;
-    btn.innerHTML = isLight
-      ? '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg> Dark'
-      : '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg> Light';
+    if (btn) btn.innerHTML = isLight ? MOON_SVG + ' Dark' : SUN_SVG + ' Light';
+    var drawerBtn = document.getElementById('drawer-theme-toggle');
+    if (drawerBtn) drawerBtn.innerHTML = isLight ? MOON_SVG + ' Dark mode' : SUN_SVG + ' Light mode';
   }
 
   function injectThemeToggle() {
@@ -179,6 +181,23 @@
       if (isActive(item.href)) a.classList.add('active');
       drawer.appendChild(a);
     });
+    // Add theme toggle to drawer
+    var divider = document.createElement('div');
+    divider.style.cssText = 'height:1px;background:var(--border,#252a30);margin:8px 0;';
+    drawer.appendChild(divider);
+    var themeBtn = document.createElement('button');
+    themeBtn.id = 'drawer-theme-toggle';
+    themeBtn.style.cssText = 'display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;padding:18px 24px;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:#b5ada6;font-family:"DM Sans",sans-serif;width:100%;';
+    themeBtn.onclick = function() {
+      var isLight = !document.body.classList.contains('light-mode');
+      localStorage.setItem('77s-theme', isLight ? 'light' : 'dark');
+      applyTheme(isLight);
+    };
+    var isLight = localStorage.getItem('77s-theme') === 'light';
+    themeBtn.innerHTML = isLight
+      ? '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg> Dark mode'
+      : '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg> Light mode';
+    drawer.appendChild(themeBtn);
   }
 
   if (!document.getElementById('nav-dropdown-css')) {
@@ -216,6 +235,7 @@
     };
     var img = document.createElement('img');
     img.src = avatarSrc || FALLBACK;
+    img.alt = 'User avatar';
     img.style.cssText = 'width:30px;height:30px;border-radius:50%;object-fit:cover;border:1.5px solid #8a6d2e;flex-shrink:0;';
     img.onerror = function() { this.src = FALLBACK; };
     var pill = document.createElement('span');
@@ -308,9 +328,26 @@
     });
   }
 
+  // Fix H1 spacing bug on types/letters/functions pages
+  function fixH1Spacing() {
+    var h1 = document.querySelector('h1');
+    if (!h1) return;
+    var br = h1.querySelector('br');
+    if (!br) return;
+    var prev = br.previousSibling;
+    if (prev && prev.nodeType === 3 && !prev.textContent.endsWith(' ')) {
+      prev.textContent += ' ';
+    } else if (prev && prev.nodeType === 1) {
+      // em tag before br - insert space text node
+      var space = document.createTextNode(' ');
+      h1.insertBefore(space, br);
+    }
+  }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initNav);
+    document.addEventListener('DOMContentLoaded', function() { initNav(); fixH1Spacing(); });
   } else {
     initNav();
+    fixH1Spacing();
   }
 })();
