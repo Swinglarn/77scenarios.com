@@ -49,7 +49,7 @@
 
   function injectThemeToggle() {
     if (document.getElementById('theme-toggle-wrap')) return;
-    var header = document.querySelector('header');
+    var header = document.querySelector('.site-nav') || document.querySelector('header');
     if (!header) return;
     var wrap = document.createElement('div');
     wrap.id = 'theme-toggle-wrap';
