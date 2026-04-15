@@ -59,7 +59,7 @@
       'body.light-mode .group-name{color:#0f0d0a!important;}',
       'body.light-mode .group-desc{color:#4a4035!important;}',
       'body.light-mode body::before{opacity:0!important;}',
-      '#theme-toggle-wrap{padding:4px 0 0 0;}@media(max-width:768px){#theme-toggle-wrap{display:none;}}',
+      '#theme-toggle-wrap{padding:4px 0 0 0;}@media(max-width:480px){#theme-toggle-wrap{display:none;}}#theme-toggle-mobile{display:none;}@media(max-width:480px){#theme-toggle-mobile{display:inline-flex;align-items:center;}}body.light-mode #theme-toggle-mobile{color:#3a3228;}',
       '#theme-toggle{display:flex;align-items:center;gap:6px;background:none;border:none;cursor:pointer;padding:5px 0 5px 2rem;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#b5ada6;font-family:"DM Sans",sans-serif;opacity:0.7;transition:opacity 0.2s;}',
       '#theme-toggle:hover{opacity:1;}',
       'body.light-mode #theme-toggle{color:#4a4035;}'
@@ -76,12 +76,16 @@
     if (btn) btn.innerHTML = isLight ? MOON_SVG + ' Dark' : SUN_SVG + ' Light';
     var drawerBtn = document.getElementById('drawer-theme-toggle');
     if (drawerBtn) drawerBtn.innerHTML = isLight ? MOON_SVG + ' Dark mode' : SUN_SVG + ' Light mode';
+    var mobileBtn = document.getElementById('theme-toggle-mobile');
+    if (mobileBtn) mobileBtn.innerHTML = isLight ? MOON_SVG : SUN_SVG;
   }
 
   function injectThemeToggle() {
     if (document.getElementById('theme-toggle-wrap')) return;
     var header = document.querySelector('.site-nav') || document.querySelector('header');
     if (!header) return;
+
+    // Desktop: below-nav button
     var wrap = document.createElement('div');
     wrap.id = 'theme-toggle-wrap';
     var btn = document.createElement('button');
@@ -94,6 +98,24 @@
     };
     wrap.appendChild(btn);
     header.insertAdjacentElement('afterend', wrap);
+
+    // Mobile: icon button inside the nav bar itself, before the burger
+    var mobileBtn = document.createElement('button');
+    mobileBtn.id = 'theme-toggle-mobile';
+    mobileBtn.setAttribute('aria-label', 'Toggle light/dark mode');
+    mobileBtn.style.cssText = 'display:none;background:none;border:none;cursor:pointer;padding:6px;color:#b5ada6;margin-right:4px;vertical-align:middle;';
+    mobileBtn.onclick = function() {
+      var isLight = !document.body.classList.contains('light-mode');
+      localStorage.setItem('77s-theme', isLight ? 'light' : 'dark');
+      applyTheme(isLight);
+    };
+    var burger = header.querySelector('.nav-burger');
+    if (burger) {
+      header.insertBefore(mobileBtn, burger);
+    } else {
+      header.appendChild(mobileBtn);
+    }
+
     applyTheme(localStorage.getItem('77s-theme') === 'light');
   }
 
