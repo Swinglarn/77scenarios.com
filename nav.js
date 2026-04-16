@@ -24,10 +24,8 @@
     ds.textContent = [
       // Nav links — DM Sans 500, bolder, mixed case
       // Reserve space on right for fixed auth+toggle container
-      '.site-nav{padding-right:220px !important;}',
-      '.nav-links{margin-right:0 !important;max-width:calc(100% - 180px) !important;overflow:visible !important;}',
-      '@media(max-width:900px){.site-nav{padding-right:160px !important;}}',
-      '@media(max-width:480px){.site-nav{padding-right:70px !important;}}',
+      '.nav-links{position:absolute !important;left:50% !important;transform:translateX(-50%) !important;display:flex !important;align-items:center !important;}',
+      '@media(max-width:480px){.nav-links{display:none !important;}}',
       '.nav-links a{font-family:"DM Sans",sans-serif !important;font-size:13px !important;font-weight:500 !important;letter-spacing:0.06em !important;text-transform:uppercase !important;color:#b5ada6 !important;transition:color 0.2s !important;}',
       '.nav-links a:hover,.nav-links a.active{color:#ede8df !important;}',
       // "Take the Test" — gold pill CTA via href attribute selector
