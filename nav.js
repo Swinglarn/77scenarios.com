@@ -24,8 +24,9 @@
     ds.textContent = [
       // Nav links — DM Sans 500, bolder, mixed case
       // Reserve space on right for fixed auth+toggle container
-      '.site-nav{padding-right:180px !important;}',
-      '@media(max-width:768px){.site-nav{padding-right:100px !important;}}',
+      '.site-nav{padding-right:220px !important;}',
+      '.nav-links{margin-right:0 !important;max-width:calc(100% - 180px) !important;overflow:visible !important;}',
+      '@media(max-width:900px){.site-nav{padding-right:160px !important;}}',
       '@media(max-width:480px){.site-nav{padding-right:70px !important;}}',
       '.nav-links a{font-family:"DM Sans",sans-serif !important;font-size:13px !important;font-weight:500 !important;letter-spacing:0.06em !important;text-transform:uppercase !important;color:#b5ada6 !important;transition:color 0.2s !important;}',
       '.nav-links a:hover,.nav-links a.active{color:#ede8df !important;}',
@@ -51,8 +52,8 @@
       '#theme-toggle-mobile{display:none !important;background:none;border:none;cursor:pointer;padding:6px;color:#b5ada6;line-height:1;}',
       '@media(max-width:480px){#theme-toggle-mobile{display:inline-flex !important;align-items:center;justify-content:center;width:36px;height:36px;}}',
       // Fixed right container — theme toggle + auth, never overlap
-      '#nav-right-fixed{position:fixed;top:0;right:32px;height:56px;display:flex;align-items:center;gap:16px;z-index:500;}',
-      '@media(max-width:480px){#nav-right-fixed{right:16px;height:52px;}}',
+      '#nav-right-fixed{position:fixed;top:0;right:0;height:56px;display:flex;align-items:center;gap:12px;z-index:500;padding:0 32px;background:rgba(12,14,16,0.92);backdrop-filter:blur(16px);}',
+      '@media(max-width:480px){#nav-right-fixed{right:0;height:52px;padding:0 16px;}}',
       // Logo redesign
       '.nav-logo{font-family:\"Cormorant Garamond\",serif !important;font-size:22px !important;font-weight:300 !important;text-decoration:none !important;display:inline-flex !important;align-items:baseline !important;gap:3px !important;letter-spacing:0 !important;}',
       '.logo-77{color:#c9a84c !important;font-weight:600 !important;font-size:38px !important;font-style:italic !important;line-height:1 !important;letter-spacing:-0.03em !important;}',
