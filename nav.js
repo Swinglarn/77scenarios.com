@@ -377,7 +377,7 @@
     signOutBtn.onclick = function() {
       var client = window._navSb || (window.supabase && window.supabase.createClient ? window.supabase.createClient(SUPA_URL, SUPA_KEY) : null);
       if (client) {
-        client.auth.signOut().then(function() { window.location.href = prefix + '/'; });
+        client.auth.signOut().then(function() { try{localStorage.removeItem('77s-auth');}catch(e){} window.location.href = prefix + '/'; });
       } else {
         window.location.href = prefix + '/';
       }
@@ -431,8 +431,32 @@
       window._navSb = sb;
     }
     var authSlot = getFixedRight();
-    if (!sb) {
+
+    // Render immediately from cache — no pop-in
+    var cached = null;
+    try { cached = JSON.parse(localStorage.getItem('77s-auth') || 'null'); } catch(e) {}
+    if (cached && cached.loggedIn) {
+      authSlot.appendChild(buildPill(cached.username || 'Profile', cached.avatarUrl || ''));
+      if (drawerNav) {
+        var _da = document.createElement('a');
+        _da.href = prefix + '/profile';
+        _da.textContent = cached.username || 'Profile';
+        _da.style.color = '#c9a84c';
+        drawerNav.appendChild(_da);
+      }
+    } else if (cached && !cached.loggedIn) {
       authSlot.appendChild(buildSignIn());
+      if (drawerNav) {
+        var _dsi = document.createElement('a');
+        _dsi.href = prefix + '/login';
+        _dsi.textContent = 'Sign in';
+        drawerNav.appendChild(_dsi);
+      }
+    }
+    // No cache yet — show nothing until Supabase responds (first visit only)
+
+    if (!sb) {
+      if (!cached) authSlot.appendChild(buildSignIn());
       return;
     }
     sb.auth.getSession().then(function(res) {
@@ -441,22 +465,35 @@
         sb.from('profiles').select('avatar_url,username').eq('id', session.user.id).single()
           .then(function(r) {
             var prof = r.data || {};
-            authSlot.appendChild(buildPill(prof.username || 'Profile', prof.avatar_url || ''));
-            if (drawerNav) {
-              var a = document.createElement('a');
-              a.href = prefix + '/profile';
-              a.textContent = prof.username || 'Profile';
-              a.style.color = '#c9a84c';
-              drawerNav.appendChild(a);
+            var newCache = {loggedIn:true, username:prof.username||'Profile', avatarUrl:prof.avatar_url||''};
+            try { localStorage.setItem('77s-auth', JSON.stringify(newCache)); } catch(e) {}
+            // Only update DOM if state changed from cache
+            if (!cached || !cached.loggedIn || cached.username !== newCache.username) {
+              authSlot.innerHTML = '';
+              authSlot.appendChild(buildPill(newCache.username, newCache.avatarUrl));
+              if (drawerNav) {
+                var existing = drawerNav.querySelector('a[href*="profile"]');
+                if (!existing) {
+                  var a = document.createElement('a');
+                  a.href = prefix + '/profile';
+                  a.textContent = newCache.username;
+                  a.style.color = '#c9a84c';
+                  drawerNav.appendChild(a);
+                }
+              }
             }
           });
       } else {
-        authSlot.appendChild(buildSignIn());
-        if (drawerNav) {
-          var a = document.createElement('a');
-          a.href = prefix + '/login';
-          a.textContent = 'Sign in';
-          drawerNav.appendChild(a);
+        try { localStorage.setItem('77s-auth', JSON.stringify({loggedIn:false})); } catch(e) {}
+        if (!cached || cached.loggedIn) {
+          authSlot.innerHTML = '';
+          authSlot.appendChild(buildSignIn());
+          if (drawerNav) {
+            var _dsi2 = document.createElement('a');
+            _dsi2.href = prefix + '/login';
+            _dsi2.textContent = 'Sign in';
+            drawerNav.appendChild(_dsi2);
+          }
         }
       }
     });
