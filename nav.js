@@ -23,6 +23,10 @@
     ds.id = 'nav-design-css';
     ds.textContent = [
       // Nav links — DM Sans 500, bolder, mixed case
+      // Reserve space on right for fixed auth+toggle container
+      '.site-nav{padding-right:180px !important;}',
+      '@media(max-width:768px){.site-nav{padding-right:100px !important;}}',
+      '@media(max-width:480px){.site-nav{padding-right:70px !important;}}',
       '.nav-links a{font-family:"DM Sans",sans-serif !important;font-size:13px !important;font-weight:500 !important;letter-spacing:0.06em !important;text-transform:uppercase !important;color:#b5ada6 !important;transition:color 0.2s !important;}',
       '.nav-links a:hover,.nav-links a.active{color:#ede8df !important;}',
       // "Take the Test" — gold pill CTA via href attribute selector
@@ -51,8 +55,8 @@
       '@media(max-width:480px){#nav-right-fixed{right:16px;height:52px;}}',
       // Logo redesign
       '.nav-logo{font-family:\"Cormorant Garamond\",serif !important;font-size:22px !important;font-weight:300 !important;text-decoration:none !important;display:inline-flex !important;align-items:baseline !important;gap:3px !important;letter-spacing:0 !important;}',
-      '.logo-77{color:#c9a84c !important;font-weight:600 !important;font-size:28px !important;font-style:italic !important;line-height:1 !important;letter-spacing:-0.02em !important;}',
-      '.logo-scenarios{color:#ede8df !important;font-weight:300 !important;font-size:20px !important;letter-spacing:0.06em !important;text-transform:lowercase !important;}',
+      '.logo-77{color:#c9a84c !important;font-weight:600 !important;font-size:38px !important;font-style:italic !important;line-height:1 !important;letter-spacing:-0.03em !important;}',
+      '.logo-scenarios{color:#ede8df !important;font-weight:300 !important;font-size:26px !important;letter-spacing:0.1em !important;text-transform:lowercase !important;}',
       'body.light-mode .logo-scenarios{color:#0f0d0a !important;}',
       'body.light-mode .logo-77{color:#c9a84c !important;}',
       // Footer styles
