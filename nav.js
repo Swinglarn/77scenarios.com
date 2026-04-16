@@ -46,6 +46,15 @@
       '@media(max-width:480px){#theme-toggle-desktop{display:none !important;}}',
       '#theme-toggle-mobile{display:none !important;background:none;border:none;cursor:pointer;padding:6px;color:#b5ada6;line-height:1;}',
       '@media(max-width:480px){#theme-toggle-mobile{display:inline-flex !important;align-items:center;justify-content:center;width:36px;height:36px;}}',
+      // Fixed right container — theme toggle + auth, never overlap
+      '#nav-right-fixed{position:fixed;top:0;right:32px;height:56px;display:flex;align-items:center;gap:16px;z-index:500;}',
+      '@media(max-width:480px){#nav-right-fixed{right:16px;height:52px;}}',
+      // Logo redesign
+      '.nav-logo{font-family:\"Cormorant Garamond\",serif !important;font-size:22px !important;font-weight:300 !important;text-decoration:none !important;display:inline-flex !important;align-items:baseline !important;gap:3px !important;letter-spacing:0 !important;}',
+      '.logo-77{color:#c9a84c !important;font-weight:600 !important;font-size:28px !important;font-style:italic !important;line-height:1 !important;letter-spacing:-0.02em !important;}',
+      '.logo-scenarios{color:#ede8df !important;font-weight:300 !important;font-size:20px !important;letter-spacing:0.06em !important;text-transform:lowercase !important;}',
+      'body.light-mode .logo-scenarios{color:#0f0d0a !important;}',
+      'body.light-mode .logo-77{color:#c9a84c !important;}',
       // Footer styles
       '#nav-footer{border-top:1px solid #252a30;padding:48px 32px;text-align:center;background:#0c0e10;}',
       '#nav-footer .footer-tagline{font-size:13px;color:#6b6358;line-height:1.7;max-width:480px;margin:0 auto 24px;}',
@@ -103,6 +112,7 @@
       'body.light-mode body::before{opacity:0 !important;}',
       'body.light-mode #theme-toggle-desktop{color:#9a8a7a;}',
       'body.light-mode #theme-toggle-mobile{color:#3a3228 !important;}',
+      'body.light-mode #nav-right-fixed a:not(.nav-cta){border-color:#c8c0b4 !important;color:#3a3228 !important;}',
       'body.light-mode #nav-footer{background:#ede8df !important;border-top-color:#c8c0b4 !important;}',
       'body.light-mode #nav-footer .footer-tagline{color:#6b5c3e !important;}',
       'body.light-mode #nav-footer .footer-links a{color:#8a7a68 !important;}',
@@ -244,6 +254,7 @@
     if (document.getElementById('theme-toggle-desktop')) return;
     var burger = nav.querySelector('.nav-burger');
 
+    // Desktop toggle lives in fixed right container (next to auth, can't overlap)
     var desktopBtn = document.createElement('button');
     desktopBtn.id = 'theme-toggle-desktop';
     desktopBtn.setAttribute('aria-label', 'Toggle light/dark mode');
@@ -252,7 +263,9 @@
       localStorage.setItem('77s-theme', isLight ? 'light' : 'dark');
       applyTheme(isLight);
     };
+    getFixedRight().insertBefore(desktopBtn, getFixedRight().firstChild);
 
+    // Mobile toggle stays in the nav bar (before burger)
     var mobileBtn = document.createElement('button');
     mobileBtn.id = 'theme-toggle-mobile';
     mobileBtn.setAttribute('aria-label', 'Toggle light/dark mode');
@@ -261,13 +274,16 @@
       localStorage.setItem('77s-theme', isLight ? 'light' : 'dark');
       applyTheme(isLight);
     };
-
     if (burger) {
-      nav.insertBefore(desktopBtn, burger);
       nav.insertBefore(mobileBtn, burger);
     } else {
-      nav.appendChild(desktopBtn);
       nav.appendChild(mobileBtn);
+    }
+
+    // Redesign logo — replace text with styled HTML
+    var logo = nav.querySelector('.nav-logo, .logo');
+    if (logo && !logo.querySelector('.logo-77')) {
+      logo.innerHTML = '<span class="logo-77">77</span><span class="logo-scenarios">scenarios</span>';
     }
 
     applyTheme(localStorage.getItem('77s-theme') === 'light');
@@ -317,7 +333,7 @@
     var wrap = document.createElement('div');
     wrap.className = 'nav-user-wrap';
     wrap.style.cssText = 'opacity:0;transition:opacity 0.25s;';
-    setTimeout(function() { wrap.style.opacity = '1'; }, 50);
+    setTimeout(function() { wrap.style.opacity = '1'; }, 30);
 
     var btn = document.createElement('button');
     btn.className = 'nav-user-btn';
@@ -371,11 +387,21 @@
     return wrap;
   }
 
+  function getFixedRight() {
+    var slot = document.getElementById('nav-right-fixed');
+    if (!slot) {
+      slot = document.createElement('div');
+      slot.id = 'nav-right-fixed';
+      document.body.appendChild(slot);
+    }
+    return slot;
+  }
+
   function buildSignIn() {
     var a = document.createElement('a');
     a.href = prefix + '/login';
     a.textContent = 'Sign in';
-    a.style.cssText = 'border:1px solid #252a30;padding:7px 16px;border-radius:60px;font-size:0.82rem;color:#ede8df !important;text-decoration:none;font-family:"DM Sans",sans-serif;white-space:nowrap;opacity:0;transition:opacity 0.25s;';
+    a.style.cssText = 'border:1px solid #252a30;padding:7px 16px;border-radius:60px;font-size:0.82rem;color:#ede8df;text-decoration:none;font-family:"DM Sans",sans-serif;white-space:nowrap;opacity:0;transition:opacity 0.25s;';
     setTimeout(function() { a.style.opacity = '1'; }, 50);
     return a;
   }
@@ -401,8 +427,9 @@
       sb = window.supabase.createClient(SUPA_URL, SUPA_KEY);
       window._navSb = sb;
     }
+    var authSlot = getFixedRight();
     if (!sb) {
-      desktopNav.appendChild(buildSignIn());
+      authSlot.appendChild(buildSignIn());
       return;
     }
     sb.auth.getSession().then(function(res) {
@@ -411,7 +438,7 @@
         sb.from('profiles').select('avatar_url,username').eq('id', session.user.id).single()
           .then(function(r) {
             var prof = r.data || {};
-            desktopNav.appendChild(buildPill(prof.username || 'Profile', prof.avatar_url || ''));
+            authSlot.appendChild(buildPill(prof.username || 'Profile', prof.avatar_url || ''));
             if (drawerNav) {
               var a = document.createElement('a');
               a.href = prefix + '/profile';
@@ -421,7 +448,7 @@
             }
           });
       } else {
-        desktopNav.appendChild(buildSignIn());
+        authSlot.appendChild(buildSignIn());
         if (drawerNav) {
           var a = document.createElement('a');
           a.href = prefix + '/login';
