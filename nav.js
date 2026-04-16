@@ -52,6 +52,7 @@
       // Fixed right container — theme toggle + auth, never overlap
       '#nav-right-fixed{position:fixed;top:0;right:0;height:56px;display:flex;align-items:center;gap:12px;z-index:500;padding:0 32px;background:rgba(12,14,16,0.92);backdrop-filter:blur(16px);}',
       '@media(max-width:480px){#nav-right-fixed{right:0;height:52px;padding:0 16px;}}',
+      'body.light-mode #nav-right-fixed{background:rgba(255,255,255,0.97) !important;box-shadow:-1px 0 0 #e0d8d0 !important;backdrop-filter:blur(16px) !important;}',
       // Logo redesign
       '.nav-logo{font-family:\"Cormorant Garamond\",serif !important;font-size:22px !important;font-weight:300 !important;text-decoration:none !important;display:inline-flex !important;align-items:baseline !important;gap:3px !important;letter-spacing:0 !important;}',
       '.logo-77{color:#c9a84c !important;font-weight:600 !important;font-size:38px !important;font-style:italic !important;line-height:1 !important;letter-spacing:-0.03em !important;}',
@@ -59,12 +60,12 @@
       'body.light-mode .logo-scenarios{color:#0f0d0a !important;}',
       'body.light-mode .logo-77{color:#c9a84c !important;}',
       // Footer styles
-      '#nav-footer{border-top:1px solid #252a30;padding:48px 32px;text-align:center;background:#0c0e10;}',
-      '#nav-footer .footer-tagline{font-size:13px;color:#6b6358;line-height:1.7;max-width:480px;margin:0 auto 24px;}',
+      '#nav-footer{border-top:1px solid #2a2a2a;padding:48px 32px;text-align:center;background:#111316;}',
+      '#nav-footer .footer-tagline{font-size:13px;color:#7a7268;line-height:1.7;max-width:480px;margin:0 auto 24px;font-style:italic;}',
       '#nav-footer .footer-links{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:center;margin-bottom:24px;}',
-      '#nav-footer .footer-links a{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#4a4040;text-decoration:none;font-weight:500;transition:color 0.2s;}',
-      '#nav-footer .footer-links a:hover{color:#b5ada6;}',
-      '#nav-footer .footer-copy{font-size:12px;color:#3a3535;}',
+      '#nav-footer .footer-links a{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#9a9088;text-decoration:none;font-weight:500;transition:color 0.2s;}',
+      '#nav-footer .footer-links a:hover{color:#ede8df;}',
+      '#nav-footer .footer-copy{font-size:12px;color:#5a5550;letter-spacing:0.06em;}',
       '@media(max-width:600px){#nav-footer{padding:36px 20px;}}'
     ].join('');
     document.head.appendChild(ds);
@@ -115,12 +116,14 @@
       'body.light-mode body::before{opacity:0 !important;}',
       'body.light-mode #theme-toggle-desktop{color:#9a8a7a;}',
       'body.light-mode #theme-toggle-mobile{color:#3a3228 !important;}',
+      'body.light-mode #nav-right-fixed{background:rgba(255,255,255,0.97) !important;border-left:1px solid #e0d8d0 !important;}',
       'body.light-mode #nav-right-fixed a:not(.nav-cta){border-color:#c8c0b4 !important;color:#3a3228 !important;}',
-      'body.light-mode #nav-footer{background:#ede8df !important;border-top-color:#c8c0b4 !important;}',
-      'body.light-mode #nav-footer .footer-tagline{color:#6b5c3e !important;}',
-      'body.light-mode #nav-footer .footer-links a{color:#8a7a68 !important;}',
-      'body.light-mode #nav-footer .footer-links a:hover{color:#3a3228 !important;}',
-      'body.light-mode #nav-footer .footer-copy{color:#a8987e !important;}'
+      'body.light-mode #theme-toggle-desktop{color:#9a8a7a !important;}',
+      'body.light-mode #nav-footer{background:#e8e3da !important;border-top-color:#c8c0b4 !important;}',
+      'body.light-mode #nav-footer .footer-tagline{color:#7a6c52 !important;}',
+      'body.light-mode #nav-footer .footer-links a{color:#6b5c3e !important;}',
+      'body.light-mode #nav-footer .footer-links a:hover{color:#1a1208 !important;}',
+      'body.light-mode #nav-footer .footer-copy{color:#9a8a70 !important;}'
     ].join('');
     document.head.appendChild(lmStyle);
   }
@@ -310,7 +313,7 @@
       '  <a href="/archive">Archive</a>',
       '  <a href="/forum">Forum</a>',
       '  <a href="/about">About</a>',
-      '  <a href="/privacy">Privacy</a>',
+
       '</nav>',
       '<p class="footer-copy">&copy; 2025 77 Scenarios</p>'
     ].join('');
