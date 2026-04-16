@@ -324,8 +324,28 @@
     var drawerNav = document.querySelector('.nav-drawer-links');
     if (!desktopNav || desktopNav.dataset.navReady) return;
     desktopNav.dataset.navReady = '1';
-    injectDesktopNav(desktopNav);
-    if (drawerNav) injectDrawerNav(drawerNav);
+    // Only re-inject links for ES/PT — EN pages already have correct links in static HTML
+    if (prefix !== "") {
+      injectDesktopNav(desktopNav);
+      if (drawerNav) injectDrawerNav(drawerNav);
+    } else if (drawerNav && !drawerNav.dataset.navReady) {
+      // EN drawer: still need to add the theme toggle button at the bottom
+      drawerNav.dataset.navReady = "1";
+      var divider = document.createElement("div");
+      divider.style.cssText = "height:1px;background:var(--border,#252a30);margin:8px 0;";
+      drawerNav.appendChild(divider);
+      var themeBtn = document.createElement("button");
+      themeBtn.id = "drawer-theme-toggle";
+      themeBtn.style.cssText = "display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;padding:18px 24px;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:#b5ada6;font-family:'DM Sans',sans-serif;width:100%;";
+      themeBtn.onclick = function() {
+        var isLight = !document.body.classList.contains("light-mode");
+        localStorage.setItem("77s-theme", isLight ? "light" : "dark");
+        applyTheme(isLight);
+      };
+      var isLt = localStorage.getItem("77s-theme") === "light";
+      themeBtn.innerHTML = isLt ? MOON_SVG + " Dark mode" : SUN_SVG + " Light mode";
+      drawerNav.appendChild(themeBtn);
+    }
     injectThemeToggle();
     var sb = window._navSb;
     if (!sb && window.supabase && window.supabase.createClient) {
