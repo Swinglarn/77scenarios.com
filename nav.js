@@ -59,10 +59,19 @@
       'body.light-mode .group-name{color:#0f0d0a!important;}',
       'body.light-mode .group-desc{color:#4a4035!important;}',
       'body.light-mode body::before{opacity:0!important;}',
-      '#theme-toggle-wrap{padding:4px 0 0 0;}@media(max-width:480px){#theme-toggle-wrap{display:none;}}#theme-toggle-mobile{display:none;}@media(max-width:480px){#theme-toggle-mobile{display:inline-flex;align-items:center;}}body.light-mode #theme-toggle-mobile{color:#3a3228;}',
-      '#theme-toggle{display:flex;align-items:center;gap:6px;background:none;border:none;cursor:pointer;padding:5px 0 5px 2rem;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#b5ada6;font-family:"DM Sans",sans-serif;opacity:0.7;transition:opacity 0.2s;}',
-      '#theme-toggle:hover{opacity:1;}',
-      'body.light-mode #theme-toggle{color:#4a4035;}'
+      
+      
+      
+      
+      ,
+      '#theme-toggle-wrap{display:none;}',
+      '#theme-toggle-desktop{display:inline-flex;align-items:center;gap:6px;background:none;border:none;cursor:pointer;padding:5px 8px;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#b5ada6;font-family:"DM Sans",sans-serif;opacity:0.7;transition:opacity 0.2s;}',
+      '#theme-toggle-desktop:hover{opacity:1;}',
+      '@media(max-width:480px){#theme-toggle-desktop{display:none !important;}}',
+      '#theme-toggle-mobile{display:none !important;background:none;border:none;cursor:pointer;padding:6px;color:#b5ada6;line-height:1;}',
+      '@media(max-width:480px){#theme-toggle-mobile{display:inline-flex !important;align-items:center;justify-content:center;width:36px;height:36px;}}',
+      'body.light-mode #theme-toggle-desktop{color:#4a4035;}',
+      'body.light-mode #theme-toggle-mobile{color:#3a3228 !important;}'
     ].join('');
     document.head.appendChild(lmStyle);
   }
@@ -72,61 +81,73 @@
 
   function applyTheme(isLight) {
     document.body.classList.toggle('light-mode', isLight);
-    var btn = document.getElementById('theme-toggle');
-    if (btn) btn.innerHTML = isLight ? MOON_SVG + ' Dark' : SUN_SVG + ' Light';
+    var desktopBtn = document.getElementById('theme-toggle-desktop');
+    if (desktopBtn) desktopBtn.innerHTML = isLight ? MOON_SVG + ' Dark' : SUN_SVG + ' Light';
     var drawerBtn = document.getElementById('drawer-theme-toggle');
     if (drawerBtn) drawerBtn.innerHTML = isLight ? MOON_SVG + ' Dark mode' : SUN_SVG + ' Light mode';
     var mobileBtn = document.getElementById('theme-toggle-mobile');
     if (mobileBtn) mobileBtn.innerHTML = isLight ? MOON_SVG : SUN_SVG;
+    // Legacy button ID fallback
+    var oldBtn = document.getElementById('theme-toggle');
+    if (oldBtn) oldBtn.innerHTML = isLight ? MOON_SVG + ' Dark' : SUN_SVG + ' Light';
   }
 
   function injectThemeToggle() {
-    if (document.getElementById('theme-toggle-wrap')) return;
-    var header = document.querySelector('.site-nav') || document.querySelector('header');
-    if (!header) return;
+    if (document.getElementById('theme-toggle-desktop')) return;
+    var nav = document.querySelector('.site-nav') || document.querySelector('header');
+    if (!nav) return;
 
-    // Desktop: below-nav button
-    var wrap = document.createElement('div');
-    wrap.id = 'theme-toggle-wrap';
-    var btn = document.createElement('button');
-    btn.id = 'theme-toggle';
-    btn.setAttribute('aria-label', 'Toggle light/dark mode');
-    btn.onclick = function() {
+    // Desktop: text button inside nav, after nav-links div
+    var desktopBtn = document.createElement('button');
+    desktopBtn.id = 'theme-toggle-desktop';
+    desktopBtn.setAttribute('aria-label', 'Toggle light/dark mode');
+    desktopBtn.onclick = function() {
       var isLight = !document.body.classList.contains('light-mode');
       localStorage.setItem('77s-theme', isLight ? 'light' : 'dark');
       applyTheme(isLight);
     };
-    wrap.appendChild(btn);
-    header.insertAdjacentElement('afterend', wrap);
+    // Insert before auth area (before burger on desktop)
+    var burger = nav.querySelector('.nav-burger');
+    if (burger) {
+      nav.insertBefore(desktopBtn, burger);
+    } else {
+      nav.appendChild(desktopBtn);
+    }
 
-    // Mobile: icon button inside the nav bar itself, before the burger
+    // Mobile: icon-only button inside nav, before burger
     var mobileBtn = document.createElement('button');
     mobileBtn.id = 'theme-toggle-mobile';
     mobileBtn.setAttribute('aria-label', 'Toggle light/dark mode');
-    mobileBtn.style.cssText = 'display:none;background:none;border:none;cursor:pointer;padding:6px;color:#b5ada6;margin-right:4px;vertical-align:middle;';
+    mobileBtn.style.cssText = 'display:none !important;background:none;border:none;cursor:pointer;padding:6px;color:#b5ada6;line-height:1;';
     mobileBtn.onclick = function() {
       var isLight = !document.body.classList.contains('light-mode');
       localStorage.setItem('77s-theme', isLight ? 'light' : 'dark');
       applyTheme(isLight);
     };
-    var burger = header.querySelector('.nav-burger');
     if (burger) {
-      header.insertBefore(mobileBtn, burger);
+      nav.insertBefore(mobileBtn, burger);
     } else {
-      header.appendChild(mobileBtn);
+      nav.appendChild(mobileBtn);
     }
 
     applyTheme(localStorage.getItem('77s-theme') === 'light');
   }
 
   // Apply saved theme immediately to avoid flash
-  if (typeof localStorage !== 'undefined' && localStorage.getItem('77s-theme') === 'light') {
-    document.documentElement.classList.add('light-mode-pending');
-    document.addEventListener('DOMContentLoaded', function() {
-      document.body.classList.add('light-mode');
-      document.documentElement.classList.remove('light-mode-pending');
-    });
-  }
+  // Default is dark (site CSS). Only apply light if explicitly saved.
+  (function() {
+    var saved = typeof localStorage !== 'undefined' ? localStorage.getItem('77s-theme') : null;
+    if (saved === 'light') {
+      if (document.body) {
+        document.body.classList.add('light-mode');
+      } else {
+        document.addEventListener('DOMContentLoaded', function() {
+          document.body.classList.add('light-mode');
+        });
+      }
+    }
+    // Never apply light mode unless user explicitly chose it
+  })();
 
   // NAV
   var path = window.location.pathname;
