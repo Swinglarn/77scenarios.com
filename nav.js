@@ -1,5 +1,6 @@
 (function() {
-  // Google Analytics
+
+  // ── GOOGLE ANALYTICS ───────────────────────────────────────────────────────
   var _gas = document.createElement('script');
   _gas.async = true;
   _gas.src = 'https://www.googletagmanager.com/gtag/js?id=G-C0D86PRJJN';
@@ -9,132 +10,107 @@
   gtag('js', new Date());
   gtag('config', 'G-C0D86PRJJN');
 
+  // ── CONSTANTS ───────────────────────────────────────────────────────────────
   var SUPA_URL = 'https://rttomfnfyjjssdqfzkaj.supabase.co';
   var SUPA_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw';
   var FALLBACK = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Ccircle cx='40' cy='40' r='40' fill='%23252a30'/%3E%3Ccircle cx='40' cy='32' r='14' fill='%238a6d2e'/%3E%3Cellipse cx='40' cy='72' rx='24' ry='16' fill='%238a6d2e'/%3E%3C/svg%3E";
+  var MOON_SVG = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  var SUN_SVG  = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
 
-  // LIGHT MODE
+  // ── NAV DESIGN CSS ──────────────────────────────────────────────────────────
+  if (!document.getElementById('nav-design-css')) {
+    var ds = document.createElement('style');
+    ds.id = 'nav-design-css';
+    ds.textContent = [
+      // Nav links — Cormorant Garamond, mixed case, elegant
+      '.nav-links a{font-family:"Cormorant Garamond",serif !important;font-size:17px !important;font-weight:400 !important;letter-spacing:0.04em !important;text-transform:none !important;color:#b5ada6 !important;transition:color 0.2s !important;}',
+      '.nav-links a:hover,.nav-links a.active{color:#ede8df !important;}',
+      // CTA pill — "Take the Test"
+      '.nav-cta{font-family:"DM Sans",sans-serif !important;font-size:12px !important;font-weight:500 !important;letter-spacing:0.1em !important;text-transform:uppercase !important;color:#c9a84c !important;border:1px solid #8a6d2e !important;padding:7px 18px !important;border-radius:60px !important;transition:background 0.2s,color 0.2s,border-color 0.2s !important;}',
+      '.nav-cta:hover{background:#c9a84c !important;color:#0c0e10 !important;border-color:#c9a84c !important;}',
+      // Dropdown CSS
+      '.nav-user-wrap{position:relative;display:inline-block;}',
+      '.nav-user-btn{display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;padding:0;}',
+      '#nav-user-dropdown{display:none;position:absolute;right:0;top:calc(100% + 8px);background:#13161a;border:1px solid #252a30;border-radius:10px;min-width:160px;z-index:9999;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.5);}',
+      '#nav-user-dropdown a{display:block;padding:12px 18px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#b5ada6;text-decoration:none;border-bottom:1px solid #252a30;font-family:"DM Sans",sans-serif !important;}',
+      '#nav-user-dropdown a:hover{color:#ede8df;background:rgba(255,255,255,0.04);}',
+      '#nav-user-dropdown button{display:block;width:100%;text-align:left;padding:12px 18px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#e07070;background:none;border:none;cursor:pointer;font-family:inherit;}',
+      '#nav-user-dropdown button:hover{background:rgba(224,112,112,0.08);}',
+      // Theme toggles
+      '#theme-toggle-desktop{display:inline-flex;align-items:center;gap:5px;background:none;border:none;cursor:pointer;padding:5px 6px;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#b5ada6;font-family:"DM Sans",sans-serif;opacity:0.6;transition:opacity 0.2s;}',
+      '#theme-toggle-desktop:hover{opacity:1;}',
+      '@media(max-width:480px){#theme-toggle-desktop{display:none !important;}}',
+      '#theme-toggle-mobile{display:none !important;background:none;border:none;cursor:pointer;padding:6px;color:#b5ada6;line-height:1;}',
+      '@media(max-width:480px){#theme-toggle-mobile{display:inline-flex !important;align-items:center;justify-content:center;width:36px;height:36px;}}'
+    ].join('');
+    document.head.appendChild(ds);
+  }
+
+  // ── LIGHT MODE CSS ──────────────────────────────────────────────────────────
   if (!document.getElementById('light-mode-css')) {
     var lmStyle = document.createElement('style');
     lmStyle.id = 'light-mode-css';
     lmStyle.textContent = [
-      'body.light-mode{--bg:#f5f5f2;--surface:#ffffff;--surface2:#ebebeb;--gold:#c9a84c;--gold-dim:#a8893a;--cream:#0f0d0a;--muted:#4a4035;--border:#c8c0b4;background:#f5f5f2!important;color:#0f0d0a!important;}',
-      'body.light-mode nav,body.light-mode .site-nav{background:#ffffff!important;border-bottom:1px solid #d4ccc0!important;box-shadow:0 2px 8px rgba(0,0,0,0.08)!important;}',
-      'body.light-mode header{background:#ffffff!important;border-bottom:1px solid #d4ccc0!important;box-shadow:0 2px 8px rgba(0,0,0,0.08)!important;}',
-      'body.light-mode .nav-logo,body.light-mode .logo{color:#0f0d0a!important;font-weight:500!important;}',
-      'body.light-mode .nav-links a{color:#3a3228!important;}',
-      'body.light-mode .nav-links a:hover,body.light-mode .nav-links a.active{color:#c9a84c!important;}',
-      'body.light-mode .nav-burger span{background:#0f0d0a!important;}',
-      'body.light-mode .nav-drawer{background:#f0ede6!important;border-left:1px solid #c8c0b4!important;}',
-      'body.light-mode .nav-drawer-links a{color:#3a3228!important;border-bottom-color:#d4cdc6!important;}',
-      'body.light-mode .nav-drawer-links a:hover{color:#c9a84c!important;}',
-      'body.light-mode .nav-close{color:#3a3228!important;}',
-      'body.light-mode .nav-drawer-header{border-bottom:1px solid #c8c0b4!important;background:#f0ede6!important;}',
-      'body.light-mode footer{background:#f5f5f2!important;border-top:1px solid #c8c0b4!important;color:#4a4035!important;}',
-      'body.light-mode footer a{color:#c9a84c!important;}',
-      'body.light-mode #t-overlay{background:#f5f5f2!important;}',
-      'body.light-mode #nav-user-dropdown{background:#ffffff!important;border:1px solid #c8c0b4!important;box-shadow:0 8px 32px rgba(0,0,0,0.1)!important;}',
-      'body.light-mode #nav-user-dropdown a{color:#3a3228!important;border-bottom-color:#e0d8d0!important;}',
-      'body.light-mode #nav-user-dropdown a:hover{color:#0f0d0a!important;background:#f0ede6!important;}',
-      'body.light-mode a{color:inherit!important;text-decoration:none!important;}',
-      'body.light-mode a:visited{color:inherit!important;}',
-      'body.light-mode .type-card{background:#ffffff!important;border-color:#c8c0b4!important;}',
-      'body.light-mode .type-card *{color:#0f0d0a!important;}',
-      'body.light-mode .type-card:hover{border-color:#c9a84c!important;box-shadow:0 12px 40px rgba(0,0,0,0.07)!important;}',
-      'body.light-mode .card-name{color:#0f0d0a!important;font-weight:500!important;}',
-      'body.light-mode .card-tagline{color:#4a4035!important;}',
-      'body.light-mode .card-arrow{color:#c9a84c!important;}',
-      'body.light-mode .hi{color:#c9a84c!important;}',
-      'body.light-mode .mini-type{background:#ebebeb!important;border:1px solid #c8c0b4!important;color:#3a3228!important;}',
-      'body.light-mode .lcard{background:#ffffff!important;border:1px solid #c8c0b4!important;}',
-      'body.light-mode .lcard:hover{border-color:#c9a84c!important;box-shadow:0 12px 40px rgba(0,0,0,0.07)!important;}',
-      'body.light-mode .lcard-letter{color:#0f0d0a!important;}',
-      'body.light-mode .lcard-name{color:#0f0d0a!important;}',
-      'body.light-mode .lcard-desc{color:#4a4035!important;}',
-      'body.light-mode .dim-desc{color:#4a4035!important;}',
-      'body.light-mode .page-sub{color:#4a4035!important;}',
-      'body.light-mode .page-eyebrow{color:#c9a84c!important;}',
-      'body.light-mode .dim-num{color:#c9a84c!important;}',
-      'body.light-mode .group-label{color:#0f0d0a!important;}',
-      'body.light-mode .group-name{color:#0f0d0a!important;}',
-      'body.light-mode .group-desc{color:#4a4035!important;}',
-      'body.light-mode body::before{opacity:0!important;}',
-      
-      
-      
-      
-      ,
-      '#theme-toggle-wrap{display:none;}',
-      '#theme-toggle-desktop{display:inline-flex;align-items:center;gap:6px;background:none;border:none;cursor:pointer;padding:5px 8px;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#b5ada6;font-family:"DM Sans",sans-serif;opacity:0.7;transition:opacity 0.2s;}',
-      '#theme-toggle-desktop:hover{opacity:1;}',
-      '@media(max-width:480px){#theme-toggle-desktop{display:none !important;}}',
-      '#theme-toggle-mobile{display:none !important;background:none;border:none;cursor:pointer;padding:6px;color:#b5ada6;line-height:1;}',
-      '@media(max-width:480px){#theme-toggle-mobile{display:inline-flex !important;align-items:center;justify-content:center;width:36px;height:36px;}}',
+      'body.light-mode{--bg:#f5f5f2;--surface:#ffffff;--surface2:#ebebeb;--gold:#c9a84c;--gold-dim:#a8893a;--cream:#0f0d0a;--muted:#4a4035;--border:#c8c0b4;background:#f5f5f2 !important;color:#0f0d0a !important;}',
+      'body.light-mode nav,body.light-mode .site-nav{background:#ffffff !important;border-bottom:1px solid #d4ccc0 !important;box-shadow:0 2px 8px rgba(0,0,0,0.08) !important;}',
+      'body.light-mode .nav-logo,body.light-mode .logo{color:#0f0d0a !important;font-weight:500 !important;}',
+      'body.light-mode .nav-links a{color:#3a3228 !important;}',
+      'body.light-mode .nav-links a:hover,body.light-mode .nav-links a.active{color:#0f0d0a !important;}',
+      'body.light-mode .nav-cta{color:#8a6d2e !important;border-color:#8a6d2e !important;}',
+      'body.light-mode .nav-cta:hover{background:#8a6d2e !important;color:#ffffff !important;border-color:#8a6d2e !important;}',
+      'body.light-mode .nav-burger span{background:#0f0d0a !important;}',
+      'body.light-mode .nav-drawer{background:#f0ede6 !important;border-left:1px solid #c8c0b4 !important;}',
+      'body.light-mode .nav-drawer-links a{color:#3a3228 !important;border-bottom-color:#d4cdc6 !important;font-family:"Cormorant Garamond",serif !important;font-size:17px !important;text-transform:none !important;letter-spacing:0.04em !important;}',
+      'body.light-mode .nav-drawer-links a:hover{color:#0f0d0a !important;}',
+      'body.light-mode .nav-close{color:#3a3228 !important;}',
+      'body.light-mode .nav-drawer-header{border-bottom:1px solid #c8c0b4 !important;background:#f0ede6 !important;}',
+      'body.light-mode footer{background:#f5f5f2 !important;border-top:1px solid #c8c0b4 !important;color:#4a4035 !important;}',
+      'body.light-mode footer a{color:#c9a84c !important;}',
+      'body.light-mode #t-overlay{background:#f5f5f2 !important;}',
+      'body.light-mode #nav-user-dropdown{background:#ffffff !important;border:1px solid #c8c0b4 !important;box-shadow:0 8px 32px rgba(0,0,0,0.1) !important;}',
+      'body.light-mode #nav-user-dropdown a{color:#3a3228 !important;border-bottom-color:#e0d8d0 !important;}',
+      'body.light-mode #nav-user-dropdown a:hover{color:#0f0d0a !important;background:#f0ede6 !important;}',
+      'body.light-mode a{color:inherit !important;text-decoration:none !important;}',
+      'body.light-mode a:visited{color:inherit !important;}',
+      'body.light-mode .type-card{background:#ffffff !important;border-color:#c8c0b4 !important;}',
+      'body.light-mode .type-card *{color:#0f0d0a !important;}',
+      'body.light-mode .type-card:hover{border-color:#c9a84c !important;box-shadow:0 12px 40px rgba(0,0,0,0.07) !important;}',
+      'body.light-mode .card-name{color:#0f0d0a !important;font-weight:500 !important;}',
+      'body.light-mode .card-tagline{color:#4a4035 !important;}',
+      'body.light-mode .card-arrow{color:#c9a84c !important;}',
+      'body.light-mode .hi{color:#c9a84c !important;}',
+      'body.light-mode .mini-type{background:#ebebeb !important;border:1px solid #c8c0b4 !important;color:#3a3228 !important;}',
+      'body.light-mode .lcard{background:#ffffff !important;border:1px solid #c8c0b4 !important;}',
+      'body.light-mode .lcard:hover{border-color:#c9a84c !important;box-shadow:0 12px 40px rgba(0,0,0,0.07) !important;}',
+      'body.light-mode .lcard-letter{color:#0f0d0a !important;}',
+      'body.light-mode .lcard-name{color:#0f0d0a !important;}',
+      'body.light-mode .lcard-desc{color:#4a4035 !important;}',
+      'body.light-mode .dim-desc{color:#4a4035 !important;}',
+      'body.light-mode .page-sub{color:#4a4035 !important;}',
+      'body.light-mode .page-eyebrow{color:#c9a84c !important;}',
+      'body.light-mode .dim-num{color:#c9a84c !important;}',
+      'body.light-mode .group-label{color:#0f0d0a !important;}',
+      'body.light-mode .group-name{color:#0f0d0a !important;}',
+      'body.light-mode .group-desc{color:#4a4035 !important;}',
+      'body.light-mode body::before{opacity:0 !important;}',
       'body.light-mode #theme-toggle-desktop{color:#4a4035;}',
       'body.light-mode #theme-toggle-mobile{color:#3a3228 !important;}'
     ].join('');
     document.head.appendChild(lmStyle);
   }
 
-  var MOON_SVG = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
-  var SUN_SVG = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
-
+  // ── THEME ───────────────────────────────────────────────────────────────────
   function applyTheme(isLight) {
     document.body.classList.toggle('light-mode', isLight);
-    var desktopBtn = document.getElementById('theme-toggle-desktop');
-    if (desktopBtn) desktopBtn.innerHTML = isLight ? MOON_SVG + ' Dark' : SUN_SVG + ' Light';
-    var drawerBtn = document.getElementById('drawer-theme-toggle');
-    if (drawerBtn) drawerBtn.innerHTML = isLight ? MOON_SVG + ' Dark mode' : SUN_SVG + ' Light mode';
-    var mobileBtn = document.getElementById('theme-toggle-mobile');
-    if (mobileBtn) mobileBtn.innerHTML = isLight ? MOON_SVG : SUN_SVG;
-    // Legacy button ID fallback
-    var oldBtn = document.getElementById('theme-toggle');
-    if (oldBtn) oldBtn.innerHTML = isLight ? MOON_SVG + ' Dark' : SUN_SVG + ' Light';
+    var d = document.getElementById('theme-toggle-desktop');
+    if (d) d.innerHTML = isLight ? MOON_SVG + ' Dark' : SUN_SVG + ' Light';
+    var m = document.getElementById('theme-toggle-mobile');
+    if (m) m.innerHTML = isLight ? MOON_SVG : SUN_SVG;
+    var dr = document.getElementById('drawer-theme-toggle');
+    if (dr) dr.innerHTML = isLight ? MOON_SVG + ' Dark mode' : SUN_SVG + ' Light mode';
   }
 
-  function injectThemeToggle() {
-    if (document.getElementById('theme-toggle-desktop')) return;
-    var nav = document.querySelector('.site-nav') || document.querySelector('header');
-    if (!nav) return;
-
-    // Desktop: text button inside nav, after nav-links div
-    var desktopBtn = document.createElement('button');
-    desktopBtn.id = 'theme-toggle-desktop';
-    desktopBtn.setAttribute('aria-label', 'Toggle light/dark mode');
-    desktopBtn.onclick = function() {
-      var isLight = !document.body.classList.contains('light-mode');
-      localStorage.setItem('77s-theme', isLight ? 'light' : 'dark');
-      applyTheme(isLight);
-    };
-    // Insert before auth area (before burger on desktop)
-    var burger = nav.querySelector('.nav-burger');
-    if (burger) {
-      nav.insertBefore(desktopBtn, burger);
-    } else {
-      nav.appendChild(desktopBtn);
-    }
-
-    // Mobile: icon-only button inside nav, before burger
-    var mobileBtn = document.createElement('button');
-    mobileBtn.id = 'theme-toggle-mobile';
-    mobileBtn.setAttribute('aria-label', 'Toggle light/dark mode');
-    mobileBtn.style.cssText = 'display:none !important;background:none;border:none;cursor:pointer;padding:6px;color:#b5ada6;line-height:1;';
-    mobileBtn.onclick = function() {
-      var isLight = !document.body.classList.contains('light-mode');
-      localStorage.setItem('77s-theme', isLight ? 'light' : 'dark');
-      applyTheme(isLight);
-    };
-    if (burger) {
-      nav.insertBefore(mobileBtn, burger);
-    } else {
-      nav.appendChild(mobileBtn);
-    }
-
-    applyTheme(localStorage.getItem('77s-theme') === 'light');
-  }
-
-  // Apply saved theme immediately to avoid flash
-  // Default is dark (site CSS). Only apply light if explicitly saved.
+  // Apply saved theme immediately (before any paint)
   (function() {
     var saved = typeof localStorage !== 'undefined' ? localStorage.getItem('77s-theme') : null;
     if (saved === 'light') {
@@ -146,39 +122,39 @@
         });
       }
     }
-    // Never apply light mode unless user explicitly chose it
   })();
 
-  // NAV
+  // ── LANGUAGE PREFIX ──────────────────────────────────────────────────────────
   var path = window.location.pathname;
   var prefix = '';
   if (path.startsWith('/es')) prefix = '/es';
   else if (path.startsWith('/pt')) prefix = '/pt';
 
+  // ── NAV LINKS ────────────────────────────────────────────────────────────────
+  // EN: 4 clean links + CTA. Store removed from nav (no more rebuild flash).
   var NAV_LINKS = {
     '': [
-      { href: '/',                    label: 'Take the Test' },
-      { href: '/types',               label: '16 Types'      },
-      { href: '/letters',             label: '8 Letters'     },
-      { href: '/cognitive-functions', label: 'Functions'     },
-      { href: '/compatibility',       label: 'Compatibility' },
-      { href: '/archive',             label: 'Archive'       },
-      { href: '/store',               label: 'Store'         },
-      { href: '/forum',               label: 'Forum'         },
-      { href: '/about',               label: 'About'         }
+      { href: '/',                    label: 'Take the Test',  cta: true },
+      { href: '/types',               label: '16 Types'        },
+      { href: '/letters',             label: '8 Letters'       },
+      { href: '/cognitive-functions', label: 'Functions'       },
+      { href: '/compatibility',       label: 'Compatibility'   },
+      { href: '/archive',             label: 'Archive'         },
+      { href: '/forum',               label: 'Forum'           },
+      { href: '/about',               label: 'About'           }
     ],
     '/es': [
-      { href: '/es/',                    label: 'Hacer el Test'  },
-      { href: '/es/types',               label: '16 Tipos'       },
-      { href: '/es/letters',             label: '8 Letras'       },
-      { href: '/es/cognitive-functions', label: 'Funciones'      },
-      { href: '/es/compatibility',       label: 'Compatibilidad' },
-      { href: '/es/archive',             label: 'Archivo'        },
-      { href: '/es/forum',               label: 'Foro'           },
-      { href: '/es/about',               label: 'Acerca de'      }
+      { href: '/es/',                    label: 'Hacer el Test',  cta: true },
+      { href: '/es/types',               label: '16 Tipos'        },
+      { href: '/es/letters',             label: '8 Letras'        },
+      { href: '/es/cognitive-functions', label: 'Funciones'       },
+      { href: '/es/compatibility',       label: 'Compatibilidad'  },
+      { href: '/es/archive',             label: 'Archivo'         },
+      { href: '/es/forum',               label: 'Foro'            },
+      { href: '/es/about',               label: 'Acerca de'       }
     ],
     '/pt': [
-      { href: '/pt/',                    label: 'Fazer o Teste'   },
+      { href: '/pt/',                    label: 'Fazer o Teste',  cta: true },
       { href: '/pt/types',               label: '16 Tipos'        },
       { href: '/pt/letters',             label: '8 Letras'        },
       { href: '/pt/cognitive-functions', label: 'Funciones'       },
@@ -197,13 +173,16 @@
     return p === h;
   }
 
+  // ── NAV INJECTION ────────────────────────────────────────────────────────────
   function injectDesktopNav(nav) {
-    Array.from(nav.querySelectorAll('a')).forEach(function(a) { a.remove(); });
-    var ref = nav.firstChild;
+    // Remove existing links
+    Array.from(nav.querySelectorAll('a:not(.nav-logo)')).forEach(function(a) { a.remove(); });
+    var ref = nav.querySelector('.nav-burger') || null;
     links.forEach(function(item) {
       var a = document.createElement('a');
       a.href = item.href;
       a.textContent = item.label;
+      if (item.cta) a.className = 'nav-cta';
       if (isActive(item.href)) a.classList.add('active');
       nav.insertBefore(a, ref);
     });
@@ -218,7 +197,7 @@
       if (isActive(item.href)) a.classList.add('active');
       drawer.appendChild(a);
     });
-    // Add theme toggle to drawer
+    // Theme toggle at bottom of drawer
     var divider = document.createElement('div');
     divider.style.cssText = 'height:1px;background:var(--border,#252a30);margin:8px 0;';
     drawer.appendChild(divider);
@@ -230,28 +209,45 @@
       localStorage.setItem('77s-theme', isLight ? 'light' : 'dark');
       applyTheme(isLight);
     };
-    var isLight = localStorage.getItem('77s-theme') === 'light';
-    themeBtn.innerHTML = isLight
-      ? '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg> Dark mode'
-      : '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg> Light mode';
+    var isLt = localStorage.getItem('77s-theme') === 'light';
+    themeBtn.innerHTML = isLt ? MOON_SVG + ' Dark mode' : SUN_SVG + ' Light mode';
     drawer.appendChild(themeBtn);
   }
 
-  if (!document.getElementById('nav-dropdown-css')) {
-    var style = document.createElement('style');
-    style.id = 'nav-dropdown-css';
-    style.textContent = [
-      '.nav-user-wrap{position:relative;display:inline-block;}',
-      '.nav-user-btn{display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;padding:0;}',
-      '#nav-user-dropdown{display:none;position:absolute;right:0;top:calc(100% + 8px);background:#13161a;border:1px solid #252a30;border-radius:10px;min-width:160px;z-index:9999;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.5);}',
-      '#nav-user-dropdown a{display:block;padding:12px 18px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#b5ada6;text-decoration:none;border-bottom:1px solid #252a30;}',
-      '#nav-user-dropdown a:hover{color:#ede8df;background:rgba(255,255,255,0.04);}',
-      '#nav-user-dropdown button{display:block;width:100%;text-align:left;padding:12px 18px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#e07070;background:none;border:none;cursor:pointer;font-family:inherit;}',
-      '#nav-user-dropdown button:hover{background:rgba(224,112,112,0.08);}'
-    ].join('');
-    document.head.appendChild(style);
+  function injectThemeToggle(nav) {
+    if (document.getElementById('theme-toggle-desktop')) return;
+    var burger = nav.querySelector('.nav-burger');
+
+    var desktopBtn = document.createElement('button');
+    desktopBtn.id = 'theme-toggle-desktop';
+    desktopBtn.setAttribute('aria-label', 'Toggle light/dark mode');
+    desktopBtn.onclick = function() {
+      var isLight = !document.body.classList.contains('light-mode');
+      localStorage.setItem('77s-theme', isLight ? 'light' : 'dark');
+      applyTheme(isLight);
+    };
+
+    var mobileBtn = document.createElement('button');
+    mobileBtn.id = 'theme-toggle-mobile';
+    mobileBtn.setAttribute('aria-label', 'Toggle light/dark mode');
+    mobileBtn.onclick = function() {
+      var isLight = !document.body.classList.contains('light-mode');
+      localStorage.setItem('77s-theme', isLight ? 'light' : 'dark');
+      applyTheme(isLight);
+    };
+
+    if (burger) {
+      nav.insertBefore(desktopBtn, burger);
+      nav.insertBefore(mobileBtn, burger);
+    } else {
+      nav.appendChild(desktopBtn);
+      nav.appendChild(mobileBtn);
+    }
+
+    applyTheme(localStorage.getItem('77s-theme') === 'light');
   }
 
+  // ── AUTH ─────────────────────────────────────────────────────────────────────
   document.addEventListener('click', function(e) {
     if (!e.target.closest || !e.target.closest('.nav-user-wrap')) {
       var d = document.getElementById('nav-user-dropdown');
@@ -262,6 +258,9 @@
   function buildPill(username, avatarSrc) {
     var wrap = document.createElement('div');
     wrap.className = 'nav-user-wrap';
+    wrap.style.cssText = 'opacity:0;transition:opacity 0.25s;';
+    setTimeout(function() { wrap.style.opacity = '1'; }, 50);
+
     var btn = document.createElement('button');
     btn.className = 'nav-user-btn';
     btn.setAttribute('aria-label', 'Account menu');
@@ -270,40 +269,43 @@
       var d = document.getElementById('nav-user-dropdown');
       if (d) d.style.display = d.style.display === 'block' ? 'none' : 'block';
     };
+
     var img = document.createElement('img');
     img.src = avatarSrc || FALLBACK;
     img.alt = 'User avatar';
     img.style.cssText = 'width:30px;height:30px;border-radius:50%;object-fit:cover;border:1.5px solid #8a6d2e;flex-shrink:0;';
     img.onerror = function() { this.src = FALLBACK; };
+
     var pill = document.createElement('span');
     pill.textContent = username || 'Profile';
-    pill.style.cssText = 'background:#c9a84c;color:#0c0e10;padding:7px 16px;border-radius:60px;font-weight:500;font-size:0.82rem;letter-spacing:0.04em;white-space:nowrap;font-family:DM Sans,sans-serif;';
+    pill.style.cssText = 'background:#c9a84c;color:#0c0e10;padding:7px 16px;border-radius:60px;font-weight:500;font-size:0.82rem;letter-spacing:0.04em;white-space:nowrap;font-family:"DM Sans",sans-serif;';
+
     btn.appendChild(img);
     btn.appendChild(pill);
     wrap.appendChild(btn);
+
     var dd = document.createElement('div');
     dd.id = 'nav-user-dropdown';
+
     var profileLink = document.createElement('a');
     profileLink.href = prefix + '/profile';
     profileLink.textContent = 'Profile';
+
     var settingsLink = document.createElement('a');
     settingsLink.href = prefix + '/settings';
     settingsLink.textContent = 'Settings';
+
     var signOutBtn = document.createElement('button');
     signOutBtn.textContent = 'Sign out';
     signOutBtn.onclick = function() {
-      var client = window._navSb || (function() {
-        if (window.supabase && window.supabase.createClient) {
-          return window.supabase.createClient(SUPA_URL, SUPA_KEY);
-        }
-        return null;
-      })();
+      var client = window._navSb || (window.supabase && window.supabase.createClient ? window.supabase.createClient(SUPA_URL, SUPA_KEY) : null);
       if (client) {
         client.auth.signOut().then(function() { window.location.href = prefix + '/'; });
       } else {
         window.location.href = prefix + '/';
       }
     };
+
     dd.appendChild(profileLink);
     dd.appendChild(settingsLink);
     dd.appendChild(signOutBtn);
@@ -315,38 +317,34 @@
     var a = document.createElement('a');
     a.href = prefix + '/login';
     a.textContent = 'Sign in';
-    a.style.cssText = 'border:1px solid #252a30;padding:7px 16px;border-radius:60px;font-size:0.82rem;color:#ede8df;text-decoration:none;font-family:DM Sans,sans-serif;white-space:nowrap;';
+    a.style.cssText = 'border:1px solid #252a30;padding:7px 16px;border-radius:60px;font-size:0.82rem;color:#ede8df;text-decoration:none;font-family:"DM Sans",sans-serif;white-space:nowrap;opacity:0;transition:opacity 0.25s;';
+    setTimeout(function() { a.style.opacity = '1'; }, 50);
     return a;
   }
 
+  // ── INIT ─────────────────────────────────────────────────────────────────────
   function initNav() {
-    var desktopNav = document.querySelector('.nav-links');
+    var nav = document.querySelector('.site-nav, nav');
+    var desktopNav = nav ? nav.querySelector('.nav-links') : null;
     var drawerNav = document.querySelector('.nav-drawer-links');
+
     if (!desktopNav || desktopNav.dataset.navReady) return;
     desktopNav.dataset.navReady = '1';
-    // Only re-inject links for ES/PT — EN pages already have correct links in static HTML
-    if (prefix !== "") {
-      injectDesktopNav(desktopNav);
-      if (drawerNav) injectDrawerNav(drawerNav);
-    } else if (drawerNav && !drawerNav.dataset.navReady) {
-      // EN drawer: still need to add the theme toggle button at the bottom
-      drawerNav.dataset.navReady = "1";
-      var divider = document.createElement("div");
-      divider.style.cssText = "height:1px;background:var(--border,#252a30);margin:8px 0;";
-      drawerNav.appendChild(divider);
-      var themeBtn = document.createElement("button");
-      themeBtn.id = "drawer-theme-toggle";
-      themeBtn.style.cssText = "display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;padding:18px 24px;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:#b5ada6;font-family:'DM Sans',sans-serif;width:100%;";
-      themeBtn.onclick = function() {
-        var isLight = !document.body.classList.contains("light-mode");
-        localStorage.setItem("77s-theme", isLight ? "light" : "dark");
-        applyTheme(isLight);
-      };
-      var isLt = localStorage.getItem("77s-theme") === "light";
-      themeBtn.innerHTML = isLt ? MOON_SVG + " Dark mode" : SUN_SVG + " Light mode";
-      drawerNav.appendChild(themeBtn);
-    }
-    injectThemeToggle();
+
+    // Hide nav-links during rebuild to prevent any flash
+    desktopNav.style.opacity = '0';
+
+    injectDesktopNav(desktopNav);
+    if (drawerNav) injectDrawerNav(drawerNav);
+    injectThemeToggle(nav);
+
+    // Fade nav-links back in after rebuild
+    requestAnimationFrame(function() {
+      desktopNav.style.transition = 'opacity 0.15s';
+      desktopNav.style.opacity = '1';
+    });
+
+    // Auth state
     var sb = window._navSb;
     if (!sb && window.supabase && window.supabase.createClient) {
       sb = window.supabase.createClient(SUPA_URL, SUPA_KEY);
@@ -354,10 +352,6 @@
     }
     if (!sb) {
       desktopNav.appendChild(buildSignIn());
-      if (drawerNav) {
-        var a = document.createElement('a'); a.href = prefix + '/login'; a.textContent = 'Sign in';
-        drawerNav.appendChild(a);
-      }
       return;
     }
     sb.auth.getSession().then(function(res) {
@@ -365,12 +359,12 @@
       if (session) {
         sb.from('profiles').select('avatar_url,username').eq('id', session.user.id).single()
           .then(function(r) {
-            var prof = r.data;
-            desktopNav.appendChild(buildPill((prof && prof.username) || 'Profile', (prof && prof.avatar_url) || ''));
+            var prof = r.data || {};
+            desktopNav.appendChild(buildPill(prof.username || 'Profile', prof.avatar_url || ''));
             if (drawerNav) {
               var a = document.createElement('a');
               a.href = prefix + '/profile';
-              a.textContent = (prof && prof.username) || 'Profile';
+              a.textContent = prof.username || 'Profile';
               a.style.color = '#c9a84c';
               drawerNav.appendChild(a);
             }
@@ -378,7 +372,9 @@
       } else {
         desktopNav.appendChild(buildSignIn());
         if (drawerNav) {
-          var a = document.createElement('a'); a.href = prefix + '/login'; a.textContent = 'Sign in';
+          var a = document.createElement('a');
+          a.href = prefix + '/login';
+          a.textContent = 'Sign in';
           drawerNav.appendChild(a);
         }
       }
@@ -395,9 +391,7 @@
     if (prev && prev.nodeType === 3 && !prev.textContent.endsWith(' ')) {
       prev.textContent += ' ';
     } else if (prev && prev.nodeType === 1) {
-      // em tag before br - insert space text node
-      var space = document.createTextNode(' ');
-      h1.insertBefore(space, br);
+      h1.insertBefore(document.createTextNode(' '), br);
     }
   }
 
@@ -407,4 +401,5 @@
     initNav();
     fixH1Spacing();
   }
+
 })();
