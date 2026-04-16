@@ -454,3 +454,62 @@
   }
 
 })();
+
+// ── SMOOTH NAVIGATION ────────────────────────────────────────────────────────
+(function() {
+
+  // 1. Cancel entry overlay IMMEDIATELY — kills the black fade-in on page load
+  function cancelOverlay() {
+    var ov = document.getElementById('t-overlay');
+    if (!ov) return;
+    ov.getAnimations().forEach(function(a) { a.cancel(); });
+    ov.style.transition = 'none';
+    ov.style.opacity = '0';
+    ov.style.pointerEvents = 'none';
+  }
+
+  // Run now, and again after DOMContentLoaded catches any race
+  cancelOverlay();
+  document.addEventListener('DOMContentLoaded', cancelOverlay);
+
+  // Also cancel on bfcache restore (back/forward)
+  window.addEventListener('pageshow', function(e) {
+    cancelOverlay();
+  });
+
+  // 2. Prefetch pages on hover — page is already cached by click time
+  var prefetched = {};
+  document.addEventListener('mouseover', function(e) {
+    var a = e.target.closest('a[href]');
+    if (!a) return;
+    var href = a.getAttribute('href');
+    if (!href || href.startsWith('#') || href.startsWith('http') ||
+        href.startsWith('mailto') || href.startsWith('tel') ||
+        href.startsWith('javascript') || a.target) return;
+    if (prefetched[href]) return;
+    prefetched[href] = true;
+    var link = document.createElement('link');
+    link.rel = 'prefetch';
+    link.href = href;
+    document.head.appendChild(link);
+  }, { passive: true });
+
+  // 3. Intercept exit clicks — stop the black overlay exit animation
+  // capture:true fires BEFORE the page's own bubble-phase listener
+  document.addEventListener('click', function(e) {
+    if (e.defaultPrevented) return;
+    var a = e.target.closest('a[href]');
+    if (!a) return;
+    var href = a.getAttribute('href');
+    if (!href || href.startsWith('#') || href.startsWith('http') ||
+        href.startsWith('mailto') || href.startsWith('tel') ||
+        href.startsWith('javascript') || a.target ||
+        a.hasAttribute('download')) return;
+    // Stop the page's overlay animation handler from firing
+    e.stopImmediatePropagation();
+    e.preventDefault();
+    // Navigate cleanly — no black overlay
+    window.location.href = href;
+  }, true); // capture phase
+
+})();
