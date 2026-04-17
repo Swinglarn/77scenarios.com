@@ -16,7 +16,7 @@
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
   :root{--bg:#0c0e10;--surface:#13161a;--surface2:#1a1e24;--gold:#c9a84c;--gold-dim:#8a6d2e;--cream:#ede8df;--muted:#b5ada6;--border:#252a30;--radius:14px;}
-  html,body{background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
+  html,body{background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;font-weight:400;overflow-x:hidden;}
   body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:0.6;}
   #t-overlay{position:fixed;inset:0;z-index:9999;pointer-events:none;background:#0c0e10;opacity:1;}
   .glow{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0;}
@@ -55,7 +55,7 @@
 
   .type-code{font-family:'Cormorant Garamond',serif;font-size:clamp(80px,14vw,130px);font-weight:300;line-height:1;letter-spacing:-0.04em;color:var(--cream);margin-bottom:16px;}
   .type-code .hi{color:var(--gold);}
-  .type-name{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,5vw,44px);font-weight:300;font-style:italic;color:var(--cream);margin-bottom:6px;}
+  .type-name{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,5vw,44px);font-weight:600;font-style:italic;color:var(--cream);margin-bottom:6px;}
   .type-tagline{font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;}
   .letter-pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:44px;}
   .letter-pill{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;padding:6px 14px;border-radius:20px;border:1px solid var(--border);color:var(--muted);background:var(--surface);text-decoration:none;transition:all 0.2s;}
