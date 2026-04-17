@@ -17,7 +17,6 @@
   var MOON_SVG = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
   var SUN_SVG  = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
 
-  // ── NAV + GLOBAL CSS ─────────────────────────────────────────────────────────
   if (!document.getElementById('nav-design-css')) {
     var ds = document.createElement('style');
     ds.id = 'nav-design-css';
@@ -393,12 +392,30 @@
     return wrap;
   }
 
+  function getScrollbarWidth() {
+    return window.innerWidth - document.documentElement.clientWidth;
+  }
+
+  function adjustFixedRight() {
+    var slot = document.getElementById('nav-right-fixed');
+    if (!slot) return;
+    var sw = getScrollbarWidth();
+    slot.style.right = sw + 'px';
+  }
+
   function getFixedRight() {
     var slot = document.getElementById('nav-right-fixed');
     if (!slot) {
       slot = document.createElement('div');
       slot.id = 'nav-right-fixed';
       document.body.appendChild(slot);
+      // Offset by scrollbar width so we never cover it
+      adjustFixedRight();
+      window.addEventListener('resize', adjustFixedRight);
+      // ResizeObserver catches scrollbar appearing mid-session (e.g. index.html screens growing)
+      if (window.ResizeObserver) {
+        new ResizeObserver(adjustFixedRight).observe(document.documentElement);
+      }
     }
     return slot;
   }
