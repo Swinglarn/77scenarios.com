@@ -399,6 +399,11 @@
   function adjustFixedRight() {
     var slot = document.getElementById('nav-right-fixed');
     if (!slot) return;
+    // Only apply offset on desktop — mobile has no scrollbar
+    if (window.innerWidth <= 480) {
+      slot.style.right = '0px';
+      return;
+    }
     var sw = getScrollbarWidth();
     slot.style.right = sw + 'px';
   }
