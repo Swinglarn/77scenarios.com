@@ -53,10 +53,10 @@
   .nav-drawer-links a:first-child{color:var(--gold);}
   @media(max-width:480px){nav,.site-nav{padding:0 16px;height:52px;}.nav-links{display:none;}.nav-burger{display:flex;}.nav-overlay{display:block;pointer-events:none;}}
   main{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:64px 24px 96px;}
-  .page-label{font-size:13px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
-  h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,6vw,56px);font-weight:400;line-height:1.1;margin-bottom:16px;}
+  .page-label{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+  h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,6vw,56px);font-weight:300;line-height:1.1;margin-bottom:16px;}
   h1 em{font-style:italic;color:var(--gold);}
-  .page-sub{font-size:17px;color:var(--muted);line-height:1.85;max-width:580px;margin-bottom:40px;font-weight:400;}
+  .page-sub{font-size:15px;color:var(--muted);line-height:1.7;max-width:560px;margin-bottom:40px;}
   .controls{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:16px;align-items:center;}
   .search-wrap{position:relative;flex:1;min-width:220px;max-width:400px;}
   .search-wrap svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);opacity:0.4;pointer-events:none;}
@@ -64,11 +64,11 @@
   #search::placeholder{color:var(--muted);}
   #search:focus{border-color:var(--gold-dim);}
   .filter-group{display:flex;flex-wrap:wrap;gap:6px;}
-  .filter-btn{font-size:13px;letter-spacing:0.05em;padding:7px 13px;border-radius:6px;border:1px solid var(--border);color:var(--muted);background:var(--surface);cursor:pointer;transition:all 0.15s;font-family:'DM Sans',sans-serif;white-space:nowrap;}
+  .filter-btn{font-size:12px;letter-spacing:0.05em;padding:7px 13px;border-radius:6px;border:1px solid var(--border);color:var(--muted);background:var(--surface);cursor:pointer;transition:all 0.15s;font-family:'DM Sans',sans-serif;white-space:nowrap;}
   .filter-btn:hover{color:var(--cream);border-color:var(--muted);}
   .filter-btn.active{color:var(--gold);border-color:var(--gold-dim);background:rgba(201,168,76,0.08);}
   .type-filter-row{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:20px;}
-  .type-btn{font-size:13px;letter-spacing:0.05em;font-weight:500;padding:5px 10px;border-radius:5px;border:1px solid var(--border);color:var(--muted);background:var(--surface);cursor:pointer;transition:all 0.15s;font-family:'DM Sans',sans-serif;}
+  .type-btn{font-size:12px;letter-spacing:0.05em;font-weight:500;padding:5px 10px;border-radius:5px;border:1px solid var(--border);color:var(--muted);background:var(--surface);cursor:pointer;transition:all 0.15s;font-family:'DM Sans',sans-serif;}
   .type-btn:hover{color:var(--cream);border-color:var(--muted);}
   .type-btn.active{color:var(--gold);border-color:var(--gold-dim);background:rgba(201,168,76,0.08);}
   .results-info{font-size:12px;color:var(--muted);margin-bottom:16px;}
@@ -76,9 +76,9 @@
   .db-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px 18px;cursor:pointer;transition:border-color 0.2s,transform 0.15s;position:relative;overflow:hidden;}
   .db-card:hover{border-color:rgba(201,168,76,0.3);transform:translateY(-2px);}
   .db-card-type{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--gold);margin-bottom:5px;line-height:1;}
-  .db-card-name{font-size:15px;color:var(--cream);font-weight:500;margin-bottom:4px;line-height:1.35;}
-  .db-card-ctx{font-size:13px;color:var(--muted);line-height:1.5;}
-  .db-card-cat{position:absolute;top:12px;right:12px;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);opacity:0.5;}
+  .db-card-name{font-size:13px;color:var(--cream);font-weight:400;margin-bottom:3px;line-height:1.3;}
+  .db-card-ctx{font-size:12px;color:var(--muted);line-height:1.4;}
+  .db-card-cat{position:absolute;top:12px;right:12px;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);opacity:0.5;}
   .empty-state{grid-column:1/-1;text-align:center;padding:64px 0;color:var(--muted);font-size:14px;line-height:1.7;}
   .empty-state em{color:var(--cream);}
   .modal-bg{position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:500;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity 0.2s;}
@@ -2893,7 +2893,35 @@ kw:['Britta Perry MBTI','Community personality type','ENFP TV character','Britta
 
 {name:`Anthony Bourdain`,ctx:`Chef, author, and TV host`,type:'ENTP',cat:'Historical',
 desc:`Anthony Bourdain is ENTP. Kitchen Confidential is the ENTP's autobiography: a systematic dismantling of every romantic idea about restaurants, told from inside the system, with enough affection for the chaos to make the demolition feel like love. He spent the second half of his career travelling not as a food critic but as someone genuinely curious about what people eat and why - and the curiosity was the constant, not the eating. Parts Unknown is what happens when an ENTP gets unlimited resources and total creative freedom, and the result is the best travel television ever made.`,
-kw:['Anthony Bourdain MBTI','Bourdain personality type','ENTP chef writer','Parts Unknown host personality']},
+kw:['Anthony Bourdain MBTI','Bourdain personality type','ENTP chef writer','Parts Unknown host personality']},,
+// -- INVINCIBLE --
+{name:`Omni-Man`,ctx:`Invincible (Amazon Prime / Image Comics)`,type:'ESTJ',cat:'Fiction',
+desc:`Omni-Man is ESTJ. Nolan Grayson spent seventeen years on Earth following a plan that was not his own. He married, built a community, and joined the Guardians of the Globe - all as required steps in a mission handed down from the Viltrum Empire. What makes him ESTJ is not the deception but the discipline: he executed the assignment faithfully, without deviation, for nearly two decades. The breakdown comes when the life he built as an instrument becomes something he cannot discard. His return to Earth is the ESTJ revising the rulebook - Mark is now the priority, and everything follows from that.`,
+kw:['Omni-Man MBTI','Invincible ESTJ','Nolan Grayson personality type']},
+{name:`Mark Grayson / Invincible`,ctx:`Invincible (Amazon Prime / Image Comics)`,type:'ENFP',cat:'Fiction',
+desc:`Mark Grayson is ENFP. He gets his powers at seventeen and immediately wants to use them - not from strategy, but because it sounds right and exciting. His entire arc is driven by this: feel the pull, move toward it, figure out the details after. He makes a mess, feels terrible about it, tries again. His great strength is genuine warmth and creative problem-solving under pressure. His weak spot is the same impulse that makes him good in a fight - he commits before thinking through what the commitment costs.`,
+kw:['Mark Grayson MBTI','Invincible ENFP','Invincible personality type']},
+{name:`Atom Eve`,ctx:`Invincible (Amazon Prime / Image Comics)`,type:'INFJ',cat:'Fiction',
+desc:`Atom Eve is INFJ. She was created as a government weapon and spent her heroic career quietly rebuilding an identity that was actually hers. Her decision to leave the Teen Team and start a farm is not a breakdown - it is an INFJ finally acting on what they have known internally for a long time. She reads situations and people with unusual depth, stays in relationships longer than she should because she holds a vision of what they could be, and acts decisively once her internal picture becomes clear enough.`,
+kw:['Atom Eve MBTI','Invincible INFJ','Samantha Eve Wilkins personality type']},
+{name:`Cecil Stedman`,ctx:`Invincible (Amazon Prime / Image Comics)`,type:'INTJ',cat:'Fiction',
+desc:`Cecil Stedman is INTJ. He runs the Global Defense Agency from a position of almost total informational advantage - he knows more than everyone, plans further ahead than anyone, and makes decisions based on models the people around him cannot fully see. His use of Nolan as an asset after the Guardians massacre, his management of Mark as a long-term resource, his willingness to harvest supervillains for future use: all of it follows from a comprehensive internal framework that values outcomes over process and effectiveness over comfort.`,
+kw:['Cecil Stedman MBTI','Invincible INTJ','GDA director personality type']},
+{name:`Rex Splode`,ctx:`Invincible (Amazon Prime / Image Comics)`,type:'ESTP',cat:'Fiction',
+desc:`Rex Splode is ESTP. His powers literally require present-moment focus - he charges objects by touch and acts on instinct. That same quality runs through everything else: he leads the Teen Team with energy and presence rather than planning, gets into relationships fast, and deals with consequences after the fact. His death against Conquest is the purest version of this - he reads what the fight needs, concludes his sacrifice is the best available move, and does it without hesitation. The same trait that caused problems his whole life, pointed in exactly the right direction at the right moment.`,
+kw:['Rex Splode MBTI','Invincible ESTP','Rex Splode personality type']},
+{name:`Robot / Rudolph Conners`,ctx:`Invincible (Amazon Prime / Image Comics)`,type:'INTJ',cat:'Fiction',
+desc:`Robot is INTJ. Rudolph Conners built a new body from stolen DNA, infiltrated a superhero team, and eventually took over the world - not from power hunger but from a genuine belief that his model of how to protect humanity was correct and no one else was capable of implementing it. His relationship with Monster Girl is the one place his internal certainty shows cracks. He calculates everything except what the people closest to him actually need, which is the INTJ blind spot made complete.`,
+kw:['Robot MBTI','Invincible INTJ','Rudolph Conners personality type']},
+{name:`Debbie Grayson`,ctx:`Invincible (Amazon Prime / Image Comics)`,type:'ISFJ',cat:'Fiction',
+desc:`Debbie Grayson is ISFJ. The life she built with Nolan was real to her - the marriage, the family, the community. When it collapses, she does not reinvent herself dramatically. She rebuilds from what remains, slowly, the way ISFJs do: tending to what is still standing while processing the damage to what was not. Her relationship with Mark across the series is the ISFJ doing what they do best - showing up consistently for the person who needs them, even when she is the one who needs help.`,
+kw:['Debbie Grayson MBTI','Invincible ISFJ','Debbie Grayson personality type']},
+{name:`William Clockwell`,ctx:`Invincible (Amazon Prime / Image Comics)`,type:'ESFP',cat:'Fiction',
+desc:`William Clockwell is ESFP. He responds to every situation - including finding out his best friend is a superhero - with full present-tense engagement and zero long-term calculation. His loyalty to Mark is genuine and immediate, not built from strategy. He is funny, warm, and consistently surprised by consequences he probably should have seen coming. In a series full of people managing massive burdens, William is the character who is simply, honestly himself in every scene.`,
+kw:['William Clockwell MBTI','Invincible ESFP','William Clockwell personality type']},
+{name:`Thragg`,ctx:`Invincible (Amazon Prime / Image Comics)`,type:'ENTJ',cat:'Fiction',
+desc:`Thragg is ENTJ. The Grand Regent of the Viltrum Empire is the most systematically competent character in Invincible - every decision is made against the single metric of what advances Viltrumite supremacy, executed with complete efficiency and no visible internal conflict. He does not rule from cruelty. He rules because his model of the world designates rule as the correct outcome, and he implements that model at full force. His fights, his strategies, and his eventual breeding programme are all the same thing: a very capable person following through on a very clear plan.`,
+kw:['Thragg MBTI','Invincible ENTJ','Thragg Grand Regent personality type']}
 ];
 
 const categories=['All','Historical','Politics','Business','Science','Music','Arts','Film','Sport','Fiction'];
