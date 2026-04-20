@@ -48,10 +48,9 @@
       '@media(max-width:480px){#theme-toggle-desktop{display:none !important;}}',
       '#theme-toggle-mobile{display:none !important;background:none;border:none;cursor:pointer;padding:6px;color:#b5ada6;line-height:1;}',
       '@media(max-width:480px){#theme-toggle-mobile{display:inline-flex !important;align-items:center;justify-content:center;width:36px;height:36px;}}',
-      // Fixed right container — theme toggle + auth, never overlap
-      '#nav-right-fixed{position:fixed;top:0;right:0;height:56px;display:flex;align-items:center;gap:12px;z-index:500;padding:0 32px;background:rgba(12,14,16,0.92);backdrop-filter:blur(16px);}',
-      '@media(max-width:480px){#nav-right-fixed{right:0;height:52px;padding:0 16px;}}',
-      'body.light-mode #nav-right-fixed{background:rgba(255,255,255,0.97) !important;box-shadow:-1px 0 0 #e0d8d0 !important;backdrop-filter:blur(16px) !important;}',
+      // Nav right slot — lives inside sticky nav, never overlaps scrollbar
+      '.nav-right-slot{display:flex;align-items:center;gap:12px;margin-left:auto;flex-shrink:0;}',
+      '@media(max-width:480px){.nav-right-slot{display:none;}}',
       // Logo redesign
       '.nav-logo{font-family:\"Cormorant Garamond\",serif !important;font-size:22px !important;font-weight:300 !important;text-decoration:none !important;display:inline-flex !important;align-items:baseline !important;gap:3px !important;letter-spacing:0 !important;}',
       '.logo-77{color:#c9a84c !important;font-weight:600 !important;font-size:38px !important;font-style:italic !important;line-height:1 !important;letter-spacing:-0.03em !important;}',
@@ -115,8 +114,8 @@
       'body.light-mode body::before{opacity:0 !important;}',
       'body.light-mode #theme-toggle-desktop{color:#9a8a7a;}',
       'body.light-mode #theme-toggle-mobile{color:#3a3228 !important;}',
-      'body.light-mode #nav-right-fixed{background:rgba(255,255,255,0.97) !important;border-left:1px solid #e0d8d0 !important;}',
-      'body.light-mode #nav-right-fixed a:not(.nav-cta){border-color:#c8c0b4 !important;color:#3a3228 !important;}',
+
+      'body.light-mode .nav-right-slot a:not(.nav-cta){border-color:#c8c0b4 !important;color:#3a3228 !important;}',
       'body.light-mode #theme-toggle-desktop{color:#9a8a7a !important;}',
       'body.light-mode #nav-footer{background:#e8e3da !important;border-top-color:#c8c0b4 !important;}',
       'body.light-mode #nav-footer .footer-tagline{color:#7a6c52 !important;}',
@@ -268,7 +267,7 @@
       localStorage.setItem('77s-theme', isLight ? 'light' : 'dark');
       applyTheme(isLight);
     };
-    getFixedRight().insertBefore(desktopBtn, getFixedRight().firstChild);
+    getNavSlot(nav).insertBefore(desktopBtn, getNavSlot(nav).firstChild);
 
     // Mobile toggle stays in the nav bar (before burger)
     var mobileBtn = document.createElement('button');
@@ -392,34 +391,16 @@
     return wrap;
   }
 
-  function getScrollbarWidth() {
-    return window.innerWidth - document.documentElement.clientWidth;
-  }
-
-  function adjustFixedRight() {
-    var slot = document.getElementById('nav-right-fixed');
-    if (!slot) return;
-    // Only apply offset on desktop — mobile has no scrollbar
-    if (window.innerWidth <= 480) {
-      slot.style.right = '0px';
-      return;
-    }
-    var sw = getScrollbarWidth();
-    slot.style.right = sw + 'px';
-  }
-
-  function getFixedRight() {
-    var slot = document.getElementById('nav-right-fixed');
+  function getNavSlot(nav) {
+    var slot = document.getElementById('nav-right-slot');
     if (!slot) {
       slot = document.createElement('div');
-      slot.id = 'nav-right-fixed';
-      document.body.appendChild(slot);
-      // Offset by scrollbar width so we never cover it
-      adjustFixedRight();
-      window.addEventListener('resize', adjustFixedRight);
-      // ResizeObserver catches scrollbar appearing mid-session (e.g. index.html screens growing)
-      if (window.ResizeObserver) {
-        new ResizeObserver(adjustFixedRight).observe(document.documentElement);
+      slot.id = 'nav-right-slot';
+      slot.className = 'nav-right-slot';
+      if (nav) nav.appendChild(slot);
+      else {
+        var n = document.querySelector('.site-nav, nav');
+        if (n) n.appendChild(slot);
       }
     }
     return slot;
@@ -455,7 +436,7 @@
       sb = window.supabase.createClient(SUPA_URL, SUPA_KEY);
       window._navSb = sb;
     }
-    var authSlot = getFixedRight();
+    var authSlot = getNavSlot();
 
     // Render immediately from cache — no pop-in
     var cached = null;
