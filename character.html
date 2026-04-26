@@ -93,6 +93,11 @@
   .fn-desc{font-size:12px;color:var(--muted);line-height:1.6;}
 
   /* ── VERDICT BOX ── */
+  .cast-links-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
+  .cast-link-card{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px 14px;text-decoration:none;transition:border-color 0.2s;}
+  .cast-link-card:hover{border-color:rgba(201,168,76,0.4);}
+  .cast-link-label{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:2px;}
+  .cast-link-name{font-size:13px;color:var(--cream);font-weight:400;}
   .verdict{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:var(--radius);padding:24px 28px;margin-bottom:48px;}
   .verdict-label{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
   .verdict p{font-size:15px;color:var(--muted);line-height:1.85;}
@@ -3023,6 +3028,27 @@ function getPathSlug(){
   return null;
 }
 
+
+  // ── Cast cross-links ─────────────────────────────────────────────────────
+  // char slug -> actor slugs | actor slug -> char slugs
+  const castLinks={
+    'the-joker':['heath-ledger'],
+    'forrest-gump':['tom-hanks'],
+    'neo-thomas-anderson':['keanu-reeves'],
+    'neo':['keanu-reeves'],
+    'john-wick':['keanu-reeves'],
+    'jack-sparrow':['johnny-depp'],
+    'don-vito-corleone':['marlon-brando'],
+    'holly-golightly':['audrey-hepburn'],
+    // actor -> chars
+    'heath-ledger':['the-joker'],
+    'tom-hanks':['forrest-gump'],
+    'keanu-reeves':['neo-thomas-anderson','john-wick'],
+    'johnny-depp':['jack-sparrow'],
+    'marlon-brando':['don-vito-corleone'],
+    'audrey-hepburn':['holly-golightly'],
+  };
+
 function renderPage(){
   const ps=getPathSlug();
   if(!ps){renderNotFound();return;}
@@ -3072,6 +3098,17 @@ function renderPage(){
       <div class="fn-desc">${fnDesc[fn]||''}</div>
     </div>`).join('');
 
+  // ── Cast links ──
+  const myLinks=castLinks[ps]||[];
+  const isActor=['Film','Music','Sport','Business','Science','Arts','Politics','Historical'].includes(p.cat);
+  const castHTML=myLinks.map(linkedSlug=>{
+    const linked=people.filter(Boolean).find(x=>slug(x.name)===linkedSlug);
+    if(!linked) return '';
+    const label=isActor?`Known for`:`Played by`;
+    const img=`<img src="/images/characters/${linkedSlug}.jpg" alt="${linked?linked.name:linkedSlug}" onerror="this.style.display='none'" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:1px solid var(--border);flex-shrink:0;">`;
+    return `<a class="cast-link-card" href="/character/${linkedSlug}">${img}<div><div class="cast-link-label">${label}</div><div class="cast-link-name">${linked?linked.name:linkedSlug}</div></div></a>`;
+  }).filter(Boolean).join('');
+
   // ── Universe (same ctx) ──
   const universe=people.filter(Boolean).filter(x=>x.ctx===p.ctx&&slug(x.name)!==ps);
   const universeHTML=universe.map(u=>`
@@ -3118,7 +3155,15 @@ function renderPage(){
     <div class="verdict r" data-d="2">
       <div class="verdict-label">The Verdict</div>
       <p>${p.desc}</p>
+      ${castHTML?`<div class="cast-links-row">${castHTML}</div>`:''}
     </div>
+
+    ${universe.length?`
+    <div class="section r" data-d="2b">
+      <div class="section-label">Same Universe</div>
+      <h2>More from ${p.ctx}</h2>
+      <div class="related-grid">${universeHTML}</div>
+    </div>`:''}
 
     <div class="section r" data-d="3">
       <div class="section-label">Who They Are</div>
@@ -3159,13 +3204,6 @@ function renderPage(){
         <a class="cta-btn" href="/type?t=${p.type}" style="display:inline-block;">Full ${p.type} Breakdown &#8594;</a>
       </div>
     </div>
-
-    ${universe.length?`
-    <div class="section r" data-d="8">
-      <div class="section-label">Same Universe</div>
-      <h2>More from ${p.ctx}</h2>
-      <div class="related-grid">${universeHTML}</div>
-    </div>`:''}
 
     ${related.length?`
     <div class="section r" data-d="9">
