@@ -3048,10 +3048,12 @@ function renderPage(){
     headline:`${p.name} - ${p.type} Personality Type Analysis`,
     description:desc,
     url:url,
+    image:`https://77scenarios.com/images/characters/${ps}.jpg`,
     about:{
       '@type':'Person',
       name:p.name,
-      description:p.ctx
+      description:p.ctx,
+      image:`https://77scenarios.com/images/characters/${ps}.jpg`
     },
     isPartOf:{
       '@type':'WebSite',
@@ -3080,9 +3082,7 @@ function renderPage(){
     </a>`).join('');
 
   // ── Avatar ──
-  const avatarHTML=p.wiki
-    ?`<img class="hero-avatar" id="hero-avatar" alt="${p.name}" style="opacity:0;transition:opacity 0.3s;">`
-    :`<div class="hero-avatar-placeholder"><span>${p.type.slice(0,1)}</span></div>`;
+  const avatarHTML=`<img class="hero-avatar" id="hero-avatar" src="/images/characters/${ps}.jpg" alt="${p.name} - ${p.type} MBTI personality type" onload="this.style.opacity='1'" onerror="this.outerHTML='<div class=\'hero-avatar-placeholder\'><span>${p.type[0]}</span></div>'" style="opacity:0;transition:opacity 0.4s;">`;
 
   // ── Keywords / tags ──
   const tagsHTML=(p.kw&&p.kw.length)?`<div class="tag-row">${p.kw.map(k=>`<span class="tag">${k}</span>`).join('')}</div>`:'';
@@ -3168,22 +3168,7 @@ function renderPage(){
     </div>
   `;
 
-  // ── Avatar lazy load ──
-  if(p.wiki){
-    fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(p.wiki))
-      .then(r=>r.ok?r.json():null)
-      .then(data=>{
-        const img=document.getElementById('hero-avatar');
-        if(!img)return;
-        const src=data&&data.thumbnail&&data.thumbnail.source;
-        if(src){img.src=src;img.onload=function(){img.style.opacity='1';};}
-        else{img.outerHTML=`<div class="hero-avatar-placeholder"><span>${p.type.slice(0,1)}</span></div>`;}
-      })
-      .catch(()=>{
-        const img=document.getElementById('hero-avatar');
-        if(img)img.outerHTML=`<div class="hero-avatar-placeholder"><span>${p.type.slice(0,1)}</span></div>`;
-      });
-  }
+
 
   // ── Animate in ──
   requestAnimationFrame(()=>{
