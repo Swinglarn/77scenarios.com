@@ -90,9 +90,24 @@
   .fn-card.dominant{border-color:var(--gold-dim);background:rgba(201,168,76,0.04);}
   .fn-label{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;}
   .fn-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--gold);margin-bottom:6px;}
-  .fn-desc{font-size:12px;color:var(--cream);opacity:0.88;line-height:1.6;}
+  .fn-desc{font-size:12px;color:var(--muted);line-height:1.6;}
 
   /* ── VERDICT BOX ── */
+  /* ── Character search bar ── */
+  .char-search-wrap{position:relative;margin:48px 0 0;}
+  .char-search-inner{display:flex;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:0 16px;gap:10px;transition:border-color 0.2s,box-shadow 0.2s;}
+  .char-search-inner:focus-within{border-color:var(--gold-dim);box-shadow:0 0 0 3px rgba(201,168,76,0.07);}
+  .char-search-inner svg{opacity:0.3;flex-shrink:0;}
+  #char-search{flex:1;background:none;border:none;padding:13px 0;color:var(--cream);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:300;outline:none;}
+  #char-search::placeholder{color:var(--muted);}
+  .char-search-results{position:absolute;top:calc(100% + 6px);left:0;right:0;background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;z-index:100;box-shadow:0 8px 32px rgba(0,0,0,0.4);display:none;}
+  .char-search-results.open{display:block;}
+  .char-search-item{display:flex;align-items:center;gap:12px;padding:10px 16px;cursor:pointer;transition:background 0.1s;text-decoration:none;}
+  .char-search-item:hover{background:var(--surface2);}
+  .char-search-item-type{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--gold);flex-shrink:0;width:40px;}
+  .char-search-item-name{font-size:13px;color:var(--cream);line-height:1.3;}
+  .char-search-item-ctx{font-size:11px;color:var(--muted);}
+  .char-search-empty{padding:16px;font-size:13px;color:var(--muted);text-align:center;}
   .cast-links-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
   .cast-link-card{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px 14px;text-decoration:none;transition:border-color 0.2s;}
   .cast-link-card:hover{border-color:rgba(201,168,76,0.4);}
@@ -1214,7 +1229,7 @@ kw:['Gollum MBTI','Smeagol personality type','INFP Lord of the Rings']},
 desc:`Boromir is ESFJ. He is defined by his people and his city - Gondor is not an abstraction to him but a specific place with specific people he has spent his life defending - and the Ring presents itself to him as the tool his community finally needs. His failure on Amon Hen is not weakness but the ESFJ's most characteristic failure: the inability to separate his love for his people from his judgment about what is right for them. He sees the Ring as a means of protecting Gondor; the Ring shows him what he wants to see. His death protecting Merry and Pippin is the ESFJ restored to themselves: the Fe dominant, freed from the Ring's distortion, acting from care rather than calculation. "My captain, my king" are the most complete words he has.`,
 kw:['Boromir MBTI','Lord of the Rings ESFJ','Boromir personality type']},
 
-{name:`Théoden King`,ctx:`Lord of the Rings`,type:'ISTJ',cat:'Fiction',
+{name:`Theoden King`,ctx:`Lord of the Rings`,type:'ISTJ',cat:'Fiction',
 desc:`Theoden King is ISTJ. He is defined by his duty to his people and his land, and the tragedy of his middle arc is the ISTJ's most specific vulnerability: the framework of loyalty captured and redirected by an external force until it serves something alien. Freed from Saruman, he returns immediately to exactly the king he was supposed to be - because the ISTJ does not need to reconstruct their values, only to have them released from the thing blocking them. He rides to Pelennor knowing he will likely die there, because his people need someone to lead them, and that is what kings do. 'No parent should have to bury their child.' He says it. Then he rides anyway.`,
 kw:['Theoden MBTI','Lord of the Rings ISTJ','Theoden personality type']},
 
@@ -3218,6 +3233,15 @@ function renderPage(){
       <a class="cta-btn" href="/">Take the Test &#8594;</a>
       <a class="cta-btn sec" href="/archive">Back to Archive</a>
       <a class="cta-btn sec" href="/compatibility">Compatibility</a>
+    </div>
+
+    <div class="char-search-wrap r" data-d="12">
+      <div class="section-label" style="margin-bottom:10px;">Find Another Character</div>
+      <div class="char-search-inner">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" id="char-search" placeholder="Search 600+ characters..." autocomplete="off" spellcheck="false">
+      </div>
+      <div class="char-search-results" id="char-search-results"></div>
     </div>
   `;
 
@@ -6431,6 +6455,41 @@ function renderNotFound(){
     </div>`;
   requestAnimationFrame(()=>document.querySelector('.not-found')?.classList.add('in'));
 }
+
+  // ── Character search ──────────────────────────────────────────────────────
+  (function(){
+    const input=document.getElementById('char-search');
+    const results=document.getElementById('char-search-results');
+    if(!input||!results)return;
+
+    function slugify(n){return n.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
+
+    input.addEventListener('input',function(){
+      const q=this.value.toLowerCase().trim();
+      results.innerHTML='';
+      if(!q){results.classList.remove('open');return;}
+      const matches=people.filter(Boolean).filter(p=>
+        p.name.toLowerCase().includes(q)||
+        p.ctx.toLowerCase().includes(q)||
+        p.type.toLowerCase().includes(q)
+      ).slice(0,8);
+      if(!matches.length){
+        results.innerHTML='<div class="char-search-empty">No results</div>';
+        results.classList.add('open');
+        return;
+      }
+      results.innerHTML=matches.map(p=>`
+        <a class="char-search-item" href="/character/${slugify(p.name)}">
+          <div class="char-search-item-type">${p.type}</div>
+          <div><div class="char-search-item-name">${p.name}</div><div class="char-search-item-ctx">${p.ctx}</div></div>
+        </a>`).join('');
+      results.classList.add('open');
+    });
+
+    document.addEventListener('click',function(e){
+      if(!e.target.closest('.char-search-wrap')) results.classList.remove('open');
+    });
+  })();
 
 // ── Page transition ──
 window.addEventListener('DOMContentLoaded',()=>{
