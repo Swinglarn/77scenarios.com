@@ -3140,9 +3140,10 @@ function filtered(){
 
 
 
-function openModal(p){
+function openModal(ps){
+  const p=people.filter(Boolean).find(x=>slug(x.name)===ps);
+  if(!p)return;
   currentModal=p;
-  const ps=slug(p.name);
   document.getElementById('modal-content').innerHTML=`
     <div class="modal-header-row">
       ${p.wiki?`<img id="modal-avatar" class="modal-avatar" alt="${p.name}">`:''}
@@ -3155,8 +3156,8 @@ function openModal(p){
     <div class="modal-desc">${p.desc}</div>
     ${p.kw&&p.kw.length?`<div class="modal-tags">${p.kw.map(k=>`<span class="modal-tag">${k}</span>`).join('')}</div>`:''}
     <div class="modal-actions">
-      <button class="modal-btn" onclick="window.location='/type?t=${p.type}'">About ${p.type} \u2192</button>
-      <button class="modal-btn sec" onclick="window.location='/compatibility'">Compatibility \u2192</button>
+      <button class="modal-btn" onclick="window.location='/character/${ps}'">Full Profile \u2192</button>
+      <button class="modal-btn sec" onclick="window.location='/type?t=${p.type}'">About ${p.type}</button>
       <button class="modal-share" onclick="shareEntry('${ps}','${p.name.replace(/'/g,"\\'")}','${p.type}')">Share \u2197</button>
     </div>`;
   history.replaceState(null,'',`/archive?p=${ps}`);
