@@ -25,7 +25,7 @@
       // Reserve space on right for fixed auth+toggle container
       '.nav-links{position:absolute !important;left:50% !important;transform:translateX(-50%) !important;display:flex !important;align-items:center !important;}',
       '@media(max-width:480px){.nav-links{display:none !important;}}',
-      '.nav-links a{font-family:"DM Sans",sans-serif !important;font-size:13px !important;font-weight:500 !important;letter-spacing:0.06em !important;text-transform:uppercase !important;color:#b5ada6 !important;transition:color 0.2s !important;}',
+      '.nav-links a{font-family:"DM Sans",sans-serif !important;font-size:13px !important;font-weight:500 !important;letter-spacing:0.06em !important;text-transform:uppercase !important;color:#ccc6bf !important;transition:color 0.2s !important;}',
       '.nav-links a:hover,.nav-links a.active{color:#ede8df !important;}',
       // "Take the Test" — gold pill CTA via href attribute selector
       '.nav-links a[href="/"]{color:#c9a84c !important;border:1px solid #8a6d2e !important;padding:6px 14px !important;border-radius:60px !important;letter-spacing:0.08em !important;transition:background 0.2s,color 0.2s,border-color 0.2s !important;}',
@@ -38,15 +38,15 @@
       '.nav-user-wrap{position:relative;display:inline-block;}',
       '.nav-user-btn{display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;padding:0;}',
       '#nav-user-dropdown{display:none;position:absolute;right:0;top:calc(100% + 8px);background:#13161a;border:1px solid #252a30;border-radius:10px;min-width:160px;z-index:9999;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.5);}',
-      '#nav-user-dropdown a{display:block;padding:12px 18px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#b5ada6;text-decoration:none;border-bottom:1px solid #252a30;}',
+      '#nav-user-dropdown a{display:block;padding:12px 18px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#ccc6bf;text-decoration:none;border-bottom:1px solid #252a30;}',
       '#nav-user-dropdown a:hover{color:#ede8df;background:rgba(255,255,255,0.04);}',
       '#nav-user-dropdown button{display:block;width:100%;text-align:left;padding:12px 18px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#e07070;background:none;border:none;cursor:pointer;font-family:inherit;}',
       '#nav-user-dropdown button:hover{background:rgba(224,112,112,0.08);}',
       // Theme toggle buttons
       '#theme-toggle-desktop{display:inline-flex;align-items:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px 6px;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#6b6358;font-family:"DM Sans",sans-serif;transition:color 0.2s;}',
-      '#theme-toggle-desktop:hover{color:#b5ada6;}',
+      '#theme-toggle-desktop:hover{color:#ccc6bf;}',
       '@media(max-width:480px){#theme-toggle-desktop{display:none !important;}}',
-      '#theme-toggle-mobile{display:none !important;background:none;border:none;cursor:pointer;padding:6px;color:#b5ada6;line-height:1;}',
+      '#theme-toggle-mobile{display:none !important;background:none;border:none;cursor:pointer;padding:6px;color:#ccc6bf;line-height:1;}',
       '@media(max-width:480px){#theme-toggle-mobile{display:inline-flex !important;align-items:center;justify-content:center;width:36px;height:36px;}}',
       // Nav right slot — lives inside sticky nav, never overlaps scrollbar
       '.nav-right-slot{display:flex;align-items:center;gap:12px;margin-left:auto;flex-shrink:0;}',
@@ -243,7 +243,7 @@
     drawer.appendChild(divider);
     var themeBtn = document.createElement('button');
     themeBtn.id = 'drawer-theme-toggle';
-    themeBtn.style.cssText = 'display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;padding:18px 24px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#b5ada6;font-family:"DM Sans",sans-serif;font-weight:500;width:100%;';
+    themeBtn.style.cssText = 'display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;padding:18px 24px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#ccc6bf;font-family:"DM Sans",sans-serif;font-weight:500;width:100%;';
     themeBtn.onclick = function() {
       var isLight = !document.body.classList.contains('light-mode');
       localStorage.setItem('77s-theme', isLight ? 'light' : 'dark');

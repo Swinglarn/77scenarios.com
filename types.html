@@ -23,7 +23,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  :root{--bg:#0c0e10;--surface:#13161a;--surface2:#1a1e24;--gold:#c9a84c;--gold-dim:#8a6d2e;--cream:#ede8df;--muted:#b5ada6;--border:#252a30;--radius:14px;}
+  :root{--bg:#0c0e10;--surface:#13161a;--surface2:#1a1e24;--gold:#c9a84c;--gold-dim:#8a6d2e;--cream:#ede8df;--muted:#ccc6bf;--border:#252a30;--radius:14px;}
   html,body{background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;font-weight:400;overflow-x:hidden;}
   body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:0.6;}
   #t-overlay{position:fixed;inset:0;z-index:9999;pointer-events:none;background:#0c0e10;opacity:1;}
@@ -64,7 +64,7 @@
   .page-eyebrow::before{content:'';display:block;height:1px;width:24px;background:var(--gold-dim);}
   h1{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,7vw,72px);font-weight:300;line-height:0.95;letter-spacing:-0.02em;color:var(--cream);margin-bottom:16px;}
   h1 em{font-style:italic;color:var(--gold);}
-  .page-sub{font-size:17px;color:var(--muted);line-height:1.7;max-width:500px;margin-bottom:72px;}
+  .page-sub{font-size:17px;color:var(--cream);opacity:0.88;line-height:1.7;max-width:500px;margin-bottom:72px;}
 
   .group{margin-bottom:60px;}
   .group-header{display:flex;align-items:baseline;gap:16px;margin-bottom:28px;flex-wrap:wrap;}
@@ -88,7 +88,7 @@
   .type-card:hover .card-arrow{color:var(--gold);transform:translateX(3px);}
 
   .sep{height:1px;background:var(--border);margin:60px 0;}
-  .footer-note{font-size:14px;color:var(--muted);line-height:1.7;}
+  .footer-note{font-size:14px;color:var(--cream);opacity:0.88;line-height:1.7;}
   .footer-note a{color:var(--gold);text-decoration:none;}
 </style>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
