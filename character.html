@@ -94,16 +94,16 @@
 
   /* ── VERDICT BOX ── */
   /* ── Character search bar ── */
-  .char-search-wrap{position:relative;margin:48px 0 0;}
-  .char-search-inner{display:flex;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:0 16px;gap:10px;transition:border-color 0.2s,box-shadow 0.2s;}
+  .char-search-sticky{position:relative;background:var(--bg);border-bottom:1px solid var(--border);padding:10px 2rem;}
+  .char-search-inner{display:flex;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:0 16px;gap:10px;transition:border-color 0.2s,box-shadow 0.2s;max-width:640px;}
   .char-search-inner:focus-within{border-color:var(--gold-dim);box-shadow:0 0 0 3px rgba(201,168,76,0.07);}
   .char-search-inner svg{opacity:0.3;flex-shrink:0;}
-  #char-search{flex:1;background:none;border:none;padding:13px 0;color:var(--cream);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:300;outline:none;}
+  #char-search{flex:1;background:none;border:none;padding:11px 0;color:var(--cream);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:300;outline:none;}
   #char-search::placeholder{color:var(--muted);}
-  .char-search-results{position:absolute;top:calc(100% + 6px);left:0;right:0;background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;z-index:100;box-shadow:0 8px 32px rgba(0,0,0,0.4);display:none;}
+  .char-search-results{position:absolute;top:calc(100% - 10px);left:2rem;right:2rem;max-width:640px;background:var(--surface);border:1px solid var(--border);border-radius:0 0 10px 10px;overflow:hidden;z-index:200;box-shadow:0 8px 32px rgba(0,0,0,0.4);display:none;}
   .char-search-results.open{display:block;}
   .char-search-item{display:flex;align-items:center;gap:12px;padding:10px 16px;cursor:pointer;transition:background 0.1s;text-decoration:none;}
-  .char-search-item:hover{background:var(--surface2);}
+  .char-search-item:hover{background:rgba(255,255,255,0.04);}
   .char-search-item-type{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--gold);flex-shrink:0;width:40px;}
   .char-search-item-name{font-size:13px;color:var(--cream);line-height:1.3;}
   .char-search-item-ctx{font-size:11px;color:var(--muted);}
@@ -180,6 +180,13 @@
 </div>
 
 <main id="main-content">
+  <div class="char-search-sticky">
+    <div class="char-search-inner">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="char-search" placeholder="Search 600+ characters..." autocomplete="off" spellcheck="false">
+    </div>
+    <div class="char-search-results" id="char-search-results"></div>
+  </div>
   <div id="page-body"></div>
 </main>
 
@@ -3235,14 +3242,6 @@ function renderPage(){
       <a class="cta-btn sec" href="/compatibility">Compatibility</a>
     </div>
 
-    <div class="char-search-wrap r" data-d="12">
-      <div class="section-label" style="margin-bottom:10px;">Find Another Character</div>
-      <div class="char-search-inner">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-        <input type="text" id="char-search" placeholder="Search 600+ characters..." autocomplete="off" spellcheck="false">
-      </div>
-      <div class="char-search-results" id="char-search-results"></div>
-    </div>
   `;
 
 
