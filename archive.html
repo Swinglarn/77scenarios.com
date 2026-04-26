@@ -68,6 +68,11 @@
   .filter-btn:hover{color:var(--cream);border-color:var(--muted);}
   .filter-btn.active{color:var(--gold);border-color:var(--gold-dim);background:rgba(201,168,76,0.08);}
   .type-filter-row{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:20px;}
+  .universe-filter-row{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px;}
+  .universe-btn{font-size:11px;letter-spacing:0.04em;padding:5px 11px;border-radius:20px;border:1px solid var(--border);color:var(--muted);background:transparent;cursor:pointer;transition:all 0.15s;font-family:'DM Sans',sans-serif;white-space:nowrap;}
+  .universe-btn:hover{color:var(--cream);border-color:var(--muted);}
+  .universe-btn.active{color:var(--gold);border-color:var(--gold-dim);background:rgba(201,168,76,0.08);}
+  .universe-label{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;opacity:0.6;}
   .type-btn{font-size:12px;letter-spacing:0.05em;font-weight:500;padding:5px 10px;border-radius:5px;border:1px solid var(--border);color:var(--muted);background:var(--surface);cursor:pointer;transition:all 0.15s;font-family:'DM Sans',sans-serif;}
   .type-btn:hover{color:var(--cream);border-color:var(--muted);}
   .type-btn.active{color:var(--gold);border-color:var(--gold-dim);background:rgba(201,168,76,0.08);}
@@ -155,6 +160,10 @@
     <div class="filter-group" id="cat-filters"></div>
   </div>
   <div class="type-filter-row r" data-d="3" id="type-filters"></div>
+  <div class="r" data-d="3" id="universe-filter-wrap" style="display:none;margin-bottom:4px;">
+    <div class="universe-label">Universe</div>
+    <div class="universe-filter-row" id="universe-filters"></div>
+  </div>
   <div class="results-info r" data-d="4" id="results-info"></div>
   <div class="db-grid" id="db-grid"></div>
 </main>
@@ -2927,7 +2936,7 @@ kw:['Thragg MBTI','Invincible ENTJ','Thragg Grand Regent personality type']}
 const categories=['All','Historical','Politics','Business','Science','Music','Arts','Film','Sport','Fiction'];
 const types16=['INFP','ENFP','INFJ','ENFJ','INTJ','ENTJ','INTP','ENTP','ISFP','ESFP','ISTP','ESTP','ISFJ','ESFJ','ISTJ','ESTJ'];
 
-let activeCategory='All', activeType=null, query='', currentModal=null;
+let activeCategory='All', activeType=null, activeUniverse=null, query='', currentModal=null;
 
 function checkURLParam(){
   const p=new URLSearchParams(window.location.search).get('p');
@@ -2968,6 +2977,33 @@ function buildCatFilters(){
   });
 }
 
+function buildUniverseFilters(){
+  // Build list of universes with 2+ characters, sorted by count
+  const counts={};
+  people.filter(Boolean).forEach(p=>{if(p.ctx)counts[p.ctx]=(counts[p.ctx]||0)+1;});
+  const universes=Object.entries(counts).filter(([,n])=>n>=2).sort((a,b)=>b[1]-a[1]).map(([ctx])=>ctx);
+
+  const wrap=document.getElementById('universe-filters');
+  universes.forEach(u=>{
+    const btn=document.createElement('button');
+    btn.className='universe-btn';
+    btn.textContent=u+' ('+counts[u]+')';
+    btn.dataset.ctx=u;
+    btn.onclick=()=>{
+      if(activeUniverse===u){
+        activeUniverse=null;
+        btn.classList.remove('active');
+      } else {
+        activeUniverse=u;
+        document.querySelectorAll('.universe-btn').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+      }
+      render();
+    };
+    wrap.appendChild(btn);
+  });
+}
+
 function buildTypeFilters(){
   const wrap=document.getElementById('type-filters');
   const all=document.createElement('button');
@@ -2992,9 +3028,10 @@ function filtered(){
   return people.filter(p=>{
     const matchCat=activeCategory==='All'||p.cat===activeCategory;
     const matchType=!activeType||p.type===activeType;
+    const matchUniverse=!activeUniverse||p.ctx===activeUniverse;
     const q=query.toLowerCase().trim();
     const matchQ=!q||p.name.toLowerCase().includes(q)||p.ctx.toLowerCase().includes(q)||p.type.toLowerCase().includes(q);
-    return matchCat&&matchType&&matchQ;
+    return matchCat&&matchType&&matchUniverse&&matchQ;
   });
 }
 

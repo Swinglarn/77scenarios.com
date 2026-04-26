@@ -3072,6 +3072,14 @@ function renderPage(){
       <div class="fn-desc">${fnDesc[fn]||''}</div>
     </div>`).join('');
 
+  // ── Universe (same ctx) ──
+  const universe=people.filter(Boolean).filter(x=>x.ctx===p.ctx&&slug(x.name)!==ps);
+  const universeHTML=universe.map(u=>`
+    <a class="related-card universe-card" href="/character/${slug(u.name)}">
+      <div class="related-type">${u.type}</div>
+      <div class="related-name">${u.name}</div>
+    </a>`).join('');
+
   // ── Related (same type, different entries) ──
   const related=people.filter(Boolean).filter(x=>x.type===p.type&&slug(x.name)!==ps).sort(()=>Math.random()-0.5).slice(0,6);
   const relatedHTML=related.map(r=>`
@@ -3152,16 +3160,23 @@ function renderPage(){
       </div>
     </div>
 
-    ${related.length?`
+    ${universe.length?`
     <div class="section r" data-d="8">
+      <div class="section-label">Same Universe</div>
+      <h2>More from ${p.ctx}</h2>
+      <div class="related-grid">${universeHTML}</div>
+    </div>`:''}
+
+    ${related.length?`
+    <div class="section r" data-d="9">
       <div class="section-label">Same Type</div>
       <h2>Other ${p.type} Characters &amp; Figures</h2>
       <div class="related-grid">${relatedHTML}</div>
     </div>`:''}
 
-    ${tagsHTML?`<div class="r" data-d="9" style="margin-top:16px;">${tagsHTML}</div>`:''}
+    ${tagsHTML?`<div class="r" data-d="10" style="margin-top:16px;">${tagsHTML}</div>`:''}
 
-    <div class="cta-row r" data-d="10">
+    <div class="cta-row r" data-d="11">
       <a class="cta-btn" href="/">Take the Test &#8594;</a>
       <a class="cta-btn sec" href="/archive">Back to Archive</a>
       <a class="cta-btn sec" href="/compatibility">Compatibility</a>
