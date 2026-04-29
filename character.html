@@ -118,6 +118,14 @@
   #char-search{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:11px 16px 11px 42px;color:var(--cream);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:300;outline:none;transition:border-color 0.2s;box-sizing:border-box;}
   #char-search::placeholder{color:var(--muted);}
   #char-search:focus{border-color:var(--gold-dim);}
+  .char-search-dropdown{position:absolute;top:calc(100% + 4px);left:0;right:0;background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden;z-index:100;display:none;}
+  .char-search-dropdown.open{display:block;}
+  .char-search-item{display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;transition:background 0.1s;text-decoration:none;}
+  .char-search-item:hover,.char-search-item.active{background:var(--surface2);}
+  .char-search-item-type{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--gold);flex-shrink:0;width:36px;}
+  .char-search-item-info{min-width:0;}
+  .char-search-item-name{font-size:13px;color:var(--cream);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .char-search-item-ctx{font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 
   /* ── CTA ── */
   .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:48px;padding-top:32px;border-top:1px solid var(--border);}
@@ -3128,7 +3136,8 @@ function renderPage(){
 
     <div class="char-search-wrap r" data-d="1c">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <input type="text" id="char-search" placeholder="Search the archive..." autocomplete="off" spellcheck="false">
+      <input type="text" id="char-search" placeholder="Search any character..." autocomplete="off" spellcheck="false">
+      <div class="char-search-dropdown" id="char-search-dropdown"></div>
     </div>
 
     <div class="verdict r" data-d="2">
@@ -6190,18 +6199,53 @@ window.addEventListener('DOMContentLoaded',()=>{
   renderPage();
   const ov=document.getElementById('t-overlay');
   if(ov){requestAnimationFrame(()=>{ov.style.transition='opacity 0.45s ease';ov.style.opacity='0';});}
-  document.addEventListener('input',e=>{
-    if(e.target.id==='char-search'){
-      const q=e.target.value.trim();
-      if(q.length>1){window.location.href='/archive?q='+encodeURIComponent(q);}
+  (function(){
+    function slugLocal(n){return n.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
+    let activeIdx=-1;
+    const inp=document.getElementById('char-search');
+    const dd=document.getElementById('char-search-dropdown');
+    if(!inp||!dd)return;
+    function getItems(){return dd.querySelectorAll('.char-search-item');}
+    function setActive(i){
+      const items=getItems();
+      items.forEach((el,j)=>el.classList.toggle('active',j===i));
+      activeIdx=i;
     }
-  });
-  document.addEventListener('keydown',e=>{
-    if(e.key==='Enter'&&document.activeElement&&document.activeElement.id==='char-search'){
-      const q=document.activeElement.value.trim();
-      if(q){window.location.href='/archive?q='+encodeURIComponent(q);}
-    }
-  });
+    inp.addEventListener('input',function(){
+      const q=this.value.trim().toLowerCase();
+      activeIdx=-1;
+      if(q.length<2){dd.innerHTML='';dd.classList.remove('open');return;}
+      const matches=people.filter(Boolean).filter(x=>
+        x.name.toLowerCase().includes(q)||
+        (x.ctx&&x.ctx.toLowerCase().includes(q))||
+        x.type.toLowerCase().includes(q)
+      ).slice(0,8);
+      if(!matches.length){dd.innerHTML='';dd.classList.remove('open');return;}
+      dd.innerHTML=matches.map(m=>
+        `<a class="char-search-item" href="/character/${slugLocal(m.name)}">
+          <span class="char-search-item-type">${m.type}</span>
+          <span class="char-search-item-info">
+            <span class="char-search-item-name">${m.name}</span>
+            <span class="char-search-item-ctx">${m.ctx}</span>
+          </span>
+        </a>`
+      ).join('');
+      dd.classList.add('open');
+    });
+    inp.addEventListener('keydown',function(e){
+      const items=getItems();
+      if(e.key==='ArrowDown'){e.preventDefault();setActive(Math.min(activeIdx+1,items.length-1));}
+      else if(e.key==='ArrowUp'){e.preventDefault();setActive(Math.max(activeIdx-1,0));}
+      else if(e.key==='Enter'){
+        if(activeIdx>=0&&items[activeIdx]){window.location.href=items[activeIdx].href;}
+        else if(items.length){window.location.href=items[0].href;}
+      }
+      else if(e.key==='Escape'){dd.innerHTML='';dd.classList.remove('open');}
+    });
+    document.addEventListener('click',function(e){
+      if(!inp.contains(e.target)&&!dd.contains(e.target)){dd.innerHTML='';dd.classList.remove('open');}
+    });
+  })();
 });
 
 // ── Intercept internal links for smooth transition ──
