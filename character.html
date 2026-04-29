@@ -3081,9 +3081,7 @@ function renderPage(){
     </a>`).join('');
 
   // ── Avatar ──
-  const avatarHTML=p.wiki
-    ?`<img class="hero-avatar" id="hero-avatar" alt="${p.name}" style="opacity:0;transition:opacity 0.3s;">`
-    :`<div class="hero-avatar-placeholder"><span>${p.type.slice(0,1)}</span></div>`;
+  const avatarHTML=`<img class="hero-avatar" id="hero-avatar" alt="${p.name}" style="opacity:0;transition:opacity 0.3s;">`;
 
   // ── Keywords / tags ──
   const tagsHTML=(p.kw&&p.kw.length)?`<div class="tag-row">${p.kw.map(k=>`<span class="tag">${k}</span>`).join('')}</div>`:'';
@@ -3170,26 +3168,30 @@ function renderPage(){
   `;
 
   // ── Avatar lazy load ──
-  if(p.wiki){
+  {
     const localSrc=`/images/characters/${ps}.jpg`;
     const img=document.getElementById('hero-avatar');
     if(img){
       const tryLocal=new Image();
       tryLocal.onload=function(){img.src=localSrc;img.onload=function(){img.style.opacity='1';};};
       tryLocal.onerror=function(){
-        fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(p.wiki))
-          .then(r=>r.ok?r.json():null)
-          .then(data=>{
-            const img2=document.getElementById('hero-avatar');
-            if(!img2)return;
-            const src=data&&data.thumbnail&&data.thumbnail.source;
-            if(src){img2.src=src;img2.onload=function(){img2.style.opacity='1';};}
-            else{img2.outerHTML=`<div class="hero-avatar-placeholder"><span>${p.type.slice(0,1)}</span></div>`;}
-          })
-          .catch(()=>{
-            const img2=document.getElementById('hero-avatar');
-            if(img2)img2.outerHTML=`<div class="hero-avatar-placeholder"><span>${p.type.slice(0,1)}</span></div>`;
-          });
+        if(p.wiki){
+          fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(p.wiki))
+            .then(r=>r.ok?r.json():null)
+            .then(data=>{
+              const img2=document.getElementById('hero-avatar');
+              if(!img2)return;
+              const src=data&&data.thumbnail&&data.thumbnail.source;
+              if(src){img2.src=src;img2.onload=function(){img2.style.opacity='1';};}
+              else{img2.outerHTML=`<div class="hero-avatar-placeholder"><span>${p.type.slice(0,1)}</span></div>`;}
+            })
+            .catch(()=>{
+              const img2=document.getElementById('hero-avatar');
+              if(img2)img2.outerHTML=`<div class="hero-avatar-placeholder"><span>${p.type.slice(0,1)}</span></div>`;
+            });
+        } else {
+          img.outerHTML=`<div class="hero-avatar-placeholder"><span>${p.type.slice(0,1)}</span></div>`;
+        }
       };
       tryLocal.src=localSrc;
     }
