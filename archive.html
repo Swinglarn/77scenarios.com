@@ -57,17 +57,17 @@
   h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,6vw,56px);font-weight:300;line-height:1.1;margin-bottom:16px;}
   h1 em{font-style:italic;color:var(--gold);}
   .page-sub{font-size:15px;color:var(--muted);line-height:1.7;max-width:560px;margin-bottom:40px;}
-  .controls{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:16px;align-items:center;}
-  .search-wrap{position:relative;flex:1;min-width:220px;max-width:400px;}
-  .search-wrap svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);opacity:0.4;pointer-events:none;}
-  #search{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:10px 14px 10px 40px;color:var(--cream);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:300;outline:none;transition:border-color 0.2s;}
+  .search-center{display:flex;flex-direction:column;align-items:center;gap:16px;margin-bottom:24px;}
+  .search-wrap{position:relative;width:100%;max-width:580px;}
+  .search-wrap svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);opacity:0.35;pointer-events:none;}
+  #search{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:13px 18px 13px 46px;color:var(--cream);font-family:'DM Sans',sans-serif;font-size:15px;font-weight:300;outline:none;transition:border-color 0.2s;box-sizing:border-box;}
   #search::placeholder{color:var(--muted);}
   #search:focus{border-color:var(--gold-dim);}
-  .filter-group{display:flex;flex-wrap:wrap;gap:6px;}
+  .filter-group{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;}
   .filter-btn{font-size:12px;letter-spacing:0.05em;padding:7px 13px;border-radius:6px;border:1px solid var(--border);color:var(--muted);background:var(--surface);cursor:pointer;transition:all 0.15s;font-family:'DM Sans',sans-serif;white-space:nowrap;}
   .filter-btn:hover{color:var(--cream);border-color:var(--muted);}
   .filter-btn.active{color:var(--gold);border-color:var(--gold-dim);background:rgba(201,168,76,0.08);}
-  .type-filter-row{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:20px;}
+  .type-filter-row{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:20px;justify-content:center;}
   .type-btn{font-size:12px;letter-spacing:0.05em;font-weight:500;padding:5px 10px;border-radius:5px;border:1px solid var(--border);color:var(--muted);background:var(--surface);cursor:pointer;transition:all 0.15s;font-family:'DM Sans',sans-serif;}
   .type-btn:hover{color:var(--cream);border-color:var(--muted);}
   .type-btn.active{color:var(--gold);border-color:var(--gold-dim);background:rgba(201,168,76,0.08);}
@@ -147,9 +147,9 @@
     <h1>Who thinks like <em>you</em>?</h1>
     <p class="page-sub">Historical figures, scientists, artists, fictional characters, musicians, athletes, and leaders. Each typed and broken down. Not just labelled. Filter by type, search by name, read the reasoning.</p>
   </div>
-  <div class="controls r" data-d="2">
+  <div class="search-center r" data-d="2">
     <div class="search-wrap">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
       <input type="text" id="search" placeholder="Search name, show, or type..." autocomplete="off" spellcheck="false">
     </div>
     <div class="filter-group" id="cat-filters"></div>
@@ -2961,7 +2961,10 @@ const types16=['INFP','ENFP','INFJ','ENFJ','INTJ','ENTJ','INTP','ENTP','ISFP','E
 let activeCategory='All', activeType=null, query='', currentModal=null;
 
 function checkURLParam(){
-  const p=new URLSearchParams(window.location.search).get('p');
+  const params=new URLSearchParams(window.location.search);
+  const q=params.get('q');
+  if(q){const el=document.getElementById('search');if(el){el.value=q;query=q;render();}}
+  const p=params.get('p');
   if(!p) return;
   const found=people.find(x=>slug(x.name)===p);
   if(!found) return;

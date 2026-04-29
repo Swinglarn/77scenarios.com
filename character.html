@@ -108,6 +108,16 @@
   .related-type{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--gold);margin-bottom:4px;}
   .related-name{font-size:13px;color:var(--cream);font-weight:400;margin-bottom:2px;line-height:1.3;}
   .related-ctx{font-size:11px;color:var(--muted);}
+  .universe-strip{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+  .universe-chip{display:flex;align-items:center;gap:8px;padding:8px 14px;background:var(--surface);border:1px solid var(--border);border-radius:8px;text-decoration:none;transition:border-color 0.15s,transform 0.15s;flex-shrink:0;}
+  .universe-chip:hover{border-color:rgba(201,168,76,0.35);transform:translateY(-1px);}
+  .universe-chip-type{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:400;color:var(--gold);line-height:1;}
+  .universe-chip-name{font-size:13px;color:var(--cream);line-height:1;}
+  .char-search-wrap{margin-top:32px;margin-bottom:8px;position:relative;max-width:480px;}
+  .char-search-wrap svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);opacity:0.35;pointer-events:none;}
+  #char-search{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:11px 16px 11px 42px;color:var(--cream);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:300;outline:none;transition:border-color 0.2s;box-sizing:border-box;}
+  #char-search::placeholder{color:var(--muted);}
+  #char-search:focus{border-color:var(--gold-dim);}
 
   /* ── CTA ── */
   .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:48px;padding-top:32px;border-top:1px solid var(--border);}
@@ -3080,6 +3090,14 @@ function renderPage(){
       <div class="related-ctx">${r.ctx}</div>
     </a>`).join('');
 
+  // ── Same universe characters ──
+  const universeChars=people.filter(Boolean).filter(x=>x.ctx===p.ctx&&slug(x.name)!==ps);
+  const universeHTML=universeChars.length?`
+    <div class="section-label" style="margin-bottom:12px;">Also from ${p.ctx.split('(')[0].trim()}</div>
+    <div class="universe-strip">
+      ${universeChars.map(u=>`<a class="universe-chip" href="/character/${slug(u.name)}"><span class="universe-chip-type">${u.type}</span><span class="universe-chip-name">${u.name.split('/')[0].trim()}</span></a>`).join('')}
+    </div>`:'';
+
   // ── Avatar ──
   const avatarHTML=`<img class="hero-avatar" id="hero-avatar" alt="${p.name}" style="opacity:0;transition:opacity 0.3s;">`;
 
@@ -3104,6 +3122,13 @@ function renderPage(){
         <div class="hero-ctx">${p.ctx}</div>
         <span class="hero-cat-badge">${p.cat}</span>
       </div>
+    </div>
+
+    ${universeHTML?`<div class="r" data-d="1b">${universeHTML}</div>`:''}
+
+    <div class="char-search-wrap r" data-d="1c">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="char-search" placeholder="Search the archive..." autocomplete="off" spellcheck="false">
     </div>
 
     <div class="verdict r" data-d="2">
@@ -6165,6 +6190,18 @@ window.addEventListener('DOMContentLoaded',()=>{
   renderPage();
   const ov=document.getElementById('t-overlay');
   if(ov){requestAnimationFrame(()=>{ov.style.transition='opacity 0.45s ease';ov.style.opacity='0';});}
+  document.addEventListener('input',e=>{
+    if(e.target.id==='char-search'){
+      const q=e.target.value.trim();
+      if(q.length>1){window.location.href='/archive?q='+encodeURIComponent(q);}
+    }
+  });
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Enter'&&document.activeElement&&document.activeElement.id==='char-search'){
+      const q=document.activeElement.value.trim();
+      if(q){window.location.href='/archive?q='+encodeURIComponent(q);}
+    }
+  });
 });
 
 // ── Intercept internal links for smooth transition ──
