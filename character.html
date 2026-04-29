@@ -3171,19 +3171,28 @@ function renderPage(){
 
   // ── Avatar lazy load ──
   if(p.wiki){
-    fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(p.wiki))
-      .then(r=>r.ok?r.json():null)
-      .then(data=>{
-        const img=document.getElementById('hero-avatar');
-        if(!img)return;
-        const src=data&&data.thumbnail&&data.thumbnail.source;
-        if(src){img.src=src;img.onload=function(){img.style.opacity='1';};}
-        else{img.outerHTML=`<div class="hero-avatar-placeholder"><span>${p.type.slice(0,1)}</span></div>`;}
-      })
-      .catch(()=>{
-        const img=document.getElementById('hero-avatar');
-        if(img)img.outerHTML=`<div class="hero-avatar-placeholder"><span>${p.type.slice(0,1)}</span></div>`;
-      });
+    const localSrc=`/images/characters/${ps}.jpg`;
+    const img=document.getElementById('hero-avatar');
+    if(img){
+      const tryLocal=new Image();
+      tryLocal.onload=function(){img.src=localSrc;img.onload=function(){img.style.opacity='1';};};
+      tryLocal.onerror=function(){
+        fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(p.wiki))
+          .then(r=>r.ok?r.json():null)
+          .then(data=>{
+            const img2=document.getElementById('hero-avatar');
+            if(!img2)return;
+            const src=data&&data.thumbnail&&data.thumbnail.source;
+            if(src){img2.src=src;img2.onload=function(){img2.style.opacity='1';};}
+            else{img2.outerHTML=`<div class="hero-avatar-placeholder"><span>${p.type.slice(0,1)}</span></div>`;}
+          })
+          .catch(()=>{
+            const img2=document.getElementById('hero-avatar');
+            if(img2)img2.outerHTML=`<div class="hero-avatar-placeholder"><span>${p.type.slice(0,1)}</span></div>`;
+          });
+      };
+      tryLocal.src=localSrc;
+    }
   }
 
   // ── Animate in ──
