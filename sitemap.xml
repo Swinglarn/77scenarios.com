@@ -10,6 +10,7 @@
   <url><loc>https://77scenarios.com/archive</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://77scenarios.com/about</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://77scenarios.com/forum</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://77scenarios.com/store</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
   <!-- 16 Type pages -->
   <url><loc>https://77scenarios.com/type?t=INTJ</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -39,7 +40,7 @@
   <url><loc>https://77scenarios.com/letter?l=J</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://77scenarios.com/letter?l=P</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
-  <!-- 660 Character pages -->
+  <!-- 704 Character pages -->
   <url><loc>https://77scenarios.com/character/tony-stark-iron-man</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://77scenarios.com/character/batman-bruce-wayne</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://77scenarios.com/character/the-joker</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -239,6 +240,7 @@
   <url><loc>https://77scenarios.com/character/keeley-jones</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://77scenarios.com/character/rick-sanchez</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://77scenarios.com/character/morty-smith</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/bojack-horseman</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://77scenarios.com/character/diane-nguyen</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://77scenarios.com/character/fleabag</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://77scenarios.com/character/villanelle</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -581,6 +583,7 @@
   <url><loc>https://77scenarios.com/character/baron-zemo</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://77scenarios.com/character/kimmy-schmidt</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://77scenarios.com/character/jay-z</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/tyler-the-creator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://77scenarios.com/character/harry-styles</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://77scenarios.com/character/andre-3000</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://77scenarios.com/character/lauryn-hill</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -698,5 +701,49 @@
   <url><loc>https://77scenarios.com/character/eren-yeager</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://77scenarios.com/character/edward-elric</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://77scenarios.com/character/spike-spiegel</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/john-locke</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/jack-shephard</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/sawyer</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/jason-mendoza</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/tahani-al-jamil</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/marshall-eriksen</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/lily-aldrin</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/jerry-seinfeld</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/niko-bellic</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/big-boss</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/hunter-s-thompson</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/charles-bukowski</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/john-steinbeck</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/diogenes</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/fr-d-ric-chopin</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/nora-helmer</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/blanche-dubois</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/stanley-kowalski</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/ahsoka-tano</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/empress-wu-zetian</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/rasputin</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/p-g-wodehouse</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/troy-barnes</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/britta-perry</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/anthony-bourdain</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/omni-man</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/mark-grayson-invincible</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/atom-eve</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/cecil-stedman</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/rex-splode</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/robot-rudolph-conners</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/debbie-grayson</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/william-clockwell</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/thragg</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/james-fraser</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/claire-fraser</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/lord-john-grey</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/murtagh-fraser</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/roger-mackenzie</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/brianna-fraser</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/colum-mackenzie</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/geillis-duncan</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/frank-randall</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://77scenarios.com/character/gustav-ii-adolf</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
 </urlset>
