@@ -436,7 +436,7 @@ function render(){
   const code=t.split('').map((l,i)=>(i%2===1)?`<span class="hi">${l}</span>`:l).join('');
   const pills=t.split('').map((l,i)=>{
     const dims=['Energy','Perception','Judgement','Lifestyle'];
-    return `<a href="/letter?l=${l}" class="letter-pill">${l} · ${dims[i]}</a>`;
+    return `<a href="/letters/${l.toLowerCase()}" class="letter-pill">${l} · ${dims[i]}</a>`;
   }).join('');
   const simCards=d.similar.map(c=>`<a href="/types/${c.toLowerCase()}" class="similar-card"><span class="sim-code">${c}</span><span class="sim-name">${typeNames[c]||''}</span></a>`).join('');
 

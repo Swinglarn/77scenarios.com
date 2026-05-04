@@ -255,7 +255,8 @@ const letters={
 
 function render(){
   const p=new URLSearchParams(window.location.search);
-  const l=(p.get('l')||'E').toUpperCase();
+  const pathMatch=window.location.pathname.match(/\/letters\/([a-zA-Z])(?:$|\/)/);
+  const l=(pathMatch?pathMatch[1]:p.get('l')||'E').toUpperCase();
   const d=letters[l];
   if(!d){document.getElementById('content').innerHTML='<p style="color:var(--muted)">Letter not found.</p>';return;}
   document.title=`${l} · ${d.name} in Myers-Briggs, 77 Scenarios`;
@@ -269,15 +270,15 @@ function render(){
   let km=document.querySelector('meta[name="keywords"]');
   if(!km){km=document.createElement('meta');km.name='keywords';document.head.appendChild(km);}
   km.content=`${l} personality, ${d.name.toLowerCase()} MBTI, ${d.name.toLowerCase()} meaning, Myers-Briggs ${l}, ${keyPhrases[l]||''}`;
-  document.getElementById('canonical-url')?.setAttribute('href',`https://77scenarios.com/letter.html?l=${l}`);
+  document.getElementById('canonical-url')?.setAttribute('href',`https://77scenarios.com/letters/${l.toLowerCase()}`);
   document.querySelector('meta[property="og:title"]')?.setAttribute('content',`${l} · ${d.name} in Myers-Briggs, 77 Scenarios`)||
     (()=>{const m=document.createElement('meta');m.setAttribute('property','og:title');m.content=`${l} · ${d.name} in Myers-Briggs, 77 Scenarios`;document.head.appendChild(m);})();
   document.querySelector('meta[property="og:description"]')?.setAttribute('content',seoDesc)||
     (()=>{const m=document.createElement('meta');m.setAttribute('property','og:description');m.content=seoDesc;document.head.appendChild(m);})();
-  document.querySelector('meta[property="og:url"]')?.setAttribute('content',`https://77scenarios.com/letter?l=${l}`)||
-    (()=>{const m=document.createElement('meta');m.setAttribute('property','og:url');m.content=`https://77scenarios.com/letter?l=${l}`;document.head.appendChild(m);})();
+  document.querySelector('meta[property="og:url"]')?.setAttribute('content',`https://77scenarios.com/letters/${l.toLowerCase()}`)||
+    (()=>{const m=document.createElement('meta');m.setAttribute('property','og:url');m.content=`https://77scenarios.com/letters/${l.toLowerCase()}`;document.head.appendChild(m);})();
   const h1el=document.getElementById('page-h1');if(h1el)h1el.textContent=`${l} · ${d.name} in Myers-Briggs`;
-  document.getElementById('letter-schema').textContent=JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":`${l} in Myers-Briggs: ${d.name} Explained`,"description":seoDesc,"url":`https://77scenarios.com/letter.html?l=${l}`,"publisher":{"@type":"Organization","name":"77 Scenarios","url":"https://77scenarios.com"}});
+  document.getElementById('letter-schema').textContent=JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":`${l} in Myers-Briggs: ${d.name} Explained`,"description":seoDesc,"url":`https://77scenarios.com/letters/${l.toLowerCase()}`,"publisher":{"@type":"Organization","name":"77 Scenarios","url":"https://77scenarios.com"}});
 
   const typesHTML=d.types.map(t=>`
     <a href="/type?t=${t}" class="type-mini">
@@ -291,7 +292,7 @@ function render(){
       <div class="hero-right">
         <div class="hero-dim">${d.dim} dimension</div>
         <div class="hero-name">${d.name}</div>
-        <div class="hero-opp">Opposite: <a href="/letter?l=${d.opp}">${d.opp} · ${d.oppName}</a></div>
+        <div class="hero-opp">Opposite: <a href="/letters/${d.opp.toLowerCase()}">${d.opp} · ${d.oppName}</a></div>
       </div>
     </div>
     <div class="section r" data-d="2"><div class="section-label">What it means</div><p class="body-text">${d.p1}</p><p class="body-text">${d.p2}</p></div>
@@ -310,7 +311,7 @@ function render(){
           <div class="opp-letter">${d.opp}</div>
           <div><div class="opp-name">${d.oppName}</div><div class="opp-sub">${d.oppDesc}</div></div>
         </div>
-        <a href="/letter?l=${d.opp}" class="btn-outline">Explore ${d.opp} →</a>
+        <a href="/letters/${d.opp.toLowerCase()}" class="btn-outline">Explore ${d.opp} →</a>
       </div>
     </div>
     <div class="cta-block r" data-d="9">

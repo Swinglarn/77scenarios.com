@@ -6,10 +6,17 @@
       "has": [{ "type": "query", "key": "t", "value": "(?<type>[a-zA-Z]{4})" }],
       "destination": "/types/:type",
       "permanent": true
+    },
+    {
+      "source": "/letter",
+      "has": [{ "type": "query", "key": "l", "value": "(?<letter>[a-zA-Z])" }],
+      "destination": "/letters/:letter",
+      "permanent": true
     }
   ],
   "rewrites": [
     { "source": "/character/:slug", "destination": "/character" },
-    { "source": "/types/:type", "destination": "/type?t=:type" }
+    { "source": "/types/:type", "destination": "/type?t=:type" },
+    { "source": "/letters/:letter", "destination": "/letter?l=:letter" }
   ]
 }
