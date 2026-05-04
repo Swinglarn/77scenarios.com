@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MBTI Personality Type Compatibility Chart — All 16 Types · 77 Scenarios</title>
+<title>MBTI Personality Type Compatibility Chart  -  All 16 Types · 77 Scenarios</title>
 <meta name="description" content="Interactive Myers-Briggs compatibility chart for all 16 personality types. Click any pairing to see detailed relationship analysis, strengths, and friction points.">
 <meta name="keywords" content="MBTI compatibility chart, Myers-Briggs compatibility, personality type compatibility, MBTI relationships, 16 personalities compatibility, INTJ compatibility, INFJ compatibility, MBTI love match, personality match chart, Myers-Briggs relationship compatibility">
 <meta name="robots" content="index, follow">
@@ -107,7 +107,12 @@
   .s3{background:rgba(170,150,40,0.08);box-shadow:inset 0 0 0 1px rgba(170,150,40,0.35),0 0 6px rgba(170,150,40,0.1);}
   .s4{background:rgba(60,140,90,0.08);box-shadow:inset 0 0 0 1px rgba(60,140,90,0.35),0 0 6px rgba(60,140,90,0.1);}
   .s5{background:rgba(60,140,220,0.1);box-shadow:inset 0 0 0 1px rgba(60,140,220,0.5),0 0 10px rgba(60,140,220,0.15);}
-  .s-self{cursor:pointer;border-radius:3px;outline:1px dashed rgba(255,255,255,0.15);outline-offset:-2px;}
+  .s-self{cursor:pointer;border-radius:3px;background:rgba(201,168,76,0.09) !important;box-shadow:inset 0 0 0 1.5px rgba(201,168,76,0.55),0 0 8px rgba(201,168,76,0.12) !important;}
+  .s-self:hover{background:rgba(201,168,76,0.22) !important;box-shadow:inset 0 0 0 2px rgba(201,168,76,0.95),0 0 16px rgba(201,168,76,0.3) !important;}
+  @keyframes gold-pulse{0%,100%{box-shadow:inset 0 0 0 1.5px rgba(201,168,76,0.45),0 0 6px rgba(201,168,76,0.1);}50%{box-shadow:inset 0 0 0 1.5px rgba(201,168,76,0.8),0 0 14px rgba(201,168,76,0.25);}}
+  .s-self{animation:gold-pulse 3s ease-in-out infinite;}
+  .s-self:hover{animation:none;}
+  body.light-mode .s-self{background:rgba(201,168,76,0.15) !important;box-shadow:inset 0 0 0 2px rgba(201,168,76,0.7) !important;}
 
   .s1:hover{background:rgba(180,50,40,0.22);box-shadow:inset 0 0 0 1px rgba(180,50,40,0.7),0 0 14px rgba(180,50,40,0.3);}
   .s2:hover{background:rgba(180,110,40,0.22);box-shadow:inset 0 0 0 1px rgba(180,110,40,0.7),0 0 14px rgba(180,110,40,0.3);}
@@ -209,7 +214,7 @@
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "MBTI Personality Type Compatibility Chart — All 16 Myers-Briggs Types",
+  "name": "MBTI Personality Type Compatibility Chart  -  All 16 Myers-Briggs Types",
   "description": "Interactive Myers-Briggs (MBTI) compatibility chart showing how all 16 personality types pair in relationships. Click any cell for a detailed pairing analysis.",
   "url": "https://77scenarios.com/compatibility",
   "isPartOf": {"@type": "WebSite", "url": "https://77scenarios.com", "name": "77 Scenarios"}
@@ -281,7 +286,7 @@
     <p class="detail-empty-text">Click any cell in the chart to see the pairing detail.<br>Or select your type above to highlight your row.</p>
   </div>
 
-  <p class="note r" data-d="6">Compatibility ratings are based on cognitive function theory and relationship satisfaction research across MBTI types. Every relationship is unique — a high score is a good foundation, not a guarantee, and a low score is a caution, not a verdict. <a href="/types">Read the full profile for each type</a> before drawing conclusions. For detailed analysis of any specific pairing, click a cell above or browse the <a href="/compatibility/intj-enfp" style="color:var(--gold)">individual compatibility pages</a>.</p>
+  <p class="note r" data-d="6">Compatibility ratings are based on cognitive function theory and relationship satisfaction research across MBTI types. Every relationship is unique  -  a high score is a good foundation, not a guarantee, and a low score is a caution, not a verdict. <a href="/types">Read the full profile for each type</a> before drawing conclusions. For detailed analysis of any specific pairing, click a cell above or browse the <a href="/compatibility/intj-enfp" style="color:var(--gold)">individual compatibility pages</a>.</p>
 </main>
 
 <footer>
@@ -303,22 +308,22 @@ const types = ['INFP','ENFP','INFJ','ENFJ','INTJ','ENTJ','INTP','ENTP','ISFP','E
 // Row/col order matches types array above
 const matrix = [
 //        INFP ENFP INFJ ENFJ INTJ ENTJ INTP ENTP ISFP ESFP ISTP ESTP ISFJ ESFJ ISTJ ESTJ
-/*INFP*/  [  0,   4,   4,   5,   3,   5,   3,   3,   3,   2,   2,   1,   3,   2,   2,   1],
-/*ENFP*/  [  4,   0,   5,   4,   5,   3,   4,   4,   3,   3,   2,   2,   2,   2,   1,   1],
-/*INFJ*/  [  4,   5,   0,   4,   4,   3,   4,   5,   3,   2,   2,   2,   3,   2,   2,   1],
-/*ENFJ*/  [  5,   4,   4,   0,   3,   3,   4,   3,   5,   4,   3,   3,   4,   3,   2,   2],
-/*INTJ*/  [  3,   5,   4,   3,   0,   4,   4,   5,   2,   1,   3,   2,   2,   1,   3,   2],
-/*ENTJ*/  [  5,   3,   3,   3,   4,   0,   5,   4,   2,   2,   3,   3,   2,   2,   3,   4],
-/*INTP*/  [  3,   4,   4,   4,   4,   5,   0,   4,   2,   2,   3,   3,   2,   3,   2,   5],
-/*ENTP*/  [  3,   4,   5,   3,   5,   4,   4,   0,   2,   2,   3,   3,   2,   2,   2,   3],
-/*ISFP*/  [  3,   3,   3,   5,   2,   2,   2,   2,   0,   4,   4,   4,   4,   5,   3,   3],
-/*ESFP*/  [  2,   3,   2,   4,   1,   2,   2,   2,   4,   0,   4,   4,   5,   4,   5,   3],
-/*ISTP*/  [  2,   2,   2,   3,   3,   3,   3,   3,   4,   4,   0,   4,   3,   5,   4,   5],
-/*ESTP*/  [  1,   2,   2,   3,   2,   3,   3,   3,   4,   4,   4,   0,   5,   4,   5,   4],
-/*ISFJ*/  [  3,   2,   3,   4,   2,   2,   2,   2,   4,   5,   3,   5,   0,   4,   4,   4],
-/*ESFJ*/  [  2,   2,   2,   3,   1,   2,   3,   2,   5,   4,   5,   4,   4,   0,   4,   4],
-/*ISTJ*/  [  2,   1,   2,   2,   3,   3,   2,   2,   3,   5,   4,   5,   4,   4,   0,   4],
-/*ESTJ*/  [  1,   1,   1,   2,   2,   4,   5,   3,   3,   3,   5,   4,   4,   4,   4,   0],
+/*INFP*/  [  3,   4,   4,   5,   3,   5,   3,   3,   3,   2,   2,   1,   3,   2,   2,   1],
+/*ENFP*/  [  4,   3,   5,   4,   5,   3,   4,   4,   3,   3,   2,   2,   2,   2,   1,   1],
+/*INFJ*/  [  4,   5,   3,   4,   4,   3,   4,   5,   3,   2,   2,   2,   3,   2,   2,   1],
+/*ENFJ*/  [  5,   4,   4,   4,   3,   3,   4,   3,   5,   4,   3,   3,   4,   3,   2,   2],
+/*INTJ*/  [  3,   5,   4,   3,   3,   4,   4,   5,   2,   1,   3,   2,   2,   1,   3,   2],
+/*ENTJ*/  [  5,   3,   3,   3,   4,   2,   5,   4,   2,   2,   3,   3,   2,   2,   3,   4],
+/*INTP*/  [  3,   4,   4,   4,   4,   5,   3,   4,   2,   2,   3,   3,   2,   3,   2,   5],
+/*ENTP*/  [  3,   4,   5,   3,   5,   4,   4,   3,   2,   2,   3,   3,   2,   2,   2,   3],
+/*ISFP*/  [  3,   3,   3,   5,   2,   2,   2,   2,   3,   4,   4,   4,   4,   5,   3,   3],
+/*ESFP*/  [  2,   3,   2,   4,   1,   2,   2,   2,   4,   3,   4,   4,   5,   4,   5,   3],
+/*ISTP*/  [  2,   2,   2,   3,   3,   3,   3,   3,   4,   4,   3,   4,   3,   5,   4,   5],
+/*ESTP*/  [  1,   2,   2,   3,   2,   3,   3,   3,   4,   4,   4,   2,   5,   4,   5,   4],
+/*ISFJ*/  [  3,   2,   3,   4,   2,   2,   2,   2,   4,   5,   3,   5,   4,   4,   4,   4],
+/*ESFJ*/  [  2,   2,   2,   3,   1,   2,   3,   2,   5,   4,   5,   4,   4,   3,   4,   4],
+/*ISTJ*/  [  2,   1,   2,   2,   3,   3,   2,   2,   3,   5,   4,   5,   4,   4,   4,   4],
+/*ESTJ*/  [  1,   1,   1,   2,   2,   4,   5,   3,   3,   3,   5,   4,   4,   4,   4,   3],
 ];
 
 const scoreLabels = {
@@ -544,7 +549,7 @@ function buildGrid() {
       if (row === col) {
         const score = matrix[row][col];
         cell.className = `cell s-self s${score}`;
-        cell.title = `${rowType} + ${rowType}: Same type pairing`;
+        cell.title = `${rowType} + ${rowType}: Same type - ${scoreLabels[score]}`;
         cell.dataset.row = row;
         cell.dataset.col = col;
         cell.addEventListener('mouseenter', () => setCrosshair(row, col, true));
