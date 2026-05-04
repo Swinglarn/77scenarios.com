@@ -10,6 +10,6 @@
   ],
   "rewrites": [
     { "source": "/character/:slug", "destination": "/character" },
-    { "source": "/types/:type([a-zA-Z]{4})", "destination": "/type.html?t=:type" }
+    { "source": "/types/:type", "destination": "/type?t=:type" }
   ]
 }
