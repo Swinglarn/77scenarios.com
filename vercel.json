@@ -1,6 +1,15 @@
 {
   "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/type",
+      "has": [{ "type": "query", "key": "t", "value": "(?<type>[a-zA-Z]{4})" }],
+      "destination": "/types/:type",
+      "permanent": true
+    }
+  ],
   "rewrites": [
-    { "source": "/character/:slug", "destination": "/character" }
+    { "source": "/character/:slug", "destination": "/character" },
+    { "source": "/types/:type([a-zA-Z]{4})", "destination": "/type.html?t=:type" }
   ]
 }
