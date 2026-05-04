@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Personality Type Compatibility Chart · 77 Scenarios</title>
-<meta name="description" content="Interactive MBTI personality type compatibility chart. See how all 16 Myers-Briggs types pair with each other in relationships.">
-<meta name="keywords" content="MBTI compatibility chart, personality type compatibility, Myers-Briggs relationship compatibility, INFP ENFJ compatible, personality match">
+<title>MBTI Personality Type Compatibility Chart — All 16 Types · 77 Scenarios</title>
+<meta name="description" content="Interactive Myers-Briggs compatibility chart for all 16 personality types. Click any pairing to see detailed relationship analysis, strengths, and friction points.">
+<meta name="keywords" content="MBTI compatibility chart, Myers-Briggs compatibility, personality type compatibility, MBTI relationships, 16 personalities compatibility, INTJ compatibility, INFJ compatibility, MBTI love match, personality match chart, Myers-Briggs relationship compatibility">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://77scenarios.com/og-image.png">
@@ -204,12 +204,13 @@
   body.light-mode .cell.crosshair{background-color:rgba(201,168,76,0.12) !important;box-shadow:inset 0 0 0 1px rgba(201,168,76,0.4) !important;}
   body.light-mode .s-self{outline-color:rgba(0,0,0,0.2) !important;}
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://77scenarios.com"},{"@type":"ListItem","position":2,"name":"Compatibility","item":"https://77scenarios.com/compatibility"}]}</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Personality Type Compatibility Chart",
-  "description": "Interactive MBTI personality type compatibility chart. See how all 16 Myers-Briggs types pair with each other.",
+  "name": "MBTI Personality Type Compatibility Chart — All 16 Myers-Briggs Types",
+  "description": "Interactive Myers-Briggs (MBTI) compatibility chart showing how all 16 personality types pair in relationships. Click any cell for a detailed pairing analysis.",
   "url": "https://77scenarios.com/compatibility",
   "isPartOf": {"@type": "WebSite", "url": "https://77scenarios.com", "name": "77 Scenarios"}
 }
@@ -255,8 +256,8 @@
 <main>
   <div class="page-header r" data-d="1">
     <div class="page-label">Relationships</div>
-    <h1>Personality <em>compatibility</em></h1>
-    <p class="page-sub">How the 16 types tend to pair with each other. Select your type to highlight your row, then click any cell to see the pairing detail.</p>
+    <h1>Myers-Briggs Personality <em>Compatibility</em> Chart</h1>
+    <p class="page-sub">How all 16 Myers-Briggs personality types pair in relationships. Select your MBTI type to highlight your row, then click any cell for a detailed compatibility breakdown.</p>
   </div>
 
   <div class="type-selector r" data-d="2">
@@ -280,7 +281,7 @@
     <p class="detail-empty-text">Click any cell in the chart to see the pairing detail.<br>Or select your type above to highlight your row.</p>
   </div>
 
-  <p class="note r" data-d="6">Compatibility is based on relationship satisfaction surveys and cognitive function theory. Every relationship is unique. A good match on a chart is not a guarantee and a difficult pairing is not a sentence. Use this as a starting point, not a verdict. <a href="/types">Read about both types</a> before drawing conclusions.</p>
+  <p class="note r" data-d="6">Compatibility ratings are based on cognitive function theory and relationship satisfaction research across MBTI types. Every relationship is unique — a high score is a good foundation, not a guarantee, and a low score is a caution, not a verdict. <a href="/types">Read the full profile for each type</a> before drawing conclusions. For detailed analysis of any specific pairing, click a cell above or browse the <a href="/compatibility/intj-enfp" style="color:var(--gold)">individual compatibility pages</a>.</p>
 </main>
 
 <footer>
@@ -456,6 +457,7 @@ function setCrosshair(row, col, on) {
   });
 }
 
+function canonicalSlug(a,b){const ai=types.indexOf(a),bi=types.indexOf(b);return ai<=bi?`${a.toLowerCase()}-${b.toLowerCase()}`:`${b.toLowerCase()}-${a.toLowerCase()}`;}
 function showDetail(row, col, cellEl) {
   // Selected ring
   if (selectedCell) selectedCell.classList.remove('selected');
@@ -483,8 +485,9 @@ function showDetail(row, col, cellEl) {
       <div class="detail-score-label sc${score}">${scoreLabels[score]}</div>
       <div class="detail-desc">${desc || defaultDesc[score]}</div>
       <div class="detail-links">
-        <a href="/type?t=${a}" class="detail-link">About ${a} →</a>
-        <a href="/type?t=${b}" class="detail-link">About ${b} →</a>
+        <a href="/types/${a.toLowerCase()}" class="detail-link">About ${a} →</a>
+        <a href="/types/${b.toLowerCase()}" class="detail-link">About ${b} →</a>
+        <a href="/compatibility/${canonicalSlug(a,b)}" class="detail-link">Full pairing page →</a>
       </div>
     </div>`;
 

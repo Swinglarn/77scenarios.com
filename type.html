@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="description" content="Your Myers-Briggs personality type in full. Strengths, blind spots, cognitive functions, and the famous people who share it.">
+<meta name="description" content="Full Myers-Briggs personality type profile: cognitive functions, strengths, blind spots, famous examples, and compatibility matches.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Personality Type Profile - 77 Scenarios</title>
+<title>Myers-Briggs Personality Type Profile · 77 Scenarios</title>
 <meta name="robots" content="index, follow">
 <meta property="og:site_name" content="77 Scenarios">
 <meta property="og:image" content="https://77scenarios.com/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" id="canonical-url" href="https://77scenarios.com/type.html">
+<script type="application/ld+json" id="faq-schema"></script>
+<script type="application/ld+json" id="breadcrumb-schema"></script>
 <script type="application/ld+json" id="type-schema">{"@context":"https://schema.org","@type":"Article","name":"Personality Type","publisher":{"@type":"Organization","name":"77 Scenarios","url":"https://77scenarios.com"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
@@ -103,7 +105,17 @@
   .btn-gold{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:#0c0e10;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;border:none;border-radius:60px;padding:14px 28px;cursor:pointer;text-decoration:none;transition:all 0.25s;}
   .btn-gold:hover{background:var(--cream);transform:translateY(-2px);}
   .sep{height:1px;background:var(--border);margin:48px 0;}
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+  .faq-list{display:flex;flex-direction:column;gap:0;}
+  .faq-item{border-bottom:1px solid var(--border);padding:18px 0;}
+  .faq-item:first-child{padding-top:0;}
+  .faq-q{font-size:15px;font-weight:500;color:var(--cream);margin-bottom:8px;line-height:1.4;}
+  .faq-a{font-size:14px;color:#a09890;line-height:1.8;}
+  .rarity-badge{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:8px 14px;font-size:13px;color:var(--muted);margin-top:12px;}
+  .rarity-badge strong{color:var(--cream);font-weight:500;}
+  .compat-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px;}
+
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 </style>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -372,6 +384,26 @@ const fnMeta = {
 const posLabels = ['1st · Dominant','2nd · Auxiliary','3rd · Tertiary','4th · Inferior'];
 const posKeys = ['dominant','auxiliary','tertiary','inferior'];
 
+
+const rarity={
+  INFP:'Around 4–5% of the population. More common in women than men.',
+  ENFP:'Around 8–9% of the population. One of the more common intuitive types.',
+  INFJ:'Around 1–3% of the population. Often cited as the rarest Myers-Briggs type.',
+  ENFJ:'Around 2–3% of the population. Rarer in men than in women.',
+  INTJ:'Around 2–4% of the population. The rarest Myers-Briggs type among women.',
+  ENTJ:'Around 2–5% of the population. More common in men than women.',
+  INTP:'Around 3–5% of the population. More common in men than women.',
+  ENTP:'Around 3–4% of the population. More common in men than women.',
+  ISFP:'Around 5–9% of the population. More common in women than men.',
+  ESFP:'Around 7–10% of the population. More common in women than men.',
+  ISTP:'Around 5–9% of the population. More common in men than women.',
+  ESTP:'Around 4–5% of the population. More common in men than women.',
+  ISFJ:'Around 9–14% of the population. One of the most common personality types.',
+  ESFJ:'Around 9–12% of the population. More common in women than men.',
+  ISTJ:'Around 11–16% of the population. One of the most common personality types.',
+  ESTJ:'Around 8–12% of the population. More common in men than women.',
+};
+
 function render(){
   const p=new URLSearchParams(window.location.search);
   // Support clean URLs like /types/intj as well as legacy ?t=INTJ
@@ -379,7 +411,7 @@ function render(){
   const t=(pathMatch?pathMatch[1]:p.get('t')||'INTJ').toUpperCase();
   const d=types[t];
   if(!d){document.getElementById('content').innerHTML='<p style="color:var(--muted)">Type not found.</p>';return;}
-  document.title=`${t} Personality Type · ${d.name}, 77 Scenarios`;
+  document.title=`${t} Personality Type: ${d.name} — MBTI Traits, Strengths & Compatibility | 77 Scenarios`;
 
   // Read optional score params (e.g. ei=72E, sn=65N, tf=81T, jp=60J)
   const scoreKeys = ['ei','sn','tf','jp'];
@@ -416,15 +448,15 @@ function render(){
   }
 
   // Dynamic SEO
-  const desc=`The ${t} personality type (${d.name}): ${d.tagline}. Full description, strengths, blind spots, and famous examples of the ${t} Myers-Briggs type.`;
+  const desc=`The ${t} Myers-Briggs personality type (${d.name}): ${d.tagline}. Discover ${t} cognitive functions, key strengths, blind spots, famous ${t} people, and best compatibility matches.`;
   let dm=document.querySelector('meta[name="description"]');
   if(!dm){dm=document.createElement('meta');dm.name='description';document.head.appendChild(dm);}
   dm.content=desc;
   let km=document.querySelector('meta[name="keywords"]');
   if(!km){km=document.createElement('meta');km.name='keywords';document.head.appendChild(km);}
-  km.content=`${t} personality, ${t} personality type, ${t} Myers-Briggs, ${d.name} personality, MBTI ${t}, ${t} strengths weaknesses, ${t} famous people`;
-  document.querySelector('meta[property="og:title"]')?.setAttribute('content',`${t} · ${d.name}, 77 Scenarios`)||
-    (()=>{const m=document.createElement('meta');m.setAttribute('property','og:title');m.content=`${t} · ${d.name}, 77 Scenarios`;document.head.appendChild(m);})();
+  km.content=`${t} personality type, ${t} personality, ${t} Myers-Briggs, ${t} MBTI, ${d.name} personality type, ${t} strengths and weaknesses, ${t} cognitive functions, ${t} compatibility, ${t} relationships, famous ${t} people, ${t} traits, what is ${t}, ${t} meaning, ${t} overview`;
+  document.querySelector('meta[property="og:title"]')?.setAttribute('content',`${t} Personality Type: ${d.name} · 77 Scenarios`)||
+    (()=>{const m=document.createElement('meta');m.setAttribute('property','og:title');m.content=`${t} Personality Type: ${d.name} · 77 Scenarios`;document.head.appendChild(m);})();
   document.getElementById('canonical-url')?.setAttribute('href',`https://77scenarios.com/types/${t.toLowerCase()}`);
   const h1el=document.getElementById('page-h1');if(h1el)h1el.textContent=`${t} Personality Type - ${d.name}`;
   document.querySelector('meta[property="og:description"]')?.setAttribute('content',desc)||
@@ -432,6 +464,36 @@ function render(){
   document.querySelector('meta[property="og:url"]')?.setAttribute('content',`https://77scenarios.com/types/${t.toLowerCase()}`)||
     (()=>{const m=document.createElement('meta');m.setAttribute('property','og:url');m.content=`https://77scenarios.com/types/${t.toLowerCase()}`;document.head.appendChild(m);})();
   document.getElementById('type-schema').textContent=JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":`${t} Personality Type: ${d.name}`,"description":desc,"url":`https://77scenarios.com/types/${t.toLowerCase()}`,"publisher":{"@type":"Organization","name":"77 Scenarios","url":"https://77scenarios.com"}});
+
+
+  // Top compatibility matches
+  const ti=Object.keys(types).indexOf(t);
+  const allTypes=['INFP','ENFP','INFJ','ENFJ','INTJ','ENTJ','INTP','ENTP','ISFP','ESFP','ISTP','ESTP','ISFJ','ESFJ','ISTJ','ESTJ'];
+  const ti2=allTypes.indexOf(t);
+  const compMatrix=[
+    [0,4,4,5,3,5,3,3,3,2,2,1,3,2,2,1],[4,0,5,4,5,3,4,4,3,3,2,2,2,2,1,1],
+    [4,5,0,4,4,3,4,5,3,2,2,2,3,2,2,1],[5,4,4,0,3,3,4,3,5,4,3,3,4,3,2,2],
+    [3,5,4,3,0,4,4,5,2,1,3,2,2,1,3,2],[5,3,3,3,4,0,5,4,2,2,3,3,2,2,3,4],
+    [3,4,4,4,4,5,0,4,2,2,3,3,2,3,2,5],[3,4,5,3,5,4,4,0,2,2,3,3,2,2,2,3],
+    [3,3,3,5,2,2,2,2,0,4,4,4,4,5,3,3],[2,3,2,4,1,2,2,2,4,0,4,4,5,4,5,3],
+    [2,2,2,3,3,3,3,3,4,4,0,4,3,5,4,5],[1,2,2,3,2,3,3,3,4,4,4,0,5,4,5,4],
+    [3,2,3,4,2,2,2,2,4,5,3,5,0,4,4,4],[2,2,2,3,1,2,3,2,5,4,5,4,4,0,4,4],
+    [2,1,2,2,3,3,2,2,3,5,4,5,4,4,0,4],[1,1,1,2,2,4,5,3,3,3,5,4,4,4,4,0],
+  ];
+  const topMatches=ti2>=0?allTypes.filter((_,i)=>i!==ti2).map(other=>({type:other,score:compMatrix[ti2][allTypes.indexOf(other)]})).sort((a,b)=>b.score-a.score).slice(0,3):[];
+  const topMatchText=topMatches.map(m=>`${m.type} (${typeNames[m.type]||m.type})`).join(', ');
+  const topMatchLinks=topMatches.map(m=>{const i1=ti2,i2=allTypes.indexOf(m.type);const sl=i1<=i2?`${t.toLowerCase()}-${m.type.toLowerCase()}`:`${m.type.toLowerCase()}-${t.toLowerCase()}`;return `<a href="/compatibility/${sl}" class="similar-card"><span class="sim-code">${m.type}</span><span class="sim-name">${typeNames[m.type]||''}</span></a>`;}).join('');
+
+  // FAQ schema
+  const faqData=[
+    {q:`What is the ${t} personality type?`,a:d.p1},
+    {q:`What are the main strengths and weaknesses of ${t}?`,a:`${t} strengths: ${d.strengths.join('; ')}. ${t} blind spots: ${d.blindspots.join('; ')}.`},
+    {q:`How rare is the ${t} Myers-Briggs type?`,a:rarity[t]},
+    {q:`What personality types are most compatible with ${t}?`,a:`${t}s tend to be most compatible with ${topMatchText}. Compatibility reflects shared cognitive functions and complementary styles.`},
+    {q:`Who are famous ${t} people?`,a:`Famous ${t} personalities include: ${d.famous.map(f=>`${f.name} (${f.ctx})`).join(', ')}.`},
+  ];
+  document.getElementById('faq-schema').textContent=JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":faqData.map(({q,a})=>({'@type':'Question','name':q,'acceptedAnswer':{'@type':'Answer','text':a}}))});
+  document.getElementById('breadcrumb-schema').textContent=JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://77scenarios.com"},{"@type":"ListItem","position":2,"name":"16 Personality Types","item":"https://77scenarios.com/types"},{"@type":"ListItem","position":3,"name":`${t} — ${d.name}`,"item":`https://77scenarios.com/types/${t.toLowerCase()}`}]});
 
   const code=t.split('').map((l,i)=>(i%2===1)?`<span class="hi">${l}</span>`:l).join('');
   const pills=t.split('').map((l,i)=>{
@@ -443,23 +505,50 @@ function render(){
   document.getElementById('content').innerHTML=`
     <div class="r" data-d="1"><div class="type-code">${code}</div><div class="type-name">${d.name}</div><div class="type-tagline">${d.tagline}</div><div class="letter-pills">${pills}</div></div>
     ${spectrumHTML}
-    <div class="section r" data-d="2"><div class="section-label">Overview</div><p class="body-text">${d.p1}</p><p class="body-text">${d.p2}</p></div>
+    <div class="section r" data-d="2"><div class="section-label">${t} Overview</div><p class="body-text">${d.p1}</p><p class="body-text">${d.p2}</p></div>
     <div class="fd-row section r" data-d="3">
       <div class="fd-box"><div class="fd-label">Core desire</div><div class="fd-text">${d.desire}</div></div>
       <div class="fd-box"><div class="fd-label">Core fear</div><div class="fd-text">${d.fear}</div></div>
     </div>
-    <div class="section r" data-d="4"><div class="section-label">Traits</div><div class="traits-row">${d.traits.map(t=>`<span class="trait">${t}</span>`).join('')}</div></div>
+    <div class="section r" data-d="4"><div class="section-label">${t} Personality Traits</div><div class="traits-row">${d.traits.map(t=>`<span class="trait">${t}</span>`).join('')}</div></div>
     <div class="two-col section r" data-d="5">
-      <div class="box"><div class="box-title">Strengths</div><ul>${d.strengths.map(s=>`<li>${s}</li>`).join('')}</ul></div>
-      <div class="box"><div class="box-title">Blind spots</div><ul>${d.blindspots.map(s=>`<li>${s}</li>`).join('')}</ul></div>
+      <div class="box"><div class="box-title">${t} Strengths</div><ul>${d.strengths.map(s=>`<li>${s}</li>`).join('')}</ul></div>
+      <div class="box"><div class="box-title">${t} Blind Spots</div><ul>${d.blindspots.map(s=>`<li>${s}</li>`).join('')}</ul></div>
     </div>
-    <div class="section r" data-d="6"><div class="section-label">Notable examples</div><div class="famous-grid">${d.famous.map(f=>`<div class="famous-card"><div class="famous-name">${f.name}</div><div class="famous-ctx">${f.ctx}</div></div>`).join('')}</div></div>
-    <div class="section r" data-d="7"><div class="section-label">Similar types</div><div class="similar-row">${simCards}</div></div>
+    <div class="section r" data-d="6"><div class="section-label">Famous ${t} People</div><div class="famous-grid">${d.famous.map(f=>`<div class="famous-card"><div class="famous-name">${f.name}</div><div class="famous-ctx">${f.ctx}</div></div>`).join('')}</div></div>
+    <div class="section r" data-d="7"><div class="section-label">Types Similar to ${t}</div><div class="similar-row">${simCards}</div></div>
     <div class="section r" data-d="7b" style="margin-top:0">
-      <div class="section-label">Cognitive functions</div>
+      <div class="section-label">${t} Cognitive Functions</div>
       <p class="body-text" style="margin-bottom:24px;font-size:14px;">Every type runs on four mental functions in a set order. Your first is almost effortless. Your fourth is your weak spot.</p>
       <div style="display:flex;flex-direction:column;gap:12px;" id="fn-stack-inline"></div>
       <a href="/functions?t=${t}" style="display:inline-block;margin-top:20px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;">See your full function breakdown &#8594;</a>
+    </div>
+    <div class="section r" data-d="8b">
+      <div class="section-label">${t} Compatibility</div>
+      <p class="body-text" style="font-size:14px;margin-bottom:16px;">Best Myers-Briggs matches for ${t}. Based on cognitive function overlap and relationship satisfaction data.</p>
+      <div class="compat-links">${topMatchLinks}</div>
+      <a href="/compatibility" style="display:inline-block;margin-top:16px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;">Full ${t} compatibility breakdown →</a>
+    </div>
+    <div class="section r" data-d="8c">
+      <div class="section-label">Frequently Asked About ${t}</div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">How rare is the ${t} personality type?</div>
+          <div class="faq-a">${rarity[t]}</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What makes someone the ${t} Myers-Briggs type?</div>
+          <div class="faq-a">${d.p2}</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What are the best relationship matches for ${t}?</div>
+          <div class="faq-a">${t}s tend to be most compatible with ${topMatchText}. The ideal match balances complementary cognitive functions with shared core values.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What are famous ${t} people?</div>
+          <div class="faq-a">${d.famous.map(f=>`${f.name} (${f.ctx})`).join(', ')}.</div>
+        </div>
+      </div>
     </div>
     <div class="sep r" data-d="8"></div>
     <div class="cta-block r" data-d="9">

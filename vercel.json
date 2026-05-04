@@ -17,6 +17,7 @@
   "rewrites": [
     { "source": "/character/:slug", "destination": "/character" },
     { "source": "/types/:type", "destination": "/type?t=:type" },
-    { "source": "/letters/:letter", "destination": "/letter?l=:letter" }
+    { "source": "/letters/:letter", "destination": "/letter?l=:letter" },
+    { "source": "/compatibility/:pair", "destination": "/compatibility-pair?pair=:pair" }
   ]
 }
