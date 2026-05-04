@@ -21,13 +21,17 @@
     var ds = document.createElement('style');
     ds.id = 'nav-design-css';
     ds.textContent = [
-      // Nav links — DM Sans 500, bolder, mixed case
+      // Nav links - DM Sans 500, bolder, mixed case
       // Reserve space on right for fixed auth+toggle container
       '.nav-links{position:absolute !important;left:50% !important;transform:translateX(-50%) !important;display:flex !important;align-items:center !important;}',
       '@media(max-width:480px){.nav-links{display:none !important;}}',
+      '.nav-drawer-links{overflow-y:auto !important;-webkit-overflow-scrolling:touch !important;flex:1 !important;min-height:0 !important;}',
+      '.nav-drawer{overflow:hidden !important;}',
+      '.nav-drawer-header{flex-shrink:0 !important;}',
+      '@media(max-width:480px){.nav-drawer-links{max-height:calc(100vh - 56px) !important;}}',
       '.nav-links a{font-family:"DM Sans",sans-serif !important;font-size:13px !important;font-weight:500 !important;letter-spacing:0.06em !important;text-transform:uppercase !important;color:#ccc6bf !important;transition:color 0.2s !important;}',
       '.nav-links a:hover,.nav-links a.active{color:#ede8df !important;}',
-      // "Take the Test" — gold pill CTA via href attribute selector
+      // "Take the Test" - gold pill CTA via href attribute selector
       '.nav-links a[href="/"]{color:#c9a84c !important;border:1px solid #8a6d2e !important;padding:6px 14px !important;border-radius:60px !important;letter-spacing:0.08em !important;transition:background 0.2s,color 0.2s,border-color 0.2s !important;}',
       '.nav-links a[href="/"]:hover{background:rgba(201,168,76,0.12) !important;border-color:#c9a84c !important;}',
       '.nav-links a[href="/"].active{background:rgba(201,168,76,0.08) !important;}',
@@ -48,7 +52,7 @@
       '@media(max-width:480px){#theme-toggle-desktop{display:none !important;}}',
       '#theme-toggle-mobile{display:none !important;background:none;border:none;cursor:pointer;padding:6px;color:#ccc6bf;line-height:1;}',
       '@media(max-width:480px){#theme-toggle-mobile{display:inline-flex !important;align-items:center;justify-content:center;width:36px;height:36px;}}',
-      // Nav right slot — lives inside sticky nav, never overlaps scrollbar
+      // Nav right slot - lives inside sticky nav, never overlaps scrollbar
       '.nav-right-slot{display:flex;align-items:center;gap:12px;margin-left:auto;flex-shrink:0;}',
       '@media(max-width:480px){.nav-right-slot{display:none;}}',
       // Logo redesign
@@ -121,7 +125,41 @@
       'body.light-mode #nav-footer .footer-tagline{color:#7a6c52 !important;}',
       'body.light-mode #nav-footer .footer-links a{color:#6b5c3e !important;}',
       'body.light-mode #nav-footer .footer-links a:hover{color:#1a1208 !important;}',
-      'body.light-mode #nav-footer .footer-copy{color:#9a8a70 !important;}'
+      'body.light-mode #nav-footer .footer-copy{color:#9a8a70 !important;}',
+      /* ── New elements: type pages, compat pages, legal pages ── */
+      'body.light-mode .faq-item{border-bottom-color:#c8c0b4 !important;}',
+      'body.light-mode .faq-q{color:#0f0d0a !important;font-weight:500 !important;}',
+      'body.light-mode .faq-a{color:#4a4035 !important;}',
+      'body.light-mode .rarity-badge{background:#ffffff !important;border-color:#c8c0b4 !important;color:#4a4035 !important;}',
+      'body.light-mode .score-block{background:#ffffff !important;border-color:#c8c0b4 !important;}',
+      'body.light-mode .score-bar-track{background:#e0dbd4 !important;}',
+      'body.light-mode .score-legend{color:#6b5c3e !important;}',
+      'body.light-mode .score-label-text{filter:saturate(1.3) brightness(0.85);}',
+      'body.light-mode .type-pair-card{background:#ffffff !important;border-color:#c8c0b4 !important;}',
+      'body.light-mode .type-pair-card:hover{border-color:#c9a84c !important;box-shadow:0 12px 40px rgba(0,0,0,0.07) !important;}',
+      'body.light-mode .tpc-code{color:#0f0d0a !important;}',
+      'body.light-mode .tpc-name{color:#0f0d0a !important;}',
+      'body.light-mode .tpc-tagline{color:#4a4035 !important;}',
+      'body.light-mode .tpc-arrow{color:#a8893a !important;}',
+      'body.light-mode .related-pill{background:#ffffff !important;border-color:#c8c0b4 !important;color:#4a4035 !important;}',
+      'body.light-mode .related-pill:hover{border-color:#c9a84c !important;color:#8a6d2e !important;}',
+      'body.light-mode .similar-card{background:#ffffff !important;border-color:#c8c0b4 !important;}',
+      'body.light-mode .similar-card:hover{border-color:#c9a84c !important;}',
+      'body.light-mode .sim-code{color:#0f0d0a !important;}',
+      'body.light-mode .sim-name{color:#4a4035 !important;}',
+      'body.light-mode .compat-links .similar-card{background:#ffffff !important;border-color:#c8c0b4 !important;}',
+      /* Legal page elements */
+      'body.light-mode .info-box{background:#ffffff !important;border-color:#c8c0b4 !important;}',
+      'body.light-mode .info-box p{color:#4a4035 !important;}',
+      'body.light-mode .data-list li{color:#4a4035 !important;}',
+      'body.light-mode .prose{color:#4a4035 !important;}',
+      'body.light-mode .warning-box{background:rgba(138,109,46,0.08) !important;border-color:rgba(138,109,46,0.3) !important;}',
+      'body.light-mode .warning-box p{color:#2a1e08 !important;}',
+      /* Contact form */
+      'body.light-mode .contact-form input,body.light-mode .contact-form textarea,body.light-mode .contact-form select{background:#ffffff !important;border-color:#c8c0b4 !important;color:#0f0d0a !important;}',
+      'body.light-mode .contact-form input:focus,body.light-mode .contact-form textarea:focus,body.light-mode .contact-form select:focus{border-color:#c9a84c !important;}',
+      'body.light-mode .contact-card{background:#ffffff !important;border-color:#c8c0b4 !important;}',
+
     ].join('');
     document.head.appendChild(lmStyle);
   }
@@ -159,7 +197,7 @@
 
   // ── NAV LINKS ─────────────────────────────────────────────────────────────────
   // IMPORTANT: EN links must match static HTML exactly (same hrefs, same order)
-  // so injectDesktopNav detects a match and skips rebuild — no flash.
+  // so injectDesktopNav detects a match and skips rebuild - no flash.
   var NAV_LINKS = {
     '': [
       { href: '/',                    label: 'Take the Test' },
@@ -209,7 +247,7 @@
     var match = expectedHrefs.length === existingHrefs.length &&
                 expectedHrefs.every(function(h, i) { return h === existingHrefs[i]; });
     if (match) {
-      // Links already correct — just update active states, no DOM change
+      // Links already correct - just update active states, no DOM change
       existing.forEach(function(a) {
         if (isActive(a.getAttribute('href'))) a.classList.add('active');
         else a.classList.remove('active');
@@ -284,7 +322,7 @@
       nav.appendChild(mobileBtn);
     }
 
-    // Redesign logo — replace text with styled HTML
+    // Redesign logo - replace text with styled HTML
     var logo = nav.querySelector('.nav-logo, .logo');
     if (logo && !logo.querySelector('.logo-77')) {
       logo.innerHTML = '<span class="logo-77">77</span><span class="logo-scenarios">scenarios</span>';
@@ -302,7 +340,7 @@
     var footer = document.createElement('footer');
     footer.id = 'nav-footer';
     footer.innerHTML = [
-      '<p class="footer-tagline">77 scenarios. No self-rating. No leading questions. Just situations and choices — and what they say about you.</p>',
+      '<p class="footer-tagline">77 scenarios. No self-rating. No leading questions. Just situations and choices - and what they say about you.</p>',
       '<nav class="footer-links" aria-label="Footer navigation">',
       '  <a href="/types">16 Types</a>',
       '  <a href="/letters">8 Letters</a>',
@@ -311,7 +349,11 @@
       '  <a href="/archive">Archive</a>',
       '  <a href="/forum">Forum</a>',
       '  <a href="/about">About</a>',
-
+      '</nav>',
+      '<nav class="footer-links" style="margin-top:8px;opacity:0.7;" aria-label="Legal navigation">',
+      '  <a href="/privacy">Privacy</a>',
+      '  <a href="/terms">Terms</a>',
+      '  <a href="/contact">Contact</a>',
       '</nav>',
       '<p class="footer-copy">&copy; 2025 77 Scenarios</p>'
     ].join('');
@@ -438,7 +480,7 @@
     }
     var authSlot = getNavSlot();
 
-    // Render immediately from cache — no pop-in
+    // Render immediately from cache - no pop-in
     var cached = null;
     try { cached = JSON.parse(localStorage.getItem('77s-auth') || 'null'); } catch(e) {}
     if (cached && cached.loggedIn) {
@@ -459,7 +501,7 @@
         drawerNav.appendChild(_dsi);
       }
     }
-    // No cache yet — show nothing until Supabase responds (first visit only)
+    // No cache yet - show nothing until Supabase responds (first visit only)
 
     if (!sb) {
       if (!cached) authSlot.appendChild(buildSignIn());
@@ -531,7 +573,7 @@
 // ── SMOOTH NAVIGATION ────────────────────────────────────────────────────────
 (function() {
 
-  // 1. Cancel entry overlay IMMEDIATELY — kills the black fade-in on page load
+  // 1. Cancel entry overlay IMMEDIATELY - kills the black fade-in on page load
   function cancelOverlay() {
     var ov = document.getElementById('t-overlay');
     if (!ov) return;
@@ -550,7 +592,7 @@
     cancelOverlay();
   });
 
-  // 2. Prefetch pages on hover — page is already cached by click time
+  // 2. Prefetch pages on hover - page is already cached by click time
   var prefetched = {};
   document.addEventListener('mouseover', function(e) {
     var a = e.target.closest('a[href]');
@@ -567,7 +609,7 @@
     document.head.appendChild(link);
   }, { passive: true });
 
-  // 3. Intercept exit clicks — stop the black overlay exit animation
+  // 3. Intercept exit clicks - stop the black overlay exit animation
   // capture:true fires BEFORE the page's own bubble-phase listener
   document.addEventListener('click', function(e) {
     if (e.defaultPrevented) return;
@@ -581,7 +623,7 @@
     // Stop the page's overlay animation handler from firing
     e.stopImmediatePropagation();
     e.preventDefault();
-    // Navigate cleanly — no black overlay
+    // Navigate cleanly - no black overlay
     window.location.href = href;
   }, true); // capture phase
 

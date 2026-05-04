@@ -885,4 +885,9 @@
   <url><loc>https://77scenarios.com/compatibility/istj-estj</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://77scenarios.com/compatibility/estj-estj</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
+
+  <!-- Legal & trust pages -->
+  <url><loc>https://77scenarios.com/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://77scenarios.com/terms</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://77scenarios.com/contact</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
 </urlset>
