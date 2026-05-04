@@ -73,14 +73,14 @@
   /* ── CONTENT SECTIONS ── */
   .section{margin-bottom:48px;}
   .section-label{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);}
-  .section p{font-size:15px;color:var(--muted);line-height:1.85;margin-bottom:16px;}
+  .section p{font-size:15px;color:#cdc7c0;line-height:1.85;margin-bottom:16px;}
   .section p:last-child{margin-bottom:0;}
   .letter-block{margin-bottom:36px;}
   .letter-block:last-child{margin-bottom:0;}
   .letter-display{display:flex;align-items:baseline;gap:10px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border);}
   .letter-big{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:700;color:var(--gold);line-height:1;}
   .letter-word{font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-dim);font-weight:500;}
-  .letter-block p{font-size:15px;color:var(--muted);line-height:1.85;margin-bottom:16px;}
+  .letter-block p{font-size:15px;color:#cdc7c0;line-height:1.85;margin-bottom:16px;}
   .section h2{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--cream);margin-bottom:20px;line-height:1.2;}
   .section h3{font-size:14px;font-weight:500;color:var(--cream);margin-bottom:10px;margin-top:24px;letter-spacing:0.04em;}
 
@@ -142,7 +142,7 @@
   /* ── 404 ── */
   .not-found{text-align:center;padding:96px 0;}
   .not-found h1{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:var(--gold);margin-bottom:16px;}
-  .not-found p{font-size:15px;color:var(--muted);margin-bottom:32px;}
+  .not-found p{font-size:15px;color:#cdc7c0;margin-bottom:32px;}
 
   /* ── ANIMATIONS ── */
   .r{opacity:0;transform:translateY(18px);transition:opacity 0.55s cubic-bezier(0.22,1,0.36,1),transform 0.55s cubic-bezier(0.22,1,0.36,1);}
@@ -152,6 +152,13 @@
   footer p{font-size:12px;color:var(--muted);}
   footer a{color:var(--muted);transition:color 0.2s;}
   footer a:hover{color:var(--cream);}
+
+  body.light-mode .section p{color:#2a2018;}
+  body.light-mode .letter-block p{color:#2a2018;}
+  body.light-mode .hero-ctx{color:#4a4035;}
+  body.light-mode .fn-desc{color:#4a4035;}
+  body.light-mode .not-found p{color:#2a2018;}
+  body.light-mode .char-search-item-ctx{color:#6b5c3e;}
 </style>
 <script src="/nav.js" defer></script>
 </head>

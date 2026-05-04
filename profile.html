@@ -70,7 +70,7 @@
   .section-label{font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:10px;}
   .section-label::after{content:'';display:block;flex:1;height:1px;background:var(--border);}
 
-  .body-text{font-size:16px;line-height:1.95;color:#a09890;}
+  .body-text{font-size:16px;line-height:1.95;color:#cdc7c0;}
   .body-text+.body-text{margin-top:18px;}
 
   /* Scoring diagram */
@@ -93,7 +93,7 @@
   .tl-item:last-child{margin-bottom:0;}
   .tl-dot{position:absolute;left:-32px;top:6px;width:8px;height:8px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--gold);}
   .tl-year{font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
-  .tl-text{font-size:15px;line-height:1.8;color:#a09890;}
+  .tl-text{font-size:15px;line-height:1.8;color:#cdc7c0;}
 
   /* Verdict boxes */
   .verdict-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px;}
@@ -105,7 +105,7 @@
   .verdict-box.good .verdict-title{color:var(--gold);}
   .verdict-box.caution .verdict-title{color:#8a7040;}
   .verdict-box ul{list-style:none;}
-  .verdict-box ul li{font-size:14px;color:#a09890;line-height:1.75;padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:10px;align-items:flex-start;}
+  .verdict-box ul li{font-size:14px;color:#cdc7c0;line-height:1.75;padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:10px;align-items:flex-start;}
   .verdict-box ul li:last-child{border-bottom:none;}
   .verdict-box.good ul li::before{content:'↑';color:var(--gold-dim);flex-shrink:0;}
   .verdict-box.caution ul li::before{content:'↓';color:#6b5a3a;flex-shrink:0;}
@@ -150,6 +150,15 @@
   .settings-link:hover{border-color:var(--muted);color:var(--cream);}
 
   .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+
+  body.light-mode .body-text{color:#2a2018;}
+  body.light-mode .tl-text{color:#2a2018;}
+  body.light-mode .verdict-box ul li{color:#2a2018;}
+  body.light-mode .verdict-box{background:#ffffff;border-color:#c8c0b4;}
+  body.light-mode .profile-email{color:#6b5c3e;}
+  body.light-mode .result-meta{color:#6b5c3e;}
+  body.light-mode .bar-row{color:#6b5c3e;}
+  body.light-mode .bar-letters{color:#6b5c3e;}
 </style>
 <script src="/nav.js" defer></script>
 </head>

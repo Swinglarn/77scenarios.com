@@ -66,7 +66,7 @@
   .section{margin-bottom:48px;}
   .section-label{font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px;}
   .section-label::after{content:'';display:block;flex:1;height:1px;background:var(--border);}
-  .body-text{font-size:16px;line-height:1.9;color:#a09890;}
+  .body-text{font-size:16px;line-height:1.9;color:#cdc7c0;}
   .body-text+.body-text{margin-top:16px;}
 
   .traits-row{display:flex;flex-wrap:wrap;gap:10px;}
@@ -77,7 +77,7 @@
   .box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;}
   .box-title{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
   .box ul{list-style:none;}
-  .box ul li{font-size:14px;color:#a09890;line-height:1.75;padding:9px 0;border-bottom:1px solid var(--border);display:flex;gap:12px;align-items:flex-start;}
+  .box ul li{font-size:14px;color:#cdc7c0;line-height:1.75;padding:9px 0;border-bottom:1px solid var(--border);display:flex;gap:12px;align-items:flex-start;}
   .box ul li:last-child{border-bottom:none;}
   .box ul li::before{content:'-';color:var(--gold-dim);flex-shrink:0;margin-top:2px;}
 
@@ -110,12 +110,16 @@
   .faq-item{border-bottom:1px solid var(--border);padding:18px 0;}
   .faq-item:first-child{padding-top:0;}
   .faq-q{font-size:15px;font-weight:500;color:var(--cream);margin-bottom:8px;line-height:1.4;}
-  .faq-a{font-size:14px;color:#a09890;line-height:1.8;}
+  .faq-a{font-size:14px;color:#cdc7c0;line-height:1.8;}
   .rarity-badge{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:8px 14px;font-size:13px;color:var(--muted);margin-top:12px;}
   .rarity-badge strong{color:var(--cream);font-weight:500;}
   .compat-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px;}
 
   .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+  body.light-mode .body-text{color:#2a2018;}
+  body.light-mode .fncard-tagline{color:#4a4035;}
+  body.light-mode .group-desc{color:#4a4035;}
 </style>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
