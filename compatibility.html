@@ -176,6 +176,22 @@
   /* Selected ring */
   .cell.selected{outline:2px solid var(--gold);outline-offset:-2px;z-index:5;}
 
+  /* ── Chart scroll affordance (mobile only) ── */
+  .chart-scroll-outer{position:relative;}
+  .chart-scroll-hint{display:none;}
+  @media(max-width:620px){
+    .chart-scroll-outer::after{
+      content:'';position:absolute;top:0;right:0;bottom:0;width:48px;
+      background:linear-gradient(to right,transparent,var(--bg));
+      pointer-events:none;z-index:2;border-radius:0 8px 8px 0;
+    }
+    .chart-scroll-hint{
+      display:block;text-align:center;font-size:11px;letter-spacing:0.12em;
+      text-transform:uppercase;color:var(--muted);margin-top:8px;
+      transition:opacity 0.3s;
+    }
+    .chart-scroll-hint.hidden{opacity:0;pointer-events:none;}
+  }
   @media(max-width:600px){
     main{padding:40px 16px 72px;}
     .detail{padding:20px;}
@@ -278,8 +294,11 @@
     <div class="legend-item"><div class="legend-dot l1"></div><span>Think this one through</span></div>
   </div>
 
-  <div class="chart-wrap r" data-d="4">
-    <div class="chart-grid" id="chart-grid"></div>
+  <div class="chart-scroll-outer">
+    <div class="chart-wrap r" data-d="4">
+      <div class="chart-grid" id="chart-grid"></div>
+    </div>
+    <div class="chart-scroll-hint" id="chart-scroll-hint">Scroll to see full chart →</div>
   </div>
 
   <div class="detail empty r" data-d="5" id="detail-panel">
@@ -584,6 +603,16 @@ const obs = new IntersectionObserver(en => {
   });
 },{threshold:0.12});
 document.querySelectorAll('.r').forEach(el => obs.observe(el));
+
+// Hide chart scroll hint once user has scrolled the chart
+(function(){
+  var wrap = document.querySelector('.chart-wrap');
+  var hint = document.getElementById('chart-scroll-hint');
+  if (!wrap || !hint) return;
+  wrap.addEventListener('scroll', function(){
+    hint.classList.add('hidden');
+  }, {once: true, passive: true});
+})();
 </script>
 
 <style>

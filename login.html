@@ -6,7 +6,7 @@
 <title>Sign In — 77 Scenarios</title>
 <meta name="description" content="How 77 Scenarios works, where Myers-Briggs comes from, and why scenario-based testing is more accurate than self-rating questionnaires.">
 <meta name="keywords" content="sign in, 77 Scenarios, Myers-Briggs personality test, MBTI login">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, follow">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://77scenarios.com/og-image.png">
 <meta property="og:title" content="About: 77 Scenarios">
@@ -19,6 +19,7 @@
 <link rel="canonical" href="https://77scenarios.com/about">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"About the 77 Scenarios Personality Test","description":"How the test is scored, where Myers-Briggs comes from, and what the research says about personality type testing.","url":"https://77scenarios.com/about","publisher":{"@type":"Organization","name":"77 Scenarios","url":"https://77scenarios.com"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -76,6 +77,7 @@
   /* Scoring diagram */
   .score-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px;}
   @media(max-width:520px){.score-grid{grid-template-columns:1fr;}}
+  @media(max-width:600px){main{padding:40px 16px 72px;}}
   .score-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px 24px;}
   .score-dim{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
   .score-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
@@ -129,7 +131,7 @@
   .auth-form{display:flex;flex-direction:column;gap:16px;}
   .field-wrap{display:flex;flex-direction:column;gap:6px;}
   .field-label{color:var(--muted);font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;}
-  .field-input{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:8px;padding:14px 16px;color:var(--cream);font-size:0.95rem;font-family:'DM Sans',sans-serif;outline:none;transition:border-color 0.2s;}
+  .field-input{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:8px;padding:14px 16px;color:var(--cream);font-size:16px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color 0.2s;}
   .field-input:focus{border-color:var(--gold-dim);}
   .field-input::placeholder{color:var(--muted);opacity:0.5;}
   .auth-btn{margin-top:8px;background:var(--gold);color:#0c0e10;font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.9rem;letter-spacing:0.06em;text-transform:uppercase;border:none;border-radius:60px;padding:16px 28px;cursor:pointer;transition:all 0.25s;}
@@ -151,12 +153,12 @@
   body.light-mode .body-text{color:#2a2018;}
   body.light-mode .tl-text{color:#2a2018;}
   body.light-mode .verdict-box ul li{color:#2a2018;}
-  body.light-mode .verdict-box{background:#f2f1ef;border-color:#dcdad5;}
-  body.light-mode .field-input{background:#ffffff;border-color:#dcdad5;color:#141210;}
+  body.light-mode .verdict-box{background:#ffffff;border-color:#c8c0b4;}
+  body.light-mode .field-input{background:#f7f4ef;border-color:#c8c0b4;color:#0f0d0a;}
   body.light-mode .field-input:focus{border-color:#c9a84c;}
-  body.light-mode .field-label{color:#504840;}
-  body.light-mode .auth-switch{color:#504840;}
-  body.light-mode .auth-divider span{color:#807870;}
+  body.light-mode .field-label{color:#6b5c3e;}
+  body.light-mode .auth-switch{color:#6b5c3e;}
+  body.light-mode .auth-divider span{color:#8a7060;}
 </style>
 <script src="/nav.js" defer></script>
 </head>

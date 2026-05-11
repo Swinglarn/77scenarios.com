@@ -23,6 +23,7 @@
 <meta name="google-adsense-account" content="ca-pub-9210546368748348">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"77 Scenarios Personality Test","description":"A scenario-based Myers-Briggs personality type test using 77 real situations instead of self-rating questions.","url":"https://77scenarios.com","applicationCategory":"LifestyleApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -81,7 +82,7 @@
 
   /* BUTTONS */
   .btn-primary { display: inline-flex; align-items: center; gap: 12px; background: var(--gold); color: #0c0e10; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; border: none; border-radius: 60px; padding: 16px 36px; cursor: pointer; transition: all 0.25s ease; }
-  .btn-primary:hover { background: var(--cream); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(201,168,76,0.25); }
+  .btn-primary:hover { background: var(--cream); box-shadow: 0 12px 40px rgba(201,168,76,0.25); }
   .btn-primary .arrow { transition: transform 0.25s ease; }
   .btn-primary:hover .arrow { transform: translateX(4px); }
 
@@ -106,7 +107,7 @@
   .answers { display: flex; flex-direction: column; gap: 14px; }
   .answer-card { display: flex; align-items: flex-start; gap: 20px; padding: 20px 22px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); cursor: pointer; transition: all 0.2s ease; text-align: left; width: 100%; position: relative; overflow: hidden; }
   .answer-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(201,168,76,0.06), transparent); opacity: 0; transition: opacity 0.2s ease; }
-  .answer-card:hover { border-color: var(--gold-dim); transform: translateX(6px); box-shadow: -4px 0 20px rgba(201,168,76,0.08); }
+  .answer-card:hover { border-color: var(--gold-dim); box-shadow: -4px 0 20px rgba(201,168,76,0.08); }
   .answer-card:hover::before { opacity: 1; }
   .answer-letter { flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; color: var(--muted); transition: all 0.2s ease; margin-top: 2px; }
   .answer-card:hover .answer-letter { border-color: var(--gold); color: var(--gold); background: rgba(201,168,76,0.08); }
@@ -204,7 +205,7 @@
   .result-save-box { margin-top: 40px; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
   .save-box-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
   .save-box-sub { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 24px; }
-  .save-email-input { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--cream); outline: none; transition: border-color 0.2s; margin-bottom: 16px; }
+  .save-email-input { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; font-family: 'DM Sans', sans-serif; font-size: 16px; color: var(--cream); outline: none; transition: border-color 0.2s; margin-bottom: 16px; }
   .save-email-input:focus { border-color: var(--gold-dim); }
   .save-email-input::placeholder { color: var(--muted); }
   .save-agree-row { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 20px; }
@@ -226,7 +227,7 @@
   .mode-subtitle{color:var(--muted);font-size:0.95rem;max-width:480px;line-height:1.7;margin-bottom:48px;}
   .mode-cards{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;max-width:860px;width:100%;}
   .mode-card{background:#13161a;border:1px solid var(--border);border-radius:12px;padding:32px 24px;flex:1;min-width:220px;max-width:260px;cursor:pointer;text-align:center;transition:border-color 0.2s,background 0.2s,transform 0.15s;display:flex;flex-direction:column;align-items:center;gap:12px;}
-  .mode-card:hover{border-color:var(--gold-dim);background:#161a1f;transform:translateY(-2px);}
+  .mode-card:hover{border-color:var(--gold-dim);background:#161a1f;}
   .mode-card.selected{border-color:var(--gold);background:#1a1c14;}
   .mode-card-both{border-style:dashed;}
   .mode-card-icon{font-size:1.8rem;line-height:1;}
@@ -543,6 +544,13 @@
   
   body.light-mode .body-text{color:#2a2018;}
   body.light-mode .type-description{color:#2a2018;}
+  /* Transforms only on devices with real hover (mouse/trackpad, not touch) */
+  @media (hover: hover) and (pointer: fine) {
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-primary:hover .arrow { transform: translateX(4px); }
+    .answer-card:hover { transform: translateX(6px); }
+    .mode-card:hover { transform: translateY(-2px); }
+  }
 </style>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -669,7 +677,7 @@
         <div class="demo-field">
           <label class="demo-label">Nationality</label>
           <div id="opt-ethnicity">
-            <select id="country-select" onchange="demoSelections.ethnicity=this.value" style="width:100%;padding:10px 12px;background:#13161a;color:#ede8df;border:1px solid #252a30;border-radius:4px;font-size:14px;font-family:'DM Sans',sans-serif;appearance:none;-webkit-appearance:none;cursor:pointer;outline:none;">
+            <select id="country-select" onchange="demoSelections.ethnicity=this.value" style="width:100%;padding:10px 12px;background:#13161a;color:#ede8df;border:1px solid #252a30;border-radius:4px;font-size:16px;font-family:'DM Sans',sans-serif;appearance:none;-webkit-appearance:none;cursor:pointer;outline:none;">
               <option value="">Select your country...</option>
               <option value="afghanistan">Afghanistan</option>
               <option value="albania">Albania</option>
@@ -921,7 +929,7 @@
       <p style="font-size:14px;color:#b5ada6;line-height:1.6;margin-bottom:8px;">Enter your email to save your type and revisit it anytime.</p>
       <p style="font-size:12px;color:#b5ada6;line-height:1.6;margin-bottom:20px;">Using an ad blocker? You may need to disable it on this page to see the full form.</p>
       <div id="eb2">
-        <input type="email" id="eb3" style="width:100%;background:#0c0e10;border:1px solid #252a30;border-radius:10px;padding:14px 18px;font-family:'DM Sans',sans-serif;font-size:14px;color:#ede8df;outline:none;margin-bottom:16px;" placeholder="your@email.com" autocomplete="email">
+        <input type="email" id="eb3" style="width:100%;background:#0c0e10;border:1px solid #252a30;border-radius:10px;padding:14px 18px;font-family:'DM Sans',sans-serif;font-size:16px;color:#ede8df;outline:none;margin-bottom:16px;" placeholder="your@email.com" autocomplete="email">
         <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:20px;">
           <input type="checkbox" id="eb4" style="flex-shrink:0;width:16px;height:16px;margin-top:2px;accent-color:#c9a84c;cursor:pointer;">
           <label for="eb4" style="font-size:12px;color:#b5ada6;line-height:1.6;cursor:pointer;">I confirm my email and result can be stored. To request removal contact&#58; <span style="color:#c9a84c;">noreply&#64;77scenarios&#46;com</span></label>
@@ -1662,30 +1670,6 @@ function toggleMenu() {
 const SUPA_URL = 'https://rttomfnfyjjssdqfzkaj.supabase.co';
 const SUPA_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw';
 
-async function _fireResultEmail(email, type, blended) {
-  try {
-    await fetch(`${SUPA_URL}/functions/v1/send-result-email`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${SUPA_KEY}`
-      },
-      body: JSON.stringify({
-        record: {
-          email,
-          personality_type: type,
-          ei_e: blended.E, ei_i: blended.I,
-          sn_s: blended.S, sn_n: blended.N,
-          tf_t: blended.T, tf_f: blended.F,
-          jp_j: blended.J, jp_p: blended.P
-        }
-      })
-    });
-  } catch(e) {
-    console.error('Result email failed:', e);
-  }
-}
-
 async function saveResult() {
   const email = document.getElementById('eb3').value.trim();
   const agreed = document.getElementById('eb4').checked;
@@ -1713,10 +1697,6 @@ async function saveResult() {
   btn.disabled = true;
   btn.textContent = 'Saving...';
 
-  // Get blended scores here — bs was a local var in showResultsActual, not accessible outside
-  const blended = getBlendedScores();
-  const type = getType();
-
   try {
     const res = await fetch(`${SUPA_URL}/rest/v1/subscribers`, {
       method: 'POST',
@@ -1728,28 +1708,25 @@ async function saveResult() {
       },
       body: JSON.stringify({
         email,
-        personality_type: type,
+        personality_type: getType(),
         gdpr_consent: true,
-        ei_e: blended.E, ei_i: blended.I,
-        sn_s: blended.S, sn_n: blended.N,
-        tf_t: blended.T, tf_f: blended.F,
-        jp_j: blended.J, jp_p: blended.P
+        ei_e: bs.E||scores.E, ei_i: bs.I||scores.I,
+        sn_s: bs.S||scores.S, sn_n: bs.N||scores.N,
+        tf_t: bs.T||scores.T, tf_f: bs.F||scores.F,
+        jp_j: bs.J||scores.J, jp_p: bs.P||scores.P
       })
     });
 
     if (res.ok) {
       document.getElementById('eb2').style.display = 'none';
       document.getElementById('eb5').style.display = 'block';
-      _fireResultEmail(email, type, blended);
     } else {
       const data = await res.json();
       if (data?.code === '23505') {
-        // Duplicate email — treat as success, still send the email
         document.getElementById('eb2').style.display = 'none';
         document.getElementById('eb5').style.display = 'block';
-        _fireResultEmail(email, type, blended);
       } else {
-        throw new Error(data?.message || 'Save failed');
+        throw new Error('Something went wrong.');
       }
     }
   } catch (e) {

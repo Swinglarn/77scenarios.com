@@ -18,6 +18,7 @@
 <link rel="canonical" href="https://77scenarios.com/letters">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"The 8 Myers-Briggs Letters","description":"All eight letters of the Myers-Briggs personality framework explained. E, I, S, N, T, F, J, P.","url":"https://77scenarios.com/letters.html","isPartOf":{"@type":"WebSite","name":"77 Scenarios","url":"https://77scenarios.com"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -70,10 +71,11 @@
 
   .letter-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
   @media(max-width:580px){.letter-pair{grid-template-columns:1fr;}}
+  @media(max-width:600px){main{padding:40px 16px 72px;}}
 
   .lcard{display:block;text-decoration:none;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px 28px;position:relative;overflow:hidden;transition:border-color 0.2s,transform 0.25s,box-shadow 0.25s;}
   .lcard::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,0.06),transparent);opacity:0;transition:opacity 0.25s;}
-  .lcard:hover{border-color:var(--gold-dim);transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,0.4);}
+  .lcard:hover{border-color:var(--gold-dim);box-shadow:0 20px 50px rgba(0,0,0,0.4);}
   .lcard:hover::after{opacity:1;}
   .lcard-letter{font-family:'Cormorant Garamond',serif;font-size:68px;font-weight:300;line-height:1;color:var(--cream);letter-spacing:-0.04em;margin-bottom:12px;transition:color 0.25s;}
   .lcard:hover .lcard-letter{color:var(--gold);}
@@ -82,14 +84,18 @@
   .lcard-types{display:flex;flex-wrap:wrap;gap:6px;}
   .mini-type{font-size:12px;letter-spacing:0.06em;font-weight:500;padding:3px 10px;border-radius:20px;border:1px solid var(--border);color:var(--muted);background:var(--surface2);}
   .lcard-arrow{position:absolute;top:24px;right:22px;font-size:13px;color:var(--gold-dim);transition:all 0.2s;}
-  .lcard:hover .lcard-arrow{color:var(--gold);transform:translateX(3px);}
+  .lcard:hover .lcard-arrow{color:var(--gold);}
 
   .dim-sep{height:1px;background:var(--border);margin:8px 0 72px;}
   .footer-note{font-size:14px;color:var(--cream);opacity:0.88;line-height:1.7;}
   .footer-note a{color:var(--gold);text-decoration:none;}
 
-  body.light-mode .dim-desc{color:#38302a;}
-  body.light-mode .dim-desc em{color:#504840;}
+  body.light-mode .dim-desc{color:#2a2018;}
+  body.light-mode .dim-desc em{color:#6b5c3e;}
+  @media (hover: hover) and (pointer: fine) {
+    .lcard:hover{transform:translateY(-5px);}
+    .lcard:hover .lcard-arrow{transform:translateX(3px);}
+  }
 </style>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
