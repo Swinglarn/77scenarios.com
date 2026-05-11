@@ -1662,6 +1662,30 @@ function toggleMenu() {
 const SUPA_URL = 'https://rttomfnfyjjssdqfzkaj.supabase.co';
 const SUPA_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw';
 
+async function _fireResultEmail(email, type, blended) {
+  try {
+    await fetch(`${SUPA_URL}/functions/v1/send-result-email`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${SUPA_KEY}`
+      },
+      body: JSON.stringify({
+        record: {
+          email,
+          personality_type: type,
+          ei_e: blended.E, ei_i: blended.I,
+          sn_s: blended.S, sn_n: blended.N,
+          tf_t: blended.T, tf_f: blended.F,
+          jp_j: blended.J, jp_p: blended.P
+        }
+      })
+    });
+  } catch(e) {
+    console.error('Result email failed:', e);
+  }
+}
+
 async function saveResult() {
   const email = document.getElementById('eb3').value.trim();
   const agreed = document.getElementById('eb4').checked;
@@ -1689,6 +1713,10 @@ async function saveResult() {
   btn.disabled = true;
   btn.textContent = 'Saving...';
 
+  // Get blended scores here — bs was a local var in showResultsActual, not accessible outside
+  const blended = getBlendedScores();
+  const type = getType();
+
   try {
     const res = await fetch(`${SUPA_URL}/rest/v1/subscribers`, {
       method: 'POST',
@@ -1700,25 +1728,28 @@ async function saveResult() {
       },
       body: JSON.stringify({
         email,
-        personality_type: getType(),
+        personality_type: type,
         gdpr_consent: true,
-        ei_e: bs.E||scores.E, ei_i: bs.I||scores.I,
-        sn_s: bs.S||scores.S, sn_n: bs.N||scores.N,
-        tf_t: bs.T||scores.T, tf_f: bs.F||scores.F,
-        jp_j: bs.J||scores.J, jp_p: bs.P||scores.P
+        ei_e: blended.E, ei_i: blended.I,
+        sn_s: blended.S, sn_n: blended.N,
+        tf_t: blended.T, tf_f: blended.F,
+        jp_j: blended.J, jp_p: blended.P
       })
     });
 
     if (res.ok) {
       document.getElementById('eb2').style.display = 'none';
       document.getElementById('eb5').style.display = 'block';
+      _fireResultEmail(email, type, blended);
     } else {
       const data = await res.json();
       if (data?.code === '23505') {
+        // Duplicate email — treat as success, still send the email
         document.getElementById('eb2').style.display = 'none';
         document.getElementById('eb5').style.display = 'block';
+        _fireResultEmail(email, type, blended);
       } else {
-        throw new Error('Something went wrong.');
+        throw new Error(data?.message || 'Save failed');
       }
     }
   } catch (e) {
