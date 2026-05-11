@@ -59,7 +59,7 @@
       '.nav-logo{font-family:\"Cormorant Garamond\",serif !important;font-size:22px !important;font-weight:300 !important;text-decoration:none !important;display:inline-flex !important;align-items:baseline !important;gap:3px !important;letter-spacing:0 !important;}',
       '.logo-77{color:#c9a84c !important;font-weight:600 !important;font-size:38px !important;font-style:italic !important;line-height:1 !important;letter-spacing:-0.03em !important;}',
       '.logo-scenarios{color:#ede8df !important;font-weight:300 !important;font-size:26px !important;letter-spacing:0.1em !important;text-transform:lowercase !important;}',
-      'body.light-mode .logo-scenarios{color:#1a1208 !important;}',
+      'body.light-mode .logo-scenarios{color:#141210 !important;}',
       'body.light-mode .logo-77{color:#c9a84c !important;}',
       // Footer styles
       '#nav-footer{border-top:1px solid #2a2a2a;padding:48px 32px;text-align:center;background:#111316;}',
@@ -78,103 +78,108 @@
     var lmStyle = document.createElement('style');
     lmStyle.id = 'light-mode-css';
     lmStyle.textContent = [
-      /* ── Core palette: white page, warm parchment surfaces, ink text, gold accent ── */
-      'body.light-mode{--bg:#ffffff;--surface:#f5efe4;--surface2:#ede5d3;--gold:#c9a84c;--gold-dim:#a8893a;--cream:#1a1208;--muted:#6b5538;--border:#d6c9b3;background:#ffffff !important;color:#1a1208 !important;}',
+      /* ── Core palette ── */
+      /* Barely-warm neutral gray surfaces — not yellow/orange, just "light gray with a hint of warmth" */
+      /* Gold pops cleanly against neutral gray the same way it pops against dark charcoal */
+      'body.light-mode{--bg:#ffffff;--surface:#f2f1ef;--surface2:#e7e5e2;--gold:#c9a84c;--gold-dim:#a8893a;--cream:#141210;--muted:#504840;--border:#dcdad5;background:#ffffff !important;color:#141210 !important;}',
       /* ── Nav bar ── */
-      'body.light-mode nav,body.light-mode .site-nav{background:rgba(255,255,255,0.96) !important;border-bottom:1px solid #d6c9b3 !important;box-shadow:0 2px 10px rgba(0,0,0,0.07) !important;}',
-      'body.light-mode .nav-logo{color:#1a1208 !important;font-weight:500 !important;}',
-      'body.light-mode .nav-links a{color:#3d2e1a !important;}',
-      'body.light-mode .nav-links a:hover,body.light-mode .nav-links a.active{color:#1a1208 !important;}',
-      'body.light-mode .nav-links a[href="/"]{color:#8a6d2e !important;border-color:#c8b370 !important;}',
-      'body.light-mode .nav-links a[href="/"]:hover{background:rgba(138,109,46,0.1) !important;border-color:#a8893a !important;}',
-      'body.light-mode .nav-links a[href="/es/"]{color:#8a6d2e !important;border-color:#c8b370 !important;}',
-      'body.light-mode .nav-links a[href="/pt/"]{color:#8a6d2e !important;border-color:#c8b370 !important;}',
-      'body.light-mode .nav-burger span{background:#1a1208 !important;}',
+      'body.light-mode nav,body.light-mode .site-nav{background:rgba(255,255,255,0.96) !important;border-bottom:1px solid #dcdad5 !important;box-shadow:0 2px 10px rgba(0,0,0,0.06) !important;}',
+      'body.light-mode .nav-logo{color:#141210 !important;font-weight:500 !important;}',
+      'body.light-mode .nav-links a{color:#38302a !important;}',
+      'body.light-mode .nav-links a:hover,body.light-mode .nav-links a.active{color:#141210 !important;}',
+      'body.light-mode .nav-links a[href="/"]{color:#8a6d2e !important;border-color:#c9a84c !important;}',
+      'body.light-mode .nav-links a[href="/"]:hover{background:rgba(201,168,76,0.1) !important;border-color:#a8893a !important;}',
+      'body.light-mode .nav-links a[href="/es/"]{color:#8a6d2e !important;border-color:#c9a84c !important;}',
+      'body.light-mode .nav-links a[href="/pt/"]{color:#8a6d2e !important;border-color:#c9a84c !important;}',
+      'body.light-mode .nav-burger span{background:#141210 !important;}',
       /* ── Mobile drawer ── */
-      'body.light-mode .nav-drawer{background:#f5efe4 !important;border-left:1px solid #d6c9b3 !important;}',
-      'body.light-mode .nav-drawer-links a{color:#3d2e1a !important;border-bottom-color:#ddd3c0 !important;}',
-      'body.light-mode .nav-drawer-links a:hover{color:#1a1208 !important;}',
-      'body.light-mode .nav-close{color:#3d2e1a !important;}',
-      'body.light-mode .nav-drawer-header{border-bottom:1px solid #d6c9b3 !important;background:#f5efe4 !important;}',
+      'body.light-mode .nav-drawer{background:#f2f1ef !important;border-left:1px solid #dcdad5 !important;}',
+      'body.light-mode .nav-drawer-links a{color:#38302a !important;border-bottom-color:#dcdad5 !important;}',
+      'body.light-mode .nav-drawer-links a:hover{color:#141210 !important;}',
+      'body.light-mode .nav-close{color:#38302a !important;}',
+      'body.light-mode .nav-drawer-header{border-bottom:1px solid #dcdad5 !important;background:#f2f1ef !important;}',
       /* ── Overlay + user dropdown ── */
       'body.light-mode #t-overlay{background:#ffffff !important;}',
-      'body.light-mode #nav-user-dropdown{background:#f5efe4 !important;border:1px solid #d6c9b3 !important;box-shadow:0 8px 32px rgba(0,0,0,0.14) !important;}',
-      'body.light-mode #nav-user-dropdown a{color:#3d2e1a !important;border-bottom-color:#ddd3c0 !important;}',
-      'body.light-mode #nav-user-dropdown a:hover{color:#1a1208 !important;background:#ede5d3 !important;}',
+      'body.light-mode #nav-user-dropdown{background:#f2f1ef !important;border:1px solid #dcdad5 !important;box-shadow:0 8px 32px rgba(0,0,0,0.12) !important;}',
+      'body.light-mode #nav-user-dropdown a{color:#38302a !important;border-bottom-color:#dcdad5 !important;}',
+      'body.light-mode #nav-user-dropdown a:hover{color:#141210 !important;background:#e7e5e2 !important;}',
       /* ── Global link reset ── */
       'body.light-mode a{color:inherit !important;text-decoration:none !important;}',
       'body.light-mode a:visited{color:inherit !important;}',
-      /* ── Type cards — parchment with subtle lift shadow ── */
-      'body.light-mode .type-card{background:#f5efe4 !important;border-color:#d6c9b3 !important;box-shadow:0 1px 4px rgba(0,0,0,0.07) !important;}',
-      'body.light-mode .type-card *{color:#1a1208 !important;}',
-      'body.light-mode .type-card:hover{border-color:#c9a84c !important;box-shadow:0 8px 28px rgba(0,0,0,0.1) !important;}',
-      'body.light-mode .card-name{color:#1a1208 !important;font-weight:500 !important;}',
-      'body.light-mode .card-tagline{color:#6b5538 !important;}',
+      /* ── Cards — neutral gray with subtle lift shadow ── */
+      'body.light-mode .type-card{background:#f2f1ef !important;border-color:#dcdad5 !important;box-shadow:0 1px 4px rgba(0,0,0,0.06) !important;}',
+      'body.light-mode .type-card *{color:#141210 !important;}',
+      'body.light-mode .type-card:hover{border-color:#c9a84c !important;box-shadow:0 8px 28px rgba(0,0,0,0.09) !important;}',
+      'body.light-mode .card-name{color:#141210 !important;font-weight:500 !important;}',
+      'body.light-mode .card-tagline{color:#504840 !important;}',
       'body.light-mode .card-arrow{color:#c9a84c !important;}',
       'body.light-mode .hi{color:#c9a84c !important;}',
-      /* ── Mini type badges ── */
-      'body.light-mode .mini-type{background:#ede5d3 !important;border:1px solid #d6c9b3 !important;color:#3d2e1a !important;}',
+      /* ── Mini type badges — clearly darker than card background ── */
+      'body.light-mode .mini-type{background:#e7e5e2 !important;border:1px solid #dcdad5 !important;color:#38302a !important;}',
       /* ── Letter cards ── */
-      'body.light-mode .lcard{background:#f5efe4 !important;border:1px solid #d6c9b3 !important;box-shadow:0 1px 4px rgba(0,0,0,0.07) !important;}',
-      'body.light-mode .lcard:hover{border-color:#c9a84c !important;box-shadow:0 8px 28px rgba(0,0,0,0.1) !important;}',
-      'body.light-mode .lcard-letter,.lcard-name{color:#1a1208 !important;}',
-      'body.light-mode .lcard-desc{color:#6b5538 !important;}',
+      'body.light-mode .lcard{background:#f2f1ef !important;border:1px solid #dcdad5 !important;box-shadow:0 1px 4px rgba(0,0,0,0.06) !important;}',
+      'body.light-mode .lcard:hover{border-color:#c9a84c !important;box-shadow:0 8px 28px rgba(0,0,0,0.09) !important;}',
+      /* FIX: both selectors must be scoped to body.light-mode or dark mode gets dark text */
+      'body.light-mode .lcard-letter,body.light-mode .lcard-name{color:#141210 !important;}',
+      'body.light-mode .lcard-desc{color:#504840 !important;}',
       /* ── Text utilities ── */
-      'body.light-mode .dim-desc{color:#3d2e1a !important;}',
-      'body.light-mode .page-sub{color:#3d2e1a !important;}',
-      'body.light-mode .page-eyebrow{color:#c9a84c !important;}',
-      'body.light-mode .dim-num{color:#c9a84c !important;}',
-      'body.light-mode .group-label,.group-name{color:#1a1208 !important;}',
-      'body.light-mode .group-desc{color:#3d2e1a !important;}',
+      'body.light-mode .dim-desc{color:#38302a !important;}',
+      'body.light-mode .page-sub{color:#38302a !important;}',
+      'body.light-mode .page-eyebrow{color:#a8893a !important;}',
+      'body.light-mode .dim-num{color:#a8893a !important;}',
+      /* FIX: both selectors must be scoped — .group-name was applying dark text globally */
+      'body.light-mode .group-label,body.light-mode .group-name{color:#141210 !important;}',
+      'body.light-mode .group-desc{color:#38302a !important;}',
       /* ── Noise texture off ── */
       'body.light-mode body::before{opacity:0 !important;}',
       /* ── Theme toggles ── */
-      'body.light-mode #theme-toggle-desktop{color:#9a8570 !important;}',
-      'body.light-mode #theme-toggle-mobile{color:#3d2e1a !important;}',
+      'body.light-mode #theme-toggle-desktop{color:#807870 !important;}',
+      'body.light-mode #theme-toggle-mobile{color:#38302a !important;}',
       /* ── Nav right slot ── */
-      'body.light-mode .nav-right-slot a:not(.nav-cta){border-color:#d6c9b3 !important;color:#3d2e1a !important;}',
-      /* ── Footer — slightly deeper parchment ── */
-      'body.light-mode #nav-footer{background:#ede5d3 !important;border-top-color:#d6c9b3 !important;}',
-      'body.light-mode #nav-footer .footer-tagline{color:#6b5538 !important;}',
-      'body.light-mode #nav-footer .footer-links a{color:#3d2e1a !important;}',
-      'body.light-mode #nav-footer .footer-links a:hover{color:#1a1208 !important;}',
-      'body.light-mode #nav-footer .footer-copy{color:#9a8570 !important;}',
+      'body.light-mode .nav-right-slot a:not(.nav-cta){border-color:#dcdad5 !important;color:#38302a !important;}',
+      /* ── Footer — deeper neutral, clearly distinct from page ── */
+      'body.light-mode #nav-footer{background:#e7e5e2 !important;border-top-color:#dcdad5 !important;}',
+      'body.light-mode #nav-footer .footer-tagline{color:#504840 !important;}',
+      'body.light-mode #nav-footer .footer-links a{color:#38302a !important;}',
+      'body.light-mode #nav-footer .footer-links a:hover{color:#141210 !important;}',
+      'body.light-mode #nav-footer .footer-copy{color:#807870 !important;}',
       /* ── FAQ ── */
-      'body.light-mode .faq-item{border-bottom-color:#d6c9b3 !important;}',
-      'body.light-mode .faq-q{color:#1a1208 !important;font-weight:500 !important;}',
-      'body.light-mode .faq-a{color:#3d2e1a !important;}',
-      /* ── Rarity badges ── */
-      'body.light-mode .rarity-badge{background:#f5efe4 !important;border-color:#d6c9b3 !important;color:#6b5538 !important;}',
+      'body.light-mode .faq-item{border-bottom-color:#dcdad5 !important;}',
+      'body.light-mode .faq-q{color:#141210 !important;font-weight:500 !important;}',
+      'body.light-mode .faq-a{color:#38302a !important;}',
+      /* ── Rarity badges — use surface2 so they're distinct inside cards ── */
+      'body.light-mode .rarity-badge{background:#e7e5e2 !important;border-color:#dcdad5 !important;color:#504840 !important;}',
       /* ── Compat score blocks ── */
-      'body.light-mode .score-block{background:#f5efe4 !important;border-color:#d6c9b3 !important;box-shadow:0 1px 4px rgba(0,0,0,0.07) !important;}',
-      'body.light-mode .score-bar-track{background:#ddd3c0 !important;}',
-      'body.light-mode .score-legend{color:#6b5538 !important;}',
+      'body.light-mode .score-block{background:#f2f1ef !important;border-color:#dcdad5 !important;box-shadow:0 1px 4px rgba(0,0,0,0.06) !important;}',
+      'body.light-mode .score-bar-track{background:#dcdad5 !important;}',
+      'body.light-mode .score-legend{color:#504840 !important;}',
       'body.light-mode .score-label-text{filter:saturate(1.3) brightness(0.85);}',
       /* ── Type pair cards ── */
-      'body.light-mode .type-pair-card{background:#f5efe4 !important;border-color:#d6c9b3 !important;box-shadow:0 1px 4px rgba(0,0,0,0.07) !important;}',
-      'body.light-mode .type-pair-card:hover{border-color:#c9a84c !important;box-shadow:0 8px 28px rgba(0,0,0,0.1) !important;}',
-      'body.light-mode .tpc-code{color:#1a1208 !important;}',
-      'body.light-mode .tpc-name{color:#1a1208 !important;}',
-      'body.light-mode .tpc-tagline{color:#6b5538 !important;}',
+      'body.light-mode .type-pair-card{background:#f2f1ef !important;border-color:#dcdad5 !important;box-shadow:0 1px 4px rgba(0,0,0,0.06) !important;}',
+      'body.light-mode .type-pair-card:hover{border-color:#c9a84c !important;box-shadow:0 8px 28px rgba(0,0,0,0.09) !important;}',
+      'body.light-mode .tpc-code{color:#141210 !important;}',
+      'body.light-mode .tpc-name{color:#141210 !important;}',
+      'body.light-mode .tpc-tagline{color:#504840 !important;}',
       'body.light-mode .tpc-arrow{color:#a8893a !important;}',
       /* ── Related pills + similar cards ── */
-      'body.light-mode .related-pill{background:#f5efe4 !important;border-color:#d6c9b3 !important;color:#6b5538 !important;}',
-      'body.light-mode .related-pill:hover{border-color:#c9a84c !important;color:#8a6d2e !important;background:#ede5d3 !important;}',
-      'body.light-mode .similar-card{background:#f5efe4 !important;border-color:#d6c9b3 !important;box-shadow:0 1px 4px rgba(0,0,0,0.07) !important;}',
-      'body.light-mode .similar-card:hover{border-color:#c9a84c !important;box-shadow:0 8px 28px rgba(0,0,0,0.1) !important;}',
-      'body.light-mode .sim-code{color:#1a1208 !important;}',
-      'body.light-mode .sim-name{color:#6b5538 !important;}',
+      /* Pills are surface2 so they contrast inside card backgrounds ── */
+      'body.light-mode .related-pill{background:#e7e5e2 !important;border-color:#dcdad5 !important;color:#504840 !important;}',
+      'body.light-mode .related-pill:hover{border-color:#c9a84c !important;color:#8a6d2e !important;background:#dddbd6 !important;}',
+      'body.light-mode .similar-card{background:#f2f1ef !important;border-color:#dcdad5 !important;box-shadow:0 1px 4px rgba(0,0,0,0.06) !important;}',
+      'body.light-mode .similar-card:hover{border-color:#c9a84c !important;box-shadow:0 8px 28px rgba(0,0,0,0.09) !important;}',
+      'body.light-mode .sim-code{color:#141210 !important;}',
+      'body.light-mode .sim-name{color:#504840 !important;}',
       /* ── Info / prose / legal boxes ── */
-      'body.light-mode .info-box{background:#f5efe4 !important;border-color:#d6c9b3 !important;box-shadow:0 1px 4px rgba(0,0,0,0.07) !important;}',
-      'body.light-mode .info-box p{color:#3d2e1a !important;}',
-      'body.light-mode .data-list li{color:#3d2e1a !important;}',
-      'body.light-mode .prose{color:#3d2e1a !important;}',
-      'body.light-mode .warning-box{background:rgba(138,109,46,0.1) !important;border-color:rgba(138,109,46,0.35) !important;}',
-      'body.light-mode .warning-box p{color:#2a1500 !important;}',
-      /* ── Contact forms — inputs stay white (clear fill affordance) ── */
-      'body.light-mode .contact-form input,body.light-mode .contact-form textarea,body.light-mode .contact-form select{background:#ffffff !important;border-color:#d6c9b3 !important;color:#1a1208 !important;}',
+      'body.light-mode .info-box{background:#f2f1ef !important;border-color:#dcdad5 !important;box-shadow:0 1px 4px rgba(0,0,0,0.06) !important;}',
+      'body.light-mode .info-box p{color:#38302a !important;}',
+      'body.light-mode .data-list li{color:#38302a !important;}',
+      'body.light-mode .prose{color:#38302a !important;}',
+      'body.light-mode .warning-box{background:rgba(201,168,76,0.08) !important;border-color:rgba(201,168,76,0.3) !important;}',
+      'body.light-mode .warning-box p{color:#141210 !important;}',
+      /* ── Contact forms — inputs white, cards surface gray ── */
+      'body.light-mode .contact-form input,body.light-mode .contact-form textarea,body.light-mode .contact-form select{background:#ffffff !important;border-color:#dcdad5 !important;color:#141210 !important;}',
       'body.light-mode .contact-form input:focus,body.light-mode .contact-form textarea:focus,body.light-mode .contact-form select:focus{border-color:#c9a84c !important;box-shadow:0 0 0 3px rgba(201,168,76,0.12) !important;}',
-      'body.light-mode .contact-card{background:#f5efe4 !important;border-color:#d6c9b3 !important;box-shadow:0 1px 4px rgba(0,0,0,0.07) !important;}',
+      'body.light-mode .contact-card{background:#f2f1ef !important;border-color:#dcdad5 !important;box-shadow:0 1px 4px rgba(0,0,0,0.06) !important;}',
 
     ].join('');
     document.head.appendChild(lmStyle);
