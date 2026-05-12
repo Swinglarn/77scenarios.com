@@ -7,6 +7,8 @@
 <meta name="description" content="Discuss personality types, cognitive functions, relationships and more with the 77 Scenarios community.">
 <meta property="og:title" content="Forum - 77 Scenarios">
 <meta property="og:description" content="Discuss personality types, cognitive functions, and more.">
+<meta property="og:image" content="https://77scenarios.com/og-image.png">
+<meta name="twitter:image" content="https://77scenarios.com/og-image.png">
 <meta property="og:url" content="https://77scenarios.com/forum">
 <meta property="og:site_name" content="77 Scenarios">
 <link rel="canonical" href="https://77scenarios.com/forum">
@@ -50,6 +52,21 @@
 
   main{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:56px 32px 96px;}
   @media(max-width:600px){main{padding:40px 16px 80px;}}
+  /* ── Mobile: move vote col to bottom row ── */
+  @media(max-width:520px){
+    .thread-wrapper{display:flex;flex-direction:column;}
+    .thread-wrapper .vote-col{
+      position:static;width:100%;flex-direction:row;
+      border-right:none;border-top:1px solid var(--border);
+      padding:8px 16px;justify-content:flex-start;gap:16px;
+      order:2;
+    }
+    .thread-wrapper .thread-item{
+      padding:16px;order:1;
+      border-bottom-left-radius:0;border-bottom-right-radius:0;
+    }
+    .thread-wrapper .vote-btn{min-height:36px;padding:6px 10px;}
+  }
 
   .r{opacity:0;transform:translateY(24px);transition:opacity 0.65s cubic-bezier(0.22,1,0.36,1),transform 0.65s cubic-bezier(0.22,1,0.36,1);}
   .r.in{opacity:1;transform:none;}
@@ -98,8 +115,24 @@
   .empty-state-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--cream);margin-bottom:10px;}
 
   /* Loading */
-  .loading-row{height:72px;background:var(--surface);border:1px solid var(--border);border-radius:10px;animation:pulse 1.4s ease infinite;}
-  @keyframes pulse{0%,100%{opacity:0.5;}50%{opacity:1;}}
+  .loading-row{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px 20px 68px;position:relative;overflow:hidden;}
+  .loading-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:52px;border-right:1px solid var(--border);}
+  .loading-row::after{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,0.04) 50%,transparent 100%);
+    background-size:200% 100%;
+    animation:shimmer 1.6s ease infinite;
+  }
+  .sk-line{height:10px;border-radius:5px;background:rgba(255,255,255,0.06);margin-bottom:10px;}
+  .sk-line.wide{width:68%;}
+  .sk-line.narrow{width:38%;}
+  .sk-line.short{width:22%;height:8px;margin-bottom:0;}
+  @keyframes shimmer{0%{background-position:200% 0;}100%{background-position:-200% 0;}}
+  body.light-mode .loading-row{background:#f2f1ef;border-color:#dcdad5;}
+  body.light-mode .loading-row::before{border-right-color:#dcdad5;}
+  body.light-mode .loading-row::after{background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,0.6) 50%,transparent 100%);background-size:200% 100;}
+  body.light-mode .sk-line{background:rgba(0,0,0,0.07);}
+
 
   /* Modal */
   .modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.72);z-index:500;align-items:center;justify-content:center;padding:24px;}
@@ -146,7 +179,6 @@ body.light-mode .cat-pill.active{border-color:#c9a84c;color:#8a6d2e;background:r
 body.light-mode .auth-notice{background:#ffffff;border-color:#d4cdc6;color:#6b5c3e;}
 body.light-mode .empty-state{color:#6b5c3e;}
 body.light-mode .empty-state-title{color:#0f0d0a;}
-body.light-mode .loading-row{background:#ede8df;border-color:#d4cdc6;}
 body.light-mode .thread-delete-btn{color:#8a7060;}
 body.light-mode .thread-delete-btn:hover{color:#c0392b;background:rgba(192,57,43,0.08);}
 body.light-mode .modal{background:#ffffff;border-color:#c8c0b4;}
@@ -233,11 +265,10 @@ body.light-mode .forum-title{color:#0f0d0a;}
   </div>
 
   <div class="thread-list r" id="thread-list">
-    <div class="loading-row"></div>
-    <div class="loading-row"></div>
-    <div class="loading-row"></div>
-    <div class="loading-row"></div>
-    <div class="loading-row"></div>
+    <div class="loading-row"><div class="sk-line wide"></div><div class="sk-line narrow"></div><div class="sk-line short"></div></div>
+    <div class="loading-row"><div class="sk-line wide" style="width:55%"></div><div class="sk-line narrow" style="width:30%"></div><div class="sk-line short"></div></div>
+    <div class="loading-row"><div class="sk-line wide" style="width:72%"></div><div class="sk-line narrow" style="width:42%"></div><div class="sk-line short"></div></div>
+    <div class="loading-row"><div class="sk-line wide" style="width:48%"></div><div class="sk-line narrow" style="width:35%"></div><div class="sk-line short"></div></div>
   </div>
 
   <div style="text-align:center;margin-top:32px;display:none;" id="load-more-wrap">
@@ -334,7 +365,8 @@ body.light-mode .forum-title{color:#0f0d0a;}
   async function loadThreads(reset = true) {
     if (reset) {
       page = 0;
-      document.getElementById('thread-list').innerHTML = '<div class="loading-row"></div><div class="loading-row"></div><div class="loading-row"></div>';
+      const sk = '<div class="loading-row"><div class="sk-line wide"></div><div class="sk-line narrow"></div><div class="sk-line short"></div></div>';
+      document.getElementById('thread-list').innerHTML = sk + sk + sk;
     }
 
     let query = sb.from('forum_threads')
@@ -398,6 +430,7 @@ body.light-mode .forum-title{color:#0f0d0a;}
     const agoStr = timeAgo(t.last_activity_at);
 
     const wrapper = document.createElement('div');
+    wrapper.className = 'thread-wrapper';
     wrapper.style.cssText = 'position:relative;';
 
     // Vote column (stops click propagation so it doesn't open the thread)

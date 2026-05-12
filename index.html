@@ -9,6 +9,7 @@
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://77scenarios.com/og-image.png">
+<meta name="twitter:image" content="https://77scenarios.com/og-image.png">
 <meta property="og:title" content="77 Scenarios Free Scenario-Based Personality Test">
 <meta property="og:description" content="77 real scenarios. No self-rating. Just choices. Find your Myers-Briggs personality type the honest way.">
 <meta property="og:url" content="https://77scenarios.com/">
@@ -23,7 +24,6 @@
 <meta name="google-adsense-account" content="ca-pub-9210546368748348">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"77 Scenarios Personality Test","description":"A scenario-based Myers-Briggs personality type test using 77 real situations instead of self-rating questions.","url":"https://77scenarios.com","applicationCategory":"LifestyleApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -82,12 +82,15 @@
 
   /* BUTTONS */
   .btn-primary { display: inline-flex; align-items: center; gap: 12px; background: var(--gold); color: #0c0e10; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; border: none; border-radius: 60px; padding: 16px 36px; cursor: pointer; transition: all 0.25s ease; }
-  .btn-primary:hover { background: var(--cream); box-shadow: 0 12px 40px rgba(201,168,76,0.25); }
+  .btn-primary:hover { background: var(--cream); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(201,168,76,0.25); }
   .btn-primary .arrow { transition: transform 0.25s ease; }
   .btn-primary:hover .arrow { transform: translateX(4px); }
 
   /* BACK BUTTON */
   .btn-back { display: inline-flex; align-items: center; gap: 6px; background: none; border: none; color: var(--muted); font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; padding: 4px 0; transition: color 0.2s ease; }
+  .kbd-hint { margin-top: 20px; text-align: center; font-size: 11px; letter-spacing: 0.08em; color: var(--muted); opacity: 0.5; }
+  .kbd-hint kbd { display: inline-block; padding: 2px 6px; border: 1px solid var(--border); border-radius: 4px; font-family: inherit; font-size: 10px; color: var(--muted); background: var(--surface); }
+  @media (hover: none) and (pointer: coarse) { .kbd-hint { display: none; } }
   .btn-back:hover { color: var(--cream); }
   .btn-back:disabled { opacity: 0; pointer-events: none; }
 
@@ -107,7 +110,7 @@
   .answers { display: flex; flex-direction: column; gap: 14px; }
   .answer-card { display: flex; align-items: flex-start; gap: 20px; padding: 20px 22px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); cursor: pointer; transition: all 0.2s ease; text-align: left; width: 100%; position: relative; overflow: hidden; }
   .answer-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(201,168,76,0.06), transparent); opacity: 0; transition: opacity 0.2s ease; }
-  .answer-card:hover { border-color: var(--gold-dim); box-shadow: -4px 0 20px rgba(201,168,76,0.08); }
+  .answer-card:hover { border-color: var(--gold-dim); transform: translateX(6px); box-shadow: -4px 0 20px rgba(201,168,76,0.08); }
   .answer-card:hover::before { opacity: 1; }
   .answer-letter { flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; color: var(--muted); transition: all 0.2s ease; margin-top: 2px; }
   .answer-card:hover .answer-letter { border-color: var(--gold); color: var(--gold); background: rgba(201,168,76,0.08); }
@@ -205,7 +208,7 @@
   .result-save-box { margin-top: 40px; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
   .save-box-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
   .save-box-sub { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 24px; }
-  .save-email-input { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; font-family: 'DM Sans', sans-serif; font-size: 16px; color: var(--cream); outline: none; transition: border-color 0.2s; margin-bottom: 16px; }
+  .save-email-input { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--cream); outline: none; transition: border-color 0.2s; margin-bottom: 16px; }
   .save-email-input:focus { border-color: var(--gold-dim); }
   .save-email-input::placeholder { color: var(--muted); }
   .save-agree-row { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 20px; }
@@ -227,7 +230,7 @@
   .mode-subtitle{color:var(--muted);font-size:0.95rem;max-width:480px;line-height:1.7;margin-bottom:48px;}
   .mode-cards{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;max-width:860px;width:100%;}
   .mode-card{background:#13161a;border:1px solid var(--border);border-radius:12px;padding:32px 24px;flex:1;min-width:220px;max-width:260px;cursor:pointer;text-align:center;transition:border-color 0.2s,background 0.2s,transform 0.15s;display:flex;flex-direction:column;align-items:center;gap:12px;}
-  .mode-card:hover{border-color:var(--gold-dim);background:#161a1f;}
+  .mode-card:hover{border-color:var(--gold-dim);background:#161a1f;transform:translateY(-2px);}
   .mode-card.selected{border-color:var(--gold);background:#1a1c14;}
   .mode-card-both{border-style:dashed;}
   .mode-card-icon{font-size:1.8rem;line-height:1;}
@@ -544,13 +547,6 @@
   
   body.light-mode .body-text{color:#2a2018;}
   body.light-mode .type-description{color:#2a2018;}
-  /* Transforms only on devices with real hover (mouse/trackpad, not touch) */
-  @media (hover: hover) and (pointer: fine) {
-    .btn-primary:hover { transform: translateY(-2px); }
-    .btn-primary:hover .arrow { transform: translateX(4px); }
-    .answer-card:hover { transform: translateX(6px); }
-    .mode-card:hover { transform: translateY(-2px); }
-  }
 </style>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -677,7 +673,7 @@
         <div class="demo-field">
           <label class="demo-label">Nationality</label>
           <div id="opt-ethnicity">
-            <select id="country-select" onchange="demoSelections.ethnicity=this.value" style="width:100%;padding:10px 12px;background:#13161a;color:#ede8df;border:1px solid #252a30;border-radius:4px;font-size:16px;font-family:'DM Sans',sans-serif;appearance:none;-webkit-appearance:none;cursor:pointer;outline:none;">
+            <select id="country-select" onchange="demoSelections.ethnicity=this.value" style="width:100%;padding:10px 12px;background:#13161a;color:#ede8df;border:1px solid #252a30;border-radius:4px;font-size:14px;font-family:'DM Sans',sans-serif;appearance:none;-webkit-appearance:none;cursor:pointer;outline:none;">
               <option value="">Select your country...</option>
               <option value="afghanistan">Afghanistan</option>
               <option value="albania">Albania</option>
@@ -902,6 +898,7 @@
     <div class="scenario-scene" id="q-scene"></div>
     <div class="scenario-text" id="q-text"></div>
     <div class="answers" id="answers-container"></div>
+    <div class="kbd-hint" id="kbd-hint">Press <kbd>1</kbd> or <kbd>2</kbd> to choose</div>
   </div>
 
   <!-- RESULTS -->
@@ -929,7 +926,7 @@
       <p style="font-size:14px;color:#b5ada6;line-height:1.6;margin-bottom:8px;">Enter your email to save your type and revisit it anytime.</p>
       <p style="font-size:12px;color:#b5ada6;line-height:1.6;margin-bottom:20px;">Using an ad blocker? You may need to disable it on this page to see the full form.</p>
       <div id="eb2">
-        <input type="email" id="eb3" style="width:100%;background:#0c0e10;border:1px solid #252a30;border-radius:10px;padding:14px 18px;font-family:'DM Sans',sans-serif;font-size:16px;color:#ede8df;outline:none;margin-bottom:16px;" placeholder="your@email.com" autocomplete="email">
+        <input type="email" id="eb3" style="width:100%;background:#0c0e10;border:1px solid #252a30;border-radius:10px;padding:14px 18px;font-family:'DM Sans',sans-serif;font-size:14px;color:#ede8df;outline:none;margin-bottom:16px;" placeholder="your@email.com" autocomplete="email">
         <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:20px;">
           <input type="checkbox" id="eb4" style="flex-shrink:0;width:16px;height:16px;margin-top:2px;accent-color:#c9a84c;cursor:pointer;">
           <label for="eb4" style="font-size:12px;color:#b5ada6;line-height:1.6;cursor:pointer;">I confirm my email and result can be stored. To request removal contact&#58; <span style="color:#c9a84c;">noreply&#64;77scenarios&#46;com</span></label>
@@ -1748,6 +1745,26 @@ async function saveResult() {
   fadeIn();
   // Also reveal when navigating back (bfcache restore)
   window.addEventListener('pageshow', e => { if (e.persisted) fadeIn(); });
+
+  // Keyboard shortcuts: 1/A = first answer, 2/B = second answer
+  // Only fires when the question screen is active and no input is focused
+  document.addEventListener('keydown', function(e) {
+    const active = document.querySelector('.screen.active');
+    if (!active || active.id !== 'screen-question') return;
+    const focused = document.activeElement;
+    if (focused && (focused.tagName === 'INPUT' || focused.tagName === 'TEXTAREA' || focused.tagName === 'SELECT')) return;
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    const key = e.key.toLowerCase();
+    if (key === '1' || key === 'a') {
+      e.preventDefault();
+      const btns = document.querySelectorAll('#answers-container button');
+      if (btns[0]) btns[0].click();
+    } else if (key === '2' || key === 'b') {
+      e.preventDefault();
+      const btns = document.querySelectorAll('#answers-container button');
+      if (btns[1]) btns[1].click();
+    }
+  });
   // Intercept navigation
   document.addEventListener('click', e => {
     const a = e.target.closest('a[href]');
