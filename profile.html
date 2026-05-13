@@ -20,6 +20,7 @@
 <link rel="canonical" href="https://77scenarios.com/profile">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Your Profile","description":"View your 77 Scenarios personality type results and test history.","url":"https://77scenarios.com/profile","publisher":{"@type":"Organization","name":"77 Scenarios","url":"https://77scenarios.com"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -142,6 +143,11 @@
   .bar-fill{height:100%;background:var(--gold);border-radius:2px;transition:width 0.6s ease;}
   .bar-letters{display:flex;justify-content:space-between;width:32px;font-size:0.94rem;color:var(--muted);}
   .result-link{color:var(--gold);text-decoration:none;font-size:0.94rem;white-space:nowrap;}
+  .result-ctas{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;padding-top:14px;border-top:1px solid var(--border);}
+  .result-cta-btn{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;border:1px solid var(--border);border-radius:20px;padding:6px 14px;transition:border-color 0.2s,color 0.2s;}
+  .result-cta-btn:hover{border-color:var(--gold-dim);color:var(--cream);}
+  body.light-mode .result-cta-btn{color:#504840;border-color:#dcdad5;}
+  body.light-mode .result-cta-btn:hover{border-color:#c9a84c;color:#141210;}
   .result-link:hover{text-decoration:underline;}
   .loading{color:var(--muted);font-size:1rem;padding:24px 0;}
   .profile-avatar{width:72px;height:72px;border-radius:50%;object-fit:cover;border:1px solid var(--border);flex-shrink:0;}
@@ -313,7 +319,12 @@ function renderCard(r) {
           <span>${jp}%</span>
         </div>
       </div>
-      <a class="result-link" href="/type?t=${t}">View type →</a>
+      <a class="result-link" href="/types/${t.toLowerCase()}">View ${t} profile →</a>
+      <div class="result-ctas">
+        <a class="result-cta-btn" href="/archive?q=${t}">${t} characters →</a>
+        <a class="result-cta-btn" href="/compatibility">Compatibility →</a>
+        <a class="result-cta-btn" href="/">Retake test →</a>
+      </div>
     </div>`;
 }
 

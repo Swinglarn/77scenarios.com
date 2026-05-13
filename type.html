@@ -15,6 +15,7 @@
 <script type="application/ld+json" id="breadcrumb-schema"></script>
 <script type="application/ld+json" id="type-schema">{"@context":"https://schema.org","@type":"Article","name":"Personality Type","publisher":{"@type":"Organization","name":"77 Scenarios","url":"https://77scenarios.com"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -56,6 +57,12 @@
   .back-link{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;margin-bottom:48px;transition:color 0.2s;}
   .back-link:hover{color:var(--gold);}
 
+  .breadcrumb{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:32px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .breadcrumb a{color:var(--muted);text-decoration:none;transition:color 0.2s;}
+  .breadcrumb a:hover{color:var(--gold);}
+  .breadcrumb span{opacity:0.4;}
+  .breadcrumb-cur{color:var(--cream);opacity:0.7;}
+
   .type-code{font-family:'Cormorant Garamond',serif;font-size:clamp(80px,14vw,130px);font-weight:300;line-height:1;letter-spacing:-0.04em;color:var(--cream);margin-bottom:16px;}
   .type-code .hi{color:var(--gold);}
   .type-name{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,5vw,44px);font-weight:600;font-style:italic;color:var(--cream);margin-bottom:6px;}
@@ -90,8 +97,12 @@
 
   .famous-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
   @media(max-width:580px){.famous-grid{grid-template-columns:1fr;}}
-  .famous-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;}
-  .famous-name{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:400;color:var(--cream);margin-bottom:3px;}
+  .famous-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;display:flex;align-items:center;gap:14px;}
+  .famous-avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0;background:var(--surface2);border:1px solid var(--border);opacity:0;transition:opacity 0.3s;}
+  .famous-avatar.loaded{opacity:1;}
+  .famous-avatar-placeholder{width:52px;height:52px;border-radius:50%;flex-shrink:0;background:var(--surface2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--gold);font-weight:300;}
+  .famous-info{flex:1;min-width:0;}
+  .famous-name{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:var(--cream);margin-bottom:3px;}
   .famous-ctx{font-size:12px;color:var(--muted);letter-spacing:0.04em;}
 
   .similar-row{display:flex;gap:10px;flex-wrap:wrap;}
@@ -121,12 +132,16 @@
   body.light-mode .body-text{color:#2a2018;}
   body.light-mode .fncard-tagline{color:#4a4035;}
   body.light-mode .group-desc{color:#4a4035;}
+
+  /* Reading progress bar */
+  #reading-progress{position:fixed;top:56px;left:0;width:0%;height:2px;background:linear-gradient(90deg,var(--gold-dim),var(--gold));z-index:199;transition:width 0.1s linear;pointer-events:none;}
 </style>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script src="/nav.js" defer></script>
 </head>
 <body>
+<div id="reading-progress"></div>
 <h1 class="sr-only" id="page-h1">77 Scenarios Personality Type</h1>
 <div id="t-overlay"></div>
 <div class="glow glow-1"></div>
@@ -163,7 +178,7 @@
 </div>
 
 <main>
-  <a href="/types" class="back-link r" data-d="0">← All types</a>
+  <div class="breadcrumb r" data-d="0"><a href="/">Home</a><span>/</span><a href="/types">Types</a><span>/</span><span class="breadcrumb-cur" id="bc-type">...</span></div>
   <div id="content"></div>
 </main>
 
@@ -463,6 +478,7 @@ function render(){
   document.querySelector('meta[property="og:title"]')?.setAttribute('content',`${t} Personality Type: ${d.name} · 77 Scenarios`)||
     (()=>{const m=document.createElement('meta');m.setAttribute('property','og:title');m.content=`${t} Personality Type: ${d.name} · 77 Scenarios`;document.head.appendChild(m);})();
   document.getElementById('canonical-url')?.setAttribute('href',`https://77scenarios.com/types/${t.toLowerCase()}`);
+  const bcEl = document.getElementById('bc-type'); if(bcEl) bcEl.textContent = t + ' · ' + d.name;
   const h1el=document.getElementById('page-h1');if(h1el)h1el.textContent=`${t} Personality Type - ${d.name}`;
   document.querySelector('meta[property="og:description"]')?.setAttribute('content',desc)||
     (()=>{const m=document.createElement('meta');m.setAttribute('property','og:description');m.content=desc;document.head.appendChild(m);})();
@@ -520,7 +536,7 @@ function render(){
       <div class="box"><div class="box-title">${t} Strengths</div><ul>${d.strengths.map(s=>`<li>${s}</li>`).join('')}</ul></div>
       <div class="box"><div class="box-title">${t} Blind Spots</div><ul>${d.blindspots.map(s=>`<li>${s}</li>`).join('')}</ul></div>
     </div>
-    <div class="section r" data-d="6"><div class="section-label">Famous ${t} People</div><div class="famous-grid">${d.famous.map(f=>`<div class="famous-card"><div class="famous-name">${f.name}</div><div class="famous-ctx">${f.ctx}</div></div>`).join('')}</div></div>
+    <div class="section r" data-d="6"><div class="section-label">Famous ${t} People</div><div class="famous-grid">${d.famous.map(f=>`<div class="famous-card" data-wiki="${f.wiki||f.name}"><div class="famous-avatar-placeholder">${f.name.charAt(0)}</div><div class="famous-info"><div class="famous-name">${f.name}</div><div class="famous-ctx">${f.ctx}</div></div></div>`).join('')}</div></div>
     <div class="section r" data-d="7"><div class="section-label">Types Similar to ${t}</div><div class="similar-row">${simCards}</div></div>
     <div class="section r" data-d="7b" style="margin-top:0">
       <div class="section-label">${t} Cognitive Functions</div>
@@ -608,6 +624,28 @@ const obs=new IntersectionObserver(entries=>{
 },{threshold:0.155});
 
 render();
+
+// Load famous example avatars from Wikipedia (deferred so it doesn't block render)
+setTimeout(function(){
+  document.querySelectorAll('.famous-card[data-wiki]').forEach(function(card){
+    const wiki = card.getAttribute('data-wiki');
+    if(!wiki) return;
+    fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(wiki))
+      .then(function(r){ return r.json(); })
+      .then(function(data){
+        const thumb = data.thumbnail && data.thumbnail.source;
+        if(!thumb) return;
+        const placeholder = card.querySelector('.famous-avatar-placeholder');
+        if(!placeholder) return;
+        const img = document.createElement('img');
+        img.className = 'famous-avatar';
+        img.alt = card.querySelector('.famous-name').textContent;
+        img.loading = 'lazy';
+        img.onload = function(){ img.classList.add('loaded'); placeholder.replaceWith(img); };
+        img.src = thumb;
+      }).catch(function(){});
+  });
+}, 400);
 </script>
 
 <script>
@@ -619,6 +657,17 @@ function toggleMenu(){var d=document.getElementById('nav-drawer'),o=document.get
   const {createClient}=supabase;
   const sb=createClient('https://rttomfnfyjjssdqfzkaj.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw');
   window._navSb = sb;
+})();
+</script>
+<script>
+(function(){
+  var bar = document.getElementById('reading-progress');
+  if(!bar) return;
+  window.addEventListener('scroll', function(){
+    var doc = document.documentElement;
+    var pct = doc.scrollHeight <= doc.clientHeight ? 0 : (doc.scrollTop / (doc.scrollHeight - doc.clientHeight)) * 100;
+    bar.style.width = Math.min(100, pct) + '%';
+  }, {passive:true});
 })();
 </script>
 </body>

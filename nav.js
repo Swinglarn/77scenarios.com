@@ -62,13 +62,25 @@
       'body.light-mode .logo-scenarios{color:#141210 !important;}',
       'body.light-mode .logo-77{color:#c9a84c !important;}',
       // Footer styles
-      '#nav-footer{border-top:1px solid #2a2a2a;padding:48px 32px;text-align:center;background:#111316;}',
-      '#nav-footer .footer-tagline{font-size:13px;color:#7a7268;line-height:1.7;max-width:480px;margin:0 auto 24px;font-style:italic;}',
-      '#nav-footer .footer-links{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:center;margin-bottom:24px;}',
-      '#nav-footer .footer-links a{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#9a9088;text-decoration:none;font-weight:500;transition:color 0.2s;}',
-      '#nav-footer .footer-links a:hover{color:#ede8df;}',
-      '#nav-footer .footer-copy{font-size:12px;color:#5a5550;letter-spacing:0.06em;}',
-      '@media(max-width:600px){#nav-footer{padding:36px 20px;}}'
+      '#nav-footer{border-top:1px solid #252a30;padding:60px 32px 0;background:#0d0f12;}',
+      '#nav-footer .footer-inner{display:flex;gap:48px;max-width:1100px;margin:0 auto 48px;flex-wrap:wrap;}',
+      '#nav-footer .footer-brand{flex:0 0 260px;min-width:200px;}',
+      '#nav-footer .footer-logo{display:flex;align-items:baseline;gap:4px;margin-bottom:14px;}',
+      '#nav-footer .footer-logo-text{font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:300;letter-spacing:0.1em;color:#7a7268;text-transform:lowercase;}',
+      '#nav-footer .footer-tagline{font-size:13px;color:#7a7268;line-height:1.7;margin:0 0 18px;font-style:italic;}',
+      '#nav-footer .footer-cta{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#c9a84c;text-decoration:none;border:1px solid rgba(201,168,76,0.3);border-radius:20px;padding:7px 16px;display:inline-block;transition:border-color 0.2s,color 0.2s;}',
+      '#nav-footer .footer-cta:hover{border-color:#c9a84c;color:#e0c070;}',
+      '#nav-footer .footer-cols{flex:1;display:flex;gap:40px;flex-wrap:wrap;min-width:200px;}',
+      '#nav-footer .footer-col{flex:1;min-width:120px;display:flex;flex-direction:column;gap:10px;}',
+      '#nav-footer .footer-col-head{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#5a5550;margin-bottom:2px;}',
+      '#nav-footer .footer-col a{font-size:13px;color:#9a9088;text-decoration:none;transition:color 0.2s;width:fit-content;}',
+      '#nav-footer .footer-col a:hover{color:#ede8df;}',
+      '#nav-footer .footer-bottom{border-top:1px solid #1e2126;padding:20px 0;max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}',
+      '#nav-footer .footer-copy{font-size:11px;color:#5a5550;letter-spacing:0.06em;}',
+      '#nav-footer .footer-bottom-links{font-size:11px;color:#5a5550;letter-spacing:0.06em;}',
+      '#nav-footer .footer-bottom-links a{color:#5a5550;text-decoration:none;transition:color 0.2s;}',
+      '#nav-footer .footer-bottom-links a:hover{color:#9a9088;}',
+      '@media(max-width:700px){#nav-footer{padding:40px 20px 0;}#nav-footer .footer-brand{flex:0 0 100%;}#nav-footer .footer-cols{gap:24px;}}'
     ].join('');
     document.head.appendChild(ds);
   }
@@ -140,9 +152,16 @@
       /* ── Footer — deeper neutral, clearly distinct from page ── */
       'body.light-mode #nav-footer{background:#e7e5e2 !important;border-top-color:#dcdad5 !important;}',
       'body.light-mode #nav-footer .footer-tagline{color:#504840 !important;}',
-      'body.light-mode #nav-footer .footer-links a{color:#38302a !important;}',
-      'body.light-mode #nav-footer .footer-links a:hover{color:#141210 !important;}',
+      'body.light-mode #nav-footer .footer-col a{color:#38302a !important;}',
+      'body.light-mode #nav-footer .footer-col a:hover{color:#141210 !important;}',
+      'body.light-mode #nav-footer .footer-col-head{color:#807870 !important;}',
+      'body.light-mode #nav-footer .footer-cta{color:#8a6d2e !important;border-color:rgba(138,109,46,0.35) !important;}',
+      'body.light-mode #nav-footer .footer-cta:hover{border-color:#a8893a !important;color:#6b5020 !important;}',
       'body.light-mode #nav-footer .footer-copy{color:#807870 !important;}',
+      'body.light-mode #nav-footer .footer-bottom{border-top-color:#dcdad5 !important;}',
+      'body.light-mode #nav-footer .footer-bottom-links a{color:#807870 !important;}',
+      'body.light-mode #nav-footer .footer-bottom-links a:hover{color:#504840 !important;}',
+      'body.light-mode #nav-footer .footer-logo-text{color:#807870 !important;}',
       /* ── FAQ ── */
       'body.light-mode .faq-item{border-bottom-color:#dcdad5 !important;}',
       'body.light-mode .faq-q{color:#141210 !important;font-weight:500 !important;}',
@@ -357,30 +376,46 @@
     // Don't inject on pages that already have a <footer>
     var existing = document.querySelector('footer');
     var target = existing || null;
+    var year = new Date().getFullYear();
 
     var footer = document.createElement('footer');
     footer.id = 'nav-footer';
     footer.innerHTML = [
-      '<p class="footer-tagline">77 scenarios. No self-rating. No leading questions. Just situations and choices - and what they say about you.</p>',
-      '<nav class="footer-links" aria-label="Footer navigation">',
-      '  <a href="/types">16 Types</a>',
-      '  <a href="/letters">8 Letters</a>',
-      '  <a href="/cognitive-functions">Functions</a>',
-      '  <a href="/compatibility">Compatibility</a>',
-      '  <a href="/archive">Archive</a>',
-      '  <a href="/forum">Forum</a>',
-      '  <a href="/about">About</a>',
-      '</nav>',
-      '<nav class="footer-links" style="margin-top:8px;opacity:0.7;" aria-label="Legal navigation">',
-      '  <a href="/privacy">Privacy</a>',
-      '  <a href="/terms">Terms</a>',
-      '  <a href="/contact">Contact</a>',
-      '</nav>',
-      '<p class="footer-copy">&copy; 2025 77 Scenarios</p>'
+      '<div class="footer-inner">',
+      '  <div class="footer-brand">',
+      '    <div class="footer-logo"><span class="logo-77">77</span><span class="footer-logo-text">scenarios</span></div>',
+      '    <p class="footer-tagline">77 situations. No self-rating.<br>Just choices — and what they reveal.</p>',
+      '    <a href="/" class="footer-cta">Take the test →</a>',
+      '  </div>',
+      '  <div class="footer-cols">',
+      '    <div class="footer-col">',
+      '      <div class="footer-col-head">Explore</div>',
+      '      <a href="/types">16 Types</a>',
+      '      <a href="/letters">8 Letters</a>',
+      '      <a href="/cognitive-functions">Functions</a>',
+      '      <a href="/compatibility">Compatibility</a>',
+      '      <a href="/archive">Character Archive</a>',
+      '    </div>',
+      '    <div class="footer-col">',
+      '      <div class="footer-col-head">Community</div>',
+      '      <a href="/forum">Forum</a>',
+      '      <a href="/about">About</a>',
+      '      <a href="/contact">Contact</a>',
+      '    </div>',
+      '    <div class="footer-col">',
+      '      <div class="footer-col-head">Legal</div>',
+      '      <a href="/privacy">Privacy Policy</a>',
+      '      <a href="/terms">Terms of Service</a>',
+      '    </div>',
+      '  </div>',
+      '</div>',
+      '<div class="footer-bottom">',
+      '  <span class="footer-copy">&copy; ' + year + ' 77 Scenarios. All rights reserved.</span>',
+      '  <span class="footer-bottom-links"><a href="/privacy">Privacy</a> &middot; <a href="/terms">Terms</a></span>',
+      '</div>'
     ].join('');
 
     if (existing) {
-      // Replace existing footer content
       existing.id = 'nav-footer';
       existing.innerHTML = footer.innerHTML;
     } else {

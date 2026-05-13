@@ -86,7 +86,7 @@ main{position:relative;z-index:1;max-width:820px;margin:0 auto;padding:64px 32px
   .growth-text{font-size:14px;color:#cdc7c0;line-height:1.7;}
   /* Light mode */
   body.light-mode .draw-block{background:rgba(201,168,76,0.06);border-color:rgba(201,168,76,0.3);}
-  body.light-mode .draw-text{color:#0f0d0a;}
+  body.light-mode .draw-text{color:#141210;}
   body.light-mode .brings-card{background:#ffffff;border-color:#d4cdc6;}
   body.light-mode .brings-list li{color:#2a2018;}
   body.light-mode .friction-item{background:#ffffff;border-color:#d4cdc6;}
@@ -98,10 +98,18 @@ main{position:relative;z-index:1;max-width:820px;margin:0 auto;padding:64px 32px
   body.light-mode .growth-text{color:#2a2018;}
 
   .back-link{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:48px;transition:color 0.2s;}
-.back-link:hover{color:var(--gold);}
+  .back-link:hover{color:var(--gold);}
+
+  .breadcrumb{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:32px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .breadcrumb a{color:var(--muted);text-decoration:none;transition:color 0.2s;}
+  .breadcrumb a:hover{color:var(--gold);}
+  .breadcrumb span{opacity:0.4;}
+  .breadcrumb-cur{color:var(--cream);opacity:0.7;}
 .pair-eyebrow{font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:12px;}
 .pair-eyebrow::before{content:'';display:block;height:1px;width:24px;background:var(--gold-dim);}
 .pair-heading{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,12vw,96px);font-weight:300;line-height:1;letter-spacing:-0.03em;color:var(--cream);margin-bottom:12px;}
+.pair-type-link{color:inherit;text-decoration:none;transition:color 0.2s;}
+.pair-type-link:hover{color:var(--gold);}
 .pair-heading .amp{font-size:0.55em;color:var(--muted);font-weight:300;margin:0 8px;vertical-align:middle;}
 .pair-heading .hi{color:var(--gold);}
 .pair-names{font-family:'Cormorant Garamond',serif;font-size:clamp(16px,3vw,22px);font-weight:300;font-style:italic;color:var(--muted);margin-bottom:32px;}
@@ -142,10 +150,14 @@ main{position:relative;z-index:1;max-width:820px;margin:0 auto;padding:64px 32px
 .cta-text em{font-style:italic;color:var(--gold);}
 .btn-gold{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:#0c0e10;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;border:none;border-radius:60px;padding:14px 28px;cursor:pointer;text-decoration:none;transition:all 0.25s;}
 .btn-gold:hover{background:var(--cream);transform:translateY(-2px);}
+
+  /* Reading progress bar */
+  #reading-progress{position:fixed;top:56px;left:0;width:0%;height:2px;background:linear-gradient(90deg,var(--gold-dim),var(--gold));z-index:199;transition:width 0.1s linear;pointer-events:none;}
 </style>
 <script src="/nav.js" defer></script>
 </head>
 <body>
+<div id="reading-progress"></div>
 <div id="t-overlay"></div>
 <div class="glow glow-1"></div>
 <div class="glow glow-2"></div>
@@ -168,7 +180,7 @@ main{position:relative;z-index:1;max-width:820px;margin:0 auto;padding:64px 32px
   </nav>
 </div>
 <main>
-  <a href="/compatibility" class="back-link r" data-d="0">← Compatibility chart</a>
+  <div class="breadcrumb r" data-d="0"><a href="/">Home</a><span>/</span><a href="/compatibility">Compatibility</a><span>/</span><span class="breadcrumb-cur" id="bc-pair">...</span></div>
   <div id="content"></div>
 </main>
 <script>
@@ -1744,6 +1756,7 @@ function render(){
   const title=isSame?`${a} + ${a} Myers-Briggs Compatibility | 77 Scenarios`:`${a} and ${b} Myers-Briggs Compatibility: ${scoreLabels[score]} | 77 Scenarios`;
   const metaDesc=`${pairLabel} Myers-Briggs compatibility: ${scoreLabels[score]}. ${desc.slice(0,130)} Find out how these two personality types relate in relationships.`;
   document.title=title;
+  const bcPair=document.getElementById('bc-pair'); if(bcPair) bcPair.textContent=pairLabel;
   document.getElementById('page-title').textContent=title;
   document.getElementById('page-desc').setAttribute('content',metaDesc);
   document.getElementById('canonical-url').setAttribute('href',canonical);
@@ -1784,7 +1797,7 @@ function render(){
   document.getElementById('content').innerHTML=`
     <div class="pair-hero r" data-d="1">
       <div class="pair-eyebrow">Myers-Briggs Compatibility</div>
-      <div class="pair-heading">${codeHtml(a)}<span class="amp">${isSame?'+':'&amp;'}</span>${codeHtml(b)}</div>
+      <div class="pair-heading"><a href="/types/${a.toLowerCase()}" class="pair-type-link">${codeHtml(a)}</a><span class="amp">${isSame?'+':'&amp;'}</span><a href="/types/${b.toLowerCase()}" class="pair-type-link">${codeHtml(b)}</a></div>
       <div class="pair-names">${typeData[a].name}${isSame?'':' &amp; '+typeData[b].name}</div>
     </div>
     <div class="score-block r" data-d="2">
@@ -1903,5 +1916,16 @@ document.addEventListener('click',e=>{const a=e.target.closest('a[href]');if(!a)
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>(function(){const{createClient}=supabase;const sb=createClient('https://rttomfnfyjjssdqfzkaj.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw');window._navSb=sb;})();</script>
+<script>
+(function(){
+  var bar = document.getElementById('reading-progress');
+  if(!bar) return;
+  window.addEventListener('scroll', function(){
+    var doc = document.documentElement;
+    var pct = doc.scrollHeight <= doc.clientHeight ? 0 : (doc.scrollTop / (doc.scrollHeight - doc.clientHeight)) * 100;
+    bar.style.width = Math.min(100, pct) + '%';
+  }, {passive:true});
+})();
+</script>
 </body>
 </html>

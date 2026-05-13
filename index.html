@@ -22,8 +22,11 @@
 <meta name="twitter:description" content="A personality test that puts you in real situations instead of asking you to rate yourself. 77 scenarios. 16 possible types.">
 <link rel="canonical" href="https://77scenarios.com/">
 <meta name="google-adsense-account" content="ca-pub-9210546368748348">
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"77 Scenarios","url":"https://77scenarios.com","description":"Scenario-based MBTI personality test and character archive.","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://77scenarios.com/archive?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"77 Scenarios Personality Test","description":"A scenario-based Myers-Briggs personality type test using 77 real situations instead of self-rating questions.","url":"https://77scenarios.com","applicationCategory":"LifestyleApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -36,9 +39,12 @@
   html, body { height: 100%; background: var(--bg); color: var(--cream); font-family: 'DM Sans', sans-serif; font-weight: 400; overflow-x: hidden; }
   body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; opacity: 0.6; }
   .glow { position: fixed; border-radius: 50%; filter: blur(120px); pointer-events: none; z-index: 0; }
-  .glow-1 { width: 600px; height: 600px; top: -200px; left: -150px; background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%); }
-  .glow-2 { width: 500px; height: 500px; bottom: -150px; right: -100px; background: radial-gradient(circle, rgba(120,180,160,0.05) 0%, transparent 70%); }
+  .glow-1 { width: 600px; height: 600px; top: -200px; left: -150px; background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%); animation: glow-drift-1 28s ease-in-out infinite; }
+  .glow-2 { width: 500px; height: 500px; bottom: -150px; right: -100px; background: radial-gradient(circle, rgba(120,180,160,0.05) 0%, transparent 70%); animation: glow-drift-2 34s ease-in-out infinite; }
+  @keyframes glow-drift-1 { 0%,100%{transform:translate(0,0) scale(1);opacity:0.85;} 33%{transform:translate(40px,-30px) scale(1.08);opacity:1;} 66%{transform:translate(-20px,40px) scale(0.95);opacity:0.7;} }
+  @keyframes glow-drift-2 { 0%,100%{transform:translate(0,0) scale(1);opacity:0.85;} 40%{transform:translate(-35px,25px) scale(1.06);opacity:1;} 70%{transform:translate(20px,-20px) scale(0.97);opacity:0.7;} }
   #app { position: relative; z-index: 1; min-height: calc(100vh - 56px); display: flex; align-items: center; justify-content: center; padding: 24px 16px; }
+  #app.tall-screen { align-items: flex-start; padding-top: 48px; }
   .screen { display: none; width: 100%; max-width: 720px; animation: fadeUp 0.6s cubic-bezier(0.22,1,0.36,1) both; }
   .screen.active { display: block; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
@@ -208,7 +214,7 @@
   .result-save-box { margin-top: 40px; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
   .save-box-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
   .save-box-sub { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 24px; }
-  .save-email-input { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--cream); outline: none; transition: border-color 0.2s; margin-bottom: 16px; }
+  .save-email-input { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; font-family: 'DM Sans', sans-serif; font-size: 16px; color: var(--cream); outline: none; transition: border-color 0.2s; margin-bottom: 16px; }
   .save-email-input:focus { border-color: var(--gold-dim); }
   .save-email-input::placeholder { color: var(--muted); }
   .save-agree-row { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 20px; }
@@ -230,17 +236,19 @@
   .mode-subtitle{color:var(--muted);font-size:0.95rem;max-width:480px;line-height:1.7;margin-bottom:48px;}
   .mode-cards{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;max-width:860px;width:100%;}
   .mode-card{background:#13161a;border:1px solid var(--border);border-radius:12px;padding:32px 24px;flex:1;min-width:220px;max-width:260px;cursor:pointer;text-align:center;transition:border-color 0.2s,background 0.2s,transform 0.15s;display:flex;flex-direction:column;align-items:center;gap:12px;}
-  .mode-card:hover{border-color:var(--gold-dim);background:#161a1f;transform:translateY(-2px);}
+  .mode-card:hover{border-color:var(--gold-dim);background:#161a1f;}
+  @media (hover: hover) and (pointer: fine) { .mode-card:hover{transform:translateY(-2px);} }
   .mode-card.selected{border-color:var(--gold);background:#1a1c14;}
   .mode-card-both{border-style:dashed;}
   .mode-card-icon{font-size:1.8rem;line-height:1;}
   .mode-card-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--cream);}
   .mode-card-desc{font-size:0.82rem;color:var(--muted);line-height:1.6;}
+  .mode-card-example{font-size:0.75rem;color:var(--gold-dim);font-style:italic;border-top:1px solid var(--border);padding-top:10px;margin-top:4px;width:100%;line-height:1.5;}
   @media(max-width:600px){.mode-cards{flex-direction:column;align-items:center;}.mode-card{max-width:100%;width:100%;}}
   body.light-mode .mode-card{background:#ffffff;border-color:#d4ccc0;box-shadow:0 2px 12px rgba(0,0,0,0.06);}
-  body.light-mode .mode-card:hover{background:#f7f4ef;border-color:var(--gold-dim);box-shadow:0 4px 20px rgba(0,0,0,0.1);}
+  body.light-mode .mode-card:hover{background:#f2f1ef;border-color:var(--gold-dim);box-shadow:0 4px 20px rgba(0,0,0,0.1);}
   body.light-mode .mode-card.selected{background:#fdf9ef;border-color:var(--gold);box-shadow:0 4px 20px rgba(201,168,76,0.15);}
-  body.light-mode .mode-card-name{color:#1a1208;}
+  body.light-mode .mode-card-name{color:#141210;}
   body.light-mode .mode-card-desc{color:#4a4035;}
 
 
@@ -615,6 +623,10 @@
   <!-- MODE SELECTION SCREEN -->
   <div class="screen" id="screen-mode">
     <div class="mode-wrap">
+      <button class="btn-back" onclick="showScreen('screen-splash')" style="margin-bottom:24px;align-self:flex-start;" tabindex="-1">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back
+      </button>
       <div class="mode-eyebrow">Before you begin</div>
       <div class="mode-title">Choose your<br><em>world.</em></div>
       <p class="mode-subtitle">The same questions can be asked in different worlds. Choose the one you want to be put in.</p>
@@ -623,16 +635,19 @@
           <div class="mode-card-icon">⚔</div>
           <div class="mode-card-name">Mythical</div>
           <div class="mode-card-desc">Ancient roads. Prophecies. Kingdoms at the edge of ruin. You are always in the middle of something larger than yourself.</div>
+          <div class="mode-card-example">"The city falls at dawn. You have one night."</div>
         </button>
         <button class="mode-card" onclick="selectMode('normal')">
           <div class="mode-card-icon">☕</div>
           <div class="mode-card-name">Everyday</div>
           <div class="mode-card-desc">Airports. Offices. Bad weeks and good news. The ordinary moments that turn out not to be ordinary at all.</div>
+          <div class="mode-card-example">"Your flight is cancelled. You have six hours."</div>
         </button>
         <button class="mode-card mode-card-both" onclick="selectMode('both')">
           <div class="mode-card-icon">◎</div>
           <div class="mode-card-name">Both Worlds</div>
           <div class="mode-card-desc">You do not want to choose. Some things are true in every world.</div>
+          <div class="mode-card-example">"Half myth. Half life. Fully you."</div>
         </button>
       </div>
     </div>
@@ -673,7 +688,7 @@
         <div class="demo-field">
           <label class="demo-label">Nationality</label>
           <div id="opt-ethnicity">
-            <select id="country-select" onchange="demoSelections.ethnicity=this.value" style="width:100%;padding:10px 12px;background:#13161a;color:#ede8df;border:1px solid #252a30;border-radius:4px;font-size:14px;font-family:'DM Sans',sans-serif;appearance:none;-webkit-appearance:none;cursor:pointer;outline:none;">
+            <select id="country-select" onchange="demoSelections.ethnicity=this.value" style="width:100%;padding:10px 12px;background:#13161a;color:#ede8df;border:1px solid #252a30;border-radius:4px;font-size:16px;font-family:'DM Sans',sans-serif;appearance:none;-webkit-appearance:none;cursor:pointer;outline:none;">
               <option value="">Select your country...</option>
               <option value="afghanistan">Afghanistan</option>
               <option value="albania">Albania</option>
@@ -889,7 +904,7 @@
   <div class="screen" id="screen-question">
     <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progress-fill" style="width:0%"></div></div>
     <div class="q-header">
-      <button class="btn-back" id="btn-back" onclick="goBack()" aria-label="Go back">
+      <button class="btn-back" id="btn-back" onclick="goBack()" aria-label="Go back" tabindex="-1">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         Back
       </button>
@@ -919,6 +934,8 @@
       <button class="btn-secondary" onclick="shareResult()">Share result</button>
       <a id="type-deep-link" href="/types" class="btn-secondary" style="text-decoration:none;">Deep dive →</a>
       <a id="functions-link" href="/functions" class="btn-secondary" style="text-decoration:none;">Explore functions →</a>
+      <a id="archive-type-link" href="/archive" class="btn-secondary" style="text-decoration:none;">Characters →</a>
+      <a id="compat-link" href="/compatibility" class="btn-secondary" style="text-decoration:none;">Compatibility →</a>
     </div>
 
     <div id="eb1" style="margin-top:40px;background:#13161a;border:1px solid #252a30;border-radius:16px;padding:32px;">
@@ -926,12 +943,14 @@
       <p style="font-size:14px;color:#b5ada6;line-height:1.6;margin-bottom:8px;">Enter your email to save your type and revisit it anytime.</p>
       <p style="font-size:12px;color:#b5ada6;line-height:1.6;margin-bottom:20px;">Using an ad blocker? You may need to disable it on this page to see the full form.</p>
       <div id="eb2">
-        <input type="email" id="eb3" style="width:100%;background:#0c0e10;border:1px solid #252a30;border-radius:10px;padding:14px 18px;font-family:'DM Sans',sans-serif;font-size:14px;color:#ede8df;outline:none;margin-bottom:16px;" placeholder="your@email.com" autocomplete="email">
+        <form onsubmit="event.preventDefault();saveResult();" style="margin:0;">
+          <input type="email" id="eb3" style="width:100%;background:#0c0e10;border:1px solid #252a30;border-radius:10px;padding:14px 18px;font-family:'DM Sans',sans-serif;font-size:16px;color:#ede8df;outline:none;margin-bottom:16px;" placeholder="your@email.com" autocomplete="email">
         <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:20px;">
           <input type="checkbox" id="eb4" style="flex-shrink:0;width:16px;height:16px;margin-top:2px;accent-color:#c9a84c;cursor:pointer;">
           <label for="eb4" style="font-size:12px;color:#b5ada6;line-height:1.6;cursor:pointer;">I confirm my email and result can be stored. To request removal contact&#58; <span style="color:#c9a84c;">noreply&#64;77scenarios&#46;com</span></label>
         </div>
-        <button class="btn-save" onclick="saveResult()">Save result</button>
+        <button type="submit" class="btn-save">Save result</button>
+        </form>
       </div>
       <div id="eb5" style="display:none;">
         <div style="font-size:28px;color:#c9a84c;margin-bottom:10px;">✓</div>
@@ -1232,6 +1251,8 @@ function showScreen(id) {
   const el = document.getElementById(id);
   el.classList.add('active');
   el.style.animation = 'none'; el.offsetHeight; el.style.animation = '';
+  const tallScreens = ['screen-question','screen-result','screen-demo','screen-burst'];
+  document.getElementById('app').classList.toggle('tall-screen', tallScreens.includes(id));
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -1327,6 +1348,7 @@ function startTest() {
   history = [];
   renderQuestion();
   showScreen('screen-question');
+  try { sessionStorage.removeItem('77s_progress'); } catch(e) {}
 }
 
 
@@ -1548,6 +1570,7 @@ function selectAnswer(choice) {
   }
   history.push({choice, letter});
   current++;
+  try { sessionStorage.setItem('77s_progress', JSON.stringify({mode:testMode,questions:orderedQuestions,current,scores,fnScores,history,burstDone,burstIdx})); } catch(e) {}
   // Trigger burst after Q38 (once only)
   if (current === BURST_TRIGGER && !burstDone) {
     triggerBurst();
@@ -1596,6 +1619,7 @@ function getBlendedScores() {
 function showResults() {
   const type = getType();
   window._resultType = type;
+  try { sessionStorage.removeItem('77s_progress'); } catch(e) {}
   // Show demographics screen before results
   showScreen('screen-demo');
   return;
@@ -1627,7 +1651,11 @@ function showResultsActual() {
 
   document.getElementById('progress-fill').style.width = '100%';
   const deepLink = document.getElementById('type-deep-link');
-  if (deepLink) deepLink.href = `type.html?t=${type}`;
+  if (deepLink) { deepLink.href = `/types/${type.toLowerCase()}`; deepLink.textContent = `${type} deep dive →`; }
+  const archLink = document.getElementById('archive-type-link');
+  if (archLink) { archLink.href = `/archive?q=${type}`; archLink.textContent = `${type} characters →`; }
+  const compatLink = document.getElementById('compat-link');
+  if (compatLink) compatLink.href = `/compatibility`;
   const fnLink = document.getElementById('functions-link');
   if (fnLink) fnLink.href = `/functions?t=${type}`;
   showScreen('screen-result');
@@ -1744,6 +1772,26 @@ async function saveResult() {
   // Reveal on load
   fadeIn();
   // Also reveal when navigating back (bfcache restore)
+
+  // Restore mid-test progress from sessionStorage
+  (function() {
+    try {
+      const saved = sessionStorage.getItem('77s_progress');
+      if (!saved) return;
+      const d = JSON.parse(saved);
+      if (!d.questions || !d.questions.length || d.current >= d.questions.length) return;
+      testMode = d.mode || 'myth';
+      orderedQuestions = d.questions;
+      current = d.current;
+      scores = d.scores;
+      fnScores = d.fnScores;
+      history = d.history || [];
+      burstDone = d.burstDone || false;
+      burstIdx = d.burstIdx || 0;
+      renderQuestion();
+      showScreen('screen-question');
+    } catch(e) {}
+  })();
   window.addEventListener('pageshow', e => { if (e.persisted) fadeIn(); });
 
   // Keyboard shortcuts: 1/A = first answer, 2/B = second answer
