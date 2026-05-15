@@ -91,7 +91,7 @@
     lmStyle.id = 'light-mode-css';
     lmStyle.textContent = [
       /* ── Core palette ── */
-      /* Barely-warm neutral gray surfaces — not yellow/orange, just "light gray with a hint of warmth" */
+      /* Barely-warm neutral gray surfaces, not yellow/orange, just "light gray with a hint of warmth" */
       /* Gold pops cleanly against neutral gray the same way it pops against dark charcoal */
       'body.light-mode{--bg:#ffffff;--surface:#f2f1ef;--surface2:#e7e5e2;--gold:#c9a84c;--gold-dim:#a8893a;--cream:#141210;--muted:#504840;--border:#dcdad5;background:#ffffff !important;color:#141210 !important;}',
       /* ── Nav bar ── */
@@ -118,7 +118,7 @@
       /* ── Global link reset ── */
       'body.light-mode a{color:inherit !important;text-decoration:none !important;}',
       'body.light-mode a:visited{color:inherit !important;}',
-      /* ── Cards — neutral gray with subtle lift shadow ── */
+      /* ── Cards, neutral gray with subtle lift shadow ── */
       'body.light-mode .type-card{background:#f2f1ef !important;border-color:#dcdad5 !important;box-shadow:0 1px 4px rgba(0,0,0,0.06) !important;}',
       'body.light-mode .type-card *{color:#141210 !important;}',
       'body.light-mode .type-card:hover{border-color:#c9a84c !important;box-shadow:0 8px 28px rgba(0,0,0,0.09) !important;}',
@@ -126,7 +126,7 @@
       'body.light-mode .card-tagline{color:#504840 !important;}',
       'body.light-mode .card-arrow{color:#c9a84c !important;}',
       'body.light-mode .hi{color:#c9a84c !important;}',
-      /* ── Mini type badges — clearly darker than card background ── */
+      /* ── Mini type badges, clearly darker than card background ── */
       'body.light-mode .mini-type{background:#e7e5e2 !important;border:1px solid #dcdad5 !important;color:#38302a !important;}',
       /* ── Letter cards ── */
       'body.light-mode .lcard{background:#f2f1ef !important;border:1px solid #dcdad5 !important;box-shadow:0 1px 4px rgba(0,0,0,0.06) !important;}',
@@ -139,7 +139,7 @@
       'body.light-mode .page-sub{color:#38302a !important;}',
       'body.light-mode .page-eyebrow{color:#a8893a !important;}',
       'body.light-mode .dim-num{color:#a8893a !important;}',
-      /* FIX: both selectors must be scoped — .group-name was applying dark text globally */
+      /* FIX: both selectors must be scoped, .group-name was applying dark text globally */
       'body.light-mode .group-label,body.light-mode .group-name{color:#141210 !important;}',
       'body.light-mode .group-desc{color:#38302a !important;}',
       /* ── Noise texture off ── */
@@ -149,7 +149,7 @@
       'body.light-mode #theme-toggle-mobile{color:#38302a !important;}',
       /* ── Nav right slot ── */
       'body.light-mode .nav-right-slot a:not(.nav-cta){border-color:#dcdad5 !important;color:#38302a !important;}',
-      /* ── Footer — deeper neutral, clearly distinct from page ── */
+      /* ── Footer, deeper neutral, clearly distinct from page ── */
       'body.light-mode #nav-footer{background:#e7e5e2 !important;border-top-color:#dcdad5 !important;}',
       'body.light-mode #nav-footer .footer-tagline{color:#504840 !important;}',
       'body.light-mode #nav-footer .footer-col a{color:#38302a !important;}',
@@ -166,7 +166,7 @@
       'body.light-mode .faq-item{border-bottom-color:#dcdad5 !important;}',
       'body.light-mode .faq-q{color:#141210 !important;font-weight:500 !important;}',
       'body.light-mode .faq-a{color:#38302a !important;}',
-      /* ── Rarity badges — use surface2 so they're distinct inside cards ── */
+      /* ── Rarity badges, use surface2 so they're distinct inside cards ── */
       'body.light-mode .rarity-badge{background:#e7e5e2 !important;border-color:#dcdad5 !important;color:#504840 !important;}',
       /* ── Compat score blocks ── */
       'body.light-mode .score-block{background:#f2f1ef !important;border-color:#dcdad5 !important;box-shadow:0 1px 4px rgba(0,0,0,0.06) !important;}',
@@ -195,7 +195,7 @@
       'body.light-mode .prose{color:#38302a !important;}',
       'body.light-mode .warning-box{background:rgba(201,168,76,0.08) !important;border-color:rgba(201,168,76,0.3) !important;}',
       'body.light-mode .warning-box p{color:#141210 !important;}',
-      /* ── Contact forms — inputs white, cards surface gray ── */
+      /* ── Contact forms, inputs white, cards surface gray ── */
       'body.light-mode .contact-form input,body.light-mode .contact-form textarea,body.light-mode .contact-form select{background:#ffffff !important;border-color:#dcdad5 !important;color:#141210 !important;}',
       'body.light-mode .contact-form input:focus,body.light-mode .contact-form textarea:focus,body.light-mode .contact-form select:focus{border-color:#c9a84c !important;box-shadow:0 0 0 3px rgba(201,168,76,0.12) !important;}',
       'body.light-mode .contact-card{background:#f2f1ef !important;border-color:#dcdad5 !important;box-shadow:0 1px 4px rgba(0,0,0,0.06) !important;}',
@@ -424,7 +424,7 @@
       '<div class="footer-inner">',
       '  <div class="footer-brand">',
       '    <div class="footer-logo"><span class="logo-77">77</span><span class="footer-logo-text">scenarios</span></div>',
-      '    <p class="footer-tagline">77 situations. No self-rating.<br>Just choices — and what they reveal.</p>',
+      '    <p class="footer-tagline">77 situations. No self-rating.<br>Just choices, and what they reveal.</p>',
       '    <a href="/" class="footer-cta">Take the test →</a>',
       '  </div>',
       '  <div class="footer-cols">',
