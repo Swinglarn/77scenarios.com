@@ -523,6 +523,40 @@ function render(){
   }).join('');
   const simCards=d.similar.map(c=>`<a href="/types/${c.toLowerCase()}" class="similar-card"><span class="sim-code">${c}</span><span class="sim-name">${typeNames[c]||''}</span></a>`).join('');
 
+  // vs page links for this type
+  const vsMap={
+    INFJ:['infj-infp','infj-intj','isfj-infj','enfj-infj','infj-istj','isfp-infj','infj-enfp'],
+    INTJ:['intj-intp','infj-intj','entj-intj','istj-intj'],
+    INFP:['infj-infp','enfp-infp','infp-isfp','intp-infp','infp-enfj'],
+    INTP:['intj-intp','entp-intp','intp-infp','istp-intp'],
+    ENFP:['enfp-infp','enfp-enfj','enfp-entp','esfp-enfp','infj-enfp'],
+    ENFJ:['enfj-infj','enfp-enfj','esfj-enfj','enfj-entj','infp-enfj'],
+    ISFJ:['isfj-infj','isfj-isfp','istj-isfj','esfj-estj'],
+    ISFP:['infp-isfp','isfj-isfp','isfp-esfp','isfp-infj'],
+    ESFJ:['esfj-enfj','esfj-estj'],
+    ENTP:['entp-intp','enfp-entp','estp-entp','entp-entj'],
+    ESTP:['estp-entp','istp-estp','estp-estj'],
+    ISTP:['istp-intp','istp-estp','istp-istj'],
+    ENTJ:['entj-intj','estj-entj','enfj-entj','entp-entj'],
+    ESTJ:['istj-intj','estj-entj','estp-estj','esfj-estj'],
+    ESFP:['isfp-esfp','esfp-enfp'],
+    ISTJ:['istj-intj','istj-isfj','infj-istj','istp-istj'],
+  };
+  const vsSlugs=vsMap[t]||[];
+  const vsCards=vsSlugs.map(slug=>{
+    const parts=slug.split('-');
+    const other=(parts[0].toUpperCase()===t?parts[1]:parts[0]).toUpperCase();
+    return `<a href="/vs/${slug}" class="similar-card"><span class="sim-code">vs ${other}</span><span class="sim-name">${typeNames[other]||''}</span></a>`;
+  }).join('');
+  const vsSection=vsCards?`
+    <div class="section r" data-d="7a" style="margin-top:0">
+      <div class="section-label">${t} Type Comparisons</div>
+      <p class="body-text" style="font-size:14px;margin-bottom:16px;">Not sure if you're really ${t}? These side-by-side breakdowns cover the most commonly confused pairings.</p>
+      <div class="similar-row">${vsCards}</div>
+      <a href="/vs" style="display:inline-block;margin-top:16px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;">All type comparisons &#8594;</a>
+    </div>`:'';
+
+
   document.getElementById('content').innerHTML=`
     <div class="r" data-d="1"><div class="type-code">${code}</div><div class="type-name">${d.name}</div><div class="type-tagline">${d.tagline}</div><div class="letter-pills">${pills}</div></div>
     ${spectrumHTML}
@@ -538,6 +572,7 @@ function render(){
     </div>
     <div class="section r" data-d="6"><div class="section-label">Famous ${t} People</div><div class="famous-grid">${d.famous.map(f=>`<div class="famous-card" data-wiki="${f.wiki||f.name}"><div class="famous-avatar-placeholder">${f.name.charAt(0)}</div><div class="famous-info"><div class="famous-name">${f.name}</div><div class="famous-ctx">${f.ctx}</div></div></div>`).join('')}</div></div>
     <div class="section r" data-d="7"><div class="section-label">Types Similar to ${t}</div><div class="similar-row">${simCards}</div></div>
+    ${vsSection}
     <div class="section r" data-d="7b" style="margin-top:0">
       <div class="section-label">${t} Cognitive Functions</div>
       <p class="body-text" style="margin-bottom:24px;font-size:14px;">Every type runs on four mental functions in a set order. Your first is almost effortless. Your fourth is your weak spot.</p>

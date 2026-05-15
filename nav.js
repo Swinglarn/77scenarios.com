@@ -199,6 +199,42 @@
       'body.light-mode .contact-form input,body.light-mode .contact-form textarea,body.light-mode .contact-form select{background:#ffffff !important;border-color:#dcdad5 !important;color:#141210 !important;}',
       'body.light-mode .contact-form input:focus,body.light-mode .contact-form textarea:focus,body.light-mode .contact-form select:focus{border-color:#c9a84c !important;box-shadow:0 0 0 3px rgba(201,168,76,0.12) !important;}',
       'body.light-mode .contact-card{background:#f2f1ef !important;border-color:#dcdad5 !important;box-shadow:0 1px 4px rgba(0,0,0,0.06) !important;}',
+      /* ── vs pages ── */
+      'body.light-mode .vs-section-title{color:#141210 !important;}',
+      'body.light-mode .vs-type-code{color:#141210 !important;}',
+      'body.light-mode .vs-vs-word{color:#7a7570 !important;}',
+      'body.light-mode .vs-tagline{color:#7a7570 !important;}',
+      'body.light-mode .vs-prose p{color:#3a3630 !important;}',
+      'body.light-mode .vs-fn-col{background:#f2f1ef !important;border-color:#dcdad5 !important;}',
+      'body.light-mode .vs-fn-col-header{color:#141210 !important;}',
+      'body.light-mode .vs-fn-item.introverted{background:#e2eef6 !important;color:#2d5a7b !important;}',
+      'body.light-mode .vs-fn-item.extroverted{background:#fdf5e4 !important;color:#7a5c1e !important;}',
+      'body.light-mode .vs-table tbody tr:nth-child(even){background:#f2f1ef !important;}',
+      'body.light-mode .vs-table td{color:#3a3630 !important;}',
+      'body.light-mode .vs-table td:first-child{color:#7a7570 !important;}',
+      'body.light-mode .vs-table th:not(:first-child){color:#7a5c1e !important;}',
+      'body.light-mode .vs-overlap-item{background:#f2f1ef !important;border-color:#dcdad5 !important;color:#3a3630 !important;}',
+      'body.light-mode .vs-tell-item{background:#f2f1ef !important;}',
+      'body.light-mode .vs-tell-title{color:#141210 !important;}',
+      'body.light-mode .vs-tell-body{color:#5a5550 !important;}',
+      'body.light-mode .vs-famous-col{background:#f2f1ef !important;border-color:#dcdad5 !important;}',
+      'body.light-mode .vs-famous-col-title{color:#7a5c1e !important;}',
+      'body.light-mode .vs-famous-name{color:#141210 !important;}',
+      'body.light-mode .vs-quiz{background:#f2f1ef !important;border-color:#dcdad5 !important;}',
+      'body.light-mode .vs-quiz-option{background:#e7e5e2 !important;border-color:#dcdad5 !important;color:#3a3630 !important;}',
+      'body.light-mode .vs-quiz-option.selected{background:#fdf5e4 !important;border-color:#9a7e3a !important;color:#141210 !important;}',
+      'body.light-mode .vs-quiz-q-text{color:#141210 !important;}',
+      'body.light-mode .vs-breadcrumb{color:#7a7570 !important;}',
+      'body.light-mode .vs-breadcrumb a{color:#7a7570 !important;}',
+      'body.light-mode .vs-cta{border-top-color:#dcdad5 !important;}',
+      'body.light-mode .vs-cta-copy{color:#7a7570 !important;}',
+      'body.light-mode .vs-not-found h1{color:#141210 !important;}',
+      'body.light-mode .vs-hub-title{color:#141210 !important;}',
+      'body.light-mode .vs-hub-desc{color:#504840 !important;}',
+      'body.light-mode .vs-pair-card{background:#f2f1ef !important;border-color:#dcdad5 !important;}',
+      'body.light-mode .vs-pair-card:hover{border-color:#c9a84c !important;}',
+      'body.light-mode .vs-pair-card-types{color:#141210 !important;}',
+      'body.light-mode .vs-pair-card-tag{color:#504840 !important;}',
 
     ].join('');
     document.head.appendChild(lmStyle);
@@ -240,14 +276,15 @@
   // so injectDesktopNav detects a match and skips rebuild - no flash.
   var NAV_LINKS = {
     '': [
-      { href: '/',                    label: 'Take the Test' },
-      { href: '/types',               label: '16 Types'      },
-      { href: '/letters',             label: '8 Letters'     },
-      { href: '/cognitive-functions', label: 'Functions'     },
-      { href: '/compatibility',       label: 'Compatibility' },
-      { href: '/archive',             label: 'Archive'       },
-      { href: '/forum',               label: 'Forum'         },
-      { href: '/about',               label: 'About'         }
+      { href: '/',                    label: 'Take the Test'  },
+      { href: '/types',               label: '16 Types'       },
+      { href: '/letters',             label: '8 Letters'      },
+      { href: '/cognitive-functions', label: 'Functions'      },
+      { href: '/compatibility',       label: 'Compatibility'  },
+      { href: '/vs',                  label: 'Type vs Type'   },
+      { href: '/archive',             label: 'Archive'        },
+      { href: '/forum',               label: 'Forum'          },
+      { href: '/about',               label: 'About'          }
     ],
     '/es': [
       { href: '/es/',                    label: 'Hacer el Test'  },
@@ -276,7 +313,10 @@
   function isActive(href) {
     var p = window.location.pathname.replace(/\/$/, '') || '/';
     var h = href.replace(/\/$/, '') || '/';
-    return p === h;
+    if (h === p) return true;
+    // Prefix match for section roots (e.g. /vs matches /vs/infj-infp)
+    if (h !== '/' && p.startsWith(h + '/')) return true;
+    return false;
   }
 
   // ── INJECTION ─────────────────────────────────────────────────────────────────
@@ -394,6 +434,7 @@
       '      <a href="/letters">8 Letters</a>',
       '      <a href="/cognitive-functions">Functions</a>',
       '      <a href="/compatibility">Compatibility</a>',
+      '      <a href="/vs">Type vs Type</a>',
       '      <a href="/archive">Character Archive</a>',
       '    </div>',
       '    <div class="footer-col">',
