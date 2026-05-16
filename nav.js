@@ -554,10 +554,76 @@
     return a;
   }
 
+  // ── GLOBAL TOGGLE (used by inline onclick on static-HTML pages too) ──────────
+  window.toggleMenu = function() {
+    var d = document.getElementById('nav-drawer');
+    var o = document.getElementById('nav-overlay');
+    var b = document.querySelector('.nav-burger');
+    if (!d) return;
+    var isOpen = d.classList.contains('open');
+    d.classList.toggle('open', !isOpen);
+    if (o) o.classList.toggle('open', !isOpen);
+    if (b) b.classList.toggle('open', !isOpen);
+  };
+
   // ── INIT ──────────────────────────────────────────────────────────────────────
   function initNav() {
-    var nav = document.querySelector('.site-nav, nav');
-    var desktopNav = nav ? nav.querySelector('.nav-links') : null;
+    var nav = document.querySelector('.site-nav');
+
+    // If no site-nav exists, build the whole structure and prepend to body
+    if (!nav) {
+      // Inject base nav CSS so the page doesn't need it hardcoded
+      var baseStyle = document.createElement('style');
+      baseStyle.textContent = [
+        'nav.site-nav{position:sticky;top:0;z-index:200;background:rgba(12,14,16,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border,#252a30);padding:0 32px;display:flex;justify-content:space-between;align-items:center;height:56px;}',
+        'nav.site-nav .nav-logo{font-family:inherit;font-size:15px;font-weight:500;letter-spacing:0.06em;color:var(--cream,#ede8df);text-decoration:none;white-space:nowrap;}',
+        'nav.site-nav .nav-links{display:flex;gap:28px;align-items:center;}',
+        'nav.site-nav .nav-links a{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--cream,#ede8df);text-decoration:none;opacity:0.7;transition:opacity 0.15s;}',
+        'nav.site-nav .nav-links a:hover,nav.site-nav .nav-links a.active{opacity:1;color:var(--gold,#c9a84c);}',
+        'nav.site-nav .nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}',
+        'nav.site-nav .nav-burger span{display:block;width:22px;height:2px;background:var(--cream,#ede8df);border-radius:2px;transition:all 0.25s;}',
+        '.nav-overlay{display:none;position:fixed;inset:0;z-index:190;background:rgba(0,0,0,0.5);}',
+        '.nav-overlay.open{display:block;}',
+        '.nav-drawer{position:fixed;top:0;right:-320px;width:300px;height:100%;z-index:210;background:var(--bg,#0c0e10);border-left:1px solid var(--border,#252a30);transition:right 0.3s ease;display:flex;flex-direction:column;}',
+        '.nav-drawer.open{right:0;}',
+        '.nav-drawer-header{display:flex;justify-content:space-between;align-items:center;padding:0 20px;height:56px;border-bottom:1px solid var(--border,#252a30);}',
+        '.nav-drawer .nav-close{background:none;border:none;color:var(--cream,#ede8df);font-size:18px;cursor:pointer;opacity:0.7;}',
+        '.nav-drawer-links{display:flex;flex-direction:column;padding:20px;gap:4px;}',
+        '.nav-drawer-links a{font-size:13px;letter-spacing:0.07em;text-transform:uppercase;color:var(--cream,#ede8df);text-decoration:none;padding:10px 4px;opacity:0.7;border-bottom:1px solid var(--border,#252a30);}',
+        '.nav-drawer-links a:hover{opacity:1;color:var(--gold,#c9a84c);}',
+        '@media(max-width:480px){nav.site-nav .nav-links{display:none;}nav.site-nav .nav-burger{display:flex;}}',
+      ].join('');
+      document.head.appendChild(baseStyle);
+      nav = document.createElement('nav');
+      nav.className = 'site-nav';
+      nav.innerHTML =
+        '<a href="/" class="nav-logo">77scenarios.com</a>' +
+        '<div class="nav-links"></div>' +
+        '<button class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>';
+      document.body.prepend(nav);
+
+      var overlay = document.createElement('div');
+      overlay.className = 'nav-overlay';
+      overlay.id = 'nav-overlay';
+      overlay.onclick = toggleMenu;
+      document.body.insertBefore(overlay, nav.nextSibling);
+
+      var drawer = document.createElement('div');
+      drawer.className = 'nav-drawer';
+      drawer.id = 'nav-drawer';
+      drawer.innerHTML =
+        '<div class="nav-drawer-header">' +
+          '<a href="/" class="nav-logo">77scenarios.com</a>' +
+          '<button class="nav-close">&#10005;</button>' +
+        '</div>' +
+        '<nav class="nav-drawer-links"></nav>';
+      document.body.insertBefore(drawer, overlay.nextSibling);
+
+      nav.querySelector('.nav-burger').onclick = toggleMenu;
+      drawer.querySelector('.nav-close').onclick = toggleMenu;
+    }
+
+    var desktopNav = nav.querySelector('.nav-links');
     var drawerNav = document.querySelector('.nav-drawer-links');
 
     if (!desktopNav || desktopNav.dataset.navReady) return;

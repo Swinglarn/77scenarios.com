@@ -525,22 +525,22 @@ function render(){
 
   // vs page links for this type
   const vsMap={
-    INFJ:['infj-infp','infj-intj','isfj-infj','enfj-infj','infj-istj','isfp-infj','infj-enfp'],
-    INTJ:['intj-intp','infj-intj','entj-intj','istj-intj'],
-    INFP:['infj-infp','enfp-infp','infp-isfp','intp-infp','infp-enfj'],
-    INTP:['intj-intp','entp-intp','intp-infp','istp-intp'],
+    INFJ:['infj-infp','infj-intj','isfj-infj','enfj-infj','infj-istj','isfp-infj','infj-enfp','infj-istp','entj-infj','intp-infj','estp-infj'],
+    INTJ:['intj-intp','infj-intj','entj-intj','istj-intj','intj-infp','entp-intj','enfj-intj','intj-esfp'],
+    INFP:['infj-infp','enfp-infp','infp-isfp','intp-infp','infp-enfj','intj-infp','entj-infp','isfj-infp','infp-istp'],
+    INTP:['intj-intp','entp-intp','intp-infp','istp-intp','intp-istj','intp-infj','intp-esfj'],
     ENFP:['enfp-infp','enfp-enfj','enfp-entp','esfp-enfp','infj-enfp'],
-    ENFJ:['enfj-infj','enfp-enfj','esfj-enfj','enfj-entj','infp-enfj'],
-    ISFJ:['isfj-infj','isfj-isfp','istj-isfj','esfj-estj'],
-    ISFP:['infp-isfp','isfj-isfp','isfp-esfp','isfp-infj'],
-    ESFJ:['esfj-enfj','esfj-estj'],
-    ENTP:['entp-intp','enfp-entp','estp-entp','entp-entj'],
-    ESTP:['estp-entp','istp-estp','estp-estj'],
-    ISTP:['istp-intp','istp-estp','istp-istj'],
-    ENTJ:['entj-intj','estj-entj','enfj-entj','entp-entj'],
-    ESTJ:['istj-intj','estj-entj','estp-estj','esfj-estj'],
-    ESFP:['isfp-esfp','esfp-enfp'],
-    ISTJ:['istj-intj','istj-isfj','infj-istj','istp-istj'],
+    ENFJ:['enfj-infj','enfp-enfj','esfj-enfj','enfj-entj','infp-enfj','enfj-isfj','enfj-intj','enfj-istp'],
+    ISFJ:['isfj-infj','isfj-isfp','istj-isfj','esfj-estj','isfj-estj','enfj-isfj','isfj-infp','istp-isfj','entj-isfj'],
+    ISFP:['infp-isfp','isfj-isfp','isfp-esfp','isfp-infj','infp-istp'],
+    ESFJ:['esfj-enfj','esfj-estj','esfj-isfj','intp-esfj'],
+    ENTP:['entp-intp','enfp-entp','estp-entp','entp-entj','entp-intj'],
+    ESTP:['estp-entp','istp-estp','estp-estj','estp-infj'],
+    ISTP:['istp-intp','istp-estp','istp-istj','infj-istp','istp-isfj','infp-istp','enfj-istp'],
+    ENTJ:['entj-intj','estj-entj','enfj-entj','entp-entj','entj-infp','entj-infj','entj-isfj'],
+    ESTJ:['istj-intj','estj-entj','estp-estj','esfj-estj','isfj-estj'],
+    ESFP:['isfp-esfp','esfp-enfp','esfp-infj','intj-esfp'],
+    ISTJ:['istj-intj','istj-isfj','infj-istj','istp-istj','intp-istj'],
   };
   const vsSlugs=vsMap[t]||[];
   const vsCards=vsSlugs.map(slug=>{
