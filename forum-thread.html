@@ -448,6 +448,13 @@ body.light-mode .loading-row{background:#ede8df;border-color:#d4cdc6;}
       return;
     }
 
+    // Update parent thread reply count and last_activity_at
+    const { data: threadData } = await sb.from('forum_threads').select('reply_count').eq('id', threadId).single();
+    await sb.from('forum_threads').update({
+      reply_count: (threadData?.reply_count || 0) + 1,
+      last_activity_at: new Date().toISOString()
+    }).eq('id', threadId);
+
     document.getElementById('reply-body').value = '';
     btn.disabled = false; btn.innerHTML = 'Post reply →';
     await loadReplies();

@@ -346,6 +346,7 @@ async function load() {
   const { data: results, error } = await sb
     .from('results')
     .select('*')
+    .eq('user_id', session.user.id)
     .order('created_at', { ascending: false });
   const container = document.getElementById('results-container');
   if (error || !results || results.length === 0) {

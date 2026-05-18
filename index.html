@@ -1723,6 +1723,7 @@ async function saveResult() {
   btn.textContent = 'Saving...';
 
   try {
+    const bs = getBlendedScores(); // must be called here — bs is local to showResultsActual()
     const res = await fetch(`${SUPA_URL}/rest/v1/subscribers`, {
       method: 'POST',
       headers: {

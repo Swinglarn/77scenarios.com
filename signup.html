@@ -277,12 +277,18 @@ async function handleSignup() {
   if (password.length < 8) { msg('Password must be at least 8 characters.', 'error'); return; }
   btn.disabled = true;
   btn.textContent = 'Creating account…';
-  const { error } = await sb.auth.signUp({ email, password });
+  const { data: signUpData, error } = await sb.auth.signUp({ email, password });
   if (error) {
     msg(error.message, 'error');
     btn.disabled = false;
     btn.textContent = 'Create account';
   } else {
+    // If email confirmation is disabled and user is immediately logged in,
+    // create the profile row now. If confirmation is required, settings.html
+    // handles profile creation via upsert on first save.
+    if (signUpData?.user) {
+      await sb.from('profiles').upsert({ id: signUpData.user.id }).throwOnError().catch(() => {});
+    }
     msg('Account created. Check your email to confirm.', 'success');
     btn.textContent = 'Done';
   }
