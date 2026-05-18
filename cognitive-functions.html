@@ -68,7 +68,7 @@
   .page-sub{font-size:17px;color:var(--cream);opacity:0.88;line-height:1.7;max-width:520px;margin-bottom:72px;}
 
   /* INTRO BOX */
-  .intro-box{background:#131820;border:1px solid #2a3848;border-radius:var(--radius);padding:32px;margin-bottom:72px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.05),0 2px 14px rgba(0,0,0,0.45);}
+  .intro-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px;margin-bottom:72px;}
   .intro-box p{font-size:16px;line-height:1.8;color:var(--cream);margin-bottom:12px;}
   .intro-box p:last-child{margin-bottom:0;}
   .intro-box em{color:var(--gold);font-style:italic;}
@@ -85,16 +85,13 @@
   @media(max-width:580px){.fn-pair{grid-template-columns:1fr;}}
   @media(max-width:600px){main{padding:40px 16px 72px;}}
 
-  .fncard{background:#131820;border:1px solid #2a3848;border-radius:var(--radius);padding:32px 28px;position:relative;overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,0.05),0 2px 14px rgba(0,0,0,0.45);transition:border-color 0.2s,transform 0.25s,box-shadow 0.25s;}
-  .fncard::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,0.07),transparent);opacity:0;transition:opacity 0.25s;pointer-events:none;}
-  .fncard:hover{border-color:var(--gold-dim);transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,0.08),0 20px 50px rgba(0,0,0,0.55);}
-  .fncard:hover::after{opacity:1;}
+  .fncard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px 28px;position:relative;overflow:hidden;}
   .fncard-code{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:300;line-height:1;color:var(--gold);letter-spacing:-0.04em;margin-bottom:12px;}
   .fncard-name{font-size:13px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--cream);margin-bottom:8px;}
   .fncard-tagline{font-size:13px;color:var(--cream);opacity:0.88;line-height:1.65;margin-bottom:18px;}
   .fncard-types{display:flex;flex-wrap:wrap;gap:6px;}
   a{color:inherit;text-decoration:none;}
-  .mini-type{font-size:12px;letter-spacing:0.06em;font-weight:500;padding:3px 10px;border-radius:20px;border:1px solid #2a3848;color:var(--muted);background:#1a2230;text-decoration:none;transition:border-color 0.15s,color 0.15s;}
+  .mini-type{font-size:12px;letter-spacing:0.06em;font-weight:500;padding:3px 10px;border-radius:20px;border:1px solid var(--border);color:var(--muted);background:var(--surface2);text-decoration:none;transition:border-color 0.15s,color 0.15s;}
   .mini-type:hover{color:var(--gold);border-color:var(--gold-dim);}
   .mini-type.dom{border-color:rgba(201,168,76,0.3);color:var(--gold);background:rgba(201,168,76,0.07);}
   .fn-pos-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:6px;}
@@ -103,7 +100,7 @@
   .dim-sep{height:1px;background:var(--border);margin:0 0 72px;}
 
   /* CTA */
-  .cta-box{background:#131820;border:1px solid #2a3848;border-radius:var(--radius);padding:40px;text-align:center;margin-top:24px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.05),0 2px 14px rgba(0,0,0,0.45);}
+  .cta-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:40px;text-align:center;margin-top:24px;}
   .cta-box p{font-size:17px;color:var(--cream);opacity:0.88;line-height:1.7;margin-bottom:24px;max-width:400px;margin-left:auto;margin-right:auto;}
   .btn-gold{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:#0c0e10;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;border:none;border-radius:60px;padding:16px 36px;cursor:pointer;text-decoration:none;transition:background 0.2s;}
   .btn-gold:hover{background:var(--cream);}
@@ -171,7 +168,6 @@
   <!-- INTUITION -->
   <div class="fn-group">
     <div class="r" data-d="4">
-      <div class="group-num">Perceiving, 01</div>
       <div class="group-name">Intuition</div>
       <div class="group-desc">Pattern recognition and meaning-making. <em>How you sense what isn't directly in front of you, possibilities, implications, what something really means beneath the surface.</em></div>
     </div>
@@ -196,7 +192,6 @@
   <!-- SENSING -->
   <div class="fn-group">
     <div class="r" data-d="8">
-      <div class="group-num">Perceiving, 02</div>
       <div class="group-name">Sensing</div>
       <div class="group-desc">Concrete information and direct experience. <em>How you engage with what is real, present and tangible, facts, details, the physical world as it actually is.</em></div>
     </div>
@@ -221,7 +216,6 @@
   <!-- THINKING -->
   <div class="fn-group">
     <div class="r" data-d="12">
-      <div class="group-num">Judging, 01</div>
       <div class="group-name">Thinking</div>
       <div class="group-desc">Logic and systematic reasoning. <em>How you evaluate ideas and make decisions, through objective analysis, cause and effect, what is true regardless of how it feels.</em></div>
     </div>
@@ -246,7 +240,6 @@
   <!-- FEELING -->
   <div class="fn-group">
     <div class="r" data-d="16">
-      <div class="group-num">Judging, 02</div>
       <div class="group-name">Feeling</div>
       <div class="group-desc">Values and human meaning. <em>How you evaluate decisions through what matters, what feels right, and the impact on people, including yourself.</em></div>
     </div>

@@ -74,9 +74,9 @@
   @media(max-width:580px){.letter-pair{grid-template-columns:1fr;}}
   @media(max-width:600px){main{padding:40px 16px 72px;}}
 
-  .lcard{display:block;text-decoration:none;background:#131820;border:1px solid #2a3848;border-radius:var(--radius);padding:32px 28px;position:relative;overflow:hidden;transition:border-color 0.2s,transform 0.25s,box-shadow 0.25s;box-shadow:inset 0 1px 0 rgba(255,255,255,0.05),0 2px 14px rgba(0,0,0,0.45);}
-  .lcard::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,0.08),transparent);opacity:0;transition:opacity 0.25s;}
-  .lcard:hover{border-color:var(--gold-dim);transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,0.08),0 20px 50px rgba(0,0,0,0.55);}
+  .lcard{display:block;text-decoration:none;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px 28px;position:relative;overflow:hidden;transition:border-color 0.2s,transform 0.25s,box-shadow 0.25s;}
+  .lcard::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,0.06),transparent);opacity:0;transition:opacity 0.25s;}
+  .lcard:hover{border-color:var(--gold-dim);box-shadow:0 20px 50px rgba(0,0,0,0.4);}
   .lcard:hover::after{opacity:1;}
   .lcard-letter{font-family:'Cormorant Garamond',serif;font-size:68px;font-weight:300;line-height:1;color:var(--cream);letter-spacing:-0.04em;margin-bottom:12px;transition:color 0.25s;}
   .lcard:hover .lcard-letter{color:var(--gold);}
@@ -144,7 +144,7 @@
 
   <!-- E/I -->
   <div class="dimension">
-    <div class="r" data-d="3"><div class="dim-num">Dimension 01</div><div class="dim-name">Energy</div><div class="dim-desc">Where you draw energy from. <em>Not whether you enjoy people, but whether spending time with them leaves you more full or less.</em></div></div>
+    <div class="r" data-d="3"><div class="dim-name">Energy</div><div class="dim-desc">Where you draw energy from. <em>Not whether you enjoy people, but whether spending time with them leaves you more full or less.</em></div></div>
     <div class="letter-pair">
       <a href="/letters/e" class="lcard r" data-d="4">
         <span class="lcard-arrow">→</span>
@@ -166,7 +166,7 @@
 
   <!-- S/N -->
   <div class="dimension">
-    <div class="r" data-d="7"><div class="dim-num">Dimension 02</div><div class="dim-name">Perception</div><div class="dim-desc">How you take in the world. <em>Whether you trust what's in front of you, or what you can infer from it.</em></div></div>
+    <div class="r" data-d="7"><div class="dim-name">Perception</div><div class="dim-desc">How you take in the world. <em>Whether you trust what's in front of you, or what you can infer from it.</em></div></div>
     <div class="letter-pair">
       <a href="/letters/s" class="lcard r" data-d="8">
         <span class="lcard-arrow">→</span>
@@ -188,7 +188,7 @@
 
   <!-- T/F -->
   <div class="dimension">
-    <div class="r" data-d="11"><div class="dim-num">Dimension 03</div><div class="dim-name">Judgement</div><div class="dim-desc">How you make decisions. <em>Whether your primary compass is logic and principle, or values and human impact.</em></div></div>
+    <div class="r" data-d="11"><div class="dim-name">Judgement</div><div class="dim-desc">How you make decisions. <em>Whether your primary compass is logic and principle, or values and human impact.</em></div></div>
     <div class="letter-pair">
       <a href="/letters/t" class="lcard r" data-d="12">
         <span class="lcard-arrow">→</span>
@@ -210,7 +210,7 @@
 
   <!-- J/P -->
   <div class="dimension">
-    <div class="r" data-d="15"><div class="dim-num">Dimension 04</div><div class="dim-name">Lifestyle</div><div class="dim-desc">How you organise your life. <em>Whether you need things settled, or prefer keeping your options open.</em></div></div>
+    <div class="r" data-d="15"><div class="dim-name">Lifestyle</div><div class="dim-desc">How you organise your life. <em>Whether you need things settled, or prefer keeping your options open.</em></div></div>
     <div class="letter-pair">
       <a href="/letters/j" class="lcard r" data-d="16">
         <span class="lcard-arrow">→</span>

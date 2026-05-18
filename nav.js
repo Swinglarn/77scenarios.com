@@ -254,6 +254,21 @@
       'body.light-mode .letter-block p{color:#2e2820 !important;}',
       'body.light-mode .section-label{border-bottom-color:#b0bcc8 !important;}',
 
+      /* New page cards: profile, settings, about, login, privacy, terms, contact, forum */
+      'body.light-mode .score-card,body.light-mode .verdict-box,body.light-mode .cta-block,body.light-mode .result-card,body.light-mode .contact-card,body.light-mode .thread-item,body.light-mode .auth-notice,body.light-mode .info-box,body.light-mode .post-body,body.light-mode .reply-card{background:#eef2f7 !important;border-color:#b0bcc8 !important;box-shadow:0 2px 10px rgba(30,60,100,0.08),0 1px 3px rgba(30,60,100,0.05) !important;}',
+      'body.light-mode .callout{background:#eef2f7 !important;border-color:#b0bcc8 !important;border-left-color:var(--gold-dim) !important;box-shadow:0 2px 10px rgba(30,60,100,0.08),0 1px 3px rgba(30,60,100,0.05) !important;}',
+      'body.light-mode .warning-box{background:rgba(201,168,76,0.06) !important;border-color:rgba(201,168,76,0.3) !important;}',
+      'body.light-mode .contact-card:hover,body.light-mode .thread-item:hover,body.light-mode .result-card:hover{box-shadow:0 4px 18px rgba(30,60,100,0.14),0 2px 4px rgba(30,60,100,0.07) !important;border-color:#c9a84c !important;}',
+
+      /* Form inputs in light mode */
+      'body.light-mode .field-input,body.light-mode .field input,body.light-mode .field textarea,body.light-mode .field select,body.light-mode .form-input,body.light-mode .form-select,body.light-mode .form-textarea{background:#eef2f7 !important;border-color:#b0bcc8 !important;color:#1a1818 !important;}',
+      'body.light-mode .field-input:focus,body.light-mode .field input:focus,body.light-mode .field textarea:focus,body.light-mode .form-input:focus{border-color:#c9a84c !important;}',
+      'body.light-mode .field-input::placeholder,body.light-mode .field input::placeholder,body.light-mode .field textarea::placeholder{color:#a0a8b0 !important;opacity:1 !important;}',
+
+      /* Prose text in light mode */
+      'body.light-mode .prose{color:#2e2820 !important;}',
+      'body.light-mode .data-list li{color:#2e2820 !important;}',
+
       /* Search bar: dark in dark mode, white in light mode */
       'body.light-mode #site-search{background:#ffffff !important;border-bottom:1px solid #dcdad5 !important;box-shadow:0 2px 10px rgba(0,0,0,0.07) !important;backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}',
       'body.light-mode #srch-icon{color:#a09898 !important;}',
