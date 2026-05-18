@@ -237,7 +237,7 @@
       'body.light-mode .vs-pair-card-tag{color:#504840 !important;}',
 
       /* ── All boxes/cards site-wide: bright white, visible border, lifted shadow ── */
-      'body.light-mode .db-card,body.light-mode .section,body.light-mode .verdict,body.light-mode .related-card,body.light-mode .fncard,body.light-mode .intro-box,body.light-mode .cta-box,body.light-mode .post-body,body.light-mode .reply-card,body.light-mode .box,body.light-mode .growth-box,body.light-mode .opp-block,body.light-mode .lcard,body.light-mode .fd-box,body.light-mode .famous-card,body.light-mode .type-card,body.light-mode .type-mini,body.light-mode .modal,body.light-mode .actor-chip,body.light-mode .universe-chip{background:#eef2f7 !important;border-color:#b0bcc8 !important;box-shadow:0 2px 10px rgba(30,60,100,0.08),0 1px 3px rgba(30,60,100,0.05) !important;}',
+      'body.light-mode .db-card,body.light-mode .fncard,body.light-mode .intro-box,body.light-mode .cta-box,body.light-mode .post-body,body.light-mode .reply-card,body.light-mode .box,body.light-mode .growth-box,body.light-mode .opp-block,body.light-mode .lcard,body.light-mode .fd-box,body.light-mode .famous-card,body.light-mode .type-card,body.light-mode .type-mini,body.light-mode .modal,body.light-mode .actor-chip,body.light-mode .universe-chip{background:#eef2f7 !important;border-color:#b0bcc8 !important;box-shadow:0 2px 10px rgba(30,60,100,0.08),0 1px 3px rgba(30,60,100,0.05) !important;}',
 
       /* Nested / secondary surface cards */
       'body.light-mode .fn-card,body.light-mode .tag,body.light-mode .mini-type,body.light-mode .filter-btn,body.light-mode .type-btn{background:#e4ecf4 !important;border-color:#b0bcc8 !important;}',
@@ -248,11 +248,6 @@
       /* Keep gold left-border accent on verdict and growth-box */
       'body.light-mode .verdict{border-left-color:var(--gold) !important;border-left-width:4px !important;}',
       'body.light-mode .growth-box{border-left-color:var(--gold-dim) !important;border-left-width:2px !important;}',
-
-      /* Character page text + labels */
-      'body.light-mode .section p{color:#2e2820 !important;}',
-      'body.light-mode .letter-block p{color:#2e2820 !important;}',
-      'body.light-mode .section-label{border-bottom-color:#b0bcc8 !important;}',
 
       /* New page cards: profile, settings, about, login, privacy, terms, contact, forum */
       'body.light-mode .score-card,body.light-mode .verdict-box,body.light-mode .cta-block,body.light-mode .result-card,body.light-mode .contact-card,body.light-mode .thread-item,body.light-mode .auth-notice,body.light-mode .info-box,body.light-mode .post-body,body.light-mode .reply-card{background:#eef2f7 !important;border-color:#b0bcc8 !important;box-shadow:0 2px 10px rgba(30,60,100,0.08),0 1px 3px rgba(30,60,100,0.05) !important;}',
