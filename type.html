@@ -525,22 +525,22 @@ function render(){
 
   // vs page links for this type
   const vsMap={
-    INFJ:['infj-infp','infj-intj','isfj-infj','enfj-infj','infj-istj','isfp-infj','infj-enfp','infj-istp','entj-infj','intp-infj','estp-infj','infj-esfj'],
-    INTJ:['intj-intp','infj-intj','entj-intj','istj-intj','intj-infp','entp-intj','enfj-intj','intj-esfp','intj-isfj','estp-intj','esfj-intj','intj-isfp','intj-istp'],
-    INFP:['infj-infp','enfp-infp','infp-isfp','intp-infp','infp-enfj','intj-infp','entj-infp','isfj-infp','infp-istp','infp-estj','infp-istj','infp-entp'],
-    INTP:['intj-intp','entp-intp','intp-infp','istp-intp','intp-istj','intp-infj','intp-esfj','intp-istp','enfj-intp'],
-    ENFP:['enfp-infp','enfp-enfj','enfp-entp','esfp-enfp','infj-enfp','enfp-esfj','enfp-istp','enfp-estj','enfp-isfp'],
-    ENFJ:['enfj-infj','enfp-enfj','esfj-enfj','enfj-entj','infp-enfj','enfj-isfj','enfj-intj','enfj-istp','enfj-esfj','enfj-estp','enfj-intp','enfj-estj','enfj-entp'],
-    ISFJ:['isfj-infj','isfj-isfp','istj-isfj','esfj-estj','isfj-estj','enfj-isfj','isfj-infp','istp-isfj','entj-isfj','entp-isfj','intj-isfj','estp-isfj','esfp-isfj'],
-    ISFP:['infp-isfp','isfj-isfp','isfp-esfp','isfp-infj','infp-istp','isfp-entj','isfp-esfj','estp-isfp','isfp-estj','enfp-isfp','intj-isfp'],
-    ESFJ:['esfj-enfj','esfj-estj','esfj-isfj','intp-esfj','enfp-esfj','enfj-esfj','entp-esfj','isfp-esfj','esfj-istp','infj-esfj','esfj-intj'],
-    ENTP:['entp-intp','enfp-entp','estp-entp','entp-entj','entp-intj','entp-isfj','entp-esfj','infp-entp','entp-estp','entp-infj','enfj-entp','entp-istj'],
-    ESTP:['estp-entp','istp-estp','estp-estj','estp-infj','esfp-estj','estp-isfj','estp-isfp','estp-intj','entp-estp','enfj-estp'],
-    ISTP:['istp-intp','istp-estp','istp-istj','infj-istp','istp-isfj','infp-istp','enfj-istp','enfp-istp','esfj-istp','estp-isfp','intp-istp','intj-istp'],
-    ENTJ:['entj-intj','estj-entj','enfj-entj','entp-entj','entj-infp','entj-infj','entj-isfj','isfp-entj','entj-esfp','esfp-entj'],
-    ESTJ:['istj-intj','estj-entj','estp-estj','esfj-estj','isfj-estj','infp-estj','estj-infj','esfp-estj','estj-istj','enfp-estj','isfp-estj','enfj-estj'],
-    ESFP:['isfp-esfp','esfp-enfp','esfp-infj','intj-esfp','esfp-estj','esfp-isfj','estp-isfp','entj-esfp','esfp-entj'],
-    ISTJ:['istj-intj','istj-isfj','infj-istj','istp-istj','intp-istj','infp-istj','estj-istj','entp-istj'],
+    INFJ:['infj-infp','infj-intj','isfj-infj','enfj-infj','infj-istj','isfp-infj','infj-enfp','infj-istp','entj-infj','intp-infj','estp-infj','infj-esfj','infj-intp'],
+    INTJ:['intj-intp','infj-intj','entj-intj','istj-intj','intj-infp','entp-intj','enfj-intj','intj-esfp','intj-isfj','estp-intj','esfj-intj','intj-isfp','intj-istp','intj-istj'],
+    INFP:['infj-infp','enfp-infp','infp-isfp','intp-infp','infp-enfj','intj-infp','entj-infp','isfj-infp','infp-istp','infp-estj','infp-istj','infp-entp','enfj-infp','esfj-infp','infp-intp'],
+    INTP:['intj-intp','entp-intp','intp-infp','istp-intp','intp-istj','intp-infj','intp-esfj','intp-istp','enfj-intp','enfp-intp','infj-intp','infp-intp'],
+    ENFP:['enfp-infp','enfp-enfj','enfp-entp','esfp-enfp','infj-enfp','enfp-esfj','enfp-istp','enfp-estj','enfp-isfp','enfj-enfp','enfp-intp','enfp-isfj','enfp-istj','enfp-esfp'],
+    ENFJ:['enfj-infj','enfp-enfj','esfj-enfj','enfj-entj','infp-enfj','enfj-isfj','enfj-intj','enfj-istp','enfj-esfj','enfj-estp','enfj-intp','enfj-estj','enfj-entp','enfj-enfp','enfj-infp','enfj-isfp','enfj-esfp'],
+    ISFJ:['isfj-infj','isfj-isfp','istj-isfj','esfj-estj','isfj-estj','enfj-isfj','isfj-infp','istp-isfj','entj-isfj','entp-isfj','intj-isfj','estp-isfj','esfp-isfj','enfp-isfj'],
+    ISFP:['infp-isfp','isfj-isfp','isfp-esfp','isfp-infj','infp-istp','isfp-entj','isfp-esfj','estp-isfp','isfp-estj','enfp-isfp','intj-isfp','enfj-isfp','isfp-istp'],
+    ESFJ:['esfj-enfj','esfj-estj','esfj-isfj','intp-esfj','enfp-esfj','enfj-esfj','entp-esfj','isfp-esfj','esfj-istp','infj-esfj','esfj-intj','esfj-infp','entj-esfj'],
+    ENTP:['entp-intp','enfp-entp','estp-entp','entp-entj','entp-intj','entp-isfj','entp-esfj','infp-entp','entp-estp','entp-infj','enfj-entp','entp-istj','entp-istp'],
+    ESTP:['estp-entp','istp-estp','estp-estj','estp-infj','esfp-estj','estp-isfj','estp-isfp','estp-intj','entp-estp','enfj-estp','estp-istp'],
+    ISTP:['istp-intp','istp-estp','istp-istj','infj-istp','istp-isfj','infp-istp','enfj-istp','enfp-istp','esfj-istp','estp-isfp','intp-istp','intj-istp','estp-istp','isfp-istp','entp-istp'],
+    ENTJ:['entj-intj','estj-entj','enfj-entj','entp-entj','entj-infp','entj-infj','entj-isfj','isfp-entj','entj-esfp','esfp-entj','entj-intp','entj-istp','entj-entp','entj-esfj'],
+    ESTJ:['istj-intj','estj-entj','estp-estj','esfj-estj','isfj-estj','infp-estj','estj-infj','esfp-estj','estj-istj','enfp-estj','isfp-estj','enfj-estj','entp-estj','estj-intj'],
+    ESFP:['isfp-esfp','esfp-enfp','esfp-infj','intj-esfp','esfp-estj','esfp-isfj','estp-isfp','entj-esfp','esfp-entj','esfp-intp','enfj-esfp','enfp-esfp'],
+    ISTJ:['istj-intj','istj-isfj','infj-istj','istp-istj','intp-istj','infp-istj','estj-istj','entp-istj','enfj-istj','enfp-istj','intj-istj'],
   };
   const vsSlugs=vsMap[t]||[];
   const vsCards=vsSlugs.map(slug=>{
