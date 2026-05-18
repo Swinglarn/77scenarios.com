@@ -136,7 +136,7 @@
       'body.light-mode .lcard-desc{color:#504840 !important;}',
       /* ── Text utilities ── */
       'body.light-mode .dim-desc{color:#38302a !important;}',
-      'body.light-mode .page-sub{color:#38302a !important;}',
+      'body.light-mode .page-sub{color:#141210 !important;}',
       'body.light-mode .page-eyebrow{color:#a8893a !important;}',
       'body.light-mode .dim-num{color:#a8893a !important;}',
       /* FIX: both selectors must be scoped, .group-name was applying dark text globally */
@@ -191,8 +191,8 @@
       /* ── Info / prose / legal boxes ── */
       'body.light-mode .info-box{background:#eef2f7 !important;border-color:#b0bcc8 !important;box-shadow:0 2px 10px rgba(30,60,100,0.08),0 1px 3px rgba(30,60,100,0.05) !important;}',
       'body.light-mode .info-box p{color:#38302a !important;}',
-      'body.light-mode .data-list li{color:#38302a !important;}',
-      'body.light-mode .prose{color:#38302a !important;}',
+      'body.light-mode .data-list li{color:#141210 !important;}',
+      'body.light-mode .prose{color:#141210 !important;}',
       'body.light-mode .warning-box{background:rgba(201,168,76,0.08) !important;border-color:rgba(201,168,76,0.3) !important;}',
       'body.light-mode .warning-box p{color:#141210 !important;}',
       /* ── Contact forms, inputs white, cards surface gray ── */
@@ -242,6 +242,19 @@
       /* Nested / secondary surface cards */
       'body.light-mode .fn-card,body.light-mode .tag,body.light-mode .mini-type,body.light-mode .filter-btn,body.light-mode .type-btn{background:#e4ecf4 !important;border-color:#b0bcc8 !important;}',
 
+      /* Archive card text — hardcoded light colors need dark overrides */
+      'body.light-mode .db-card-name{color:#1c1a18 !important;}',
+      'body.light-mode .db-card-ctx{color:#4a5868 !important;}',
+      'body.light-mode .db-card-cat{color:#7a8898 !important;opacity:1 !important;}',
+      'body.light-mode .db-card-type{color:var(--gold-dim) !important;}',
+
+      /* Archive filter/type button text */
+      'body.light-mode .filter-btn{color:#3a3830 !important;}',
+      'body.light-mode .filter-btn.active{color:var(--gold) !important;background:rgba(201,168,76,0.1) !important;border-color:var(--gold-dim) !important;}',
+      'body.light-mode .type-btn{color:#3a3830 !important;}',
+      'body.light-mode .type-btn.active{color:var(--gold) !important;background:rgba(201,168,76,0.1) !important;border-color:var(--gold-dim) !important;}',
+      'body.light-mode .results-info-count{color:#1c1a18 !important;}',
+
       /* Hover lift for interactive cards */
       'body.light-mode .db-card:hover,body.light-mode .type-card:hover,body.light-mode .lcard:hover,body.light-mode .related-card:hover,body.light-mode .fncard:hover{box-shadow:0 4px 18px rgba(30,60,100,0.14),0 2px 4px rgba(30,60,100,0.07) !important;border-color:#c9a84c !important;}',
 
@@ -261,8 +274,8 @@
       'body.light-mode .field-input::placeholder,body.light-mode .field input::placeholder,body.light-mode .field textarea::placeholder{color:#a0a8b0 !important;opacity:1 !important;}',
 
       /* Prose text in light mode */
-      'body.light-mode .prose{color:#2e2820 !important;}',
-      'body.light-mode .data-list li{color:#2e2820 !important;}',
+      'body.light-mode .prose{color:#141210 !important;}',
+      'body.light-mode .data-list li{color:#141210 !important;}',
 
       /* Search bar: dark in dark mode, white in light mode */
       'body.light-mode #site-search{background:#ffffff !important;border-bottom:1px solid #dcdad5 !important;box-shadow:0 2px 10px rgba(0,0,0,0.07) !important;backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}',
