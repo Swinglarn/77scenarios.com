@@ -109,7 +109,7 @@
       'body.light-mode .nav-drawer-links a{color:#38302a !important;border-bottom-color:#dcdad5 !important;}',
       'body.light-mode .nav-drawer-links a:hover{color:#141210 !important;}',
       'body.light-mode .nav-close{color:#38302a !important;}',
-      'body.light-mode .nav-drawer-header{border-bottom:1px solid #dcdad5 !important;background:#f2f1ef !important;}',
+      'body.light-mode .nav-drawer-header{border-bottom:1px solid #dcdad5 !important;background:#eef2f7 !important;}',
       /* ── Overlay + user dropdown ── */
       'body.light-mode #t-overlay{background:#ffffff !important;}',
       'body.light-mode #nav-user-dropdown{background:#f2f1ef !important;border:1px solid #dcdad5 !important;box-shadow:0 8px 32px rgba(0,0,0,0.12) !important;}',
@@ -119,7 +119,7 @@
       'body.light-mode a{color:inherit !important;text-decoration:none !important;}',
       'body.light-mode a:visited{color:inherit !important;}',
       /* ── Cards, neutral gray with subtle lift shadow ── */
-      'body.light-mode .type-card{background:#f2f1ef !important;border-color:#dcdad5 !important;box-shadow:0 1px 4px rgba(0,0,0,0.06) !important;}',
+      'body.light-mode .type-card{background:#eef2f7 !important;border-color:#b0bcc8 !important;box-shadow:0 2px 10px rgba(30,60,100,0.08),0 1px 3px rgba(30,60,100,0.05) !important;}',
       'body.light-mode .type-card *{color:#141210 !important;}',
       'body.light-mode .type-card:hover{border-color:#c9a84c !important;box-shadow:0 8px 28px rgba(0,0,0,0.09) !important;}',
       'body.light-mode .card-name{color:#141210 !important;font-weight:500 !important;}',
@@ -129,7 +129,7 @@
       /* ── Mini type badges, clearly darker than card background ── */
       'body.light-mode .mini-type{background:#e7e5e2 !important;border:1px solid #dcdad5 !important;color:#38302a !important;}',
       /* ── Letter cards ── */
-      'body.light-mode .lcard{background:#f2f1ef !important;border:1px solid #dcdad5 !important;box-shadow:0 1px 4px rgba(0,0,0,0.06) !important;}',
+      'body.light-mode .lcard{background:#eef2f7 !important;border:1px solid #b0bcc8 !important;box-shadow:0 2px 10px rgba(30,60,100,0.08),0 1px 3px rgba(30,60,100,0.05) !important;}',
       'body.light-mode .lcard:hover{border-color:#c9a84c !important;box-shadow:0 8px 28px rgba(0,0,0,0.09) !important;}',
       /* FIX: both selectors must be scoped to body.light-mode or dark mode gets dark text */
       'body.light-mode .lcard-letter,body.light-mode .lcard-name{color:#141210 !important;}',
@@ -169,12 +169,12 @@
       /* ── Rarity badges, use surface2 so they're distinct inside cards ── */
       'body.light-mode .rarity-badge{background:#e7e5e2 !important;border-color:#dcdad5 !important;color:#504840 !important;}',
       /* ── Compat score blocks ── */
-      'body.light-mode .score-block{background:#f2f1ef !important;border-color:#dcdad5 !important;box-shadow:0 1px 4px rgba(0,0,0,0.06) !important;}',
+      'body.light-mode .score-block{background:#eef2f7 !important;border-color:#b0bcc8 !important;box-shadow:0 2px 10px rgba(30,60,100,0.08),0 1px 3px rgba(30,60,100,0.05) !important;}',
       'body.light-mode .score-bar-track{background:#dcdad5 !important;}',
       'body.light-mode .score-legend{color:#504840 !important;}',
       'body.light-mode .score-label-text{filter:saturate(1.3) brightness(0.85);}',
       /* ── Type pair cards ── */
-      'body.light-mode .type-pair-card{background:#f2f1ef !important;border-color:#dcdad5 !important;box-shadow:0 1px 4px rgba(0,0,0,0.06) !important;}',
+      'body.light-mode .type-pair-card{background:#eef2f7 !important;border-color:#b0bcc8 !important;box-shadow:0 2px 10px rgba(30,60,100,0.08),0 1px 3px rgba(30,60,100,0.05) !important;}',
       'body.light-mode .type-pair-card:hover{border-color:#c9a84c !important;box-shadow:0 8px 28px rgba(0,0,0,0.09) !important;}',
       'body.light-mode .tpc-code{color:#141210 !important;}',
       'body.light-mode .tpc-name{color:#141210 !important;}',
@@ -184,12 +184,12 @@
       /* Pills are surface2 so they contrast inside card backgrounds ── */
       'body.light-mode .related-pill{background:#e7e5e2 !important;border-color:#dcdad5 !important;color:#504840 !important;}',
       'body.light-mode .related-pill:hover{border-color:#c9a84c !important;color:#8a6d2e !important;background:#dddbd6 !important;}',
-      'body.light-mode .similar-card{background:#f2f1ef !important;border-color:#dcdad5 !important;box-shadow:0 1px 4px rgba(0,0,0,0.06) !important;}',
+      'body.light-mode .similar-card{background:#eef2f7 !important;border-color:#b0bcc8 !important;box-shadow:0 2px 10px rgba(30,60,100,0.08),0 1px 3px rgba(30,60,100,0.05) !important;}',
       'body.light-mode .similar-card:hover{border-color:#c9a84c !important;box-shadow:0 8px 28px rgba(0,0,0,0.09) !important;}',
       'body.light-mode .sim-code{color:#141210 !important;}',
       'body.light-mode .sim-name{color:#504840 !important;}',
       /* ── Info / prose / legal boxes ── */
-      'body.light-mode .info-box{background:#f2f1ef !important;border-color:#dcdad5 !important;box-shadow:0 1px 4px rgba(0,0,0,0.06) !important;}',
+      'body.light-mode .info-box{background:#eef2f7 !important;border-color:#b0bcc8 !important;box-shadow:0 2px 10px rgba(30,60,100,0.08),0 1px 3px rgba(30,60,100,0.05) !important;}',
       'body.light-mode .info-box p{color:#38302a !important;}',
       'body.light-mode .data-list li{color:#38302a !important;}',
       'body.light-mode .prose{color:#38302a !important;}',
@@ -198,29 +198,29 @@
       /* ── Contact forms, inputs white, cards surface gray ── */
       'body.light-mode .contact-form input,body.light-mode .contact-form textarea,body.light-mode .contact-form select{background:#ffffff !important;border-color:#dcdad5 !important;color:#141210 !important;}',
       'body.light-mode .contact-form input:focus,body.light-mode .contact-form textarea:focus,body.light-mode .contact-form select:focus{border-color:#c9a84c !important;box-shadow:0 0 0 3px rgba(201,168,76,0.12) !important;}',
-      'body.light-mode .contact-card{background:#f2f1ef !important;border-color:#dcdad5 !important;box-shadow:0 1px 4px rgba(0,0,0,0.06) !important;}',
+      'body.light-mode .contact-card{background:#eef2f7 !important;border-color:#b0bcc8 !important;box-shadow:0 2px 10px rgba(30,60,100,0.08),0 1px 3px rgba(30,60,100,0.05) !important;}',
       /* ── vs pages ── */
       'body.light-mode .vs-section-title{color:#141210 !important;}',
       'body.light-mode .vs-type-code{color:#141210 !important;}',
       'body.light-mode .vs-vs-word{color:#7a7570 !important;}',
       'body.light-mode .vs-tagline{color:#7a7570 !important;}',
       'body.light-mode .vs-prose p{color:#3a3630 !important;}',
-      'body.light-mode .vs-fn-col{background:#f2f1ef !important;border-color:#dcdad5 !important;}',
+      'body.light-mode .vs-fn-col{background:#eef2f7 !important;border-color:#b0bcc8 !important;}',
       'body.light-mode .vs-fn-col-header{color:#141210 !important;}',
       'body.light-mode .vs-fn-item.introverted{background:#e2eef6 !important;color:#2d5a7b !important;}',
       'body.light-mode .vs-fn-item.extroverted{background:#fdf5e4 !important;color:#7a5c1e !important;}',
-      'body.light-mode .vs-table tbody tr:nth-child(even){background:#f2f1ef !important;}',
+      'body.light-mode .vs-table tbody tr:nth-child(even){background:#eef2f7 !important;}',
       'body.light-mode .vs-table td{color:#3a3630 !important;}',
       'body.light-mode .vs-table td:first-child{color:#7a7570 !important;}',
       'body.light-mode .vs-table th:not(:first-child){color:#7a5c1e !important;}',
-      'body.light-mode .vs-overlap-item{background:#f2f1ef !important;border-color:#dcdad5 !important;color:#3a3630 !important;}',
-      'body.light-mode .vs-tell-item{background:#f2f1ef !important;}',
+      'body.light-mode .vs-overlap-item{background:#eef2f7 !important;border-color:#b0bcc8 !important;color:#3a3630 !important;}',
+      'body.light-mode .vs-tell-item{background:#eef2f7 !important;}',
       'body.light-mode .vs-tell-title{color:#141210 !important;}',
       'body.light-mode .vs-tell-body{color:#5a5550 !important;}',
-      'body.light-mode .vs-famous-col{background:#f2f1ef !important;border-color:#dcdad5 !important;}',
+      'body.light-mode .vs-famous-col{background:#eef2f7 !important;border-color:#b0bcc8 !important;}',
       'body.light-mode .vs-famous-col-title{color:#7a5c1e !important;}',
       'body.light-mode .vs-famous-name{color:#141210 !important;}',
-      'body.light-mode .vs-quiz{background:#f2f1ef !important;border-color:#dcdad5 !important;}',
+      'body.light-mode .vs-quiz{background:#eef2f7 !important;border-color:#b0bcc8 !important;}',
       'body.light-mode .vs-quiz-option{background:#e7e5e2 !important;border-color:#dcdad5 !important;color:#3a3630 !important;}',
       'body.light-mode .vs-quiz-option.selected{background:#fdf5e4 !important;border-color:#9a7e3a !important;color:#141210 !important;}',
       'body.light-mode .vs-quiz-q-text{color:#141210 !important;}',
@@ -231,27 +231,33 @@
       'body.light-mode .vs-not-found h1{color:#141210 !important;}',
       'body.light-mode .vs-hub-title{color:#141210 !important;}',
       'body.light-mode .vs-hub-desc{color:#504840 !important;}',
-      'body.light-mode .vs-pair-card{background:#f2f1ef !important;border-color:#dcdad5 !important;}',
-      'body.light-mode .vs-pair-card:hover{border-color:#c9a84c !important;}',
+      'body.light-mode .vs-pair-card{background:#eef2f7 !important;border-color:#b0bcc8 !important;box-shadow:0 2px 10px rgba(30,60,100,0.08),0 1px 3px rgba(30,60,100,0.05) !important;}',
+      'body.light-mode .vs-pair-card:hover{border-color:#c9a84c !important;box-shadow:0 4px 16px rgba(30,60,100,0.14),0 1px 4px rgba(30,60,100,0.07) !important;}',
       'body.light-mode .vs-pair-card-types{color:#141210 !important;}',
       'body.light-mode .vs-pair-card-tag{color:#504840 !important;}',
 
-      /* Character page sections — flip dark boxes to warm light cards */
-      'body.light-mode .section{background:#f2f1ef !important;border-color:#d4d0ca !important;box-shadow:0 1px 4px rgba(0,0,0,0.07) !important;}',
+      /* ── All boxes/cards site-wide: bright white, visible border, lifted shadow ── */
+      'body.light-mode .db-card,body.light-mode .section,body.light-mode .verdict,body.light-mode .related-card,body.light-mode .fncard,body.light-mode .intro-box,body.light-mode .cta-box,body.light-mode .post-body,body.light-mode .reply-card,body.light-mode .box,body.light-mode .growth-box,body.light-mode .opp-block,body.light-mode .lcard,body.light-mode .fd-box,body.light-mode .famous-card,body.light-mode .type-card,body.light-mode .type-mini,body.light-mode .modal,body.light-mode .actor-chip,body.light-mode .universe-chip{background:#eef2f7 !important;border-color:#b0bcc8 !important;box-shadow:0 2px 10px rgba(30,60,100,0.08),0 1px 3px rgba(30,60,100,0.05) !important;}',
+
+      /* Nested / secondary surface cards */
+      'body.light-mode .fn-card,body.light-mode .tag,body.light-mode .mini-type,body.light-mode .filter-btn,body.light-mode .type-btn{background:#e4ecf4 !important;border-color:#b0bcc8 !important;}',
+
+      /* Hover lift for interactive cards */
+      'body.light-mode .db-card:hover,body.light-mode .type-card:hover,body.light-mode .lcard:hover,body.light-mode .related-card:hover,body.light-mode .fncard:hover{box-shadow:0 4px 18px rgba(30,60,100,0.14),0 2px 4px rgba(30,60,100,0.07) !important;border-color:#c9a84c !important;}',
+
+      /* Keep gold left-border accent on verdict and growth-box */
+      'body.light-mode .verdict{border-left-color:var(--gold) !important;border-left-width:4px !important;}',
+      'body.light-mode .growth-box{border-left-color:var(--gold-dim) !important;border-left-width:2px !important;}',
+
+      /* Character page text + labels */
       'body.light-mode .section p{color:#2e2820 !important;}',
       'body.light-mode .letter-block p{color:#2e2820 !important;}',
-      'body.light-mode .section-label{border-bottom-color:#d4d0ca !important;}',
-      'body.light-mode .verdict{background:#f2f1ef !important;border-color:#d4d0ca !important;box-shadow:0 2px 8px rgba(0,0,0,0.07) !important;}',
-      'body.light-mode .fn-card{background:#e9e7e4 !important;border-color:#d4d0ca !important;box-shadow:0 1px 4px rgba(0,0,0,0.06) !important;}',
-      'body.light-mode .related-card{background:#f2f1ef !important;border-color:#d4d0ca !important;box-shadow:0 1px 4px rgba(0,0,0,0.07) !important;}',
-      'body.light-mode .actor-chip{background:#f2f1ef !important;border-color:#d4d0ca !important;}',
-      'body.light-mode .universe-chip{background:#f2f1ef !important;border-color:#d4d0ca !important;}',
-      'body.light-mode .tag{background:#e9e7e4 !important;border-color:#d4d0ca !important;}',
+      'body.light-mode .section-label{border-bottom-color:#b0bcc8 !important;}',
 
       /* Search bar: dark in dark mode, white in light mode */
       'body.light-mode #site-search{background:#ffffff !important;border-bottom:1px solid #dcdad5 !important;box-shadow:0 2px 10px rgba(0,0,0,0.07) !important;backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}',
       'body.light-mode #srch-icon{color:#a09898 !important;}',
-      'body.light-mode #srch-input{background:#f4f2f0 !important;border-color:#d8d4ce !important;color:#1a1818 !important;}',
+      'body.light-mode #srch-input{background:#eef2f7 !important;border-color:#b0bcc8 !important;color:#1a1818 !important;}',
       'body.light-mode #srch-input:focus{border-color:#c9a84c !important;background:#ffffff !important;}',
       'body.light-mode #srch-input::placeholder{color:#a89e98 !important;}',
       'body.light-mode #srch-hint{color:#c8c0b8 !important;}',
