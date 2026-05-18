@@ -69,7 +69,7 @@
   .type-tagline{font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;}
   .letter-pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:44px;}
   .letter-pill{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;padding:6px 14px;border-radius:20px;border:1px solid var(--border);color:var(--muted);background:var(--surface);text-decoration:none;transition:all 0.2s;}
-  .letter-pill:hover{border-color:var(--gold-dim);color:var(--gold);}
+  .letter-pill:hover{border-color:var(--gold-dim);color:var(--gold);transform:translateY(-1px);box-shadow:0 4px 14px rgba(0,0,0,0.4);}
 
   .section{margin-bottom:48px;}
   .section-label{font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px;}
@@ -82,7 +82,7 @@
 
   .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
   @media(max-width:580px){.two-col{grid-template-columns:1fr;}}
-  .box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;}
+  .box{background:#131820;border:1px solid #2a3848;border-radius:var(--radius);padding:24px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.05),0 2px 14px rgba(0,0,0,0.45);}
   .box-title{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
   .box ul{list-style:none;}
   .box ul li{font-size:14px;color:#cdc7c0;line-height:1.75;padding:9px 0;border-bottom:1px solid var(--border);display:flex;gap:12px;align-items:flex-start;}
@@ -91,16 +91,17 @@
 
   .fd-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
   @media(max-width:580px){.fd-row{grid-template-columns:1fr;}}
-  .fd-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px;}
+  .fd-box{background:#131820;border:1px solid #2a3848;border-radius:var(--radius);padding:22px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.05),0 2px 14px rgba(0,0,0,0.45);}
   .fd-label{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
   .fd-text{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:300;font-style:italic;color:var(--cream);line-height:1.45;}
 
   .famous-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
   @media(max-width:580px){.famous-grid{grid-template-columns:1fr;}}
-  .famous-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;display:flex;align-items:center;gap:14px;}
-  .famous-avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0;background:var(--surface2);border:1px solid var(--border);opacity:0;transition:opacity 0.3s;}
+  .famous-card{background:#131820;border:1px solid #2a3848;border-radius:var(--radius);padding:16px 18px;display:flex;align-items:center;gap:14px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.04),0 2px 8px rgba(0,0,0,0.35);transition:border-color 0.2s,box-shadow 0.2s;}
+  .famous-card:hover{border-color:var(--gold-dim);box-shadow:0 6px 20px rgba(0,0,0,0.5);}
+  .famous-avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0;background:#1a2230;border:1px solid #2a3848;opacity:0;transition:opacity 0.3s;}
   .famous-avatar.loaded{opacity:1;}
-  .famous-avatar-placeholder{width:52px;height:52px;border-radius:50%;flex-shrink:0;background:var(--surface2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--gold);font-weight:300;}
+  .famous-avatar-placeholder{width:52px;height:52px;border-radius:50%;flex-shrink:0;background:#1a2230;border:1px solid #2a3848;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--gold);font-weight:300;}
   .famous-info{flex:1;min-width:0;}
   .famous-name{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:var(--cream);margin-bottom:3px;}
   .famous-ctx{font-size:12px;color:var(--muted);letter-spacing:0.04em;}
