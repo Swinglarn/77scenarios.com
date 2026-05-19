@@ -12179,7 +12179,8 @@ function renderPage(data) {
   setMeta('og:title',       titleText);
   setMeta('og:description', data.metaDesc);
   setMeta('og:url',         `https://77scenarios.com/vs/${data.typeA.toLowerCase()}-${data.typeB.toLowerCase()}`);
-  setMeta('og:image',       'https://77scenarios.com/og-image.png');
+  setMeta('og:image', `https://77scenarios.com/images/types/${data.typeA}.jpg`);
+  setMeta('twitter:image', `https://77scenarios.com/images/types/${data.typeA}.jpg`, 'name');
   setMeta('twitter:card',   'summary_large_image', 'name');
   setMeta('twitter:title',  titleText, 'name');
   setMeta('twitter:description', data.metaDesc, 'name');

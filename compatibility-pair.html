@@ -1763,6 +1763,8 @@ function render(){
   const setMeta=(prop,val,attr='property')=>{let m=document.querySelector(`meta[${attr}="${prop}"]`);if(!m){m=document.createElement('meta');m.setAttribute(attr,prop);document.head.appendChild(m);}m.setAttribute('content',val);};
   setMeta('og:title',title);setMeta('og:description',metaDesc);setMeta('og:url',canonical);
   setMeta('twitter:title',title,'name');setMeta('twitter:description',metaDesc,'name');
+  const compImgUrl=`https://77scenarios.com/images/types/${a}.jpg`;
+  setMeta('og:image',compImgUrl);setMeta('twitter:image',compImgUrl,'name');
   setMeta('keywords',`${a} ${b} compatibility, ${a} and ${b} relationship, MBTI ${a} ${b}, Myers-Briggs ${a} ${b} compatibility, ${a} ${b} relationship advice, ${isSame?a+' same type':a+' '+b+' attraction'}, personality type compatibility`,'name');
   document.getElementById('pair-schema').textContent=JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":`${pairLabel} Compatibility`,"description":metaDesc,"url":canonical,"publisher":{"@type":"Organization","name":"77 Scenarios","url":"https://77scenarios.com"}});
   const {forA,forB}=getRelated(a,b);

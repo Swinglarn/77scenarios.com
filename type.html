@@ -485,6 +485,11 @@ function render(){
     (()=>{const m=document.createElement('meta');m.setAttribute('property','og:description');m.content=desc;document.head.appendChild(m);})();
   document.querySelector('meta[property="og:url"]')?.setAttribute('content',`https://77scenarios.com/types/${t.toLowerCase()}`)||
     (()=>{const m=document.createElement('meta');m.setAttribute('property','og:url');m.content=`https://77scenarios.com/types/${t.toLowerCase()}`;document.head.appendChild(m);})();
+  const typeImgUrl=`https://77scenarios.com/images/types/${t}.jpg`;
+  document.querySelector('meta[property="og:image"]')?.setAttribute('content',typeImgUrl)||
+    (()=>{const m=document.createElement('meta');m.setAttribute('property','og:image');m.content=typeImgUrl;document.head.appendChild(m);})();
+  document.querySelector('meta[name="twitter:image"]')?.setAttribute('content',typeImgUrl)||
+    (()=>{const m=document.createElement('meta');m.setAttribute('name','twitter:image');m.content=typeImgUrl;document.head.appendChild(m);})();
   document.getElementById('type-schema').textContent=JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":`${t} Personality Type: ${d.name}`,"description":desc,"url":`https://77scenarios.com/types/${t.toLowerCase()}`,"publisher":{"@type":"Organization","name":"77 Scenarios","url":"https://77scenarios.com"}});
 
 
