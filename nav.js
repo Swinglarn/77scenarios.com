@@ -1,5 +1,125 @@
 (function() {
 
+  // ── CANONICAL TAG ────────────────────────────────────────────────────────────
+  // Injected immediately so it's in <head> before any other scripts run
+  (function() {
+    var BASE = 'https://77scenarios.com';
+    var path = window.location.pathname;
+    var search = window.location.search;
+    // Build canonical — keep query string for type/letter pages, strip all else
+    var keepQuery = /^\/(type|letter|compatibility)(\?.*)?$/.test(path + search);
+    var canonical = BASE + path + (keepQuery ? search : '');
+    // Remove trailing slash except root
+    if (canonical !== BASE + '/' && canonical.slice(-1) === '/') {
+      canonical = canonical.slice(0, -1);
+    }
+    var link = document.createElement('link');
+    link.rel = 'canonical';
+    link.href = canonical;
+    document.head.appendChild(link);
+  })();
+
+  // ── SITEWIDE SCHEMA (WebSite + Organization) ─────────────────────────────────
+  // Injected once on every page — establishes entity identity for Google
+  (function() {
+    var schema = {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'WebSite',
+          '@id': 'https://77scenarios.com/#website',
+          'url': 'https://77scenarios.com',
+          'name': '77 Scenarios',
+          'description': 'Scenario-based MBTI personality test and in-depth analysis of 700+ real and fictional people.',
+          'inLanguage': 'en',
+          'potentialAction': {
+            '@type': 'SearchAction',
+            'target': {
+              '@type': 'EntryPoint',
+              'urlTemplate': 'https://77scenarios.com/archive?q={search_term_string}'
+            },
+            'query-input': 'required name=search_term_string'
+          }
+        },
+        {
+          '@type': 'Organization',
+          '@id': 'https://77scenarios.com/#organization',
+          'name': '77 Scenarios',
+          'url': 'https://77scenarios.com',
+          'logo': {
+            '@type': 'ImageObject',
+            'url': 'https://77scenarios.com/og-image.png'
+          },
+          'description': 'Personality type analysis using cognitive function frameworks. Covers historical figures, fictional characters, public figures, and MBTI type comparisons.',
+          'knowsAbout': ['MBTI', 'personality types', 'cognitive functions', 'Jungian typology'],
+          'publisher': { '@id': 'https://77scenarios.com/#organization' }
+        }
+      ]
+    };
+    var s = document.createElement('script');
+    s.type = 'application/ld+json';
+    s.text = JSON.stringify(schema);
+    document.head.appendChild(s);
+  })();
+
+  // ── BREADCRUMB SCHEMA ────────────────────────────────────────────────────────
+  // Auto-generated for character, vs, type, letter, cognitive-function pages
+  (function() {
+    var BASE = 'https://77scenarios.com';
+    var path = window.location.pathname;
+    var search = window.location.search;
+    var crumbs = null;
+
+    if (/^\/character\//.test(path)) {
+      var slug = path.replace('/character/', '');
+      var name = slug.replace(/-/g, ' ').replace(/\b\w/g, function(c) { return c.toUpperCase(); });
+      crumbs = [
+        { pos: 1, name: 'Home', item: BASE + '/' },
+        { pos: 2, name: 'Archive', item: BASE + '/archive' },
+        { pos: 3, name: name, item: BASE + path }
+      ];
+    } else if (/^\/vs\//.test(path)) {
+      var pair = path.replace('/vs/', '').toUpperCase().replace('-', ' vs ');
+      crumbs = [
+        { pos: 1, name: 'Home', item: BASE + '/' },
+        { pos: 2, name: 'Type Comparisons', item: BASE + '/vs' },
+        { pos: 3, name: pair, item: BASE + path }
+      ];
+    } else if (path === '/type' && search) {
+      var t = (search.match(/t=([A-Z]{4})/) || [])[1];
+      if (t) crumbs = [
+        { pos: 1, name: 'Home', item: BASE + '/' },
+        { pos: 2, name: '16 Types', item: BASE + '/types' },
+        { pos: 3, name: t, item: BASE + path + search }
+      ];
+    } else if (path === '/letter' && search) {
+      var l = (search.match(/l=([A-Z])/) || [])[1];
+      if (l) crumbs = [
+        { pos: 1, name: 'Home', item: BASE + '/' },
+        { pos: 2, name: '8 Letters', item: BASE + '/letters' },
+        { pos: 3, name: l + ' — ' + ({ E:'Extroversion',I:'Introversion',S:'Sensing',N:'Intuition',T:'Thinking',F:'Feeling',J:'Judging',P:'Perceiving' }[l] || l), item: BASE + path + search }
+      ];
+    } else if (path === '/cognitive-functions') {
+      crumbs = [
+        { pos: 1, name: 'Home', item: BASE + '/' },
+        { pos: 2, name: 'Cognitive Functions', item: BASE + '/cognitive-functions' }
+      ];
+    }
+
+    if (!crumbs) return;
+    var schema = {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      'itemListElement': crumbs.map(function(c) {
+        return { '@type': 'ListItem', 'position': c.pos, 'name': c.name, 'item': c.item };
+      })
+    };
+    var s = document.createElement('script');
+    s.type = 'application/ld+json';
+    s.text = JSON.stringify(schema);
+    document.head.appendChild(s);
+  })();
+
   // ── GOOGLE ANALYTICS ────────────────────────────────────────────────────────
   var _gas = document.createElement('script');
   _gas.async = true;

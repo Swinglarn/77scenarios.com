@@ -12313,6 +12313,55 @@ function renderPage(data) {
 
   // Mount quiz (after innerHTML so the element exists)
   mountQuiz(data.quiz, data.typeA, data.typeB, document.getElementById('quiz-mount'));
+
+  // ── Schema: Article + FAQPage ──────────────────────────────────────────────
+  const vsUrl = `https://77scenarios.com/vs/${data.typeA.toLowerCase()}-${data.typeB.toLowerCase()}`;
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Article',
+        '@id': vsUrl + '#article',
+        'headline': `${data.typeA} vs ${data.typeB}: The Real Difference`,
+        'description': data.metaDesc,
+        'url': vsUrl,
+        'keywords': `${data.typeA}, ${data.typeB}, MBTI comparison, personality type difference, cognitive functions`,
+        'articleSection': 'Personality Type Comparison',
+        'inLanguage': 'en',
+        'dateModified': '2026-05-19',
+        'publisher': {
+          '@type': 'Organization',
+          '@id': 'https://77scenarios.com/#organization',
+          'name': '77 Scenarios',
+          'url': 'https://77scenarios.com'
+        },
+        'isPartOf': { '@type': 'WebSite', '@id': 'https://77scenarios.com/#website' }
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': vsUrl + '#faq',
+        'mainEntity': data.tellApart.map(function(item) {
+          return {
+            '@type': 'Question',
+            'name': 'How do you tell ' + data.typeA + ' from ' + data.typeB + '? ' + item.title,
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': item.body
+            }
+          };
+        })
+      }
+    ]
+  };
+  // Inject or replace the vs schema script
+  var existing = document.getElementById('vs-schema');
+  if (!existing) {
+    existing = document.createElement('script');
+    existing.type = 'application/ld+json';
+    existing.id = 'vs-schema';
+    document.head.appendChild(existing);
+  }
+  existing.text = JSON.stringify(faqSchema);
 }
 
 /* ============================================================
