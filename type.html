@@ -525,7 +525,7 @@ function render(){
   // Article schema
   let artSchema = document.getElementById('article-schema');
   if (!artSchema) { artSchema = document.createElement('script'); artSchema.type = 'application/ld+json'; artSchema.id = 'article-schema'; document.head.appendChild(artSchema); }
-  artSchema.textContent = JSON.stringify({"@context":"https://schema.org","@type":"Article","@id":`https://77scenarios.com/type?t=${t}#article`,"headline":`${t} Personality Type: ${d.name}`,"description":desc,"url":`https://77scenarios.com/type?t=${t}`,"keywords":`${t} personality type, ${t} MBTI, ${d.name}, cognitive functions ${t}`,"articleSection":"Personality Type Analysis","inLanguage":"en","dateModified":"2026-05-19","publisher":{"@type":"Organization","@id":"https://77scenarios.com/#organization","name":"77 Scenarios"},"isPartOf":{"@type":"WebSite","@id":"https://77scenarios.com/#website"}});
+  artSchema.textContent = JSON.stringify({"@context":"https://schema.org","@type":"Article","@id":`https://77scenarios.com/type?t=${t}#article`,"headline":`${t} Personality Type: ${d.name}`,"description":desc,"url":`https://77scenarios.com/type?t=${t}`,"keywords":`${t} personality type, ${t} MBTI, ${d.name}, cognitive functions ${t}`,"articleSection":"Personality Type Analysis","inLanguage":"en","dateModified":"2026-05-19T00:00:00+00:00","publisher":{"@type":"Organization","@id":"https://77scenarios.com/#organization","name":"77 Scenarios"},"isPartOf":{"@type":"WebSite","@id":"https://77scenarios.com/#website"}});
 
   const code=t.split('').map((l,i)=>(i%2===1)?`<span class="hi">${l}</span>`:l).join('');
   const pills=t.split('').map((l,i)=>{
