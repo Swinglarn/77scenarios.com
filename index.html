@@ -1744,11 +1744,32 @@ async function saveResult() {
     });
 
     if (res.ok) {
+      // Fire result email — non-blocking, don't let email failure affect the UI
+      fetch(`${SUPA_URL}/functions/v1/send-result-email`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPA_KEY,
+          'Authorization': `Bearer ${SUPA_KEY}`
+        },
+        body: JSON.stringify({
+          record: {
+            email,
+            personality_type: getType(),
+            ei_e: bs.E||scores.E, ei_i: bs.I||scores.I,
+            sn_s: bs.S||scores.S, sn_n: bs.N||scores.N,
+            tf_t: bs.T||scores.T, tf_f: bs.F||scores.F,
+            jp_j: bs.J||scores.J, jp_p: bs.P||scores.P
+          }
+        })
+      }).catch(() => {}); // swallow silently — email is best-effort
+
       document.getElementById('eb2').style.display = 'none';
       document.getElementById('eb5').style.display = 'block';
     } else {
       const data = await res.json();
       if (data?.code === '23505') {
+        // Duplicate email — already saved before, don't resend the email
         document.getElementById('eb2').style.display = 'none';
         document.getElementById('eb5').style.display = 'block';
       } else {
