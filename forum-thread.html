@@ -4,16 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title id="page-title">Forum Thread - 77 Scenarios</title>
-<meta name="robots" content="noindex, follow">
-<meta name="description" content="Join the discussion on 77 Scenarios - scenario-based Myers-Briggs personality forum.">
+<meta name="robots" content="index, follow">
+<meta id="page-desc" name="description" content="Join the discussion on 77 Scenarios - scenario-based Myers-Briggs personality forum.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Forum - 77 Scenarios">
-<meta property="og:description" content="Join the discussion on 77 Scenarios - scenario-based Myers-Briggs personality forum.">
+<meta id="og-title" property="og:title" content="Forum - 77 Scenarios">
+<meta id="og-desc" property="og:description" content="Join the discussion on 77 Scenarios - scenario-based Myers-Briggs personality forum.">
 <meta property="og:image" content="https://77scenarios.com/og-image.png">
 <meta name="twitter:image" content="https://77scenarios.com/og-image.png">
-<meta property="og:url" content="https://77scenarios.com/forum">
+<meta id="og-url" property="og:url" content="https://77scenarios.com/forum">
 <meta property="og:site_name" content="77 Scenarios">
-<link rel="canonical" href="https://77scenarios.com/forum-thread">
+<link id="canonical-url" rel="canonical" href="https://77scenarios.com/forum-thread">
+<script id="thread-schema" type="application/ld+json">{}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
@@ -273,6 +274,32 @@ body.light-mode .loading-row{background:#ede8df;border-color:#d4cdc6;}
 
     document.title = `${t.title} - 77 Scenarios Forum`;
     document.getElementById('page-h1').textContent = t.title;
+
+    // ── Dynamic SEO ──
+    const threadUrl = `https://77scenarios.com/forum-thread?id=${threadId}`;
+    const rawSnippet = (t.body || '').replace(/\s+/g, ' ').trim().slice(0, 155);
+    const metaDesc = rawSnippet.length === 155 ? rawSnippet.slice(0, 152) + '\u2026' : rawSnippet;
+    const ogTitle = `${t.title} \u00b7 77 Scenarios Forum`;
+    document.getElementById('page-desc').setAttribute('content', metaDesc);
+    document.getElementById('og-title').setAttribute('content', ogTitle);
+    document.getElementById('og-desc').setAttribute('content', metaDesc);
+    document.getElementById('og-url').setAttribute('content', threadUrl);
+    document.getElementById('canonical-url').setAttribute('href', threadUrl);
+    document.getElementById('thread-schema').textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'DiscussionForumPosting',
+      'headline': t.title,
+      'text': (t.body || '').slice(0, 500),
+      'url': threadUrl,
+      'datePublished': t.created_at,
+      'interactionStatistic': {
+        '@type': 'InteractionCounter',
+        'interactionType': 'https://schema.org/ReplyAction',
+        'userInteractionCount': t.reply_count || 0
+      },
+      'isPartOf': { '@type': 'WebSite', '@id': 'https://77scenarios.com/#website' },
+      'publisher': { '@type': 'Organization', 'name': '77 Scenarios', 'url': 'https://77scenarios.com' }
+    });
 
     renderThread(t);
     await loadReplies();
