@@ -27,46 +27,26 @@
   .glow-1{width:600px;height:600px;top:-200px;left:-150px;background:radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%);}
   .glow-2{width:400px;height:400px;bottom:-100px;right:-100px;background:radial-gradient(circle,rgba(120,180,160,0.05) 0%,transparent 70%);}
 
-  nav,.site-nav{position:sticky;top:0;z-index:200;background:rgba(12,14,16,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 32px;display:flex;justify-content:space-between;align-items:center;height:56px;}
-  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--cream);text-decoration:none;}
-  .nav-links{display:flex;gap:32px;align-items:center;}
-  .nav-links a{font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;white-space:nowrap;}
-  .nav-links a:hover,.nav-links a.active{color:var(--cream);}
-  .nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
-  .nav-burger span{display:block;width:22px;height:1.5px;background:#b5ada6;transition:all 0.3s ease;transform-origin:center;}
-  .nav-burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);background:#c9a84c;}
-  .nav-burger.open span:nth-child(2){opacity:0;}
-  .nav-burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);background:#c9a84c;}
-  .nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:300;opacity:0;transition:opacity 0.3s ease;pointer-events:none;}
-  .nav-overlay.open{opacity:1;pointer-events:auto;}
-  .nav-drawer{position:fixed;top:0;right:-100%;width:min(320px,85vw);height:100%;background:#13161a;border-left:1px solid #252a30;z-index:400;transition:right 0.35s cubic-bezier(0.22,1,0.36,1),visibility 0s linear 0.35s;display:flex;flex-direction:column;pointer-events:none;visibility:hidden;}
-  .nav-drawer.open{right:0;pointer-events:auto;visibility:visible;transition:right 0.35s cubic-bezier(0.22,1,0.36,1),visibility 0s linear 0s;}
-  .nav-drawer-header{display:flex;justify-content:space-between;align-items:center;padding:0 24px;height:56px;border-bottom:1px solid #252a30;flex-shrink:0;}
-  .nav-close{background:none;border:none;color:#b5ada6;font-size:18px;cursor:pointer;padding:4px;transition:color 0.2s;}
-  .nav-close:hover{color:#ede8df;}
-  .nav-drawer-links{display:flex;flex-direction:column;padding:16px 0;}
-  .nav-drawer-links a{font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:#b5ada6;text-decoration:none;padding:18px 24px;border-bottom:1px solid #1e2227;transition:all 0.15s ease;}
-  .nav-drawer-links a:hover{color:#c9a84c;padding-left:32px;}
-  @media(max-width:480px){nav,.site-nav{padding:0 16px;height:52px;}.nav-links{display:none;}.nav-burger{display:flex;}.nav-overlay{display:block;pointer-events:none;}}
+  nav,
+  @media(max-width:480px){nav,}
 
   .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
   main{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:56px 32px 96px;}
   @media(max-width:600px){main{padding:40px 16px 80px;}}
   /* ── Mobile: move vote col to bottom row ── */
-  @media(max-width:520px){
-    .thread-wrapper{display:flex;flex-direction:column;}
-    .thread-wrapper .vote-col{
-      position:static;width:100%;flex-direction:row;
-      border-right:none;border-top:1px solid var(--border);
-      padding:8px 16px;justify-content:flex-start;gap:16px;
-      order:2;
-    }
-    .thread-wrapper .thread-item{
-      padding:16px;order:1;
-      border-bottom-left-radius:0;border-bottom-right-radius:0;
-    }
-    .thread-wrapper .vote-btn{min-height:36px;padding:6px 10px;}
+  @media(max-width:520px){.thread-wrapper{display:flex;flex-direction:column;}
+  .thread-wrapper .vote-col{
+  position:static;width:100%;flex-direction:row;
+  border-right:none;border-top:1px solid var(--border);
+  padding:8px 16px;justify-content:flex-start;gap:16px;
+  order:2;
+  }
+  .thread-wrapper .thread-item{
+  padding:16px;order:1;
+  border-bottom-left-radius:0;border-bottom-right-radius:0;
+  }
+  .thread-wrapper .vote-btn{min-height:36px;padding:6px 10px;}
   }
 
   .r{opacity:0;transform:translateY(24px);transition:opacity 0.65s cubic-bezier(0.22,1,0.36,1),transform 0.65s cubic-bezier(0.22,1,0.36,1);}
@@ -77,7 +57,6 @@
   .forum-eyebrow{font-size:0.84rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:10px;}
   .forum-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3rem);font-weight:600;color:var(--cream);line-height:1.05;}
   .forum-title em{color:var(--gold);font-style:italic;}
-
 
   /* Vote buttons */
   .vote-col{position:absolute;left:0;top:0;bottom:0;width:52px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-right:1px solid var(--border);padding:12px 0;}
@@ -121,10 +100,10 @@
   .loading-row{background:#131820;border:1px solid #2a3848;border-radius:10px;padding:20px 24px 20px 68px;position:relative;overflow:hidden;}
   .loading-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:52px;border-right:1px solid var(--border);}
   .loading-row::after{
-    content:'';position:absolute;inset:0;
-    background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,0.04) 50%,transparent 100%);
-    background-size:200% 100%;
-    animation:shimmer 1.6s ease infinite;
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,0.04) 50%,transparent 100%);
+  background-size:200% 100%;
+  animation:shimmer 1.6s ease infinite;
   }
   .sk-line{height:10px;border-radius:5px;background:rgba(255,255,255,0.06);margin-bottom:10px;}
   .sk-line.wide{width:68%;}
@@ -135,7 +114,6 @@
   body.light-mode .loading-row::before{border-right-color:#dcdad5;}
   body.light-mode .loading-row::after{background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,0.6) 50%,transparent 100%);background-size:200% 100;}
   body.light-mode .sk-line{background:rgba(0,0,0,0.07);}
-
 
   /* Modal */
   .modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.72);z-index:500;align-items:center;justify-content:center;padding:24px;}
@@ -200,40 +178,6 @@ body.light-mode .forum-title{color:#141210;}
 <div id="t-overlay"></div>
 <div class="glow glow-1"></div>
 <div class="glow glow-2"></div>
-
-<nav class="site-nav">
-  <a href="/" class="nav-logo">77scenarios.com</a>
-  <div class="nav-links" id="nav-links">
-    <a href="/">Take the Test</a>
-    <a href="/types">16 Types</a>
-    <a href="/letters">8 Letters</a>
-    <a href="/cognitive-functions">Functions</a>
-    <a href="/compatibility">Compatibility</a>
-    <a href="/archive">Archive</a>
-    <a href="/forum" class="active">Forum</a>
-    <a href="/about">About</a>
-  </div>
-  <button class="nav-burger" onclick="toggleMenu()" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-<div class="nav-overlay" id="nav-overlay" onclick="toggleMenu()"></div>
-<div class="nav-drawer" id="nav-drawer">
-  <div class="nav-drawer-header">
-    <a href="/" class="nav-logo">77scenarios.com</a>
-    <button class="nav-close" onclick="toggleMenu()">✕</button>
-  </div>
-  <div class="nav-drawer-links">
-    <a href="/">Take the Test</a>
-    <a href="/types">16 Types</a>
-    <a href="/letters">8 Letters</a>
-    <a href="/cognitive-functions">Functions</a>
-    <a href="/compatibility">Compatibility</a>
-    <a href="/archive">Archive</a>
-    <a href="/forum">Forum</a>
-    <a href="/about">About</a>
-  </div>
-</div>
 
 <h1 class="sr-only">Forum - 77 Scenarios</h1>
 
@@ -604,15 +548,7 @@ body.light-mode .forum-title{color:#141210;}
 
   function escHtml(s) {
     return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-  }
-
-  function toggleMenu() {
-    document.querySelector('.nav-burger').classList.toggle('open');
-    document.getElementById('nav-drawer').classList.toggle('open');
-    document.getElementById('nav-overlay').classList.toggle('open');
-  }
-
-  const ro = new IntersectionObserver(entries => {
+  }const ro = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } });
   }, { threshold: 0.1 });
   document.querySelectorAll('.r').forEach(el => ro.observe(el));

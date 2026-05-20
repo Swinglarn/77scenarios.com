@@ -25,21 +25,11 @@ html{font-size:16px}
 body{background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;min-height:100vh;display:flex;flex-direction:column}
 #t-overlay{position:fixed;inset:0;background:#0c0e10;opacity:0;pointer-events:none;z-index:9999;transition:opacity .2s}
 a{color:inherit;text-decoration:none}
-header{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 2rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100}
+
 .logo{font-family:'Cormorant Garamond',serif;font-size:1.25rem;letter-spacing:.05em;color:var(--gold)}
-nav.desktop-nav{display:flex;gap:1.75rem;font-size:0.96rem;color:var(--muted)}
-nav.desktop-nav a:hover{color:var(--cream)}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
-.hamburger span{display:block;width:24px;height:2px;background:var(--cream);border-radius:2px;transition:all .3s}
-.nav-drawer{position:fixed;top:0;right:-100%;width:min(320px,85vw);height:100%;background:#13161a;border-left:1px solid var(--border);z-index:400;transition:right 0.35s cubic-bezier(0.22,1,0.36,1),visibility 0s linear 0.35s;display:flex;flex-direction:column;padding:0;pointer-events:none;visibility:hidden}
-.nav-drawer.open{right:0;pointer-events:auto;visibility:visible;transition:right 0.35s cubic-bezier(0.22,1,0.36,1),visibility 0s}
-.drawer-header{display:flex;justify-content:flex-end;padding:1.25rem 1.5rem;border-bottom:1px solid var(--border)}
-.drawer-close{background:none;border:none;color:var(--muted);font-size:1.5rem;cursor:pointer;line-height:1}
-.drawer-links{display:flex;flex-direction:column;padding:1.5rem}
-.drawer-links a{padding:.85rem 0;font-size:1rem;color:var(--muted);border-bottom:1px solid var(--border);transition:color .2s}
-.drawer-links a:hover{color:var(--cream)}
-.nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:300;opacity:0;pointer-events:none;transition:opacity .3s}
-.nav-overlay.open{opacity:1;pointer-events:auto}
+
+.drawer-
+
 main{flex:1;display:flex;align-items:center;justify-content:center;padding:4rem 2rem;text-align:center}
 .error-wrap{max-width:500px}
 .error-number{font-family:'Cormorant Garamond',serif;font-size:clamp(6rem,20vw,10rem);font-weight:600;color:var(--gold);opacity:.3;line-height:1;margin-bottom:1rem}
@@ -48,52 +38,12 @@ main{flex:1;display:flex;align-items:center;justify-content:center;padding:4rem 
 .btn-home{display:inline-block;background:var(--gold);color:#0c0e10;padding:.75rem 2rem;font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:500;border-radius:3px;transition:opacity .2s}
 .btn-home:hover{opacity:.85}
 footer{padding:2rem;text-align:center;font-size:0.92rem;color:var(--muted);border-top:1px solid var(--border)}
-@media(max-width:768px){
-  nav.desktop-nav{display:none}
-  .hamburger{display:flex}
-  header{padding:1rem 1.25rem}
-}
-  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--cream);text-decoration:none;}
+
+  
 </style>
 </head>
 <body>
 <div id="t-overlay"></div>
-
-<header>
-  <a href="/" class="logo">77Scenarios</a>
-  <nav class="site-nav">
-  <a href="/" class="nav-logo">77scenarios.com</a>
-  <div class="nav-links">
-    <a href="/">Take the Test</a>
-    <a href="/types">16 Types</a>
-    <a href="/letters">8 Letters</a>
-    <a href="/cognitive-functions">Functions</a>
-    <a href="/compatibility">Compatibility</a>
-    <a href="/archive">Archive</a>
-    <a href="/about">About</a>
-  </div>
-  <button class="nav-burger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
-</nav>
-  <div class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" role="button" tabindex="0">
-    <span></span><span></span><span></span>
-  </div>
-</header>
-
-<div class="nav-drawer" id="navDrawer" role="dialog" aria-modal="true" aria-label="Navigation">
-  <div class="drawer-header">
-    <button class="drawer-close" id="drawerClose" aria-label="Close menu">✕</button>
-  </div>
-  <nav class="drawer-links">
-    <a href="/">Take the Test</a>
-    <a href="/types">16 Types</a>
-    <a href="/letters">8 Letters</a>
-    <a href="/cognitive-functions">Functions</a>
-    <a href="/compatibility">Compatibility</a>
-    <a href="/archive">Archive</a>
-    <a href="/about">About</a>
-  </nav>
-</div>
-<div class="nav-overlay" id="navOverlay"></div>
 
 <main>
   <div class="error-wrap">
@@ -123,15 +73,7 @@ document.addEventListener('click',e=>{
     setTimeout(()=>{window.location.href=h;},280);
   }
 });
-const hamburger=document.getElementById('hamburger');
-const drawer=document.getElementById('navDrawer');
-const overlay=document.getElementById('navOverlay');
-const closeBtn=document.getElementById('drawerClose');
-function openNav(){drawer.classList.add('open');overlay.classList.add('open');hamburger.setAttribute('aria-expanded','true');}
-function closeNav(){drawer.classList.remove('open');overlay.classList.remove('open');hamburger.setAttribute('aria-expanded','false');}
-hamburger.addEventListener('click',openNav);
-closeBtn.addEventListener('click',closeNav);
-overlay.addEventListener('click',closeNav);
+
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
@@ -187,5 +129,7 @@ overlay.addEventListener('click',closeNav);
   });
 })();
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/nav.js"></script>
 </body>
 </html>
