@@ -12992,6 +12992,12 @@ function renderPage(data) {
   }
   canonical.href = `https://77scenarios.com/vs/${data.typeA.toLowerCase()}-${data.typeB.toLowerCase()}`;
 
+  // Silently correct URL if user landed on a mirror slug (e.g. /vs/enfp-enfj -> /vs/enfj-enfp)
+  const canonicalSlug = `${data.typeA.toLowerCase()}-${data.typeB.toLowerCase()}`;
+  if (slug !== canonicalSlug) {
+    window.history.replaceState(null, '', `/vs/${canonicalSlug}`);
+  }
+
   // OG tags
   function setMeta(prop, val, attr) {
     let el = document.querySelector(`meta[${attr||'property'}="${prop}"]`);
