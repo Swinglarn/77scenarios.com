@@ -141,10 +141,8 @@
     var ds = document.createElement('style');
     ds.id = 'nav-design-css';
     ds.textContent = [
-      // Fixed nav — works on all pages regardless of parent overflow/height
       'nav.site-nav,.site-nav{position:fixed !important;top:0 !important;left:0 !important;right:0 !important;width:100% !important;z-index:200 !important;}',
-      // Compensate for fixed nav taking element out of flow
-      'body{padding-top:56px !important;}',
+      'body{padding-top:116px !important;}',
       // Nav links - DM Sans 500, bolder, mixed case
       // Reserve space on right for fixed auth+toggle container
       '.nav-links{position:absolute !important;left:50% !important;transform:translateX(-50%) !important;display:flex !important;align-items:center !important;}',
@@ -227,13 +225,10 @@
       'body.light-mode .nav-logo{color:#141210 !important;font-weight:500 !important;}',
       'body.light-mode .nav-links a{color:#38302a !important;}',
       'body.light-mode .nav-links a:hover,body.light-mode .nav-links a.active{color:#141210 !important;}',
-      'body.light-mode .nav-links a[href="/"]{color:#8a6d2e !important;border:none !important;background:transparent !important;}',
-      'body.light-mode .nav-links a[href="/"]::after{background:#8a6d2e !important;}',
-      'body.light-mode .nav-links a[href="/"]:hover{color:#6b5020 !important;}',
-      'body.light-mode .nav-links a[href="/es/"]{color:#8a6d2e !important;border:none !important;background:transparent !important;}',
-      'body.light-mode .nav-links a[href="/es/"]::after{background:#8a6d2e !important;}',
-      'body.light-mode .nav-links a[href="/pt/"]{color:#8a6d2e !important;border:none !important;background:transparent !important;}',
-      'body.light-mode .nav-links a[href="/pt/"]::after{background:#8a6d2e !important;}',
+      'body.light-mode .nav-links a[href="/"]{color:#8a6d2e !important;border-color:#c9a84c !important;}',
+      'body.light-mode .nav-links a[href="/"]:hover{background:rgba(201,168,76,0.1) !important;border-color:#a8893a !important;}',
+      'body.light-mode .nav-links a[href="/es/"]{color:#8a6d2e !important;border-color:#c9a84c !important;}',
+      'body.light-mode .nav-links a[href="/pt/"]{color:#8a6d2e !important;border-color:#c9a84c !important;}',
       'body.light-mode .nav-burger span{background:#141210 !important;}',
       /* ── Mobile drawer ── */
       'body.light-mode .nav-drawer{background:#f2f1ef !important;border-left:1px solid #dcdad5 !important;}',
@@ -1056,7 +1051,7 @@
     // CSS - white bar on both dark and light mode
     var s = document.createElement('style');
     s.textContent = [
-      '#site-search{background:#0d1117;border-top:1px solid #2a3340;border-bottom:1px solid #2a3340;box-shadow:0 4px 20px rgba(0,0,0,0.5);padding:10px 20px;position:sticky;top:56px;z-index:190;}',
+      '#site-search{background:#0d1117;border-top:1px solid #2a3340;border-bottom:1px solid #2a3340;box-shadow:0 4px 20px rgba(0,0,0,0.5);padding:10px 20px;position:fixed;top:56px;left:0;right:0;width:100%;z-index:189;}',
       '#site-search-inner{position:relative;max-width:680px;margin:0 auto;}',
       '#srch-icon{position:absolute;left:10px;top:50%;transform:translateY(-50%);pointer-events:none;color:#607082;}',
       '#srch-input{width:100%;box-sizing:border-box;background:#161c24;border:1px solid #3a4758;border-radius:8px;padding:9px 74px 9px 33px;font-size:16px;line-height:1.2;color:#ede8df;font-family:inherit;outline:none;transition:border-color 0.15s,background 0.15s;-webkit-appearance:none;appearance:none;}',
