@@ -188,7 +188,7 @@
       'body.light-mode .logo-scenarios{color:#141210 !important;}',
       'body.light-mode .logo-77{color:#c9a84c !important;}',
       // Footer styles
-      '#nav-footer{border-top:1px solid #252a30;padding:60px 32px 0;background:#0d0f12;}',
+      '#nav-footer{border-top:1px solid #252a30;padding:60px 32px 0;background:rgba(12,14,16,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);}',
       '#nav-footer .footer-inner{display:flex;gap:48px;max-width:1100px;margin:0 auto 48px;flex-wrap:wrap;}',
       '#nav-footer .footer-brand{flex:0 0 260px;min-width:200px;}',
       '#nav-footer .footer-logo{display:flex;align-items:baseline;gap:4px;margin-bottom:14px;}',
