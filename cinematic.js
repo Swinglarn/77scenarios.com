@@ -134,12 +134,12 @@
       /* gold overrides handled separately — don't touch */
     }
 
-    /* Light mode: full reset — white bg, dark text everywhere */
+    /* ── NAVY & GOLD light mode ── */
     body.light-mode {
       background: #ffffff !important;
-      color: #141210 !important;
-      --cream: #141210 !important;
-      --muted: #504840 !important;
+      color: #1e2d4a !important;
+      --cream: #1e2d4a !important;
+      --muted: #4a5568 !important;
     }
     body.light-mode p,
     body.light-mode li,
@@ -171,7 +171,7 @@
     body.light-mode .data-list li,
     body.light-mode .cc-desc,
     body.light-mode .submit-note {
-      color: #141210 !important;
+      color: #1e2d4a !important;
     }
     body.light-mode h1,
     body.light-mode h2,
@@ -179,53 +179,78 @@
     body.light-mode h4,
     body.light-mode h5,
     body.light-mode h6 {
-      color: #0a0806 !important;
+      color: #1e2d4a !important;
     }
     body.light-mode .muted,
     body.light-mode small,
     body.light-mode footer,
     body.light-mode .breadcrumb span {
-      color: #504840 !important;
+      color: #4a5568 !important;
     }
     body.light-mode .nav-links a:not([href="/"]):not([href="/es/"]):not([href="/pt/"]) {
-      color: #2a2520 !important;
+      color: #2d4168 !important;
+    }
+    body.light-mode .nav-links a.active {
+      color: #1e2d4a !important;
     }
 
-    /* Section labels & eyebrows — gold (#c9a84c) is only 2.7:1 on white, too dim */
+    /* Section labels — navy so they're legible and match the palette */
     body.light-mode .section-label,
-    body.light-mode .section-label::after,
-    body.light-mode .page-eyebrow,
-    body.light-mode [class*="eyebrow"],
     body.light-mode [class*="-label"]:not(label),
     body.light-mode .pair-eyebrow,
     body.light-mode .breadcrumb-cur {
-      color: #6b5020 !important;
+      color: #2d4168 !important;
     }
     body.light-mode .section-label::after {
-      background: #d0c8c0 !important;
-    }
-    body.light-mode .page-eyebrow::before {
-      background: #6b5020 !important;
+      background: #c8d4e4 !important;
     }
 
-    /* Trait pills, type comparison badges — border and text dim on white */
+    /* Page eyebrows keep gold-dim — warm accent against white */
+    body.light-mode .page-eyebrow,
+    body.light-mode [class*="eyebrow"] {
+      color: #8a6d2e !important;
+    }
+    body.light-mode .page-eyebrow::before {
+      background: #8a6d2e !important;
+    }
+
+    /* Trait pills, badges — navy border and text */
     body.light-mode .trait-pill,
     body.light-mode .type-pill,
     body.light-mode [class*="pill"],
     body.light-mode [class*="-tag"],
     body.light-mode [class*="badge"] {
-      color: #2a2520 !important;
-      border-color: #c8c0b8 !important;
+      color: #2d4168 !important;
+      border-color: #c0cad8 !important;
     }
 
-    /* Gold section divider lines */
-    body.light-mode .section-label::after {
-      background: #d8d0c8 !important;
-    }
+    /* Scenario / question text — deep navy for readability */
     body.light-mode .scenario-text,
     body.light-mode #question-text,
     body.light-mode .question-text {
-      color: #0a0806 !important;
+      color: #1e2d4a !important;
+    }
+
+    /* Em glow in light mode — use navy instead of gold glow */
+    body.light-mode h1 em,
+    body.light-mode .splash-title em {
+      animation: cinEmGlowLight 3.5s ease-in-out infinite !important;
+    }
+    @keyframes cinEmGlowLight {
+      0%, 100% { color: #8a6d2e; text-shadow: none; }
+      50%       { color: #c9a84c; text-shadow: none; }
+    }
+
+    /* Particles invisible in light mode */
+    body.light-mode #cin-canvas { opacity: 0 !important; }
+
+    /* Scan lines much more subtle in light mode */
+    body.light-mode #cin-scanlines {
+      background: repeating-linear-gradient(
+        0deg, transparent, transparent 3px,
+        rgba(30,45,74,0.02) 3px, rgba(30,45,74,0.02) 4px
+      ) !important;
+      opacity: 0.4 !important;
     }
 
   `;
