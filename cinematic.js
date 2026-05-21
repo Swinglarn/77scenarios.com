@@ -59,6 +59,104 @@
           0 0 90px rgba(201,168,76,0.10);
       }
     }
+
+    /* ════════════════════════════════════════════
+       CONTRAST & READABILITY — dark mode
+       Primary fix: font-weight 300→400 on body copy
+       Secondary:   brighten text and muted colours
+    ════════════════════════════════════════════ */
+
+    /* Brighten the cream token site-wide */
+    :root {
+      --cream: #f0ece6 !important;
+      --muted: #ccc6be !important;
+    }
+
+    /* Body copy — weight is the single biggest lever */
+    body {
+      font-weight: 400 !important;
+      color: #f0ece6 !important;
+    }
+
+    /* Every prose-like element gets 400 explicitly */
+    p, li, dd, dt, td, th, caption, label, blockquote,
+    .prose, .body-text, .section-body, .type-description,
+    .pair-body, .char-bio, .about-body, .letter-body,
+    .detail-text, .desc-text, .func-desc, .result-desc,
+    .scenario-text, .answer-text, .splash-subtitle,
+    .page-sub, .updated, .note, .warning-box p, .info-box p,
+    .data-list li, .cc-desc, .submit-note, .section-label,
+    .pair-eyebrow, .page-eyebrow, .meta-label {
+      font-weight: 400 !important;
+      color: #f0ece6 !important;
+    }
+
+    /* Headings: crisp and fully bright */
+    h1, h2, h3, h4, h5, h6 {
+      color: #f8f4ee !important;
+      font-weight: 300 !important; /* keep Cormorant elegant */
+    }
+
+    /* Muted / secondary text: lift it so it's legible */
+    .muted, [class*="muted"],
+    .meta-item .meta-label,
+    .answer-letter, .scenario-scene,
+    .breadcrumb a, .breadcrumb span,
+    footer, footer a,
+    small {
+      color: #ccc6be !important;
+    }
+
+    /* Nav links — current default is too dim */
+    .nav-links a:not([href="/"]):not([href="/es/"]):not([href="/pt/"]) {
+      color: #ddd8d0 !important;
+    }
+    .nav-links a.active {
+      color: #f0ece6 !important;
+    }
+
+    /* Answer cards — question text must be sharp */
+    .answer-text {
+      color: #f0ece6 !important;
+      font-weight: 400 !important;
+    }
+
+    /* Scenario question text */
+    .scenario-text, .question-text, #question-text {
+      color: #f8f4ee !important;
+      font-weight: 400 !important;
+    }
+
+    /* Keep gold accents untouched */
+    .gold, [style*="color:var(--gold)"],
+    .section-label, .page-eyebrow,
+    h1 em, h2 em, h3 em {
+      /* gold overrides handled separately — don't touch */
+    }
+
+    /* Light mode: undo contrast overrides — handled in light-mode block below */
+    body.light-mode {
+      color: #1a1612 !important;
+      --cream: #1a1612 !important;
+    }
+    body.light-mode p,
+    body.light-mode li,
+    body.light-mode .prose,
+    body.light-mode .body-text,
+    body.light-mode .page-sub,
+    body.light-mode .section-body {
+      color: #1a1612 !important;
+    }
+    body.light-mode h1,
+    body.light-mode h2,
+    body.light-mode h3,
+    body.light-mode h4 {
+      color: #0f0d0a !important;
+    }
+    body.light-mode .nav-links a:not([href="/"]):not([href="/es/"]):not([href="/pt/"]) {
+      color: #2a2520 !important;
+    }
+
   `;
   document.head.appendChild(style);
 
