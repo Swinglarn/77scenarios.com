@@ -141,6 +141,8 @@
     var ds = document.createElement('style');
     ds.id = 'nav-design-css';
     ds.textContent = [
+      // Force sticky nav on all pages
+      'nav.site-nav,.site-nav{position:sticky !important;top:0 !important;}',
       // Nav links - DM Sans 500, bolder, mixed case
       // Reserve space on right for fixed auth+toggle container
       '.nav-links{position:absolute !important;left:50% !important;transform:translateX(-50%) !important;display:flex !important;align-items:center !important;}',
@@ -151,14 +153,13 @@
       '@media(max-width:480px){.nav-drawer-links{max-height:calc(100vh - 56px) !important;}}',
       '.nav-links a{font-family:"DM Sans",sans-serif !important;font-size:13px !important;font-weight:500 !important;letter-spacing:0.06em !important;text-transform:uppercase !important;color:#ccc6bf !important;transition:color 0.2s !important;}',
       '.nav-links a:hover,.nav-links a.active{color:#ede8df !important;}',
-      // "Take the Test" - solid gold CTA with breathing glow
-      '@keyframes navCtaPulse{0%,100%{box-shadow:0 0 0 0 rgba(201,168,76,0);}50%{box-shadow:0 0 12px 3px rgba(201,168,76,0.45),0 0 28px 8px rgba(201,168,76,0.15);}}',
-      '.nav-links a[href="/"]{background:#c9a84c !important;color:#0c0e10 !important;border:1px solid #c9a84c !important;padding:6px 18px !important;border-radius:60px !important;letter-spacing:0.08em !important;font-weight:600 !important;transition:background 0.2s,color 0.2s,box-shadow 0.2s,transform 0.2s !important;animation:navCtaPulse 3.5s ease-in-out infinite !important;}',
-      '.nav-links a[href="/"]:hover{background:#ede8df !important;border-color:#ede8df !important;color:#0c0e10 !important;transform:translateY(-1px) !important;box-shadow:0 6px 22px rgba(201,168,76,0.4) !important;animation:none !important;}',
-      '.nav-links a[href="/"].active{background:#c9a84c !important;animation:navCtaPulse 3.5s ease-in-out infinite !important;}',
+      // "Take the Test" - gold pill CTA via href attribute selector
+      '.nav-links a[href="/"]{color:#c9a84c !important;border:1px solid #8a6d2e !important;padding:6px 14px !important;border-radius:60px !important;letter-spacing:0.08em !important;transition:background 0.2s,color 0.2s,border-color 0.2s !important;}',
+      '.nav-links a[href="/"]:hover{background:rgba(201,168,76,0.12) !important;border-color:#c9a84c !important;}',
+      '.nav-links a[href="/"].active{background:rgba(201,168,76,0.08) !important;}',
       // ES/PT CTA equivalents
-      '.nav-links a[href="/es/"]{background:#c9a84c !important;color:#0c0e10 !important;border:1px solid #c9a84c !important;padding:6px 18px !important;border-radius:60px !important;font-weight:600 !important;animation:navCtaPulse 3.5s ease-in-out infinite !important;}',
-      '.nav-links a[href="/pt/"]{background:#c9a84c !important;color:#0c0e10 !important;border:1px solid #c9a84c !important;padding:6px 18px !important;border-radius:60px !important;font-weight:600 !important;animation:navCtaPulse 3.5s ease-in-out infinite !important;}',
+      '.nav-links a[href="/es/"]{color:#c9a84c !important;border:1px solid #8a6d2e !important;padding:6px 14px !important;border-radius:60px !important;transition:background 0.2s,color 0.2s,border-color 0.2s !important;}',
+      '.nav-links a[href="/pt/"]{color:#c9a84c !important;border:1px solid #8a6d2e !important;padding:6px 14px !important;border-radius:60px !important;transition:background 0.2s,color 0.2s,border-color 0.2s !important;}',
       // Auth dropdown
       '.nav-user-wrap{position:relative;display:inline-block;}',
       '.nav-user-btn{display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;padding:0;}',
@@ -220,8 +221,8 @@
       'body.light-mode .nav-logo{color:#141210 !important;font-weight:500 !important;}',
       'body.light-mode .nav-links a{color:#38302a !important;}',
       'body.light-mode .nav-links a:hover,body.light-mode .nav-links a.active{color:#141210 !important;}',
-      'body.light-mode .nav-links a[href="/"]{background:#c9a84c !important;color:#0c0e10 !important;border-color:#c9a84c !important;}',
-      'body.light-mode .nav-links a[href="/"]:hover{background:#a8893a !important;border-color:#a8893a !important;color:#fff !important;}',
+      'body.light-mode .nav-links a[href="/"]{color:#8a6d2e !important;border-color:#c9a84c !important;}',
+      'body.light-mode .nav-links a[href="/"]:hover{background:rgba(201,168,76,0.1) !important;border-color:#a8893a !important;}',
       'body.light-mode .nav-links a[href="/es/"]{color:#8a6d2e !important;border-color:#c9a84c !important;}',
       'body.light-mode .nav-links a[href="/pt/"]{color:#8a6d2e !important;border-color:#c9a84c !important;}',
       'body.light-mode .nav-burger span{background:#141210 !important;}',
