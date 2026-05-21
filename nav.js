@@ -1,5 +1,25 @@
 (function() {
 
+  // ── IMMEDIATE THEME APPLICATION — prevents flash on navigation ──────────────
+  // Runs synchronously before DOMContentLoaded, within the 60ms overlay delay
+  (function() {
+    try {
+      var saved = localStorage.getItem('77s-theme');
+      if (saved === 'light') {
+        document.documentElement.classList.add('light-mode');
+        document.body && document.body.classList.add('light-mode');
+        // Flip overlay to white immediately so page reveal shows correct bg
+        var ov = document.getElementById('t-overlay');
+        if (ov) ov.style.background = '#ffffff';
+        // Inject minimal light-bg style so body bg is white before full CSS loads
+        var s = document.createElement('style');
+        s.id = 'theme-flash-guard';
+        s.textContent = 'body{background:#ffffff!important;color:#141210!important}#t-overlay{background:#ffffff!important}';
+        document.head.appendChild(s);
+      }
+    } catch(e) {}
+  })();
+
   // ── CANONICAL TAG ────────────────────────────────────────────────────────────
   // Injected immediately so it's in <head> before any other scripts run
   (function() {
@@ -188,7 +208,7 @@
       'body.light-mode .logo-scenarios{color:#141210 !important;}',
       'body.light-mode .logo-77{color:#c9a84c !important;}',
       // Footer styles
-      '#nav-footer{border-top:1px solid #252a30;padding:60px 32px 0;background:rgba(12,14,16,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);}',
+      '#nav-footer{border-top:1px solid #252a30;padding:60px 32px 0;background:#0d0f12;}',
       '#nav-footer .footer-inner{display:flex;gap:48px;max-width:1100px;margin:0 auto 48px;flex-wrap:wrap;}',
       '#nav-footer .footer-brand{flex:0 0 260px;min-width:200px;}',
       '#nav-footer .footer-logo{display:flex;align-items:baseline;gap:4px;margin-bottom:14px;}',
@@ -425,6 +445,10 @@
   // ── THEME ────────────────────────────────────────────────────────────────────
   function applyTheme(isLight) {
     document.body.classList.toggle('light-mode', isLight);
+    document.documentElement.classList.toggle('light-mode', isLight);
+    // Remove flash guard once full theme CSS is applied
+    var guard = document.getElementById('theme-flash-guard');
+    if (guard) guard.remove();
     var d = document.getElementById('theme-toggle-desktop');
     if (d) d.innerHTML = isLight ? MOON_SVG + ' Dark' : SUN_SVG + ' Light';
     var m = document.getElementById('theme-toggle-mobile');

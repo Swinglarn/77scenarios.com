@@ -134,27 +134,98 @@
       /* gold overrides handled separately — don't touch */
     }
 
-    /* Light mode: undo contrast overrides — handled in light-mode block below */
+    /* Light mode: full reset — white bg, dark text everywhere */
     body.light-mode {
-      color: #1a1612 !important;
-      --cream: #1a1612 !important;
+      background: #ffffff !important;
+      color: #141210 !important;
+      --cream: #141210 !important;
+      --muted: #504840 !important;
     }
     body.light-mode p,
     body.light-mode li,
+    body.light-mode dd,
+    body.light-mode dt,
+    body.light-mode td,
+    body.light-mode th,
+    body.light-mode blockquote,
     body.light-mode .prose,
     body.light-mode .body-text,
+    body.light-mode .section-body,
+    body.light-mode .type-description,
+    body.light-mode .pair-body,
+    body.light-mode .char-bio,
+    body.light-mode .about-body,
+    body.light-mode .letter-body,
+    body.light-mode .detail-text,
+    body.light-mode .desc-text,
+    body.light-mode .func-desc,
+    body.light-mode .result-desc,
+    body.light-mode .scenario-text,
+    body.light-mode .answer-text,
+    body.light-mode .splash-subtitle,
     body.light-mode .page-sub,
-    body.light-mode .section-body {
-      color: #1a1612 !important;
+    body.light-mode .updated,
+    body.light-mode .note,
+    body.light-mode .warning-box p,
+    body.light-mode .info-box p,
+    body.light-mode .data-list li,
+    body.light-mode .cc-desc,
+    body.light-mode .submit-note {
+      color: #141210 !important;
     }
     body.light-mode h1,
     body.light-mode h2,
     body.light-mode h3,
-    body.light-mode h4 {
-      color: #0f0d0a !important;
+    body.light-mode h4,
+    body.light-mode h5,
+    body.light-mode h6 {
+      color: #0a0806 !important;
+    }
+    body.light-mode .muted,
+    body.light-mode small,
+    body.light-mode footer,
+    body.light-mode .breadcrumb span {
+      color: #504840 !important;
     }
     body.light-mode .nav-links a:not([href="/"]):not([href="/es/"]):not([href="/pt/"]) {
       color: #2a2520 !important;
+    }
+
+    /* Section labels & eyebrows — gold (#c9a84c) is only 2.7:1 on white, too dim */
+    body.light-mode .section-label,
+    body.light-mode .section-label::after,
+    body.light-mode .page-eyebrow,
+    body.light-mode [class*="eyebrow"],
+    body.light-mode [class*="-label"]:not(label),
+    body.light-mode .pair-eyebrow,
+    body.light-mode .breadcrumb-cur {
+      color: #6b5020 !important;
+    }
+    body.light-mode .section-label::after {
+      background: #d0c8c0 !important;
+    }
+    body.light-mode .page-eyebrow::before {
+      background: #6b5020 !important;
+    }
+
+    /* Trait pills, type comparison badges — border and text dim on white */
+    body.light-mode .trait-pill,
+    body.light-mode .type-pill,
+    body.light-mode [class*="pill"],
+    body.light-mode [class*="-tag"],
+    body.light-mode [class*="badge"] {
+      color: #2a2520 !important;
+      border-color: #c8c0b8 !important;
+    }
+
+    /* Gold section divider lines */
+    body.light-mode .section-label::after {
+      background: #d8d0c8 !important;
+    }
+    body.light-mode .scenario-text,
+    body.light-mode #question-text,
+    body.light-mode .question-text {
+      color: #0a0806 !important;
     }
 
   `;
