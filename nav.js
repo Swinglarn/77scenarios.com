@@ -141,8 +141,10 @@
     var ds = document.createElement('style');
     ds.id = 'nav-design-css';
     ds.textContent = [
-      // Force sticky nav on all pages
-      'nav.site-nav,.site-nav{position:sticky !important;top:0 !important;}',
+      // Fixed nav — works on all pages regardless of parent overflow/height
+      'nav.site-nav,.site-nav{position:fixed !important;top:0 !important;left:0 !important;right:0 !important;width:100% !important;z-index:200 !important;}',
+      // Compensate for fixed nav taking element out of flow
+      'body{padding-top:56px !important;}',
       // Nav links - DM Sans 500, bolder, mixed case
       // Reserve space on right for fixed auth+toggle container
       '.nav-links{position:absolute !important;left:50% !important;transform:translateX(-50%) !important;display:flex !important;align-items:center !important;}',
@@ -153,13 +155,17 @@
       '@media(max-width:480px){.nav-drawer-links{max-height:calc(100vh - 56px) !important;}}',
       '.nav-links a{font-family:"DM Sans",sans-serif !important;font-size:13px !important;font-weight:500 !important;letter-spacing:0.06em !important;text-transform:uppercase !important;color:#ccc6bf !important;transition:color 0.2s !important;}',
       '.nav-links a:hover,.nav-links a.active{color:#ede8df !important;}',
-      // "Take the Test" - gold pill CTA via href attribute selector
-      '.nav-links a[href="/"]{color:#c9a84c !important;border:1px solid #8a6d2e !important;padding:6px 14px !important;border-radius:60px !important;letter-spacing:0.08em !important;transition:background 0.2s,color 0.2s,border-color 0.2s !important;}',
-      '.nav-links a[href="/"]:hover{background:rgba(201,168,76,0.12) !important;border-color:#c9a84c !important;}',
-      '.nav-links a[href="/"].active{background:rgba(201,168,76,0.08) !important;}',
+      // "Take the Test" - underline accent with slow pulse
+      '@keyframes navUnderlinePulse{0%,100%{opacity:0.3;}50%{opacity:1;}}',
+      '.nav-links a[href="/"]{color:#c9a84c !important;border:none !important;padding:0 !important;border-radius:0 !important;letter-spacing:0.08em !important;font-weight:500 !important;background:transparent !important;position:relative !important;transition:color 0.2s !important;}',
+      '.nav-links a[href="/"]::after{content:"" !important;position:absolute !important;left:0 !important;right:0 !important;bottom:-4px !important;height:1px !important;background:#c9a84c !important;display:block !important;animation:navUnderlinePulse 3.5s ease-in-out infinite !important;}',
+      '.nav-links a[href="/"]:hover{color:#e8cc7a !important;}',
+      '.nav-links a[href="/"]:hover::after,.nav-links a[href="/"].active::after{opacity:1 !important;animation:none !important;}',
       // ES/PT CTA equivalents
-      '.nav-links a[href="/es/"]{color:#c9a84c !important;border:1px solid #8a6d2e !important;padding:6px 14px !important;border-radius:60px !important;transition:background 0.2s,color 0.2s,border-color 0.2s !important;}',
-      '.nav-links a[href="/pt/"]{color:#c9a84c !important;border:1px solid #8a6d2e !important;padding:6px 14px !important;border-radius:60px !important;transition:background 0.2s,color 0.2s,border-color 0.2s !important;}',
+      '.nav-links a[href="/es/"]{color:#c9a84c !important;border:none !important;padding:0 !important;border-radius:0 !important;font-weight:500 !important;background:transparent !important;position:relative !important;transition:color 0.2s !important;}',
+      '.nav-links a[href="/es/"]::after{content:"" !important;position:absolute !important;left:0 !important;right:0 !important;bottom:-4px !important;height:1px !important;background:#c9a84c !important;display:block !important;animation:navUnderlinePulse 3.5s ease-in-out infinite !important;}',
+      '.nav-links a[href="/pt/"]{color:#c9a84c !important;border:none !important;padding:0 !important;border-radius:0 !important;font-weight:500 !important;background:transparent !important;position:relative !important;transition:color 0.2s !important;}',
+      '.nav-links a[href="/pt/"]::after{content:"" !important;position:absolute !important;left:0 !important;right:0 !important;bottom:-4px !important;height:1px !important;background:#c9a84c !important;display:block !important;animation:navUnderlinePulse 3.5s ease-in-out infinite !important;}',
       // Auth dropdown
       '.nav-user-wrap{position:relative;display:inline-block;}',
       '.nav-user-btn{display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;padding:0;}',
@@ -221,10 +227,13 @@
       'body.light-mode .nav-logo{color:#141210 !important;font-weight:500 !important;}',
       'body.light-mode .nav-links a{color:#38302a !important;}',
       'body.light-mode .nav-links a:hover,body.light-mode .nav-links a.active{color:#141210 !important;}',
-      'body.light-mode .nav-links a[href="/"]{color:#8a6d2e !important;border-color:#c9a84c !important;}',
-      'body.light-mode .nav-links a[href="/"]:hover{background:rgba(201,168,76,0.1) !important;border-color:#a8893a !important;}',
-      'body.light-mode .nav-links a[href="/es/"]{color:#8a6d2e !important;border-color:#c9a84c !important;}',
-      'body.light-mode .nav-links a[href="/pt/"]{color:#8a6d2e !important;border-color:#c9a84c !important;}',
+      'body.light-mode .nav-links a[href="/"]{color:#8a6d2e !important;border:none !important;background:transparent !important;}',
+      'body.light-mode .nav-links a[href="/"]::after{background:#8a6d2e !important;}',
+      'body.light-mode .nav-links a[href="/"]:hover{color:#6b5020 !important;}',
+      'body.light-mode .nav-links a[href="/es/"]{color:#8a6d2e !important;border:none !important;background:transparent !important;}',
+      'body.light-mode .nav-links a[href="/es/"]::after{background:#8a6d2e !important;}',
+      'body.light-mode .nav-links a[href="/pt/"]{color:#8a6d2e !important;border:none !important;background:transparent !important;}',
+      'body.light-mode .nav-links a[href="/pt/"]::after{background:#8a6d2e !important;}',
       'body.light-mode .nav-burger span{background:#141210 !important;}',
       /* ── Mobile drawer ── */
       'body.light-mode .nav-drawer{background:#f2f1ef !important;border-left:1px solid #dcdad5 !important;}',
@@ -753,7 +762,7 @@
       // Inject base nav CSS so the page doesn't need it hardcoded
       var baseStyle = document.createElement('style');
       baseStyle.textContent = [
-        'nav.site-nav{position:sticky;top:0;z-index:200;background:rgba(12,14,16,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border,#252a30);padding:0 32px;display:flex;justify-content:space-between;align-items:center;height:56px;}',
+        'nav.site-nav{position:fixed;top:0;left:0;right:0;width:100%;z-index:200;background:rgba(12,14,16,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border,#252a30);padding:0 32px;display:flex;justify-content:space-between;align-items:center;height:56px;}',
         'nav.site-nav .nav-logo{font-family:inherit;font-size:15px;font-weight:500;letter-spacing:0.06em;color:var(--cream,#ede8df);text-decoration:none;white-space:nowrap;}',
         'nav.site-nav .nav-links{display:flex;gap:28px;align-items:center;}',
         'nav.site-nav .nav-links a{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--cream,#ede8df);text-decoration:none;opacity:0.7;transition:opacity 0.15s;}',
