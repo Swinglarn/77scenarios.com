@@ -1,9 +1,10 @@
 {
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/types/:slug",      "destination": "/type"      },
-    { "source": "/character/:slug",  "destination": "/character" },
-    { "source": "/letters/:slug",    "destination": "/letter"    },
-    { "source": "/vs/:slug",         "destination": "/vs"        }
+    { "source": "/types/:slug",              "destination": "/type"              },
+    { "source": "/character/:slug",          "destination": "/character"         },
+    { "source": "/letters/:slug",            "destination": "/letter"            },
+    { "source": "/vs/:slug",                 "destination": "/vs"                },
+    { "source": "/compatibility/:pair",      "destination": "/compatibility-pair" }
   ]
 }
