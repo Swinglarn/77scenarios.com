@@ -1,25 +1,5 @@
 (function() {
 
-  // ── IMMEDIATE THEME APPLICATION — prevents flash on navigation ──────────────
-  // Runs synchronously before DOMContentLoaded, within the 60ms overlay delay
-  (function() {
-    try {
-      var saved = localStorage.getItem('77s-theme');
-      if (saved === 'light') {
-        document.documentElement.classList.add('light-mode');
-        document.body && document.body.classList.add('light-mode');
-        // Flip overlay to white immediately so page reveal shows correct bg
-        var ov = document.getElementById('t-overlay');
-        if (ov) ov.style.background = '#ffffff';
-        // Inject minimal light-bg style so body bg is white before full CSS loads
-        var s = document.createElement('style');
-        s.id = 'theme-flash-guard';
-        s.textContent = 'body{background:#ffffff!important;color:#141210!important}#t-overlay{background:#ffffff!important}';
-        document.head.appendChild(s);
-      }
-    } catch(e) {}
-  })();
-
   // ── CANONICAL TAG ────────────────────────────────────────────────────────────
   // Injected immediately so it's in <head> before any other scripts run
   (function() {
@@ -171,7 +151,7 @@
       '.nav-drawer{overflow:hidden !important;}',
       '.nav-drawer-header{flex-shrink:0 !important;}',
       '@media(max-width:480px){.nav-drawer-links{max-height:calc(100vh - 56px) !important;}}',
-      '.nav-links a{font-family:"DM Sans",sans-serif !important;font-size:13px !important;font-weight:500 !important;letter-spacing:0.06em !important;text-transform:uppercase !important;color:#ccc6bf !important;transition:color 0.2s !important;}',
+      '.nav-links a{font-family:"DM Sans",sans-serif !important;font-size:13px !important;font-weight:600 !important;letter-spacing:0.06em !important;text-transform:uppercase !important;color:#ccc6bf !important;transition:color 0.2s !important;}',
       '.nav-links a:hover,.nav-links a.active{color:#ede8df !important;}',
       // "Take the Test" - underline accent with slow pulse
       '@keyframes navUnderlinePulse{0%,100%{opacity:0.3;}50%{opacity:1;}}',
@@ -445,10 +425,6 @@
   // ── THEME ────────────────────────────────────────────────────────────────────
   function applyTheme(isLight) {
     document.body.classList.toggle('light-mode', isLight);
-    document.documentElement.classList.toggle('light-mode', isLight);
-    // Remove flash guard once full theme CSS is applied
-    var guard = document.getElementById('theme-flash-guard');
-    if (guard) guard.remove();
     var d = document.getElementById('theme-toggle-desktop');
     if (d) d.innerHTML = isLight ? MOON_SVG + ' Dark' : SUN_SVG + ' Light';
     var m = document.getElementById('theme-toggle-mobile');
