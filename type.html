@@ -715,6 +715,8 @@ document.addEventListener('DOMContentLoaded',function(){
     'body.light-mode{color:#1e2d4a!important}',
     'body.light-mode h1,body.light-mode h2,body.light-mode h3,body.light-mode h4{color:#1e2d4a!important}',
     'body.light-mode p,body.light-mode li,body.light-mode .prose,body.light-mode .body-text,body.light-mode .page-sub{color:#1e2d4a!important}',
+    /* re-override: prose inside navy sections must stay white — this rule is last so it wins */
+    'body.light-mode .section p,body.light-mode .section .body-text,body.light-mode .section li{color:#ffffff!important}',
   ].join('');
   document.head.appendChild(s);
 });
