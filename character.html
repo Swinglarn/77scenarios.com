@@ -12823,18 +12823,25 @@ document.addEventListener('DOMContentLoaded',function(){
     'body.light-mode #nav-footer .footer-bottom-links a:hover{color:#fff!important}',
     'body.light-mode #nav-footer .footer-logo-text{color:rgba(255,255,255,0.5)!important}',
     'body.light-mode #nav-footer .footer-cta{color:#c9a84c!important}',
-    /* all primary cards: white */
-    'body.light-mode .type-card,body.light-mode .lcard,body.light-mode .db-card,body.light-mode .fncard,body.light-mode .vs-pair-card,body.light-mode .contact-card,body.light-mode .thread-item,body.light-mode .reply-card,body.light-mode .post-body,body.light-mode .info-box,body.light-mode .score-block,body.light-mode .similar-card,body.light-mode .type-pair-card,body.light-mode .vs-fn-col,body.light-mode .vs-overlap-item,body.light-mode .vs-tell-item,body.light-mode .vs-famous-col,body.light-mode .vs-quiz,body.light-mode .famous-card,body.light-mode .modal,body.light-mode .intro-box,body.light-mode .verdict,body.light-mode .verdict-box,body.light-mode .score-card,body.light-mode .result-card,body.light-mode .auth-notice,body.light-mode .callout,body.light-mode .cta-box,body.light-mode .opp-block,body.light-mode .box,body.light-mode .growth-box,body.light-mode .fd-box,body.light-mode .related-card{background:#ffffff!important;border-color:#d0d7e3!important;box-shadow:0 1px 4px rgba(30,45,74,0.07)!important}',
-    /* card text navy bold */
-    'body.light-mode .card-name,body.light-mode .db-card-name,body.light-mode .lcard-letter,body.light-mode .lcard-name,body.light-mode .tpc-code,body.light-mode .tpc-name,body.light-mode .sim-code,body.light-mode .vs-pair-card-types{color:#1e2d4a!important;font-weight:600!important}',
-    'body.light-mode .type-card *{color:#1e2d4a!important}',
-    /* card hover: navy border */
-    'body.light-mode .type-card:hover,body.light-mode .lcard:hover,body.light-mode .db-card:hover,body.light-mode .fncard:hover,body.light-mode .vs-pair-card:hover,body.light-mode .contact-card:hover,body.light-mode .thread-item:hover,body.light-mode .similar-card:hover,body.light-mode .type-pair-card:hover{border-color:#1e2d4a!important;box-shadow:0 4px 20px rgba(30,45,74,0.14)!important}',
-    /* section label navy */
+    /* all primary cards: navy */
+    'body.light-mode .type-card,body.light-mode .lcard,body.light-mode .db-card,body.light-mode .fncard,body.light-mode .vs-pair-card,body.light-mode .contact-card,body.light-mode .thread-item,body.light-mode .reply-card,body.light-mode .post-body,body.light-mode .info-box,body.light-mode .score-block,body.light-mode .similar-card,body.light-mode .type-pair-card,body.light-mode .vs-fn-col,body.light-mode .vs-overlap-item,body.light-mode .vs-tell-item,body.light-mode .vs-famous-col,body.light-mode .vs-quiz,body.light-mode .famous-card,body.light-mode .modal,body.light-mode .intro-box,body.light-mode .verdict,body.light-mode .verdict-box,body.light-mode .score-card,body.light-mode .result-card,body.light-mode .auth-notice,body.light-mode .callout,body.light-mode .cta-box,body.light-mode .opp-block,body.light-mode .box,body.light-mode .growth-box,body.light-mode .fd-box,body.light-mode .related-card,body.light-mode .section,body.light-mode .fn-card{background:#1e2d4a!important;border-color:#2d4168!important;box-shadow:0 4px 16px rgba(30,45,74,0.18)!important}',
+    /* all text inside cards: white */
+    'body.light-mode .type-card *,body.light-mode .lcard *,body.light-mode .db-card *,body.light-mode .fncard *,body.light-mode .vs-pair-card *,body.light-mode .contact-card *,body.light-mode .thread-item *,body.light-mode .reply-card *,body.light-mode .post-body *,body.light-mode .info-box *,body.light-mode .similar-card *,body.light-mode .type-pair-card *,body.light-mode .verdict *,body.light-mode .verdict-box *,body.light-mode .score-card *,body.light-mode .intro-box *,body.light-mode .callout *{color:#ffffff!important}',
+    /* primary card text: bold white */
+    'body.light-mode .card-name,body.light-mode .db-card-name,body.light-mode .lcard-letter,body.light-mode .lcard-name,body.light-mode .tpc-code,body.light-mode .tpc-name,body.light-mode .sim-code,body.light-mode .vs-pair-card-types,body.light-mode .cc-title{color:#ffffff!important;font-weight:600!important}',
+    /* secondary text in cards: dimmer white */
+    'body.light-mode .card-tagline,body.light-mode .lcard-desc,body.light-mode .tpc-tagline,body.light-mode .db-card-ctx,body.light-mode .db-card-cat,body.light-mode .vs-pair-card-tag,body.light-mode .cc-desc,body.light-mode .sim-name{color:rgba(255,255,255,0.7)!important;font-weight:400!important}',
+    /* gold accents stay gold inside cards */
+    'body.light-mode .type-card .card-arrow,body.light-mode .lcard .lcard-arrow,body.light-mode .db-card .db-card-type,body.light-mode .fncard .fn-letter,body.light-mode .hi,body.light-mode .cc-email{color:#c9a84c!important}',
+    /* card hover: slightly lighter navy + gold accent shadow */
+    'body.light-mode .type-card:hover,body.light-mode .lcard:hover,body.light-mode .db-card:hover,body.light-mode .fncard:hover,body.light-mode .vs-pair-card:hover,body.light-mode .contact-card:hover,body.light-mode .thread-item:hover,body.light-mode .similar-card:hover,body.light-mode .type-pair-card:hover{background:#2d4168!important;border-color:#c9a84c!important;box-shadow:0 8px 28px rgba(30,45,74,0.3)!important}',
+    /* nested pills/tags inside cards: lighter navy */
+    'body.light-mode .type-card .mini-type,body.light-mode .type-card .tag,body.light-mode .fn-card .tag,body.light-mode .actor-chip,body.light-mode .universe-chip{background:rgba(255,255,255,0.12)!important;border-color:rgba(255,255,255,0.2)!important;color:#ffffff!important}',
+    /* section label + eyebrow */
     'body.light-mode .section-label{color:#2d4168!important}',
     'body.light-mode .section-label::after{background:#c8d4e4!important}',
     'body.light-mode .page-eyebrow{color:#8a6d2e!important}',
-    /* body text navy */
+    /* page body text navy */
     'body.light-mode{color:#1e2d4a!important}',
     'body.light-mode h1,body.light-mode h2,body.light-mode h3,body.light-mode h4{color:#1e2d4a!important}',
     'body.light-mode p,body.light-mode li,body.light-mode .prose,body.light-mode .body-text,body.light-mode .page-sub{color:#1e2d4a!important}',
