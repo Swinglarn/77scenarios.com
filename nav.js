@@ -151,7 +151,7 @@
       '.nav-drawer{overflow:hidden !important;}',
       '.nav-drawer-header{flex-shrink:0 !important;}',
       '@media(max-width:480px){.nav-drawer-links{max-height:calc(100vh - 56px) !important;}}',
-      '.nav-links a{font-family:"DM Sans",sans-serif !important;font-size:13px !important;font-weight:600 !important;letter-spacing:0.06em !important;text-transform:uppercase !important;color:#ccc6bf !important;transition:color 0.2s !important;}',
+      '.nav-links a{font-family:"DM Sans",sans-serif !important;font-size:13px !important;font-weight:500 !important;letter-spacing:0.06em !important;text-transform:uppercase !important;color:#ccc6bf !important;transition:color 0.2s !important;-webkit-font-smoothing:antialiased !important;transform:translateZ(0) !important;}',
       '.nav-links a:hover,.nav-links a.active{color:#ede8df !important;}',
       // "Take the Test" - underline accent with slow pulse
       '@keyframes navUnderlinePulse{0%,100%{opacity:0.3;}50%{opacity:1;}}',
@@ -761,7 +761,7 @@
         'nav.site-nav{position:fixed;top:0;left:0;right:0;width:100%;z-index:200;background:rgba(12,14,16,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border,#252a30);padding:0 32px;display:flex;justify-content:space-between;align-items:center;height:56px;}',
         'nav.site-nav .nav-logo{font-family:inherit;font-size:15px;font-weight:500;letter-spacing:0.06em;color:var(--cream,#ede8df);text-decoration:none;white-space:nowrap;}',
         'nav.site-nav .nav-links{display:flex;gap:28px;align-items:center;}',
-        'nav.site-nav .nav-links a{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--cream,#ede8df);text-decoration:none;opacity:0.7;transition:opacity 0.15s;}',
+        'nav.site-nav .nav-links a{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--cream,#ede8df);text-decoration:none;opacity:0.7;transition:opacity 0.15s;-webkit-font-smoothing:antialiased;transform:translateZ(0);}',
         'nav.site-nav .nav-links a:hover,nav.site-nav .nav-links a.active{opacity:1;color:var(--gold,#c9a84c);}',
         'nav.site-nav .nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}',
         'nav.site-nav .nav-burger span{display:block;width:22px;height:2px;background:var(--cream,#ede8df);border-radius:2px;transition:all 0.25s;}',
