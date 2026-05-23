@@ -389,6 +389,8 @@
 
       /* Keep gold left-border accent on verdict and growth-box */
       'body.light-mode .verdict{border-left-color:var(--gold) !important;border-left-width:4px !important;}',
+      'body.light-mode .verdict-label{color:#c9a84c !important;}',
+      'body.light-mode .verdict p,body.light-mode .verdict li{color:#ffffff !important;}',
       'body.light-mode .growth-box{border-left-color:var(--gold-dim) !important;border-left-width:2px !important;}',
 
       /* New page cards: profile, settings, about, login, privacy, terms, contact, forum */
