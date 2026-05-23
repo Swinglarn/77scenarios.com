@@ -42,6 +42,26 @@
   .hero-opp a{color:var(--gold);text-decoration:none;}
   .hero-opp a:hover{text-decoration:underline;}
 
+  /* ── Per-letter hero letter color ── */
+  body[data-letter="e"] .hero-letter{color:rgba(248,40,40,1);}
+  body[data-letter="i"] .hero-letter{color:rgba(92,72,240,1);}
+  body[data-letter="n"] .hero-letter{color:rgba(188,95,255,1);}
+  body[data-letter="s"] .hero-letter{color:rgba(252,220,30,1);}
+  body[data-letter="t"] .hero-letter{color:rgba(40,205,248,1);}
+  body[data-letter="f"] .hero-letter{color:rgba(38,210,85,1);}
+  body[data-letter="j"] .hero-letter{color:rgba(240,245,255,1);}
+  body[data-letter="p"] .hero-letter{color:rgba(252,148,28,1);}
+
+  /* ── Per-letter page accent (opp link, active nav underline) ── */
+  body[data-letter="e"] .hero-opp a{color:rgba(248,40,40,1);}
+  body[data-letter="i"] .hero-opp a{color:rgba(92,72,240,1);}
+  body[data-letter="n"] .hero-opp a{color:rgba(188,95,255,1);}
+  body[data-letter="s"] .hero-opp a{color:rgba(252,220,30,1);}
+  body[data-letter="t"] .hero-opp a{color:rgba(40,205,248,1);}
+  body[data-letter="f"] .hero-opp a{color:rgba(38,210,85,1);}
+  body[data-letter="j"] .hero-opp a{color:rgba(240,245,255,1);}
+  body[data-letter="p"] .hero-opp a{color:rgba(252,148,28,1);}
+
   .section{margin-bottom:48px;}
   .section-label{font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px;}
   .section-label::after{content:'';display:block;flex:1;height:1px;background:var(--border);}
@@ -226,6 +246,7 @@ function render(){
   if(!km){km=document.createElement('meta');km.name='keywords';document.head.appendChild(km);}
   km.content=`${l} personality, ${d.name.toLowerCase()} MBTI, ${d.name.toLowerCase()} meaning, Myers-Briggs ${l}, ${keyPhrases[l]||''}`;
   document.getElementById('canonical-url')?.setAttribute('href',`https://77scenarios.com/letters/${l.toLowerCase()}`);
+  document.body.dataset.letter = l.toLowerCase();
   document.querySelector('meta[property="og:title"]')?.setAttribute('content',`${l} · ${d.name} in Myers-Briggs, 77 Scenarios`)||
     (()=>{const m=document.createElement('meta');m.setAttribute('property','og:title');m.content=`${l} · ${d.name} in Myers-Briggs, 77 Scenarios`;document.head.appendChild(m);})();
   document.querySelector('meta[property="og:description"]')?.setAttribute('content',seoDesc)||
@@ -341,7 +362,15 @@ document.addEventListener('DOMContentLoaded',function(){
     'body.light-mode .card-name,body.light-mode .db-card-name,body.light-mode .lcard-letter,body.light-mode .lcard-name,body.light-mode .tpc-code,body.light-mode .tpc-name,body.light-mode .sim-code,body.light-mode .vs-pair-card-types,body.light-mode .cc-title{color:#ffffff!important}',
     /* secondary text in cards: high-opacity white */
     'body.light-mode .card-tagline,body.light-mode .lcard-desc,body.light-mode .tpc-tagline,body.light-mode .db-card-ctx,body.light-mode .db-card-cat,body.light-mode .vs-pair-card-tag,body.light-mode .cc-desc,body.light-mode .sim-name{color:rgba(255,255,255,0.88)!important}',
-    /* gold stays gold inside cards */
+    /* per-letter hero color: light mode keeps the vivid letter colors */
+    'body.light-mode[data-letter="e"] .hero-letter{color:rgba(210,18,18,1)!important}',
+    'body.light-mode[data-letter="i"] .hero-letter{color:rgba(65,45,205,1)!important}',
+    'body.light-mode[data-letter="n"] .hero-letter{color:rgba(118,38,198,1)!important}',
+    'body.light-mode[data-letter="s"] .hero-letter{color:rgba(178,148,10,1)!important}',
+    'body.light-mode[data-letter="t"] .hero-letter{color:rgba(16,132,168,1)!important}',
+    'body.light-mode[data-letter="f"] .hero-letter{color:rgba(22,148,58,1)!important}',
+    'body.light-mode[data-letter="j"] .hero-letter{color:rgba(90,100,122,1)!important}',
+    'body.light-mode[data-letter="p"] .hero-letter{color:rgba(195,105,12,1)!important}',
     'body.light-mode .db-card .db-card-type,body.light-mode .hi,body.light-mode .cc-email{color:#c9a84c!important}',
     /* card hover */
     'body.light-mode .type-card:hover,body.light-mode .lcard:hover,body.light-mode .db-card:hover,body.light-mode .fncard:hover,body.light-mode .vs-pair-card:hover,body.light-mode .contact-card:hover,body.light-mode .thread-item:hover,body.light-mode .similar-card:hover,body.light-mode .type-pair-card:hover,body.light-mode .type-mini:hover{background:#2d4168!important;border-color:#c9a84c!important;box-shadow:0 8px 28px rgba(30,45,74,0.3)!important}',

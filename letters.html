@@ -58,6 +58,24 @@
   .lcard::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,0.06),transparent);opacity:0;transition:opacity 0.25s;}
   .lcard:hover{border-color:var(--gold-dim);box-shadow:0 20px 50px rgba(0,0,0,0.4);}
   .lcard:hover::after{opacity:1;}
+
+  /* ── Per-letter gradients ── */
+  a[href="/letters/e"]{background:linear-gradient(140deg,rgba(210,18,18,0.6) 0%,rgba(135,8,8,0.3) 55%,#131820 100%);border-color:rgba(248,40,40,0.45);}
+  a[href="/letters/e"]:hover{border-color:rgba(255,65,65,0.85);box-shadow:0 20px 50px rgba(210,18,18,0.4);}
+  a[href="/letters/i"]{background:linear-gradient(140deg,rgba(38,20,158,0.6) 0%,rgba(22,10,98,0.3) 55%,#131820 100%);border-color:rgba(65,45,205,0.45);}
+  a[href="/letters/i"]:hover{border-color:rgba(92,72,240,0.85);box-shadow:0 20px 50px rgba(38,20,158,0.4);}
+  a[href="/letters/n"]{background:linear-gradient(140deg,rgba(118,38,198,0.6) 0%,rgba(72,20,132,0.3) 55%,#131820 100%);border-color:rgba(155,65,238,0.45);}
+  a[href="/letters/n"]:hover{border-color:rgba(188,95,255,0.85);box-shadow:0 20px 50px rgba(118,38,198,0.4);}
+  a[href="/letters/s"]{background:linear-gradient(140deg,rgba(210,178,15,0.6) 0%,rgba(138,115,8,0.3) 55%,#131820 100%);border-color:rgba(248,215,25,0.45);}
+  a[href="/letters/s"]:hover{border-color:rgba(255,232,45,0.85);box-shadow:0 20px 50px rgba(210,178,15,0.4);}
+  a[href="/letters/t"]{background:linear-gradient(140deg,rgba(16,132,168,0.6) 0%,rgba(8,78,108,0.3) 55%,#131820 100%);border-color:rgba(25,168,210,0.45);}
+  a[href="/letters/t"]:hover{border-color:rgba(40,205,248,0.85);box-shadow:0 20px 50px rgba(16,132,168,0.4);}
+  a[href="/letters/f"]{background:linear-gradient(140deg,rgba(25,155,65,0.6) 0%,rgba(12,90,35,0.3) 55%,#131820 100%);border-color:rgba(38,195,82,0.45);}
+  a[href="/letters/f"]:hover{border-color:rgba(55,230,100,0.85);box-shadow:0 20px 50px rgba(25,155,65,0.4);}
+  a[href="/letters/j"]{background:linear-gradient(140deg,rgba(225,228,235,0.28) 0%,rgba(155,162,175,0.12) 55%,#131820 100%);border-color:rgba(210,215,225,0.45);}
+  a[href="/letters/j"]:hover{border-color:rgba(245,248,255,0.9);box-shadow:0 20px 50px rgba(200,210,230,0.25);}
+  a[href="/letters/p"]{background:linear-gradient(140deg,rgba(215,118,15,0.6) 0%,rgba(138,70,6,0.3) 55%,#131820 100%);border-color:rgba(252,148,28,0.45);}
+  a[href="/letters/p"]:hover{border-color:rgba(255,175,55,0.85);box-shadow:0 20px 50px rgba(215,118,15,0.4);}
   .lcard-letter{font-family:'Cormorant Garamond',serif;font-size:68px;font-weight:300;line-height:1;color:var(--cream);letter-spacing:-0.04em;margin-bottom:12px;transition:color 0.25s;}
   .lcard:hover .lcard-letter{color:var(--gold);}
   .lcard-name{font-size:15px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--cream);margin-bottom:8px;}
@@ -242,7 +260,15 @@ document.addEventListener('DOMContentLoaded',function(){
     'body.light-mode .card-name,body.light-mode .db-card-name,body.light-mode .lcard-letter,body.light-mode .lcard-name,body.light-mode .tpc-code,body.light-mode .tpc-name,body.light-mode .sim-code,body.light-mode .vs-pair-card-types,body.light-mode .cc-title{color:#ffffff!important}',
     /* secondary text in cards: dimmer white */
     'body.light-mode .card-tagline,body.light-mode .lcard-desc,body.light-mode .tpc-tagline,body.light-mode .db-card-ctx,body.light-mode .db-card-cat,body.light-mode .vs-pair-card-tag,body.light-mode .cc-desc,body.light-mode .sim-name{color:rgba(255,255,255,0.88)!important}',
-    /* gold stays gold inside cards */
+    /* per-letter gradients: light mode */
+    'body.light-mode a[href="/letters/e"]{background:linear-gradient(140deg,rgba(210,18,18,0.68) 0%,rgba(30,45,74,0.98) 100%)!important;border-color:rgba(248,40,40,0.6)!important}',
+    'body.light-mode a[href="/letters/i"]{background:linear-gradient(140deg,rgba(38,20,158,0.68) 0%,rgba(30,45,74,0.98) 100%)!important;border-color:rgba(65,45,205,0.6)!important}',
+    'body.light-mode a[href="/letters/n"]{background:linear-gradient(140deg,rgba(118,38,198,0.68) 0%,rgba(30,45,74,0.98) 100%)!important;border-color:rgba(155,65,238,0.6)!important}',
+    'body.light-mode a[href="/letters/s"]{background:linear-gradient(140deg,rgba(210,178,15,0.68) 0%,rgba(30,45,74,0.98) 100%)!important;border-color:rgba(248,215,25,0.6)!important}',
+    'body.light-mode a[href="/letters/t"]{background:linear-gradient(140deg,rgba(16,132,168,0.68) 0%,rgba(30,45,74,0.98) 100%)!important;border-color:rgba(25,168,210,0.6)!important}',
+    'body.light-mode a[href="/letters/f"]{background:linear-gradient(140deg,rgba(25,155,65,0.68) 0%,rgba(30,45,74,0.98) 100%)!important;border-color:rgba(38,195,82,0.6)!important}',
+    'body.light-mode a[href="/letters/j"]{background:linear-gradient(140deg,rgba(225,228,235,0.35) 0%,rgba(30,45,74,0.98) 100%)!important;border-color:rgba(210,215,225,0.6)!important}',
+    'body.light-mode a[href="/letters/p"]{background:linear-gradient(140deg,rgba(215,118,15,0.68) 0%,rgba(30,45,74,0.98) 100%)!important;border-color:rgba(252,148,28,0.6)!important}',
     'body.light-mode .db-card .db-card-type,body.light-mode .hi,body.light-mode .cc-email{color:#c9a84c!important}',
     /* card hover */
     'body.light-mode .type-card:hover,body.light-mode .lcard:hover,body.light-mode .db-card:hover,body.light-mode .fncard:hover,body.light-mode .vs-pair-card:hover,body.light-mode .contact-card:hover,body.light-mode .thread-item:hover,body.light-mode .similar-card:hover,body.light-mode .type-pair-card:hover{background:#2d4168!important;border-color:#c9a84c!important;box-shadow:0 8px 28px rgba(30,45,74,0.3)!important}',
