@@ -365,6 +365,8 @@
 
       /* ── All boxes/cards site-wide: bright white, visible border, lifted shadow ── */
       'body.light-mode .db-card,body.light-mode .fncard,body.light-mode .intro-box,body.light-mode .cta-box,body.light-mode .post-body,body.light-mode .reply-card,body.light-mode .box,body.light-mode .growth-box,body.light-mode .opp-block,body.light-mode .fd-box,body.light-mode .famous-card,body.light-mode .modal{background:#ffffff !important;border-color:#d0d7e3 !important;box-shadow:0 1px 4px rgba(30,45,74,0.07) !important;}',
+      /* fn-pos-label (Dominant/Auxiliary/Tertiary/Inferior) must stay white on navy fncard */
+      'body.light-mode .fncard .fn-pos-label,body.light-mode .fn-pos-label{color:rgba(255,255,255,0.92) !important;}',
 
       /* Nested / secondary surface cards */
       'body.light-mode .fn-card,body.light-mode .tag,body.light-mode .mini-type,body.light-mode .filter-btn,body.light-mode .type-btn{background:#eaecf0 !important;border-color:#c8d4e4 !important;}',
