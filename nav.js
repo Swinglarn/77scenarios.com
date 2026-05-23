@@ -182,7 +182,7 @@
       '.nav-right-slot{display:flex;align-items:center;gap:12px;margin-left:auto;flex-shrink:0;}',
       '@media(max-width:960px){.nav-right-slot{display:none;}}',
       // Logo redesign
-      '.nav-logo{font-family:\"Cormorant Garamond\",serif !important;font-size:22px !important;font-weight:300 !important;text-decoration:none !important;display:inline-flex !important;align-items:baseline !important;gap:3px !important;letter-spacing:0 !important;}',
+      '.nav-logo{font-family:\"Cormorant Garamond\",serif !important;font-size:22px !important;font-weight:300 !important;color:var(--cream,#ede8df) !important;text-decoration:none !important;display:inline-flex !important;align-items:baseline !important;gap:3px !important;letter-spacing:0 !important;}',
       '.logo-77{color:#c9a84c !important;font-weight:600 !important;font-size:38px !important;font-style:italic !important;line-height:1 !important;letter-spacing:-0.03em !important;}',
       '.logo-scenarios{color:#ede8df !important;font-weight:300 !important;font-size:26px !important;letter-spacing:0.1em !important;text-transform:lowercase !important;}',
       'body.light-mode .logo-scenarios{color:#141210 !important;}',
