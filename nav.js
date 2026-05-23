@@ -248,7 +248,7 @@
       'body.light-mode .type-card{background:#ffffff !important;border-color:#d0d7e3 !important;box-shadow:0 1px 4px rgba(30,45,74,0.07) !important;}',
       'body.light-mode .type-card *{color:#1e2d4a !important;}',
       'body.light-mode .type-card:hover{border-color:#1e2d4a !important;box-shadow:0 4px 20px rgba(30,45,74,0.14) !important;}',
-      'body.light-mode .card-name{color:#1e2d4a !important;font-weight:600 !important;}',
+      'body.light-mode .card-name{color:#1e2d4a !important;font-weight:500 !important;}',
       'body.light-mode .card-tagline{color:#4a5568 !important;font-weight:400 !important;}',
       'body.light-mode .card-arrow{color:#c9a84c !important;}',
       'body.light-mode .hi{color:#c9a84c !important;}',
@@ -258,7 +258,7 @@
       'body.light-mode .lcard{background:#ffffff !important;border:1px solid #d0d7e3 !important;box-shadow:0 1px 4px rgba(30,45,74,0.07) !important;}',
       'body.light-mode .lcard:hover{border-color:#1e2d4a !important;box-shadow:0 4px 20px rgba(30,45,74,0.14) !important;}',
       /* FIX: both selectors must be scoped to body.light-mode or dark mode gets dark text */
-      'body.light-mode .lcard-letter,body.light-mode .lcard-name{color:#1e2d4a !important;font-weight:600 !important;}',
+      'body.light-mode .lcard-letter,body.light-mode .lcard-name{color:#1e2d4a !important;font-weight:500 !important;}',
       'body.light-mode .lcard-desc{color:#4a5568 !important;}',
       /* ── Text utilities ── */
       'body.light-mode .dim-desc{color:#38302a !important;}',
@@ -303,8 +303,8 @@
       /* ── Type pair cards ── */
       'body.light-mode .type-pair-card{background:#ffffff !important;border-color:#d0d7e3 !important;box-shadow:0 1px 4px rgba(30,45,74,0.07) !important;}',
       'body.light-mode .type-pair-card:hover{border-color:#1e2d4a !important;box-shadow:0 4px 20px rgba(30,45,74,0.14) !important;}',
-      'body.light-mode .tpc-code{color:#1e2d4a !important;font-weight:600 !important;}',
-      'body.light-mode .tpc-name{color:#1e2d4a !important;font-weight:600 !important;}',
+      'body.light-mode .tpc-code{color:#1e2d4a !important;}',
+      'body.light-mode .tpc-name{color:#1e2d4a !important;font-weight:500 !important;}',
       'body.light-mode .tpc-tagline{color:#4a5568 !important;}',
       'body.light-mode .tpc-arrow{color:#a8893a !important;}',
       /* ── Related pills + similar cards ── */
@@ -313,7 +313,7 @@
       'body.light-mode .related-pill:hover{border-color:#c9a84c !important;color:#8a6d2e !important;background:#dddbd6 !important;}',
       'body.light-mode .similar-card{background:#ffffff !important;border-color:#d0d7e3 !important;box-shadow:0 1px 4px rgba(30,45,74,0.07) !important;}',
       'body.light-mode .similar-card:hover{border-color:#1e2d4a !important;box-shadow:0 4px 20px rgba(30,45,74,0.14) !important;}',
-      'body.light-mode .sim-code{color:#1e2d4a !important;font-weight:600 !important;}',
+      'body.light-mode .sim-code{color:#1e2d4a !important;}',
       'body.light-mode .sim-name{color:#4a5568 !important;}',
       /* ── Info / prose / legal boxes ── */
       'body.light-mode .info-box{background:#ffffff !important;border-color:#d0d7e3 !important;box-shadow:0 1px 4px rgba(30,45,74,0.07) !important;}',
@@ -360,7 +360,7 @@
       'body.light-mode .vs-hub-desc{color:#504840 !important;}',
       'body.light-mode .vs-pair-card{background:#ffffff !important;border-color:#d0d7e3 !important;box-shadow:0 1px 4px rgba(30,45,74,0.07) !important;}',
       'body.light-mode .vs-pair-card:hover{border-color:#1e2d4a !important;box-shadow:0 4px 20px rgba(30,45,74,0.14) !important;}',
-      'body.light-mode .vs-pair-card-types{color:#1e2d4a !important;font-weight:600 !important;}',
+      'body.light-mode .vs-pair-card-types{color:#1e2d4a !important;}',
       'body.light-mode .vs-pair-card-tag{color:#4a5568 !important;}',
 
       /* ── All boxes/cards site-wide: bright white, visible border, lifted shadow ── */
@@ -372,7 +372,7 @@
       'body.light-mode .fn-card,body.light-mode .tag,body.light-mode .mini-type,body.light-mode .filter-btn,body.light-mode .type-btn{background:#eaecf0 !important;border-color:#c8d4e4 !important;}',
 
       /* Archive card text — hardcoded light colors need dark overrides */
-      'body.light-mode .db-card-name{color:#1e2d4a !important;font-weight:600 !important;}',
+      'body.light-mode .db-card-name{color:#1e2d4a !important;font-weight:500 !important;}',
       'body.light-mode .db-card-ctx{color:#4a5868 !important;}',
       'body.light-mode .db-card-cat{color:#7a8898 !important;opacity:1 !important;}',
       'body.light-mode .db-card-type{color:var(--gold-dim) !important;}',
