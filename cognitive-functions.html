@@ -320,6 +320,26 @@ document.addEventListener('DOMContentLoaded',function(){
     'body.light-mode{color:#1e2d4a!important}',
     'body.light-mode h1,body.light-mode h2,body.light-mode h3,body.light-mode h4{color:#1e2d4a!important}',
     'body.light-mode p,body.light-mode li,body.light-mode .prose,body.light-mode .body-text,body.light-mode .page-sub{color:#1e2d4a!important}',
+    /* page-sub and group-desc: remove element-level opacity so color is full strength */
+    'body.light-mode .page-sub{opacity:1!important;color:#1e2d4a!important}',
+    'body.light-mode .group-desc{opacity:1!important;color:#1e2d4a!important}',
+    /* group-desc em: hardcoded #cdc7c0 is invisible on white — override to navy */
+    'body.light-mode .group-desc em{color:#4a5568!important;font-style:italic!important}',
+    /* group-num: gold-dim is too faint on white */
+    'body.light-mode .group-num{color:#8a6d2e!important}',
+    /* group-name: explicit navy */
+    'body.light-mode .group-name{color:#1e2d4a!important}',
+    /* cta-box: missing from white-text rule — dark text on navy bg = invisible */
+    'body.light-mode .cta-box p{color:#ffffff!important;opacity:1!important}',
+    'body.light-mode .cta-box *{color:#ffffff!important}',
+    /* intro-box: restore gold on italic em despite the * override */
+    'body.light-mode .intro-box em{color:#8a6d2e!important}',
+    /* intro-box p: explicit navy, full opacity */
+    'body.light-mode .intro-box p{color:#1e2d4a!important;opacity:1!important}',
+    /* fncard-tagline: has element opacity:0.88 — reset it */
+    'body.light-mode .fncard-tagline{color:rgba(255,255,255,0.95)!important;opacity:1!important}',
+    /* dim-sep: light border color */
+    'body.light-mode .dim-sep{background:#d0d7e3!important}',
   ].join('');
   document.head.appendChild(s);
 });
