@@ -75,7 +75,8 @@
   .mini-type:hover{color:var(--gold);border-color:var(--gold-dim);}
   .mini-type.dom{border-color:rgba(201,168,76,0.3);color:var(--gold);background:rgba(201,168,76,0.07);}
   .fn-pos-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:6px;}
-  .fn-pos-label{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);min-width:64px;flex-shrink:0;}
+  .fn-pos-label{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.82);min-width:64px;flex-shrink:0;}
+  body.light-mode .fn-pos-label{color:rgba(255,255,255,0.95)!important;}
 
   .dim-sep{height:1px;background:var(--border);margin:0 0 72px;}
 
@@ -299,7 +300,7 @@ document.addEventListener('DOMContentLoaded',function(){
     'body.light-mode .fncard-code{color:#ffffff!important}',
     'body.light-mode .fncard-name{color:#ffffff!important}',
     'body.light-mode .fncard-tagline{color:rgba(255,255,255,0.88)!important}',
-    'body.light-mode .fn-pos-label{color:#ffffff!important}',
+    'body.light-mode .fn-pos-label{color:rgba(255,255,255,0.95)!important}',
     /* mini-type chips inside fncard: translucent white */
     'body.light-mode .fncard .mini-type{background:rgba(255,255,255,0.1)!important;border-color:rgba(255,255,255,0.2)!important;color:#ffffff!important}',
     'body.light-mode .fncard .mini-type.dom{background:rgba(201,168,76,0.2)!important;border-color:rgba(201,168,76,0.5)!important;color:#c9a84c!important}',
