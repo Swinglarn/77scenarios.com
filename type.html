@@ -374,6 +374,51 @@ const rarity={
   ESTJ:'Around 8–12% of the population. More common in men than women.',
 };
 
+// Relationships + Work depth content. Rolled out in batches; render guards on presence.
+const typeDepth = {};
+Object.assign(typeDepth, {
+  INTJ:{
+    rel:[
+      "In relationships you are loyal in a way that is easy to miss, because you show it through reliability rather than display. You choose partners deliberately, you do not drift into things, and once you commit you treat the relationship as something to build rather than something to maintain. The trouble is that you assume your effort is visible when it often is not, and you tend to go quiet at exactly the moment a partner needs reassurance.",
+      "As a friend you keep a small circle and invest in it heavily. You remember the thing someone mentioned months ago and act on it without announcing that you did. You have little patience for relationships that run on obligation, and you would rather have three people who actually understand you than thirty who do not."
+    ],
+    work:[
+      "At work you are strongest when handed a problem and left alone with it. You think in systems and long arcs, so you usually see the flaw in a plan before anyone else does, and staying quiet about it costs you real effort. Your best work happens in places that reward competence over politics and do not mistake meetings for progress.",
+      "What drains you is being managed closely, justifying decisions you have already reasoned through, and working beside people who treat their own standards as optional. You do not need praise. You need autonomy, a clear bar, and the room to clear it your own way."
+    ]
+  },
+  INTP:{
+    rel:[
+      "You connect through ideas before you connect through feelings, and the people who fit you best are the ones who find that fascinating rather than cold. You are not distant, you are careful, and you open up slowly to those who earn it. Once someone is inside your circle you are far warmer, and stranger, than your reserved exterior suggests.",
+      "What you struggle with is the maintenance side of closeness, the regular check-ins and small gestures that other people read as basic care. You assume that because nothing has changed in how you feel, nothing needs to be said. A partner who needs words will need you to learn that silence is not the same as security."
+    ],
+    work:[
+      "At work you want a genuine problem to take apart and the freedom to take it apart properly. You are at your best in the analysis, the design, the moment where the underlying logic finally clicks, and you lose energy fast once a thing becomes routine execution. Deadlines that interrupt your thinking feel less like structure and more like sabotage.",
+      "You are wasted in environments built around appearances, and you tend to know it almost immediately. What you need is intellectual respect, room to follow a thread without justifying every step, and colleagues who would rather be correct than comfortable."
+    ]
+  },
+  ENTJ:{
+    rel:[
+      "You approach relationships the way you approach everything, with intent and momentum. You want a partner you can build something with, someone with their own direction rather than someone who simply follows yours. You show love through provision and forward motion, by solving the problem, clearing the obstacle, making the future more secure.",
+      "The risk is that you run a relationship like a project, optimising and directing when what is wanted is simply presence. Not everything is a problem to be solved, and the people closest to you sometimes need you to stop improving the situation and just be in it with them."
+    ],
+    work:[
+      "At work you are built to lead, and you tend to end up leading whether or not anyone handed you the title. You see the goal, map the route, and move people toward it with a confidence that is genuinely useful when the direction is right. You make decisions others stall on and you carry the weight of them without complaint.",
+      "Your blind spot is the human cost of your pace. You can mistake bluntness for clarity and push a team past what it can sustain. The people who get the most out of you are the ones who give you scope and then make sure you remember that the people are not just resources on the plan."
+    ]
+  },
+  ENTP:{
+    rel:[
+      "You are drawn to people who can keep up, argue back, and surprise you, and you lose interest fast in anyone who agrees with everything you say. Your way of showing affection often looks like provocation, the teasing, the devil's advocate, the relentless what-if. To you that is engagement. To a partner who reads it wrong it can feel like being needled.",
+      "Commitment is not the problem people assume it is for you, but routine is. You stay where there is still something to discover, and the relationships that last are the ones that keep generating new questions rather than settling into a script. The work is learning that consistency is not the enemy of interest."
+    ],
+    work:[
+      "At work you are an engine of ideas, the person who reframes the problem and finds the angle nobody else considered. You thrive in the early, open phase where everything is still possible and you can chase a thread wherever it leads. You are at your worst in the long grind of execution and admin, where the energy that makes you brilliant turns into restlessness.",
+      "You need an environment that rewards initiative and forgives the occasional dead end, ideally with someone alongside you who finishes what you start. Tell you something cannot be done and you will spend a week proving otherwise, which is either your greatest asset or a real liability depending on who is pointing you."
+    ]
+  }
+});
+
 function render(){
   const p=new URLSearchParams(window.location.search);
   // Support clean URLs like /types/intj as well as legacy ?t=INTJ
@@ -516,6 +561,18 @@ function render(){
       <a href="/vs" style="display:inline-block;margin-top:16px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;">All type comparisons &#8594;</a>
     </div>`:'';
 
+  const dd2=(typeof typeDepth!=='undefined'&&typeDepth[t])?typeDepth[t]:{};
+  const relSection=(dd2.rel&&dd2.rel.length)?`
+    <div class="section r" data-d="5b">
+      <div class="section-label">${t} in Relationships</div>
+      ${dd2.rel.map(p=>`<p class="body-text">${p}</p>`).join('')}
+      <a href="/compatibility" style="display:inline-block;margin-top:8px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;">${t} compatibility matches &#8594;</a>
+    </div>`:'';
+  const workSection=(dd2.work&&dd2.work.length)?`
+    <div class="section r" data-d="5c">
+      <div class="section-label">${t} at Work</div>
+      ${dd2.work.map(p=>`<p class="body-text">${p}</p>`).join('')}
+    </div>`:'';
 
   document.getElementById('content').innerHTML=`
     <div class="r" data-d="1"><div class="type-code">${code}</div><div class="type-name">${d.name}</div><div class="type-tagline">${d.tagline}</div><div class="letter-pills">${pills}</div></div>
@@ -530,6 +587,7 @@ function render(){
       <div class="box"><div class="box-title">${t} Strengths</div><ul>${d.strengths.map(s=>`<li>${s}</li>`).join('')}</ul></div>
       <div class="box"><div class="box-title">${t} Blind Spots</div><ul>${d.blindspots.map(s=>`<li>${s}</li>`).join('')}</ul></div>
     </div>
+    ${relSection}${workSection}
     <div class="section r" data-d="6"><div class="section-label">Famous ${t} People</div><div class="famous-grid">${d.famous.map(f=>{const slug=f.name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');return`<a href="/character/${slug}" class="famous-card" data-wiki="${f.wiki||f.name}"><div class="famous-avatar-placeholder">${f.name.charAt(0)}</div><div class="famous-info"><div class="famous-name">${f.name}</div><div class="famous-ctx">${f.ctx}</div></div></a>`;}).join('')}</div></div>
     <div class="section r" data-d="7"><div class="section-label">Types Similar to ${t}</div><div class="similar-row">${simCards}</div></div>
     ${vsSection}
