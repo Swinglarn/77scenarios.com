@@ -1681,6 +1681,11 @@ const FN_INFO = {
   Fi:['Introverted Feeling','you navigate by a private compass of values and what feels true to you']
 };
 const TYPE_RARITY = { ISTJ:11.6, ISFJ:13.8, INFJ:1.5, INTJ:2.1, ISTP:5.4, ISFP:8.8, INFP:4.4, INTP:3.3, ESTP:4.3, ESFP:8.5, ENFP:8.1, ENTP:3.2, ESTJ:8.7, ESFJ:12.0, ENFJ:2.5, ENTJ:1.8 };
+// Within-gender prevalence (% of each gender that is this type). Source: CAPT / MBTI Manual US data.
+const GENDER_RARITY = {
+  male:   { ISTJ:16.4, ISFJ:8.1, INFJ:1.3, INTJ:3.3, ISTP:8.5, ISFP:7.6, INFP:4.1, INTP:4.8, ESTP:5.6, ESFP:6.9, ENFP:6.4, ENTP:4.0, ESTJ:11.2, ESFJ:7.5, ENFJ:1.6, ENTJ:2.7 },
+  female: { ISTJ:6.9, ISFJ:19.4, INFJ:1.6, INTJ:0.8, ISTP:2.4, ISFP:9.9, INFP:4.6, INTP:1.7, ESTP:3.0, ESFP:10.1, ENFP:9.7, ENTP:2.4, ESTJ:6.3, ESFJ:16.9, ENFJ:3.3, ENTJ:0.9 }
+};
 const POLE_LABEL = { E:'Extravert', I:'Introvert', S:'Sensing', N:'Intuitive', T:'Thinking', F:'Feeling', J:'Judging', P:'Perceiving' };
 const MODE_LABEL = { myth:'the mythic lens', normal:'everyday scenarios', both:'a mix of myth and the everyday' };
 
@@ -1706,10 +1711,13 @@ function computeResultModel(type) {
     return { rank:ranks[i], fn, name:info[0], desc: info[1] ? info[1].charAt(0).toUpperCase()+info[1].slice(1)+'.' : '', count };
   });
   const mode = (typeof testMode !== 'undefined') ? testMode : 'both';
+  const gender = (typeof demoSelections !== 'undefined' && demoSelections.gender) ? demoSelections.gender : null;
+  const rarityGender = (gender && GENDER_RARITY[gender] && GENDER_RARITY[gender][type] != null) ? GENDER_RARITY[gender][type] : null;
   return {
     v: 1, type, name: td.name, tagline: td.tagline, description: td.description,
     mode, modeLabel: MODE_LABEL[mode] || 'these scenarios',
     rarity: (TYPE_RARITY[type] != null) ? TYPE_RARITY[type] : null,
+    gender, rarityGender,
     spectrum, neighbours, stack, moments: computeMoments(type),
     createdAt: new Date().toISOString()
   };
@@ -1759,7 +1767,14 @@ function renderInsights(type, bs) {
 
 function paintRarity(model) {
   const el = document.getElementById('rarity-line');
-  if (!el || model.rarity == null) return;
+  if (!el) return;
+  if (model.gender && model.rarityGender != null) {
+    const who = model.gender === 'female' ? 'women' : 'men';
+    const rare = model.rarityGender <= 2;
+    el.innerHTML = `<div class="rarity-pill">${rare ? 'One of the rarest &middot; ' : ''}Only <b>${model.rarityGender}%</b> of ${who} share your type</div>`;
+    return;
+  }
+  if (model.rarity == null) return;
   const rare = model.rarity <= 4;
   el.innerHTML = `<div class="rarity-pill">${rare ? 'One of the rarest types &middot; ' : ''}Around <b>${model.rarity}%</b> of people share your type</div>`;
 }

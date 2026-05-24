@@ -374,6 +374,12 @@ const rarity={
   ESTJ:'Around 8–12% of the population. More common in men than women.',
 };
 
+// Within-gender prevalence (% of each gender that is this type). Source: CAPT / MBTI Manual US data.
+const GENDER_RARITY = {
+  male:   { ISTJ:16.4, ISFJ:8.1, INFJ:1.3, INTJ:3.3, ISTP:8.5, ISFP:7.6, INFP:4.1, INTP:4.8, ESTP:5.6, ESFP:6.9, ENFP:6.4, ENTP:4.0, ESTJ:11.2, ESFJ:7.5, ENFJ:1.6, ENTJ:2.7 },
+  female: { ISTJ:6.9, ISFJ:19.4, INFJ:1.6, INTJ:0.8, ISTP:2.4, ISFP:9.9, INFP:4.6, INTP:1.7, ESTP:3.0, ESFP:10.1, ENFP:9.7, ENTP:2.4, ESTJ:6.3, ESFJ:16.9, ENFJ:3.3, ENTJ:0.9 }
+};
+
 // Relationships + Work depth content. Rolled out in batches; render guards on presence.
 const typeDepth = {};
 Object.assign(typeDepth, {
@@ -697,6 +703,17 @@ function render(){
       ${dd2.work.map(p=>`<p class="body-text">${p}</p>`).join('')}
     </div>`:'';
 
+  const gMale=GENDER_RARITY.male[t], gFemale=GENDER_RARITY.female[t];
+  const rarityCard=(gMale!=null&&gFemale!=null)?`
+    <div class="section r" data-d="3b">
+      <div class="section-label">How Common Is ${t}?</div>
+      <div class="two-col">
+        <div class="box"><div class="box-title">Among Men</div><p class="body-text" style="margin:0;font-size:14px;">About <strong style="color:var(--gold)">${gMale}%</strong> of men are ${t}.</p></div>
+        <div class="box"><div class="box-title">Among Women</div><p class="body-text" style="margin:0;font-size:14px;">About <strong style="color:var(--gold)">${gFemale}%</strong> of women are ${t}.</p></div>
+      </div>
+    </div>`:'';
+  const genderRarityText=(gMale!=null&&gFemale!=null)?` Broken down by gender, about ${gMale}% of men and ${gFemale}% of women are ${t}.`:'';
+
   document.getElementById('content').innerHTML=`
     <div class="r" data-d="1"><div class="type-code">${code}</div><div class="type-name">${d.name}</div><div class="type-tagline">${d.tagline}</div><div class="letter-pills">${pills}</div></div>
     ${spectrumHTML}
@@ -705,6 +722,7 @@ function render(){
       <div class="fd-box"><div class="fd-label">Core desire</div><div class="fd-text">${d.desire}</div></div>
       <div class="fd-box"><div class="fd-label">Core fear</div><div class="fd-text">${d.fear}</div></div>
     </div>
+    ${rarityCard}
     <div class="section r" data-d="4"><div class="section-label">${t} Personality Traits</div><div class="traits-row">${d.traits.map(t=>`<span class="trait">${t}</span>`).join('')}</div></div>
     <div class="two-col section r" data-d="5">
       <div class="box"><div class="box-title">${t} Strengths</div><ul>${d.strengths.map(s=>`<li>${s}</li>`).join('')}</ul></div>
@@ -731,7 +749,7 @@ function render(){
       <div class="faq-list">
         <div class="faq-item">
           <div class="faq-q">How rare is the ${t} personality type?</div>
-          <div class="faq-a">${rarity[t]}</div>
+          <div class="faq-a">${rarity[t]}${genderRarityText}</div>
         </div>
         <div class="faq-item">
           <div class="faq-q">What makes someone the ${t} Myers-Briggs type?</div>
