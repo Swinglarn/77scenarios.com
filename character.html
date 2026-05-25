@@ -80,7 +80,7 @@
   .verdict p{font-size:15px;color:var(--cream);line-height:1.8;}
   /* static light-mode overrides — fires before nav.js injection */
   body.light-mode .verdict{background:#1e2d4a!important;border-color:#2d4168!important;border-left-color:#c9a84c!important}
-  body.light-mode .verdict-label{color:#c9a84c!important}
+  body.light-mode .verdict .verdict-label{color:#c9a84c!important}
   body.light-mode .verdict p{color:#ffffff!important}
   body.light-mode .section p{color:#1e2d4a!important}
   body.light-mode .section h2,body.light-mode .section h3{color:#1e2d4a!important}
@@ -12850,7 +12850,7 @@ document.addEventListener('DOMContentLoaded',function(){
     /* card hover */
     'body.light-mode .type-card:hover,body.light-mode .lcard:hover,body.light-mode .db-card:hover,body.light-mode .fncard:hover,body.light-mode .vs-pair-card:hover,body.light-mode .contact-card:hover,body.light-mode .thread-item:hover,body.light-mode .similar-card:hover,body.light-mode .type-pair-card:hover,body.light-mode .famous-card:hover,body.light-mode .related-card:hover,body.light-mode .actor-chip:hover,body.light-mode .universe-chip:hover{background:#2d4168!important;border-color:#c9a84c!important;box-shadow:0 8px 28px rgba(30,45,74,0.3)!important}',
     /* verdict: explicit overrides — placed after wildcard so they win the cascade */
-    'body.light-mode .verdict-label{color:#c9a84c!important}',
+    'body.light-mode .verdict .verdict-label{color:#c9a84c!important}',
     'body.light-mode .verdict p{color:#ffffff!important}',
     'body.light-mode .verdict{border-left-color:#c9a84c!important}',
     /* section: transparent bg, navy text — hardcoded #c8c0b8 in base CSS needs override */
@@ -12897,7 +12897,7 @@ document.addEventListener('DOMContentLoaded',function(){
     'body.light-mode h1,body.light-mode h2,body.light-mode h3,body.light-mode h4{color:#1e2d4a!important}',
     'body.light-mode p,body.light-mode li,body.light-mode .prose,body.light-mode .body-text,body.light-mode .page-sub{color:#1e2d4a!important}',
     /* verdict re-override LAST so it wins any body.light-mode p cascade conflict */
-    'body.light-mode .verdict-label{color:#c9a84c!important}',
+    'body.light-mode .verdict .verdict-label{color:#c9a84c!important}',
     'body.light-mode .verdict p,body.light-mode .verdict li{color:#ffffff!important}',
   ].join('');
   document.head.appendChild(s);
