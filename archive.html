@@ -79,6 +79,42 @@
   .db-card-name{font-size:13px;color:#f0ebe3;font-weight:500;margin-bottom:3px;line-height:1.3;}
   .db-card-ctx{font-size:12px;color:#9ca4ac;line-height:1.4;}
   .db-card-cat{position:absolute;top:12px;right:12px;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);opacity:0.5;}
+  /* ── Per-type card colors (match /types palette) ── */
+  .db-card.t-intj{background:linear-gradient(140deg,rgba(45,20,175,0.65) 0%,rgba(25,10,100,0.35) 55%,#131820 100%);border-color:rgba(90,55,210,0.5);}
+  .db-card.t-intp{background:linear-gradient(140deg,rgba(85,55,210,0.6) 0%,rgba(50,30,145,0.3) 55%,#131820 100%);border-color:rgba(125,95,240,0.5);}
+  .db-card.t-entj{background:linear-gradient(140deg,rgba(135,25,165,0.65) 0%,rgba(85,12,105,0.35) 55%,#131820 100%);border-color:rgba(175,55,210,0.5);}
+  .db-card.t-entp{background:linear-gradient(140deg,rgba(165,35,130,0.6) 0%,rgba(105,18,82,0.3) 55%,#131820 100%);border-color:rgba(205,60,165,0.5);}
+  .db-card.t-infj{background:linear-gradient(140deg,rgba(18,95,42,0.65) 0%,rgba(10,55,24,0.35) 55%,#131820 100%);border-color:rgba(28,125,58,0.5);}
+  .db-card.t-infp{background:linear-gradient(140deg,rgba(55,125,55,0.6) 0%,rgba(30,72,30,0.3) 55%,#131820 100%);border-color:rgba(80,158,80,0.5);}
+  .db-card.t-enfj{background:linear-gradient(140deg,rgba(15,148,62,0.65) 0%,rgba(8,88,35,0.35) 55%,#131820 100%);border-color:rgba(22,185,80,0.5);}
+  .db-card.t-enfp{background:linear-gradient(140deg,rgba(55,178,70,0.6) 0%,rgba(28,110,38,0.3) 55%,#131820 100%);border-color:rgba(75,215,92,0.5);}
+  .db-card.t-istj{background:linear-gradient(140deg,rgba(22,65,168,0.65) 0%,rgba(12,36,105,0.35) 55%,#131820 100%);border-color:rgba(35,95,215,0.5);}
+  .db-card.t-isfj{background:linear-gradient(140deg,rgba(48,98,195,0.6) 0%,rgba(26,56,128,0.3) 55%,#131820 100%);border-color:rgba(72,135,235,0.5);}
+  .db-card.t-estj{background:linear-gradient(140deg,rgba(18,82,185,0.65) 0%,rgba(10,46,118,0.35) 55%,#131820 100%);border-color:rgba(28,118,230,0.5);}
+  .db-card.t-esfj{background:linear-gradient(140deg,rgba(55,118,212,0.6) 0%,rgba(28,66,145,0.3) 55%,#131820 100%);border-color:rgba(80,152,248,0.5);}
+  .db-card.t-istp{background:linear-gradient(140deg,rgba(148,100,18,0.65) 0%,rgba(90,60,8,0.35) 55%,#131820 100%);border-color:rgba(190,132,28,0.5);}
+  .db-card.t-isfp{background:linear-gradient(140deg,rgba(198,138,22,0.6) 0%,rgba(128,88,12,0.3) 55%,#131820 100%);border-color:rgba(238,172,35,0.5);}
+  .db-card.t-estp{background:linear-gradient(140deg,rgba(185,55,18,0.65) 0%,rgba(118,32,8,0.35) 55%,#131820 100%);border-color:rgba(225,82,30,0.5);}
+  .db-card.t-esfp{background:linear-gradient(140deg,rgba(218,95,32,0.6) 0%,rgba(145,58,16,0.3) 55%,#131820 100%);border-color:rgba(252,128,52,0.5);}
+  /* keep the gold hover affordance on top of type colors */
+  .db-grid .db-card:hover{border-color:var(--gold-dim);}
+  /* light-mode per-type tints over navy base (match /types) */
+  body.light-mode .db-card.t-intj{background:linear-gradient(140deg,rgba(45,20,175,0.7) 0%,rgba(30,45,74,0.98) 100%)!important;border-color:rgba(90,55,210,0.6)!important;}
+  body.light-mode .db-card.t-intp{background:linear-gradient(140deg,rgba(85,55,210,0.65) 0%,rgba(30,45,74,0.98) 100%)!important;border-color:rgba(125,95,240,0.6)!important;}
+  body.light-mode .db-card.t-entj{background:linear-gradient(140deg,rgba(135,25,165,0.7) 0%,rgba(30,45,74,0.98) 100%)!important;border-color:rgba(175,55,210,0.6)!important;}
+  body.light-mode .db-card.t-entp{background:linear-gradient(140deg,rgba(165,35,130,0.65) 0%,rgba(30,45,74,0.98) 100%)!important;border-color:rgba(205,60,165,0.6)!important;}
+  body.light-mode .db-card.t-infj{background:linear-gradient(140deg,rgba(18,95,42,0.7) 0%,rgba(30,45,74,0.98) 100%)!important;border-color:rgba(28,125,58,0.6)!important;}
+  body.light-mode .db-card.t-infp{background:linear-gradient(140deg,rgba(55,125,55,0.65) 0%,rgba(30,45,74,0.98) 100%)!important;border-color:rgba(80,158,80,0.6)!important;}
+  body.light-mode .db-card.t-enfj{background:linear-gradient(140deg,rgba(15,148,62,0.7) 0%,rgba(30,45,74,0.98) 100%)!important;border-color:rgba(22,185,80,0.6)!important;}
+  body.light-mode .db-card.t-enfp{background:linear-gradient(140deg,rgba(55,178,70,0.65) 0%,rgba(30,45,74,0.98) 100%)!important;border-color:rgba(75,215,92,0.6)!important;}
+  body.light-mode .db-card.t-istj{background:linear-gradient(140deg,rgba(22,65,168,0.7) 0%,rgba(30,45,74,0.98) 100%)!important;border-color:rgba(35,95,215,0.6)!important;}
+  body.light-mode .db-card.t-isfj{background:linear-gradient(140deg,rgba(48,98,195,0.65) 0%,rgba(30,45,74,0.98) 100%)!important;border-color:rgba(72,135,235,0.6)!important;}
+  body.light-mode .db-card.t-estj{background:linear-gradient(140deg,rgba(18,82,185,0.7) 0%,rgba(30,45,74,0.98) 100%)!important;border-color:rgba(28,118,230,0.6)!important;}
+  body.light-mode .db-card.t-esfj{background:linear-gradient(140deg,rgba(55,118,212,0.65) 0%,rgba(30,45,74,0.98) 100%)!important;border-color:rgba(80,152,248,0.6)!important;}
+  body.light-mode .db-card.t-istp{background:linear-gradient(140deg,rgba(148,100,18,0.7) 0%,rgba(30,45,74,0.98) 100%)!important;border-color:rgba(190,132,28,0.6)!important;}
+  body.light-mode .db-card.t-isfp{background:linear-gradient(140deg,rgba(198,138,22,0.65) 0%,rgba(30,45,74,0.98) 100%)!important;border-color:rgba(238,172,35,0.6)!important;}
+  body.light-mode .db-card.t-estp{background:linear-gradient(140deg,rgba(185,55,18,0.7) 0%,rgba(30,45,74,0.98) 100%)!important;border-color:rgba(225,82,30,0.6)!important;}
+  body.light-mode .db-card.t-esfp{background:linear-gradient(140deg,rgba(218,95,32,0.65) 0%,rgba(30,45,74,0.98) 100%)!important;border-color:rgba(252,128,52,0.6)!important;}
   .empty-state{grid-column:1/-1;text-align:center;padding:64px 0;color:var(--muted);font-size:14px;line-height:1.7;}
   .empty-state em{color:var(--cream);}
   .modal-bg{position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:500;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity 0.2s;}
@@ -3250,7 +3286,7 @@ function render(){
   }
   results.forEach(p=>{
     const card=document.createElement('a');
-    card.className='db-card';
+    card.className='db-card t-'+(p.type||'').toLowerCase();
     card.href='/character/'+slug(p.name);
     card.innerHTML=`<div class="db-card-type">${p.type}</div><div class="db-card-name">${p.name}</div><div class="db-card-ctx">${p.ctx}</div><div class="db-card-cat">${p.cat}</div>`;
     card.addEventListener('click', e => { e.preventDefault(); const ov=document.getElementById('t-overlay'); if(ov){ov.style.transition='opacity 0.3s ease';ov.style.opacity='1';} setTimeout(()=>window.location.href=card.href,280); });
