@@ -3,6 +3,8 @@
   // ── CANONICAL TAG ────────────────────────────────────────────────────────────
   // Injected immediately so it's in <head> before any other scripts run
   (function() {
+    // Skip if a static canonical already exists in the HTML
+    if (document.querySelector('link[rel="canonical"]')) return;
     var BASE = 'https://77scenarios.com';
     var path = window.location.pathname;
     var search = window.location.search;
@@ -129,6 +131,14 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-C0D86PRJJN');
+
+  // ── SUPABASE PRECONNECT ────────────────────────────────────────────────────
+  if (!document.querySelector('link[href*="supabase.co"][rel="preconnect"]')) {
+    var _pc = document.createElement('link');
+    _pc.rel = 'preconnect';
+    _pc.href = 'https://rttomfnfyjjssdqfzkaj.supabase.co';
+    document.head.appendChild(_pc);
+  }
 
   // ── CONSTANTS ────────────────────────────────────────────────────────────────
   var SUPA_URL = 'https://rttomfnfyjjssdqfzkaj.supabase.co';
@@ -487,7 +497,7 @@
       { href: '/pt/',                    label: 'Fazer o Teste'   },
       { href: '/pt/types',               label: '16 Tipos'        },
       { href: '/pt/letters',             label: '8 Letras'        },
-      { href: '/pt/cognitive-functions', label: 'Funciones'       },
+      { href: '/pt/cognitive-functions', label: 'Funções'         },
       { href: '/pt/compatibility',       label: 'Compatibilidade' },
       { href: '/pt/archive',             label: 'Arquivo'         },
       { href: '/pt/forum',               label: 'Fórum'           },

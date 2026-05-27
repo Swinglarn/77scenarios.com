@@ -12,9 +12,9 @@
   <url><loc>https://77scenarios.com/archive</loc><lastmod>2026-05-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://77scenarios.com/about</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://77scenarios.com/forum</loc><lastmod>2026-05-19</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-  <url><loc>https://77scenarios.com/store</loc><lastmod>2025-05-01</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://77scenarios.com/store</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
 
-  <!-- 113 vs comparison pages (new) -->
+  <!-- 120 vs comparison pages -->
   <url><loc>https://77scenarios.com/vs/enfj-enfp</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://77scenarios.com/vs/enfj-entj</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://77scenarios.com/vs/enfj-entp</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -128,6 +128,47 @@
   
   <url><loc>https://77scenarios.com/vs/istp-isfj</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://77scenarios.com/vs/istp-istj</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Previously missing VS pairs -->
+  <url><loc>https://77scenarios.com/vs/enfp-entj</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/enfp-estp</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/enfp-infj</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/entj-estj</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/entj-estp</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/entj-isfp</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/entj-istj</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/entp-esfp</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/entp-infp</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/esfj-esfp</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/esfj-estp</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/esfj-infj</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/esfj-intp</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/esfj-isfp</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/esfj-istj</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/esfp-infp</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/esfp-intj</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/esfp-isfp</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/esfp-istj</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/esfp-istp</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/estj-estp</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/estj-infp</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/estj-intp</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/estj-isfj</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/estj-isfp</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/estj-istp</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/estp-infp</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/estp-intp</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/estp-istj</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/infj-isfj</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/infj-isfp</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/infp-intj</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/infp-isfj</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/intp-isfj</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/intp-isfp</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/isfj-istj</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/isfj-istp</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/isfp-istj</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://77scenarios.com/vs/istj-istp</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- 702 Character pages -->
   <url><loc>https://77scenarios.com/character/tony-stark</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
