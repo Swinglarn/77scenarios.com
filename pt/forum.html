@@ -1,118 +1,138 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fórum - 77 Scenarios</title>
-<meta name="description" content="Discuss personality types, cognitive functions, relationships and more with the 77 Scenarios community.">
-<meta property="og:title" content="Forum - 77 Scenarios">
-<meta property="og:description" content="Discuss personality types, cognitive functions, and more.">
-<meta property="og:url" content="https://77scenarios.com/forum">
+<meta name="description" content="Discuta tipos de personalidade, funções cognitivas, relacionamentos e muito mais com a comunidade do 77 Scenarios.">
+<meta property="og:title" content="Fórum - 77 Scenarios">
+<meta property="og:description" content="Discuta tipos de personalidade, funções cognitivas, relacionamentos e muito mais.">
+<meta property="og:image" content="https://77scenarios.com/og-image.png">
+<meta name="twitter:image" content="https://77scenarios.com/og-image.png">
+<meta property="og:url" content="https://77scenarios.com/pt/forum">
 <meta property="og:site_name" content="77 Scenarios">
 <link rel="canonical" href="https://77scenarios.com/pt/forum">
+<link rel="alternate" hreflang="en" href="https://77scenarios.com/forum">
+<link rel="alternate" hreflang="es" href="https://77scenarios.com/es/forum">
+<link rel="alternate" hreflang="pt-BR" href="https://77scenarios.com/pt/forum">
+<link rel="alternate" hreflang="x-default" href="https://77scenarios.com/forum">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"DiscussionForum","name":"Fórum 77 Scenarios","description":"Discuta tipos de personalidade MBTI, funções cognitivas, relacionamentos e debates sobre mistypes com a comunidade do 77 Scenarios.","url":"https://77scenarios.com/pt/forum","isPartOf":{"@type":"WebSite","name":"77 Scenarios","url":"https://77scenarios.com"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://77scenarios.com"},{"@type":"ListItem","position":2,"name":"Fórum","item":"https://77scenarios.com/pt/forum"}]}]}</script>
+<meta name="robots" content="index, follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  :root{--bg:#0c0e10;--surface:#13161a;--surface2:#1a1e24;--gold:#c9a84c;--gold-dim:#8a6d2e;--cream:#ede8df;--muted:#b5ada6;--border:#252a30;--radius:14px;}
-  html,body{background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
+  :root{--bg:#0c0e10;--surface:#13161a;--surface2:#1a1e24;--gold:#c9a84c;--gold-dim:#8a6d2e;--cream:#ede8df;--muted:#ccc6bf;--border:#252a30;--radius:14px;}
+  html,body{background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;font-weight:400;overflow-x:hidden;}
   body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:0.6;}
   #t-overlay{position:fixed;inset:0;z-index:9999;pointer-events:none;background:#0c0e10;opacity:1;}
   .glow{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0;}
   .glow-1{width:600px;height:600px;top:-200px;left:-150px;background:radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%);}
   .glow-2{width:400px;height:400px;bottom:-100px;right:-100px;background:radial-gradient(circle,rgba(120,180,160,0.05) 0%,transparent 70%);}
 
-  nav,.site-nav{position:sticky;top:0;z-index:200;background:rgba(12,14,16,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 32px;display:flex;justify-content:space-between;align-items:center;height:56px;}
-  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--cream);text-decoration:none;}
-  .nav-links{display:flex;gap:32px;align-items:center;}
-  .nav-links a{font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;white-space:nowrap;}
-  .nav-links a:hover,.nav-links a.active{color:var(--cream);}
-  .nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
-  .nav-burger span{display:block;width:22px;height:1.5px;background:#b5ada6;transition:all 0.3s ease;transform-origin:center;}
-  .nav-burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);background:#c9a84c;}
-  .nav-burger.open span:nth-child(2){opacity:0;}
-  .nav-burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);background:#c9a84c;}
-  .nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:300;opacity:0;transition:opacity 0.3s ease;pointer-events:none;}
-  .nav-overlay.open{opacity:1;pointer-events:auto;}
-  .nav-drawer{position:fixed;top:0;right:-100%;width:min(320px,85vw);height:100%;background:#13161a;border-left:1px solid #252a30;z-index:400;transition:right 0.35s cubic-bezier(0.22,1,0.36,1),visibility 0s linear 0.35s;display:flex;flex-direction:column;pointer-events:none;visibility:hidden;}
-  .nav-drawer.open{right:0;pointer-events:auto;visibility:visible;transition:right 0.35s cubic-bezier(0.22,1,0.36,1),visibility 0s linear 0s;}
-  .nav-drawer-header{display:flex;justify-content:space-between;align-items:center;padding:0 24px;height:56px;border-bottom:1px solid #252a30;flex-shrink:0;}
-  .nav-close{background:none;border:none;color:#b5ada6;font-size:18px;cursor:pointer;padding:4px;transition:color 0.2s;}
-  .nav-close:hover{color:#ede8df;}
-  .nav-drawer-links{display:flex;flex-direction:column;padding:16px 0;}
-  .nav-drawer-links a{font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:#b5ada6;text-decoration:none;padding:18px 24px;border-bottom:1px solid #1e2227;transition:all 0.15s ease;}
-  .nav-drawer-links a:hover{color:#c9a84c;padding-left:32px;}
-  @media(max-width:480px){nav,.site-nav{padding:0 16px;height:52px;}.nav-links{display:none;}.nav-burger{display:flex;}.nav-overlay{display:block;pointer-events:none;}}
 
   .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
   main{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:56px 32px 96px;}
   @media(max-width:600px){main{padding:40px 16px 80px;}}
+  /* ── Mobile: move vote col to bottom row ── */
+  @media(max-width:520px){.thread-wrapper{display:flex;flex-direction:column;}
+  .thread-wrapper .vote-col{
+  position:static;width:100%;flex-direction:row;
+  border-right:none;border-top:1px solid var(--border);
+  padding:8px 16px;justify-content:flex-start;gap:16px;
+  order:2;
+  }
+  .thread-wrapper .thread-item{
+  padding:16px;order:1;
+  border-bottom-left-radius:0;border-bottom-right-radius:0;
+  }
+  .thread-wrapper .vote-btn{min-height:36px;padding:6px 10px;}
+  }
 
   .r{opacity:0;transform:translateY(24px);transition:opacity 0.65s cubic-bezier(0.22,1,0.36,1),transform 0.65s cubic-bezier(0.22,1,0.36,1);}
   .r.in{opacity:1;transform:none;}
 
   /* Page header */
   .forum-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;gap:16px;flex-wrap:wrap;}
-  .forum-eyebrow{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:10px;}
+  .forum-eyebrow{font-size:0.84rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:10px;}
   .forum-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3rem);font-weight:600;color:var(--cream);line-height:1.05;}
   .forum-title em{color:var(--gold);font-style:italic;}
 
-
   /* Vote buttons */
   .vote-col{position:absolute;left:0;top:0;bottom:0;width:52px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-right:1px solid var(--border);padding:12px 0;}
-  .vote-btn{background:none;border:none;color:var(--muted);cursor:pointer;padding:4px;font-size:14px;line-height:1;transition:color 0.15s;display:flex;align-items:center;justify-content:center;border-radius:4px;}
+  .vote-btn{background:none;border:none;color:var(--muted);cursor:pointer;padding:10px 8px;font-size:14px;line-height:1;transition:color 0.15s;display:flex;align-items:center;justify-content:center;border-radius:4px;min-height:44px;}
   .vote-btn:hover{color:var(--gold);}
   .vote-btn.up.active{color:var(--gold);}
   .vote-btn.down.active{color:#e07070;}
-  .vote-score{font-size:0.82rem;font-weight:500;color:var(--cream);min-width:20px;text-align:center;}
+  .vote-score{font-size:0.94rem;font-weight:500;color:var(--cream);min-width:20px;text-align:center;}
 
   /* New thread button */
-  .btn-primary{background:var(--gold);color:#0c0e10;border:none;padding:10px 22px;border-radius:8px;font-size:0.85rem;font-weight:500;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:opacity 0.15s;font-family:'DM Sans',sans-serif;white-space:nowrap;}
+  .btn-primary{background:var(--gold);color:#0c0e10;border:none;padding:10px 22px;border-radius:8px;font-size:0.96rem;font-weight:500;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:opacity 0.15s;font-family:'DM Sans',sans-serif;white-space:nowrap;}
   .btn-primary:hover{opacity:0.88;}
-  .btn-secondary{background:transparent;color:var(--muted);border:1px solid var(--border);padding:10px 22px;border-radius:8px;font-size:0.85rem;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:border-color 0.15s,color 0.15s;font-family:'DM Sans',sans-serif;}
+  .btn-secondary{background:transparent;color:var(--muted);border:1px solid var(--border);padding:10px 22px;border-radius:8px;font-size:0.96rem;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:border-color 0.15s,color 0.15s;font-family:'DM Sans',sans-serif;}
   .btn-secondary:hover{border-color:var(--gold-dim);color:var(--cream);}
 
   /* Categories */
   .cat-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px;}
-  .cat-pill{background:transparent;border:1px solid var(--border);border-radius:20px;padding:6px 14px;font-size:0.78rem;letter-spacing:0.06em;color:var(--muted);cursor:pointer;transition:all 0.15s;font-family:'DM Sans',sans-serif;}
+  .cat-pill{background:transparent;border:1px solid var(--border);border-radius:20px;padding:6px 14px;font-size:1rem;letter-spacing:0.06em;color:var(--muted);cursor:pointer;transition:all 0.15s;font-family:'DM Sans',sans-serif;}
   .cat-pill:hover{border-color:var(--gold-dim);color:var(--cream);}
   .cat-pill.active{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,0.07);}
 
   /* Thread list */
   .thread-list{display:flex;flex-direction:column;gap:2px;}
-  .thread-item{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px 20px 68px;cursor:pointer;transition:border-color 0.15s,background 0.15s;text-decoration:none;display:block;color:inherit;position:relative;}
-  .thread-item:hover{border-color:var(--gold-dim);background:#161a1e;}
+  .thread-item{background:#131820;border:1px solid #2a3848;border-radius:10px;padding:20px 24px 20px 68px;cursor:pointer;transition:border-color 0.2s,transform 0.25s,box-shadow 0.25s;text-decoration:none;display:block;color:inherit;position:relative;overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,0.05),0 2px 14px rgba(0,0,0,0.45);}
+  .thread-item::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,0.07),transparent);opacity:0;transition:opacity 0.25s;pointer-events:none;}
+  .thread-item:hover{border-color:var(--gold-dim);transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,0.08),0 20px 50px rgba(0,0,0,0.55);}
+  .thread-item:hover::after{opacity:1;}
   .thread-item-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:8px;}
-  .thread-cat-badge{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-dim);flex-shrink:0;margin-top:2px;}
+  .thread-cat-badge{font-size:0.92rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-dim);flex-shrink:0;margin-top:2px;}
   .thread-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--cream);line-height:1.3;flex:1;}
-  .thread-meta{display:flex;align-items:center;gap:16px;font-size:0.78rem;color:var(--muted);}
+  .thread-meta{display:flex;align-items:center;gap:16px;font-size:1rem;color:var(--muted);}
   .thread-meta-author{color:var(--gold-dim);}
   .thread-replies{display:flex;align-items:center;gap:4px;}
-  .thread-pinned{color:var(--gold);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;}
+  .thread-pinned{color:var(--gold);font-size:0.84rem;letter-spacing:0.1em;text-transform:uppercase;}
 
   /* Empty state */
   .empty-state{text-align:center;padding:64px 24px;color:var(--muted);}
   .empty-state-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--cream);margin-bottom:10px;}
 
   /* Loading */
-  .loading-row{height:72px;background:var(--surface);border:1px solid var(--border);border-radius:10px;animation:pulse 1.4s ease infinite;}
-  @keyframes pulse{0%,100%{opacity:0.5;}50%{opacity:1;}}
+  .loading-row{background:#131820;border:1px solid #2a3848;border-radius:10px;padding:20px 24px 20px 68px;position:relative;overflow:hidden;}
+  .loading-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:52px;border-right:1px solid var(--border);}
+  .loading-row::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,0.04) 50%,transparent 100%);
+  background-size:200% 100%;
+  animation:shimmer 1.6s ease infinite;
+  }
+  .sk-line{height:10px;border-radius:5px;background:rgba(255,255,255,0.06);margin-bottom:10px;}
+  .sk-line.wide{width:68%;}
+  .sk-line.narrow{width:38%;}
+  .sk-line.short{width:22%;height:8px;margin-bottom:0;}
+  @keyframes shimmer{0%{background-position:200% 0;}100%{background-position:-200% 0;}}
+  body.light-mode .loading-row{background:#f4f5f7;border-color:#d0d7e3;}
+  body.light-mode .loading-row::before{border-right-color:#d0d7e3;}
+  body.light-mode .loading-row::after{background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,0.6) 50%,transparent 100%);background-size:200% 100;}
+  body.light-mode .sk-line{background:rgba(0,0,0,0.07);}
 
   /* Modal */
   .modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.72);z-index:500;align-items:center;justify-content:center;padding:24px;}
   .modal-bg.open{display:flex;}
-  .modal{background:#13161a;border:1px solid var(--border);border-radius:16px;width:100%;max-width:580px;padding:36px;position:relative;}
+  .modal{background:#131820;border:1px solid #2a3848;border-radius:16px;width:100%;max-width:580px;padding:36px;position:relative;}
   .modal-title{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--cream);margin-bottom:24px;}
   .modal-close{position:absolute;top:20px;right:20px;background:none;border:none;color:var(--muted);font-size:20px;cursor:pointer;line-height:1;}
   .modal-close:hover{color:var(--cream);}
   .form-field{display:flex;flex-direction:column;gap:8px;margin-bottom:20px;}
-  .form-label{font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);}
-  .form-input,.form-select,.form-textarea{background:#0c0e10;border:1px solid var(--border);border-radius:8px;padding:12px 14px;color:var(--cream);font-size:0.9rem;font-family:'DM Sans',sans-serif;width:100%;transition:border-color 0.15s;outline:none;}
+  .form-label{font-size:1rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);}
+  .form-input,.form-select,.form-textarea{background:rgba(8,12,18,0.8);border:1px solid #2a3848;border-radius:8px;padding:12px 14px;color:var(--cream);font-size:1rem;font-family:'DM Sans',sans-serif;width:100%;transition:border-color 0.15s;outline:none;}
   .form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--gold-dim);}
   .form-textarea{resize:vertical;min-height:140px;line-height:1.6;}
   .form-select option{background:#13161a;}
-  .form-error{font-size:0.8rem;color:#e07070;margin-top:-12px;margin-bottom:8px;display:none;}
+  .form-error{font-size:0.92rem;color:#e07070;margin-top:-12px;margin-bottom:8px;display:none;}
   .modal-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:8px;}
 
   /* Thread delete button */
@@ -120,55 +140,52 @@
   .thread-delete-btn:hover{color:#e07070;background:rgba(224,112,112,0.1);}
 
   /* Auth notice */
-  .auth-notice{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;text-align:center;color:var(--muted);font-size:0.88rem;margin-bottom:24px;}
+  .auth-notice{background:#131820;border:1px solid #2a3848;border-radius:10px;padding:20px 24px;text-align:center;color:var(--muted);font-size:1rem;margin-bottom:24px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.05),0 2px 14px rgba(0,0,0,0.45);}
   .auth-notice a{color:var(--gold);text-decoration:none;}
   .auth-notice a:hover{text-decoration:underline;}
 </style>
-
-<link rel="alternate" hreflang="en" href="https://77scenarios.com/forum">
-<link rel="alternate" hreflang="pt-BR" href="https://77scenarios.com/pt/forum">
 <script src="/nav.js" defer></script>
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+body.light-mode .thread-item{background:#ffffff;border-color:#c8d4e4;}
+body.light-mode .thread-item:hover{background:#f0f4fc;border-color:#c9a84c;box-shadow:0 2px 12px rgba(201,168,76,0.10);}
+body.light-mode .thread-title{color:#1e2d4a;}
+body.light-mode .thread-cat-badge{color:#8a6d2e;}
+body.light-mode .thread-meta{color:#4a6080;}
+body.light-mode .thread-meta-author{color:#8a6d2e;}
+body.light-mode .vote-col{border-right-color:#c8d4e4;}
+body.light-mode .vote-btn{color:#4a6080;}
+body.light-mode .vote-btn:hover{color:#a8893a;}
+body.light-mode .vote-btn.up.active{color:#a8893a;}
+body.light-mode .vote-score{color:#1e2d4a;}
+body.light-mode .cat-pill{border-color:#c0cad8;color:#4a6080;}
+body.light-mode .cat-pill:hover{border-color:#a8893a;color:#1e2d4a;}
+body.light-mode .cat-pill.active{border-color:#c9a84c;color:#8a6d2e;background:rgba(201,168,76,0.10);}
+body.light-mode .auth-notice{background:#ffffff;border-color:#c8d4e4;color:#4a6080;}
+body.light-mode .empty-state{color:#4a6080;}
+body.light-mode .empty-state-title{color:#1e2d4a;}
+body.light-mode .thread-delete-btn{color:#6a7a90;}
+body.light-mode .thread-delete-btn:hover{color:#c0392b;background:rgba(192,57,43,0.08);}
+body.light-mode .modal{background:#ffffff;border-color:#c0cad8;}
+body.light-mode .modal-title{color:#1e2d4a;}
+body.light-mode .modal-close{color:#4a6080;}
+body.light-mode .modal-close:hover{color:#1e2d4a;}
+body.light-mode .form-label{color:#4a6080;}
+body.light-mode .form-input,body.light-mode .form-select,body.light-mode .form-textarea{background:#ffffff;border-color:#d0d7e3;color:#1e2d4a;}
+body.light-mode .form-input::placeholder,body.light-mode .form-textarea::placeholder{color:#8a9ab0;}
+body.light-mode .form-input:focus,body.light-mode .form-select:focus,body.light-mode .form-textarea:focus{border-color:#c9a84c;box-shadow:0 0 0 3px rgba(201,168,76,0.10);}
+body.light-mode .form-select option{background:#ffffff;color:#1e2d4a;}
+body.light-mode .forum-title{color:#1e2d4a;}
+</style>
 </head>
 <body>
 <div id="t-overlay"></div>
 <div class="glow glow-1"></div>
 <div class="glow glow-2"></div>
 
-<nav class="site-nav">
-  <a href="/pt/" class="nav-logo">77scenarios.com</a>
-  <div class="nav-links" id="nav-links">
-    <a href="/pt/">Fazer o Teste</a>
-    <a href="/pt/types">16 Tipos</a>
-    <a href="/pt/letters">8 Letras</a>
-    <a href="/pt/cognitive-functions">Funções</a>
-    <a href="/pt/compatibility">Compatibilidade</a>
-    <a href="/pt/archive">Arquivo</a>
-    <a href="/pt/forum" class="active">Fórum</a>
-    <a href="/pt/about">Sobre</a>
-  </div>
-  <button class="nav-burger" onclick="toggleMenu()" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-<div class="nav-overlay" id="nav-overlay" onclick="toggleMenu()"></div>
-<div class="nav-drawer" id="nav-drawer">
-  <div class="nav-drawer-header">
-    <a href="/pt/" class="nav-logo">77scenarios.com</a>
-    <button class="nav-close" onclick="toggleMenu()">✕</button>
-  </div>
-  <div class="nav-drawer-links">
-    <a href="/pt/">Fazer o Teste</a>
-    <a href="/pt/types">16 Tipos</a>
-    <a href="/pt/letters">8 Letras</a>
-    <a href="/pt/cognitive-functions">Funções</a>
-    <a href="/pt/compatibility">Compatibilidade</a>
-    <a href="/pt/archive">Arquivo</a>
-    <a href="/pt/forum">Fórum</a>
-    <a href="/pt/about">Sobre</a>
-  </div>
-</div>
-
-<h1 class="sr-only">Fórum — 77 Scenarios</h1>
+<h1 class="sr-only">Fórum - 77 Scenarios</h1>
 
 <main>
   <div class="forum-header r">
@@ -180,7 +197,7 @@
   </div>
 
   <div id="auth-notice" class="auth-notice r" style="display:none;">
-    <a href="/pt/login">Entrar</a> or <a href="/pt/signup">criar uma conta</a> para iniciar um tópico ou responder.
+    <a href="/pt/login">Entrar</a> ou <a href="/pt/signup">criar uma conta</a> para iniciar um tópico ou responder.
   </div>
 
 
@@ -191,21 +208,20 @@
   </div>
 
   <div class="cat-bar r">
-    <button class="cat-pill active" data-cat="all" onclick="filterCat(this,'all')">Todos</button> onclick="filterCat(this,'all')">Todos</button>
+    <button class="cat-pill active" data-cat="all" onclick="filterCat(this,'all')">Todos</button>
     <button class="cat-pill" data-cat="general" onclick="filterCat(this,'general')">Geral</button>
     <button class="cat-pill" data-cat="type_discussion" onclick="filterCat(this,'type_discussion')">Discussão de Tipos</button>
     <button class="cat-pill" data-cat="relationships" onclick="filterCat(this,'relationships')">Relacionamentos</button>
     <button class="cat-pill" data-cat="cognitive_functions" onclick="filterCat(this,'cognitive_functions')">Funções Cognitivas</button>
     <button class="cat-pill" data-cat="ask_the_forum" onclick="filterCat(this,'ask_the_forum')">Perguntar ao Fórum</button>
-    <button class="cat-pill" data-cat="off_topic" onclick="filterCat(this,'off_topic')">Fora do Tema</button>
+    <button class="cat-pill" data-cat="off_topic" onclick="filterCat(this,'off_topic')">Fora de Tópico</button>
   </div>
 
   <div class="thread-list r" id="thread-list">
-    <div class="loading-row"></div>
-    <div class="loading-row"></div>
-    <div class="loading-row"></div>
-    <div class="loading-row"></div>
-    <div class="loading-row"></div>
+    <div class="loading-row"><div class="sk-line wide"></div><div class="sk-line narrow"></div><div class="sk-line short"></div></div>
+    <div class="loading-row"><div class="sk-line wide" style="width:55%"></div><div class="sk-line narrow" style="width:30%"></div><div class="sk-line short"></div></div>
+    <div class="loading-row"><div class="sk-line wide" style="width:72%"></div><div class="sk-line narrow" style="width:42%"></div><div class="sk-line short"></div></div>
+    <div class="loading-row"><div class="sk-line wide" style="width:48%"></div><div class="sk-line narrow" style="width:35%"></div><div class="sk-line short"></div></div>
   </div>
 
   <div style="text-align:center;margin-top:32px;display:none;" id="load-more-wrap">
@@ -217,30 +233,30 @@
 <div class="modal-bg" id="new-thread-modal">
   <div class="modal">
     <button class="modal-close" onclick="closeModal()">✕</button>
-    <div class="modal-title">Start a thread</div>
+    <div class="modal-title">Iniciar um tópico</div>
     <div class="form-field">
-      <label class="form-label">Category</label>
+      <label class="form-label">Categoria</label>
       <select class="form-select" id="thread-cat">
         <option value="general">Geral</option>
         <option value="type_discussion">Discussão de Tipos</option>
         <option value="relationships">Relacionamentos</option>
         <option value="cognitive_functions">Funções Cognitivas</option>
         <option value="ask_the_forum">Perguntar ao Fórum</option>
-        <option value="off_topic">Fora do Tema</option>
+        <option value="off_topic">Fora de Tópico</option>
       </select>
     </div>
     <div class="form-field">
-      <label class="form-label">Title</label>
-      <input class="form-input" id="thread-title" type="text" placeholder="What is this thread about?" maxlength="200">
-      <div class="form-error" id="title-error">Title must be at least 3 characters.</div>
+      <label class="form-label">Título</label>
+      <input class="form-input" id="thread-title" type="text" placeholder="Sobre o que é este tópico?" maxlength="200">
+      <div class="form-error" id="title-error">O título deve ter pelo menos 3 caracteres.</div>
     </div>
     <div class="form-field">
-      <label class="form-label">Body</label>
+      <label class="form-label">Texto</label>
       <textarea class="form-textarea" id="thread-body" placeholder="Escreva seu tópico aqui..."></textarea>
-      <div class="form-error" id="body-error">Body must be at least 10 characters.</div>
+      <div class="form-error" id="body-error">O texto deve ter pelo menos 10 caracteres.</div>
     </div>
     <div class="modal-actions">
-      <button class="btn-secondary" onclick="closeModal()">Cancel</button>
+      <button class="btn-secondary" onclick="closeModal()">Cancelar</button>
       <button class="btn-primary" id="submit-thread-btn" onclick="submitThread()">Publicar tópico →</button>
     </div>
     <div id="thread-post-error" style="display:none;color:#e07070;font-size:0.82rem;margin-top:12px;text-align:right;"></div>
@@ -251,11 +267,12 @@
 <script>
   const { createClient } = supabase;
   const sb = createClient('https://rttomfnfyjjssdqfzkaj.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw');
+  window._navSb = sb;
 
   const CAT_LABELS = {
-    general: 'General', type_discussion: 'Discussão de Tipos',
+    general: 'Geral', type_discussion: 'Discussão de Tipos',
     relationships: 'Relacionamentos', cognitive_functions: 'Funções Cognitivas',
-    ask_the_forum: 'Perguntar ao Fórum', off_topic: 'Fora do Tema'
+    ask_the_forum: 'Perguntar ao Fórum', off_topic: 'Fora de Tópico'
   };
 
   let currentCat = 'all';
@@ -270,7 +287,7 @@
     if (!e) return 'Unknown error';
     if (typeof e === 'string') return e;
     // Supabase JS v2 error shape
-    if (e.message) return e.message;
+    if (e.message && e.message.includes('DataClone')) return 'Connection sync error - please refresh.'; if (e.message) return e.message;
     if (e.error_description) return e.error_description;
     if (e.error) return typeof e.error === 'string' ? e.error : 'Unknown error';
     if (e.details) return e.details;
@@ -293,40 +310,16 @@
       .eq('user_id', currentUser.id)
       .not('thread_id', 'is', null);
     if (votes) votes.forEach(v => { userVotes[v.thread_id] = v.vote; });
-    // Nav avatar
-    const { data: prof } = await sb.from('profiles').select('username, avatar_url').eq('id', currentUser.id).single();
-    injectNavAuth(prof);
+
   }
 
-  function injectNavAuth(prof) {
-    const links = document.querySelector('.nav-links');
-    const drawerLinks = document.querySelector('.nav-drawer-links');
-    const avatarSrc = (prof && prof.avatar_url) || 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 80 80%27%3E%3Ccircle cx=%2740%27 cy=%2740%27 r=%2740%27 fill=%27%23252a30%27/%3E%3Ccircle cx=%2740%27 cy=%2732%27 r=%2714%27 fill=%27%238a6d2e%27/%3E%3Cellipse cx=%2740%27 cy=%2772%27 rx=%2724%27 ry=%2716%27 fill=%27%238a6d2e%27/%3E%3C/svg%3E';
-    const username = (prof && prof.username) || 'Perfil';
-    if (links) {
-      const wrap = document.createElement('a');
-      wrap.href = '/profile';
-      wrap.style.cssText = 'display:flex;align-items:center;gap:8px;text-decoration:none;';
-      const img = document.createElement('img');
-      img.src = avatarSrc;
-      img.style.cssText = 'width:30px;height:30px;border-radius:50%;object-fit:cover;border:1.5px solid var(--gold-dim);';
-      const pill = document.createElement('span');
-      pill.textContent = username;
-      pill.style.cssText = 'font-size:13px;color:var(--gold);letter-spacing:0.06em;text-transform:uppercase;';
-      wrap.appendChild(img); wrap.appendChild(pill);
-      links.appendChild(wrap);
-    }
-    if (drawerLinks) {
-      const a = document.createElement('a');
-      a.href = '/profile'; a.textContent = username; a.style.color = 'var(--gold)';
-      drawerLinks.insertBefore(a, drawerLinks.firstChild);
-    }
-  }
+
 
   async function loadThreads(reset = true) {
     if (reset) {
       page = 0;
-      document.getElementById('thread-list').innerHTML = '<div class="loading-row"></div><div class="loading-row"></div><div class="loading-row"></div>';
+      const sk = '<div class="loading-row"><div class="sk-line wide"></div><div class="sk-line narrow"></div><div class="sk-line short"></div></div>';
+      document.getElementById('thread-list').innerHTML = sk + sk + sk;
     }
 
     let query = sb.from('forum_threads')
@@ -345,7 +338,28 @@
     }
 
     const { data, error } = await query;
-    if (error) { document.getElementById('thread-list').innerHTML = '<div class="empty-state"><div class="empty-state-title">Não foi possível carregar os tópicos.</div><p>' + errStr(error) + '</p></div>'; return; }
+    if (error) {
+      // DataCloneError is an internal Supabase BroadcastChannel issue - retry once silently
+      if (error.message && error.message.includes('DataClone')) {
+        await new Promise(r => setTimeout(r, 300));
+        const retry = await query;
+        if (retry.error) {
+          document.getElementById('thread-list').innerHTML = '<div class="empty-state"><div class="empty-state-title">Não foi possível carregar os tópicos.</div><p>' + errStr(retry.error) + '</p></div>';
+          return;
+        }
+        // retry succeeded - continue with retry.data
+        const data2 = retry.data;
+        hasMore = data2.length === PAGE_SIZE + 1;
+        const threads2 = hasMore ? data2.slice(0, PAGE_SIZE) : data2;
+        const list2 = document.getElementById('thread-list');
+        if (reset) list2.innerHTML = '';
+        if (threads2.length === 0 && reset) { list2.innerHTML = '<div class="empty-state"><div class="empty-state-title">Ainda não há tópicos.</div><p>Seja o primeiro a iniciar uma conversa.</p></div>'; document.getElementById('load-more-wrap').style.display = 'none'; return; }
+        threads2.forEach(t => renderThread(t, list2));
+        document.getElementById('load-more-wrap').style.display = hasMore ? 'block' : 'none';
+        return;
+      }
+      document.getElementById('thread-list').innerHTML = '<div class="empty-state"><div class="empty-state-title">Não foi possível carregar os tópicos.</div><p>' + errStr(error) + '</p></div>'; return;
+    }
 
     hasMore = data.length === PAGE_SIZE + 1;
     const threads = hasMore ? data.slice(0, PAGE_SIZE) : data;
@@ -369,6 +383,7 @@
     const agoStr = timeAgo(t.last_activity_at);
 
     const wrapper = document.createElement('div');
+    wrapper.className = 'thread-wrapper';
     wrapper.style.cssText = 'position:relative;';
 
     // Vote column (stops click propagation so it doesn't open the thread)
@@ -392,7 +407,7 @@
         <div class="thread-cat-badge">${CAT_LABELS[t.category] || t.category}</div>
       </div>
       <div class="thread-meta">
-        ${t.is_pinned ? '<span class="thread-pinned">📌 Pinned</span>' : ''}
+        ${t.is_pinned ? '<span class="thread-pinned">📌 Fixado</span>' : ''}
         <span class="thread-meta-author">${escHtml(username)}</span>
         <span title="${new Date(t.created_at).toLocaleString()}">${dateStr}</span>
         <span>💬 ${t.reply_count}</span>
@@ -415,7 +430,7 @@
   }
 
   async function handleVote(threadId, replyId, v) {
-    if (!currentUser) { window.location.href = '/login'; return; }
+    if (!currentUser) { window.location.href = '/pt/login'; return; }
     const isThread = threadId !== null;
     const key = isThread ? threadId : replyId;
     const existing = userVotes[key];
@@ -478,7 +493,7 @@
   }
 
   function handleNewThread() {
-    if (!currentUser) { window.location.href = '/login'; return; }
+    if (!currentUser) { window.location.href = '/pt/login'; return; }
     document.getElementById('new-thread-modal').classList.add('open');
   }
 
@@ -517,37 +532,29 @@
       return;
     }
     closeModal();
-    window.location.href = `/forum-thread?id=${data.id}`;
+    window.location.href = `/pt/forum-thread?id=${data.id}`;
   }
 
   function formatDate(ts) {
     const d = new Date(ts);
-    return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+    return d.toLocaleDateString('pt-BR', { day: 'numeric', month: 'short', year: 'numeric' });
   }
 
   function timeAgo(ts) {
     const diff = Date.now() - new Date(ts).getTime();
     const m = Math.floor(diff / 60000);
-    if (m < 1) return 'just now';
-    if (m < 60) return `${m}m ago`;
+    if (m < 1) return 'agora mesmo';
+    if (m < 60) return `há ${m} min`;
     const h = Math.floor(m / 60);
-    if (h < 24) return `${h}h ago`;
+    if (h < 24) return `há ${h}h`;
     const d = Math.floor(h / 24);
-    if (d < 30) return `${d}d ago`;
+    if (d < 30) return `há ${d}d`;
     return formatDate(ts);
   }
 
   function escHtml(s) {
     return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-  }
-
-  function toggleMenu() {
-    document.querySelector('.nav-burger').classList.toggle('open');
-    document.getElementById('nav-drawer').classList.toggle('open');
-    document.getElementById('nav-overlay').classList.toggle('open');
-  }
-
-  const ro = new IntersectionObserver(entries => {
+  }const ro = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } });
   }, { threshold: 0.1 });
   document.querySelectorAll('.r').forEach(el => ro.observe(el));
@@ -570,5 +577,57 @@
   initAuth().then(() => loadThreads());
 
 </script>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  if(document.getElementById('page-lm'))return;
+  var s=document.createElement('style');
+  s.id='page-lm';
+  s.textContent=[
+    /* glow + grain off */
+    'body.light-mode::before{opacity:0!important}',
+    'body.light-mode .glow{opacity:0!important}',
+    /* footer: navy */
+    'body.light-mode #nav-footer{background:rgba(30,45,74,0.97)!important;border-top:3px solid #c9a84c!important}',
+    'body.light-mode #nav-footer .footer-tagline{color:rgba(255,255,255,0.65)!important}',
+    'body.light-mode #nav-footer .footer-col a{color:rgba(255,255,255,0.7)!important}',
+    'body.light-mode #nav-footer .footer-col a:hover{color:#fff!important}',
+    'body.light-mode #nav-footer .footer-col-head{color:rgba(255,255,255,0.45)!important}',
+    'body.light-mode #nav-footer .footer-copy{color:rgba(255,255,255,0.4)!important}',
+    'body.light-mode #nav-footer .footer-bottom{border-top-color:rgba(255,255,255,0.12)!important}',
+    'body.light-mode #nav-footer .footer-bottom-links a{color:rgba(255,255,255,0.45)!important}',
+    'body.light-mode #nav-footer .footer-bottom-links a:hover{color:#fff!important}',
+    'body.light-mode #nav-footer .footer-logo-text{color:rgba(255,255,255,0.5)!important}',
+    'body.light-mode #nav-footer .footer-cta{color:#c9a84c!important}',
+    /* card UI components: navy — NOT content/prose containers */
+    'body.light-mode .type-card,body.light-mode .lcard,body.light-mode .db-card,body.light-mode .fncard,body.light-mode .vs-pair-card,body.light-mode .contact-card,body.light-mode .thread-item,body.light-mode .similar-card,body.light-mode .type-pair-card,body.light-mode .famous-card,body.light-mode .score-block,body.light-mode .callout,body.light-mode .cta-box,body.light-mode .modal,body.light-mode .verdict,body.light-mode .verdict-box{background:#1e2d4a!important;border-color:#2d4168!important;box-shadow:0 4px 16px rgba(30,45,74,0.18)!important}',
+    /* white text inside navy cards */
+    'body.light-mode .type-card *,body.light-mode .lcard *,body.light-mode .db-card *,body.light-mode .fncard *,body.light-mode .vs-pair-card *,body.light-mode .contact-card *,body.light-mode .thread-item *,body.light-mode .similar-card *,body.light-mode .type-pair-card *,body.light-mode .verdict *,body.light-mode .verdict-box *,body.light-mode .score-block *,body.light-mode .callout *{color:#ffffff!important}',
+    /* primary card text: bold white */
+    'body.light-mode .card-name,body.light-mode .db-card-name,body.light-mode .lcard-letter,body.light-mode .lcard-name,body.light-mode .tpc-code,body.light-mode .tpc-name,body.light-mode .sim-code,body.light-mode .vs-pair-card-types,body.light-mode .cc-title{color:#ffffff!important;font-weight:600!important}',
+    /* secondary text in cards: dimmer white */
+    'body.light-mode .card-tagline,body.light-mode .lcard-desc,body.light-mode .tpc-tagline,body.light-mode .db-card-ctx,body.light-mode .db-card-cat,body.light-mode .vs-pair-card-tag,body.light-mode .cc-desc,body.light-mode .sim-name{color:rgba(255,255,255,0.7)!important}',
+    /* gold stays gold inside cards */
+    'body.light-mode .db-card .db-card-type,body.light-mode .hi,body.light-mode .cc-email{color:#c9a84c!important}',
+    /* card hover */
+    'body.light-mode .type-card:hover,body.light-mode .lcard:hover,body.light-mode .db-card:hover,body.light-mode .fncard:hover,body.light-mode .vs-pair-card:hover,body.light-mode .contact-card:hover,body.light-mode .thread-item:hover,body.light-mode .similar-card:hover,body.light-mode .type-pair-card:hover{background:#2d4168!important;border-color:#c9a84c!important;box-shadow:0 8px 28px rgba(30,45,74,0.3)!important}',
+    /* nested pills inside navy cards */
+    'body.light-mode .type-card .mini-type,body.light-mode .type-card .tag,body.light-mode .actor-chip,body.light-mode .universe-chip{background:rgba(255,255,255,0.12)!important;border-color:rgba(255,255,255,0.2)!important;color:#ffffff!important}',
+    /* content containers: white with navy text */
+    'body.light-mode .box,body.light-mode .intro-box,body.light-mode .post-body,body.light-mode .reply-card,body.light-mode .growth-box,body.light-mode .opp-block,body.light-mode .fd-box,body.light-mode .auth-notice,body.light-mode .result-card,body.light-mode .info-box,body.light-mode .fn-card,body.light-mode .section{background:#ffffff!important;border-color:#d0d7e3!important;box-shadow:0 1px 4px rgba(30,45,74,0.07)!important}',
+    'body.light-mode .box *,body.light-mode .intro-box *,body.light-mode .post-body *,body.light-mode .reply-card *,body.light-mode .growth-box *,body.light-mode .opp-block *,body.light-mode .fn-card *{color:#1e2d4a!important}',
+    /* section label + eyebrow */
+    'body.light-mode .section-label{color:#2d4168!important}',
+    'body.light-mode .section-label::after{background:#c8d4e4!important}',
+    'body.light-mode .page-eyebrow{color:#8a6d2e!important}',
+    /* page body text */
+    'body.light-mode{color:#1e2d4a!important}',
+    'body.light-mode h1,body.light-mode h2,body.light-mode h3,body.light-mode h4{color:#1e2d4a!important}',
+    'body.light-mode p,body.light-mode li,body.light-mode .prose,body.light-mode .body-text,body.light-mode .page-sub{color:#1e2d4a!important}',
+  ].join('');
+  document.head.appendChild(s);
+});
+</script>
+
 </body>
 </html>

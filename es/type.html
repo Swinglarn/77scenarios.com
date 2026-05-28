@@ -2,48 +2,35 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="description" content="Detailed Myers-Briggs personality type profile: cognitive functions, strengths, blind spots, compatibility, and famous examples.">
+<meta name="description" content="Perfil detallado del tipo de personalidad de Myers-Briggs: funciones cognitivas, fortalezas, puntos ciegos, compatibilidad y ejemplos famosos.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Personality Type Profile — 77Scenarios</title>
+<title>Perfil del Tipo de Personalidad — 77Scenarios</title>
 <meta name="robots" content="index, follow">
 <meta property="og:site_name" content="77 Scenarios">
-<meta property="og:image" content="https://77scenarios.com/es/og-image.png">
+<meta property="og:image" content="https://77scenarios.com/og-image.png">
+<meta property="og:title" content="Tipo de Personalidad MBTI — 77 Scenarios"><meta property="og:description" content="Análisis profundo de este tipo de personalidad de Myers-Briggs. Funciones cognitivas, fortalezas, debilidades, compatibilidad y ejemplos famosos.">
+<meta name="twitter:image" content="https://77scenarios.com/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" id="canonical-url" href="https://77scenarios.com/type.html">
+<link rel="canonical" id="canonical-url" href="https://77scenarios.com/types">
+<link rel="alternate" hreflang="en" href="https://77scenarios.com/type">
+<link rel="alternate" hreflang="es" href="https://77scenarios.com/es/type">
+<link rel="alternate" hreflang="pt-BR" href="https://77scenarios.com/pt/type">
+<link rel="alternate" hreflang="x-default" href="https://77scenarios.com/type">
+<script type="application/ld+json" id="faq-schema"></script>
+<script type="application/ld+json" id="breadcrumb-schema"></script>
 <script type="application/ld+json" id="type-schema">{"@context":"https://schema.org","@type":"Article","name":"Personality Type","publisher":{"@type":"Organization","name":"77 Scenarios","url":"https://77scenarios.com"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  :root{--bg:#0c0e10;--surface:#13161a;--surface2:#1a1e24;--gold:#c9a84c;--gold-dim:#8a6d2e;--cream:#ede8df;--muted:#b5ada6;--border:#252a30;--radius:14px;}
-  html,body{background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
+  :root{--bg:#0c0e10;--surface:#13161a;--surface2:#1a1e24;--gold:#c9a84c;--gold-dim:#8a6d2e;--cream:#ede8df;--muted:#ccc6bf;--border:#252a30;--radius:14px;}
+  html,body{background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;font-weight:400;overflow-x:hidden;}
   body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:0.6;}
   #t-overlay{position:fixed;inset:0;z-index:9999;pointer-events:none;background:#0c0e10;opacity:1;}
   .glow{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0;}
   .glow-1{width:600px;height:600px;top:-200px;left:-150px;background:radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%);}
   .glow-2{width:400px;height:400px;bottom:-100px;right:-100px;background:radial-gradient(circle,rgba(120,180,160,0.05) 0%,transparent 70%);}
-    nav, .site-nav{position:sticky;top:0;z-index:200;background:rgba(12,14,16,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 32px;display:flex;justify-content:space-between;align-items:center;height:56px;}
-  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--cream);text-decoration:none;}
-  .nav-links{display:flex;gap:32px;align-items:center;}
-  .nav-links a{font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;white-space:nowrap;}
-  .nav-links a:hover,.nav-links a.active{color:var(--cream);}
-  .nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
-  .nav-burger span{display:block;width:22px;height:1.5px;background:#b5ada6;transition:all 0.3s ease;transform-origin:center;}
-  .nav-burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);background:#c9a84c;}
-  .nav-burger.open span:nth-child(2){opacity:0;}
-  .nav-burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);background:#c9a84c;}
-  .nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:300;opacity:0;transition:opacity 0.3s ease;pointer-events:none;}
-  .nav-overlay.open{opacity:1;pointer-events:auto;}
-  .nav-drawer{position:fixed;top:0;right:-100%;width:min(320px,85vw);height:100%;background:#13161a;border-left:1px solid #252a30;z-index:400;transition:right 0.35s cubic-bezier(0.22,1,0.36,1),visibility 0s linear 0.35s;display:flex;flex-direction:column;pointer-events:none;visibility:hidden;}
-  .nav-drawer.open{right:0;pointer-events:auto;visibility:visible;transition:right 0.35s cubic-bezier(0.22,1,0.36,1),visibility 0s linear 0s;}
-  .nav-drawer-header{display:flex;justify-content:space-between;align-items:center;padding:0 24px;height:56px;border-bottom:1px solid #252a30;flex-shrink:0;}
-  .nav-close{background:none;border:none;color:#b5ada6;font-size:18px;cursor:pointer;padding:4px;transition:color 0.2s;}
-  .nav-close:hover{color:#ede8df;}
-  .nav-drawer-links{display:flex;flex-direction:column;padding:16px 0;}
-  .nav-drawer-links a{font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:#b5ada6;text-decoration:none;padding:18px 24px;border-bottom:1px solid #1e2227;transition:all 0.15s ease;}
-  .nav-drawer-links a:hover{color:#c9a84c;padding-left:32px;}
-  .nav-drawer-links a:first-child{color:#c9a84c;}
-  @media(max-width:480px){nav,.site-nav{padding:0 16px;height:52px;}.nav-links{display:none;}.nav-burger{display:flex;}.nav-overlay{display:block;pointer-events:none;}}
   main{position:relative;z-index:1;max-width:820px;margin:0 auto;padding:64px 32px 96px;}
 
   /* REVEAL */
@@ -53,18 +40,24 @@
   .back-link{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;margin-bottom:48px;transition:color 0.2s;}
   .back-link:hover{color:var(--gold);}
 
+  .breadcrumb{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:32px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .breadcrumb a{color:var(--muted);text-decoration:none;transition:color 0.2s;}
+  .breadcrumb a:hover{color:var(--gold);}
+  .breadcrumb span{opacity:0.4;}
+  .breadcrumb-cur{color:var(--cream);opacity:0.7;}
+
   .type-code{font-family:'Cormorant Garamond',serif;font-size:clamp(80px,14vw,130px);font-weight:300;line-height:1;letter-spacing:-0.04em;color:var(--cream);margin-bottom:16px;}
   .type-code .hi{color:var(--gold);}
-  .type-name{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,5vw,44px);font-weight:300;font-style:italic;color:var(--cream);margin-bottom:6px;}
+  .type-name{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,5vw,44px);font-weight:600;font-style:italic;color:var(--cream);margin-bottom:6px;}
   .type-tagline{font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;}
   .letter-pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:44px;}
   .letter-pill{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;padding:6px 14px;border-radius:20px;border:1px solid var(--border);color:var(--muted);background:var(--surface);text-decoration:none;transition:all 0.2s;}
-  .letter-pill:hover{border-color:var(--gold-dim);color:var(--gold);}
+  .letter-pill:hover{border-color:var(--gold-dim);color:var(--gold);transform:translateY(-1px);box-shadow:0 4px 14px rgba(0,0,0,0.4);}
 
   .section{margin-bottom:48px;}
   .section-label{font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px;}
   .section-label::after{content:'';display:block;flex:1;height:1px;background:var(--border);}
-  .body-text{font-size:16px;line-height:1.9;color:#a09890;}
+  .body-text{font-size:16px;line-height:1.9;color:#cdc7c0;}
   .body-text+.body-text{margin-top:16px;}
 
   .traits-row{display:flex;flex-wrap:wrap;gap:10px;}
@@ -72,23 +65,28 @@
 
   .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
   @media(max-width:580px){.two-col{grid-template-columns:1fr;}}
-  .box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;}
+  .box{background:#131820;border:1px solid #2a3848;border-radius:var(--radius);padding:24px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.05),0 2px 14px rgba(0,0,0,0.45);}
   .box-title{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
   .box ul{list-style:none;}
-  .box ul li{font-size:14px;color:#a09890;line-height:1.75;padding:9px 0;border-bottom:1px solid var(--border);display:flex;gap:12px;align-items:flex-start;}
+  .box ul li{font-size:14px;color:#cdc7c0;line-height:1.75;padding:9px 0;border-bottom:1px solid var(--border);display:flex;gap:12px;align-items:flex-start;}
   .box ul li:last-child{border-bottom:none;}
-  .box ul li::before{content:'–';color:var(--gold-dim);flex-shrink:0;margin-top:2px;}
+  .box ul li::before{content:'-';color:var(--gold-dim);flex-shrink:0;margin-top:2px;}
 
   .fd-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
   @media(max-width:580px){.fd-row{grid-template-columns:1fr;}}
-  .fd-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px;}
+  .fd-box{background:#131820;border:1px solid #2a3848;border-radius:var(--radius);padding:22px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.05),0 2px 14px rgba(0,0,0,0.45);}
   .fd-label{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
   .fd-text{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:300;font-style:italic;color:var(--cream);line-height:1.45;}
 
   .famous-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
   @media(max-width:580px){.famous-grid{grid-template-columns:1fr;}}
-  .famous-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;}
-  .famous-name{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:400;color:var(--cream);margin-bottom:3px;}
+  .famous-card{background:#131820;border:1px solid #2a3848;border-radius:var(--radius);padding:16px 18px;display:flex;align-items:center;gap:14px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.04),0 2px 8px rgba(0,0,0,0.35);transition:border-color 0.2s,box-shadow 0.2s;cursor:pointer;text-decoration:none;}
+  .famous-card:hover{border-color:var(--gold-dim);box-shadow:0 6px 20px rgba(0,0,0,0.5);}
+  .famous-avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0;background:#1a2230;border:1px solid #2a3848;opacity:0;transition:opacity 0.3s;}
+  .famous-avatar.loaded{opacity:1;}
+  .famous-avatar-placeholder{width:52px;height:52px;border-radius:50%;flex-shrink:0;background:#1a2230;border:1px solid #2a3848;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--gold);font-weight:300;}
+  .famous-info{flex:1;min-width:0;}
+  .famous-name{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:var(--cream);margin-bottom:3px;}
   .famous-ctx{font-size:12px;color:var(--muted);letter-spacing:0.04em;}
 
   .similar-row{display:flex;gap:10px;flex-wrap:wrap;}
@@ -103,53 +101,37 @@
   .btn-gold{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:#0c0e10;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;border:none;border-radius:60px;padding:14px 28px;cursor:pointer;text-decoration:none;transition:all 0.25s;}
   .btn-gold:hover{background:var(--cream);transform:translateY(-2px);}
   .sep{height:1px;background:var(--border);margin:48px 0;}
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+  .faq-list{display:flex;flex-direction:column;gap:0;}
+  .faq-item{border-bottom:1px solid var(--border);padding:18px 0;}
+  .faq-item:first-child{padding-top:0;}
+  .faq-q{font-size:15px;font-weight:500;color:var(--cream);margin-bottom:8px;line-height:1.4;}
+  .faq-a{font-size:14px;color:#cdc7c0;line-height:1.8;}
+  .rarity-badge{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:8px 14px;font-size:13px;color:var(--muted);margin-top:12px;}
+  .rarity-badge strong{color:var(--cream);font-weight:500;}
+  .compat-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px;}
+
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+  body.light-mode .body-text{color:#1e2d4a;}
+  body.light-mode .fncard-tagline{color:#4a5568;}
+  body.light-mode .group-desc{color:#4a5568;}
+
+  /* Reading progress bar */
+  #reading-progress{position:fixed;top:56px;left:0;width:0%;height:2px;background:linear-gradient(90deg,var(--gold-dim),var(--gold));z-index:199;transition:width 0.1s linear;pointer-events:none;}
 </style>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-<link rel="alternate" hreflang="en" href="https://77scenarios.com/type">
-<link rel="alternate" hreflang="es" href="https://77scenarios.com/es/type">
 <script src="/nav.js" defer></script>
 </head>
 <body>
+<div id="reading-progress"></div>
 <h1 class="sr-only" id="page-h1">77 Scenarios Personality Type</h1>
 <div id="t-overlay"></div>
 <div class="glow glow-1"></div>
 <div class="glow glow-2"></div>
-<nav class="site-nav">
-  <a href="/es/" class="nav-logo">77scenarios.com</a>
-  <div class="nav-links">
-    <a href="/es/">Hacer el Test</a>
-    <a href="/es/types">16 Tipos</a>
-    <a href="/es/letters">8 Letras</a>
-    <a href="/es/cognitive-functions">Funciones</a>
-    <a href="/es/compatibility">Compatibilidad</a>
-    <a href="/es/archive">Archivo</a>
-    <a href="/es/about">Acerca de</a>
-  </div>
-  <button class="nav-burger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
-</nav>
-
-<div class="nav-overlay" id="nav-overlay" onclick="toggleMenu()"></div>
-<div class="nav-drawer" id="nav-drawer">
-  <div class="nav-drawer-header">
-    <span style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:#ede8df;">77scenarios.com</span>
-    <button class="nav-close" onclick="toggleMenu()">&#10005;</button>
-  </div>
-  <div class="nav-drawer-links">
-    <a href="/es/">Hacer el Test</a>
-    <a href="/es/types">16 Tipos</a>
-    <a href="/es/letters">8 Letras</a>
-    <a href="/es/cognitive-functions">Funciones</a>
-    <a href="/es/compatibility">Compatibilidad</a>
-    <a href="/es/archive">Archivo</a>
-    <a href="/es/about">Acerca de</a>
-  </div>
-</div>
-
 <main>
-  <a href="/es/types" class="back-link r" data-d="0">← Todos los tipos</a>
+  <div class="breadcrumb r" data-d="0"><a href="/es/">Inicio</a><span>/</span><a href="/es/types">Tipos</a><span>/</span><span class="breadcrumb-cur" id="bc-type">...</span></div>
   <div id="content"></div>
 </main>
 
@@ -161,11 +143,11 @@ const types = {
     p2:"Tu fiabilidad es tan rara que la mayoría de las personas solo puede apreciarla completamente cuando desaparece. No trabajas por elogios. Trabajas porque el trabajo merece hacerse correctamente. Las personas que te conocen bien saben que pueden entregarte algo y marcharse, completamente seguros de que se manejará.",
     desire:"Ser completamente confiable y nunca ser la fuente de un fallo",
     fear:"Ser sorprendido sin preparación, o ser responsable de algo que se hizo mal",
-    strengths:["Los compromisos se cumplen sin excepción — la gente aprende rápido que puede depender de ti","La memoria para detalles factuales, decisiones pasadas y matices de procedimiento es inusualmente aguda","Se mantiene metódico cuando aumenta la presión, donde otros se vuelven reactivos","Aplica el mismo estándar a ti mismo que a los demás, lo cual es raro"],
-    blindspots:["Cuando las circunstancias realmente cambian, adaptarse puede parecer una concesión, aunque no lo sea","El calor está ahí pero tiende a quedarse interno — la gente a veces se siente invisible para ti","Las preocupaciones emocionales suelen filtrarse antes de que se hayan comprendido completamente"],
-    traits:["Fiable","Meticuloso","Íntegro","Paciente","Reservado"],
-    famous:[{name:"Hermione Granger",ctx:"Ficción"},{name:"Warren Buffett",ctx:"Inversor"},{name:"Reina Isabel II",ctx:"Histórico"}],
-    similar:["ESTJ","ISFJ","INTJ"]
+    strengths:["Los compromisos se cumplen sin excepción — la gente aprende rápido que puede depender de ti", "La memoria para detalles factuales, decisiones pasadas y matices de procedimiento es inusualmente aguda", "Se mantiene metódico cuando aumenta la presión, donde otros se vuelven reactivos", "Aplica el mismo estándar a ti mismo que a los demás, lo cual es raro"],
+    blindspots:["Cuando las circunstancias realmente cambian, adaptarse puede parecer una concesión, aunque no lo sea", "El calor está ahí pero tiende a quedarse interno — la gente a veces se siente invisible para ti", "Las preocupaciones emocionales suelen filtrarse antes de que se hayan comprendido completamente"],
+    traits:["Fiable", "Meticuloso", "Íntegro", "Paciente", "Reservado"],
+    famous:[{name:"Hermione Granger",ctx:"Ficción"}, {name:"Warren Buffett",ctx:"Inversor"}, {name:"Reina Isabel II",ctx:"Histórico"}],
+    similar:["ESTJ", "ISFJ", "INTJ"]
   },
   ISFJ:{
     name:"El Protector",tagline:"Cuidado silencioso, lealtad feroz",
@@ -173,11 +155,11 @@ const types = {
     p2:"El mundo depende de personas como tú más de lo que reconoce. Apareces. Cumples. Notas cuando algo va mal y haces algo al respecto sin que te lo pidan. El riesgo es que este hábito de dar en silencio puede continuar durante mucho tiempo antes de que alguien piense en preguntarte qué necesitas.",
     desire:"Cuidar a las personas a tu alrededor y saber que no les has fallado",
     fear:"Fallar a alguien que contaba contigo sin decírtelo",
-    strengths:["La memoria personal de lo que importa a los demás es casi perturbadora en su precisión","Actúa sobre el cuidado a través de acciones específicas y oportunas, no de palabras","Crea seguridad genuina — la gente se siente sostenida, no gestionada","Cumple compromisos con las personas mucho después de cuando habría sido aceptable detenerse"],
-    blindspots:["Raramente pide ayuda, incluso cuando está genuinamente abrumado","Dice que sí a obligaciones mucho más allá del punto de ser justo consigo mismo","Evita el conflicto incluso cuando el conflicto realmente protegería la relación"],
-    traits:["Cálido","Observador","Leal","Fiable","Altruista"],
-    famous:[{name:"Capitán América",ctx:"Ficción"},{name:"Kate Middleton",ctx:"Figura pública"},{name:"Dr. Watson",ctx:"Ficción"}],
-    similar:["ISTJ","INFJ","ESFJ"]
+    strengths:["La memoria personal de lo que importa a los demás es casi perturbadora en su precisión", "Actúa sobre el cuidado a través de acciones específicas y oportunas, no de palabras", "Crea seguridad genuina — la gente se siente sostenida, no gestionada", "Cumple compromisos con las personas mucho después de cuando habría sido aceptable detenerse"],
+    blindspots:["Raramente pide ayuda, incluso cuando está genuinamente abrumado", "Dice que sí a obligaciones mucho más allá del punto de ser justo consigo mismo", "Evita el conflicto incluso cuando el conflicto realmente protegería la relación"],
+    traits:["Cálido", "Observador", "Leal", "Fiable", "Altruista"],
+    famous:[{name:"Capitán América",ctx:"Ficción"}, {name:"Kate Middleton",ctx:"Figura pública"}, {name:"Dr. Watson",ctx:"Ficción"}],
+    similar:["ISTJ", "INFJ", "ESFJ"]
   },
   INFJ:{
     name:"El Consejero",tagline:"Visión rara, resolución tranquila",
@@ -185,11 +167,11 @@ const types = {
     p2:"El tipo más raro por una razón. La combinación de intuición e inteligencia emocional que tienes no es un rasgo de personalidad — es una forma de procesar que la mayoría de las personas simplemente no tiene acceso. El costo es que absorbes más que los demás, y recuperarte de esa absorción requiere tiempo a solas que los demás raramente entienden como la necesidad que es.",
     desire:"Vivir en plena alineación con tus valores y dejar algo que realmente importó",
     fear:"Comprometer tu integridad, o darte cuenta demasiado tarde de que los ideales no sobreviven al contacto con el mundo",
-    strengths:["Ve patrones en personas y situaciones significativamente antes de cuando se vuelven visibles para otros","Empatía que no pierde claridad analítica — sientes y piensas simultáneamente","Convicción que se mantiene bajo presión sostenida sin volverse frágil","Llega a personas que están cerradas para casi todos los demás"],
-    blindspots:["Da demasiado a pocos, y se recupera lentamente cuando esas inversiones no funcionan","El perfeccionismo puede paralizar la finalización indefinidamente","Desaparece completamente cuando está abrumado — los demás leen esto como rechazo"],
-    traits:["Perspicaz","Idealista","Empático","Determinado","Enigmático"],
-    famous:[{name:"Jesucristo",ctx:"Histórico"},{name:"Aragorn",ctx:"Ficción"},{name:"Nelson Mandela",ctx:"Histórico"}],
-    similar:["INTJ","ENFJ","INFP"]
+    strengths:["Ve patrones en personas y situaciones significativamente antes de cuando se vuelven visibles para otros", "Empatía que no pierde claridad analítica — sientes y piensas simultáneamente", "Convicción que se mantiene bajo presión sostenida sin volverse frágil", "Llega a personas que están cerradas para casi todos los demás"],
+    blindspots:["Da demasiado a pocos, y se recupera lentamente cuando esas inversiones no funcionan", "El perfeccionismo puede paralizar la finalización indefinidamente", "Desaparece completamente cuando está abrumado — los demás leen esto como rechazo"],
+    traits:["Perspicaz", "Idealista", "Empático", "Determinado", "Enigmático"],
+    famous:[{name:"Jesucristo",ctx:"Histórico"}, {name:"Aragorn",ctx:"Ficción"}, {name:"Nelson Mandela",ctx:"Histórico"}],
+    similar:["INTJ", "ENFJ", "INFP"]
   },
   INTJ:{
     name:"El Arquitecto",tagline:"Mente estratégica, estándar implacable",
@@ -197,11 +179,11 @@ const types = {
     p2:"La independencia no es una preferencia — es cómo piensas. El ruido externo no mejora la calidad de lo que produces; la degrada. Has construido hábitos en torno a la soledad no como aislamiento sino como la condición bajo la cual ocurre tu mejor trabajo. Las personas que vale la pena tener en tu vida entenderán esto. Las que no lo hacen lo encontrarán difícil.",
     desire:"Entender cómo funcionan las cosas a un nivel profundo y construir algo que refleje ese entendimiento",
     fear:"Ser incompetente, o dependiente de alguien menos capaz que tú",
-    strengths:["Pensamiento estratégico a largo plazo que es genuinamente raro a este nivel","Trabaja sin necesitar validación externa — el trabajo cumple tu estándar o no","Mantiene múltiples capas de complejidad en paralelo sin perder el hilo","Altos estándares personales que producen resultados de los que vale la pena estar orgulloso"],
-    blindspots:["La dimensión emocional de las situaciones se subestima sistemáticamente","Puede parecer arrogante o desdeñoso sin darse cuenta","Cuando los demás son irracionales, ocultar el desprecio requiere un esfuerzo visible"],
-    traits:["Estratégico","Independiente","Exigente","Decisivo","Visionario"],
-    famous:[{name:"Gandalf",ctx:"Ficción"},{name:"Elon Musk",ctx:"Emprendedor"},{name:"Friedrich Nietzsche",ctx:"Filósofo"}],
-    similar:["ENTJ","INTP","INFJ"]
+    strengths:["Pensamiento estratégico a largo plazo que es genuinamente raro a este nivel", "Trabaja sin necesitar validación externa — el trabajo cumple tu estándar o no", "Mantiene múltiples capas de complejidad en paralelo sin perder el hilo", "Altos estándares personales que producen resultados de los que vale la pena estar orgulloso"],
+    blindspots:["La dimensión emocional de las situaciones se subestima sistemáticamente", "Puede parecer arrogante o desdeñoso sin darse cuenta", "Cuando los demás son irracionales, ocultar el desprecio requiere un esfuerzo visible"],
+    traits:["Estratégico", "Independiente", "Exigente", "Decisivo", "Visionario"],
+    famous:[{name:"Gandalf",ctx:"Ficción"}, {name:"Elon Musk",ctx:"Emprendedor"}, {name:"Friedrich Nietzsche",ctx:"Filósofo"}],
+    similar:["ENTJ", "INTP", "INFJ"]
   },
   ISTP:{
     name:"El Artesano",tagline:"Cabeza fría, manos hábiles",
@@ -209,11 +191,11 @@ const types = {
     p2:"Respetas la competencia por encima de casi todo, y puedes detectar su ausencia rápidamente. El rendimiento social — el tipo que sustituye la confianza por la habilidad — se registra como ruido. Mantienes tu propia competencia con el mismo estándar sin sentimentalismo. Cuando dices que algo funciona, funciona.",
     desire:"Entender cómo funcionan las cosas y ser genuinamente útil en la práctica cuando importa",
     fear:"Estar atrapado, obligado a depender de otros, o privado de la autonomía de trabajar a tu manera",
-    strengths:["Más claro bajo presión — la crisis agudiza en lugar de sacudir","Diagnóstico y reparación por instinto, no por procedimiento","Alta tolerancia para la ambigüedad genuina — la incertidumbre es un problema a resolver, no una razón para detenerse","Aprende nuevas habilidades rápidamente poniéndose manos a la obra, no observando desde lejos"],
-    blindspots:["La disponibilidad emocional requiere un esfuerzo deliberado — las personas cercanas pueden sentir la distancia","Se compromete con personas y planes lentamente — la confianza tarda tiempo en construirse y menos en perderse","Puede retirarse sin aviso y sin explicación"],
-    traits:["Tranquilo","Analítico","Práctico","Adaptable","Habilidoso"],
-    famous:[{name:"James Bond",ctx:"Ficción"},{name:"Clint Eastwood",ctx:"Actor / Director"},{name:"Arya Stark",ctx:"Ficción"}],
-    similar:["ESTP","INTP","ISFP"]
+    strengths:["Más claro bajo presión — la crisis agudiza en lugar de sacudir", "Diagnóstico y reparación por instinto, no por procedimiento", "Alta tolerancia para la ambigüedad genuina — la incertidumbre es un problema a resolver, no una razón para detenerse", "Aprende nuevas habilidades rápidamente poniéndose manos a la obra, no observando desde lejos"],
+    blindspots:["La disponibilidad emocional requiere un esfuerzo deliberado — las personas cercanas pueden sentir la distancia", "Se compromete con personas y planes lentamente — la confianza tarda tiempo en construirse y menos en perderse", "Puede retirarse sin aviso y sin explicación"],
+    traits:["Tranquilo", "Analítico", "Práctico", "Adaptable", "Habilidoso"],
+    famous:[{name:"James Bond",ctx:"Ficción"}, {name:"Clint Eastwood",ctx:"Actor / Director"}, {name:"Arya Stark",ctx:"Ficción"}],
+    similar:["ESTP", "INTP", "ISFP"]
   },
   ISFP:{
     name:"El Artista",tagline:"Presente, libre, profundamente sensible",
@@ -221,11 +203,11 @@ const types = {
     p2:"Hay una calidad de atención en ti que la mayoría de las personas no pueden acceder. La música correcta en el momento correcto genuinamente te mueve. Notas el color, la textura, el espacio, la sensación que lleva un entorno. Estás sintonizado con la belleza de una manera que va más allá de la preferencia hacia algo más parecido a la percepción. Esa sintonía también se aplica a las personas — sientes cómo está alguien antes de que hayan dicho una palabra.",
     desire:"Vivir auténticamente, completamente en tus sentidos, según lo que realmente crees",
     fear:"Ser forzado a una forma que no es tuya — que te digan quién ser o qué querer",
-    strengths:["Sintonía estética y emocional que la mayoría de las personas simplemente no tiene","Ética personal fuerte que se vive en lugar de anunciarse","Calidez a través de acciones específicas — presente, silenciosa, real","Completamente en el momento de una manera que es cada vez más rara y genuinamente notable"],
-    blindspots:["Evita el conflicto más allá del punto en que habría ayudado","Puede derivar sin estructura externa o una razón clara para comprometerse","Sensible a la crítica de maneras que no son visibles en la superficie"],
-    traits:["Gentil","Auténtico","Espontáneo","Sensible","Creativo"],
-    famous:[{name:"Lana Del Rey",ctx:"Música"},{name:"Harry Potter",ctx:"Ficción"},{name:"Bob Dylan",ctx:"Música"}],
-    similar:["INFP","ISTP","ESFP"]
+    strengths:["Sintonía estética y emocional que la mayoría de las personas simplemente no tiene", "Ética personal fuerte que se vive en lugar de anunciarse", "Calidez a través de acciones específicas — presente, silenciosa, real", "Completamente en el momento de una manera que es cada vez más rara y genuinamente notable"],
+    blindspots:["Evita el conflicto más allá del punto en que habría ayudado", "Puede derivar sin estructura externa o una razón clara para comprometerse", "Sensible a la crítica de maneras que no son visibles en la superficie"],
+    traits:["Gentil", "Auténtico", "Espontáneo", "Sensible", "Creativo"],
+    famous:[{name:"Lana Del Rey",ctx:"Música"}, {name:"Harry Potter",ctx:"Ficción"}, {name:"Bob Dylan",ctx:"Música"}],
+    similar:["INFP", "ISTP", "ESFP"]
   },
   INFP:{
     name:"El Mediador",tagline:"Ideales profundos, fuego silencioso",
@@ -233,11 +215,11 @@ const types = {
     p2:"La mayoría de las personas no ven la rica vida interior que llevas. La muestras selectivamente, a personas que se la han ganado. Esto no es deshonestidad — es protección para algo que importa. Las pocas personas que son admitidas en tu mundo interior tienden a quedarse allí mucho tiempo, porque inviertes en ellas completamente y recuerdas.",
     desire:"Vivir en alineación con valores profundos y que esa vida lleve un significado genuino",
     fear:"Que la vida que vives será hueca, o que comprometerás las cosas que la hacen valer la pena",
-    strengths:["Empatía que corre lo suficientemente profunda como para sentir lo que sienten los demás, no solo observarlo","Vida interior creativa que produce trabajo con una resonancia emocional inusual","Ve el potencial en las personas antes de que ellas lo vean en sí mismas","Se mantiene firme en los valores bajo presión sin necesitar la aprobación de la sala"],
-    blindspots:["El idealismo puede superar a la ejecución — la visión es vívida, el seguimiento es más difícil","Sensible a la crítica de una manera que puede ralentizar las cosas cuando se necesita velocidad","Idealiza a las personas y luego tiene que lidiar con la distancia entre la expectativa y la realidad"],
-    traits:["Idealista","Empático","Creativo","Reflexivo","Íntegro"],
-    famous:[{name:"Johnny Depp",ctx:"Actor"},{name:"Keanu Reeves",ctx:"Actor"},{name:"Frodo Baggins",ctx:"Ficción"}],
-    similar:["ISFP","ENFP","INFJ"]
+    strengths:["Empatía que corre lo suficientemente profunda como para sentir lo que sienten los demás, no solo observarlo", "Vida interior creativa que produce trabajo con una resonancia emocional inusual", "Ve el potencial en las personas antes de que ellas lo vean en sí mismas", "Se mantiene firme en los valores bajo presión sin necesitar la aprobación de la sala"],
+    blindspots:["El idealismo puede superar a la ejecución — la visión es vívida, el seguimiento es más difícil", "Sensible a la crítica de una manera que puede ralentizar las cosas cuando se necesita velocidad", "Idealiza a las personas y luego tiene que lidiar con la distancia entre la expectativa y la realidad"],
+    traits:["Idealista", "Empático", "Creativo", "Reflexivo", "Íntegro"],
+    famous:[{name:"Johnny Depp",ctx:"Actor"}, {name:"Keanu Reeves",ctx:"Actor"}, {name:"Frodo Baggins",ctx:"Ficción"}],
+    similar:["ISFP", "ENFP", "INFJ"]
   },
   INTP:{
     name:"El Pensador",tagline:"Curioso, preciso, tranquilamente no convencional",
@@ -245,11 +227,11 @@ const types = {
     p2:"Eres selectivo con las personas, no antisocial. La conversación correcta con alguien que piensa a un nivel similar es una de las mejores cosas disponibles para ti. Te quedarás mucho más tiempo del planeado. Sales de conversaciones superficiales más rápido que la mayoría, porque la relación coste-beneficio de fingir interés que no sientes nunca ha tenido sentido para ti.",
     desire:"Entender la cosa en la que estás actualmente inmerso, completamente, antes de pasar a la siguiente",
     fear:"Estar equivocado de una manera que no captaste, o ser intelectualmente mediocre sin saberlo",
-    strengths:["Pensamiento analítico riguroso que no se detiene en la respuesta cómoda","Honestidad intelectual — actualiza posiciones cuando la evidencia lo requiere, sin ego","Conecta ideas distantes de maneras que producen perspectivas genuinamente originales","Cómodo en la complejidad y ambigüedad que pone ansiosos a otros tipos"],
-    blindspots:["Puede circular un análisis indefinidamente sin elegir una dirección","El calor social está ahí pero requiere enrutamiento deliberado y consciente","Las buenas ideas viviendo dentro de la cabeza en lugar de en el mundo es un patrón consistente"],
-    traits:["Analítico","Curioso","Preciso","Independiente","No convencional"],
-    famous:[{name:"Albert Einstein",ctx:"Físico"},{name:"Sherlock Holmes",ctx:"Ficción"},{name:"René Descartes",ctx:"Filósofo"}],
-    similar:["INTJ","ENTP","ISTP"]
+    strengths:["Pensamiento analítico riguroso que no se detiene en la respuesta cómoda", "Honestidad intelectual — actualiza posiciones cuando la evidencia lo requiere, sin ego", "Conecta ideas distantes de maneras que producen perspectivas genuinamente originales", "Cómodo en la complejidad y ambigüedad que pone ansiosos a otros tipos"],
+    blindspots:["Puede circular un análisis indefinidamente sin elegir una dirección", "El calor social está ahí pero requiere enrutamiento deliberado y consciente", "Las buenas ideas viviendo dentro de la cabeza en lugar de en el mundo es un patrón consistente"],
+    traits:["Analítico", "Curioso", "Preciso", "Independiente", "No convencional"],
+    famous:[{name:"Albert Einstein",ctx:"Físico"}, {name:"Sherlock Holmes",ctx:"Ficción"}, {name:"René Descartes",ctx:"Filósofo"}],
+    similar:["INTJ", "ENTP", "ISTP"]
   },
   ESTP:{
     name:"El Dínamo",tagline:"Audaz, perspicaz, siempre en movimiento",
@@ -257,11 +239,11 @@ const types = {
     p2:"Funcionas mejor en tiempo real. Planificar está bien hasta que se encuentra con la realidad de lo que está realmente sucediendo — y luego improvisas mejor que lo que la mayoría de las personas planifican. La brecha entre tus capacidades y las expectativas de otras personas es a menudo más grande en una crisis, que es exactamente cuando prefieres que te llamen.",
     desire:"Estar en medio de las cosas, resolviendo lo que realmente está frente a ti, con apuestas reales",
     fear:"El aburrimiento, la irrelevancia, y moverse lentamente mientras algo más interesante está sucediendo en otro lugar",
-    strengths:["Lee a las personas y las dinámicas con precisión y rapidez, sin esfuerzo","Actúa bajo presión sin la parálisis que experimentan otros","Pragmático y persuasivo — pone a las personas en movimiento en la dirección necesaria","Decisión y ejecución en el mismo movimiento, con muy poco arrastre entre ellos"],
-    blindspots:["La planificación a largo plazo se siente genuinamente antinatural y a menudo se pospone indefinidamente","Puede pasar por los procesos de otras personas sin notar la fricción que esto crea","El compromiso — con planes, con personas — es algo a negociar, no a asumir"],
-    traits:["Perspicaz","Audaz","Enérgico","Pragmático","Carismático"],
-    famous:[{name:"Stifler",ctx:"Ficción"},{name:"Han Solo",ctx:"Ficción"},{name:"Bear Grylls",ctx:"Aventurero"}],
-    similar:["ESTJ","ISTP","ENTP"]
+    strengths:["Lee a las personas y las dinámicas con precisión y rapidez, sin esfuerzo", "Actúa bajo presión sin la parálisis que experimentan otros", "Pragmático y persuasivo — pone a las personas en movimiento en la dirección necesaria", "Decisión y ejecución en el mismo movimiento, con muy poco arrastre entre ellos"],
+    blindspots:["La planificación a largo plazo se siente genuinamente antinatural y a menudo se pospone indefinidamente", "Puede pasar por los procesos de otras personas sin notar la fricción que esto crea", "El compromiso — con planes, con personas — es algo a negociar, no a asumir"],
+    traits:["Perspicaz", "Audaz", "Enérgico", "Pragmático", "Carismático"],
+    famous:[{name:"Stifler",ctx:"Ficción"}, {name:"Han Solo",ctx:"Ficción"}, {name:"Bear Grylls",ctx:"Aventurero"}],
+    similar:["ESTJ", "ISTP", "ENTP"]
   },
   ESFP:{
     name:"El Animador",tagline:"Vivo, generoso, contagiosamente presente",
@@ -269,11 +251,11 @@ const types = {
     p2:"Experimentas el mundo a través de la sensación y el sentimiento de una manera que es cada vez más rara. Las cosas son genuinamente hermosas, divertidas, conmovedoras o aburridas para ti, sin la distancia irónica que mantienen muchas personas. La vida no necesita una explicación o un propósito más allá del hecho de que estás en ella. Eso no es superficial — es una respuesta completa a la que mucha gente pasa años intentando llegar.",
     desire:"Estar completamente presente en una vida plena, y traer a otras personas consigo",
     fear:"Pasar desapercibido, o pasar sin haber hecho que nadie se sienta mejor por ello",
-    strengths:["Interés genuino en las personas, no actuado, y lo suficientemente específico como para sorprender","Presencia que hace que los demás sientan que tienen toda tu atención — porque la tienen","Generosidad sin un libro de registros — da libremente y no lleva la cuenta de lo que se debe","Puede cambiar la energía de una sala sin anunciar ninguna intención de hacerlo"],
-    blindspots:["La planificación orientada al futuro y el seguimiento es un desafío consistente","La incomodidad y las verdades difíciles pueden evitarse en lugar de enfrentarse","La rutina prolongada o el aislamiento agota rápidamente"],
-    traits:["Entusiasta","Generoso","Espontáneo","Social","Cálido"],
-    famous:[{name:"Hunter Biden",ctx:"Figura pública"},{name:"Marilyn Monroe",ctx:"Actriz"},{name:"Elton John",ctx:"Músico"}],
-    similar:["ENFP","ISFP","ESTP"]
+    strengths:["Interés genuino en las personas, no actuado, y lo suficientemente específico como para sorprender", "Presencia que hace que los demás sientan que tienen toda tu atención — porque la tienen", "Generosidad sin un libro de registros — da libremente y no lleva la cuenta de lo que se debe", "Puede cambiar la energía de una sala sin anunciar ninguna intención de hacerlo"],
+    blindspots:["La planificación orientada al futuro y el seguimiento es un desafío consistente", "La incomodidad y las verdades difíciles pueden evitarse en lugar de enfrentarse", "La rutina prolongada o el aislamiento agota rápidamente"],
+    traits:["Entusiasta", "Generoso", "Espontáneo", "Social", "Cálido"],
+    famous:[{name:"Hunter Biden",ctx:"Figura pública"}, {name:"Marilyn Monroe",ctx:"Actriz"}, {name:"Elton John",ctx:"Músico"}],
+    similar:["ENFP", "ISFP", "ESTP"]
   },
   ENFP:{
     name:"El Campeón",tagline:"Posibilidad inquieta, energía magnética",
@@ -281,11 +263,11 @@ const types = {
     p2:"La relación con el seguimiento es real y vale la pena nombrarla. No porque no estés comprometido — estás profundamente comprometido con las cosas que te importan — sino porque la próxima cosa interesante llega rápido, y el espacio entre el interés y la finalización es donde muchas buenas ideas se silencian. La disciplina no es forzarte a ser alguien que no eres. Es proteger la cosa el tiempo suficiente para que exista.",
     desire:"Explorar lo que todo podría ser — ideas, personas, tú mismo",
     fear:"Ser ordinario, o atrapado en una vida que ya no encaja",
-    strengths:["Ve el potencial antes de que sea visible para cualquier otra persona","Hace que la gente se sienta capaz de cosas que no habían considerado","Genera ideas rápidamente, las conecta entre dominios inesperadamente","Lee a las personas y las dinámicas emocionales con precisión genuina y no estudiada"],
-    blindspots:["Empieza significativamente más de lo que termina","Sensible a la desaprobación bajo un exterior seguro","La idea actual puede desplazar el compromiso anterior antes de que esté completo"],
-    traits:["Creativo","Entusiasta","Empático","Curioso","Inspirador"],
-    famous:[{name:"Kanye West",ctx:"Músico"},{name:"Will Smith",ctx:"Actor"},{name:"Willy Wonka",ctx:"Ficción"}],
-    similar:["ENTP","INFP","ESFP"]
+    strengths:["Ve el potencial antes de que sea visible para cualquier otra persona", "Hace que la gente se sienta capaz de cosas que no habían considerado", "Genera ideas rápidamente, las conecta entre dominios inesperadamente", "Lee a las personas y las dinámicas emocionales con precisión genuina y no estudiada"],
+    blindspots:["Empieza significativamente más de lo que termina", "Sensible a la desaprobación bajo un exterior seguro", "La idea actual puede desplazar el compromiso anterior antes de que esté completo"],
+    traits:["Creativo", "Entusiasta", "Empático", "Curioso", "Inspirador"],
+    famous:[{name:"Kanye West",ctx:"Músico"}, {name:"Will Smith",ctx:"Actor"}, {name:"Willy Wonka",ctx:"Ficción"}],
+    similar:["ENTP", "INFP", "ESFP"]
   },
   ENTP:{
     name:"El Visionario",tagline:"Agudo, provocador, incansablemente curioso",
@@ -293,11 +275,11 @@ const types = {
     p2:"El estancamiento es lo que más temes realmente, aunque el aburrimiento es cómo suele presentarse. Te mueves rápidamente entre ideas porque siempre hay otras más interesantes por delante. El desafío no es generar — es elegir, y luego mantenerse en lo elegido. Las cosas más significativas que construirás requerirán que sigas interesado en ellas mucho después de que haya pasado la chispa inicial.",
     desire:"Encontrar la mejor respuesta — la que está debajo de la que todos los demás dejaron de buscar",
     fear:"El estancamiento, la uniformidad intelectual, y estar cómodo cuando deberías estar cuestionando",
-    strengths:["Síntesis rápida entre dominios muy diferentes","El debate como herramienta de pensamiento genuina — no actuación, un método","Creativo en situaciones con restricciones porque las restricciones son simplemente problemas interesantes","Intelectualmente valiente — cuestionará incluso las cosas que la mayoría de las personas deja sin examinar"],
-    blindspots:["Puede argumentar posiciones sin estar comprometido con ellas, lo que confunde a las personas","El seguimiento es un desafío sincero y continuo","El cuestionamiento implacable puede ser experimentado como agotador por personas que solo quieren una decisión"],
-    traits:["Ingenioso","Innovador","Debatidor","Estratégico","Adaptable"],
-    famous:[{name:"Sócrates",ctx:"Filósofo"},{name:"Tyrion Lannister",ctx:"Ficción"},{name:"Leonardo da Vinci",ctx:"Polímata"}],
-    similar:["ENFP","INTP","ENTJ"]
+    strengths:["Síntesis rápida entre dominios muy diferentes", "El debate como herramienta de pensamiento genuina — no actuación, un método", "Creativo en situaciones con restricciones porque las restricciones son simplemente problemas interesantes", "Intelectualmente valiente — cuestionará incluso las cosas que la mayoría de las personas deja sin examinar"],
+    blindspots:["Puede argumentar posiciones sin estar comprometido con ellas, lo que confunde a las personas", "El seguimiento es un desafío sincero y continuo", "El cuestionamiento implacable puede ser experimentado como agotador por personas que solo quieren una decisión"],
+    traits:["Ingenioso", "Innovador", "Debatidor", "Estratégico", "Adaptable"],
+    famous:[{name:"Sócrates",ctx:"Filósofo"}, {name:"Tyrion Lannister",ctx:"Ficción"}, {name:"Leonardo da Vinci",ctx:"Polímata"}],
+    similar:["ENFP", "INTP", "ENTJ"]
   },
   ESTJ:{
     name:"El Director",tagline:"Orden, resultados, responsabilidad",
@@ -305,11 +287,11 @@ const types = {
     p2:"Mantienes a las personas en sus compromisos. Incluyéndote a ti mismo. El estándar que aplicas hacia afuera es el mismo que aplicas hacia adentro, que es en realidad la forma más honesta de equidad, incluso cuando es incómodo. Los demás a veces leen esto como exigente. Desde adentro, parece simple consistencia.",
     desire:"Crear orden, mantener estándares y producir resultados de la manera correcta",
     fear:"El caos, la incompetencia y las personas que no se mantendrán en lo que acordaron",
-    strengths:["Ejecución a escala — hacer realidad los planes es tu idioma nativo","Comunicación directa y clara que no hace que la gente adivine","Mantiene la responsabilidad de manera consistente, sin excepciones ni favoritismos","Construye procesos y estructuras que sobreviven al problema inmediato"],
-    blindspots:["La flexibilidad en situaciones genuinamente nuevas puede parecer una concesión cuando no lo es","El proceso puede volverse más importante que la experiencia humana dentro de él","Incomodidad con situaciones que no tienen una respuesta correcta clara"],
-    traits:["Organizado","Directo","Decisivo","Fiable","Determinado"],
-    famous:[{name:"Margaret Thatcher",ctx:"Líder política"},{name:"Gordon Ramsay",ctx:"Chef / Televisión"},{name:"Charlie Kirk",ctx:"Comentarista político"}],
-    similar:["ISTJ","ENTJ","ESFJ"]
+    strengths:["Ejecución a escala — hacer realidad los planes es tu idioma nativo", "Comunicación directa y clara que no hace que la gente adivine", "Mantiene la responsabilidad de manera consistente, sin excepciones ni favoritismos", "Construye procesos y estructuras que sobreviven al problema inmediato"],
+    blindspots:["La flexibilidad en situaciones genuinamente nuevas puede parecer una concesión cuando no lo es", "El proceso puede volverse más importante que la experiencia humana dentro de él", "Incomodidad con situaciones que no tienen una respuesta correcta clara"],
+    traits:["Organizado", "Directo", "Decisivo", "Fiable", "Determinado"],
+    famous:[{name:"Margaret Thatcher",ctx:"Líder política"}, {name:"Gordon Ramsay",ctx:"Chef / Televisión"}, {name:"Charlie Kirk",ctx:"Comentarista político"}],
+    similar:["ISTJ", "ENTJ", "ESFJ"]
   },
   ESFJ:{
     name:"El Cuidador",tagline:"Comunidad, calidez, cuidado imparable",
@@ -317,11 +299,11 @@ const types = {
     p2:"La comunidad no es el trasfondo de tu vida — es el contenido de ella. Los rituales, las revisiones, asegurarse de que todos se sientan incluidos — esto te importa de una manera difícil de explicar a personas para quienes no importa. El riesgo es que atender a todos los demás puede convertirse silenciosamente en una forma de no atenderte a ti mismo.",
     desire:"Ser genuinamente necesitado, y ser parte de un grupo que se sienta como un hogar",
     fear:"El conflicto, el rechazo y la posibilidad de haber decepcionado a alguien sin saberlo",
-    strengths:["Nota lo que los demás necesitan antes de que se diga y actúa sobre ello específicamente","Construye calidez y pertenencia en grupos sin forzarlo","Hace que las personas se sientan incluidas y valoradas de una manera que se llevan a casa","Fiable en compromisos con las personas, a largo plazo, sin necesitar el crédito"],
-    blindspots:["La crítica — incluso gentil y precisa — puede llegar con fuerza y persistir","La comodidad de los demás puede priorizarse directamente a expensas de lo que es verdad","Necesita aprobación externa de maneras que pueden gestionarse pero no desearse"],
-    traits:["Cuidadoso","Social","Leal","Organizado","Generoso"],
-    famous:[{name:"Molly Weasley",ctx:"Ficción"},{name:"Monica Geller",ctx:"Ficción"},{name:"Taylor Swift",ctx:"Música"}],
-    similar:["ISFJ","ENFJ","ESTJ"]
+    strengths:["Nota lo que los demás necesitan antes de que se diga y actúa sobre ello específicamente", "Construye calidez y pertenencia en grupos sin forzarlo", "Hace que las personas se sientan incluidas y valoradas de una manera que se llevan a casa", "Fiable en compromisos con las personas, a largo plazo, sin necesitar el crédito"],
+    blindspots:["La crítica — incluso gentil y precisa — puede llegar con fuerza y persistir", "La comodidad de los demás puede priorizarse directamente a expensas de lo que es verdad", "Necesita aprobación externa de maneras que pueden gestionarse pero no desearse"],
+    traits:["Cuidadoso", "Social", "Leal", "Organizado", "Generoso"],
+    famous:[{name:"Molly Weasley",ctx:"Ficción"}, {name:"Monica Geller",ctx:"Ficción"}, {name:"Taylor Swift",ctx:"Música"}],
+    similar:["ISFJ", "ENFJ", "ESTJ"]
   },
   ENFJ:{
     name:"El Maestro",tagline:"Carisma con propósito",
@@ -329,11 +311,11 @@ const types = {
     p2:"Encuentras las palabras correctas en el momento correcto con una precisión que los demás notan incluso cuando tú no eres consciente de ello. Liderar viene naturalmente no porque busques el poder sino porque estás genuinamente orientado hacia el grupo — quieres el mejor resultado para todos en la sala, y estás dispuesto a hacer lo que sea necesario para crearlo.",
     desire:"Ayudar a las personas a tu alrededor a convertirse más plenamente en sí mismas, y ser parte de algo más grande",
     fear:"Causar daño por inacción, o fallar a las personas que confiaron en ti",
-    strengths:["Lee las corrientes emocionales subyacentes en personas y grupos con precisión real","Inspira a través de una creencia genuina en los demás, no a través de la fuerza o la presión","Saca capacidades que las personas no sabían que tenían","Carisma que tiene sustancia real detrás"],
-    blindspots:["Asume responsabilidad por los resultados de los demás más allá de lo que es justo o sostenible","Evita el conflicto necesario, especialmente con las personas que le importan","La empatía puede ser usada en su contra por personas que se dan cuenta de esto"],
-    traits:["Carismático","Empático","Inspirador","Decisivo","Perspicaz"],
-    famous:[{name:"Barack Obama",ctx:"Político"},{name:"Oprah Winfrey",ctx:"Medios"},{name:"Dumbledore",ctx:"Ficción"}],
-    similar:["INFJ","ESFJ","ENTJ"]
+    strengths:["Lee las corrientes emocionales subyacentes en personas y grupos con precisión real", "Inspira a través de una creencia genuina en los demás, no a través de la fuerza o la presión", "Saca capacidades que las personas no sabían que tenían", "Carisma que tiene sustancia real detrás"],
+    blindspots:["Asume responsabilidad por los resultados de los demás más allá de lo que es justo o sostenible", "Evita el conflicto necesario, especialmente con las personas que le importan", "La empatía puede ser usada en su contra por personas que se dan cuenta de esto"],
+    traits:["Carismático", "Empático", "Inspirador", "Decisivo", "Perspicaz"],
+    famous:[{name:"Barack Obama",ctx:"Político"}, {name:"Oprah Winfrey",ctx:"Medios"}, {name:"Dumbledore",ctx:"Ficción"}],
+    similar:["INFJ", "ESFJ", "ENTJ"]
   },
   ENTJ:{
     name:"El Comandante",tagline:"Visión, control, impulso",
@@ -341,16 +323,15 @@ const types = {
     p2:"Lideras porque estás hecho para ello, y porque dejar el volante a alguien menos equipado se siente genuinamente costoso. El desafío es mantener la certeza lo suficientemente abierta como para dejar entrar mejor información. Las personas a tu alrededor tienen más que ofrecer de lo que siempre permites. Cuanto más rápido te mueves, más fácilmente se pierde eso.",
     desire:"Liderar, construir y hacer que las cosas funcionen a un nivel que importa",
     fear:"El fracaso, y la indignidad particular de ser superado por alguien menos capaz",
-    strengths:["Claridad estratégica — ve la forma de sistemas grandes de un vistazo","Decisivo de maneras que generan impulso real hacia adelante","Mueve a personas y organizaciones hacia objetivos por la fuerza de una dirección clara","Ejecución implacable una vez que se establece la dirección"],
-    blindspots:["Impaciente con los pensadores más lentos, y no siempre capaz de ocultarlo","Las dimensiones emocionales del liderazgo se subestiman sistemáticamente","Los altos estándares mantenidos en voz alta pueden sentirse aplastantes para las personas a su alrededor"],
-    traits:["Estratégico","Seguro","Directo","Determinado","Decisivo"],
-    famous:[{name:"Steve Jobs",ctx:"Emprendedor"},{name:"Napoleón Bonaparte",ctx:"Histórico"},{name:"Frank Underwood",ctx:"Ficción"}],
-    similar:["INTJ","ENFJ","ESTJ"]
+    strengths:["Claridad estratégica — ve la forma de sistemas grandes de un vistazo", "Decisivo de maneras que generan impulso real hacia adelante", "Mueve a personas y organizaciones hacia objetivos por la fuerza de una dirección clara", "Ejecución implacable una vez que se establece la dirección"],
+    blindspots:["Impaciente con los pensadores más lentos, y no siempre capaz de ocultarlo", "Las dimensiones emocionales del liderazgo se subestiman sistemáticamente", "Los altos estándares mantenidos en voz alta pueden sentirse aplastantes para las personas a su alrededor"],
+    traits:["Estratégico", "Seguro", "Directo", "Determinado", "Decisivo"],
+    famous:[{name:"Steve Jobs",ctx:"Emprendedor"}, {name:"Napoleón Bonaparte",ctx:"Histórico"}, {name:"Frank Underwood",ctx:"Ficción"}],
+    similar:["INTJ", "ENFJ", "ESTJ"]
   }
 };
 
 const typeNames={ISTJ:"Inspector",ISFJ:"Protector",INFJ:"Consejero",INTJ:"Arquitecto",ISTP:"Artesano",ISFP:"Artista",INFP:"Mediador",INTP:"Pensador",ESTP:"Dínamo",ESFP:"Animador",ENFP:"Campeón",ENTP:"Visionario",ESTJ:"Director",ESFJ:"Cuidador",ENFJ:"Maestro",ENTJ:"Comandante"};
-
 
 const typeStacks = {
   INTJ:['Ni','Te','Fi','Se'],INTP:['Ti','Ne','Si','Fe'],
@@ -375,12 +356,107 @@ const fnMeta = {
 const posLabels = ['1º · Dominante','2º · Auxiliar','3º · Terciaria','4º · Inferior'];
 const posKeys = ['dominant','auxiliary','tertiary','inferior'];
 
+const rarity={
+  INFP:'Alrededor del 4-5% de la población. Más común en mujeres que en hombres.',
+  ENFP:'Alrededor del 8-9% de la población. Uno de los tipos intuitivos más comunes.',
+  INFJ:'Alrededor del 1-3% de la población. A menudo citado como el tipo Myers-Briggs más raro.',
+  ENFJ:'Alrededor del 2-3% de la población. Más raro en hombres que en mujeres.',
+  INTJ:'Alrededor del 2-4% de la población. El tipo Myers-Briggs más raro entre las mujeres.',
+  ENTJ:'Alrededor del 2-5% de la población. Más común en hombres que en mujeres.',
+  INTP:'Alrededor del 3-5% de la población. Más común en hombres que en mujeres.',
+  ENTP:'Alrededor del 3-4% de la población. Más común en hombres que en mujeres.',
+  ISFP:'Alrededor del 5-9% de la población. Más común en mujeres que en hombres.',
+  ESFP:'Alrededor del 7-10% de la población. Más común en mujeres que en hombres.',
+  ISTP:'Alrededor del 5-9% de la población. Más común en hombres que en mujeres.',
+  ESTP:'Alrededor del 4-5% de la población. Más común en hombres que en mujeres.',
+  ISFJ:'Alrededor del 9-14% de la población. Uno de los tipos de personalidad más comunes.',
+  ESFJ:'Alrededor del 9-12% de la población. Más común en mujeres que en hombres.',
+  ISTJ:'Alrededor del 11-16% de la población. Uno de los tipos de personalidad más comunes.',
+  ESTJ:'Alrededor del 8-12% de la población. Más común en hombres que en mujeres.'
+};
+
+// Within-gender prevalence (% of each gender that is this type). Source: CAPT / MBTI Manual US data.
+const GENDER_RARITY = {
+  male:   { ISTJ:16.4, ISFJ:8.1, INFJ:1.3, INTJ:3.3, ISTP:8.5, ISFP:7.6, INFP:4.1, INTP:4.8, ESTP:5.6, ESFP:6.9, ENFP:6.4, ENTP:4.0, ESTJ:11.2, ESFJ:7.5, ENFJ:1.6, ENTJ:2.7 },
+  female: { ISTJ:6.9, ISFJ:19.4, INFJ:1.6, INTJ:0.8, ISTP:2.4, ISFP:9.9, INFP:4.6, INTP:1.7, ESTP:3.0, ESFP:10.1, ENFP:9.7, ENTP:2.4, ESTJ:6.3, ESFJ:16.9, ENFJ:3.3, ENTJ:0.9 }
+};
+
+// Relationships + Work depth content. Rolled out in batches; render guards on presence.
+const typeDepth = {
+  INTJ:{
+    rel:["En las relaciones eres leal de una manera que es fácil de pasar por alto, porque lo demuestras a través de la fiabilidad y no de la exhibición. Eliges a tus parejas deliberadamente, no te dejas llevar por las circunstancias, y una vez que te comprometes, tratas la relación como algo que construir más que como algo que mantener. El problema es que asumes que tu esfuerzo es visible cuando a menudo no lo es, y tiendes a guardar silencio exactamente en el momento en que tu pareja necesita tranquilidad.", "Como amigo mantienes un círculo pequeño e inviertes fuertemente en él. Recuerdas aquello que alguien mencionó hace meses y actúas en consecuencia sin anunciar que lo hiciste. Tienes poca paciencia para las relaciones basadas en la obligación, y prefieres tener tres personas que realmente te entiendan a treinta que no lo hagan."],
+    work:["En el trabajo eres más fuerte cuando se te entrega un problema y se te deja a solas con él. Piensas en sistemas y a largo plazo, por lo que sueles ver el fallo en un plan antes que nadie, y mantenerte callado al respecto te cuesta un esfuerzo real. Tu mejor desempeño ocurre en lugares que premian la competencia por encima de la política y no confunden las reuniones con el progreso.", "Lo que te agota es ser supervisado de cerca, tener que justificar decisiones que ya has razonado a fondo y trabajar junto a personas que tratan sus propios estándares como opcionales. No necesitas elogios. Necesitas autonomía, metas claras y espacio para superarlas a tu manera."]
+  },
+  INTP:{
+    rel:["Te conectas a través de las ideas antes de conectarte a través de los sentimientos, y las personas que mejor encajan contigo son aquellas que encuentran eso fascinante en lugar de frío. No eres distante, eres cuidadoso, y te abres lentamente a quienes se lo ganan. Una vez que alguien está dentro de tu círculo, eres mucho más cálido, y más peculiar, de lo que sugiere tu exterior reservado.", "Lo que más te cuesta es el mantenimiento de la cercanía: los contactos regulares y los pequeños gestos que los demás interpretan como cuidado básico. Asumes que, dado que nada ha cambiado en lo que sientes, no es necesario decir nada. Una pareja que necesite palabras requerirá que aprendas que el silencio no equivale a seguridad."],
+    work:["En el trabajo buscas un problema real que desmontar y la libertad para hacerlo correctamente. Estás en tu mejor momento en el análisis, el diseño, el instante en que la lógica subyacente finalmente encaja, y pierdes energía rápidamente una vez que algo se convierte en una ejecución rutinaria. Los plazos que interrumpen tus pensamientos se sienten menos como una estructura y más como un sabotaje.", "Estás desaprovechado en entornos basados en las apariencias, y sueles darte cuenta casi de de inmediato. Lo que necesitas es respeto intelectual, espacio para seguir un hilo sin tener que justificar cada paso, y compañeros de trabajo que prefieran tener la razón a estar cómodos."]
+  },
+  ENTJ:{
+    rel:["Abordas las relaciones como todo lo demás: con intención e impulso. Quieres una pareja con la que puedas construir algo, alguien con su propia dirección y no alguien que simplemente siga la tuya. Demuestras amor a través de la provisión y el avance, resolviendo el problema, eliminando el obstáculo y haciendo que el futuro sea más seguro.", "El riesgo es que dirijas una relación como si fuera un proyecto, optimizando y dirigiendo cuando lo que se busca es simplemente presencia. No todo es un problema que resolver, y las personas más cercanas a ti a veces necesitan que dejes de mejorar la situación y te limites a estar con ellas."],
+    work:["En el trabajo estás hecho para liderar, y tiendes a terminar liderando te hayan dado o no el título. Ves la meta, trazas la ruta y diriges a las personas hacia ella con una confianza que resulta verdaderamente útil cuando la dirección es la correcta. Tomas decisiones con las que otros se estancan y cargas con el peso de las mismas sin quejarte.", "Tu punto ciego es el costo humano de tu ritmo. Puedes confundir la franqueza con la claridad y presionar a un equipo más allá de lo que puede soportar. Las personas que obtienen lo mejor de ti son aquellas que te dan margen de acción y luego se aseguran de recordarte que las personas no son solo recursos en el plan."]
+  },
+  ENTP:{
+    rel:["Te atraen las personas que pueden mantener el ritmo, debatir y sorprenderte, y pierdes el interés rápidamente en cualquiera que esté de acuerdo con todo lo que dices. Tu forma de mostrar afecto a menudo parece una provocación: las burlas, el abogado del diablo, el incesante '¿y si...?'. Para ti, eso es compromiso. Para una pareja que lo interprete mal, puede sentirse como un acoso constante.", "El compromiso no es el problema que la gente asume que tienes, pero la rutina sí lo es. Te quedas donde todavía hay algo por descubrir, y las relaciones que duran son aquellas que siguen generando nuevas preguntas en lugar de acomodarse en un guion. El reto es aprender que la constancia no es enemiga del interés."],
+    work:["En el trabajo eres un motor de ideas, la persona que replantea el problema y encuentra el ángulo en el que nadie más había pensado. Prosperas en la fase inicial y abierta, donde todo es posible y puedes seguir un hilo conductor a donde quiera que te lleve. Estás en tu peor momento en la larga tarea de ejecución y administración, donde la energía que te hace brillante se convierte en inquietud.", "Necesitas un entorno que premie la iniciativa y perdone los callejones sin salida ocasionales, idealmente con alguien a tu lado que termine lo que tú empiezas. Si te dicen que algo no se puede hacer, pasarás una semana demostrando lo contrario, lo cual es tu mayor virtud o una gran desventaja según quién te esté dirigiendo."]
+  },
+  INFJ:{
+    rel:["Ofreces a las personas una profundidad de comprensión que la mayoría nunca ha recibido de nadie, y lo haces en silencio, a menudo antes de que digan una palabra. Quienes te aman describen sentirse verdaderamente vistos. El costo es que interpretas tanto y tan rápido que puedes cargar con el estado de ánimo de tu pareja como si fuera el tuyo propio, y te cuesta distinguir dónde terminan sus sentimientos y dónde empiezan los tuyos.", "Te comprometes lenta y completamente, y una vez que dejas entrar a alguien defiendes el vínculo con fiereza. Pero también tienes una puerta que se cierra de golpe. Cuando has dado demasiado durante mucho tiempo sin que se note, te retiras, a veces para siempre, y la otra persona rara vez lo ve venir porque nunca le hiciste saber lo agotado que estabas."],
+    work:["Necesitas que tu trabajo signifique algo. Un empleo que pague bien pero no sirva a nada en lo que crees te agotará silenciosamente, por muy seguro que sea. Te desempeñas mejor en funciones donde puedas ayudar a otros a crecer o impulsar un ideal, y donde no te veas obligado a actuar en salas abiertas y de alto conflicto todo el día.", "Eres más capaz de lo que sugiere tu gentileza, y puedes liderar, pero lideras a través de la visión y el cuidado en lugar de la fuerza. Lo que te desgasta es la política, la falta de sinceridad y que se te pida luchar por territorio. Si te dan una misión en la que creas y un espacio tranquilo para llevarla a cabo, durarás más que personas que parecían mucho más fuertes."]
+  },
+  INFP:{
+    rel:["Amas con una profundidad e idealismo que pueden resultar casi abrumadores, manteniendo una imagen privada de lo que la relación podría ser en su forma más pura. Cuando encuentras a alguien que cumple con tus valores, te muestras devoto, tierno y tolerante sin límites con quien es en realidad. El riesgo es la brecha entre el ideal en tu cabeza y la persona común que tienes frente a ti, y la sutil decepción que puede crecer allí si nunca lo hablas.", "Evitas el conflicto porque la armonía se siente esencial, pero los dolores no expresados no desaparecen en ti; se acumulan. Una pareja que sepa sacarte de tu caparazón con delicadeza, que te brinde la seguridad para decir lo difícil antes de que se endurezca, obtiene la versión más leal e imaginativa de ti que existe."],
+    work:["Necesitas un trabajo que se alinee con tu identidad, y no puedes fingir entusiasmo por algo en lo que no crees. Estás en tu mejor momento con libertad creativa, una causa que importe y el espacio para hacer las cosas a tu manera y a tu ritmo. La estructura rígida y la supervisión constante te asfixian más rápido que casi cualquier otra cosa.", "Eres silenciosamente ambicioso con respecto a las cosas que te importan, incluso si te estremece la palabra ambición. La trampa es el perfeccionismo y los largos periodos en los que una idea se queda en tu cabeza en lugar de llegar al mundo. Los entornos que se adaptan a ti protegen tu autonomía y te dan un plazo lo suficientemente amable como para no aplastar el trabajo, pero lo bastante firme como para terminarlo."]
+  },
+  ENFJ:{
+    rel:["Te entregas por completo a las personas que amas, anticipando necesidades, suavizando tensiones y haciendo que todos a tu alrededor se sientan más capaces y apoyados. Como pareja eres cálido, atento y estás genuinamente interesado en que la otra persona se convierta en quien desea ser. El peligro es que puedes perderte en esto, atendiendo tan bien las necesidades de los demás que nadie, incluido tú, se da cuenta de cuándo las tuyas se quedan sin cubrir.", "Te tomas el conflicto y el distanciamiento muy a pecho, a veces más de lo que la situación amerita, porque la cercanía es fundamental para tu forma de vida. Las relaciones más saludables para ti son aquellas en las que el cuidado es mutuo, donde alguien insiste en cuidarte con la misma atención que tú ofreces tan libremente."],
+    work:["Eres un líder natural de personas, capaz de unir a un grupo en torno a un propósito compartido y hacer que cada individuo sientan que es importante para el mismo. Destacas en funciones basadas en el desarrollo, la enseñanza o la orientación de otros, y aportas una calidez a la organización de la que carecen los puros estrategas. Pocas personas leen una sala y la movilizan como tú puedes hacerlo.", "Tu punto débil es la crítica y la fricción, que puedes tomarte de forma más personal de lo previsto, y la tendencia a dar demasiado hasta que te agotas. Realizas tu mejor labor donde la misión es humana y la cultura es sincera, y donde alguien te recuerda que se te permite tener límites."]
+  },
+  ENFP:{
+    rel:["Aportas una intensidad y calidez a las relaciones que pueden sentirse como la luz del sol, entregándote a la conexión con una sinceridad inusual y un poco desconcertante. Ves el potencial en una pareja con claridad y lo apoyas. El desafío es la tensión entre tu amor por la profundidad y tu amor por la posibilidad, esa parte de ti que puede romantizar lo nuevo y volverse inquieta una vez que el primer brillo se desvanece.", "Las relaciones que perduran contigo son aquellas que siguen creciendo, donde hay espacio para explorar juntos y una pareja lo suficientemente segura como para no sentirse amenazada por tu necesidad de libertad. Debajo de la espontaneidad eres mucho más leal y tierno de lo que la gente espera, y lo que más deseas es ser conocido en su totalidad, no solo disfrutado."],
+    work:["Estás en tu mejor momento donde hay novedades, personas y una causa que te entusiasme. Generas ideas sin esfuerzo, conectas cosas que otros mantienen separadas y aportas una energía que eleva a todo un equipo. El trabajo repetitivo, aislado y fuertemente procedimental es donde tu chispa se extingue, y sentirás eso mucho antes de admitirlo.", "Tu dificultad es el seguimiento, esa etapa intermedia y poco glamurosa de un proyecto tras el emocionante inicio. Prosperas con variedad, autonomía e idealmente un socio estructurado que te ayude a concretar las cosas que lanzas. Si te dan sentido y libertad, trabajarás más que nadie; si te piden que te quedes quieto y proceses formularios, te marchitarás."]
+  },
+  ISTJ:{
+    rel:["Demuestras amor a través de la fiabilidad y no de las declaraciones. Eres la pareja que hace lo que dijo que haría, que está ahí, que mantiene en silencio las bases de una vida compartida sólida año tras año. Puede que no lo digas a menudo, pero tu constancia es el mensaje, y las personas que te entienden aprenden a leerlo de esa manera.", "Tu dificultad está en el lado expresivo: la calidez espontánea y la improvisación emocional que algunas parejas necesitan para sentirse cercanas. Puedes tratar el afecto como algo resuelto una vez que se ha declarado, cuando otros necesitan que se renueve. Una relación funciona mejor para ti cuando ambas partes valoran la lealtad y la estabilidad por encima del espectáculo, y cuando tu pareja aprende que tu presencia misma es la devoción."],
+    work:["Eres la columna vertebral de cualquier organización que tenga la suerte de tenerte. Haces aquello a lo que te comprometes, con un estándar de calidad, a tiempo, sin necesidad de que te vigilen, y tienes una memoria para los detalles y los procedimientos que evita que todo se desmorone. Cuando dices que algo está hecho, está bien hecho.", "Tu punto ciego es la rigidez, la incomodidad ante el cambio repentino y el instinto de defender el camino probado incluso cuando existe uno mejor. Realizas tu mejor desempeño en entornos estables y bien dirigidos que premian la confiabilidad y no se reinventan por el simple hecho de hacerlo. Si respetan tus estándares, cargarás con más responsabilidades de las que nadie imagina."]
+  },
+  ISFJ:{
+    rel:["Amas a través de un cuidado específico e incansable, remembering exactamente lo que les importa a las personas más cercanas a ti y actuando en consecuencia sin que te lo pidan. Creas una sensación de seguridad que los demás pueden sentir en cuanto están contigo, y mantienes los compromisos con las personas mucho después de que hubiera sido aceptable detenerse. Ser amado por ti es ser cuidado de manera silenciosa y confiable.", "La dificultad es que das tanto y pides tan poco que tus propias necesidades pueden quedarse sin expresar hasta que el resentimiento crece debajo de la calidez. Evitas el conflicto incluso cuando plantearlo protegería la relación. Las parejas ideales para ti son aquellas que notan lo que estás cargando e insisten en llevar parte de ese peso."],
+    work:["Eres concienzudo, observador y tienes una genuina vocación de servicio; eres la persona que mantiene todo en marcha y apoya a los demás, a menudo sin reconocimiento. Te desenvuelves de maravilla en funciones centradas en el cuidado, el apoyo y la fiabilidad constante, donde la atención al detalle y el seguimiento realmente importan a personas reales.", "Lo que te desgasta es que te den por sentado, los entornos de alto conflicto y decir que sí mucho más allá de lo que es justo contigo mismo. Rara vez exigirás reconocimiento, lo que significa que los lugares de trabajo más saludables para ti son aquellos que te lo otorgan sin que lo pidas, y que nunca confunden tu disposición con un recurso ilimitado."]
+  },
+  ESTJ:{
+    rel:["Te tomas las relaciones en serio como compromisos, no como sentimientos que van y vienen, y demuestras amor proveyendo, organizando y haciéndote presente de manera constante. Eres confiable hasta la médula, y aportas un orden y seguridad a la pareja que permite que quienes te rodean se relajen. Dices lo que piensas y esperas lo mismo a cambio.", "Tu desafío está en el registro más suave. Puedes caer por defecto en gestionar y corregir cuando una pareja simplemente quiere ser escuchada, y la franqueza que para ti es honestidad puede resultar áspera para ella. Las relaciones que prosperan son aquellas donde se valora tu estabilidad y donde haces espacio para sentimientos que aún no son ordenados o lógicos."],
+    work:["En el trabajo eres un organizador y ejecutor natural, la persona que convierte la intención en un sistema funcional y hace que la gente responda ante él. Ves lo que hay que hacer, lo asignas y lo llevas a cabo hasta completarlo; las instituciones funcionan de manera más fluida por tenerte en ellas. Respetas las reglas, la estructura y el trabajo bien hecho.", "Tu punto ciego es la flexibilidad y el matiz humano debajo del rendimiento. Puedes valorar la eficiencia por encima de los sentimientos y la tradición sobre una idea mejor no probada. Realizas tu mejor desempeño donde los resultados son claros y se mantienen los estándares, y lideras mejor cuando recuerdas que un equipo está formado por personas, no solo por funciones en un organigrama."]
+  },
+  ESFJ:{
+    rel:["Eres profundamente devoto, atento a las necesidades prácticas y emocionales de las personas que amas, y te sientes más feliz cuando quienes te rodean se sienten cuidados y conectados. Recuerdas las ocasiones especiales, mantienes las relaciones cálidas y eres quien mantiene unido al grupo. Estar contigo se siente como pertenecer a algo que es genuinamente cuidado.", "Donde se complica es en que tu bienestar está muy ligado a la armonía y a sentirte valorado, por lo que la desaprobación o la distancia pueden herirte más de lo debido. Puedes dar hasta agotarte y llevar la cuenta en silencio sin querer. Las mejores parejas para ti corresponden a tu cuidado abiertamente y te tranquilizan a menudo, porque la reafirmación no es una debilidad en ti, sino cómo te mantienes estable."],
+    work:["Aportas calidez, organización y un cuidado real por las personas a tu trabajo, y sobresales en funciones diseñadas para apoyar, coordinar y servir a los demás. Notas quién está teniendo dificultades, mantienes al equipo conectado y manejas la logística humana que permite que un lugar funcione y sea agradable.", "Tu punto débil es la sensibilidad a la crítica y la tendencia a sobreesforzarte para obtener aprobación. Te desempeñas mejor en entornos cooperativos y agradecidos, con expectativas claras y gratitud visible, y te cuesta encajar en culturas frías o combativas que tratan a las personas como piezas intercambiables."]
+  },
+  ISTP:{
+    rel:["Muestras interés haciendo en lugar de discutiendo: arreglando cosas, haciéndose presente cuando cuenta, estando realmente allí sin montar un espectáculo. Le das a tu pareja una inusual cantidad de libertad porque deseas lo mismo, y tienes poca tolerancia para el drama o la presión. Lo que ofreces es calma, capacidad y una reconfortante ausencia de juegos de poder.", "La dificultad es la conversación emocional. Te quedas callado o te alejas físicamente cuando los sentimientos se vuelven intensos, lo que una pareja puede interpretar como indiferencia cuando en realidad es más bien una sobrecarga. Las relaciones funcionan para ti cuando hay espacio e independencia por ambas partes, y cuando tu pareja aprende que tu lealtad se muestra en la acción mucho antes de aparecer en las palabras."],
+    work:["En el trabajo estás en tu mejor momento con un problema concreto, herramientas reales y la autonomía para resolverlo a tu manera. Aprendes haciendo, mantienes la cabeza fría bajo una presión que perturba a otros y tienes una inteligencia práctica que va directo a lo que realmente funciona. El trabajo práctico, de alta especialización y baja burocracia se adapta a ti por completo.", "Lo que no soportas es el procedimiento inútil, la microgestión y las reuniones que dan vueltas a un problema en lugar de abordarlo. Te desconectarás rápidamente de las reglas que existen por el simple hecho de existir. Si te dan un desafío real y la libertad de manejarlo, superarás a personas que parecían mucho más ansiosas por destacar."]
+  },
+  ISFP:{
+    rel:["Amas con delicadeza y sinceridad, expresándolo a través de la presencia, pequeños detalles y una atención silenciosa a cómo se siente realmente la otra persona en lugar de cómo cree que debería sentirse. Eres tolerante de una manera inusual, lento para juzgar y generoso con el espacio. Las personas cercanas a ti se sienten libres de ser exactamente ellas mismas a tu alrededor.", "Tu desafío es expresar tus propias necesidades y las cosas difíciles, ya que prefieres absorber el malestar antes que generar conflicto. Los dolores pueden acumularse silenciosamente detrás de tu calidez natural. Una relación es ideal para ti cuando tu pareja hace que sea verdaderamente seguro hablar y comprende que tu quietud no es distancia, sino tu forma de mantenerte conectado a tierra."],
+    work:["Necesitas un trabajo que se sienta auténtico e idealmente te permita hacer o crear algo real con tus manos, tus sentidos o tu gusto. Aportas una destreza silenciosa y un ojo clínico que otros no tienen, y te importa más que el trabajo esté bien hecho que ser visto haciéndolo. La libertad y un ambiente agradable te importan mucho más que el estatus.", "La jerarquía rígida, la presión implacable y la política abstracta te agotan rápidamente. Te desempeñas mejor cuando se confía en ti, se te da espacio y se te juzga por la calidad de lo que realmente produces, más que por la fuerza con la que lo vendes. Eres más capaz de lo que tu modestia deja ver."]
+  },
+  ESTP:{
+    rel:["Aportas energía, espontaneidad y una especie de presencia audaz a las relaciones; eres la pareja que hace que los días comunes se sientan vivos y que maneja una crisis sin pestañear. Muestras afecto a través de la acción y la aventura, y rara vez eres aburrido. Lo que una pareja obtiene contigo es alguien completamente en el presente, generoso y rápido para actuar cuando importa.", "El desafío es a largo plazo: la paciencia para la profundidad emocional y el trabajo más pausado de la intimidad una vez que el entusiasmo se asienta. Puedes esquivar conversaciones densas manteniéndote en movimiento. Las relaciones que duran contigo son aquellas que mantienen viva cierta aventura mientras te enseñan que quedarse, hablar y estar quietos es su propia forma de audacia."],
+    work:["Estás en tu mejor momento donde las cosas se mueven rápido y los resultados son inmediatos, interpretando una situación y actuando sobre ella mientras otros siguen deliberando. Eres ingenioso, persuasivo e imperturbable bajo presión, y prefieres intentar, fallar y ajustar antes que planificar sin fin. El trabajo dinámico, práctico y de alto riesgo es donde cobras vida.", "La rutina, la teoría y la burocracia lenta son tus enemigas, y recortarás pasos en procesos que consideres inútiles. Prosperas con autonomía, metas reales y un entorno que premie la iniciativa y el pensamiento rápido sobre el papeleo y el protocolo."]
+  },
+  ESFP:{
+    rel:["Amas abiertamente, de forma generosa, cálida y plenamente presente; eres la pareja que hace que la vida parezca más una celebración con el simple hecho de estar en ella. Eres atento con las personas que te rodean y rápido para mejorar su estado de ánimo, y aportas espontaneidad y afecto sin reservas. Ser amado por ti rara vez es sutil y nunca frío.", "Donde se vuelve difícil es en el conflicto y el clima emocional más denso, que prefieres superar en lugar de habitar, y en la inclinación hacia lo inmediato sobre el largo plazo. Las relaciones que mejor se adaptan a ti emparejan tu calidez con alguien estable, que te ayude a enfrentar lo difícil sin apagar el brillo que te hace ser quien eres."],
+    work:["Brillas en trabajos animados orientados al público, donde tu energía, adaptabilidad y encanto natural son virtudes en lugar de distracciones. Lees bien a las personas, haces que los ambientes sean más agradables y respondes de manera brillante en el momento. Aprendes haciendo y atraes a otros contigo.", "Los periodos prolongados de trabajo solitario, abstracto o repetitivo te agotan rápidamente, al igual que una estructura rígida sin margen para la improvisación. Te desempeñas mejor donde hay variedad, contacto humano y resultados tangibles que puedas ver y sentir, y donde ser agradable se trata como la fortaleza que es."]
+  }
+};
+
 function render(){
   const p=new URLSearchParams(window.location.search);
-  const t=(p.get('t')||'INTJ').toUpperCase();
+  // Support clean URLs like /types/intj as well as legacy ?t=INTJ
+  const pathMatch=window.location.pathname.match(/\/types\/([a-zA-Z]{4})(?:$|\/)/);
+  const t=(pathMatch?pathMatch[1]:p.get('t')||'INTJ').toUpperCase();
   const d=types[t];
-  if(!d){document.getElementById('content').innerHTML='<p style="color:var(--muted)">Tipo no encontrado.</p>';return;}
-  document.title=`${t} Personality Type · ${d.name}, 77 Scenarios`;
+  if(!d){document.getElementById('content').innerHTML='<p style="color:var(--muted)">Type not found.</p>';return;}
+  document.title=`Tipo de Personalidad ${t}: ${d.name} — Rasgos, Fortalezas y Compatibilidad | 77Scenarios`;
 
   // Read optional score params (e.g. ei=72E, sn=65N, tf=81T, jp=60J)
   const scoreKeys = ['ei','sn','tf','jp'];
@@ -412,62 +488,188 @@ function render(){
     spectrumHTML = `<div class="section r" data-d="1b" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px 32px;margin-bottom:36px">
       <div class="section-label" style="margin-bottom:20px">Sus puntuaciones</div>
       ${bars}
-      <p style="font-size:12px;color:var(--muted);margin-top:16px;line-height:1.6">Compartido desde un test 77 Scenarios completado. <a href="/es/" style="color:var(--gold);text-decoration:none">Hazlo tú mismo →</a></p>
+      <p style="font-size:12px;color:var(--muted);margin-top:16px;line-height:1.6">Compartido desde un test de 77 Scenarios completado. <a href="/es/" style="color:var(--gold);text-decoration:none">Hazlo tú mismo →</a></p>
     </div>`;
   }
 
   // Dynamic SEO
-  const desc=`The ${t} personality type (${d.name}): ${d.tagline}. Full description, strengths, blind spots, and famous examples of the ${t} Myers-Briggs type.`;
+  const desc=`El tipo de personalidad de Myers-Briggs ${t} (${d.name}): ${d.tagline}. Descubre las funciones cognitivas de ${t}, sus fortalezas clave, puntos ciegos, personas famosas ${t} y mejores parejas de compatibilidad.`;
   let dm=document.querySelector('meta[name="description"]');
   if(!dm){dm=document.createElement('meta');dm.name='description';document.head.appendChild(dm);}
   dm.content=desc;
   let km=document.querySelector('meta[name="keywords"]');
   if(!km){km=document.createElement('meta');km.name='keywords';document.head.appendChild(km);}
-  km.content=`${t} personality, ${t} personality type, ${t} Myers-Briggs, ${d.name} personality, MBTI ${t}, ${t} strengths weaknesses, ${t} famous people`;
+  km.content=`tipo de personalidad ${t}, personalidad ${t}, ${t} Myers-Briggs, ${t} MBTI, tipo de personalidad ${d.name}, fortalezas y debilidades de ${t}, funciones cognitivas de ${t}, compatibilidad de ${t}, relaciones de ${t}, personas famosas ${t}, rasgos de ${t}, qué es ${t}, significado de ${t}, resumen de ${t}`;
   document.querySelector('meta[property="og:title"]')?.setAttribute('content',`${t} · ${d.name}, 77 Scenarios`)||
     (()=>{const m=document.createElement('meta');m.setAttribute('property','og:title');m.content=`${t} · ${d.name}, 77 Scenarios`;document.head.appendChild(m);})();
-  document.getElementById('canonical-url')?.setAttribute('href',`https://77scenarios.com/type.html?t=${t}`);
-  const h1el=document.getElementById('page-h1');if(h1el)h1el.textContent=`${t} Personality Type — ${d.name}`;
+  document.getElementById('canonical-url')?.setAttribute('href',`https://77scenarios.com/types/${t.toLowerCase()}`);
+  const bcEl = document.getElementById('bc-type'); if(bcEl) bcEl.textContent = t + ' · ' + d.name;
+  const h1el=document.getElementById('page-h1');if(h1el)h1el.textContent=`Tipo de Personalidad ${t} - ${d.name}`;
   document.querySelector('meta[property="og:description"]')?.setAttribute('content',desc)||
     (()=>{const m=document.createElement('meta');m.setAttribute('property','og:description');m.content=desc;document.head.appendChild(m);})();
-  document.querySelector('meta[property="og:url"]')?.setAttribute('content',`https://77scenarios.com/type?t=${t}`)||
-    (()=>{const m=document.createElement('meta');m.setAttribute('property','og:url');m.content=`https://77scenarios.com/type?t=${t}`;document.head.appendChild(m);})();
-  document.getElementById('type-schema').textContent=JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":`${t} Personality Type: ${d.name}`,"description":desc,"url":`https://77scenarios.com/type.html?t=${t}`,"publisher":{"@type":"Organization","name":"77 Scenarios","url":"https://77scenarios.com"}});
+  document.querySelector('meta[property="og:url"]')?.setAttribute('content',`https://77scenarios.com/types/${t.toLowerCase()}`)||
+    (()=>{const m=document.createElement('meta');m.setAttribute('property','og:url');m.content=`https://77scenarios.com/types/${t.toLowerCase()}`;document.head.appendChild(m);})();
+  const typeImgUrl=`https://77scenarios.com/images/types/${t}.jpg`;
+  document.querySelector('meta[property="og:image"]')?.setAttribute('content',typeImgUrl)||
+    (()=>{const m=document.createElement('meta');m.setAttribute('property','og:image');m.content=typeImgUrl;document.head.appendChild(m);})();
+  document.querySelector('meta[name="twitter:image"]')?.setAttribute('content',typeImgUrl)||
+    (()=>{const m=document.createElement('meta');m.setAttribute('name','twitter:image');m.content=typeImgUrl;document.head.appendChild(m);})();
+  document.getElementById('type-schema').textContent=JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":`Tipo de Personalidad ${t}: ${d.name}`,"description":desc,"url":`https://77scenarios.com/types/${t.toLowerCase()}`,"publisher":{"@type":"Organization","name":"77 Scenarios","url":"https://77scenarios.com"}});
+
+  // Top compatibility matches
+  const ti=Object.keys(types).indexOf(t);
+  const allTypes=['INFP','ENFP','INFJ','ENFJ','INTJ','ENTJ','INTP','ENTP','ISFP','ESFP','ISTP','ESTP','ISFJ','ESFJ','ISTJ','ESTJ'];
+  const ti2=allTypes.indexOf(t);
+  const compMatrix=[
+    [0,4,4,5,3,5,3,3,3,2,2,1,3,2,2,1],[4,0,5,4,5,3,4,4,3,3,2,2,2,2,1,1],
+    [4,5,0,4,4,3,4,5,3,2,2,2,3,2,2,1],[5,4,4,0,3,3,4,3,5,4,3,3,4,3,2,2],
+    [3,5,4,3,0,4,4,5,2,1,3,2,2,1,3,2],[5,3,3,3,4,0,5,4,2,2,3,3,2,2,3,4],
+    [3,4,4,4,4,5,0,4,2,2,3,3,2,3,2,5],[3,4,5,3,5,4,4,0,2,2,3,3,2,2,2,3],
+    [3,3,3,5,2,2,2,2,0,4,4,4,4,5,3,3],[2,3,2,4,1,2,2,2,4,0,4,4,5,4,5,3],
+    [2,2,2,3,3,3,3,3,4,4,0,4,3,5,4,5],[1,2,2,3,2,3,3,3,4,4,4,0,5,4,5,4],
+    [3,2,3,4,2,2,2,2,4,5,3,5,0,4,4,4],[2,2,2,3,1,2,3,2,5,4,5,4,4,0,4,4],
+    [2,1,2,2,3,3,2,2,3,5,4,5,4,4,0,4],[1,1,1,2,2,4,5,3,3,3,5,4,4,4,4,0],
+  ];
+  const topMatches=ti2>=0?allTypes.filter((_,i)=>i!==ti2).map(other=>({type:other,score:compMatrix[ti2][allTypes.indexOf(other)]})).sort((a,b)=>b.score-a.score).slice(0,3):[];
+  const topMatchText=topMatches.map(m=>`${m.type} (${typeNames[m.type]||m.type})`).join(', ');
+  const topMatchLinks=topMatches.map(m=>{const i1=ti2,i2=allTypes.indexOf(m.type);const sl=i1<=i2?`${t.toLowerCase()}-${m.type.toLowerCase()}`:`${m.type.toLowerCase()}-${t.toLowerCase()}`;return `<a href="/es/compatibility/${sl}" class="similar-card"><span class="sim-code">${m.type}</span><span class="sim-name">${typeNames[m.type]||''}</span></a>`;}).join('');
+
+  // FAQ schema
+  const faqData=[
+    {q:`What is the ${t} personality type?`,a:d.p1},
+    {q:`What are the main strengths and weaknesses of ${t}?`,a:`${t} strengths: ${d.strengths.join('; ')}. ${t} blind spots: ${d.blindspots.join('; ')}.`},
+    {q:`How rare is the ${t} Myers-Briggs type?`,a:rarity[t]},
+    {q:`What personality types are most compatible with ${t}?`,a:`${t}s tend to be most compatible with ${topMatchText}. Compatibility reflects shared cognitive functions and complementary styles.`},
+    {q:`Who are famous ${t} people?`,a:`Famous ${t} personalities include: ${d.famous.map(f=>`${f.name} (${f.ctx})`).join(', ')}.`},
+  ];
+  document.getElementById('faq-schema').textContent=JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":faqData.map(({q,a})=>({'@type':'Question','name':q,'acceptedAnswer':{'@type':'Answer','text':a}}))});
+  document.getElementById('breadcrumb-schema').textContent=JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://77scenarios.com"},{"@type":"ListItem","position":2,"name":"16 Tipos de Personalidad","item":"https://77scenarios.com/types"},{"@type":"ListItem","position":3,"name":`${t}  -  ${d.name}`,"item":`https://77scenarios.com/types/${t.toLowerCase()}`}]});
+
+  // Article schema
+  let artSchema = document.getElementById('article-schema');
+  if (!artSchema) { artSchema = document.createElement('script'); artSchema.type = 'application/ld+json'; artSchema.id = 'article-schema'; document.head.appendChild(artSchema); }
+  artSchema.textContent = JSON.stringify({"@context":"https://schema.org","@type":"Article","@id":`https://77scenarios.com/types/${t.toLowerCase()}#article`,"headline":`${t} Personality Type: ${d.name}`,"description":desc,"url":`https://77scenarios.com/types/${t.toLowerCase()}`,"keywords":`${t} personality type, ${t} MBTI, ${d.name}, cognitive functions ${t}`,"articleSection":"Personality Type Analysis","inLanguage":"es","dateModified":"2026-05-19T00:00:00+00:00","publisher":{"@type":"Organization","@id":"https://77scenarios.com/#organization","name":"77 Scenarios"},"isPartOf":{"@type":"WebSite","@id":"https://77scenarios.com/#website"}});
 
   const code=t.split('').map((l,i)=>(i%2===1)?`<span class="hi">${l}</span>`:l).join('');
   const pills=t.split('').map((l,i)=>{
     const dims=['Energía','Percepción','Juicio','Estilo de vida'];
-    return `<a href="/es/letter?l=${l}" class="letter-pill">${l} · ${dims[i]}</a>`;
+    return `<a href="/es/letters/${l.toLowerCase()}" class="letter-pill">${l} · ${dims[i]}</a>`;
   }).join('');
-  const simCards=d.similar.map(c=>`<a href="/es/type?t=${c}" class="similar-card"><span class="sim-code">${c}</span><span class="sim-name">${typeNames[c]||''}</span></a>`).join('');
+  const simCards=d.similar.map(c=>`<a href="/es/types/${c.toLowerCase()}" class="similar-card"><span class="sim-code">${c}</span><span class="sim-name">${typeNames[c]||''}</span></a>`).join('');
+
+  // vs page links for this type
+  const vsMap={
+    INFJ:['infj-infp','infj-intj','isfj-infj','enfj-infj','infj-istj','isfp-infj','infj-enfp','infj-istp','entj-infj','intp-infj','estp-infj','infj-esfj','infj-intp'],
+    INTJ:['intj-intp','infj-intj','entj-intj','istj-intj','intj-infp','entp-intj','enfj-intj','intj-esfp','intj-isfj','estp-intj','esfj-intj','intj-isfp','intj-istp','intj-istj'],
+    INFP:['infj-infp','enfp-infp','infp-isfp','intp-infp','infp-enfj','intj-infp','entj-infp','isfj-infp','infp-istp','infp-estj','infp-istj','infp-entp','enfj-infp','esfj-infp','infp-intp'],
+    INTP:['intj-intp','entp-intp','intp-infp','istp-intp','intp-istj','intp-infj','intp-esfj','intp-istp','enfj-intp','enfp-intp','infj-intp','infp-intp'],
+    ENFP:['enfp-infp','enfp-enfj','enfp-entp','esfp-enfp','infj-enfp','enfp-esfj','enfp-istp','enfp-estj','enfp-isfp','enfj-enfp','enfp-intp','enfp-isfj','enfp-istj','enfp-esfp'],
+    ENFJ:['enfj-infj','enfp-enfj','esfj-enfj','enfj-entj','infp-enfj','enfj-isfj','enfj-intj','enfj-istp','enfj-esfj','enfj-estp','enfj-intp','enfj-estj','enfj-entp','enfj-enfp','enfj-infp','enfj-isfp','enfj-esfp'],
+    ISFJ:['isfj-infj','isfj-isfp','istj-isfj','esfj-estj','isfj-estj','enfj-isfj','isfj-infp','istp-isfj','entj-isfj','entp-isfj','intj-isfj','estp-isfj','esfp-isfj','enfp-isfj'],
+    ISFP:['infp-isfp','isfj-isfp','isfp-esfp','isfp-infj','infp-istp','isfp-entj','isfp-esfj','estp-isfp','isfp-estj','enfp-isfp','intj-isfp','enfj-isfp','isfp-istp'],
+    ESFJ:['esfj-enfj','esfj-estj','esfj-isfj','intp-esfj','enfp-esfj','enfj-esfj','entp-esfj','isfp-esfj','esfj-istp','infj-esfj','esfj-intj','esfj-infp','entj-esfj'],
+    ENTP:['entp-intp','enfp-entp','estp-entp','entp-entj','entp-intj','entp-isfj','entp-esfj','infp-entp','entp-estp','entp-infj','enfj-entp','entp-istj','entp-istp'],
+    ESTP:['estp-entp','istp-estp','estp-estj','estp-infj','esfp-estj','estp-isfj','estp-isfp','estp-intj','entp-estp','enfj-estp','estp-istp'],
+    ISTP:['istp-intp','istp-estp','istp-istj','infj-istp','istp-isfj','infp-istp','enfj-istp','enfp-istp','esfj-istp','estp-isfp','intp-istp','intj-istp','estp-istp','isfp-istp','entp-istp'],
+    ENTJ:['entj-intj','estj-entj','enfj-entj','entp-entj','entj-infp','entj-infj','entj-isfj','isfp-entj','entj-esfp','esfp-entj','entj-intp','entj-istp','entj-entp','entj-esfj'],
+    ESTJ:['istj-intj','estj-entj','estp-estj','esfj-estj','isfj-estj','infp-estj','estj-infj','esfp-estj','estj-istj','enfp-estj','isfp-estj','enfj-estj','entp-estj','estj-intj'],
+    ESFP:['isfp-esfp','esfp-enfp','esfp-infj','intj-esfp','esfp-estj','esfp-isfj','estp-isfp','entj-esfp','esfp-entj','esfp-intp','enfj-esfp','enfp-esfp'],
+    ISTJ:['istj-intj','istj-isfj','infj-istj','istp-istj','intp-istj','infp-istj','estj-istj','entp-istj','enfj-istj','enfp-istj','intj-istj'],
+  };
+  const vsSlugs=vsMap[t]||[];
+  const vsCards=vsSlugs.map(slug=>{
+    const parts=slug.split('-');
+    const other=(parts[0].toUpperCase()===t?parts[1]:parts[0]).toUpperCase();
+    return `<a href="/vs/${slug}" class="similar-card"><span class="sim-code">vs ${other}</span><span class="sim-name">${typeNames[other]||''}</span></a>`;
+  }).join('');
+  const vsSection=vsCards?`
+    <div class="section r" data-d="7a" style="margin-top:0">
+      <div class="section-label">Comparaciones del Tipo ${t}</div>
+      <p class="body-text" style="font-size:14px;margin-bottom:16px;">¿No estás seguro de si eres realmente ${t}? Estas comparaciones detalladas cubren las parejas que se confunden más comúnmente.</p>
+      <div class="similar-row">${vsCards}</div>
+      <a href="/vs" style="display:inline-block;margin-top:16px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;">Todas las comparaciones de tipos &#8594;</a>
+    </div>`:'';
+
+  const dd2=(typeof typeDepth!=='undefined'&&typeDepth[t])?typeDepth[t]:{};
+  const relSection=(dd2.rel&&dd2.rel.length)?`
+    <div class="section r" data-d="5b">
+      <div class="section-label">${t} en las Relaciones</div>
+      ${dd2.rel.map(p=>`<p class="body-text">${p}</p>`).join('')}
+      <a href="/es/compatibility" style="display:inline-block;margin-top:8px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;">Parejas compatibles con ${t} &#8594;</a>
+    </div>`:'';
+  const workSection=(dd2.work&&dd2.work.length)?`
+    <div class="section r" data-d="5c">
+      <div class="section-label">${t} en el Trabajo</div>
+      ${dd2.work.map(p=>`<p class="body-text">${p}</p>`).join('')}
+    </div>`:'';
+
+  const gMale=GENDER_RARITY.male[t], gFemale=GENDER_RARITY.female[t];
+  const rarityCard=(gMale!=null&&gFemale!=null)?`
+    <div class="section r" data-d="3b">
+      <div class="section-label">¿Qué tan común es el tipo ${t}?</div>
+      <div class="two-col">
+        <div class="box"><div class="box-title">Entre Hombres</div><p class="body-text" style="margin:0;font-size:14px;">Alrededor del <strong style="color:var(--gold)">${gMale}%</strong> de los hombres son ${t}.</p></div>
+        <div class="box"><div class="box-title">Entre Mujeres</div><p class="body-text" style="margin:0;font-size:14px;">Alrededor del <strong style="color:var(--gold)">${gFemale}%</strong> de las mujeres son ${t}.</p></div>
+      </div>
+    </div>`:'';
+  const genderRarityText=(gMale!=null&&gFemale!=null)?` Desglosado por género, aproximadamente el ${gMale}% de los hombres y el ${gFemale}% de las mujeres son ${t}.`:'';
 
   document.getElementById('content').innerHTML=`
     <div class="r" data-d="1"><div class="type-code">${code}</div><div class="type-name">${d.name}</div><div class="type-tagline">${d.tagline}</div><div class="letter-pills">${pills}</div></div>
     ${spectrumHTML}
-    <div class="section r" data-d="2"><div class="section-label">Visión general</div><p class="body-text">${d.p1}</p><p class="body-text">${d.p2}</p></div>
+    <div class="section r" data-d="2"><div class="section-label">Visión general de ${t}</div><p class="body-text">${d.p1}</p><p class="body-text">${d.p2}</p></div>
     <div class="fd-row section r" data-d="3">
       <div class="fd-box"><div class="fd-label">Deseo central</div><div class="fd-text">${d.desire}</div></div>
       <div class="fd-box"><div class="fd-label">Miedo central</div><div class="fd-text">${d.fear}</div></div>
     </div>
-    <div class="section r" data-d="4"><div class="section-label">Rasgos</div><div class="traits-row">${d.traits.map(t=>`<span class="trait">${t}</span>`).join('')}</div></div>
+    ${rarityCard}
+    <div class="section r" data-d="4"><div class="section-label">Rasgos de personalidad de ${t}</div><div class="traits-row">${d.traits.map(t=>`<span class="trait">${t}</span>`).join('')}</div></div>
     <div class="two-col section r" data-d="5">
-      <div class="box"><div class="box-title">Fortalezas</div><ul>${d.strengths.map(s=>`<li>${s}</li>`).join('')}</ul></div>
-      <div class="box"><div class="box-title">Puntos ciegos</div><ul>${d.blindspots.map(s=>`<li>${s}</li>`).join('')}</ul></div>
+      <div class="box"><div class="box-title">Fortalezas de ${t}</div><ul>${d.strengths.map(s=>`<li>${s}</li>`).join('')}</ul></div>
+      <div class="box"><div class="box-title">Puntos ciegos de ${t}</div><ul>${d.blindspots.map(s=>`<li>${s}</li>`).join('')}</ul></div>
     </div>
-    <div class="section r" data-d="6"><div class="section-label">Ejemplos notables</div><div class="famous-grid">${d.famous.map(f=>`<div class="famous-card"><div class="famous-name">${f.name}</div><div class="famous-ctx">${f.ctx}</div></div>`).join('')}</div></div>
-    <div class="section r" data-d="7"><div class="section-label">Tipos similares</div><div class="similar-row">${simCards}</div></div>
+    ${relSection}${workSection}
+    <div class="section r" data-d="6"><div class="section-label">Personas famosas con el tipo ${t}</div><div class="famous-grid">${d.famous.map(f=>{const slug=f.name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');return`<a href="/character/${slug}" class="famous-card" data-wiki="${f.wiki||f.name}"><div class="famous-avatar-placeholder">${f.name.charAt(0)}</div><div class="famous-info"><div class="famous-name">${f.name}</div><div class="famous-ctx">${f.ctx}</div></div></a>`;}).join('')}</div></div>
+    <div class="section r" data-d="7"><div class="section-label">Tipos similares a ${t}</div><div class="similar-row">${simCards}</div></div>
+    ${vsSection}
     <div class="section r" data-d="7b" style="margin-top:0">
-      <div class="section-label">Funciones cognitivas</div>
-      <p class="body-text" style="margin-bottom:24px;font-size:14px;">Todo tipo funciona con cuatro funciones mentales en un orden definido. La primera es casi sin esfuerzo. La cuarta es tu punto débil.</p>
+      <div class="section-label">Funciones cognitivas de ${t}</div>
+      <p class="body-text" style="margin-bottom:24px;font-size:14px;">Cada tipo funciona con cuatro funciones mentales en un orden establecido. La primera es casi sin esfuerzo. La cuarta es tu punto débil.</p>
       <div style="display:flex;flex-direction:column;gap:12px;" id="fn-stack-inline"></div>
-      <a href="/es/functions?t=${t}" style="display:inline-block;margin-top:20px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;">Ver el análisis completo de tus funciones &#8594;</a>
+      <a href="/es/functions?t=${t}" style="display:inline-block;margin-top:20px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;">Ver el desglose completo de tus funciones &#8594;</a>
+    </div>
+    <div class="section r" data-d="8b">
+      <div class="section-label">Compatibilidad de ${t}</div>
+      <p class="body-text" style="font-size:14px;margin-bottom:16px;">Las mejores parejas de Myers-Briggs para ${t}. Basado en la superposición de funciones cognitivas y datos de satisfacción en las relaciones.</p>
+      <div class="compat-links">${topMatchLinks}</div>
+      <a href="/es/compatibility" style="display:inline-block;margin-top:16px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;">Desglose de compatibilidad completo de ${t} →</a>
+    </div>
+    <div class="section r" data-d="8c">
+      <div class="section-label">Preguntas frecuentes sobre ${t}</div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">¿Qué tan raro es el tipo de personalidad ${t}?</div>
+          <div class="faq-a">${rarity[t]}${genderRarityText}</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">¿Qué hace que alguien sea del tipo Myers-Briggs ${t}?</div>
+          <div class="faq-a">${d.p2}</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">¿Cuáles son las mejores parejas de relación para ${t}?</div>
+          <div class="faq-a">Los ${t} tienden a ser más compatibles con ${topMatchText}. La pareja ideal equilibra funciones cognitivas complementarias con valores fundamentales compartidos.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">¿Quiénes son personas famosas con el tipo ${t}?</div>
+          <div class="faq-a">${d.famous.map(f=>`${f.name} (${f.ctx})`).join(', ')}.</div>
+        </div>
+      </div>
     </div>
     <div class="sep r" data-d="8"></div>
     <div class="cta-block r" data-d="9">
-      <div class="cta-text">¿No estás seguro de ser <em>${t}</em>?<br>Deja que los escenarios decidan.</div>
+      <div class="cta-text">¿No estás seguro de si eres <em>${t}</em>?<br>Deja que los escenarios decidan.</div>
       <a href="/es/" class="btn-gold">Hacer el test →</a>
     </div>`;
-
 
   // Build inline function stack
   const stackEl = document.getElementById('fn-stack-inline');
@@ -504,7 +706,7 @@ document.addEventListener('click',e=>{
   ov.animate([{opacity:0},{opacity:1}],{duration:320,easing:'cubic-bezier(0.76,0,0.24,1)',fill:'forwards'}).finished.then(()=>{window.location.href=h;});
 });
 
-// Reveal observer — defined before render() so obs.observe() works inside render()
+// Reveal observer - defined before render() so obs.observe() works inside render()
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(en=>{
     if(!en.isIntersecting)return;
@@ -515,18 +717,100 @@ const obs=new IntersectionObserver(entries=>{
 },{threshold:0.155});
 
 render();
+
+// Load famous example avatars from Wikipedia (deferred so it doesn't block render)
+setTimeout(function(){
+  document.querySelectorAll('.famous-card[data-wiki]').forEach(function(card){
+    const wiki = card.getAttribute('data-wiki');
+    if(!wiki) return;
+    fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(wiki))
+      .then(function(r){ return r.json(); })
+      .then(function(data){
+        const thumb = data.thumbnail && data.thumbnail.source;
+        if(!thumb) return;
+        const placeholder = card.querySelector('.famous-avatar-placeholder');
+        if(!placeholder) return;
+        const img = document.createElement('img');
+        img.className = 'famous-avatar';
+        img.alt = card.querySelector('.famous-name').textContent;
+        img.loading = 'lazy';
+        img.onload = function(){ img.classList.add('loaded'); placeholder.replaceWith(img); };
+        img.src = thumb;
+      }).catch(function(){});
+  });
+}, 400);
 </script>
 
 <script>
-function toggleMenu(){var d=document.getElementById('nav-drawer'),o=document.getElementById('nav-overlay'),b=document.querySelector('.nav-burger'),isOpen=d.classList.contains('open');d.classList.toggle('open',!isOpen);o.classList.toggle('open',!isOpen);b.classList.toggle('open',!isOpen);document.body.style.overflow=isOpen?'':'hidden';}
-</script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
 (function(){
-  const {createClient}=supabase;
-  const sb=createClient('https://rttomfnfyjjssdqfzkaj.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw');
-  window._navSb = sb;
+  var bar = document.getElementById('reading-progress');
+  if(!bar) return;
+  window.addEventListener('scroll', function(){
+    var doc = document.documentElement;
+    var pct = doc.scrollHeight <= doc.clientHeight ? 0 : (doc.scrollTop / (doc.scrollHeight - doc.clientHeight)) * 100;
+    bar.style.width = Math.min(100, pct) + '%';
+  }, {passive:true});
 })();
 </script>
+<script src="/cinematic.js" defer></script>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  if(document.getElementById('page-lm'))return;
+  var s=document.createElement('style');
+  s.id='page-lm';
+  s.textContent=[
+    /* glow + grain off */
+    'body.light-mode::before{opacity:0!important}',
+    'body.light-mode .glow{opacity:0!important}',
+    /* footer: navy */
+    'body.light-mode #nav-footer{background:rgba(30,45,74,0.97)!important;border-top:3px solid #c9a84c!important}',
+    'body.light-mode #nav-footer .footer-tagline{color:rgba(255,255,255,0.65)!important}',
+    'body.light-mode #nav-footer .footer-col a{color:rgba(255,255,255,0.7)!important}',
+    'body.light-mode #nav-footer .footer-col a:hover{color:#fff!important}',
+    'body.light-mode #nav-footer .footer-col-head{color:rgba(255,255,255,0.45)!important}',
+    'body.light-mode #nav-footer .footer-copy{color:rgba(255,255,255,0.4)!important}',
+    'body.light-mode #nav-footer .footer-bottom{border-top-color:rgba(255,255,255,0.12)!important}',
+    'body.light-mode #nav-footer .footer-bottom-links a{color:rgba(255,255,255,0.45)!important}',
+    'body.light-mode #nav-footer .footer-bottom-links a:hover{color:#fff!important}',
+    'body.light-mode #nav-footer .footer-logo-text{color:rgba(255,255,255,0.5)!important}',
+    'body.light-mode #nav-footer .footer-cta{color:#c9a84c!important}',
+    /* all primary cards: navy */
+    'body.light-mode .type-card,body.light-mode .lcard,body.light-mode .db-card,body.light-mode .fncard,body.light-mode .vs-pair-card,body.light-mode .contact-card,body.light-mode .thread-item,body.light-mode .reply-card,body.light-mode .post-body,body.light-mode .info-box,body.light-mode .score-block,body.light-mode .similar-card,body.light-mode .type-pair-card,body.light-mode .vs-fn-col,body.light-mode .vs-overlap-item,body.light-mode .vs-tell-item,body.light-mode .vs-famous-col,body.light-mode .vs-quiz,body.light-mode .famous-card,body.light-mode .modal,body.light-mode .intro-box,body.light-mode .verdict,body.light-mode .verdict-box,body.light-mode .score-card,body.light-mode .result-card,body.light-mode .auth-notice,body.light-mode .callout,body.light-mode .cta-box,body.light-mode .opp-block,body.light-mode .box,body.light-mode .growth-box,body.light-mode .fd-box,body.light-mode .related-card,body.light-mode .fn-card{background:#1e2d4a!important;border-color:#2d4168!important;box-shadow:0 4px 16px rgba(30,45,74,0.18)!important}',
+    /* sections: transparent — blend with page background */
+    'body.light-mode .section{background:transparent!important;border-color:#d0d7e3!important;box-shadow:none!important}',
+    /* all text inside navy cards: white */
+    'body.light-mode .type-card *,body.light-mode .lcard *,body.light-mode .db-card *,body.light-mode .fncard *,body.light-mode .vs-pair-card *,body.light-mode .contact-card *,body.light-mode .thread-item *,body.light-mode .reply-card *,body.light-mode .post-body *,body.light-mode .info-box *,body.light-mode .similar-card *,body.light-mode .type-pair-card *,body.light-mode .verdict *,body.light-mode .verdict-box *,body.light-mode .score-card *,body.light-mode .intro-box *,body.light-mode .callout *,body.light-mode .famous-card *,body.light-mode .score-block *,body.light-mode .box *,body.light-mode .growth-box *,body.light-mode .fn-card *,body.light-mode .related-card *,body.light-mode .opp-block *,body.light-mode .cta-box *,body.light-mode .fd-box *{color:#ffffff!important}',
+    /* primary card text: white (no font-weight override — prevents fake-bold double render) */
+    'body.light-mode .card-name,body.light-mode .db-card-name,body.light-mode .lcard-letter,body.light-mode .lcard-name,body.light-mode .tpc-code,body.light-mode .tpc-name,body.light-mode .sim-code,body.light-mode .vs-pair-card-types,body.light-mode .cc-title{color:#ffffff!important}',
+    /* secondary text in cards: high-opacity white */
+    'body.light-mode .card-tagline,body.light-mode .lcard-desc,body.light-mode .tpc-tagline,body.light-mode .db-card-ctx,body.light-mode .db-card-cat,body.light-mode .vs-pair-card-tag,body.light-mode .cc-desc,body.light-mode .sim-name{color:rgba(255,255,255,0.88)!important}',
+    /* fd-box: explicit overrides so no wildcard ambiguity */
+    'body.light-mode .fd-label{color:#c9a84c!important}',
+    'body.light-mode .fd-text{color:#ffffff!important}',
+    /* box-title: explicit override — var(--gold) resolves dark in light mode on navy bg */
+    'body.light-mode .box-title{color:#c9a84c!important}',
+    'body.light-mode .box li,body.light-mode .box p{color:#ffffff!important}',
+    /* gold accents stay gold inside cards */
+    'body.light-mode .type-card .card-arrow,body.light-mode .lcard .lcard-arrow,body.light-mode .db-card .db-card-type,body.light-mode .fncard .fn-letter,body.light-mode .hi,body.light-mode .cc-email{color:#c9a84c!important}',
+    /* card hover */
+    'body.light-mode .type-card:hover,body.light-mode .lcard:hover,body.light-mode .db-card:hover,body.light-mode .fncard:hover,body.light-mode .vs-pair-card:hover,body.light-mode .contact-card:hover,body.light-mode .thread-item:hover,body.light-mode .similar-card:hover,body.light-mode .type-pair-card:hover,body.light-mode .famous-card:hover{background:#2d4168!important;border-color:#c9a84c!important;box-shadow:0 8px 28px rgba(30,45,74,0.3)!important}',
+    /* nested pills/tags inside cards: lighter navy */
+    'body.light-mode .type-card .mini-type,body.light-mode .lcard .mini-type,body.light-mode .type-card .tag,body.light-mode .fn-card .tag,body.light-mode .actor-chip,body.light-mode .universe-chip{background:rgba(255,255,255,0.12)!important;border-color:rgba(255,255,255,0.2)!important;color:#ffffff!important}',
+    /* section label + eyebrow: navy on white background */
+    'body.light-mode .section-label{color:#2d4168!important}',
+    'body.light-mode .section-label::after{background:#c8d4e4!important}',
+    /* trait chips inside sections: navy outline style */
+    'body.light-mode .section .trait{background:#f0f2f6!important;border-color:#c8d4e4!important;color:#1e2d4a!important}',
+    'body.light-mode .page-eyebrow{color:#8a6d2e!important}',
+    /* page body text navy */
+    'body.light-mode{color:#1e2d4a!important}',
+    'body.light-mode h1,body.light-mode h2,body.light-mode h3,body.light-mode h4{color:#1e2d4a!important}',
+    'body.light-mode p,body.light-mode li,body.light-mode .prose,body.light-mode .body-text,body.light-mode .page-sub{color:#1e2d4a!important}',
+  ].join('');
+  document.head.appendChild(s);
+});
+</script>
+
 </body>
 </html>
