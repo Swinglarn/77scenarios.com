@@ -467,6 +467,7 @@
   var prefix = '';
   if (path.startsWith('/es')) prefix = '/es';
   else if (path.startsWith('/pt')) prefix = '/pt';
+  else if (path.startsWith('/ja')) prefix = '/ja';
 
   // ── NAV LINKS ─────────────────────────────────────────────────────────────────
   // IMPORTANT: EN links must match static HTML exactly (same hrefs, same order)
@@ -502,6 +503,16 @@
       { href: '/pt/archive',             label: 'Arquivo'         },
       { href: '/pt/forum',               label: 'Fórum'           },
       { href: '/pt/about',               label: 'Sobre'           }
+    ],
+    '/ja': [
+      { href: '/ja/',                    label: 'テストを受ける'  },
+      { href: '/ja/types',               label: '16の性格タイプ'  },
+      { href: '/ja/letters',             label: '8つの指標'      },
+      { href: '/ja/cognitive-functions', label: '心理機能'      },
+      { href: '/ja/compatibility',       label: '相性診断'      },
+      { href: '/ja/archive',             label: 'アーカイブ'     },
+      { href: '/ja/forum',               label: 'フォーラム'     },
+      { href: '/ja/about',               label: 'このサイトについて' }
     ]
   };
 

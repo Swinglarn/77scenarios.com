@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">スレッド - 77 Scenarios</title>
+<meta name="robots" content="index, follow">
+<meta id="page-desc" name="description" content="77 Scenariosのフォーラムで、シナリオベースの性格タイプや認知機能について語り合いましょう。">
+<meta property="og:type" content="article">
+<meta id="og-title" property="og:title" content="フォーラム - 77 Scenarios">
+<meta id="og-desc" property="og:description" content="77 Scenariosのフォーラムで、シナシナリオベースの性格タイプや認知機能について語り合いましょう。">
+<meta property="og:image" content="https://77scenarios.com/og-image.png">
+<meta name="twitter:image" content="https://77scenarios.com/og-image.png">
+<meta property="og:url" content="https://77scenarios.com/ja/forum-thread">
+<meta property="og:site_name" content="77 Scenarios">
+<link rel="canonical" href="https://77scenarios.com/ja/forum-thread">
+<link rel="alternate" hreflang="en" href="https://77scenarios.com/forum-thread">
+<link rel="alternate" hreflang="es" href="https://77scenarios.com/es/forum-thread">
+<link rel="alternate" hreflang="pt-BR" href="https://77scenarios.com/pt/forum-thread">
+<link rel="alternate" hreflang="ja" href="https://77scenarios.com/ja/forum-thread">
+<link rel="alternate" hreflang="x-default" href="https://77scenarios.com/forum-thread">
+<script id="thread-schema" type="application/ld+json">{}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{--bg:#0c0e10;--surface:#13161a;--surface2:#1a1e24;--gold:#c9a84c;--gold-dim:#8a6d2e;--cream:#ede8df;--muted:#ccc6bf;--border:#252a30;--radius:14px;}
+  html,body{background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;font-weight:400;overflow-x:hidden;}
+  body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:0.6;}
+  #t-overlay{position:fixed;inset:0;z-index:9999;pointer-events:none;background:#0c0e10;opacity:1;}
+  .glow{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0;}
+  .glow-1{width:600px;height:600px;top:-200px;left:-150px;background:radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%);}
+  .glow-2{width:400px;height:400px;bottom:-100px;right:-100px;background:radial-gradient(circle,rgba(120,180,160,0.05) 0%,transparent 70%);}
+
+
+  /* Vote buttons */
+  .vote-btn{background:none;border:none;color:var(--muted);cursor:pointer;padding:10px 8px;font-size:14px;line-height:1;transition:color 0.15s;border-radius:4px;display:flex;align-items:center;justify-content:center;min-height:44px;}
+  .vote-btn:hover{color:var(--gold);}
+  .vote-btn.up.active{color:var(--gold);}
+  .vote-btn.down.active{color:#e07070;}
+
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+  main{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:48px 32px 96px;}
+  @media(max-width:600px){main{padding:32px 16px 80px;}}
+
+  .r{opacity:0;transform:translateY(24px);transition:opacity 0.65s cubic-bezier(0.22,1,0.36,1),transform 0.65s cubic-bezier(0.22,1,0.36,1);}
+  .r.in{opacity:1;transform:none;}
+
+  /* Back link */
+  .back-link{display:inline-flex;align-items:center;gap:8px;color:var(--muted);font-size:0.94rem;text-decoration:none;margin-bottom:28px;transition:color 0.15s;}
+  .back-link:hover{color:var(--cream);}
+
+  /* Thread */
+  .thread-head{margin-bottom:36px;}
+  .thread-cat{font-size:0.84rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:10px;}
+  .thread-title-large{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:600;color:var(--cream);line-height:1.1;margin-bottom:14px;}
+  .thread-author-line{display:flex;align-items:center;gap:12px;font-size:0.94rem;color:var(--muted);}
+  .thread-author-name{color:var(--gold-dim);}
+
+  /* Original post */
+  .post-body{background:#131820;border:1px solid #2a3848;border-radius:12px;padding:28px 28px 24px;margin-bottom:40px;line-height:1.8;font-size:1.05rem;color:#c8c0b8;white-space:pre-wrap;word-break:break-word;box-shadow:inset 0 1px 0 rgba(255,255,255,0.05),0 2px 14px rgba(0,0,0,0.45);}
+
+  /* Divider */
+  .replies-label{font-size:0.84rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:20px;display:flex;align-items:center;gap:12px;}
+  .replies-label::after{content:'';flex:1;height:1px;background:var(--border);}
+
+  /* Reply cards */
+  .reply-list{display:flex;flex-direction:column;gap:12px;margin-bottom:36px;}
+  .reply-card{background:#131820;border:1px solid #2a3848;border-radius:10px;padding:20px 24px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.04),0 2px 8px rgba(0,0,0,0.35);}
+  .reply-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
+  .reply-author{font-size:0.94rem;color:var(--gold-dim);}
+  .reply-time{font-size:1rem;color:var(--muted);}
+  .reply-body{font-size:1rem;line-height:1.75;color:#c8c0b8;white-space:pre-wrap;word-break:break-word;}
+  .reply-deleted{font-size:1rem;color:var(--muted);font-style:italic;}
+  .reply-actions{display:flex;gap:10px;margin-top:10px;}
+  .reply-action-btn{background:none;border:none;color:var(--muted);font-size:1rem;cursor:pointer;padding:0;transition:color 0.15s;font-family:'DM Sans',sans-serif;}
+  .reply-action-btn:hover{color:var(--gold);}
+
+  /* Loading */
+  .loading-row{height:80px;background:var(--surface);border:1px solid var(--border);border-radius:10px;animation:pulse 1.4s ease infinite;margin-bottom:12px;}
+  @keyframes pulse{0%,100%{opacity:0.5;}50%{opacity:1;}}
+
+  /* Reply form */
+  .reply-form{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;}
+  .reply-form-title{font-size:1rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
+  .form-textarea{background:#0c0e10;border:1px solid var(--border);border-radius:8px;padding:12px 14px;color:var(--cream);font-size:1rem;font-family:'DM Sans',sans-serif;width:100%;transition:border-color 0.15s;outline:none;resize:vertical;min-height:110px;line-height:1.6;}
+  .form-textarea:focus{border-color:var(--gold-dim);}
+  .reply-form-actions{display:flex;justify-content:flex-end;margin-top:12px;}
+  .btn-primary{background:var(--gold);color:#0c0e10;border:none;padding:10px 22px;border-radius:8px;font-size:0.96rem;font-weight:500;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:opacity 0.15s;font-family:'DM Sans',sans-serif;}
+  .btn-primary:hover{opacity:0.88;}
+  .btn-secondary{background:transparent;color:var(--muted);border:1px solid var(--border);padding:10px 22px;border-radius:8px;font-size:0.96rem;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:border-color 0.15s,color 0.15s;font-family:'DM Sans',sans-serif;}
+  .btn-secondary:hover{border-color:var(--gold-dim);color:var(--cream);}
+  .auth-notice{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;text-align:center;color:var(--muted);font-size:1rem;}
+  .auth-notice a{color:var(--gold);text-decoration:none;}
+  .auth-notice a:hover{text-decoration:underline;}
+  .reply-error{color:#e07070;font-size:0.92rem;margin-top:8px;display:none;}
+
+  /* Empty */
+  .no-replies{text-align:center;padding:40px 24px;color:var(--muted);font-size:1rem;}
+
+  /* Not found */
+  .not-found{text-align:center;padding:80px 24px;}
+  .not-found-title{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--cream);margin-bottom:10px;}
+
+  body.light-mode .post-body{color:#1e2d4a;}
+  body.light-mode .reply-body{color:#1e2d4a;}
+</style>
+<script src="/nav.js" defer></script>
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+body.light-mode .back-link{color:#4a5568;}
+body.light-mode .back-link:hover{color:#1e2d4a;}
+body.light-mode .thread-cat{color:#8a6d2e;}
+body.light-mode .thread-title-large{color:#1e2d4a;}
+body.light-mode .thread-author-line{color:#4a6080;}
+body.light-mode .thread-author-name{color:#8a6d2e;}
+body.light-mode .post-body{background:#ffffff;border-color:#c8d4e4;color:#1e2d4a;}
+body.light-mode .replies-label{color:#8a6d2e;}
+body.light-mode .replies-label::after{background:#c0cad8;}
+body.light-mode .reply-card{background:#ffffff;border-color:#c8d4e4;}
+body.light-mode .reply-author{color:#8a6d2e;}
+body.light-mode .reply-time{color:#6a7a90;}
+body.light-mode .reply-body{color:#1e2d4a;}
+body.light-mode .reply-deleted{color:#6a7a90;}
+body.light-mode .reply-action-btn{color:#6a7a90;}
+body.light-mode .reply-action-btn:hover{color:#8a6d2e;}
+body.light-mode .reply-form{background:#ffffff;border-color:#c8d4e4;}
+body.light-mode .reply-form-title{color:#4a6080;}
+body.light-mode .form-textarea{background:#ffffff;border-color:#d0d7e3;color:#1e2d4a;}
+body.light-mode .form-textarea::placeholder{color:#8a9ab0;}
+body.light-mode .form-textarea:focus{border-color:#c9a84c;box-shadow:0 0 0 3px rgba(201,168,76,0.10);}
+body.light-mode .auth-notice{background:#ffffff;border-color:#c8d4e4;color:#4a6080;}
+body.light-mode .no-replies{color:#4a6080;}
+body.light-mode .loading-row{background:#eef2f8;border-color:#c8d4e4;}
+</style>
+</head>
+<body>
+<div id="t-overlay"></div>
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+
+<h1 class="sr-only" id="page-h1">スレッド - 77 Scenarios</h1>
+
+<main id="main-content">
+  <div class="loading-row" style="height:200px;margin-bottom:24px;"></div>
+  <div class="loading-row"></div>
+  <div class="loading-row"></div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const { createClient } = supabase;
+  const sb = createClient('https://rttomfnfyjjssdqfzkaj.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw');
+  window._navSb = sb;
+
+  const CAT_LABELS = {
+    general:'雑談・一般', type_discussion:'タイプ議論', relationships:'相性・人間関係',
+    cognitive_functions:'認知機能', ask_the_forum:'フォーラムに質問', off_topic:'フリートーク'
+  };
+
+  const params = new URLSearchParams(location.search);
+  const threadId = params.get('id');
+  let currentUser = null;
+  let thread = null;
+  let userVotes = {}; // replyId -> vote
+
+  function errStr(e) {
+    if (!e) return '不明なエラー';
+    if (typeof e === 'string') return e;
+    // Supabase JS v2 error shape
+    if (e.message) return e.message;
+    if (e.error_description) return e.error_description;
+    if (e.error) return typeof e.error === 'string' ? e.error : '不明なエラー';
+    if (e.details) return e.details;
+    if (e.hint) return e.hint;
+    if (e.code) return 'エラーコード: ' + e.code;
+    try { return JSON.stringify(e); } catch { return '不明なエラー'; }
+  }
+
+  function escHtml(s) {
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function formatDate(ts) {
+    return new Date(ts).toLocaleDateString('ja-JP', { day:'numeric', month:'short', year:'numeric' });
+  }
+
+  function formatDateTime(ts) {
+    const d = new Date(ts);
+    return d.toLocaleDateString('ja-JP', { day:'numeric', month:'short', year:'numeric' }) +
+      ' ' + d.toLocaleTimeString('ja-JP', { hour:'2-digit', minute:'2-digit' });
+  }
+
+  function timeAgo(ts) {
+    const diff = Date.now() - new Date(ts).getTime();
+    const m = Math.floor(diff / 60000);
+    if (m < 1) return 'たった今';
+    if (m < 60) return `${m}分前`;
+    const h = Math.floor(m / 60);
+    if (h < 24) return `${h}時間前`;
+    const d = Math.floor(h / 24);
+    if (d < 30) return `${d}日前`;
+    return formatDate(ts);
+  }
+
+  async function init() {
+    const { data } = await sb.auth.getUser();
+    currentUser = data?.user || null;
+
+    if (!threadId) { renderNotFound(); return; }
+
+    const [{ data: t, error }, { data: votes }] = await Promise.all([
+      sb.from('forum_threads').select('*').eq('id', threadId).single(),
+      currentUser ? sb.from('forum_votes').select('reply_id, vote').eq('user_id', currentUser.id).not('reply_id', 'is', null) : Promise.resolve({ data: [] })
+    ]);
+
+    if (error || !t) { renderNotFound(); return; }
+    thread = t;
+
+    if (votes) votes.forEach(v => { userVotes[v.reply_id] = v.vote; });
+
+    document.title = `${t.title} - 77 Scenarios フォーラム`;
+    document.getElementById('page-h1').textContent = t.title;
+
+    // ── Dynamic SEO ──
+    const threadUrl = `https://77scenarios.com/ja/forum-thread?id=${threadId}`;
+    const rawSnippet = (t.body || '').replace(/\s+/g, ' ').trim().slice(0, 155);
+    const metaDesc = rawSnippet.length === 155 ? rawSnippet.slice(0, 152) + '\u2026' : rawSnippet;
+    const ogTitle = `${t.title} \u00b7 77 Scenarios フォーラム`;
+    document.getElementById('page-desc').setAttribute('content', metaDesc);
+    document.getElementById('og-title').setAttribute('content', ogTitle);
+    document.getElementById('og-desc').setAttribute('content', metaDesc);
+    document.getElementById('og-url').setAttribute('content', threadUrl);
+    document.getElementById('canonical-url').setAttribute('href', threadUrl);
+    document.getElementById('thread-schema').textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'DiscussionForumPosting',
+      'headline': t.title,
+      'text': (t.body || '').slice(0, 500),
+      'url': threadUrl,
+      'datePublished': t.created_at,
+      'interactionStatistic': {
+        '@type': 'InteractionCounter',
+        'interactionType': 'https://schema.org/ReplyAction',
+        'userInteractionCount': t.reply_count || 0
+      },
+      'isPartOf': { '@type': 'WebSite', '@id': 'https://77scenarios.com/#website' },
+      'publisher': { '@type': 'Organization', 'name': '77 Scenarios', 'url': 'https://77scenarios.com' }
+    });
+
+    renderThread(t);
+    await loadReplies();
+    renderReplyForm();
+
+    if (currentUser) {
+      const { data: prof } = await sb.from('profiles').select('username, avatar_url').eq('id', currentUser.id).single();
+      injectNavAuth(prof);
+    }
+
+    const ro = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } });
+    }, { threshold: 0.05 });
+    document.querySelectorAll('.r').forEach(el => ro.observe(el));
+  }
+
+  function injectNavAuth(prof) {
+    const links = document.querySelector('.nav-links');
+    const drawerLinks = document.querySelector('.nav-drawer-links');
+    const avatarSrc = (prof && prof.avatar_url) || 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 80 80%27%3E%3Ccircle cx=%2740%27 cy=%2740%27 r=%2740%27 fill=%27%23252a30%27/%3E%3Ccircle cx=%2740%27 cy=%2732%27 r=%2714%27 fill=%27%238a6d2e%27/%3E%3Cellipse cx=%2740%27 cy=%2772%27 rx=%2724%27 ry=%2716%27 fill=%27%238a6d2e%27/%3E%3C/svg%3E';
+    const username = (prof && prof.username) || 'プロフィール';
+    if (links) {
+      const wrap = document.createElement('a');
+      wrap.href = '/ja/profile';
+      wrap.style.cssText = 'display:flex;align-items:center;gap:8px;text-decoration:none;';
+      const img = document.createElement('img');
+      img.src = avatarSrc;
+      img.style.cssText = 'width:30px;height:30px;border-radius:50%;object-fit:cover;border:1.5px solid var(--gold-dim);';
+      const pill = document.createElement('span');
+      pill.textContent = username;
+      pill.style.cssText = 'font-size:13px;color:var(--gold);letter-spacing:0.06em;text-transform:uppercase;';
+      wrap.appendChild(img); wrap.appendChild(pill);
+      links.appendChild(wrap);
+    }
+    if (drawerLinks) {
+      const a = document.createElement('a');
+      a.href = '/ja/profile'; a.textContent = username; a.style.color = 'var(--gold)';
+      drawerLinks.insertBefore(a, drawerLinks.firstChild);
+    }
+  }
+
+  function renderThread(t) {
+    const username = t.author_username || '匿名';
+    const dateStr = formatDateTime(t.created_at);
+    document.getElementById('main-content').innerHTML = `
+      <a href="/ja/forum" class="back-link r">← フォーラムに戻る</a>
+      <div class="thread-head r">
+        <div class="thread-cat">${CAT_LABELS[t.category] || t.category}</div>
+        <div class="thread-title-large">${escHtml(t.title)}</div>
+        <div class="thread-author-line">
+          <span class="thread-author-name">${escHtml(username)}</span>
+          <span title="${dateStr}">${dateStr}</span>
+          <span>💬 ${t.reply_count} 件の返信</span>
+          <span>▲ ${t.vote_score}</span>
+          ${currentUser && currentUser.id === t.user_id ? `<button class="reply-action-btn" style="margin-left:8px;" onclick="deleteThread('${t.id}')">スレッドを削除</button>` : ''}
+        </div>
+      </div>
+      <div class="post-body r">${escHtml(t.body)}</div>
+      <div class="replies-label r" id="replies-label">返信</div>
+      <div class="reply-list r" id="reply-list"></div>
+      <div id="reply-form-wrap" class="r"></div>
+    `;
+  }
+
+  async function loadReplies() {
+    const list = document.getElementById('reply-list');
+    if (!list) return;
+
+    const { data: replies, error } = await sb.from('forum_replies')
+      .select('id, body, user_id, is_deleted, created_at, author_username, vote_score')
+      .eq('thread_id', threadId)
+      .order('created_at', { ascending: true });
+
+    if (error || !replies || replies.length === 0) {
+      list.innerHTML = '<div class="no-replies">返信がまだありません。最初の返信を投稿してみましょう。</div>';
+      return;
+    }
+
+    list.innerHTML = '';
+    replies.forEach(r => {
+      const card = document.createElement('div');
+      card.className = 'reply-card';
+      card.id = `reply-${r.id}`;
+      const username = r.author_username || '匿名';
+      const isOwn = currentUser && currentUser.id === r.user_id;
+      const myVote = userVotes[r.id] || 0;
+      const dateStr = formatDateTime(r.created_at);
+
+      card.innerHTML = `
+        <div class="reply-header">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="display:flex;align-items:center;gap:6px;">
+              <button class="vote-btn up ${myVote===1?'active':''}" data-rid="${r.id}" data-v="1" style="font-size:12px;padding:2px 4px;">▲</button>
+              <span style="font-size:0.8rem;color:var(--cream);min-width:16px;text-align:center;" id="rvs-${r.id}">${r.vote_score}</span>
+              <button class="vote-btn down ${myVote===-1?'active':''}" data-rid="${r.id}" data-v="-1" style="font-size:12px;padding:2px 4px;">▼</button>
+            </div>
+            <span class="reply-author">${escHtml(username)}</span>
+          </div>
+          <span class="reply-time" title="${dateStr}">${dateStr}</span>
+        </div>
+        ${r.is_deleted
+          ? '<div class="reply-deleted">この返信は削除されました。</div>'
+          : `<div class="reply-body">${escHtml(r.body)}</div>`}
+        ${isOwn && !r.is_deleted ? `<div class="reply-actions"><button class="reply-action-btn" onclick="deleteReply('${r.id}')">削除</button></div>` : ''}
+      `;
+
+      card.querySelectorAll('.vote-btn').forEach(btn => {
+        btn.addEventListener('click', () => handleReplyVote(r.id, parseInt(btn.dataset.v)));
+      });
+
+      list.appendChild(card);
+    });
+  }
+
+  async function handleReplyVote(replyId, v) {
+    if (!currentUser) { window.location.href = '/login'; return; }
+    const existing = userVotes[replyId];
+
+    if (existing === v) {
+      await sb.from('forum_votes').delete().eq('user_id', currentUser.id).eq('reply_id', replyId);
+      delete userVotes[replyId];
+    } else {
+      if (existing) await sb.from('forum_votes').delete().eq('user_id', currentUser.id).eq('reply_id', replyId);
+      const { error } = await sb.from('forum_votes').insert({ user_id: currentUser.id, reply_id: replyId, vote: v });
+      if (error) { console.error('Vote error:', errStr(error)); return; }
+      userVotes[replyId] = v;
+    }
+
+    const { data } = await sb.from('forum_replies').select('vote_score').eq('id', replyId).single();
+    if (data) {
+      const el = document.getElementById(`rvs-${replyId}`);
+      if (el) el.textContent = data.vote_score;
+      document.querySelectorAll(`.vote-btn[data-rid="${replyId}"]`).forEach(btn => {
+        btn.classList.toggle('active', userVotes[replyId] === parseInt(btn.dataset.v));
+      });
+    }
+  }
+
+  function renderReplyForm() {
+    const wrap = document.getElementById('reply-form-wrap');
+    if (!wrap) return;
+    if (thread?.is_locked) { wrap.innerHTML = '<div class="auth-notice">このスレッドはロックされています。</div>'; return; }
+    if (!currentUser) { wrap.innerHTML = '<div class="auth-notice"><a href="/ja/login">ログイン</a>または<a href="/ja/signup">アカウント登録</a>を行うと返信できます。</div>'; return; }
+    wrap.innerHTML = `
+      <div class="reply-form">
+        <div class="reply-form-title">返信を投稿する</div>
+        <textarea class="form-textarea" id="reply-body" placeholder="返信内容を入力してください..."></textarea>
+        <div class="reply-error" id="reply-error">返信内容を入力してください。</div>
+        <div class="reply-form-actions">
+          <button class="btn-primary" id="reply-submit-btn" onclick="submitReply()">返信を投稿 →</button>
+        </div>
+      </div>`;
+  }
+
+  async function submitReply() {
+    const body = document.getElementById('reply-body').value.trim();
+    if (!body) { document.getElementById('reply-error').style.display = 'block'; return; }
+    document.getElementById('reply-error').style.display = 'none';
+    const btn = document.getElementById('reply-submit-btn');
+    btn.disabled = true; btn.textContent = '投稿中…';
+
+    const { data: profile } = await sb.from('profiles').select('username').eq('id', currentUser.id).single();
+    const replyUsername = profile?.username || '匿名';
+
+    const { error } = await sb.from('forum_replies').insert({
+      thread_id: threadId, user_id: currentUser.id, body, author_username: replyUsername
+    });
+
+    if (error) {
+      document.getElementById('reply-error').textContent = 'エラー: ' + errStr(error);
+      document.getElementById('reply-error').style.display = 'block';
+      btn.disabled = false; btn.innerHTML = '返信を投稿 →';
+      return;
+    }
+
+    // Update parent thread reply count and last_activity_at
+    const { data: threadData } = await sb.from('forum_threads').select('reply_count').eq('id', threadId).single();
+    await sb.from('forum_threads').update({
+      reply_count: (threadData?.reply_count || 0) + 1,
+      last_activity_at: new Date().toISOString()
+    }).eq('id', threadId);
+
+    document.getElementById('reply-body').value = '';
+    btn.disabled = false; btn.innerHTML = '返信を投稿 →';
+    await loadReplies();
+    document.getElementById('reply-list').lastElementChild?.scrollIntoView({ behavior:'smooth', block:'end' });
+  }
+
+  async function deleteReply(id) {
+    if (!confirm('この返信を削除しますか？')) return;
+    await sb.from('forum_replies').update({ is_deleted: true }).eq('id', id).eq('user_id', currentUser.id);
+    await loadReplies();
+  }
+
+  async function deleteThread(id) {
+    if (!confirm('このスレッドとすべての返信を削除しますか？')) return;
+    const { error } = await sb.from('forum_threads').delete().eq('id', id).eq('user_id', currentUser.id);
+    if (error) { alert('エラー: ' + errStr(error)); return; }
+    window.location.href = '/forum';
+  }
+
+  function renderNotFound() {
+    document.getElementById('main-content').innerHTML = `
+      <div class="not-found">
+        <div class="not-found-title">スレッドが見つかりませんでした。</div>
+        <a href="/ja/forum" class="btn-secondary" style="display:inline-flex;margin-top:20px;">← フォーラムに戻る</a>
+      </div>`;
+  }const ov = document.getElementById('t-overlay');
+  window.addEventListener('pageshow', () => {
+    requestAnimationFrame(() => { ov.style.transition = 'opacity 0.45s ease'; ov.style.opacity = '0'; });
+  });
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href]');
+    if (!a) return;
+    const href = a.getAttribute('href');
+    if (!href || href.startsWith('#') || href.startsWith('mailto') || a.target === '_blank') return;
+    if (new URL(a.href, location.origin).origin !== location.origin) return;
+    e.preventDefault();
+    ov.style.transition = 'opacity 0.3s ease'; ov.style.opacity = '1';
+    setTimeout(() => { window.location.href = href; }, 310);
+  });
+
+  init();
+
+</script>
+<script src="/cinematic.js" defer></script>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  if(document.getElementById('page-lm'))return;
+  var s=document.createElement('style');
+  s.id='page-lm';
+  s.textContent=[
+    /* glow + grain off */
+    'body.light-mode::before{opacity:0!important}',
+    'body.light-mode .glow{opacity:0!important}',
+    /* footer: navy */
+    'body.light-mode #nav-footer{background:rgba(30,45,74,0.97)!important;border-top:3px solid #c9a84c!important}',
+    'body.light-mode #nav-footer .footer-tagline{color:rgba(255,255,255,0.65)!important}',
+    'body.light-mode #nav-footer .footer-col a{color:rgba(255,255,255,0.7)!important}',
+    'body.light-mode #nav-footer .footer-col a:hover{color:#fff!important}',
+    'body.light-mode #nav-footer .footer-col-head{color:rgba(255,255,255,0.45)!important}',
+    'body.light-mode #nav-footer .footer-copy{color:rgba(255,255,255,0.4)!important}',
+    'body.light-mode #nav-footer .footer-bottom{border-top-color:rgba(255,255,255,0.12)!important}',
+    'body.light-mode #nav-footer .footer-bottom-links a{color:rgba(255,255,255,0.45)!important}',
+    'body.light-mode #nav-footer .footer-bottom-links a:hover{color:#fff!important}',
+    'body.light-mode #nav-footer .footer-logo-text{color:rgba(255,255,255,0.5)!important}',
+    'body.light-mode #nav-footer .footer-cta{color:#c9a84c!important}',
+    /* card UI components: navy — NOT content/prose containers */
+    'body.light-mode .type-card,body.light-mode .lcard,body.light-mode .db-card,body.light-mode .fncard,body.light-mode .vs-pair-card,body.light-mode .contact-card,body.light-mode .thread-item,body.light-mode .similar-card,body.light-mode .type-pair-card,body.light-mode .famous-card,body.light-mode .score-block,body.light-mode .callout,body.light-mode .cta-box,body.light-mode .modal,body.light-mode .verdict,body.light-mode .verdict-box{background:#1e2d4a!important;border-color:#2d4168!important;box-shadow:0 4px 16px rgba(30,45,74,0.18)!important}',
+    /* white text inside navy cards */
+    'body.light-mode .type-card *,body.light-mode .lcard *,body.light-mode .db-card *,body.light-mode .fncard *,body.light-mode .vs-pair-card *,body.light-mode .contact-card *,body.light-mode .thread-item *,body.light-mode .similar-card *,body.light-mode .type-pair-card *,body.light-mode .verdict *,body.light-mode .verdict-box *,body.light-mode .score-block *,body.light-mode .callout *{color:#ffffff!important}',
+    /* primary card text: bold white */
+    'body.light-mode .card-name,body.light-mode .db-card-name,body.light-mode .lcard-letter,body.light-mode .lcard-name,body.light-mode .tpc-code,body.light-mode .tpc-name,body.light-mode .sim-code,body.light-mode .vs-pair-card-types,body.light-mode .cc-title{color:#ffffff!important;font-weight:600!important}',
+    /* secondary text in cards: dimmer white */
+    'body.light-mode .card-tagline,body.light-mode .lcard-desc,body.light-mode .tpc-tagline,body.light-mode .db-card-ctx,body.light-mode .db-card-cat,body.light-mode .vs-pair-card-tag,body.light-mode .cc-desc,body.light-mode .sim-name{color:rgba(255,255,255,0.7)!important}',
+    /* gold stays gold inside cards */
+    'body.light-mode .db-card .db-card-type,body.light-mode .hi,body.light-mode .cc-email{color:#c9a84c!important}',
+    /* card hover */
+    'body.light-mode .type-card:hover,body.light-mode .lcard:hover,body.light-mode .db-card:hover,body.light-mode .fncard:hover,body.light-mode .vs-pair-card:hover,body.light-mode .contact-card:hover,body.light-mode .thread-item:hover,body.light-mode .similar-card:hover,body.light-mode .type-pair-card:hover{background:#2d4168!important;border-color:#c9a84c!important;box-shadow:0 8px 28px rgba(30,45,74,0.3)!important}',
+    /* nested pills inside navy cards */
+    'body.light-mode .type-card .mini-type,body.light-mode .type-card .tag,body.light-mode .actor-chip,body.light-mode .universe-chip{background:rgba(255,255,255,0.12)!important;border-color:rgba(255,255,255,0.2)!important;color:#ffffff!important}',
+    /* content containers: white with navy text */
+    'body.light-mode .box,body.light-mode .intro-box,body.light-mode .post-body,body.light-mode .reply-card,body.light-mode .growth-box,body.light-mode .opp-block,body.light-mode .fd-box,body.light-mode .auth-notice,body.light-mode .result-card,body.light-mode .info-box,body.light-mode .fn-card,body.light-mode .section{background:#ffffff!important;border-color:#d0d7e3!important;box-shadow:0 1px 4px rgba(30,45,74,0.07)!important}',
+    'body.light-mode .box *,body.light-mode .intro-box *,body.light-mode .post-body *,body.light-mode .reply-card *,body.light-mode .growth-box *,body.light-mode .opp-block *,body.light-mode .fn-card *{color:#1e2d4a!important}',
+    /* section label + eyebrow */
+    'body.light-mode .section-label{color:#2d4168!important}',
+    'body.light-mode .section-label::after{background:#c8d4e4!important}',
+    'body.light-mode .page-eyebrow{color:#8a6d2e!important}',
+    /* page body text */
+    'body.light-mode{color:#1e2d4a!important}',
+    'body.light-mode h1,body.light-mode h2,body.light-mode h3,body.light-mode h4{color:#1e2d4a!important}',
+    'body.light-mode p,body.light-mode li,body.light-mode .prose,body.light-mode .body-text,body.light-mode .page-sub{color:#1e2d4a!important}',
+  ].join('');
+  document.head.appendChild(s);
+});
+</script>
+
+</body>
+</html>
