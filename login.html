@@ -4,21 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sign In, 77 Scenarios</title>
-<meta name="description" content="How 77 Scenarios works, where Myers-Briggs comes from, and why scenario-based testing is more accurate than self-rating questionnaires.">
-<meta name="keywords" content="sign in, 77 Scenarios, Myers-Briggs personality test, MBTI login">
+<meta name="description" content="Sign in to 77 Scenarios to save your results, track your type, and join the forum.">
 <meta name="robots" content="noindex, follow">
-<meta property="og:type" content="article">
+<meta property="og:type" content="website">
 <meta property="og:image" content="https://77scenarios.com/og-image.png">
 <meta name="twitter:image" content="https://77scenarios.com/og-image.png">
-<meta property="og:title" content="About: 77 Scenarios">
+<meta property="og:title" content="Sign In · 77 Scenarios">
 <meta property="og:description" content="Sign in to 77 Scenarios to save your results, track your type, and join the forum.">
-<meta property="og:url" content="https://77scenarios.com/about">
+<meta property="og:url" content="https://77scenarios.com/login">
 <meta property="og:site_name" content="77 Scenarios">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Sign In · 77 Scenarios">
 <meta name="twitter:description" content="Sign in to 77 Scenarios.">
-<link rel="canonical" href="https://77scenarios.com/about">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"About the 77 Scenarios Personality Test","description":"How the test is scored, where Myers-Briggs comes from, and what the research says about personality type testing.","url":"https://77scenarios.com/about","publisher":{"@type":"Organization","name":"77 Scenarios","url":"https://77scenarios.com"}}</script>
+<link rel="canonical" href="https://77scenarios.com/login">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Sign In","url":"https://77scenarios.com/login","isPartOf":{"@type":"WebSite","name":"77 Scenarios","url":"https://77scenarios.com"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
@@ -33,10 +32,6 @@
   .glow{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0;}
   .glow-1{width:600px;height:600px;top:-200px;left:-150px;background:radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%);}
   .glow-2{width:400px;height:400px;bottom:-100px;right:-100px;background:radial-gradient(circle,rgba(120,180,160,0.05) 0%,transparent 70%);}
-
-  nav, 
-  @media(max-width:480px){nav,}
-
   main{position:relative;z-index:1;max-width:740px;margin:0 auto;padding:72px 32px 96px;}
 
   /* REVEAL */
@@ -198,7 +193,7 @@ const obs=new IntersectionObserver(entries=>{
 document.querySelectorAll('.r').forEach(el=>obs.observe(el));
 </script>
 
-<script></script>
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -240,18 +235,7 @@ document.getElementById('password').addEventListener('keydown', e => {
   if (e.key === 'Enter') handleLogin();
 });
 </script>
-<script>
-(function(){
-  const {createClient}=supabase;
-  const sb=createClient('https://rttomfnfyjjssdqfzkaj.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw');
-  sb.auth.getSession().then(({data})=>{
-    const links=document.querySelector('.nav-links');
-    const drawerLinks=document.querySelector('.nav-drawer-links');
-    if(links){const a=document.createElement('a');a.href='/login';a.textContent='Sign in';a.style.cssText='border:1px solid var(--border);padding:7px 16px;border-radius:60px;font-size:0.82rem;color:var(--cream);';links.appendChild(a);}
-    if(drawerLinks){const a=document.createElement('a');a.href='/login';a.textContent='Sign in';drawerLinks.appendChild(a);const b=document.createElement('a');b.href='/signup';b.textContent='Create account';drawerLinks.appendChild(b);}
-  });
-})();
-</script>
+
 
 <script>
 document.addEventListener('DOMContentLoaded',function(){

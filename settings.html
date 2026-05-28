@@ -4,21 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Settings — 77 Scenarios</title>
-<meta name="description" content="How 77 Scenarios works, where Myers-Briggs comes from, and why scenario-based testing is more accurate than self-rating questionnaires.">
-<meta name="keywords" content="account settings, 77 Scenarios, MBTI personality test">
-<meta name="robots" content="index, follow">
-<meta property="og:type" content="article">
+<meta name="description" content="Manage your 77 Scenarios account settings. Update your username, profile picture, and password.">
+<meta name="robots" content="noindex, follow">
+<meta property="og:type" content="website">
 <meta property="og:image" content="https://77scenarios.com/og-image.png">
-<meta property="og:title" content="About: 77 Scenarios">
+<meta property="og:title" content="Settings · 77 Scenarios">
 <meta property="og:description" content="Manage your 77 Scenarios account settings.">
-<meta property="og:url" content="https://77scenarios.com/about">
+<meta property="og:url" content="https://77scenarios.com/settings">
 <meta property="og:site_name" content="77 Scenarios">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="About 77 Scenarios: How the Test Works">
+<meta name="twitter:title" content="Settings · 77 Scenarios">
 <meta name="twitter:description" content="Manage your 77 Scenarios account.">
-<link rel="canonical" href="https://77scenarios.com/about">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"About the 77 Scenarios Personality Test","description":"How the test is scored, where Myers-Briggs comes from, and what the research says about personality type testing.","url":"https://77scenarios.com/about","publisher":{"@type":"Organization","name":"77 Scenarios","url":"https://77scenarios.com"}}</script>
+<link rel="canonical" href="https://77scenarios.com/settings">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Settings","url":"https://77scenarios.com/settings","isPartOf":{"@type":"WebSite","name":"77 Scenarios","url":"https://77scenarios.com"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -31,10 +31,6 @@
   .glow{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0;}
   .glow-1{width:600px;height:600px;top:-200px;left:-150px;background:radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%);}
   .glow-2{width:400px;height:400px;bottom:-100px;right:-100px;background:radial-gradient(circle,rgba(120,180,160,0.05) 0%,transparent 70%);}
-
-  nav, 
-  @media(max-width:480px){nav,}
-
   main{position:relative;z-index:1;max-width:740px;margin:0 auto;padding:72px 32px 96px;}
 
   /* REVEAL */
@@ -233,10 +229,6 @@ const obs=new IntersectionObserver(entries=>{
 },{threshold:0.155});
 document.querySelectorAll('.r').forEach(el=>obs.observe(el));
 </script>
-
-<script></script>
-
-
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 const {createClient} = supabase;
