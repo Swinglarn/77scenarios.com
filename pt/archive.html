@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="description" content="Explore os tipos de personalidade MBTI de figuras históricas, cientistas, artistas, personagens fictícios, músicos, atletas e líderes. Filtre por tipo e categoria.">
@@ -22,6 +22,7 @@
 <link rel="alternate" hreflang="pt-BR" href="https://77scenarios.com/pt/archive">
 <link rel="alternate" hreflang="ja" href="https://77scenarios.com/ja/archive">
 <link rel="alternate" hreflang="x-default" href="https://77scenarios.com/archive">
+
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script id="page-schema" type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":"Arquivo de Tipos de Personalidade","description":"Tipos de personalidade Myers-Briggs de figuras célebres, personagens de ficção e figuras históricas. Explore mais de 680 perfis por tipo, categoria ou nome.","url":"https://77scenarios.com/pt/archive","isPartOf":{"@type":"WebSite","name":"77 Scenarios","url":"https://77scenarios.com"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://77scenarios.com"},{"@type":"ListItem","position":2,"name":"Archive","item":"https://77scenarios.com/pt/archive"}]}}]}</script>
@@ -138,7 +139,7 @@
   <div class="results-info r" data-d="4" id="results-info"></div>
   <div class="db-grid" id="db-grid"></div>
 </main>
-<footer><p><a href="/pt/">Fazer o teste</a> &nbsp;·&nbsp; <a href="/pt/types">16 Tipos</a> &nbsp;·&nbsp; <a href="/pt/compatibility">Compatibilidade</a> &nbsp;·&nbsp; <a href="/pt/archive">Archive</a> &nbsp;·&nbsp; <a href="/pt/about">About</a></p></footer>
+
 <div class="modal-bg" id="modal-bg" onclick="closeModal(event)">
   <div class="modal" id="modal"><button class="modal-close" onclick="closeModalDirect()">&#10005;</button><div id="modal-content"></div></div>
 </div>
@@ -3290,11 +3291,11 @@ function openModal(p){
     <div class="modal-desc">${p.desc}</div>
     ${p.kw&&p.kw.length?`<div class="modal-tags">${p.kw.map(k=>`<span class="modal-tag">${k}</span>`).join('')}</div>`:''}
     <div class="modal-actions">
-      <button class="modal-btn" onclick="window.location='/type?t=${p.type}'">Sobre ${p.type} \u2192</button>
-      <button class="modal-btn sec" onclick="window.location='/compatibility'">Compatibilidade \u2192</button>
+      <button class="modal-btn" onclick="window.location='/pt/type?t=${p.type}'">Sobre ${p.type} \u2192</button>
+      <button class="modal-btn sec" onclick="window.location='/pt/compatibility'">Compatibilidade \u2192</button>
       <button class="modal-share" onclick="shareEntry('${ps}','${p.name.replace(/'/g,"\\'")}','${p.type}')">Compartilhar \u2197</button>
     </div>`;
-  history.replaceState(null,'',`/archive?p=${ps}`);
+  history.replaceState(null,'',`/pt/archive?p=${ps}`);
   document.getElementById('modal-bg').classList.add('open');
   document.body.style.overflow='hidden';
   if(p.wiki){
@@ -3323,7 +3324,7 @@ function closeModal(e){if(e.target===document.getElementById('modal-bg'))closeMo
 function closeModalDirect(){
   document.getElementById('modal-bg').classList.remove('open');
   document.body.style.overflow='';
-  history.replaceState(null,'','/archive');
+  history.replaceState(null,'','/pt/archive');
   currentModal=null;
 }
 

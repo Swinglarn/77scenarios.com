@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Página Não Encontrada — 77 Scenarios</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Página não encontrada no 77 Scenarios. Faça o teste de personalidade baseado em cenários para descobrir seu tipo Myers-Briggs.">
+<link rel="canonical" href="https://77scenarios.com/pt/404">
+<link rel="alternate" hreflang="en" href="https://77scenarios.com/404">
+<link rel="alternate" hreflang="es" href="https://77scenarios.com/es/404">
+<link rel="alternate" hreflang="pt-BR" href="https://77scenarios.com/pt/404">
+<link rel="alternate" hreflang="ja" href="https://77scenarios.com/ja/404">
+<link rel="alternate" hreflang="x-default" href="https://77scenarios.com/404">
+
+<meta property="og:title" content="Página Não Encontrada — 77 Scenarios">
+<meta property="og:description" content="Esta página não existe. Mas o seu tipo de personalidade sim — faça o teste para descobri-lo.">
+<meta property="og:image" content="https://77scenarios.com/og-image.png">
+<meta property="og:url" content="https://77scenarios.com/pt/404">
+<meta property="og:site_name" content="77 Scenarios">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0c0e10;--gold:#c9a84c;--gold-dim:#8a6d2e;--cream:#ede8df;--muted:#ccc6bf;--border:#252a30}
+html{font-size:16px}
+body{background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;min-height:100vh;display:flex;flex-direction:column}
+#t-overlay{position:fixed;inset:0;background:#0c0e10;opacity:0;pointer-events:none;z-index:9999;transition:opacity .2s}
+a{color:inherit;text-decoration:none}
+
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.25rem;letter-spacing:.05em;color:var(--gold)}
+
+.drawer-
+
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:4rem 2rem;text-align:center}
+.error-wrap{max-width:500px}
+.error-number{font-family:'Cormorant Garamond',serif;font-size:clamp(6rem,20vw,10rem);font-weight:600;color:var(--gold);opacity:.3;line-height:1;margin-bottom:1rem}
+.error-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,4vw,2.5rem);color:var(--cream);margin-bottom:1rem}
+.error-desc{color:var(--cream);opacity:0.88;font-size:1.05rem;line-height:1.7;margin-bottom:2.5rem}
+.btn-home{display:inline-block;background:var(--gold);color:#0c0e10;padding:.75rem 2rem;font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:500;border-radius:3px;transition:opacity .2s}
+.btn-home:hover{opacity:.85}
+footer{padding:2rem;text-align:center;font-size:0.92rem;color:var(--muted);border-top:1px solid var(--border)}
+
+  
+</style>
+</head>
+<body>
+<div id="t-overlay"></div>
+
+<main>
+  <div class="error-wrap">
+    <div class="error-number">404</div>
+    <h1 class="error-title">Esta página não existe</h1>
+    <p class="error-desc">A página que você estava procurando vagou pelo desconhecido. Talvez ela nunca tenha existido — ou talvez tenha simplesmente escolhido outro caminho.</p>
+    <a href="/pt/" class="btn-home">Fazer o teste em vez disso</a>
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 77 Scenarios · <a href="/pt/about">Sobre</a> · <a href="/pt/privacy" style="color:var(--muted)">Privacidade</a></p>
+</footer>
+
+<script>
+const ov=document.getElementById('t-overlay');
+function fadeIn(){ov.style.opacity='1';ov.animate([{opacity:1},{opacity:0}],{duration:550,delay:60,easing:'cubic-bezier(0.22,1,0.36,1)',fill:'forwards'});}
+fadeIn();
+window.addEventListener('pageshow',e=>{if(e.persisted)fadeIn();});
+document.addEventListener('click',e=>{
+  const a=e.target.closest('a[href]');
+  if(!a)return;
+  const h=a.getAttribute('href');
+  if(h&&!h.startsWith('#')&&!h.startsWith('mailto')&&!h.startsWith('http')&&!a.target){
+    e.preventDefault();
+    ov.style.opacity='1';
+    setTimeout(()=>{window.location.href=h;},280);
+  }
+});
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(function(){
+  const {createClient}=supabase;
+  const sb=createClient('https://rttomfnfyjjssdqfzkaj.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw');
+  sb.auth.getSession().then(({data})=>{
+    const session=data.session;
+    const desktopNav=document.querySelector('.nav-links');
+    const drawerLinks=document.querySelector('.nav-drawer-links');
+    if(session){
+      // Logged in — show avatar + Profile link
+      sb.from('profiles').select('avatar_url').eq('id',session.user.id).single().then(({data:prof})=>{
+        const avatarSrc=(prof&&prof.avatar_url)||'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 80 80%27%3E%3Ccircle cx=%2740%27 cy=%2740%27 r=%2740%27 fill=%27%23252a30%27/%3E%3Ccircle cx=%2740%27 cy=%2732%27 r=%2714%27 fill=%27%238a6d2e%27/%3E%3Cellipse cx=%2740%27 cy=%2772%27 rx=%2724%27 ry=%2716%27 fill=%27%238a6d2e%27/%3E%3C/svg%3E';
+        if(desktopNav){
+          const wrap=document.createElement('a');
+          wrap.href='/profile';
+          wrap.style.cssText='display:flex;align-items:center;gap:8px;text-decoration:none;';
+          const img=document.createElement('img');
+          img.src=avatarSrc;
+          img.style.cssText='width:30px;height:30px;border-radius:50%;object-fit:cover;border:1px solid var(--border);flex-shrink:0;';
+          img.onerror=()=>{img.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 80 80%27%3E%3Ccircle cx=%2740%27 cy=%2740%27 r=%2740%27 fill=%27%23252a30%27/%3E%3Ccircle cx=%2740%27 cy=%2732%27 r=%2714%27 fill=%27%238a6d2e%27/%3E%3Cellipse cx=%2740%27 cy=%2772%27 rx=%2724%27 ry=%2716%27 fill=%27%238a6d2e%27/%3E%3C/svg%3E';};
+          const label=document.createElement('span');
+          label.textContent='Profile';
+          label.style.cssText='background:var(--gold);color:#0c0e10;padding:7px 16px;border-radius:60px;font-weight:500;font-size:0.82rem;letter-spacing:0.04em;';
+          wrap.appendChild(img);
+          wrap.appendChild(label);
+          desktopNav.appendChild(wrap);
+        }
+        if(drawerLinks){
+          const a=document.createElement('a');
+          a.href='/profile';a.textContent='Profile';
+          drawerLinks.appendChild(a);
+        }
+      });
+    } else {
+      // Logged out — show Sign In link
+      if(desktopNav){
+        const a=document.createElement('a');
+        a.href='/login';a.textContent='Sign in';
+        a.style.cssText='border:1px solid var(--border);padding:7px 16px;border-radius:60px;font-size:0.82rem;color:var(--cream);';
+        desktopNav.appendChild(a);
+      }
+      if(drawerLinks){
+        const a=document.createElement('a');
+        a.href='/login';a.textContent='Sign in';
+        drawerLinks.appendChild(a);
+        const b=document.createElement('a');
+        b.href='/signup';b.textContent='Create account';
+        drawerLinks.appendChild(b);
+      }
+    }
+  });
+})();
+</script>
+<script src="/nav.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  if(document.getElementById('page-lm'))return;
+  var s=document.createElement('style');
+  s.id='page-lm';
+  s.textContent=[
+    /* glow + grain off */
+    'body.light-mode::before{opacity:0!important}',
+    'body.light-mode .glow{opacity:0!important}',
+    /* footer: navy */
+    'body.light-mode #nav-footer{background:rgba(30,45,74,0.97)!important;border-top:3px solid #c9a84c!important}',
+    'body.light-mode #nav-footer .footer-tagline{color:rgba(255,255,255,0.65)!important}',
+    'body.light-mode #nav-footer .footer-col a{color:rgba(255,255,255,0.7)!important}',
+    'body.light-mode #nav-footer .footer-col a:hover{color:#fff!important}',
+    'body.light-mode #nav-footer .footer-col-head{color:rgba(255,255,255,0.45)!important}',
+    'body.light-mode #nav-footer .footer-copy{color:rgba(255,255,255,0.4)!important}',
+    'body.light-mode #nav-footer .footer-bottom{border-top-color:rgba(255,255,255,0.12)!important}',
+    'body.light-mode #nav-footer .footer-bottom-links a{color:rgba(255,255,255,0.45)!important}',
+    'body.light-mode #nav-footer .footer-bottom-links a:hover{color:#fff!important}',
+    'body.light-mode #nav-footer .footer-logo-text{color:rgba(255,255,255,0.5)!important}',
+    'body.light-mode #nav-footer .footer-cta{color:#c9a84c!important}',
+    /* card UI components: navy — NOT content/prose containers */
+    'body.light-mode .type-card,body.light-mode .lcard,body.light-mode .db-card,body.light-mode .fncard,body.light-mode .vs-pair-card,body.light-mode .contact-card,body.light-mode .thread-item,body.light-mode .similar-card,body.light-mode .type-pair-card,body.light-mode .famous-card,body.light-mode .score-block,body.light-mode .callout,body.light-mode .cta-box,body.light-mode .modal,body.light-mode .verdict,body.light-mode .verdict-box{background:#1e2d4a!important;border-color:#2d4168!important;box-shadow:0 4px 16px rgba(30,45,74,0.18)!important}',
+    /* white text inside navy cards */
+    'body.light-mode .type-card *,body.light-mode .lcard *,body.light-mode .db-card *,body.light-mode .fncard *,body.light-mode .vs-pair-card *,body.light-mode .contact-card *,body.light-mode .thread-item *,body.light-mode .similar-card *,body.light-mode .type-pair-card *,body.light-mode .verdict *,body.light-mode .verdict-box *,body.light-mode .score-block *,body.light-mode .callout *{color:#ffffff!important}',
+    /* primary card text: bold white */
+    'body.light-mode .card-name,body.light-mode .db-card-name,body.light-mode .lcard-letter,body.light-mode .lcard-name,body.light-mode .tpc-code,body.light-mode .tpc-name,body.light-mode .sim-code,body.light-mode .vs-pair-card-types,body.light-mode .cc-title{color:#ffffff!important;font-weight:600!important}',
+    /* secondary text in cards: dimmer white */
+    'body.light-mode .card-tagline,body.light-mode .lcard-desc,body.light-mode .tpc-tagline,body.light-mode .db-card-ctx,body.light-mode .db-card-cat,body.light-mode .vs-pair-card-tag,body.light-mode .cc-desc,body.light-mode .sim-name{color:rgba(255,255,255,0.7)!important}',
+    /* gold stays gold inside cards */
+    'body.light-mode .db-card .db-card-type,body.light-mode .hi,body.light-mode .cc-email{color:#c9a84c!important}',
+    /* card hover */
+    'body.light-mode .type-card:hover,body.light-mode .lcard:hover,body.light-mode .db-card:hover,body.light-mode .fncard:hover,body.light-mode .vs-pair-card:hover,body.light-mode .contact-card:hover,body.light-mode .thread-item:hover,body.light-mode .similar-card:hover,body.light-mode .type-pair-card:hover{background:#2d4168!important;border-color:#c9a84c!important;box-shadow:0 8px 28px rgba(30,45,74,0.3)!important}',
+    /* nested pills inside navy cards */
+    'body.light-mode .type-card .mini-type,body.light-mode .type-card .tag,body.light-mode .actor-chip,body.light-mode .universe-chip{background:rgba(255,255,255,0.12)!important;border-color:rgba(255,255,255,0.2)!important;color:#ffffff!important}',
+    /* content containers: white with navy text */
+    'body.light-mode .box,body.light-mode .intro-box,body.light-mode .post-body,body.light-mode .reply-card,body.light-mode .growth-box,body.light-mode .opp-block,body.light-mode .fd-box,body.light-mode .auth-notice,body.light-mode .result-card,body.light-mode .info-box,body.light-mode .fn-card,body.light-mode .section{background:#ffffff!important;border-color:#d0d7e3!important;box-shadow:0 1px 4px rgba(30,45,74,0.07)!important}',
+    'body.light-mode .box *,body.light-mode .intro-box *,body.light-mode .post-body *,body.light-mode .reply-card *,body.light-mode .growth-box *,body.light-mode .opp-block *,body.light-mode .fn-card *{color:#1e2d4a!important}',
+    /* section label + eyebrow */
+    'body.light-mode .section-label{color:#2d4168!important}',
+    'body.light-mode .section-label::after{background:#c8d4e4!important}',
+    'body.light-mode .page-eyebrow{color:#8a6d2e!important}',
+    /* page body text */
+    'body.light-mode{color:#1e2d4a!important}',
+    'body.light-mode h1,body.light-mode h2,body.light-mode h3,body.light-mode h4{color:#1e2d4a!important}',
+    'body.light-mode p,body.light-mode li,body.light-mode .prose,body.light-mode .body-text,body.light-mode .page-sub{color:#1e2d4a!important}',
+  ].join('');
+  document.head.appendChild(s);
+});
+</script>
+
+</body>
+</html>

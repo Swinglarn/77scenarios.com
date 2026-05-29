@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +24,7 @@
 <link rel="alternate" hreflang="pt-BR" href="https://77scenarios.com/pt/">
 <link rel="alternate" hreflang="ja" href="https://77scenarios.com/ja/">
 <link rel="alternate" hreflang="x-default" href="https://77scenarios.com/">
+
 <meta name="google-adsense-account" content="ca-pub-9210546368748348">
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"77 Scenarios","url":"https://77scenarios.com/pt/","description":"Scenario-based MBTI personality test and character archive.","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://77scenarios.com/archive?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script>
@@ -592,14 +593,14 @@
   <!-- SPLASH -->
   <div class="screen active" id="screen-splash">
     <div class="splash-eyebrow">77 Scenarios</div>
-    <div class="splash-title">The scenario-based<br><em>personality</em> test.</div>
-    <p class="splash-subtitle">Most personality tests ask you to rate yourself. But self-ratings lie.<br><br>77 Scenarios puts you in real situations and watches what you choose — no self-assessment, no leading questions. Just 77 scenarios and your instincts.</p>
+    <div class="splash-title">O teste de personalidade<br>baseado em <em>cenários.</em></div>
+    <p class="splash-subtitle">A maioria dos testes de personalidade pede que você se avalie. Mas a autoavaliação mente.<br><br>O 77 Scenarios te coloca em situações reais e observa o que você escolhe — sem autoavaliação, sem perguntas indutivas. Apenas 77 cenários e seus instintos.</p>
     <div class="splash-meta">
-      <div class="meta-item"><div class="meta-num">77</div><div class="meta-label">Scenarios</div></div>
+      <div class="meta-item"><div class="meta-num">77</div><div class="meta-label">Cenários</div></div>
       <div class="divider"></div>
-      <div class="meta-item"><div class="meta-num">~20</div><div class="meta-label">Minutes</div></div>
+      <div class="meta-item"><div class="meta-num">~20</div><div class="meta-label">Minutos</div></div>
       <div class="divider"></div>
-      <div class="meta-item"><div class="meta-num">16</div><div class="meta-label">Possible types</div></div>
+      <div class="meta-item"><div class="meta-num">16</div><div class="meta-label">Tipos possíveis</div></div>
     </div>
     <button class="btn-primary" onclick="showScreen('screen-mode')">Iniciar <span class="arrow">→</span></button>
   </div>
@@ -870,7 +871,7 @@
               <option value="yemen">Yemen</option>
               <option value="zambia">Zambia</option>
               <option value="zimbabwe">Zimbabwe</option>
-              <option value="prefer_not_to_say">Prefer not to say</option>
+              <option value="prefer_not_to_say">Prefiro não responder</option>
             </select>
           </div>
         </div>
@@ -942,8 +943,10 @@
       <button class="btn-secondary" onclick="shareResult()">Compartilhar resultado</button>
       <a id="type-deep-link" href="/pt/types" class="btn-secondary" style="text-decoration:none;">Deep dive →</a>
       <a id="functions-link" href="/pt/functions" class="btn-secondary" style="text-decoration:none;">Explorar funções →</a>
-      <a id="archive-type-link" href="/pt/archive" class="btn-secondary" style="text-decoration:none;">Characters →</a>
-      <a id="compat-link" href="/pt/compatibility" class="btn-secondary" style="text-decoration:none;">Compatibility →</a>
+      <a id="type-deep-link" href="/pt/types" class="btn-secondary" style="text-decoration:none;">Deep dive →</a>
+      <a id="functions-link" href="/pt/functions" class="btn-secondary" style="text-decoration:none;">Explorar funções →</a>
+      <a id="archive-type-link" href="/pt/archive" class="btn-secondary" style="text-decoration:none;">Personagens →</a>
+      <a id="compat-link" href="/pt/compatibility" class="btn-secondary" style="text-decoration:none;">Compatibilidade →</a>
     </div>
 
     <div id="eb1" style="margin-top:40px;background:#13161a;border:1px solid #252a30;border-radius:16px;padding:32px;">
@@ -952,10 +955,10 @@
       <p style="font-size:12px;color:#b5ada6;line-height:1.6;margin-bottom:20px;">Usando um bloqueador de anúncios? Pode ser necessário desativá-lo nesta página para ver o formulário completo.</p>
       <div id="eb2">
         <form onsubmit="event.preventDefault();saveResult();" style="margin:0;">
-          <input type="email" id="eb3" style="width:100%;background:#0c0e10;border:1px solid #252a30;border-radius:10px;padding:14px 18px;font-family:'DM Sans',sans-serif;font-size:16px;color:#ede8df;outline:none;margin-bottom:16px;" placeholder="your@email.com" autocomplete="email">
+          <input type="email" id="eb3" style="width:100%;background:#0c0e10;border:1px solid #252a30;border-radius:10px;padding:14px 18px;font-family:'DM Sans',sans-serif;font-size:16px;color:#ede8df;outline:none;margin-bottom:16px;" placeholder="seu@email.com" autocomplete="email">
         <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:20px;">
           <input type="checkbox" id="eb4" style="flex-shrink:0;width:16px;height:16px;margin-top:2px;accent-color:#c9a84c;cursor:pointer;">
-          <label for="eb4" style="font-size:12px;color:#b5ada6;line-height:1.6;cursor:pointer;">I confirm my email and result can be stored. To request removal contact&#58; <span style="color:#c9a84c;">noreply&#64;77scenarios&#46;com</span></label>
+          <label for="eb4" style="font-size:12px;color:#b5ada6;line-height:1.6;cursor:pointer;">Confirmo que meu e-mail e resultado podem ser armazenados. Para solicitar remoção, entre em contato&#58; <span style="color:#c9a84c;">noreply&#64;77scenarios&#46;com</span></label>
         </div>
         <button type="submit" class="btn-save">Salvar resultado</button>
         </form>
@@ -970,16 +973,16 @@
 
 
 <!-- BURST OVERLAY -->
-<div id="screen-burst">>
+<div id="screen-burst">
     <div class="burst-flash" id="burst-flash"></div>
     <div class="burst-intro" id="burst-intro">
       <div class="burst-eyebrow">Rodada rápida</div>
       <div class="burst-heading">Sem pensar.<br>Apenas escolha.</div>
-      <div class="burst-sub">Ten pairs. First instinct only.</div>
+      <div class="burst-sub">Dez pares. Primeiro instinto apenas.</div>
       <button class="burst-start-btn" onclick="startBurst()">Iniciar</button>
     </div>
     <div class="burst-question-wrap" id="burst-qwrap">
-      <div class="burst-counter" id="burst-counter">1 of 10</div>
+      <div class="burst-counter" id="burst-counter">1 de 10</div>
       <div class="burst-timer-ring">
         <svg viewBox="0 0 48 48">
           <circle class="burst-timer-bg" cx="24" cy="24" r="22"/>
@@ -989,7 +992,7 @@
       </div>
       <div class="burst-words">
         <div class="burst-word" id="burst-word-a" onclick="burstPick(0)"></div>
-        <div class="burst-or">or</div>
+        <div class="burst-or">ou</div>
         <div class="burst-word" id="burst-word-b" onclick="burstPick(1)"></div>
       </div>
       <div class="burst-progress-dots" id="burst-dots"></div>
@@ -1664,7 +1667,7 @@ function computeResultModel(type) {
   });
   const neighbours = spectrum.filter(s => s.pct <= 58).sort((x,y)=>x.pct-y.pct).slice(0,2).map(s => {
     const neighbour = type.split('').map((ch,i) => i === s.pos ? s.losePole : ch).join('');
-    return { type, neighbour, axisLabel:`${s.label} vs ${s.loseLabel}`, pct:s.pct, href:`/vs/${type.toLowerCase()}-${neighbour.toLowerCase()}` };
+    return { type, neighbour, axisLabel:`${s.label} vs ${s.loseLabel}`, pct:s.pct, href:`/pt/vs/${type.toLowerCase()}-${neighbour.toLowerCase()}` };
   });
   const ranks = ['Dominante','Auxiliar','Terciária','Inferior'];
   const stack = (FN_STACKS[type] || []).map((fn,i) => {
@@ -1677,7 +1680,7 @@ function computeResultModel(type) {
   const rarityGender = (gender && GENDER_RARITY[gender] && GENDER_RARITY[gender][type] != null) ? GENDER_RARITY[gender][type] : null;
   return {
     v: 1, type, name: td.name, tagline: td.tagline, description: td.description,
-    mode, modeLabel: MODE_LABEL[mode] || 'these scenarios',
+    mode, modeLabel: MODE_LABEL[mode] || 'estes cenários',
     rarity: (TYPE_RARITY[type] != null) ? TYPE_RARITY[type] : null,
     gender, rarityGender,
     spectrum, neighbours, stack, moments: computeMoments(type),
@@ -1770,7 +1773,7 @@ function paintMoments(model) {
   if (intro) intro.innerHTML = `Você respondeu através de <b>${model.modeLabel}</b>. Estas foram as escolhas que moldaram seu resultado.`;
   document.getElementById('moment-list').innerHTML = model.moments.map(m => {
     const read = m.fn ? `Esse instinto é <b>${m.fnName} (${m.fn})</b> &mdash; ${m.fnDesc}.` : '';
-    return `<div class="moment-card"><div class="moment-scene">${m.scene || 'A moment'}</div><div class="moment-choice">&ldquo;${m.choice}&rdquo;</div>${read ? `<div class="moment-read">${read}</div>` : ''}</div>`;
+    return `<div class="moment-card"><div class="moment-scene">${m.scene || 'Um momento'}</div><div class="moment-choice">&ldquo;${m.choice}&rdquo;</div>${read ? `<div class="moment-read">${read}</div>` : ''}</div>`;
   }).join('');
   document.getElementById('insight-moments').style.display = 'block';
 }
