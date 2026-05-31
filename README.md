@@ -105,3 +105,5 @@ High-value keywords already in the pages:
 - `16 personality types` / `Myers-Briggs types` (types page)
 - `[TYPE] personality type` e.g. `INTJ personality type` (each type page)
 - `introvert vs extrovert` / `sensing vs intuition` / `thinking vs feeling` / `judging vs perceiving` (letter pages)
+
+<!-- Rebuild trigger to restore original codebase state -->
