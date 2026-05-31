@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Cognitive Functions — Myers-Briggs Function Stack | 77 Scenarios</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title id="page-title">Your Cognitive Functions — 77 Scenarios</title>
 <meta name="description" id="page-desc" content="Discover the four cognitive functions behind your personality type. Simple explanations and real-life examples of how your mind actually works.">
@@ -16,12 +15,6 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:site_name" content="77 Scenarios">
 <link rel="canonical" id="canonical-url" href="https://77scenarios.com/functions">
-<link rel="alternate" hreflang="en" href="https://77scenarios.com/functions">
-<link rel="alternate" hreflang="es" href="https://77scenarios.com/es/functions">
-<link rel="alternate" hreflang="pt-BR" href="https://77scenarios.com/pt/functions">
-<link rel="alternate" hreflang="ja" href="https://77scenarios.com/ja/functions">
-<link rel="alternate" hreflang="x-default" href="https://77scenarios.com/functions">
-
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,6 +29,10 @@
   .glow{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0;}
   .glow-1{width:600px;height:600px;top:-200px;left:-150px;background:radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%);}
   .glow-2{width:400px;height:400px;bottom:-100px;right:-100px;background:radial-gradient(circle,rgba(120,180,160,0.05) 0%,transparent 70%);}
+
+  nav, 
+  @media(max-width:480px){nav,}
+
   main{position:relative;z-index:1;max-width:740px;margin:0 auto;padding:72px 32px 96px;}
 
   .r{opacity:0;transform:translateY(24px);transition:opacity 0.65s cubic-bezier(0.22,1,0.36,1),transform 0.65s cubic-bezier(0.22,1,0.36,1);}
@@ -404,6 +401,15 @@ const obs=new IntersectionObserver(entries=>{
 document.querySelectorAll('.r').forEach(el=>obs.observe(el));
 </script>
 
+<script></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(function(){
+  const {createClient}=supabase;
+  const sb=createClient('https://rttomfnfyjjssdqfzkaj.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw');
+  window._navSb = sb;
+})();
+</script>
 <script src="/cinematic.js" defer></script>
 
 <script>

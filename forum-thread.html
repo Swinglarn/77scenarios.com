@@ -18,8 +18,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
   :root{--bg:#0c0e10;--surface:#13161a;--surface2:#1a1e24;--gold:#c9a84c;--gold-dim:#8a6d2e;--cream:#ede8df;--muted:#ccc6bf;--border:#252a30;--radius:14px;}
@@ -29,6 +27,28 @@
   .glow{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0;}
   .glow-1{width:600px;height:600px;top:-200px;left:-150px;background:radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%);}
   .glow-2{width:400px;height:400px;bottom:-100px;right:-100px;background:radial-gradient(circle,rgba(120,180,160,0.05) 0%,transparent 70%);}
+
+  nav,.site-nav{position:sticky;top:0;z-index:200;background:rgba(12,14,16,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 32px;display:flex;justify-content:space-between;align-items:center;height:56px;}
+  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--cream);text-decoration:none;}
+  .nav-links{display:flex;gap:32px;align-items:center;}
+  .nav-links a{font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;white-space:nowrap;}
+  .nav-links a:hover,.nav-links a.active{color:var(--cream);}
+  .nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+  .nav-burger span{display:block;width:22px;height:1.5px;background:#b5ada6;transition:all 0.3s ease;transform-origin:center;}
+  .nav-burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);background:#c9a84c;}
+  .nav-burger.open span:nth-child(2){opacity:0;}
+  .nav-burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);background:#c9a84c;}
+  .nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:300;opacity:0;transition:opacity 0.3s ease;pointer-events:none;}
+  .nav-overlay.open{opacity:1;pointer-events:auto;}
+  .nav-drawer{position:fixed;top:0;right:-100%;width:min(320px,85vw);height:100%;background:#13161a;border-left:1px solid #252a30;z-index:400;transition:right 0.35s cubic-bezier(0.22,1,0.36,1),visibility 0s linear 0.35s;display:flex;flex-direction:column;pointer-events:none;visibility:hidden;}
+  .nav-drawer.open{right:0;pointer-events:auto;visibility:visible;transition:right 0.35s cubic-bezier(0.22,1,0.36,1),visibility 0s linear 0s;}
+  .nav-drawer-header{display:flex;justify-content:space-between;align-items:center;padding:0 24px;height:56px;border-bottom:1px solid #252a30;flex-shrink:0;}
+  .nav-close{background:none;border:none;color:#b5ada6;font-size:18px;cursor:pointer;padding:4px;transition:color 0.2s;}
+  .nav-close:hover{color:#ede8df;}
+  .nav-drawer-links{display:flex;flex-direction:column;padding:16px 0;}
+  .nav-drawer-links a{font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:#b5ada6;text-decoration:none;padding:18px 24px;border-bottom:1px solid #1e2227;transition:all 0.15s ease;}
+  .nav-drawer-links a:hover{color:#c9a84c;padding-left:32px;}
+  @media(max-width:480px){nav,.site-nav{padding:0 16px;height:52px;}.nav-links{display:none;}.nav-burger{display:flex;}.nav-overlay{display:block;pointer-events:none;}}
 
 
   /* Vote buttons */
@@ -101,44 +121,76 @@
   .not-found{text-align:center;padding:80px 24px;}
   .not-found-title{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--cream);margin-bottom:10px;}
 
-  body.light-mode .post-body{color:#1e2d4a;}
-  body.light-mode .reply-body{color:#1e2d4a;}
+  body.light-mode .post-body{color:#2a2018;}
+  body.light-mode .reply-body{color:#2a2018;}
 </style>
 <script src="/nav.js" defer></script>
 
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <style>
-body.light-mode .back-link{color:#4a5568;}
-body.light-mode .back-link:hover{color:#1e2d4a;}
+body.light-mode .back-link{color:#504840;}
+body.light-mode .back-link:hover{color:#141210;}
 body.light-mode .thread-cat{color:#8a6d2e;}
-body.light-mode .thread-title-large{color:#1e2d4a;}
-body.light-mode .thread-author-line{color:#4a6080;}
+body.light-mode .thread-title-large{color:#141210;}
+body.light-mode .thread-author-line{color:#6b5c3e;}
 body.light-mode .thread-author-name{color:#8a6d2e;}
-body.light-mode .post-body{background:#ffffff;border-color:#c8d4e4;color:#1e2d4a;}
+body.light-mode .post-body{background:#ffffff;border-color:#d4cdc6;color:#2a2018;}
 body.light-mode .replies-label{color:#8a6d2e;}
-body.light-mode .replies-label::after{background:#c0cad8;}
-body.light-mode .reply-card{background:#ffffff;border-color:#c8d4e4;}
+body.light-mode .replies-label::after{background:#c8c0b4;}
+body.light-mode .reply-card{background:#ffffff;border-color:#d4cdc6;}
 body.light-mode .reply-author{color:#8a6d2e;}
-body.light-mode .reply-time{color:#6a7a90;}
-body.light-mode .reply-body{color:#1e2d4a;}
-body.light-mode .reply-deleted{color:#6a7a90;}
-body.light-mode .reply-action-btn{color:#6a7a90;}
+body.light-mode .reply-time{color:#8a7060;}
+body.light-mode .reply-body{color:#2a2018;}
+body.light-mode .reply-deleted{color:#8a7060;}
+body.light-mode .reply-action-btn{color:#8a7060;}
 body.light-mode .reply-action-btn:hover{color:#8a6d2e;}
-body.light-mode .reply-form{background:#ffffff;border-color:#c8d4e4;}
-body.light-mode .reply-form-title{color:#4a6080;}
-body.light-mode .form-textarea{background:#ffffff;border-color:#d0d7e3;color:#1e2d4a;}
-body.light-mode .form-textarea::placeholder{color:#8a9ab0;}
+body.light-mode .reply-form{background:#ffffff;border-color:#d4cdc6;}
+body.light-mode .reply-form-title{color:#6b5c3e;}
+body.light-mode .form-textarea{background:#ffffff;border-color:#dcdad5;color:#141210;}
+body.light-mode .form-textarea::placeholder{color:#a89880;}
 body.light-mode .form-textarea:focus{border-color:#c9a84c;box-shadow:0 0 0 3px rgba(201,168,76,0.10);}
-body.light-mode .auth-notice{background:#ffffff;border-color:#c8d4e4;color:#4a6080;}
-body.light-mode .no-replies{color:#4a6080;}
-body.light-mode .loading-row{background:#eef2f8;border-color:#c8d4e4;}
+body.light-mode .auth-notice{background:#ffffff;border-color:#d4cdc6;color:#6b5c3e;}
+body.light-mode .no-replies{color:#6b5c3e;}
+body.light-mode .loading-row{background:#ede8df;border-color:#d4cdc6;}
 </style>
 </head>
 <body>
 <div id="t-overlay"></div>
 <div class="glow glow-1"></div>
 <div class="glow glow-2"></div>
+
+<nav class="site-nav">
+  <a href="/" class="nav-logo">77scenarios.com</a>
+  <div class="nav-links" id="nav-links">
+    <a href="/">Take the Test</a>
+    <a href="/types">16 Types</a>
+    <a href="/letters">8 Letters</a>
+    <a href="/cognitive-functions">Functions</a>
+    <a href="/compatibility">Compatibility</a>
+    <a href="/archive">Archive</a>
+    <a href="/forum" class="active">Forum</a>
+    <a href="/about">About</a>
+  </div>
+  <button class="nav-burger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-overlay" id="nav-overlay" onclick="toggleMenu()"></div>
+<div class="nav-drawer" id="nav-drawer">
+  <div class="nav-drawer-header">
+    <a href="/" class="nav-logo">77scenarios.com</a>
+    <button class="nav-close" onclick="toggleMenu()">✕</button>
+  </div>
+  <div class="nav-drawer-links">
+    <a href="/">Take the Test</a>
+    <a href="/types">16 Types</a>
+    <a href="/letters">8 Letters</a>
+    <a href="/cognitive-functions">Functions</a>
+    <a href="/compatibility">Compatibility</a>
+    <a href="/archive">Archive</a>
+    <a href="/forum">Forum</a>
+    <a href="/about">About</a>
+  </div>
+</div>
 
 <h1 class="sr-only" id="page-h1">Forum Thread - 77 Scenarios</h1>
 
@@ -455,7 +507,15 @@ body.light-mode .loading-row{background:#eef2f8;border-color:#c8d4e4;}
         <div class="not-found-title">Thread not found.</div>
         <a href="/forum" class="btn-secondary" style="display:inline-flex;margin-top:20px;">← Back to Forum</a>
       </div>`;
-  }const ov = document.getElementById('t-overlay');
+  }
+
+  function toggleMenu() {
+    document.querySelector('.nav-burger').classList.toggle('open');
+    document.getElementById('nav-drawer').classList.toggle('open');
+    document.getElementById('nav-overlay').classList.toggle('open');
+  }
+
+  const ov = document.getElementById('t-overlay');
   window.addEventListener('pageshow', () => {
     requestAnimationFrame(() => { ov.style.transition = 'opacity 0.45s ease'; ov.style.opacity = '0'; });
   });
@@ -473,58 +533,5 @@ body.light-mode .loading-row{background:#eef2f8;border-color:#c8d4e4;}
   init();
 
 </script>
-<script src="/cinematic.js" defer></script>
-
-<script>
-document.addEventListener('DOMContentLoaded',function(){
-  if(document.getElementById('page-lm'))return;
-  var s=document.createElement('style');
-  s.id='page-lm';
-  s.textContent=[
-    /* glow + grain off */
-    'body.light-mode::before{opacity:0!important}',
-    'body.light-mode .glow{opacity:0!important}',
-    /* footer: navy */
-    'body.light-mode #nav-footer{background:rgba(30,45,74,0.97)!important;border-top:3px solid #c9a84c!important}',
-    'body.light-mode #nav-footer .footer-tagline{color:rgba(255,255,255,0.65)!important}',
-    'body.light-mode #nav-footer .footer-col a{color:rgba(255,255,255,0.7)!important}',
-    'body.light-mode #nav-footer .footer-col a:hover{color:#fff!important}',
-    'body.light-mode #nav-footer .footer-col-head{color:rgba(255,255,255,0.45)!important}',
-    'body.light-mode #nav-footer .footer-copy{color:rgba(255,255,255,0.4)!important}',
-    'body.light-mode #nav-footer .footer-bottom{border-top-color:rgba(255,255,255,0.12)!important}',
-    'body.light-mode #nav-footer .footer-bottom-links a{color:rgba(255,255,255,0.45)!important}',
-    'body.light-mode #nav-footer .footer-bottom-links a:hover{color:#fff!important}',
-    'body.light-mode #nav-footer .footer-logo-text{color:rgba(255,255,255,0.5)!important}',
-    'body.light-mode #nav-footer .footer-cta{color:#c9a84c!important}',
-    /* card UI components: navy — NOT content/prose containers */
-    'body.light-mode .type-card,body.light-mode .lcard,body.light-mode .db-card,body.light-mode .fncard,body.light-mode .vs-pair-card,body.light-mode .contact-card,body.light-mode .thread-item,body.light-mode .similar-card,body.light-mode .type-pair-card,body.light-mode .famous-card,body.light-mode .score-block,body.light-mode .callout,body.light-mode .cta-box,body.light-mode .modal,body.light-mode .verdict,body.light-mode .verdict-box{background:#1e2d4a!important;border-color:#2d4168!important;box-shadow:0 4px 16px rgba(30,45,74,0.18)!important}',
-    /* white text inside navy cards */
-    'body.light-mode .type-card *,body.light-mode .lcard *,body.light-mode .db-card *,body.light-mode .fncard *,body.light-mode .vs-pair-card *,body.light-mode .contact-card *,body.light-mode .thread-item *,body.light-mode .similar-card *,body.light-mode .type-pair-card *,body.light-mode .verdict *,body.light-mode .verdict-box *,body.light-mode .score-block *,body.light-mode .callout *{color:#ffffff!important}',
-    /* primary card text: bold white */
-    'body.light-mode .card-name,body.light-mode .db-card-name,body.light-mode .lcard-letter,body.light-mode .lcard-name,body.light-mode .tpc-code,body.light-mode .tpc-name,body.light-mode .sim-code,body.light-mode .vs-pair-card-types,body.light-mode .cc-title{color:#ffffff!important;font-weight:600!important}',
-    /* secondary text in cards: dimmer white */
-    'body.light-mode .card-tagline,body.light-mode .lcard-desc,body.light-mode .tpc-tagline,body.light-mode .db-card-ctx,body.light-mode .db-card-cat,body.light-mode .vs-pair-card-tag,body.light-mode .cc-desc,body.light-mode .sim-name{color:rgba(255,255,255,0.7)!important}',
-    /* gold stays gold inside cards */
-    'body.light-mode .db-card .db-card-type,body.light-mode .hi,body.light-mode .cc-email{color:#c9a84c!important}',
-    /* card hover */
-    'body.light-mode .type-card:hover,body.light-mode .lcard:hover,body.light-mode .db-card:hover,body.light-mode .fncard:hover,body.light-mode .vs-pair-card:hover,body.light-mode .contact-card:hover,body.light-mode .thread-item:hover,body.light-mode .similar-card:hover,body.light-mode .type-pair-card:hover{background:#2d4168!important;border-color:#c9a84c!important;box-shadow:0 8px 28px rgba(30,45,74,0.3)!important}',
-    /* nested pills inside navy cards */
-    'body.light-mode .type-card .mini-type,body.light-mode .type-card .tag,body.light-mode .actor-chip,body.light-mode .universe-chip{background:rgba(255,255,255,0.12)!important;border-color:rgba(255,255,255,0.2)!important;color:#ffffff!important}',
-    /* content containers: white with navy text */
-    'body.light-mode .box,body.light-mode .intro-box,body.light-mode .post-body,body.light-mode .reply-card,body.light-mode .growth-box,body.light-mode .opp-block,body.light-mode .fd-box,body.light-mode .auth-notice,body.light-mode .result-card,body.light-mode .info-box,body.light-mode .fn-card,body.light-mode .section{background:#ffffff!important;border-color:#d0d7e3!important;box-shadow:0 1px 4px rgba(30,45,74,0.07)!important}',
-    'body.light-mode .box *,body.light-mode .intro-box *,body.light-mode .post-body *,body.light-mode .reply-card *,body.light-mode .growth-box *,body.light-mode .opp-block *,body.light-mode .fn-card *{color:#1e2d4a!important}',
-    /* section label + eyebrow */
-    'body.light-mode .section-label{color:#2d4168!important}',
-    'body.light-mode .section-label::after{background:#c8d4e4!important}',
-    'body.light-mode .page-eyebrow{color:#8a6d2e!important}',
-    /* page body text */
-    'body.light-mode{color:#1e2d4a!important}',
-    'body.light-mode h1,body.light-mode h2,body.light-mode h3,body.light-mode h4{color:#1e2d4a!important}',
-    'body.light-mode p,body.light-mode li,body.light-mode .prose,body.light-mode .body-text,body.light-mode .page-sub{color:#1e2d4a!important}',
-  ].join('');
-  document.head.appendChild(s);
-});
-</script>
-
 </body>
 </html>
