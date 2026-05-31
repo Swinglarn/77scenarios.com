@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="page-title">Type vs Type | 77 Scenarios</title>
-  <meta name="description" id="page-desc" content="Discover the real cognitive difference between these two personality types.">
-  <meta property="og:title" content="Type vs Type — MBTI Comparisons | 77 Scenarios">
-  <meta property="og:description" content="Compare any two MBTI personality types side by side. 120 in-depth comparisons covering cognitive functions, famous examples, and key differences.">
+  <title id="page-title">性格タイプ比較（vs）一覧 | 77 Scenarios</title>
+  <meta name="description" id="page-desc" content="すべての主要なMBTI性格タイプペアの徹底比較。認知機能の違い、本質的な違い、見分け方のポイント、そして自分がどちらのタイプかを知るための簡易クイズを掲載しています。">
+  <meta property="og:title" content="性格タイプ比較（vs）一覧 — MBTI比較 | 77 Scenarios">
+  <meta property="og:description" content="すべての主要なMBTI性格タイプペアの徹底比較。認知機能の違い、本質的な違い、見分け方のポイント、そして自分がどちらのタイプかを知るための簡易クイズを掲載しています。">
   <meta property="og:image" content="https://77scenarios.com/og-image.png">
   <link rel="icon" href="/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -740,14 +740,14 @@
    FUNCTION METADATA
    ============================================================ */
 const fnMeta = {
-  Ni: { name: 'Introverted Intuition', dir: 'introverted' },
-  Ne: { name: 'Extroverted Intuition', dir: 'extroverted' },
-  Fi: { name: 'Introverted Feeling',   dir: 'introverted' },
-  Fe: { name: 'Extroverted Feeling',   dir: 'extroverted' },
-  Ti: { name: 'Introverted Thinking',  dir: 'introverted' },
-  Te: { name: 'Extroverted Thinking',  dir: 'extroverted' },
-  Si: { name: 'Introverted Sensing',   dir: 'introverted' },
-  Se: { name: 'Extroverted Sensing',   dir: 'extroverted' },
+  Ni: { name: '内向的直観（Ni）', dir: 'introverted' },
+  Ne: { name: '外向的直観（Ne）', dir: 'extroverted' },
+  Fi: { name: '内向的感情（Fi）', dir: 'introverted' },
+  Fe: { name: '外向的感情（Fe）', dir: 'extroverted' },
+  Ti: { name: '内向的思考（Ti）', dir: 'introverted' },
+  Te: { name: '外向的思考（Te）', dir: 'extroverted' },
+  Si: { name: '内向的感覚（Si）', dir: 'introverted' },
+  Se: { name: '外向的感覚（Se）', dir: 'extroverted' },
 };
 
 /* ============================================================
@@ -12918,9 +12918,9 @@ function mountQuiz(quiz, typeA, typeB, container) {
     const isLast = current === total - 1;
 
     container.innerHTML = `
-      <p class="vs-quiz-intro">5 questions specific to this pairing. Select the option that fits you better.</p>
+      <p class="vs-quiz-intro">このペアに特化した5つの質問です。より自分に当てはまる選択肢を選んでください。</p>
       <div class="vs-quiz-prog-bar"><div class="vs-quiz-prog-fill" style="width:${pct}%"></div></div>
-      <div class="vs-quiz-q-num">Question ${current + 1} of ${total}</div>
+      <div class="vs-quiz-q-num">質問 ${current + 1} / ${total}</div>
       <div class="vs-quiz-q-text">${q.q}</div>
       <div class="vs-quiz-options">
         <button class="vs-quiz-option" data-score="${q.a.score}">${q.a.text}</button>
@@ -12928,7 +12928,7 @@ function mountQuiz(quiz, typeA, typeB, container) {
       </div>
       <div class="vs-quiz-footer">
         <span class="vs-quiz-prog-text">${current + 1} / ${total}</span>
-        <button class="vs-quiz-btn" id="quiz-next" disabled>${isLast ? 'See result' : 'Next'}</button>
+        <button class="vs-quiz-btn" id="quiz-next" disabled>${isLast ? '結果を見る' : '次へ'}</button>
       </div>
     `;
 
@@ -12957,20 +12957,28 @@ function mountQuiz(quiz, typeA, typeB, container) {
     else if (bCount > aCount) result = quiz.resultB;
     else                      result = quiz.resultTie;
 
+    let localizedLabel = result.label;
+    if (result.label.startsWith("Likely ")) {
+      const typeStr = result.label.replace("Likely ", "");
+      localizedLabel = `${typeStr}の可能性が高い`;
+    } else if (result.label === "It's close" || result.label === "It\'s close") {
+      localizedLabel = "結果は僅差です";
+    }
+
     const typeSlug  = result.type !== '?' ? result.type.toLowerCase() : null;
-    const typeLink  = typeSlug ? `/types/${typeSlug}` : '/';
-    const linkLabel = typeSlug ? `Read about ${result.type}` : 'Take the full test';
+    const typeLink  = typeSlug ? `/ja/types/${typeSlug}` : '/ja/';
+    const linkLabel = typeSlug ? `${result.type}の解説を読む` : '性格診断テストを受ける';
 
     container.innerHTML = `
       <div class="vs-quiz-result">
         <div class="vs-quiz-result-type">${result.type}</div>
-        <div class="vs-quiz-result-label">${result.label}</div>
+        <div class="vs-quiz-result-label">${localizedLabel}</div>
         <div class="vs-quiz-result-desc">${result.desc}</div>
         <div class="vs-quiz-result-links">
           <a class="vs-quiz-result-link" href="${typeLink}">${linkLabel}</a>
-          <a class="vs-quiz-result-link" href="/ja/">Take the full test</a>
+          <a class="vs-quiz-result-link" href="/ja/">診断テストを受ける</a>
         </div>
-        <button class="vs-quiz-reset">Retake quiz</button>
+        <button class="vs-quiz-reset">クイズをもう一度受ける</button>
       </div>
     `;
 
@@ -12989,9 +12997,49 @@ function mountQuiz(quiz, typeA, typeB, container) {
    ============================================================ */
 function renderPage(data) {
   const root = document.getElementById('vs-root');
+  
+  const typeRoles = {
+    ISTJ: "管理者", ISFJ: "擁護者", INFJ: "提唱者", INTJ: "建築家",
+    ISTP: "巨匠", ISFP: "冒険者", INFP: "仲介者", INTP: "論理学者",
+    ESTP: "起業家", ESFP: "エンターテイナー", ENFP: "運動家", ENTP: "討論者",
+    ESTJ: "幹部", ESFJ: "領事官", ENFJ: "主人公", ENTJ: "指揮官"
+  };
+  const rankLabels = {
+    Dominant: '第1機能',
+    Auxiliary: '第2機能',
+    Tertiary: '第3機能',
+    Inferior: '第4機能'
+  };
+  const labelTrans = {
+    'Primary drive': '主な動機',
+    'Decision lens': '意思決定の基準',
+    'Structure': '構造・ストラクチャー',
+    'Emotional radar': '感情的アンテナ',
+    'Under stress': 'ストレス下での反応',
+    'Communication': 'コミュニケーション',
+    'Core orientation': '基本志向',
+    'Decisions': '意思決定',
+    'Primary goal': '主な目標',
+    'Lead function': '主機能',
+    'Energy source': 'エネルギー源',
+    'Processing': '思考プロセス',
+    'Social pattern': '対人関係パターン',
+    'Core need': '核となる欲求',
+    'After socializing': '交流後の反応',
+    'Vision aimed at': 'ビジョンの焦点',
+    'Second function': '第2機能',
+    'In groups': '集団の中での行動',
+    'Dominant function': '主機能（第一機能）',
+    'Internal anchor': '内面の錨',
+    'Orientation': '志向性',
+    'Handling detail': 'ディテールの処理',
+    'Care style': '気配りのスタイル',
+    'Tradition': '伝統への姿勢',
+    'Decision speed': '意思決定のスピード'
+  };
 
   // SEO
-  const titleText = `${data.typeA} vs ${data.typeB}: The Real Difference | 77 Scenarios`;
+  const titleText = `${data.typeA} vs ${data.typeB}：本当の違い | 77 Scenarios`;
   document.getElementById('page-title').textContent = titleText;
   document.getElementById('page-desc').setAttribute('content', data.metaDesc);
 
@@ -13002,12 +13050,12 @@ function renderPage(data) {
     canonical.rel = 'canonical';
     document.head.appendChild(canonical);
   }
-  canonical.href = `https://77scenarios.com/vs/${data.typeA.toLowerCase()}-${data.typeB.toLowerCase()}`;
+  canonical.href = `https://77scenarios.com/ja/vs/${data.typeA.toLowerCase()}-${data.typeB.toLowerCase()}`;
 
   // Silently correct URL if user landed on a mirror slug (e.g. /vs/enfp-enfj -> /vs/enfj-enfp)
   const canonicalSlug = `${data.typeA.toLowerCase()}-${data.typeB.toLowerCase()}`;
   if (slug !== canonicalSlug) {
-    window.history.replaceState(null, '', `/vs/${canonicalSlug}`);
+    window.history.replaceState(null, '', `/ja/vs/${canonicalSlug}`);
   }
 
   // OG tags
@@ -13031,7 +13079,7 @@ function renderPage(data) {
       return `<div class="vs-fn-item ${meta.dir}">
         <span class="vs-fn-code">${f.code}</span>
         <span class="vs-fn-label">${meta.name}</span>
-        <span class="vs-fn-rank">${f.rank}</span>
+        <span class="vs-fn-rank">${rankLabels[f.rank] || f.rank}</span>
       </div>`;
     }).join('');
     return `<div class="vs-fn-col">
@@ -13042,7 +13090,7 @@ function renderPage(data) {
 
   // Table HTML
   const tableRows = data.tableRows.map(r => `<tr>
-    <td>${r.label}</td>
+    <td>${labelTrans[r.label] || r.label}</td>
     <td>${r.a}</td>
     <td>${r.b}</td>
   </tr>`).join('');
@@ -13055,7 +13103,7 @@ function renderPage(data) {
 
   // Tell apart HTML
   const tellItems = data.tellApart.map((t, i) => `<div class="vs-tell-item">
-    <div class="vs-tell-num">Point ${i + 1}</div>
+    <div class="vs-tell-num">ポイント ${i + 1}</div>
     <div class="vs-tell-title">${t.title}</div>
     <div class="vs-tell-body">${t.body}</div>
   </div>`).join('');
@@ -13077,7 +13125,7 @@ function renderPage(data) {
 
   root.innerHTML = `
     <nav class="vs-breadcrumb">
-      <a href="/ja/">Home</a><span>/</span><a href="/ja/vs">vs</a><span>/</span>
+      <a href="/ja/">ホーム</a><span>/</span><a href="/ja/vs">vs</a><span>/</span>
       <span>${data.typeA} vs ${data.typeB}</span>
     </nav>
 
@@ -13085,12 +13133,12 @@ function renderPage(data) {
       <div class="vs-types-row">
         <div class="vs-type-badge">
           <div class="vs-type-code">${data.typeA}</div>
-          <div class="vs-type-role">${data.roleA}</div>
+          <div class="vs-type-role">${typeRoles[data.typeA] || data.roleA}</div>
         </div>
         <div class="vs-vs-word">vs</div>
         <div class="vs-type-badge">
           <div class="vs-type-code">${data.typeB}</div>
-          <div class="vs-type-role">${data.roleB}</div>
+          <div class="vs-type-role">${typeRoles[data.typeB] || data.roleB}</div>
         </div>
       </div>
       <div class="vs-rule"></div>
@@ -13098,12 +13146,12 @@ function renderPage(data) {
     </header>
 
     <section class="vs-section">
-      <h2 class="vs-section-title">The Core Difference</h2>
+      <h2 class="vs-section-title">本質的な違い</h2>
       <div class="vs-prose">${data.coreDiff}</div>
     </section>
 
     <section class="vs-section">
-      <h2 class="vs-section-title">Cognitive Functions</h2>
+      <h2 class="vs-section-title">認知機能</h2>
       <div class="vs-fn-compare">
         ${fnColHTML(data.typeA, data.functionsA)}
         ${fnColHTML(data.typeB, data.functionsB)}
@@ -13111,7 +13159,7 @@ function renderPage(data) {
     </section>
 
     <section class="vs-section">
-      <h2 class="vs-section-title">Side by Side</h2>
+      <h2 class="vs-section-title">徹底比較</h2>
       <table class="vs-table">
         <thead><tr>
           <th></th>
@@ -13123,17 +13171,17 @@ function renderPage(data) {
     </section>
 
     <section class="vs-section">
-      <h2 class="vs-section-title">Where They Overlap</h2>
+      <h2 class="vs-section-title">共通点・オーバーラップする部分</h2>
       <ul class="vs-overlap-list">${overlapItems}</ul>
     </section>
 
     <section class="vs-section">
-      <h2 class="vs-section-title">How to Tell Them Apart</h2>
+      <h2 class="vs-section-title">見分けるためのポイント</h2>
       <div class="vs-tell-list">${tellItems}</div>
     </section>
 
     <section class="vs-section">
-      <h2 class="vs-section-title">Well-Known Examples</h2>
+      <h2 class="vs-section-title">有名な実例・キャラクター</h2>
       <div class="vs-famous-grid">
         ${famousColHTML(data.typeA, data.famousA)}
         ${famousColHTML(data.typeB, data.famousB)}
@@ -13141,13 +13189,13 @@ function renderPage(data) {
     </section>
 
     <section class="vs-section">
-      <h2 class="vs-section-title">Not Sure Which You Are?</h2>
+      <h2 class="vs-section-title">自分がどちらのタイプか迷っていませんか？</h2>
       <div class="vs-quiz" id="quiz-mount"></div>
     </section>
 
     <div class="vs-cta">
-      <p class="vs-cta-copy">Still unsure? The full test uses 77 scenario-based questions to give you a much clearer read.</p>
-      <a class="vs-cta-btn" href="/ja/">Take the 77 Scenarios test</a>
+      <p class="vs-cta-copy">まだ確信が持てませんか？77個のシチュエーション式質問に答える性格診断テストで、より明確な結果を知ることができます。</p>
+      <a class="vs-cta-btn" href="/ja/">77 Scenarios 性格診断を受ける</a>
     </div>
   `;
 
@@ -13166,8 +13214,8 @@ function renderPage(data) {
         'description': data.metaDesc,
         'url': vsUrl,
         'keywords': `${data.typeA}, ${data.typeB}, MBTI comparison, personality type difference, cognitive functions`,
-        'articleSection': 'Personality Type Comparison',
-        'inLanguage': 'en',
+        'articleSection': '性格タイプ比較',
+        'inLanguage': 'ja',
         'dateModified': '2026-05-19',
         'publisher': {
           '@type': 'Organization',
@@ -13183,7 +13231,7 @@ function renderPage(data) {
         'mainEntity': data.tellApart.map(function(item) {
           return {
             '@type': 'Question',
-            'name': 'How do you tell ' + data.typeA + ' from ' + data.typeB + '? ' + item.title,
+            'name': data.typeA + 'と' + data.typeB + 'の見分け方は？ ' + item.title,
             'acceptedAnswer': {
               '@type': 'Answer',
               'text': item.body
@@ -13213,9 +13261,9 @@ function renderPage(data) {
 function renderIndex() {
   const root = document.getElementById('vs-root');
 
-  document.getElementById('page-title').textContent = 'Type vs Type: All MBTI Comparisons | 77 Scenarios';
+  document.getElementById('page-title').textContent = '性格タイプ比較（vs）一覧 | 77 Scenarios';
   document.getElementById('page-desc').setAttribute('content',
-    'Side-by-side comparisons of every major MBTI type pairing. Cognitive functions, key differences, and a short quiz to help you find which one you actually are.');
+    'すべての主要なMBTI性格タイプペアの徹底比較。認知機能の違い、本質的な違い、見分け方のポイント、そして自分がどちらのタイプかを知るための簡易クイズを掲載しています。');
 
   // Ordered groups
   const groups = [
@@ -13240,18 +13288,30 @@ function renderIndex() {
       pairs: ['infp-intp','enfp-intj','intp-istj','infj-intp','enfj-istp','esfj-intp','esfp-intj','estj-infp','estj-infj','entp-isfj','entj-isfp','esfj-istp','infp-istj','enfj-isfj','entp-infp','esfj-intj','enfp-isfp','entp-infj','entp-istj','entp-isfp','enfj-istj','esfj-infp','enfj-isfp','enfp-intp','enfp-isfj','enfp-istj','entp-istp','intp-isfj','intp-isfp','esfp-infp','estp-infp','estj-intp','estp-intp','isfp-istj'],
     }];
 
+  const typeRoles = {
+    ISTJ: "管理者", ISFJ: "擁護者", INFJ: "提唱者", INTJ: "建築家",
+    ISTP: "巨匠", ISFP: "冒険者", INFP: "仲介者", INTP: "論理学者",
+    ESTP: "起業家", ESFP: "エンターテイナー", ENFP: "運動家", ENTP: "討論者",
+    ESTJ: "幹部", ESFJ: "領事官", ENFJ: "主人公", ENTJ: "指揮官"
+  };
+  const groupTrans = {
+    'Most commonly confused': '最も混同されやすいペア',
+    'Extrovert variants': '外向型のバリエーション',
+    'Sensing and structure pairs': '感覚と判断・知覚のペア',
+    'Functional mirrors': '認知機能の反転ペア'
+  };
   const sectionsHTML = groups.map(g => {
     const cards = g.pairs.map(slug => {
       const d = vsData[slug];
       if (!d) return '';
       return `<a class="vs-pair-card" href="/ja/vs/${slug}">
         <div class="vs-pair-card-types"><span class="vt">${d.typeA}</span><span class="vv"> vs </span><span class="vt">${d.typeB}</span></div>
-        <div class="vs-pair-card-tag">${d.roleA} vs ${d.roleB}</div>
+        <div class="vs-pair-card-tag">${typeRoles[d.typeA] || d.roleA} vs ${typeRoles[d.typeB] || d.roleB}</div>
       </a>`;
     }).join('');
     return `
       <div class="vs-hub-section">
-        <div class="vs-hub-section-title">${g.label}</div>
+        <div class="vs-hub-section-title">${groupTrans[g.label] || g.label}</div>
         <div class="vs-hub-grid">${cards}</div>
       </div>`;
   }).join('');
@@ -13260,12 +13320,12 @@ function renderIndex() {
     <div class="vs-hub">
       <div class="vs-hub-header">
         <h1 class="vs-hub-title">Type <em>vs</em> Type</h1>
-        <p class="vs-hub-desc">Deep comparisons of every major MBTI pairing, cognitive functions, five ways to tell them apart, and a short quiz to help you find which one you actually are.</p>
+        <p class="vs-hub-desc">すべての主要な性格タイプペアの徹底比較。認知機能の違い、本質的な違い、見分けるための5つのポイント、そして自分がどちらのタイプかを知るための簡易クイズを掲載しています。</p>
       </div>
       ${sectionsHTML}
       <div class="vs-cta" style="margin-top:8px;">
-        <p class="vs-cta-copy">Not sure which type you are to begin with?</p>
-        <a class="vs-cta-btn" href="/ja/">Take the 77 Scenarios test</a>
+        <p class="vs-cta-copy">そもそも自分がどの性格タイプか分かりませんか？</p>
+        <a class="vs-cta-btn" href="/ja/">77 Scenarios 性格診断を受ける</a>
       </div>
     </div>
   `;

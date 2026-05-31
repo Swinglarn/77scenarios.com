@@ -159,11 +159,13 @@
       '.nav-links a[href="/"]::after{content:"" !important;position:absolute !important;left:0 !important;right:0 !important;bottom:-4px !important;height:1px !important;background:#c9a84c !important;display:block !important;animation:navUnderlinePulse 3.5s ease-in-out infinite !important;}',
       '.nav-links a[href="/"]:hover{color:#e8cc7a !important;}',
       '.nav-links a[href="/"]:hover::after,.nav-links a[href="/"].active::after{opacity:1 !important;animation:none !important;}',
-      // ES/PT CTA equivalents
+      // ES/PT/JA CTA equivalents
       '.nav-links a[href="/es/"]{color:#c9a84c !important;border:none !important;padding:0 !important;border-radius:0 !important;font-weight:500 !important;background:transparent !important;position:relative !important;transition:color 0.2s !important;}',
       '.nav-links a[href="/es/"]::after{content:"" !important;position:absolute !important;left:0 !important;right:0 !important;bottom:-4px !important;height:1px !important;background:#c9a84c !important;display:block !important;animation:navUnderlinePulse 3.5s ease-in-out infinite !important;}',
       '.nav-links a[href="/pt/"]{color:#c9a84c !important;border:none !important;padding:0 !important;border-radius:0 !important;font-weight:500 !important;background:transparent !important;position:relative !important;transition:color 0.2s !important;}',
       '.nav-links a[href="/pt/"]::after{content:"" !important;position:absolute !important;left:0 !important;right:0 !important;bottom:-4px !important;height:1px !important;background:#c9a84c !important;display:block !important;animation:navUnderlinePulse 3.5s ease-in-out infinite !important;}',
+      '.nav-links a[href="/ja/"]{color:#c9a84c !important;border:none !important;padding:0 !important;border-radius:0 !important;font-weight:500 !important;background:transparent !important;position:relative !important;transition:color 0.2s !important;}',
+      '.nav-links a[href="/ja/"]::after{content:"" !important;position:absolute !important;left:0 !important;right:0 !important;bottom:-4px !important;height:1px !important;background:#c9a84c !important;display:block !important;animation:navUnderlinePulse 3.5s ease-in-out infinite !important;}',
       // Auth dropdown
       '.nav-user-wrap{position:relative;display:inline-block;}',
       '.nav-user-btn{display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;padding:0;}',
@@ -229,6 +231,7 @@
       'body.light-mode .nav-links a[href="/"]:hover{background:rgba(201,168,76,0.1) !important;border-color:#a8893a !important;}',
       'body.light-mode .nav-links a[href="/es/"]{color:#8a6d2e !important;border-color:#c9a84c !important;}',
       'body.light-mode .nav-links a[href="/pt/"]{color:#8a6d2e !important;border-color:#c9a84c !important;}',
+      'body.light-mode .nav-links a[href="/ja/"]{color:#8a6d2e !important;border-color:#c9a84c !important;}',
       'body.light-mode .nav-burger span{background:#141210 !important;}',
       /* ── Mobile drawer ── */
       'body.light-mode .nav-drawer{background:#f2f1ef !important;border-left:1px solid #dcdad5 !important;}',
@@ -457,6 +460,7 @@
   var prefix = '';
   if (path.startsWith('/es')) prefix = '/es';
   else if (path.startsWith('/pt')) prefix = '/pt';
+  else if (path.startsWith('/ja')) prefix = '/ja';
 
   // ── NAV LINKS ─────────────────────────────────────────────────────────────────
   // IMPORTANT: EN links must match static HTML exactly (same hrefs, same order)
@@ -479,6 +483,7 @@
       { href: '/es/letters',             label: '8 Letras'       },
       { href: '/es/cognitive-functions', label: 'Funciones'      },
       { href: '/es/compatibility',       label: 'Compatibilidad' },
+      { href: '/es/vs',                  label: 'Tipo contra Tipo' },
       { href: '/es/archive',             label: 'Archivo'        },
       { href: '/es/forum',               label: 'Foro'           },
       { href: '/es/about',               label: 'Acerca de'      }
@@ -489,9 +494,21 @@
       { href: '/pt/letters',             label: '8 Letras'        },
       { href: '/pt/cognitive-functions', label: 'Funciones'       },
       { href: '/pt/compatibility',       label: 'Compatibilidade' },
+      { href: '/pt/vs',                  label: 'Tipo vs Tipo'    },
       { href: '/pt/archive',             label: 'Arquivo'         },
       { href: '/pt/forum',               label: 'Fórum'           },
       { href: '/pt/about',               label: 'Sobre'           }
+    ],
+    '/ja': [
+      { href: '/ja/',                    label: 'テストを受ける'  },
+      { href: '/ja/types',               label: '16タイプ'       },
+      { href: '/ja/letters',             label: '8つの指標'      },
+      { href: '/ja/cognitive-functions', label: '認知機能'       },
+      { href: '/ja/compatibility',       label: '相性診断'       },
+      { href: '/ja/vs',                  label: 'タイプ比較'     },
+      { href: '/ja/archive',             label: 'アーカイブ'     },
+      { href: '/ja/forum',               label: 'フォーラム'     },
+      { href: '/ja/about',               label: '当サイトについて' }
     ]
   };
 
@@ -595,8 +612,102 @@
       logo.innerHTML = '<span class="logo-77">77</span><span class="logo-scenarios">scenarios</span>';
     }
 
+    // Update logo hrefs to support international prefixes
+    document.querySelectorAll('.nav-logo, .logo').forEach(function(el) {
+      if (el.getAttribute('href') === '/' || !el.getAttribute('href')) {
+        el.setAttribute('href', prefix ? prefix + '/' : '/');
+      }
+    });
+
     applyTheme(localStorage.getItem('77s-theme') === 'light');
   }
+
+  var FOOTER_TEXT = {
+    '': {
+      tagline: '77 situations. No self-rating.<br>Just choices, and what they reveal.',
+      cta: 'Take the test →',
+      explore: 'Explore',
+      types: '16 Types',
+      letters: '8 Letters',
+      fns: 'Functions',
+      compat: 'Compatibility',
+      vs: 'Type vs Type',
+      archive: 'Character Archive',
+      community: 'Community',
+      forum: 'Forum',
+      about: 'About',
+      contact: 'Contact',
+      legal: 'Legal',
+      privacy: 'Privacy Policy',
+      terms: 'Terms of Service',
+      copy: 'All rights reserved.',
+      priv: 'Privacy',
+      trm: 'Terms'
+    },
+    '/es': {
+      tagline: '77 escenarios. Sin autoevaluación.<br>Solo elecciones y lo que revelan.',
+      cta: 'Hacer el test →',
+      explore: 'Explorar',
+      types: '16 Tipos',
+      letters: '8 Letras',
+      fns: 'Funciones',
+      compat: 'Compatibilidad',
+      vs: 'Tipo contra Tipo',
+      archive: 'Archivo de Personajes',
+      community: 'Comunidad',
+      forum: 'Foro',
+      about: 'Acerca de',
+      contact: 'Contacto',
+      legal: 'Legal',
+      privacy: 'Política de Privacidad',
+      terms: 'Términos de Servicio',
+      copy: 'Todos los derechos reservados.',
+      priv: 'Privacidad',
+      trm: 'Términos'
+    },
+    '/pt': {
+      tagline: '77 cenários. Sem autoavaliação.<br>Apenas escolhas, e o que elas revelam.',
+      cta: 'Fazer o teste →',
+      explore: 'Explorar',
+      types: '16 Tipos',
+      letters: '8 Letras',
+      fns: 'Funções',
+      compat: 'Compatibilidade',
+      vs: 'Tipo vs Tipo',
+      archive: 'Arquivo de Personagens',
+      community: 'Comunidade',
+      forum: 'Fórum',
+      about: 'Sobre',
+      contact: 'Contato',
+      legal: 'Legal',
+      privacy: 'Política de Privacidade',
+      terms: 'Termos de Serviço',
+      copy: 'Todos os direitos reservados.',
+      priv: 'Privacidade',
+      trm: 'Termos'
+    },
+    '/ja': {
+      tagline: '77のシナリオ。自己評価は不要。<br>選択と、それが浮き彫りにするあなたの本質。',
+      cta: 'テストを受ける →',
+      explore: '探索する',
+      types: '16タイプ',
+      letters: '8つの指標',
+      fns: '認知機能',
+      compat: '相性診断',
+      vs: 'タイプ比較',
+      archive: 'アーカイブ',
+      community: 'コミュニティ',
+      forum: 'フォーラム',
+      about: '当サイトについて',
+      contact: 'お問い合わせ',
+      legal: '法的規約',
+      privacy: 'プライバシーポリシー',
+      terms: '利用規約',
+      copy: 'All rights reserved.',
+      priv: 'プライバシー',
+      trm: '利用規約'
+    }
+  };
 
   function injectFooter() {
     if (document.getElementById('nav-footer')) return;
@@ -604,6 +715,8 @@
     var existing = document.querySelector('footer');
     var target = existing || null;
     var year = new Date().getFullYear();
+    var t = FOOTER_TEXT[prefix] || FOOTER_TEXT[''];
+    var rootHref = prefix ? prefix + '/' : '/';
 
     var footer = document.createElement('footer');
     footer.id = 'nav-footer';
@@ -611,35 +724,35 @@
       '<div class="footer-inner">',
       '  <div class="footer-brand">',
       '    <div class="footer-logo"><span class="logo-77">77</span><span class="footer-logo-text">scenarios</span></div>',
-      '    <p class="footer-tagline">77 situations. No self-rating.<br>Just choices, and what they reveal.</p>',
-      '    <a href="/" class="footer-cta">Take the test →</a>',
+      '    <p class="footer-tagline">' + t.tagline + '</p>',
+      '    <a href="' + rootHref + '" class="footer-cta">' + t.cta + '</a>',
       '  </div>',
       '  <div class="footer-cols">',
       '    <div class="footer-col">',
-      '      <div class="footer-col-head">Explore</div>',
-      '      <a href="/types">16 Types</a>',
-      '      <a href="/letters">8 Letters</a>',
-      '      <a href="/cognitive-functions">Functions</a>',
-      '      <a href="/compatibility">Compatibility</a>',
-      '      <a href="/vs">Type vs Type</a>',
-      '      <a href="/archive">Character Archive</a>',
+      '      <div class="footer-col-head">' + t.explore + '</div>',
+      '      <a href="' + prefix + '/types">' + t.types + '</a>',
+      '      <a href="' + prefix + '/letters">' + t.letters + '</a>',
+      '      <a href="' + prefix + '/cognitive-functions">' + t.fns + '</a>',
+      '      <a href="' + prefix + '/compatibility">' + t.compat + '</a>',
+      '      <a href="' + prefix + '/vs">' + t.vs + '</a>',
+      '      <a href="' + prefix + '/archive">' + t.archive + '</a>',
       '    </div>',
       '    <div class="footer-col">',
-      '      <div class="footer-col-head">Community</div>',
-      '      <a href="/forum">Forum</a>',
-      '      <a href="/about">About</a>',
-      '      <a href="/contact">Contact</a>',
+      '      <div class="footer-col-head">' + t.community + '</div>',
+      '      <a href="' + prefix + '/forum">' + t.forum + '</a>',
+      '      <a href="' + prefix + '/about">' + t.about + '</a>',
+      '      <a href="' + prefix + '/contact">' + t.contact + '</a>',
       '    </div>',
       '    <div class="footer-col">',
-      '      <div class="footer-col-head">Legal</div>',
-      '      <a href="/privacy">Privacy Policy</a>',
-      '      <a href="/terms">Terms of Service</a>',
+      '      <div class="footer-col-head">' + t.legal + '</div>',
+      '      <a href="' + prefix + '/privacy">' + t.privacy + '</a>',
+      '      <a href="' + prefix + '/terms">' + t.terms + '</a>',
       '    </div>',
       '  </div>',
       '</div>',
       '<div class="footer-bottom">',
-      '  <span class="footer-copy">&copy; ' + year + ' 77 Scenarios. All rights reserved.</span>',
-      '  <span class="footer-bottom-links"><a href="/privacy">Privacy</a> &middot; <a href="/terms">Terms</a></span>',
+      '  <span class="footer-copy">&copy; ' + year + ' 77 Scenarios. ' + t.copy + '</span>',
+      '  <span class="footer-bottom-links"><a href="' + prefix + '/privacy">' + t.priv + '</a> &middot; <a href="' + prefix + '/terms">' + t.trm + '</a></span>',
       '</div>'
     ].join('');
 
@@ -1033,7 +1146,7 @@
     res.innerHTML = results.map(function(item, i) {
       var col = CAT_COLOR[item.cat] || '#888';
       var lbl = CAT_LABEL[item.cat] || item.cat;
-      return '<a class="srch-item" href="'+item.url+'" data-i="'+i+'">' +
+      return '<a class="srch-item" href="'+(prefix + item.url)+'" data-i="'+i+'">' +
         '<span class="srch-cat" style="color:'+col+'">'+lbl+'</span>' +
         '<span class="srch-info">' +
           '<span class="srch-title">'+item.title+'</span>' +

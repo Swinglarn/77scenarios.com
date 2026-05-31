@@ -451,8 +451,8 @@ function showDetail(row, col, cellEl) {
       <div class="detail-score-label sc${score}">${scoreLabels[score]}</div>
       <div class="detail-desc">${desc || defaultDesc[score]}</div>
       <div class="detail-links">
-        <a href="/ja/type?t=${a}" class="detail-link">${a} について →</a>
-        <a href="/ja/type?t=${b}" class="detail-link">${b} について →</a>
+        <a href="/ja/types/${a.toLowerCase()}" class="detail-link">${a} について →</a>
+        <a href="/ja/types/${b.toLowerCase()}" class="detail-link">${b} について →</a>
         <a href="/ja/compatibility/${canonicalSlug(a,b)}" class="detail-link">詳細な相性診断ページ →</a>
       </div>
     </div>`;
