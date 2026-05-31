@@ -18,18 +18,10 @@
 <meta name="twitter:title" content="Your Profile · 77 Scenarios">
 <meta name="twitter:description" content="View your personality type results and score breakdown.">
 <link rel="canonical" href="https://77scenarios.com/profile">
-<link rel="alternate" hreflang="en" href="https://77scenarios.com/profile">
-<link rel="alternate" hreflang="es" href="https://77scenarios.com/es/profile">
-<link rel="alternate" hreflang="pt-BR" href="https://77scenarios.com/pt/profile">
-<link rel="alternate" hreflang="ja" href="https://77scenarios.com/ja/profile">
-<link rel="alternate" hreflang="x-default" href="https://77scenarios.com/profile">
-
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Your Profile","description":"View your 77 Scenarios personality type results and test history.","url":"https://77scenarios.com/profile","publisher":{"@type":"Organization","name":"77 Scenarios","url":"https://77scenarios.com"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
   :root{--bg:#0c0e10;--surface:#13161a;--surface2:#1a1e24;--gold:#c9a84c;--gold-dim:#8a6d2e;--cream:#ede8df;--muted:#ccc6bf;--border:#252a30;--radius:14px;}
@@ -39,6 +31,10 @@
   .glow{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0;}
   .glow-1{width:600px;height:600px;top:-200px;left:-150px;background:radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%);}
   .glow-2{width:400px;height:400px;bottom:-100px;right:-100px;background:radial-gradient(circle,rgba(120,180,160,0.05) 0%,transparent 70%);}
+
+  nav, 
+  @media(max-width:480px){nav,}
+
   main{position:relative;z-index:1;max-width:740px;margin:0 auto;padding:72px 32px 96px;}
 
   /* REVEAL */
@@ -134,39 +130,6 @@
   body.light-mode .result-cta-btn{color:#4a5568;border-color:#d0d7e3;}
   body.light-mode .result-cta-btn:hover{border-color:#c9a84c;color:#1e2d4a;}
   .result-link:hover{text-decoration:underline;}
-  /* ── Expandable rich result panel ── */
-  .result-expand{flex-basis:100%;width:100%;margin-top:14px;padding-top:14px;border:none;border-top:1px solid var(--border);background:none;color:var(--gold);font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;text-align:left;display:flex;align-items:center;gap:8px;}
-  .result-expand:hover{color:var(--cream);}
-  .result-expand .chev{transition:transform 0.25s ease;font-size:13px;}
-  .result-expand.open .chev{transform:rotate(180deg);}
-  .rp-detail{flex-basis:100%;width:100%;margin-top:18px;}
-  .rp-intro{font-size:0.95rem;line-height:1.7;color:var(--muted);}
-  .rp-rarity{display:inline-block;font-size:12px;color:var(--gold);border:1px solid var(--gold-dim);border-radius:30px;padding:5px 14px;margin-top:16px;}
-  .rp-section{margin-top:26px;}
-  .rp-label{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
-  .rp-fn-row{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--border);}
-  .rp-fn-row:last-child{border-bottom:none;}
-  .rp-fn-rank{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);width:66px;flex-shrink:0;padding-top:4px;}
-  .rp-fn-name{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:var(--cream);margin-bottom:2px;}
-  .rp-fn-name span{font-style:normal;font-family:'DM Sans',sans-serif;font-size:11px;color:var(--gold);margin-left:6px;letter-spacing:0.05em;}
-  .rp-fn-desc{font-size:0.88rem;line-height:1.55;color:var(--muted);}
-  .rp-fn-count{font-size:11px;color:var(--gold-dim);margin-top:5px;}
-  .rp-moment{background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:10px;padding:16px 18px;margin-bottom:12px;}
-  .rp-moment-scene{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:9px;}
-  .rp-moment-choice{font-size:0.95rem;font-style:italic;line-height:1.6;color:var(--cream);margin-bottom:11px;}
-  .rp-moment-read{font-size:0.85rem;line-height:1.55;color:var(--muted);padding-top:11px;border-top:1px solid var(--border);}
-  .rp-moment-read b{color:var(--gold);font-weight:500;}
-  .rp-neighbour{display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:10px;transition:border-color 0.2s;}
-  .rp-neighbour:hover{border-color:var(--gold-dim);}
-  .rp-neighbour-ax{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:3px;}
-  .rp-neighbour-txt{font-size:0.88rem;color:var(--muted);}
-  .rp-neighbour-txt b{color:var(--cream);font-weight:500;}
-  .rp-neighbour-arrow{color:var(--muted);flex-shrink:0;}
-  .rp-neighbour:hover .rp-neighbour-arrow{color:var(--gold);}
-  body.light-mode .rp-intro,body.light-mode .rp-fn-desc,body.light-mode .rp-moment-read,body.light-mode .rp-neighbour-txt,body.light-mode .rp-fn-rank,body.light-mode .rp-label{color:#4a6080!important;}
-  body.light-mode .rp-fn-name,body.light-mode .rp-moment-choice,body.light-mode .rp-neighbour-txt b{color:#1e2d4a!important;}
-  body.light-mode .rp-fn-name span,body.light-mode .rp-moment-scene,body.light-mode .rp-neighbour-ax,body.light-mode .rp-rarity,body.light-mode .rp-moment-read b,body.light-mode .result-expand{color:#8a6d2e!important;}
-  body.light-mode .rp-moment,body.light-mode .rp-neighbour{background:#f5f7fa!important;border-color:#d0d7e3!important;}
   .loading{color:var(--muted);font-size:1rem;padding:24px 0;}
   .profile-avatar{width:72px;height:72px;border-radius:50%;object-fit:cover;border:1px solid #2a3848;flex-shrink:0;}
   .profile-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,3.2rem);font-weight:600;color:var(--cream);line-height:1.1;margin:40px 0 32px;}
@@ -243,6 +206,10 @@ const obs=new IntersectionObserver(entries=>{
 },{threshold:0.155});
 document.querySelectorAll('.r').forEach(el=>obs.observe(el));
 </script>
+
+<script></script>
+
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 const { createClient } = supabase;
@@ -265,57 +232,12 @@ function fmt(date) {
   return new Date(date).toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric' });
 }
 
-function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
-
-function renderDetail(d){
-  if(!d) return '';
-  let html = '';
-  if(d.description) html += `<div class="rp-intro">${esc(d.description)}</div>`;
-  if(d.rarity != null) html += `<div><span class="rp-rarity">${d.rarity<=4?'Rare &middot; ':''}~${esc(d.rarity)}% of people share this type</span></div>`;
-  if(Array.isArray(d.stack) && d.stack.length){
-    html += `<div class="rp-section"><div class="rp-label">How this mind is wired</div>`;
-    html += d.stack.map((s,i)=>{
-      const c = (i<2 && s.count>0) ? `<div class="rp-fn-count">Fired ${esc(s.count)} time${s.count===1?'':'s'} in this test</div>` : '';
-      return `<div class="rp-fn-row"><div class="rp-fn-rank">${esc(s.rank)}</div><div><div class="rp-fn-name">${esc(s.name)}<span>${esc(s.fn)}</span></div><div class="rp-fn-desc">${esc(s.desc)}</div>${c}</div></div>`;
-    }).join('');
-    html += `</div>`;
-  }
-  if(Array.isArray(d.moments) && d.moments.length){
-    html += `<div class="rp-section"><div class="rp-label">Defining moments${d.modeLabel?' &middot; '+esc(d.modeLabel):''}</div>`;
-    html += d.moments.map(m=>{
-      const read = m.fn ? `That instinct is <b>${esc(m.fnName)} (${esc(m.fn)})</b> &mdash; ${esc(m.fnDesc)}.` : '';
-      return `<div class="rp-moment"><div class="rp-moment-scene">${esc(m.scene||'A moment')}</div><div class="rp-moment-choice">&ldquo;${esc(m.choice)}&rdquo;</div>${read?`<div class="rp-moment-read">${read}</div>`:''}</div>`;
-    }).join('');
-    html += `</div>`;
-  }
-  if(Array.isArray(d.neighbours) && d.neighbours.length){
-    html += `<div class="rp-section"><div class="rp-label">Your closest neighbouring types</div>`;
-    html += d.neighbours.map(n=>`<a class="rp-neighbour" href="${esc(n.href)}"><div><div class="rp-neighbour-ax">${esc(n.axisLabel)} &middot; ${esc(n.pct)}%</div><div class="rp-neighbour-txt">How <b>${esc(n.type)}</b> and <b>${esc(n.neighbour)}</b> diverge</div></div><div class="rp-neighbour-arrow">&rarr;</div></a>`).join('');
-    html += `</div>`;
-  }
-  return html;
-}
-
-function toggleDetail(btn){
-  const panel = btn.nextElementSibling;
-  if(!panel) return;
-  const open = panel.style.display === 'block';
-  panel.style.display = open ? 'none' : 'block';
-  btn.classList.toggle('open', !open);
-  const lbl = btn.querySelector('.lbl');
-  if(lbl) lbl.textContent = open ? 'Full breakdown' : 'Hide breakdown';
-}
-
 function renderCard(r) {
   const ep = pct(r.ei_e, r.ei_i);
   const sp = pct(r.sn_s, r.sn_n);
   const tp = pct(r.tf_t, r.tf_f);
   const jp = pct(r.jp_j, r.jp_p);
   const t = r.personality_type;
-  const detailHtml = r.details ? renderDetail(r.details) : '';
-  const expand = detailHtml
-    ? `<button class="result-expand" onclick="toggleDetail(this)"><span class="chev">&#9662;</span><span class="lbl">Full breakdown</span></button><div class="rp-detail" style="display:none">${detailHtml}</div>`
-    : '';
   return `
     <div class="result-card">
       <div>
@@ -350,7 +272,6 @@ function renderCard(r) {
         <a class="result-cta-btn" href="/compatibility">Compatibility →</a>
         <a class="result-cta-btn" href="/">Retake test →</a>
       </div>
-      ${expand}
     </div>`;
 }
 

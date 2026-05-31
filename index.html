@@ -126,39 +126,6 @@
   .result-actions { display: flex; gap: 16px; flex-wrap: wrap; }
   .btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--muted); font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid var(--border); border-radius: 60px; padding: 14px 28px; cursor: pointer; transition: all 0.2s ease; }
   .btn-secondary:hover { border-color: var(--muted); color: var(--cream); }
-  /* ── PERSONALIZED RESULT INSIGHTS ── */
-  .insight-block { margin-bottom: 44px; }
-  .insight-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
-  .rarity-pill { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); letter-spacing: 0.04em; background: var(--surface); border: 1px solid var(--border); border-radius: 30px; padding: 8px 16px; margin-bottom: 8px; }
-  .rarity-pill b { color: var(--gold); font-weight: 500; }
-  .clarity-note { font-size: 14px; line-height: 1.75; color: #cdc7c0; margin-bottom: 20px; }
-  .clarity-note b { color: var(--cream); font-weight: 500; }
-  .neighbour-card { display: flex; align-items: center; justify-content: space-between; gap: 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; margin-bottom: 14px; text-decoration: none; transition: all 0.2s ease; }
-  .neighbour-card:hover { border-color: var(--gold-dim); background: var(--surface2); }
-  .neighbour-left { display: flex; flex-direction: column; gap: 5px; }
-  .neighbour-axis { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); }
-  .neighbour-text { font-size: 13px; color: var(--muted); line-height: 1.55; }
-  .neighbour-text b { color: var(--cream); font-weight: 500; }
-  .neighbour-arrow { flex-shrink: 0; color: var(--muted); font-size: 16px; transition: color 0.2s ease; }
-  .neighbour-card:hover .neighbour-arrow { color: var(--gold); }
-  .fn-row { display: flex; gap: 16px; align-items: flex-start; padding: 18px 0; border-bottom: 1px solid var(--border); }
-  .fn-row:last-child { border-bottom: none; }
-  .fn-rank { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); width: 72px; flex-shrink: 0; padding-top: 4px; }
-  .fn-body { flex: 1; }
-  .fn-name { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 21px; color: var(--cream); margin-bottom: 4px; }
-  .fn-name span { color: var(--gold); font-style: normal; font-size: 12px; letter-spacing: 0.05em; margin-left: 8px; font-family: 'DM Sans', sans-serif; }
-  .fn-desc { font-size: 13px; line-height: 1.6; color: var(--muted); }
-  .fn-count { font-size: 11px; color: var(--gold-dim); margin-top: 7px; letter-spacing: 0.03em; }
-  .moment-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 22px 24px; margin-bottom: 16px; }
-  .moment-scene { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
-  .moment-choice { font-size: 15px; line-height: 1.7; color: var(--cream); font-weight: 300; font-style: italic; margin-bottom: 14px; }
-  .moment-read { font-size: 13px; line-height: 1.65; color: var(--muted); padding-top: 14px; border-top: 1px solid var(--border); }
-  .moment-read b { color: var(--gold); font-weight: 500; }
-  .insight-divider { width: 100%; height: 1px; background: var(--border); margin: 8px 0 44px; }
-  body.light-mode .rarity-pill, body.light-mode .neighbour-card, body.light-mode .moment-card { background: #ffffff !important; border-color: #d0d7e3 !important; }
-  body.light-mode .clarity-note, body.light-mode .clarity-note b, body.light-mode .neighbour-text b, body.light-mode .fn-name, body.light-mode .moment-choice { color: #1e2d4a !important; }
-  body.light-mode .neighbour-text, body.light-mode .fn-desc, body.light-mode .moment-read, body.light-mode .fn-rank, body.light-mode .insight-label { color: #4a5568 !important; }
-
   @media (max-width: 480px) { .splash-meta { gap: 20px; } .answer-card { padding: 16px 18px; } .result-actions { flex-direction: column; } .btn-primary, .btn-secondary { width: 100%; justify-content: center; } }
 
   /* ── TABLET (max 768px) ── */
@@ -894,34 +861,11 @@
     <div class="type-tagline" id="type-tagline"></div>
     <p class="type-description" id="type-description"></p>
     <div class="traits-grid" id="traits-grid"></div>
-    <div id="rarity-line"></div>
     <div class="sep"></div>
     <div class="spectrum-section">
       <div class="spectrum-label">Your spectrum</div>
       <div id="spectrum-bars"></div>
     </div>
-
-    <!-- PERSONALIZED INSIGHTS (populated by renderInsights) -->
-    <div id="insight-clarity" class="insight-block" style="display:none;">
-      <div class="insight-label">How clear your type is</div>
-      <div class="clarity-note" id="clarity-note"></div>
-      <div id="clarity-neighbours"></div>
-    </div>
-
-    <div id="insight-functions" class="insight-block" style="display:none;">
-      <div class="insight-label">How your mind is wired</div>
-      <div id="fn-stack"></div>
-      <a href="/cognitive-functions" class="btn-secondary" style="text-decoration:none;margin-top:20px;">What are cognitive functions? →</a>
-    </div>
-
-    <div id="insight-moments" class="insight-block" style="display:none;">
-      <div class="insight-label">Your defining moments</div>
-      <div class="clarity-note" id="moment-intro" style="margin-bottom:22px;"></div>
-      <div id="moment-list"></div>
-    </div>
-
-    <div class="insight-divider"></div>
-
     <div class="result-actions">
       <button class="btn-primary" onclick="retakeTest()">Retake test <span class="arrow">→</span></button>
       <button class="btn-secondary" onclick="shareResult()">Share result</button>
@@ -1652,7 +1596,6 @@ function showResultsActual() {
   const fnLink = document.getElementById('functions-link');
   if (fnLink) fnLink.href = `/functions?t=${type}`;
   showScreen('screen-result');
-  renderInsights(type, bs);
   setTimeout(() => document.querySelectorAll('.spectrum-fill').forEach(el => el.style.width = el.dataset.target+'%'), 200);
   setTimeout(() => {
     const cb = document.getElementById('eb4');
@@ -1661,141 +1604,6 @@ function showResultsActual() {
     }
   }, 300);
   if (window._sbSaveResult) window._sbSaveResult(type, scores);
-}
-
-// ── PERSONALIZED RESULT INSIGHTS ──
-const FN_STACKS = {
-  ISTJ:['Si','Te','Fi','Ne'], ISFJ:['Si','Fe','Ti','Ne'], INFJ:['Ni','Fe','Ti','Se'], INTJ:['Ni','Te','Fi','Se'],
-  ISTP:['Ti','Se','Ni','Fe'], ISFP:['Fi','Se','Ni','Te'], INFP:['Fi','Ne','Si','Te'], INTP:['Ti','Ne','Si','Fe'],
-  ESTP:['Se','Ti','Fe','Ni'], ESFP:['Se','Fi','Te','Ni'], ENFP:['Ne','Fi','Te','Si'], ENTP:['Ne','Ti','Fe','Si'],
-  ESTJ:['Te','Si','Ne','Fi'], ESFJ:['Fe','Si','Ne','Ti'], ENFJ:['Fe','Ni','Se','Ti'], ENTJ:['Te','Ni','Se','Fi']
-};
-const FN_INFO = {
-  Se:['Extraverted Sensing','you live in the immediate, physical present and act on what is right in front of you'],
-  Si:['Introverted Sensing','you trust lived experience, detail, and what has been proven to work before'],
-  Ne:['Extraverted Intuition','you chase possibilities and connections, always asking what else this could become'],
-  Ni:['Introverted Intuition','you sense where things are heading and the single pattern underneath the noise'],
-  Te:['Extraverted Thinking','you organise the outer world into systems, plans, and measurable results'],
-  Ti:['Introverted Thinking','you build precise internal frameworks and need ideas to be logically clean'],
-  Fe:['Extraverted Feeling','you read and tend the emotional climate of a room almost automatically'],
-  Fi:['Introverted Feeling','you navigate by a private compass of values and what feels true to you']
-};
-const TYPE_RARITY = { ISTJ:11.6, ISFJ:13.8, INFJ:1.5, INTJ:2.1, ISTP:5.4, ISFP:8.8, INFP:4.4, INTP:3.3, ESTP:4.3, ESFP:8.5, ENFP:8.1, ENTP:3.2, ESTJ:8.7, ESFJ:12.0, ENFJ:2.5, ENTJ:1.8 };
-const POLE_LABEL = { E:'Extravert', I:'Introvert', S:'Sensing', N:'Intuitive', T:'Thinking', F:'Feeling', J:'Judging', P:'Perceiving' };
-const MODE_LABEL = { myth:'the mythic lens', normal:'everyday scenarios', both:'a mix of myth and the everyday' };
-
-// Single source of truth: builds a self-contained result model that renders
-// identically on the results screen, in the email, and on the profile.
-function computeResultModel(type) {
-  const bs = getBlendedScores();
-  const td = (typeof typeData !== 'undefined' && typeData[type]) ? typeData[type] : { name:'', tagline:'', description:'' };
-  const dims = [{a:'E',b:'I',pos:0},{a:'S',b:'N',pos:1},{a:'T',b:'F',pos:2},{a:'J',b:'P',pos:3}];
-  const spectrum = dims.map(d => {
-    const va = bs[d.a]||0, vb = bs[d.b]||0, total = va+vb, aWins = va >= vb;
-    const win = aWins ? d.a : d.b, lose = aWins ? d.b : d.a;
-    return { pole:win, losePole:lose, label:POLE_LABEL[win], loseLabel:POLE_LABEL[lose], pct: total===0?50:Math.round((Math.max(va,vb)/total)*100), pos:d.pos };
-  });
-  const neighbours = spectrum.filter(s => s.pct <= 58).sort((x,y)=>x.pct-y.pct).slice(0,2).map(s => {
-    const neighbour = type.split('').map((ch,i) => i === s.pos ? s.losePole : ch).join('');
-    return { type, neighbour, axisLabel:`${s.label} vs ${s.loseLabel}`, pct:s.pct, href:`/vs/${type.toLowerCase()}-${neighbour.toLowerCase()}` };
-  });
-  const ranks = ['Dominant','Auxiliary','Tertiary','Inferior'];
-  const stack = (FN_STACKS[type] || []).map((fn,i) => {
-    const info = FN_INFO[fn] || ['',''];
-    const count = (typeof fnScores !== 'undefined' && fnScores[fn]) ? Math.round(fnScores[fn]) : 0;
-    return { rank:ranks[i], fn, name:info[0], desc: info[1] ? info[1].charAt(0).toUpperCase()+info[1].slice(1)+'.' : '', count };
-  });
-  const mode = (typeof testMode !== 'undefined') ? testMode : 'both';
-  return {
-    v: 1, type, name: td.name, tagline: td.tagline, description: td.description,
-    mode, modeLabel: MODE_LABEL[mode] || 'these scenarios',
-    rarity: (TYPE_RARITY[type] != null) ? TYPE_RARITY[type] : null,
-    spectrum, neighbours, stack, moments: computeMoments(type),
-    createdAt: new Date().toISOString()
-  };
-}
-
-function computeMoments(type) {
-  if (!Array.isArray(history) || !history.length || !Array.isArray(orderedQuestions)) return [];
-  const dimMap = { EI:0, SN:1, TF:2, JP:3 };
-  const typePoles = type.split('');
-  const stack = FN_STACKS[type] || [];
-  const cands = [];
-  history.forEach((h, idx) => {
-    const q = orderedQuestions[idx];
-    if (!q || !q.dim) return;
-    const pos = dimMap[q.dim];
-    if (pos === undefined) return;
-    const chosenPole = h.choice === 'A' ? q.dim[0] : q.dim[1];
-    if (chosenPole !== typePoles[pos]) return; // only type-confirming choices
-    const fn = q.fn ? (h.choice === 'A' ? q.fn.split('/')[0] : q.fn.split('/')[1]) : null;
-    const answer = h.choice === 'A' ? q.a : q.b;
-    const info = fn ? FN_INFO[fn] : null;
-    let w = (answer || '').length / 50;
-    const r = fn ? stack.indexOf(fn) : -1;
-    if (r === 0) w += 100; else if (r === 1) w += 60; else if (r > -1) w += 20;
-    cands.push({ pos, scene:q.scene, choice:answer, fn, fnName: info?info[0]:'', fnDesc: info?info[1]:'', weight:w });
-  });
-  const out = [];
-  [0,1,2,3].forEach(p => {
-    const best = cands.filter(c => c.pos === p).sort((a,b)=>b.weight-a.weight)[0];
-    if (best) out.push(best);
-  });
-  out.sort((a,b)=>b.weight-a.weight);
-  return out.slice(0,4).map(m => ({ scene:m.scene, choice:m.choice, fn:m.fn, fnName:m.fnName, fnDesc:m.fnDesc }));
-}
-
-function renderInsights(type, bs) {
-  ['insight-clarity','insight-functions','insight-moments'].forEach(id => { const e = document.getElementById(id); if (e) e.style.display = 'none'; });
-  const rl = document.getElementById('rarity-line'); if (rl) rl.innerHTML = '';
-  let model;
-  try { model = computeResultModel(type); } catch(e) { return; }
-  window._resultModel = model;
-  try { paintRarity(model); } catch(e) {}
-  try { paintClarity(model); } catch(e) {}
-  try { paintFunctions(model); } catch(e) {}
-  try { paintMoments(model); } catch(e) {}
-}
-
-function paintRarity(model) {
-  const el = document.getElementById('rarity-line');
-  if (!el || model.rarity == null) return;
-  const rare = model.rarity <= 4;
-  el.innerHTML = `<div class="rarity-pill">${rare ? 'One of the rarest types &middot; ' : ''}Around <b>${model.rarity}%</b> of people share your type</div>`;
-}
-
-function paintClarity(model) {
-  const block = document.getElementById('insight-clarity');
-  if (!block || !model.spectrum.length) return;
-  const sorted = [...model.spectrum].sort((x,y)=>y.pct-x.pct);
-  const strongest = sorted[0], weakest = sorted[sorted.length-1];
-  document.getElementById('clarity-note').innerHTML =
-    `Your clearest signal is <b>${strongest.label}</b> at ${strongest.pct}%. The closest call was <b>${weakest.label}</b> just edging out ${weakest.loseLabel} at ${weakest.pct}% &mdash; that is where you most resemble a neighbouring type.`;
-  const container = document.getElementById('clarity-neighbours');
-  container.innerHTML = model.neighbours.map(n =>
-    `<a class="neighbour-card" href="${n.href}"><div class="neighbour-left"><div class="neighbour-axis">${n.axisLabel} &middot; ${n.pct}%</div><div class="neighbour-text">You sit close to the line here. See how <b>${n.type}</b> and <b>${n.neighbour}</b> diverge.</div></div><div class="neighbour-arrow">&rarr;</div></a>`
-  ).join('');
-  block.style.display = 'block';
-}
-
-function paintFunctions(model) {
-  if (!model.stack.length) return;
-  document.getElementById('fn-stack').innerHTML = model.stack.map((s,i) => {
-    const countLine = (i < 2 && s.count > 0) ? `<div class="fn-count">Fired ${s.count} time${s.count===1?'':'s'} across your scenarios</div>` : '';
-    return `<div class="fn-row"><div class="fn-rank">${s.rank}</div><div class="fn-body"><div class="fn-name">${s.name}<span>${s.fn}</span></div><div class="fn-desc">${s.desc}</div>${countLine}</div></div>`;
-  }).join('');
-  document.getElementById('insight-functions').style.display = 'block';
-}
-
-function paintMoments(model) {
-  if (!model.moments.length) return;
-  const intro = document.getElementById('moment-intro');
-  if (intro) intro.innerHTML = `You answered through <b>${model.modeLabel}</b>. These were the choices that shaped your result.`;
-  document.getElementById('moment-list').innerHTML = model.moments.map(m => {
-    const read = m.fn ? `That instinct is <b>${m.fnName} (${m.fn})</b> &mdash; ${m.fnDesc}.` : '';
-    return `<div class="moment-card"><div class="moment-scene">${m.scene || 'A moment'}</div><div class="moment-choice">&ldquo;${m.choice}&rdquo;</div>${read ? `<div class="moment-read">${read}</div>` : ''}</div>`;
-  }).join('');
-  document.getElementById('insight-moments').style.display = 'block';
 }
 
 function retakeTest() {
@@ -1876,8 +1684,7 @@ async function saveResult() {
             ei_e: bs.E||scores.E, ei_i: bs.I||scores.I,
             sn_s: bs.S||scores.S, sn_n: bs.N||scores.N,
             tf_t: bs.T||scores.T, tf_f: bs.F||scores.F,
-            jp_j: bs.J||scores.J, jp_p: bs.P||scores.P,
-            details: window._resultModel || null
+            jp_j: bs.J||scores.J, jp_p: bs.P||scores.P
           }
         })
       }).catch(() => {}); // swallow silently — email is best-effort
@@ -2003,7 +1810,6 @@ function shareResult() {
   window._sbSaveResult = async function(type, sc) {
     const { data: { session } } = await sb.auth.getSession();
     if (!session) return;
-    const details = window._resultModel || (function(){ try { return computeResultModel(type); } catch(e) { return null; } })();
     await sb.from('results').insert({
       user_id: session.user.id,
       personality_type: type,
@@ -2011,7 +1817,6 @@ function shareResult() {
       sn_s: sc.S||0, sn_n: sc.N||0,
       tf_t: sc.T||0, tf_f: sc.F||0,
       jp_j: sc.J||0, jp_p: sc.P||0,
-      details: details,
     });
   };
 

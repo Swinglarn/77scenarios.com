@@ -3,8 +3,6 @@
   // ── CANONICAL TAG ────────────────────────────────────────────────────────────
   // Injected immediately so it's in <head> before any other scripts run
   (function() {
-    // Skip if a static canonical already exists in the HTML
-    if (document.querySelector('link[rel="canonical"]')) return;
     var BASE = 'https://77scenarios.com';
     var path = window.location.pathname;
     var search = window.location.search;
@@ -132,14 +130,6 @@
   gtag('js', new Date());
   gtag('config', 'G-C0D86PRJJN');
 
-  // ── SUPABASE PRECONNECT ────────────────────────────────────────────────────
-  if (!document.querySelector('link[href*="supabase.co"][rel="preconnect"]')) {
-    var _pc = document.createElement('link');
-    _pc.rel = 'preconnect';
-    _pc.href = 'https://rttomfnfyjjssdqfzkaj.supabase.co';
-    document.head.appendChild(_pc);
-  }
-
   // ── CONSTANTS ────────────────────────────────────────────────────────────────
   var SUPA_URL = 'https://rttomfnfyjjssdqfzkaj.supabase.co';
   var SUPA_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dG9tZm5meWpqc3NkcWZ6a2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjEsImV4cCI6MjA4ODU2MzAyMX0.0qBogK8xywL77IFYj4IywZIhHyKjbvbVmXYvG6wAZGw';
@@ -192,7 +182,7 @@
       '.nav-right-slot{display:flex;align-items:center;gap:12px;margin-left:auto;flex-shrink:0;}',
       '@media(max-width:960px){.nav-right-slot{display:none;}}',
       // Logo redesign
-      '.nav-logo{font-family:\"Cormorant Garamond\",serif !important;font-size:22px !important;font-weight:300 !important;color:var(--cream,#ede8df) !important;text-decoration:none !important;display:inline-flex !important;align-items:baseline !important;gap:3px !important;letter-spacing:0 !important;}',
+      '.nav-logo{font-family:\"Cormorant Garamond\",serif !important;font-size:22px !important;font-weight:300 !important;text-decoration:none !important;display:inline-flex !important;align-items:baseline !important;gap:3px !important;letter-spacing:0 !important;}',
       '.logo-77{color:#c9a84c !important;font-weight:600 !important;font-size:38px !important;font-style:italic !important;line-height:1 !important;letter-spacing:-0.03em !important;}',
       '.logo-scenarios{color:#ede8df !important;font-weight:300 !important;font-size:26px !important;letter-spacing:0.1em !important;text-transform:lowercase !important;}',
       'body.light-mode .logo-scenarios{color:#141210 !important;}',
@@ -467,7 +457,6 @@
   var prefix = '';
   if (path.startsWith('/es')) prefix = '/es';
   else if (path.startsWith('/pt')) prefix = '/pt';
-  else if (path.startsWith('/ja')) prefix = '/ja';
 
   // ── NAV LINKS ─────────────────────────────────────────────────────────────────
   // IMPORTANT: EN links must match static HTML exactly (same hrefs, same order)
@@ -498,21 +487,11 @@
       { href: '/pt/',                    label: 'Fazer o Teste'   },
       { href: '/pt/types',               label: '16 Tipos'        },
       { href: '/pt/letters',             label: '8 Letras'        },
-      { href: '/pt/cognitive-functions', label: 'Funções'         },
+      { href: '/pt/cognitive-functions', label: 'Funciones'       },
       { href: '/pt/compatibility',       label: 'Compatibilidade' },
       { href: '/pt/archive',             label: 'Arquivo'         },
       { href: '/pt/forum',               label: 'Fórum'           },
       { href: '/pt/about',               label: 'Sobre'           }
-    ],
-    '/ja': [
-      { href: '/ja/',                    label: 'テストを受ける'  },
-      { href: '/ja/types',               label: '16の性格タイプ'  },
-      { href: '/ja/letters',             label: '8つの指標'      },
-      { href: '/ja/cognitive-functions', label: '心理機能'      },
-      { href: '/ja/compatibility',       label: '相性診断'      },
-      { href: '/ja/archive',             label: 'アーカイブ'     },
-      { href: '/ja/forum',               label: 'フォーラム'     },
-      { href: '/ja/about',               label: 'このサイトについて' }
     ]
   };
 
