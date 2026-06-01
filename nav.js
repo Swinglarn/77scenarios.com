@@ -433,12 +433,13 @@
   // ── THEME ────────────────────────────────────────────────────────────────────
   function applyTheme(isLight) {
     document.body.classList.toggle('light-mode', isLight);
+    var u = typeof ui !== 'undefined' ? ui : UI_TEXT[''];
     var d = document.getElementById('theme-toggle-desktop');
-    if (d) d.innerHTML = isLight ? MOON_SVG + ' Dark' : SUN_SVG + ' Light';
+    if (d) d.innerHTML = isLight ? MOON_SVG + ' ' + u.dark : SUN_SVG + ' ' + u.light;
     var m = document.getElementById('theme-toggle-mobile');
     if (m) m.innerHTML = isLight ? MOON_SVG : SUN_SVG;
     var dr = document.getElementById('drawer-theme-toggle');
-    if (dr) dr.innerHTML = isLight ? MOON_SVG + ' Dark mode' : SUN_SVG + ' Light mode';
+    if (dr) dr.innerHTML = isLight ? MOON_SVG + ' ' + u.darkMode : SUN_SVG + ' ' + u.lightMode;
   }
 
   // Apply saved theme before paint
@@ -461,6 +462,124 @@
   if (path.startsWith('/es')) prefix = '/es';
   else if (path.startsWith('/pt')) prefix = '/pt';
   else if (path.startsWith('/ja')) prefix = '/ja';
+
+  var UI_TEXT = {
+    '': {
+      signIn: 'Sign in',
+      profile: 'Profile',
+      settings: 'Settings',
+      signOut: 'Sign out',
+      darkMode: 'Dark mode',
+      lightMode: 'Light mode',
+      dark: 'Dark',
+      light: 'Light',
+      searchPlaceholder: 'Search types, characters, comparisons…',
+      noResults: 'No results for "{query}"',
+      catType: 'Type',
+      catLetter: 'Letter',
+      catFunction: 'Function',
+      catComparison: 'Comparison',
+      catCharacter: 'Character',
+      subLetter: 'Cognitive Letter',
+      subFunction: 'Cognitive Function',
+      subComparison: 'Type Comparison',
+      typeNames: {
+        INFJ: 'The Advocate', INTJ: 'The Architect', INFP: 'The Mediator', INTP: 'The Logician',
+        ENFJ: 'The Protagonist', ENTJ: 'The Commander', ENFP: 'The Campaigner', ENTP: 'The Debater',
+        ISFJ: 'The Defender', ISTJ: 'The Logistician', ISFP: 'The Adventurer', ISTP: 'The Virtuoso',
+        ESFJ: 'The Consul', ESTJ: 'The Executive', ESFP: 'The Entertainer', ESTP: 'The Entrepreneur'
+      },
+      letters: { I:'Introversion', E:'Extroversion', S:'Sensing', N:'Intuition', T:'Thinking', F:'Feeling', J:'Judging', P:'Perceiving' },
+      fns: { Ni:'Introverted Intuition', Ne:'Extroverted Intuition', Si:'Introverted Sensing', Se:'Extroverted Sensing', Ti:'Introverted Thinking', Te:'Extroverted Thinking', Fi:'Introverted Feeling', Fe:'Extroverted Feeling' }
+    },
+    '/es': {
+      signIn: 'Iniciar sesión',
+      profile: 'Perfil',
+      settings: 'Ajustes',
+      signOut: 'Cerrar sesión',
+      darkMode: 'Modo oscuro',
+      lightMode: 'Modo claro',
+      dark: 'Oscuro',
+      light: 'Claro',
+      searchPlaceholder: 'Buscar tipos, personajes, comparaciones…',
+      noResults: 'No hay resultados para "{query}"',
+      catType: 'Tipo',
+      catLetter: 'Letra',
+      catFunction: 'Función',
+      catComparison: 'Comparación',
+      catCharacter: 'Personaje',
+      subLetter: 'Letra cognitiva',
+      subFunction: 'Función cognitiva',
+      subComparison: 'Comparación de tipos',
+      typeNames: {
+        ISTJ: "Inspector", ISFJ: "Protector", INFJ: "Consejero", INTJ: "Arquitecto",
+        ISTP: "Artesano", ISFP: "Artista", INFP: "Mediador", INTP: "Pensador",
+        ESTP: "Dínamo", ESFP: "Animador", ENFP: "Campeón", ENTP: "Visionario",
+        ESTJ: "Director", ESFJ: "Cuidador", ENFJ: "Maestro", ENTJ: "Comandante"
+      },
+      letters: { I:'Introversión', E:'Extraversión', S:'Sensación', N:'Intuición', T:'Pensamiento', F:'Sentimiento', J:'Juicio', P:'Percepción' },
+      fns: { Ni:'Intuición Introvertida', Ne:'Intuición Extravertida', Si:'Sensación Introvertida', Se:'Sensación Extravertida', Ti:'Pensamiento Introvertido', Te:'Pensamiento Extravertido', Fi:'Sentimiento Introvertido', Fe:'Sentimiento Extravertido' }
+    },
+    '/pt': {
+      signIn: 'Entrar',
+      profile: 'Perfil',
+      settings: 'Configurações',
+      signOut: 'Sair',
+      darkMode: 'Modo escuro',
+      lightMode: 'Modo claro',
+      dark: 'Escuro',
+      light: 'Claro',
+      searchPlaceholder: 'Buscar tipos, personagens, comparações…',
+      noResults: 'Nenhum resultado para "{query}"',
+      catType: 'Tipo',
+      catLetter: 'Letra',
+      catFunction: 'Função',
+      catComparison: 'Comparação',
+      catCharacter: 'Personagem',
+      subLetter: 'Letra cognitiva',
+      subFunction: 'Função cognitiva',
+      subComparison: 'Comparação de tipos',
+      typeNames: {
+        ISTJ: "Inspetor", ISFJ: "Protetor", INFJ: "Conselheiro", INTJ: "Arquiteto",
+        ISTP: "Artesão", ISFP: "Artista", INFP: "Mediador", INTP: "Pensador",
+        ESTP: "Dínamo", ESFP: "Animador", ENFP: "Campeão", ENTP: "Visionário",
+        ESTJ: "Diretor", ESFJ: "Cuidador", ENFJ: "Professor", ENTJ: "Comandante"
+      },
+      letters: { I:'Introversão', E:'Extroversão', S:'Sensação', N:'Intuição', T:'Pensamento', F:'Sentimento', J:'Julgamento', P:'Percepção' },
+      fns: { Ni:'Intuição Introvertida', Ne:'Intuição Extrovertida', Si:'Sensação Introvertida', Se:'Sensação Extrovertida', Ti:'Pensamento Introvertido', Te:'Pensamento Extrovertido', Fi:'Sentimento Introvertido', Fe:'Sentimento Extrovertido' }
+    },
+    '/ja': {
+      signIn: 'ログイン',
+      profile: 'プロフィール',
+      settings: '設定',
+      signOut: 'ログアウト',
+      darkMode: 'ダークモード',
+      lightMode: 'ライトモード',
+      dark: 'ダーク',
+      light: 'ライト',
+      searchPlaceholder: '性格タイプ、キャラクター、比較を検索…',
+      noResults: '「{query}」の検索結果はありません',
+      catType: 'タイプ',
+      catLetter: '指標',
+      catFunction: '機能',
+      catComparison: '比較',
+      catCharacter: 'キャラクター',
+      subLetter: '心理指標',
+      subFunction: '認知機能',
+      subComparison: 'タイプ比較',
+      typeNames: {
+        ISTJ: "管理者", ISFJ: "擁護者", INFJ: "提唱者", INTJ: "建築家",
+        ISTP: "巨匠", ISFP: "冒険者", INFP: "仲介者", INTP: "論理学者",
+        ESTP: "起業家", ESFP: "エンターテイナー", ENFP: "運動家", ENTP: "討論者",
+        ESTJ: "幹部", ESFJ: "領事官", ENFJ: "主人公", ENTJ: "指揮官"
+      },
+      letters: { I:'内向型', E:'外向型', S:'感覚型', N:'直観型', T:'思考型', F:'感情型', J:'判断型', P:'知覚型' },
+      fns: { Ni:'内向的直観', Ne:'外向的直観', Si:'内向的感覚', Se:'外向的感覚', Ti:'内向的思考', Te:'外向的思考', Fi:'内向的感情', Fe:'外向的感情' }
+    }
+  };
+
+  var ui = UI_TEXT[prefix] || UI_TEXT[''];
+
 
   // ── NAV LINKS ─────────────────────────────────────────────────────────────────
   // IMPORTANT: EN links must match static HTML exactly (same hrefs, same order)
@@ -572,7 +691,7 @@
       applyTheme(isLight);
     };
     var isLt = localStorage.getItem('77s-theme') === 'light';
-    themeBtn.innerHTML = isLt ? MOON_SVG + ' Dark mode' : SUN_SVG + ' Light mode';
+    themeBtn.innerHTML = isLt ? MOON_SVG + ' ' + ui.darkMode : SUN_SVG + ' ' + ui.lightMode;
     drawer.appendChild(themeBtn);
   }
 
@@ -794,7 +913,7 @@
     img.onerror = function() { this.src = FALLBACK; };
 
     var pill = document.createElement('span');
-    pill.textContent = username || 'Profile';
+    pill.textContent = username || ui.profile;
     pill.style.cssText = 'background:#c9a84c;color:#0c0e10;padding:7px 16px;border-radius:60px;font-weight:500;font-size:0.82rem;letter-spacing:0.04em;white-space:nowrap;font-family:"DM Sans",sans-serif;';
 
     btn.appendChild(img);
@@ -806,14 +925,14 @@
 
     var profileLink = document.createElement('a');
     profileLink.href = prefix + '/profile';
-    profileLink.textContent = 'Profile';
+    profileLink.textContent = ui.profile;
 
     var settingsLink = document.createElement('a');
     settingsLink.href = prefix + '/settings';
-    settingsLink.textContent = 'Settings';
+    settingsLink.textContent = ui.settings;
 
     var signOutBtn = document.createElement('button');
-    signOutBtn.textContent = 'Sign out';
+    signOutBtn.textContent = ui.signOut;
     signOutBtn.onclick = function() {
       var client = window._navSb || (window.supabase && window.supabase.createClient ? window.supabase.createClient(SUPA_URL, SUPA_KEY) : null);
       if (client) {
@@ -848,7 +967,7 @@
   function buildSignIn() {
     var a = document.createElement('a');
     a.href = prefix + '/login';
-    a.textContent = 'Sign in';
+    a.textContent = ui.signIn;
     a.style.cssText = 'border:1px solid #252a30;padding:7px 16px;border-radius:60px;font-size:0.82rem;color:#ede8df;text-decoration:none;font-family:"DM Sans",sans-serif;white-space:nowrap;opacity:0;transition:opacity 0.25s;';
     setTimeout(function() { a.style.opacity = '1'; }, 50);
     return a;
@@ -950,11 +1069,11 @@
     var cached = null;
     try { cached = JSON.parse(localStorage.getItem('77s-auth') || 'null'); } catch(e) {}
     if (cached && cached.loggedIn) {
-      authSlot.appendChild(buildPill(cached.username || 'Profile', cached.avatarUrl || ''));
+      authSlot.appendChild(buildPill(cached.username || ui.profile, cached.avatarUrl || ''));
       if (drawerNav) {
         var _da = document.createElement('a');
         _da.href = prefix + '/profile';
-        _da.textContent = cached.username || 'Profile';
+        _da.textContent = cached.username || ui.profile;
         _da.style.color = '#c9a84c';
         drawerNav.appendChild(_da);
       }
@@ -963,7 +1082,7 @@
       if (drawerNav) {
         var _dsi = document.createElement('a');
         _dsi.href = prefix + '/login';
-        _dsi.textContent = 'Sign in';
+        _dsi.textContent = ui.signIn;
         drawerNav.appendChild(_dsi);
       }
     }
@@ -979,7 +1098,7 @@
         sb.from('profiles').select('avatar_url,username').eq('id', session.user.id).single()
           .then(function(r) {
             var prof = r.data || {};
-            var newCache = {loggedIn:true, username:prof.username||'Profile', avatarUrl:prof.avatar_url||''};
+            var newCache = {loggedIn:true, username:prof.username||ui.profile, avatarUrl:prof.avatar_url||''};
             try { localStorage.setItem('77s-auth', JSON.stringify(newCache)); } catch(e) {}
             // Only update DOM if state changed from cache
             if (!cached || !cached.loggedIn || cached.username !== newCache.username) {
@@ -1005,7 +1124,7 @@
           if (drawerNav) {
             var _dsi2 = document.createElement('a');
             _dsi2.href = prefix + '/login';
-            _dsi2.textContent = 'Sign in';
+            _dsi2.textContent = ui.signIn;
             drawerNav.appendChild(_dsi2);
           }
         }
@@ -1069,22 +1188,21 @@
   function buildStaticIndex() {
     var idx = [];
     Object.keys(TYPE_NAMES).forEach(function(t) {
-      idx.push({title:t, sub:TYPE_NAMES[t], url:'/types/'+t.toLowerCase(), cat:'type'});
+      var name = ui.typeNames[t] || TYPE_NAMES[t];
+      idx.push({title:t, sub:name, url:'/types/'+t.toLowerCase(), cat:'type'});
     });
-    [{code:'I',name:'Introversion'},{code:'E',name:'Extroversion'},{code:'S',name:'Sensing'},
-     {code:'N',name:'Intuition'},{code:'T',name:'Thinking'},{code:'F',name:'Feeling'},
-     {code:'J',name:'Judging'},{code:'P',name:'Perceiving'}].forEach(function(l) {
-      idx.push({title:l.name+' ('+l.code+')', sub:'Cognitive Letter', url:'/letters/'+l.code.toLowerCase(), cat:'letter'});
+    [{code:'I',name:ui.letters['I']},{code:'E',name:ui.letters['E']},{code:'S',name:ui.letters['S']},
+     {code:'N',name:ui.letters['N']},{code:'T',name:ui.letters['T']},{code:'F',name:ui.letters['F']},
+     {code:'J',name:ui.letters['J']},{code:'P',name:ui.letters['P']}].forEach(function(l) {
+      idx.push({title:l.name+' ('+l.code+')', sub:ui.subLetter, url:'/letters/'+l.code.toLowerCase(), cat:'letter'});
     });
-    [{code:'Ni',name:'Introverted Intuition'},{code:'Ne',name:'Extroverted Intuition'},
-     {code:'Si',name:'Introverted Sensing'},{code:'Se',name:'Extroverted Sensing'},
-     {code:'Ti',name:'Introverted Thinking'},{code:'Te',name:'Extroverted Thinking'},
-     {code:'Fi',name:'Introverted Feeling'},{code:'Fe',name:'Extroverted Feeling'}].forEach(function(f) {
-      idx.push({title:f.code+', '+f.name, sub:'Cognitive Function', url:'/cognitive-functions', cat:'function'});
+    [{code:'Ni',name:ui.fns['Ni']},{code:'Ne',name:ui.fns['Ne']},{code:'Si',name:ui.fns['Si']},{code:'Se',name:ui.fns['Se']},
+     {code:'Ti',name:ui.fns['Ti']},{code:'Te',name:ui.fns['Te']},{code:'Fi',name:ui.fns['Fi']},{code:'Fe',name:ui.fns['Fe']}].forEach(function(f) {
+      idx.push({title:f.code+', '+f.name, sub:ui.subFunction, url:'/cognitive-functions', cat:'function'});
     });
     VS_SLUGS.forEach(function(slug) {
       var p = slug.split('-');
-      idx.push({title:p[0].toUpperCase()+' vs '+p[1].toUpperCase(), sub:'Type Comparison', url:'/vs/'+slug, cat:'vs'});
+      idx.push({title:p[0].toUpperCase()+' vs '+p[1].toUpperCase(), sub:ui.subComparison, url:'/vs/'+slug, cat:'vs'});
     });
     return idx;
   }
@@ -1092,7 +1210,7 @@
   function loadIndex(cb) {
     if (_srchIdx !== null) { cb(); return; }
     var idx = buildStaticIndex();
-    fetch('/archive').then(function(r){ return r.text(); }).then(function(html) {
+    fetch(prefix + '/archive').then(function(r){ return r.text(); }).then(function(html) {
       var re = /\{name:`([^`]+)`,ctx:`([^`]+)`,type:'([A-Z]{4})'/g, m;
       while ((m = re.exec(html)) !== null) {
         idx.push({title:m[1], sub:m[3]+' · '+m[2], url:'/character/'+slugSrch(m[1]), cat:'character'});
@@ -1120,7 +1238,7 @@
   }
 
   var CAT_COLOR = {type:'#c9a84c',letter:'#6b9080',function:'#8b7bb5',vs:'#4a90a4',character:'#c06040'};
-  var CAT_LABEL = {type:'Type',letter:'Letter',function:'Function',vs:'Comparison',character:'Character'};
+  var CAT_LABEL = {type:ui.catType,letter:ui.catLetter,function:ui.catFunction,vs:ui.catComparison,character:ui.catCharacter};
 
   function srchSelectResult(i) {
     var items = document.querySelectorAll('#srch-res .srch-item');
@@ -1139,7 +1257,7 @@
     if (!q || !q.trim()) { res.style.display = 'none'; res.innerHTML = ''; return; }
     if (!results.length) {
       res.style.display = 'block';
-      res.innerHTML = '<div class="srch-empty">No results for "'+q+'"</div>';
+      res.innerHTML = '<div class="srch-empty">'+ui.noResults.replace('{query}', q)+'</div>';
       return;
     }
     res.style.display = 'block';
@@ -1207,7 +1325,7 @@
     bar.innerHTML =
       '<div id="site-search-inner">' +
         '<svg id="srch-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>' +
-        '<input id="srch-input" type="search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search types, characters, comparisons…">' +
+        '<input id="srch-input" type="search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="'+ui.searchPlaceholder+'">' +
         '<span id="srch-hint">Ctrl+K</span>' +
         '<div id="srch-res"></div>' +
       '</div>';
