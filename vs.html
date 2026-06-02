@@ -12997,8 +12997,9 @@ function renderPage(data) {
   canonical.href = `https://77scenarios.com/vs/${data.typeA.toLowerCase()}-${data.typeB.toLowerCase()}`;
 
   // Silently correct URL if user landed on a mirror slug (e.g. /vs/enfp-enfj -> /vs/enfj-enfp)
+  const currentSlug = (window.location.pathname.split('/').filter(Boolean)[1] || '').toLowerCase();
   const canonicalSlug = `${data.typeA.toLowerCase()}-${data.typeB.toLowerCase()}`;
-  if (slug !== canonicalSlug) {
+  if (currentSlug !== canonicalSlug) {
     window.history.replaceState(null, '', `/vs/${canonicalSlug}`);
   }
 
