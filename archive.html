@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="description" content="Browse the MBTI personality types of famous people, historical figures, fictional characters, and cultural icons. Search by name, type, or category.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title id="page-title">Personality Type Archive · 77 Scenarios</title>
 <meta id="page-desc" name="description" content="Browse the Myers-Briggs personality types of 400+ famous people, historical figures, fictional characters, world leaders, scientists, and artists. Search by name or filter by type.">
@@ -138,7 +137,7 @@
   <div class="modal" id="modal"><button class="modal-close" onclick="closeModalDirect()">&#10005;</button><div id="modal-content"></div></div>
 </div>
 <script>
-function slug(n){return n.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
+function slug(n){return n.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[\u0142]/g,'l').replace(/[\u00f8]/g,'o').replace(/[\u00e6]/g,'ae').replace(/[\u0111]/g,'d').replace(/[\u00df]/g,'ss').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
 
 const people=[
 // ── HIGHEST SEARCH VOLUME FICTION ────────────────────────────────────────
@@ -1013,10 +1012,6 @@ kw:['Rick Sanchez MBTI','Rick and Morty personality type','ENTP character']},
 {name:`Morty Smith`,ctx:`Rick and Morty`,type:'ISFP',cat:'Fiction',
 desc:`Morty is ISFP. He is dragged through adventures he did not choose and responds with a moral consistency that his grandfather lacks entirely. His decency under pressure is not heroism but character: he cannot stop caring even when caring is the most dangerous thing.`,
 kw:['Morty Smith MBTI','Rick and Morty ISFP','ISFP animated character']},
-
-{name:`Bojack Horseman`,ctx:`BoJack Horseman`,type:'ENFP',cat:'Fiction',
-desc:`BoJack is the ENFP shadow in its most extended form. Enormous warmth and creative talent that cannot be translated into a stable life. His self-awareness is total and useless. He understands exactly what he does wrong and repeats it. The show explores what happens when an ENFP never develops.`,
-kw:['BoJack Horseman MBTI','BoJack personality type','ENFP self-destruction']},
 
 {name:`Diane Nguyen`,ctx:`BoJack Horseman`,type:'INFP',cat:'Fiction',
 desc:`Diane is INFP. She writes about the world's injustices because she cannot stop feeling them. Her arc is an INFP realising that authenticity alone is not a life plan and that helping yourself is not the same as giving up.`,
@@ -2394,9 +2389,6 @@ kw:['Kimmy Schmidt MBTI','Unbreakable Kimmy Schmidt personality','ENFP optimist 
 {name:`Jay-Z`,ctx:`Rapper and entrepreneur`,type:'INTJ',cat:'Music',
 desc:`Jay-Z is INTJ. His career is one of the most disciplined long-game executions in music history. He understood that the business around music matters as much as the music itself - from Roc-A-Fella to Tidal to Armand de Brignac. His lyrics are strategic as much as autobiographical.`,
 kw:['Jay-Z MBTI','Jay-Z personality type','INTJ rapper entrepreneur']},
-{name:`Tyler the Creator`,ctx:`Rapper and producer`,type:'ENTP',cat:'Music',
-desc:`Tyler the Creator is ENTP. His career has been a continuous argument about what music, art, and image can be, conducted at high speed and with total disregard for genre boundaries. Each album is a new position in the argument.`,
-kw:['Tyler the Creator MBTI','Tyler personality type','ENTP musician rapper']},
 {name:`Harry Styles`,ctx:`Musician`,type:'ENFP',cat:'Music',
 desc:`Harry Styles is ENFP. He has built a solo career on the premise that conventional boundaries of genre, gender, and pop stardom are not constraints worth accepting. His warmth with audiences is genuine and his restlessness is creative.`,
 kw:['Harry Styles MBTI','Harry Styles personality type','ENFP musician pop star']},
