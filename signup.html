@@ -229,12 +229,8 @@ async function handleSignup() {
     btn.disabled = false;
     btn.textContent = 'Create account';
   } else {
-    // If email confirmation is disabled and user is immediately logged in,
-    // create the profile row now. If confirmation is required, settings.html
-    // handles profile creation via upsert on first save.
-    if (signUpData?.user) {
-      await sb.from('profiles').upsert({ id: signUpData.user.id }).throwOnError().catch(() => {});
-    }
+    // Profile row is created on first authenticated save (settings.html),
+    // since no session exists yet when email confirmation is required.
     msg('Account created. Check your email to confirm.', 'success');
     btn.textContent = 'Done';
   }

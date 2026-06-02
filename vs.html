@@ -13268,7 +13268,7 @@ function renderIndex() {
    ============================================================ */
 (function init() {
   const parts = window.location.pathname.split('/').filter(Boolean);
-  const slug = parts[1] || '';
+  const slug = (parts[1] || '').toLowerCase();
   // Try canonical slug, then reversed (e.g. intj-infp stored as infp-intj)
   const reversedSlug = slug.split('-').length === 2 ? slug.split('-').reverse().join('-') : '';
   const data = vsData[slug] || vsData[reversedSlug] || null;

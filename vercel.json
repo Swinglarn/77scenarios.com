@@ -1,5 +1,6 @@
 {
   "cleanUrls": true,
+  "trailingSlash": false,
   "rewrites": [
     { "source": "/types/:slug",              "destination": "/type"              },
     { "source": "/character/:slug",          "destination": "/character"         },
