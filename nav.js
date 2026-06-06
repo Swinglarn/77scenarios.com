@@ -594,7 +594,8 @@
       { href: '/vs',                  label: 'Type vs Type'   },
       { href: '/archive',             label: 'Archive'        },
       { href: '/forum',               label: 'Forum'          },
-      { href: '/about',               label: 'About'          }
+      { href: '/about',               label: 'About'          },
+      { href: 'https://store.77scenarios.com', label: 'Shop', external: true }
     ],
     '/es': [
       { href: '/es/',                    label: 'Hacer el Test'  },
@@ -605,7 +606,8 @@
       { href: '/es/vs',                  label: 'Tipo contra Tipo' },
       { href: '/es/archive',             label: 'Archivo'        },
       { href: '/es/forum',               label: 'Foro'           },
-      { href: '/es/about',               label: 'Acerca de'      }
+      { href: '/es/about',               label: 'Acerca de'      },
+      { href: 'https://store.77scenarios.com', label: 'Tienda', external: true }
     ],
     '/pt': [
       { href: '/pt/',                    label: 'Fazer o Teste'   },
@@ -616,7 +618,8 @@
       { href: '/pt/vs',                  label: 'Tipo vs Tipo'    },
       { href: '/pt/archive',             label: 'Arquivo'         },
       { href: '/pt/forum',               label: 'Fórum'           },
-      { href: '/pt/about',               label: 'Sobre'           }
+      { href: '/pt/about',               label: 'Sobre'           },
+      { href: 'https://store.77scenarios.com', label: 'Loja', external: true }
     ],
     '/ja': [
       { href: '/ja/',                    label: 'テストを受ける'  },
@@ -627,7 +630,8 @@
       { href: '/ja/vs',                  label: 'タイプ比較'     },
       { href: '/ja/archive',             label: 'アーカイブ'     },
       { href: '/ja/forum',               label: 'フォーラム'     },
-      { href: '/ja/about',               label: '当サイトについて' }
+      { href: '/ja/about',               label: '当サイトについて' },
+      { href: 'https://store.77scenarios.com', label: 'ストア', external: true }
     ]
   };
 
@@ -664,7 +668,12 @@
       var a = document.createElement('a');
       a.href = item.href;
       a.textContent = item.label;
-      if (isActive(item.href)) a.classList.add('active');
+      if (item.external) {
+        a.target = '_blank';
+        a.rel = 'noopener';
+      } else if (isActive(item.href)) {
+        a.classList.add('active');
+      }
       nav.insertBefore(a, ref);
     });
   }
@@ -675,7 +684,12 @@
       var a = document.createElement('a');
       a.href = item.href;
       a.textContent = item.label;
-      if (isActive(item.href)) a.classList.add('active');
+      if (item.external) {
+        a.target = '_blank';
+        a.rel = 'noopener';
+      } else if (isActive(item.href)) {
+        a.classList.add('active');
+      }
       drawer.appendChild(a);
     });
     // Theme toggle at bottom
@@ -756,6 +770,7 @@
       forum: 'Forum',
       about: 'About',
       contact: 'Contact',
+      shop: 'Shop',
       legal: 'Legal',
       privacy: 'Privacy Policy',
       terms: 'Terms of Service',
@@ -777,6 +792,7 @@
       forum: 'Foro',
       about: 'Acerca de',
       contact: 'Contacto',
+      shop: 'Tienda',
       legal: 'Legal',
       privacy: 'Política de Privacidad',
       terms: 'Términos de Servicio',
@@ -798,6 +814,7 @@
       forum: 'Fórum',
       about: 'Sobre',
       contact: 'Contato',
+      shop: 'Loja',
       legal: 'Legal',
       privacy: 'Política de Privacidade',
       terms: 'Termos de Serviço',
@@ -819,6 +836,7 @@
       forum: 'フォーラム',
       about: '当サイトについて',
       contact: 'お問い合わせ',
+      shop: 'ストア',
       legal: '法的規約',
       privacy: 'プライバシーポリシー',
       terms: '利用規約',
@@ -861,6 +879,7 @@
       '      <a href="' + prefix + '/forum">' + t.forum + '</a>',
       '      <a href="' + prefix + '/about">' + t.about + '</a>',
       '      <a href="' + prefix + '/contact">' + t.contact + '</a>',
+      '      <a href="https://store.77scenarios.com" target="_blank" rel="noopener">' + t.shop + '</a>',
       '    </div>',
       '    <div class="footer-col">',
       '      <div class="footer-col-head">' + t.legal + '</div>',
