@@ -270,6 +270,7 @@
 
   // ── PARTICLE SYSTEM ─────────────────────────
   const ctx = canvas.getContext('2d');
+  if (!ctx) return;
   let W, H, particles = [];
 
   function resize() {
@@ -298,7 +299,12 @@
   }
 
   let t = 0;
+  let rafId = null;
+  function shouldAnimate() {
+    return !document.hidden && !document.body.classList.contains('light-mode');
+  }
   function draw() {
+    if (!shouldAnimate()) { rafId = null; return; }
     ctx.clearRect(0, 0, W, H);
     t++;
     for (const p of particles) {
@@ -313,13 +319,17 @@
       ctx.fillStyle = `rgba(${p.rC},${p.gC},${p.bC},${(p.alpha * pulse).toFixed(3)})`;
       ctx.fill();
     }
-    requestAnimationFrame(draw);
+    rafId = requestAnimationFrame(draw);
   }
+  function startDraw() { if (!rafId && shouldAnimate()) { rafId = requestAnimationFrame(draw); } }
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) startDraw(); });
+  new MutationObserver(() => { if (shouldAnimate()) startDraw(); else if (rafId) { cancelAnimationFrame(rafId); rafId = null; } }).observe(document.body, { attributes: true, attributeFilter: ['class'] });
 
   resize();
   initParticles();
-  draw();
+  startDraw();
   setTimeout(() => canvas.classList.add('cin-visible'), 500);
-  window.addEventListener('resize', () => { resize(); initParticles(); });
+  let resizeTimer;
+  window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => { resize(); initParticles(); }, 250); });
 
 })();

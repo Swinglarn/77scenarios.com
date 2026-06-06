@@ -611,7 +611,7 @@
       { href: '/pt/',                    label: 'Fazer o Teste'   },
       { href: '/pt/types',               label: '16 Tipos'        },
       { href: '/pt/letters',             label: '8 Letras'        },
-      { href: '/pt/cognitive-functions', label: 'Funciones'       },
+      { href: '/pt/cognitive-functions', label: 'Funções'         },
       { href: '/pt/compatibility',       label: 'Compatibilidade' },
       { href: '/pt/vs',                  label: 'Tipo vs Tipo'    },
       { href: '/pt/archive',             label: 'Arquivo'         },
@@ -1129,7 +1129,7 @@
           }
         }
       }
-    });
+    }).catch(function(err) { console.warn('77s nav auth error:', err); if (!cached) authSlot.appendChild(buildSignIn()); });
   }
 
   // Fix H1 spacing bug (types/letters/functions pages)
@@ -1240,6 +1240,8 @@
   var CAT_COLOR = {type:'#c9a84c',letter:'#6b9080',function:'#8b7bb5',vs:'#4a90a4',character:'#c06040'};
   var CAT_LABEL = {type:ui.catType,letter:ui.catLetter,function:ui.catFunction,vs:ui.catComparison,character:ui.catCharacter};
 
+  function escHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
   function srchSelectResult(i) {
     var items = document.querySelectorAll('#srch-res .srch-item');
     items.forEach(function(el){ el.classList.remove('srch-active'); });
@@ -1257,18 +1259,19 @@
     if (!q || !q.trim()) { res.style.display = 'none'; res.innerHTML = ''; return; }
     if (!results.length) {
       res.style.display = 'block';
-      res.innerHTML = '<div class="srch-empty">'+ui.noResults.replace('{query}', q)+'</div>';
+      res.innerHTML = '<div class="srch-empty">'+ui.noResults.replace('{query}', escHtml(q))+'</div>';
       return;
     }
     res.style.display = 'block';
     res.innerHTML = results.map(function(item, i) {
       var col = CAT_COLOR[item.cat] || '#888';
       var lbl = CAT_LABEL[item.cat] || item.cat;
-      return '<a class="srch-item" href="'+(prefix + item.url)+'" data-i="'+i+'">' +
-        '<span class="srch-cat" style="color:'+col+'">'+lbl+'</span>' +
+      var safeUrl = escHtml(prefix + item.url);
+      return '<a class="srch-item" href="'+safeUrl+'" data-i="'+i+'">' +
+        '<span class="srch-cat" style="color:'+col+'">'+escHtml(lbl)+'</span>' +
         '<span class="srch-info">' +
-          '<span class="srch-title">'+item.title+'</span>' +
-          '<span class="srch-sub">'+item.sub+'</span>' +
+          '<span class="srch-title">'+escHtml(item.title)+'</span>' +
+          '<span class="srch-sub">'+escHtml(item.sub)+'</span>' +
         '</span>' +
         '<svg class="srch-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>' +
       '</a>';
@@ -1433,6 +1436,8 @@
         href.startsWith('mailto') || href.startsWith('tel') ||
         href.startsWith('javascript') || a.target) return;
     if (prefetched[href]) return;
+    var keys = Object.keys(prefetched);
+    if (keys.length >= 20) return;
     prefetched[href] = true;
     var link = document.createElement('link');
     link.rel = 'prefetch';

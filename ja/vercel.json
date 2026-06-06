@@ -1,0 +1,102 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/ja",
+      "destination": "/ja/index.html"
+    },
+    {
+      "source": "/ja/type",
+      "destination": "/ja/type.html"
+    },
+    {
+      "source": "/ja/types",
+      "destination": "/ja/types.html"
+    },
+    {
+      "source": "/ja/letters",
+      "destination": "/ja/letters.html"
+    },
+    {
+      "source": "/ja/letter",
+      "destination": "/ja/letter.html"
+    },
+    {
+      "source": "/ja/about",
+      "destination": "/ja/about.html"
+    },
+    {
+      "source": "/ja/archive",
+      "destination": "/ja/archive.html"
+    },
+    {
+      "source": "/ja/functions",
+      "destination": "/ja/functions.html"
+    },
+    {
+      "source": "/ja/cognitive-functions",
+      "destination": "/ja/cognitive-functions.html"
+    },
+    {
+      "source": "/ja/compatibility",
+      "destination": "/ja/compatibility.html"
+    },
+    {
+      "source": "/ja/forum",
+      "destination": "/ja/forum.html"
+    },
+    {
+      "source": "/ja/forum-thread",
+      "destination": "/ja/forum-thread.html"
+    },
+    {
+      "source": "/ja/login",
+      "destination": "/ja/login.html"
+    },
+    {
+      "source": "/ja/signup",
+      "destination": "/ja/signup.html"
+    },
+    {
+      "source": "/ja/profile",
+      "destination": "/ja/profile.html"
+    },
+    {
+      "source": "/ja/settings",
+      "destination": "/ja/settings.html"
+    },
+    {
+      "source": "/ja/contact",
+      "destination": "/ja/contact.html"
+    },
+    {
+      "source": "/ja/privacy",
+      "destination": "/ja/privacy.html"
+    },
+    {
+      "source": "/ja/terms",
+      "destination": "/ja/terms.html"
+    },
+    {
+      "source": "/ja/store",
+      "destination": "/ja/store.html"
+    },
+    {
+      "source": "/ja/vs",
+      "destination": "/ja/vs.html"
+    },
+    {
+      "source": "/ja/character/:slug",
+      "destination": "/ja/character.html"
+    },
+    {
+      "source": "/ja/vs/:slug",
+      "destination": "/ja/vs.html"
+    },
+    {
+      "source": "/ja/compatibility/:pair",
+      "destination": "/ja/compatibility-pair.html"
+    }
+  ]
+}
