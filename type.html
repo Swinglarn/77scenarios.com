@@ -114,6 +114,14 @@
   body.light-mode .fncard-tagline{color:#4a5568;}
   body.light-mode .group-desc{color:#4a5568;}
 
+  /* wear your type strip */
+  .type-shop{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 28px;border:1px solid var(--border);border-radius:var(--radius);background:linear-gradient(135deg,rgba(201,168,76,0.05),rgba(138,109,46,0.02));text-decoration:none;transition:all 0.25s ease;}
+  .type-shop:hover{border-color:var(--gold-dim);background:linear-gradient(135deg,rgba(201,168,76,0.09),rgba(138,109,46,0.04));transform:translateY(-2px);}
+  .type-shop-name{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:24px;font-weight:300;color:var(--cream);margin-bottom:6px;}
+  .type-shop-sub{font-size:13px;line-height:1.6;color:var(--muted);max-width:360px;}
+  .type-shop-cta{flex-shrink:0;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);white-space:nowrap;}
+  @media(max-width:480px){.type-shop{flex-direction:column;align-items:flex-start;gap:14px;}}
+
   /* Reading progress bar */
   #reading-progress{position:fixed;top:56px;left:0;width:0%;height:2px;background:linear-gradient(90deg,var(--gold-dim),var(--gold));z-index:199;transition:width 0.1s linear;pointer-events:none;}
 </style>
@@ -545,6 +553,16 @@ function render(){
       <div class="compat-links">${topMatchLinks}</div>
       <a href="/compatibility" style="display:inline-block;margin-top:16px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;">Full ${t} compatibility breakdown →</a>
     </div>
+    <div class="section r" data-d="8b2">
+      <div class="section-label">Wear Your Type</div>
+      <a class="type-shop" href="https://store.77scenarios.com/collections/${d.name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'')}" target="_blank" rel="noopener">
+        <div class="type-shop-left">
+          <div class="type-shop-name">The ${t} collection</div>
+          <div class="type-shop-sub">Quiet gold print on premium wear, from the Seventy-Seven collection.</div>
+        </div>
+        <div class="type-shop-cta">View collection →</div>
+      </a>
+    </div>
     <div class="section r" data-d="8c">
       <div class="section-label">Frequently Asked About ${t}</div>
       <div class="faq-list">
@@ -687,7 +705,7 @@ document.addEventListener('DOMContentLoaded',function(){
     'body.light-mode #nav-footer .footer-logo-text{color:rgba(255,255,255,0.5)!important}',
     'body.light-mode #nav-footer .footer-cta{color:#c9a84c!important}',
     /* all primary cards: navy */
-    'body.light-mode .type-card,body.light-mode .lcard,body.light-mode .db-card,body.light-mode .fncard,body.light-mode .vs-pair-card,body.light-mode .contact-card,body.light-mode .thread-item,body.light-mode .reply-card,body.light-mode .post-body,body.light-mode .info-box,body.light-mode .score-block,body.light-mode .similar-card,body.light-mode .type-pair-card,body.light-mode .vs-fn-col,body.light-mode .vs-overlap-item,body.light-mode .vs-tell-item,body.light-mode .vs-famous-col,body.light-mode .vs-quiz,body.light-mode .famous-card,body.light-mode .modal,body.light-mode .intro-box,body.light-mode .verdict,body.light-mode .verdict-box,body.light-mode .score-card,body.light-mode .result-card,body.light-mode .auth-notice,body.light-mode .callout,body.light-mode .cta-box,body.light-mode .opp-block,body.light-mode .box,body.light-mode .growth-box,body.light-mode .fd-box,body.light-mode .related-card,body.light-mode .fn-card{background:#1e2d4a!important;border-color:#2d4168!important;box-shadow:0 4px 16px rgba(30,45,74,0.18)!important}',
+    'body.light-mode .type-card,body.light-mode .lcard,body.light-mode .db-card,body.light-mode .fncard,body.light-mode .vs-pair-card,body.light-mode .contact-card,body.light-mode .thread-item,body.light-mode .reply-card,body.light-mode .post-body,body.light-mode .info-box,body.light-mode .score-block,body.light-mode .similar-card,body.light-mode .type-pair-card,body.light-mode .vs-fn-col,body.light-mode .vs-overlap-item,body.light-mode .vs-tell-item,body.light-mode .vs-famous-col,body.light-mode .vs-quiz,body.light-mode .famous-card,body.light-mode .modal,body.light-mode .intro-box,body.light-mode .verdict,body.light-mode .verdict-box,body.light-mode .score-card,body.light-mode .result-card,body.light-mode .auth-notice,body.light-mode .callout,body.light-mode .cta-box,body.light-mode .opp-block,body.light-mode .box,body.light-mode .growth-box,body.light-mode .fd-box,body.light-mode .related-card,body.light-mode .fn-card,body.light-mode .type-shop{background:#1e2d4a!important;border-color:#2d4168!important;box-shadow:0 4px 16px rgba(30,45,74,0.18)!important}',
     /* sections: transparent — blend with page background */
     'body.light-mode .section{background:transparent!important;border-color:#d0d7e3!important;box-shadow:none!important}',
     /* all text inside navy cards: white */
@@ -711,6 +729,10 @@ document.addEventListener('DOMContentLoaded',function(){
     /* section label + eyebrow: navy on white background */
     'body.light-mode .section-label{color:#2d4168!important}',
     'body.light-mode .section-label::after{background:#c8d4e4!important}',
+    'body.light-mode .type-shop:hover{border-color:#c9a84c!important;background:#2d4168!important}',
+    'body.light-mode .type-shop-name{color:#ffffff!important}',
+    'body.light-mode .type-shop-sub{color:#cbd4e6!important}',
+    'body.light-mode .type-shop-cta{color:#c9a84c!important}',
     /* trait chips inside sections: navy outline style */
     'body.light-mode .section .trait{background:#f0f2f6!important;border-color:#c8d4e4!important;color:#1e2d4a!important}',
     'body.light-mode .page-eyebrow{color:#8a6d2e!important}',

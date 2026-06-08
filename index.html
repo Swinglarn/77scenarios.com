@@ -123,6 +123,54 @@
   .spectrum-name { font-size: 11px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
   .spectrum-pct { font-size: 12px; color: var(--gold); font-weight: 500; min-width: 36px; text-align: right; }
   .sep { width: 100%; height: 1px; background: var(--border); margin: 36px 0; }
+  /* result detail blocks */
+  .rb-block { margin-bottom: 48px; max-width: 620px; }
+  .rb-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  .rb-sub { font-size: 13px; line-height: 1.7; color: var(--muted); margin-bottom: 22px; max-width: 540px; }
+  .rb-stat { display: flex; align-items: baseline; gap: 12px; margin-bottom: 10px; }
+  .rb-num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 44px; font-weight: 300; color: var(--gold); line-height: 1; }
+  .rb-cap { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+  .rb-line { font-size: 14px; line-height: 1.75; color: #cdc7c0; max-width: 540px; }
+  /* function stack */
+  .fnstack { display: flex; flex-direction: column; gap: 10px; }
+  .fn-row { display: flex; align-items: center; gap: 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 18px; }
+  .fn-glyph { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; color: var(--gold); width: 42px; flex-shrink: 0; }
+  .fn-row.dom .fn-glyph { color: var(--gold); }
+  .fn-row:not(.dom) .fn-glyph { color: var(--gold-dim); }
+  .fn-body { flex: 1; }
+  .fn-pos { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+  .fn-desc { font-size: 13px; line-height: 1.6; color: #cdc7c0; }
+  /* two column cards */
+  .rb-twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .rb-card { border: 1px solid var(--border); border-radius: 14px; padding: 22px; background: var(--surface); }
+  .rb-card-best { border-color: rgba(201,168,76,0.3); }
+  .rb-card-h { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 12px; color: var(--gold); }
+  .rb-card-stress .rb-card-h { color: var(--muted); }
+  .rb-card p { font-size: 13.5px; line-height: 1.7; color: #cdc7c0; }
+  /* lists */
+  .rb-list { list-style: none; padding: 0; margin: 0; }
+  .rb-list li { font-size: 13.5px; line-height: 1.55; color: #cdc7c0; padding: 8px 0 8px 24px; position: relative; border-bottom: 1px solid var(--border); }
+  .rb-list li:last-child { border-bottom: none; }
+  .rb-list-plus li::before { content: '+'; position: absolute; left: 0; color: var(--gold); font-weight: 500; }
+  .rb-list-minus li::before { content: '−'; position: absolute; left: 0; color: var(--muted); font-weight: 500; }
+  /* compatibility chips */
+  .rb-compat { display: flex; flex-wrap: wrap; gap: 10px; }
+  .rb-compat a { display: inline-flex; flex-direction: column; gap: 2px; text-decoration: none; border: 1px solid var(--border); border-radius: 12px; padding: 12px 18px; transition: all 0.2s ease; background: var(--surface); }
+  .rb-compat a:hover { border-color: var(--gold-dim); transform: translateY(-2px); }
+  .rb-compat .rc-type { font-size: 14px; letter-spacing: 0.1em; color: var(--cream); font-weight: 500; }
+  .rb-compat .rc-name { font-size: 11px; color: var(--muted); }
+  .rb-charlink { font-size: 13px; color: var(--gold); text-decoration: none; letter-spacing: 0.04em; transition: color 0.2s ease; }
+  .rb-charlink:hover { color: var(--cream); }
+  /* wear your type strip: subtle, brand-styled */
+  .rb-shop { display: flex; align-items: center; justify-content: space-between; gap: 20px; max-width: 620px; margin-bottom: 48px; padding: 24px 26px; border: 1px solid var(--border); border-radius: 16px; background: linear-gradient(135deg, rgba(201,168,76,0.05), rgba(138,109,46,0.02)); text-decoration: none; transition: all 0.25s ease; }
+  .rb-shop:hover { border-color: var(--gold-dim); background: linear-gradient(135deg, rgba(201,168,76,0.09), rgba(138,109,46,0.04)); transform: translateY(-2px); }
+  .rb-shop-eyebrow { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+  .rb-shop-name { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 24px; font-weight: 300; color: var(--cream); margin-bottom: 6px; }
+  .rb-shop-sub { font-size: 12.5px; line-height: 1.6; color: var(--muted); max-width: 340px; }
+  .rb-shop-cta { flex-shrink: 0; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); white-space: nowrap; }
+  @media (max-width: 480px) { .rb-shop { flex-direction: column; align-items: flex-start; gap: 14px; } }
+  @media (max-width: 560px) { .rb-twocol { grid-template-columns: 1fr; } .rb-num { font-size: 36px; } }
+  body.light-mode .rb-line, body.light-mode .fn-desc, body.light-mode .rb-card p, body.light-mode .rb-list li { color: #1e2d4a; }
   .result-actions { display: flex; gap: 16px; flex-wrap: wrap; }
   .btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--muted); font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid var(--border); border-radius: 60px; padding: 14px 28px; cursor: pointer; transition: all 0.2s ease; }
   .btn-secondary:hover { border-color: var(--muted); color: var(--cream); }
@@ -866,6 +914,72 @@
       <div class="spectrum-label">Your spectrum</div>
       <div id="spectrum-bars"></div>
     </div>
+
+    <!-- RARITY -->
+    <div class="rb-block" id="rarity-block">
+      <div class="rb-stat"><span class="rb-num" id="rarity-num"></span><span class="rb-cap" id="rarity-cap"></span></div>
+      <p class="rb-line" id="rarity-line"></p>
+    </div>
+
+    <!-- COGNITIVE FUNCTIONS -->
+    <div class="rb-block">
+      <div class="rb-label">How your mind is wired</div>
+      <p class="rb-sub">The order your mental processes run in. The first comes most naturally; the last is your growth edge.</p>
+      <div class="fnstack" id="fnstack"></div>
+    </div>
+
+    <!-- AT BEST / UNDER STRESS -->
+    <div class="rb-block">
+      <div class="rb-twocol">
+        <div class="rb-card rb-card-best">
+          <div class="rb-card-h">At your best</div>
+          <p id="best-text"></p>
+        </div>
+        <div class="rb-card rb-card-stress">
+          <div class="rb-card-h">Under stress</div>
+          <p id="stress-text"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- STRENGTHS / BLIND SPOTS -->
+    <div class="rb-block">
+      <div class="rb-twocol">
+        <div>
+          <div class="rb-label">Strengths</div>
+          <ul class="rb-list rb-list-plus" id="strengths-list"></ul>
+        </div>
+        <div>
+          <div class="rb-label">Blind spots</div>
+          <ul class="rb-list rb-list-minus" id="blindspots-list"></ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMPATIBILITY -->
+    <div class="rb-block">
+      <div class="rb-label">Who you click with</div>
+      <p class="rb-sub">Types people of your result tend to pair well with. Tap any to see the dynamic.</p>
+      <div class="rb-compat" id="compat-types"></div>
+    </div>
+
+    <!-- CHARACTERS -->
+    <div class="rb-block">
+      <div class="rb-label">Characters who share your type</div>
+      <p class="rb-sub" id="chars-sub"></p>
+      <a class="rb-charlink" id="chars-link" href="/archive">Browse all <span id="chars-count"></span> characters →</a>
+    </div>
+
+    <!-- WEAR YOUR TYPE -->
+    <a class="rb-shop" id="shop-strip" href="#" target="_blank" rel="noopener">
+      <div class="rb-shop-left">
+        <div class="rb-shop-eyebrow">Wear your type</div>
+        <div class="rb-shop-name" id="shop-name"></div>
+        <div class="rb-shop-sub">Quiet gold print on premium wear. From the Seventy-Seven collection.</div>
+      </div>
+      <div class="rb-shop-cta">View collection →</div>
+    </a>
+
     <div class="result-actions">
       <button class="btn-primary" onclick="retakeTest()">Retake test <span class="arrow">→</span></button>
       <button class="btn-secondary" onclick="shareResult()">Share result</button>
@@ -1172,6 +1286,39 @@ const typeData = {
   ESFJ:{name:"The Caregiver",tagline:"Community, warmth, unstoppable care",description:"You are the connective tissue of every group you're part of. You remember birthdays, notice when something's off, and make sure no one is left out. You have a gift for creating the kind of warmth that makes people feel safe. Harmony isn't just nice to have for you it's something you actively work toward every single day.",traits:["Caring","Social","Loyal","Organised","Generous"]},
   ENFJ:{name:"The Teacher",tagline:"Charisma with purpose",description:"You have a gift that's hard to explain you make people feel simultaneously fully seen and gently challenged to be more. You lead not through authority but through genuine belief in others. You're a natural at reading people and even better at inspiring them. The people in your life are often more capable than they were before they knew you.",traits:["Charismatic","Empathetic","Inspiring","Decisive","Perceptive"]},
   ENTJ:{name:"The Commander",tagline:"Vision, control, momentum",description:"You see the destination before others see the problem. Your confidence isn't performance it comes from having already run the scenarios in your head and knowing which one wins. You lead because you can't stand watching things be done poorly when they could be done well. You are demanding, ambitious, and exactly the person you'd want on your side in a crisis.",traits:["Strategic","Confident","Direct","Driven","Decisive"]}
+};
+
+// Function descriptions, keyed by function code
+const fnInfo = {
+  Si:"Internal library of past experience. You compare what is happening now against what has worked before.",
+  Se:"Direct contact with the present moment. You take in the physical world as it is, fast and unfiltered.",
+  Ni:"Pattern recognition that runs underneath thought. You sense where things are heading before you can explain why.",
+  Ne:"A scanner for possibility. One thing reminds you of five others and the connections keep branching.",
+  Ti:"A private logic engine. You test ideas against their own internal consistency, not outside opinion.",
+  Te:"Organising the outside world toward a result. You measure things by whether they actually work.",
+  Fi:"A deep internal compass of values. You know what feels right to you, often before you can argue it.",
+  Fe:"Tuned to the emotional weather of a group. You read what others need and move to meet it."
+};
+const fnPos = ["Dominant","Auxiliary","Tertiary","Inferior"];
+
+// Rarity figures are widely cited population estimates and are approximate.
+const typeExtra = {
+  ISTJ:{stack:["Si","Te","Fi","Ne"],rarity:"11-14%",rarityLine:"One of the most common types. The steady, rule-keeping people who quietly hold institutions together.",best:"Calm, organised, and completely reliable. You finish what you start and people trust your word without checking.",stress:"You can turn rigid, fixate on rules over outcomes, and dismiss new approaches before testing them.",strengths:["You do what you said you would do","You catch errors others skim over","You stay calm when plans collapse","You honour commitments without being chased"],blindspots:["You resist change even when it is needed","You can read flexibility as carelessness","You keep stress to yourself too long"],compat:["ESFP","ESTP","ISFJ"]},
+  ISFJ:{stack:["Si","Fe","Ti","Ne"],rarity:"9-14%",rarityLine:"Among the most common types. The quietly attentive people who remember what everyone else forgets.",best:"Warm, observant, and dependable. You notice who is struggling and act before they ask.",stress:"You overextend for others, bury your own needs, and grow quietly resentful when it goes unseen.",strengths:["You remember the details that matter to people","You follow through without fanfare","You create a sense of safety around you","You read shifts in mood early"],blindspots:["You neglect your own needs","You avoid conflict until it festers","You take criticism harder than intended"],compat:["ESFP","ESTP","ISTJ"]},
+  INFJ:{stack:["Ni","Fe","Ti","Se"],rarity:"1-2%",rarityLine:"The rarest type. Few people share your particular mix of idealism and quiet intensity.",best:"Insightful and purposeful. You see what people could become and you invest in the few who matter.",stress:"You withdraw entirely, replay conversations, and convince yourself no one truly understands you.",strengths:["You see patterns in people early","You commit deeply to what you believe in","You hold space for others' hardest moments","You think several steps ahead"],blindspots:["You expect others to read you without speaking","You burn out from carrying too much alone","You hold standards no one can meet"],compat:["ENFP","ENTP","INTJ"]},
+  INTJ:{stack:["Ni","Te","Fi","Se"],rarity:"2-4%",rarityLine:"One of the rarer types, and rarer still among women. The long-game strategists.",best:"Independent, strategic, and decisive. You build systems that still work years later.",stress:"You become cold, over-control details, and dismiss feelings as noise, including your own.",strengths:["You see the structural flaw others walk past","You plan for problems before they arrive","You work without needing supervision","You hold yourself to a real standard"],blindspots:["You can be dismissive of slower thinkers","You undervalue emotional information","You isolate when you should delegate"],compat:["ENFP","ENTP","INFJ"]},
+  ISTP:{stack:["Ti","Se","Ni","Fe"],rarity:"4-6%",rarityLine:"A fairly uncommon type. The unflappable problem-solvers who say little and fix everything.",best:"Calm under pressure and genuinely skilled. When something breaks, you are the most useful person present.",stress:"You detach completely, take reckless risks, or disappear without explanation.",strengths:["You stay level when everyone else panics","You learn by doing, fast","You cut straight to what works","You read mechanical and physical systems intuitively"],blindspots:["You avoid emotional conversations","You can seem indifferent when you care","You resist rules even good ones"],compat:["ESFJ","ESTJ","ISFP"]},
+  ISFP:{stack:["Fi","Se","Ni","Te"],rarity:"5-9%",rarityLine:"A moderately common type. The quietly intense people who live close to their senses and values.",best:"Authentic, present, and gently creative. You feel beauty deeply and live by what is true for you.",stress:"You withdraw, take things personally, and abandon things rather than defend them.",strengths:["You stay true to your own values","You bring warmth without performance","You notice beauty others rush past","You give people the space they need"],blindspots:["You avoid confrontation entirely","You struggle with long-term planning","You take criticism as rejection"],compat:["ESTJ","ESFJ","ISTP"]},
+  INFP:{stack:["Fi","Ne","Si","Te"],rarity:"4-5%",rarityLine:"A relatively uncommon type. The idealists with a rich inner world few people ever see.",best:"Imaginative, principled, and quietly fierce. You believe in people and you mean it.",stress:"You spiral into self-criticism, withdraw into fantasy, and feel the world's gap from your ideals too sharply.",strengths:["You hold deep convictions and live by them","You see potential in people others write off","You bring originality to everything you touch","You give the benefit of the doubt"],blindspots:["You idealise then feel let down","You avoid practical follow-through","You take things to heart too easily"],compat:["ENFJ","ENTJ","INFJ"]},
+  INTP:{stack:["Ti","Ne","Si","Fe"],rarity:"3-5%",rarityLine:"A fairly uncommon type. The precise, restless minds that pull every idea apart.",best:"Curious, rigorous, and original. You find the flaw in the argument everyone else accepted.",stress:"You overthink to paralysis, withdraw socially, and lose hours to rabbit holes instead of acting.",strengths:["You spot inconsistencies instantly","You think with real independence","You go deeper than anyone expects","You stay open to being wrong"],blindspots:["You delay decisions waiting for certainty","You neglect the human and emotional side","You start more than you finish"],compat:["ENTJ","ESTJ","ENFP"]},
+  ESTP:{stack:["Se","Ti","Fe","Ni"],rarity:"4-6%",rarityLine:"A fairly uncommon type. The bold improvisers who handle reality better than most.",best:"Perceptive, quick, and energising. You read the room and act while others are still deciding.",stress:"You act before thinking, chase stimulation, and ignore long-term consequences.",strengths:["You stay sharp under pressure","You improvise when plans fail","You read people fast","You get things moving"],blindspots:["You skip the long view","You can be impatient with reflection","You take risks others find alarming"],compat:["ISFJ","ISTJ","ESFP"]},
+  ESFP:{stack:["Se","Fi","Te","Ni"],rarity:"4-9%",rarityLine:"A moderately common type. The warm, present people who raise the temperature of a room.",best:"Generous, spontaneous, and fully alive. You make people feel seen and included.",stress:"You avoid hard truths, chase distraction, and struggle to sit with discomfort.",strengths:["You make others feel welcome instantly","You live fully in the present","You bring genuine warmth","You adapt to whatever the moment needs"],blindspots:["You avoid difficult planning","You take criticism personally","You can over-rely on the moment"],compat:["ISFJ","ISTJ","ESTP"]},
+  ENFP:{stack:["Ne","Fi","Te","Si"],rarity:"6-8%",rarityLine:"A moderately common type. The magnetic idea-people who see possibility everywhere.",best:"Inspiring, curious, and warm. You make everyone around you feel more interesting than they knew.",stress:"You scatter across projects, lose follow-through, and feel everything too intensely at once.",strengths:["You generate ideas endlessly","You make people feel believed in","You connect things others keep separate","You bring real enthusiasm"],blindspots:["You struggle to finish what you start","You over-commit then overwhelm","You avoid routine and detail"],compat:["INFJ","INTJ","ENTP"]},
+  ENTP:{stack:["Ne","Ti","Fe","Si"],rarity:"2-5%",rarityLine:"One of the rarer types. The provocative, restless debaters who probe every assumption.",best:"Quick, inventive, and fearless with ideas. You test the weak point in any argument.",stress:"You argue for sport, abandon projects when bored, and dismiss feelings as inefficiency.",strengths:["You see angles others miss","You adapt strategy on the fly","You energise a stale discussion","You stay genuinely open to ideas"],blindspots:["You get bored before finishing","You argue past the point of usefulness","You can steamroll quieter people"],compat:["INFJ","INTJ","ENFP"]},
+  ESTJ:{stack:["Te","Si","Ne","Fi"],rarity:"8-12%",rarityLine:"One of the more common types. The organisers who bring order and hold people accountable.",best:"Decisive, organised, and dependable. You build structures that last and you deliver.",stress:"You become controlling, impatient, and deaf to input that slows the plan.",strengths:["You turn chaos into a working system","You hold people to their commitments","You decide and move","You deliver what you promise"],blindspots:["You can run over others' feelings","You resist approaches that differ from yours","You equate disagreement with disorder"],compat:["ISFP","ISTP","INTP"]},
+  ESFJ:{stack:["Fe","Si","Ne","Ti"],rarity:"9-13%",rarityLine:"One of the most common types. The connective tissue of every group they join.",best:"Warm, organised, and deeply caring. You make sure no one is left out and everything runs.",stress:"You over-manage others, seek approval, and take any conflict as a personal failure.",strengths:["You create real warmth and belonging","You remember and act on what people need","You keep groups running smoothly","You show up consistently"],blindspots:["You depend on approval","You avoid necessary conflict","You over-give and burn out"],compat:["ISFP","ISTP","ENFJ"]},
+  ENFJ:{stack:["Fe","Ni","Se","Ti"],rarity:"2-3%",rarityLine:"One of the rarer types. The charismatic guides who make people feel seen and pushed to grow.",best:"Charismatic and perceptive. You read people and inspire them toward something better.",stress:"You over-invest in others, neglect yourself, and grow anxious when not needed.",strengths:["You make people feel genuinely seen","You lead through belief, not authority","You sense what a group needs","You bring out others' potential"],blindspots:["You neglect your own needs","You take on others' problems as yours","You avoid your own difficult emotions"],compat:["INFP","ISFP","ENTJ"]},
+  ENTJ:{stack:["Te","Ni","Se","Fi"],rarity:"2-4%",rarityLine:"One of the rarer types, and rarer still among women. The natural commanders.",best:"Strategic, confident, and driven. You see the destination and you build the road to it.",stress:"You become domineering, impatient, and dismissive of emotion, including your own.",strengths:["You see the long game clearly","You make hard decisions fast","You build momentum in others","You hold the highest standard in the room"],blindspots:["You can run over people to win","You undervalue emotional reality","You struggle to slow down"],compat:["INFP","INTP","ENFP"]}
 };
 
 // Shuffle each dimension block, then interleave so test feels varied
@@ -1595,6 +1742,7 @@ function showResultsActual() {
   if (compatLink) compatLink.href = `/compatibility`;
   const fnLink = document.getElementById('functions-link');
   if (fnLink) fnLink.href = `/functions?t=${type}`;
+  renderTypeDetail(type);
   showScreen('screen-result');
   setTimeout(() => document.querySelectorAll('.spectrum-fill').forEach(el => el.style.width = el.dataset.target+'%'), 200);
   setTimeout(() => {
@@ -1604,6 +1752,41 @@ function showResultsActual() {
     }
   }, 300);
   if (window._sbSaveResult) window._sbSaveResult(type, scores);
+}
+
+function renderTypeDetail(type) {
+  const ex = typeExtra[type];
+  if (!ex) return;
+  // rarity
+  document.getElementById('rarity-num').textContent = ex.rarity;
+  document.getElementById('rarity-cap').textContent = 'of the population';
+  document.getElementById('rarity-line').textContent = ex.rarityLine;
+  // function stack
+  document.getElementById('fnstack').innerHTML = ex.stack.map((fn,i)=>
+    `<div class="fn-row${i===0?' dom':''}"><div class="fn-glyph">${fn}</div><div class="fn-body"><div class="fn-pos">${fnPos[i]} &middot; ${fn}</div><div class="fn-desc">${fnInfo[fn]}</div></div></div>`
+  ).join('');
+  // best / stress
+  document.getElementById('best-text').textContent = ex.best;
+  document.getElementById('stress-text').textContent = ex.stress;
+  // strengths / blind spots
+  document.getElementById('strengths-list').innerHTML = ex.strengths.map(s=>`<li>${s}</li>`).join('');
+  document.getElementById('blindspots-list').innerHTML = ex.blindspots.map(s=>`<li>${s}</li>`).join('');
+  // compatibility
+  const compatOrder = ['INFP','ENFP','INFJ','ENFJ','INTJ','ENTJ','INTP','ENTP','ISFP','ESFP','ISTP','ESTP','ISFJ','ESFJ','ISTJ','ESTJ'];
+  const pairSlug = (a,b) => { const ai=compatOrder.indexOf(a), bi=compatOrder.indexOf(b); return ai<=bi?`${a.toLowerCase()}-${b.toLowerCase()}`:`${b.toLowerCase()}-${a.toLowerCase()}`; };
+  document.getElementById('compat-types').innerHTML = ex.compat.map(t=>
+    `<a href="/compatibility/${pairSlug(type,t)}"><span class="rc-type">${t}</span><span class="rc-name">${typeData[t]?typeData[t].name:''}</span></a>`
+  ).join('');
+  // characters
+  document.getElementById('chars-sub').textContent = `Real and fictional people across the archive who match the ${type} profile.`;
+  const cl = document.getElementById('chars-link');
+  cl.href = `/archive?q=${type}`;
+  cl.textContent = `See ${type} characters →`;
+  // wear your type: handle is the slugified type name (e.g. "The Mediator" gives the-mediator)
+  const handle = typeData[type].name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+  const shop = document.getElementById('shop-strip');
+  shop.href = `https://store.77scenarios.com/collections/${handle}`;
+  document.getElementById('shop-name').textContent = `The ${type} collection`;
 }
 
 function retakeTest() {
@@ -1898,6 +2081,16 @@ document.addEventListener('DOMContentLoaded',function(){
     'body.light-mode #nav-footer .footer-cta{color:#c9a84c!important}',
     /* card UI components: navy — NOT content/prose containers */
     'body.light-mode .type-card,body.light-mode .lcard,body.light-mode .db-card,body.light-mode .fncard,body.light-mode .vs-pair-card,body.light-mode .contact-card,body.light-mode .thread-item,body.light-mode .similar-card,body.light-mode .type-pair-card,body.light-mode .famous-card,body.light-mode .score-block,body.light-mode .callout,body.light-mode .cta-box,body.light-mode .modal,body.light-mode .verdict,body.light-mode .verdict-box{background:#1e2d4a!important;border-color:#2d4168!important;box-shadow:0 4px 16px rgba(30,45,74,0.18)!important}',
+    /* save-result email box: navy in light mode */
+    'body.light-mode #eb1{background:#1e2d4a!important;border-color:#2d4168!important;box-shadow:0 4px 16px rgba(30,45,74,0.18)!important}',
+    'body.light-mode #eb1 p,body.light-mode #eb1 label,body.light-mode #eb5 div{color:#cbd4e6!important}',
+    'body.light-mode #eb1 .rb-label,body.light-mode #eb1 div[style*="c9a84c"]{color:#c9a84c!important}',
+    'body.light-mode #eb3{background:#16233f!important;border-color:#2d4168!important;color:#ffffff!important}',
+    'body.light-mode #eb3::placeholder{color:#7d8aa6!important}',
+    'body.light-mode .rb-shop{background:#1e2d4a!important;border-color:#2d4168!important}',
+    'body.light-mode .rb-shop:hover{border-color:#c9a84c!important;background:#2d4168!important}',
+    'body.light-mode .rb-shop-name{color:#ffffff!important}',
+    'body.light-mode .rb-shop-sub{color:#cbd4e6!important}',
     /* white text inside navy cards */
     'body.light-mode .type-card *,body.light-mode .lcard *,body.light-mode .db-card *,body.light-mode .fncard *,body.light-mode .vs-pair-card *,body.light-mode .contact-card *,body.light-mode .thread-item *,body.light-mode .similar-card *,body.light-mode .type-pair-card *,body.light-mode .verdict *,body.light-mode .verdict-box *,body.light-mode .score-block *,body.light-mode .callout *{color:#ffffff!important}',
     /* primary card text: bold white */
