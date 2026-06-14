@@ -1054,7 +1054,7 @@
       drawer.id = 'nav-drawer';
       drawer.innerHTML =
         '<div class="nav-drawer-header">' +
-          '<a href="/" class="nav-logo">77scenarios.com</a>' +
+          '<span></span>' +
           '<button class="nav-close">&#10005;</button>' +
         '</div>' +
         '<nav class="nav-drawer-links"></nav>';
