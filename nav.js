@@ -179,12 +179,12 @@
       '#theme-toggle-desktop:hover{color:#ccc6bf;}',
       '@media(max-width:960px){#theme-toggle-desktop{display:none !important;}}',
       '#theme-toggle-mobile{display:none !important;background:none;border:none;cursor:pointer;padding:6px;color:#ccc6bf;line-height:1;}',
-      '@media(max-width:960px){#theme-toggle-mobile{display:inline-flex !important;align-items:center;justify-content:center;width:36px;height:36px;}}',
+      '@media(max-width:960px){#theme-toggle-mobile{display:inline-flex !important;align-items:center;justify-content:center;width:44px;height:44px;}}',
       // Nav right slot - lives inside sticky nav, never overlaps scrollbar
       '.nav-right-slot{display:flex;align-items:center;gap:12px;margin-left:auto;flex-shrink:0;}',
       '@media(max-width:960px){.nav-right-slot{display:none;}}',
       // Logo redesign
-      '.nav-logo{font-family:\"Cormorant Garamond\",serif !important;font-size:22px !important;font-weight:300 !important;text-decoration:none !important;display:inline-flex !important;align-items:baseline !important;gap:3px !important;letter-spacing:0 !important;}',
+      '.nav-logo{font-family:\"Cormorant Garamond\",serif !important;font-size:22px !important;font-weight:300 !important;text-decoration:none !important;display:inline-flex !important;align-items:baseline !important;gap:3px !important;letter-spacing:0 !important;color:var(--cream,#ede8df) !important;}',
       '.logo-77{color:#c9a84c !important;font-weight:600 !important;font-size:38px !important;font-style:italic !important;line-height:1 !important;letter-spacing:-0.03em !important;}',
       '.logo-scenarios{color:#ede8df !important;font-weight:300 !important;font-size:26px !important;letter-spacing:0.1em !important;text-transform:lowercase !important;}',
       'body.light-mode .logo-scenarios{color:#141210 !important;}',
@@ -1021,7 +1021,7 @@
         'nav.site-nav .nav-links a{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--cream,#ede8df);text-decoration:none;opacity:0.7;transition:opacity 0.15s;-webkit-font-smoothing:antialiased;transform:translateZ(0);white-space:nowrap;}',
         '@media(max-width:1200px){nav.site-nav .nav-links a{font-size:11px;letter-spacing:0.04em;}}',
         'nav.site-nav .nav-links a:hover,nav.site-nav .nav-links a.active{opacity:1;color:var(--gold,#c9a84c);}',
-        'nav.site-nav .nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}',
+        'nav.site-nav .nav-burger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;background:none;border:none;cursor:pointer;width:44px;height:44px;padding:0;}',
         'nav.site-nav .nav-burger span{display:block;width:22px;height:2px;background:var(--cream,#ede8df);border-radius:2px;transition:all 0.25s;}',
         '.nav-overlay{display:none;position:fixed;inset:0;z-index:190;background:rgba(0,0,0,0.5);}',
         '.nav-overlay.open{display:block;}',
@@ -1054,7 +1054,7 @@
       drawer.id = 'nav-drawer';
       drawer.innerHTML =
         '<div class="nav-drawer-header">' +
-          '<span></span>' +
+          '<a href="/" class="nav-logo"><span class="logo-77">77</span><span class="logo-scenarios">scenarios</span></a>' +
           '<button class="nav-close">&#10005;</button>' +
         '</div>' +
         '<nav class="nav-drawer-links"></nav>';

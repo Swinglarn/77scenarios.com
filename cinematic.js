@@ -8,6 +8,9 @@
   // ── INJECT CSS ──────────────────────────────
   const style = document.createElement('style');
   style.textContent = `
+    @media (max-width: 768px) {
+      #cin-canvas, #cin-scanlines { display: none !important; }
+    }
     #cin-canvas {
       position: fixed; inset: 0; z-index: 0;
       pointer-events: none; opacity: 0;
@@ -301,7 +304,7 @@
   let t = 0;
   let rafId = null;
   function shouldAnimate() {
-    return !document.hidden && !document.body.classList.contains('light-mode');
+    return !document.hidden && !document.body.classList.contains('light-mode') && !window.matchMedia('(max-width: 768px)').matches;
   }
   function draw() {
     if (!shouldAnimate()) { rafId = null; return; }
@@ -330,6 +333,6 @@
   startDraw();
   setTimeout(() => canvas.classList.add('cin-visible'), 500);
   let resizeTimer;
-  window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => { resize(); initParticles(); }, 250); });
+  window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => { resize(); initParticles(); startDraw(); }, 250); });
 
 })();
