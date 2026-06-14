@@ -78,6 +78,33 @@
   .cat-pill:hover{border-color:var(--gold-dim);color:var(--cream);}
   .cat-pill.active{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,0.07);}
 
+  /* Tags */
+  .thread-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;}
+  .tag-chip{background:rgba(201,168,76,0.08);border:1px solid var(--gold-dim);border-radius:14px;padding:3px 10px;font-size:0.84rem;letter-spacing:0.04em;color:var(--gold);cursor:pointer;transition:background 0.15s,border-color 0.15s;line-height:1.4;}
+  .tag-chip:hover{background:rgba(201,168,76,0.18);border-color:var(--gold);}
+  .active-tag-bar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
+  .active-tag-bar .active-tag-label{font-size:0.92rem;color:var(--muted);}
+  .active-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(201,168,76,0.12);border:1px solid var(--gold);border-radius:16px;padding:4px 12px;font-size:0.92rem;color:var(--gold);}
+  .active-tag button{background:none;border:none;color:var(--gold);cursor:pointer;font-size:1rem;line-height:1;padding:0;}
+  /* Tag input field */
+  .tag-input-wrap{display:flex;gap:6px;flex-wrap:wrap;align-items:center;background:rgba(8,12,18,0.8);border:1px solid #2a3848;border-radius:8px;padding:8px 10px;min-height:46px;transition:border-color 0.15s;}
+  .tag-input-wrap:focus-within{border-color:var(--gold-dim);}
+  .tag-input-wrap input{background:none;border:none;outline:none;color:var(--cream);font-size:1rem;font-family:'DM Sans',sans-serif;flex:1;min-width:120px;padding:4px;}
+  .tag-pending{display:inline-flex;align-items:center;gap:6px;background:rgba(201,168,76,0.1);border:1px solid var(--gold-dim);border-radius:14px;padding:3px 10px;font-size:0.88rem;color:var(--gold);}
+  .tag-pending button{background:none;border:none;color:var(--gold);cursor:pointer;font-size:0.95rem;line-height:1;padding:0;}
+  .tag-hint{font-size:0.84rem;color:var(--muted);margin-top:6px;}
+  body.light-mode .tag-chip{background:rgba(201,168,76,0.12);border-color:#a8893a;color:#8a6d2e;}
+  body.light-mode .tag-chip:hover{background:rgba(201,168,76,0.22);border-color:#8a6d2e;}
+  body.light-mode .thread-item .tag-chip{background:rgba(255,255,255,0.14)!important;border-color:rgba(255,255,255,0.3)!important;color:#ffffff!important;}
+  body.light-mode .active-tag{background:rgba(201,168,76,0.14);border-color:#a8893a;color:#8a6d2e;}
+  body.light-mode .active-tag button{color:#8a6d2e;}
+  body.light-mode .active-tag-bar .active-tag-label{color:#4a6080;}
+  body.light-mode .tag-input-wrap{background:#ffffff;border-color:#d0d7e3;}
+  body.light-mode .tag-input-wrap input{color:#1e2d4a;}
+  body.light-mode .tag-pending{background:rgba(201,168,76,0.12);border-color:#a8893a;color:#8a6d2e;}
+  body.light-mode .tag-pending button{color:#8a6d2e;}
+  body.light-mode .tag-hint{color:#4a6080;}
+
   /* Thread list */
   .thread-list{display:flex;flex-direction:column;gap:2px;}
   .thread-item{background:#131820;border:1px solid #2a3848;border-radius:10px;padding:20px 24px 20px 68px;cursor:pointer;transition:border-color 0.2s,transform 0.25s,box-shadow 0.25s;text-decoration:none;display:block;color:inherit;position:relative;overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,0.05),0 2px 14px rgba(0,0,0,0.45);}
@@ -249,6 +276,13 @@ body.light-mode .forum-title{color:#1e2d4a;}
       <textarea class="form-textarea" id="thread-body" placeholder="Write your post here..."></textarea>
       <div class="form-error" id="body-error">Body must be at least 10 characters.</div>
     </div>
+    <div class="form-field">
+      <label class="form-label">Tags <span style="text-transform:none;letter-spacing:0;font-size:0.82rem;">(optional)</span></label>
+      <div class="tag-input-wrap" id="tag-input-wrap" onclick="document.getElementById('tag-input').focus()">
+        <input id="tag-input" type="text" placeholder="Add a tag and press Enter" maxlength="24" autocomplete="off">
+      </div>
+      <div class="tag-hint">Press Enter or comma to add. Up to 5 tags.</div>
+    </div>
     <div class="modal-actions">
       <button class="btn-secondary" onclick="closeModal()">Cancel</button>
       <button class="btn-primary" id="submit-thread-btn" onclick="submitThread()">Post thread →</button>
@@ -270,6 +304,8 @@ body.light-mode .forum-title{color:#1e2d4a;}
   };
 
   let currentCat = 'all';
+  let currentTag = null;
+  let pendingTags = [];
   let currentUser = null;
   let userVotes = {}; // threadId -> 1 or -1
   let page = 0;
@@ -317,10 +353,11 @@ body.light-mode .forum-title{color:#1e2d4a;}
     }
 
     let query = sb.from('forum_threads')
-      .select('id, title, category, reply_count, is_pinned, vote_score, last_activity_at, created_at, user_id, author_username')
+      .select('id, title, category, tags, reply_count, is_pinned, vote_score, last_activity_at, created_at, user_id, author_username')
       .range(page * PAGE_SIZE, page * PAGE_SIZE + PAGE_SIZE);
 
     if (currentCat !== 'all') query = query.eq('category', currentCat);
+    if (currentTag) query = query.contains('tags', [currentTag]);
 
     if (sortMode === 'top') {
       query = query.order('is_pinned', { ascending: false }).order('vote_score', { ascending: false });
@@ -407,6 +444,21 @@ body.light-mode .forum-title{color:#1e2d4a;}
         <span>💬 ${t.reply_count}</span>
         <span>🕐 ${agoStr}</span>
       </div>`;
+
+    // Tags (outside the <a> so clicks filter instead of opening thread)
+    if (Array.isArray(t.tags) && t.tags.length) {
+      const tagRow = document.createElement('div');
+      tagRow.className = 'thread-tags';
+      tagRow.style.cssText = 'margin-top:10px;';
+      t.tags.forEach(tag => {
+        const chip = document.createElement('span');
+        chip.className = 'tag-chip';
+        chip.textContent = '#' + tag;
+        chip.onclick = e => { e.preventDefault(); e.stopPropagation(); filterTag(tag); };
+        tagRow.appendChild(chip);
+      });
+      a.appendChild(tagRow);
+    }
 
     // Delete button for own threads
     if (currentUser && t.user_id === currentUser.id) {
@@ -495,6 +547,9 @@ body.light-mode .forum-title{color:#1e2d4a;}
     document.getElementById('new-thread-modal').classList.remove('open');
     document.getElementById('thread-title').value = '';
     document.getElementById('thread-body').value = '';
+    document.getElementById('tag-input').value = '';
+    pendingTags = [];
+    renderPendingTags();
     ['title-error','body-error','thread-post-error'].forEach(id => document.getElementById(id).style.display = 'none');
   }
 
@@ -516,7 +571,7 @@ body.light-mode .forum-title{color:#1e2d4a;}
     const username = profile?.username || 'Anonymous';
 
     const { data, error } = await sb.from('forum_threads').insert({
-      title, body, category: cat, user_id: currentUser.id, author_username: username
+      title, body, category: cat, tags: pendingTags, user_id: currentUser.id, author_username: username
     }).select('id').single();
 
     if (error) {
@@ -527,6 +582,69 @@ body.light-mode .forum-title{color:#1e2d4a;}
     }
     closeModal();
     window.location.href = `/forum-thread?id=${data.id}`;
+  }
+
+  // ── Tags ──
+  function normTag(s) {
+    return s.trim().toLowerCase().replace(/[^a-z0-9 -]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '').slice(0, 24);
+  }
+
+  function renderPendingTags() {
+    const wrap = document.getElementById('tag-input-wrap');
+    wrap.querySelectorAll('.tag-pending').forEach(el => el.remove());
+    const input = document.getElementById('tag-input');
+    pendingTags.forEach(tag => {
+      const chip = document.createElement('span');
+      chip.className = 'tag-pending';
+      chip.innerHTML = `${escHtml(tag)} <button type="button" title="Remove">✕</button>`;
+      chip.querySelector('button').onclick = () => { pendingTags = pendingTags.filter(t => t !== tag); renderPendingTags(); };
+      wrap.insertBefore(chip, input);
+    });
+    input.style.display = pendingTags.length >= 5 ? 'none' : '';
+  }
+
+  function addPendingTag() {
+    const input = document.getElementById('tag-input');
+    const t = normTag(input.value);
+    if (t && pendingTags.length < 5 && !pendingTags.includes(t)) pendingTags.push(t);
+    input.value = '';
+    renderPendingTags();
+  }
+
+  function setupTagInput() {
+    const input = document.getElementById('tag-input');
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ',') { e.preventDefault(); addPendingTag(); }
+      else if (e.key === 'Backspace' && input.value === '' && pendingTags.length) { pendingTags.pop(); renderPendingTags(); }
+    });
+    input.addEventListener('blur', () => { if (input.value.trim()) addPendingTag(); });
+  }
+
+  function filterTag(tag) {
+    currentTag = tag;
+    renderActiveTagBar();
+    loadThreads();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function clearTagFilter() {
+    currentTag = null;
+    renderActiveTagBar();
+    loadThreads();
+  }
+
+  function renderActiveTagBar() {
+    let bar = document.getElementById('active-tag-bar');
+    if (!currentTag) { if (bar) bar.remove(); return; }
+    if (!bar) {
+      bar = document.createElement('div');
+      bar.id = 'active-tag-bar';
+      bar.className = 'active-tag-bar';
+      const list = document.getElementById('thread-list');
+      list.parentNode.insertBefore(bar, list);
+    }
+    bar.innerHTML = `<span class="active-tag-label">Filtering by tag:</span>
+      <span class="active-tag">#${escHtml(currentTag)} <button title="Clear" onclick="clearTagFilter()">✕</button></span>`;
   }
 
   function formatDate(ts) {
@@ -568,6 +686,9 @@ body.light-mode .forum-title{color:#1e2d4a;}
     setTimeout(() => { window.location.href = href; }, 310);
   });
 
+  setupTagInput();
+  const urlTag = new URLSearchParams(location.search).get('tag');
+  if (urlTag) { currentTag = normTag(urlTag); renderActiveTagBar(); }
   initAuth().then(() => loadThreads());
 
 </script>
