@@ -98,6 +98,26 @@
   .auth-notice a:hover{text-decoration:underline;}
   .reply-error{color:#e07070;font-size:0.92rem;margin-top:8px;display:none;}
 
+  /* Image attach */
+  .img-attach{margin-top:12px;}
+  .img-attach-controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+  .img-btn{background:transparent;border:1px solid var(--border);border-radius:8px;padding:8px 14px;font-size:0.92rem;color:var(--muted);cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:border-color 0.15s,color 0.15s;font-family:'DM Sans',sans-serif;}
+  .img-btn:hover{border-color:var(--gold-dim);color:var(--cream);}
+  .img-url-input{background:rgba(8,12,18,0.8);border:1px solid var(--border);border-radius:8px;padding:8px 12px;color:var(--cream);font-size:0.92rem;font-family:'DM Sans',sans-serif;flex:1;min-width:160px;outline:none;transition:border-color 0.15s;}
+  .img-url-input:focus{border-color:var(--gold-dim);}
+  .img-preview{position:relative;display:inline-block;margin-top:12px;max-width:100%;}
+  .img-preview img{max-width:280px;max-height:220px;border-radius:10px;border:1px solid var(--border);display:block;}
+  .img-preview-remove{position:absolute;top:6px;right:6px;background:rgba(8,12,18,0.85);border:1px solid var(--border);border-radius:6px;color:var(--cream);cursor:pointer;font-size:0.9rem;line-height:1;padding:4px 8px;}
+  .img-preview-remove:hover{color:#e07070;border-color:#e07070;}
+  .img-status{font-size:0.86rem;color:var(--muted);margin-top:8px;}
+  .post-image{margin-top:14px;}
+  .post-image img{max-width:100%;max-height:520px;border-radius:10px;border:1px solid var(--border);display:block;cursor:zoom-in;}
+  .reply-image{margin-top:10px;}
+  .reply-image img{max-width:100%;max-height:360px;border-radius:8px;border:1px solid var(--border);display:block;cursor:zoom-in;}
+  .img-lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:9998;align-items:center;justify-content:center;padding:24px;cursor:zoom-out;}
+  .img-lightbox.open{display:flex;}
+  .img-lightbox img{max-width:96vw;max-height:96vh;border-radius:8px;}
+
   /* Empty */
   .no-replies{text-align:center;padding:40px 24px;color:var(--muted);font-size:1rem;}
 
@@ -135,6 +155,14 @@ body.light-mode .form-textarea:focus{border-color:#c9a84c;box-shadow:0 0 0 3px r
 body.light-mode .auth-notice{background:#ffffff;border-color:#c8d4e4;color:#4a6080;}
 body.light-mode .no-replies{color:#4a6080;}
 body.light-mode .loading-row{background:#eef2f8;border-color:#c8d4e4;}
+body.light-mode .img-btn{border-color:#d0d7e3;color:#4a6080;}
+body.light-mode .img-btn:hover{border-color:#a8893a;color:#1e2d4a;}
+body.light-mode .img-url-input{background:#ffffff;border-color:#d0d7e3;color:#1e2d4a;}
+body.light-mode .img-url-input:focus{border-color:#c9a84c;}
+body.light-mode .img-preview img,body.light-mode .post-image img,body.light-mode .reply-image img{border-color:#c8d4e4;}
+body.light-mode .img-preview-remove{background:#ffffff;border-color:#d0d7e3;color:#1e2d4a;}
+body.light-mode .img-status{color:#4a6080;}
+
 </style>
 </head>
 <body>
@@ -291,6 +319,147 @@ body.light-mode .loading-row{background:#eef2f8;border-color:#c8d4e4;}
     }
   }
 
+  // ── Image attach helper (shared) ──
+  // Creates a picker bound to a container; tracks selected image (file or url).
+  // Call ImgPicker.create(containerId) then ImgPicker.resolve(containerId) at submit
+  // to get a public URL (uploads pending file first). Returns null if none.
+  const ImgPicker = (function () {
+    const state = {}; // containerId -> { file, url, objectUrl }
+    const MAX_BYTES = 5 * 1024 * 1024;
+    const OK_TYPES = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+
+    function html(id) {
+      return `
+        <div class="img-attach-controls">
+          <button type="button" class="img-btn" onclick="ImgPicker.pickFile('${id}')">🖼 Add image</button>
+          <input type="text" class="img-url-input" id="${id}-imgurl" placeholder="or paste an image URL">
+          <input type="file" id="${id}-imgfile" accept="image/*" style="display:none">
+        </div>
+        <div id="${id}-imgpreview"></div>
+        <div class="img-status" id="${id}-imgstatus" style="display:none"></div>`;
+    }
+
+    function create(containerId) {
+      const c = document.getElementById(containerId);
+      if (!c) return;
+      c.innerHTML = html(containerId);
+      state[containerId] = { file: null, url: null, objectUrl: null };
+      const fileInput = document.getElementById(`${containerId}-imgfile`);
+      fileInput.addEventListener('change', () => onFile(containerId, fileInput.files[0]));
+      const urlInput = document.getElementById(`${containerId}-imgurl`);
+      urlInput.addEventListener('change', () => onUrl(containerId, urlInput.value.trim()));
+      urlInput.addEventListener('blur', () => onUrl(containerId, urlInput.value.trim()));
+    }
+
+    function pickFile(containerId) {
+      document.getElementById(`${containerId}-imgfile`).click();
+    }
+
+    function status(containerId, msg, isErr) {
+      const el = document.getElementById(`${containerId}-imgstatus`);
+      if (!el) return;
+      if (!msg) { el.style.display = 'none'; el.textContent = ''; return; }
+      el.style.display = 'block';
+      el.textContent = msg;
+      el.style.color = isErr ? '#e07070' : 'var(--muted)';
+    }
+
+    function onFile(containerId, file) {
+      const s = state[containerId];
+      if (!file) return;
+      if (!OK_TYPES.includes(file.type)) { status(containerId, 'Use JPG, PNG, GIF or WebP.', true); return; }
+      if (file.size > MAX_BYTES) { status(containerId, 'Image must be under 5 MB.', true); return; }
+      clearUrlField(containerId);
+      s.url = null;
+      s.file = file;
+      if (s.objectUrl) URL.revokeObjectURL(s.objectUrl);
+      s.objectUrl = URL.createObjectURL(file);
+      showPreview(containerId, s.objectUrl);
+      status(containerId, '');
+    }
+
+    function onUrl(containerId, url) {
+      const s = state[containerId];
+      if (!url) { if (!s.file) clearPreview(containerId); return; }
+      if (!/^https?:\/\/.+/i.test(url)) { status(containerId, 'Enter a valid http(s) image URL.', true); return; }
+      s.file = null;
+      if (s.objectUrl) { URL.revokeObjectURL(s.objectUrl); s.objectUrl = null; }
+      s.url = url;
+      showPreview(containerId, url);
+      status(containerId, '');
+    }
+
+    function showPreview(containerId, src) {
+      const p = document.getElementById(`${containerId}-imgpreview`);
+      p.innerHTML = `<div class="img-preview"><img src="${src}" alt="preview" onerror="ImgPicker.previewError('${containerId}')"><button type="button" class="img-preview-remove" onclick="ImgPicker.remove('${containerId}')">✕</button></div>`;
+    }
+
+    function previewError(containerId) {
+      status(containerId, 'Could not load that image.', true);
+      clearPreview(containerId);
+      state[containerId].url = null;
+    }
+
+    function clearPreview(containerId) {
+      const p = document.getElementById(`${containerId}-imgpreview`);
+      if (p) p.innerHTML = '';
+    }
+
+    function clearUrlField(containerId) {
+      const u = document.getElementById(`${containerId}-imgurl`);
+      if (u) u.value = '';
+    }
+
+    function remove(containerId) {
+      const s = state[containerId];
+      if (s.objectUrl) { URL.revokeObjectURL(s.objectUrl); }
+      state[containerId] = { file: null, url: null, objectUrl: null };
+      clearPreview(containerId);
+      clearUrlField(containerId);
+      const f = document.getElementById(`${containerId}-imgfile`);
+      if (f) f.value = '';
+      status(containerId, '');
+    }
+
+    // Returns a public URL (string) or null. Uploads pending file to storage.
+    async function resolve(containerId) {
+      const s = state[containerId];
+      if (!s) return null;
+      if (s.url) return s.url;
+      if (!s.file) return null;
+      if (!currentUser) return null;
+      status(containerId, 'Uploading image…');
+      const ext = (s.file.name.split('.').pop() || 'png').toLowerCase().replace(/[^a-z0-9]/g, '') || 'png';
+      const path = `${currentUser.id}/${Date.now()}-${Math.random().toString(36).slice(2, 8)}.${ext}`;
+      const { error } = await sb.storage.from('forum-images').upload(path, s.file, { upsert: false, contentType: s.file.type });
+      if (error) { status(containerId, 'Upload failed: ' + (error.message || 'error'), true); throw error; }
+      const { data } = sb.storage.from('forum-images').getPublicUrl(path);
+      status(containerId, '');
+      return data.publicUrl;
+    }
+
+    function reset(containerId) { remove(containerId); }
+
+    return { create, pickFile, remove, resolve, reset, previewError };
+  })();
+  window.ImgPicker = ImgPicker;
+
+  // Lightbox for viewing posted images
+  function openLightbox(src) {
+    let lb = document.getElementById('img-lightbox');
+    if (!lb) {
+      lb = document.createElement('div');
+      lb.id = 'img-lightbox';
+      lb.className = 'img-lightbox';
+      lb.onclick = () => lb.classList.remove('open');
+      lb.innerHTML = '<img alt="">';
+      document.body.appendChild(lb);
+    }
+    lb.querySelector('img').src = src;
+    lb.classList.add('open');
+  }
+  window.openLightbox = openLightbox;
+
   function renderThread(t) {
     const username = t.author_username || 'Anonymous';
     const dateStr = formatDateTime(t.created_at);
@@ -309,6 +478,7 @@ body.light-mode .loading-row{background:#eef2f8;border-color:#c8d4e4;}
       </div>
       ${Array.isArray(t.tags) && t.tags.length ? `<div class="thread-tags r">${t.tags.map(tg => `<a class="tag-chip" href="/forum?tag=${encodeURIComponent(tg)}">#${escHtml(tg)}</a>`).join('')}</div>` : ''}
       <div class="post-body r">${escHtml(t.body)}</div>
+      ${t.image_url ? `<div class="post-image r"><img src="${escHtml(t.image_url)}" alt="thread image" loading="lazy" onclick="openLightbox(this.src)"></div>` : ''}
       <div class="replies-label r" id="replies-label">Replies</div>
       <div class="reply-list r" id="reply-list"></div>
       <div id="reply-form-wrap" class="r"></div>
@@ -320,7 +490,7 @@ body.light-mode .loading-row{background:#eef2f8;border-color:#c8d4e4;}
     if (!list) return;
 
     const { data: replies, error } = await sb.from('forum_replies')
-      .select('id, body, user_id, is_deleted, created_at, author_username, vote_score')
+      .select('id, body, user_id, is_deleted, created_at, author_username, vote_score, image_url')
       .eq('thread_id', threadId)
       .order('created_at', { ascending: true });
 
@@ -353,7 +523,7 @@ body.light-mode .loading-row{background:#eef2f8;border-color:#c8d4e4;}
         </div>
         ${r.is_deleted
           ? '<div class="reply-deleted">This reply has been deleted.</div>'
-          : `<div class="reply-body">${escHtml(r.body)}</div>`}
+          : `<div class="reply-body">${escHtml(r.body)}</div>${r.image_url ? `<div class="reply-image"><img src="${escHtml(r.image_url)}" alt="reply image" loading="lazy" onclick="openLightbox(this.src)"></div>` : ''}`}
         ${isOwn && !r.is_deleted ? `<div class="reply-actions"><button class="reply-action-btn" onclick="deleteReply('${r.id}')">Delete</button></div>` : ''}
       `;
 
@@ -399,24 +569,31 @@ body.light-mode .loading-row{background:#eef2f8;border-color:#c8d4e4;}
         <div class="reply-form-title">Your reply</div>
         <textarea class="form-textarea" id="reply-body" placeholder="Write your reply..."></textarea>
         <div class="reply-error" id="reply-error">Reply cannot be empty.</div>
+        <div class="img-attach" id="reply-img-attach"></div>
         <div class="reply-form-actions">
           <button class="btn-primary" id="reply-submit-btn" onclick="submitReply()">Post reply →</button>
         </div>
       </div>`;
+    ImgPicker.create('reply-img-attach');
   }
 
   async function submitReply() {
     const body = document.getElementById('reply-body').value.trim();
-    if (!body) { document.getElementById('reply-error').style.display = 'block'; return; }
+    const hasImg = ImgPicker.resolve && (document.getElementById('reply-img-attach-imgpreview')?.children.length > 0);
+    if (!body && !hasImg) { document.getElementById('reply-error').textContent = 'Reply cannot be empty.'; document.getElementById('reply-error').style.display = 'block'; return; }
     document.getElementById('reply-error').style.display = 'none';
     const btn = document.getElementById('reply-submit-btn');
     btn.disabled = true; btn.textContent = 'Posting…';
+
+    let imageUrl = null;
+    try { imageUrl = await ImgPicker.resolve('reply-img-attach'); }
+    catch (e) { btn.disabled = false; btn.innerHTML = 'Post reply →'; return; }
 
     const { data: profile } = await sb.from('profiles').select('username').eq('id', currentUser.id).single();
     const replyUsername = profile?.username || 'Anonymous';
 
     const { error } = await sb.from('forum_replies').insert({
-      thread_id: threadId, user_id: currentUser.id, body, author_username: replyUsername
+      thread_id: threadId, user_id: currentUser.id, body, author_username: replyUsername, image_url: imageUrl
     });
 
     if (error) {
@@ -434,6 +611,7 @@ body.light-mode .loading-row{background:#eef2f8;border-color:#c8d4e4;}
     }).eq('id', threadId);
 
     document.getElementById('reply-body').value = '';
+    ImgPicker.reset('reply-img-attach');
     btn.disabled = false; btn.innerHTML = 'Post reply →';
     await loadReplies();
     document.getElementById('reply-list').lastElementChild?.scrollIntoView({ behavior:'smooth', block:'end' });

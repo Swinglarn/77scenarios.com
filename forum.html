@@ -105,6 +105,26 @@
   body.light-mode .tag-pending button{color:#8a6d2e;}
   body.light-mode .tag-hint{color:#4a6080;}
 
+  /* Image attach */
+  .img-attach{margin-top:12px;}
+  .img-attach-controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+  .img-btn{background:transparent;border:1px solid var(--border);border-radius:8px;padding:8px 14px;font-size:0.92rem;color:var(--muted);cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:border-color 0.15s,color 0.15s;font-family:'DM Sans',sans-serif;}
+  .img-btn:hover{border-color:var(--gold-dim);color:var(--cream);}
+  .img-url-input{background:rgba(8,12,18,0.8);border:1px solid var(--border);border-radius:8px;padding:8px 12px;color:var(--cream);font-size:0.92rem;font-family:'DM Sans',sans-serif;flex:1;min-width:160px;outline:none;transition:border-color 0.15s;}
+  .img-url-input:focus{border-color:var(--gold-dim);}
+  .img-preview{position:relative;display:inline-block;margin-top:12px;max-width:100%;}
+  .img-preview img{max-width:280px;max-height:220px;border-radius:10px;border:1px solid var(--border);display:block;}
+  .img-preview-remove{position:absolute;top:6px;right:6px;background:rgba(8,12,18,0.85);border:1px solid var(--border);border-radius:6px;color:var(--cream);cursor:pointer;font-size:0.9rem;line-height:1;padding:4px 8px;}
+  .img-preview-remove:hover{color:#e07070;border-color:#e07070;}
+  .img-status{font-size:0.86rem;color:var(--muted);margin-top:8px;}
+  .post-image{margin-top:14px;}
+  .post-image img{max-width:100%;max-height:520px;border-radius:10px;border:1px solid var(--border);display:block;cursor:zoom-in;}
+  .reply-image{margin-top:10px;}
+  .reply-image img{max-width:100%;max-height:360px;border-radius:8px;border:1px solid var(--border);display:block;cursor:zoom-in;}
+  .img-lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:9998;align-items:center;justify-content:center;padding:24px;cursor:zoom-out;}
+  .img-lightbox.open{display:flex;}
+  .img-lightbox img{max-width:96vw;max-height:96vh;border-radius:8px;}
+
   /* Thread list */
   .thread-list{display:flex;flex-direction:column;gap:2px;}
   .thread-item{background:#131820;border:1px solid #2a3848;border-radius:10px;padding:20px 24px 20px 68px;cursor:pointer;transition:border-color 0.2s,transform 0.25s,box-shadow 0.25s;text-decoration:none;display:block;color:inherit;position:relative;overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,0.05),0 2px 14px rgba(0,0,0,0.45);}
@@ -199,6 +219,13 @@ body.light-mode .form-input::placeholder,body.light-mode .form-textarea::placeho
 body.light-mode .form-input:focus,body.light-mode .form-select:focus,body.light-mode .form-textarea:focus{border-color:#c9a84c;box-shadow:0 0 0 3px rgba(201,168,76,0.10);}
 body.light-mode .form-select option{background:#ffffff;color:#1e2d4a;}
 body.light-mode .forum-title{color:#1e2d4a;}
+body.light-mode .img-btn{border-color:#d0d7e3;color:#4a6080;}
+body.light-mode .img-btn:hover{border-color:#a8893a;color:#1e2d4a;}
+body.light-mode .img-url-input{background:#ffffff;border-color:#d0d7e3;color:#1e2d4a;}
+body.light-mode .img-url-input:focus{border-color:#c9a84c;}
+body.light-mode .img-preview img,body.light-mode .post-image img,body.light-mode .reply-image img{border-color:#c8d4e4;}
+body.light-mode .img-preview-remove{background:#ffffff;border-color:#d0d7e3;color:#1e2d4a;}
+body.light-mode .img-status{color:#4a6080;}
 </style>
 </head>
 <body>
@@ -275,6 +302,7 @@ body.light-mode .forum-title{color:#1e2d4a;}
       <label class="form-label">Body</label>
       <textarea class="form-textarea" id="thread-body" placeholder="Write your post here..."></textarea>
       <div class="form-error" id="body-error">Body must be at least 10 characters.</div>
+      <div class="img-attach" id="thread-img-attach"></div>
     </div>
     <div class="form-field">
       <label class="form-label">Tags <span style="text-transform:none;letter-spacing:0;font-size:0.82rem;">(optional)</span></label>
@@ -353,7 +381,7 @@ body.light-mode .forum-title{color:#1e2d4a;}
     }
 
     let query = sb.from('forum_threads')
-      .select('id, title, category, tags, reply_count, is_pinned, vote_score, last_activity_at, created_at, user_id, author_username')
+      .select('id, title, category, tags, image_url, reply_count, is_pinned, vote_score, last_activity_at, created_at, user_id, author_username')
       .range(page * PAGE_SIZE, page * PAGE_SIZE + PAGE_SIZE);
 
     if (currentCat !== 'all') query = query.eq('category', currentCat);
@@ -407,6 +435,147 @@ body.light-mode .forum-title{color:#1e2d4a;}
     document.getElementById('load-more-wrap').style.display = hasMore ? 'block' : 'none';
   }
 
+  // ── Image attach helper (shared) ──
+  // Creates a picker bound to a container; tracks selected image (file or url).
+  // Call ImgPicker.create(containerId) then ImgPicker.resolve(containerId) at submit
+  // to get a public URL (uploads pending file first). Returns null if none.
+  const ImgPicker = (function () {
+    const state = {}; // containerId -> { file, url, objectUrl }
+    const MAX_BYTES = 5 * 1024 * 1024;
+    const OK_TYPES = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+
+    function html(id) {
+      return `
+        <div class="img-attach-controls">
+          <button type="button" class="img-btn" onclick="ImgPicker.pickFile('${id}')">🖼 Add image</button>
+          <input type="text" class="img-url-input" id="${id}-imgurl" placeholder="or paste an image URL">
+          <input type="file" id="${id}-imgfile" accept="image/*" style="display:none">
+        </div>
+        <div id="${id}-imgpreview"></div>
+        <div class="img-status" id="${id}-imgstatus" style="display:none"></div>`;
+    }
+
+    function create(containerId) {
+      const c = document.getElementById(containerId);
+      if (!c) return;
+      c.innerHTML = html(containerId);
+      state[containerId] = { file: null, url: null, objectUrl: null };
+      const fileInput = document.getElementById(`${containerId}-imgfile`);
+      fileInput.addEventListener('change', () => onFile(containerId, fileInput.files[0]));
+      const urlInput = document.getElementById(`${containerId}-imgurl`);
+      urlInput.addEventListener('change', () => onUrl(containerId, urlInput.value.trim()));
+      urlInput.addEventListener('blur', () => onUrl(containerId, urlInput.value.trim()));
+    }
+
+    function pickFile(containerId) {
+      document.getElementById(`${containerId}-imgfile`).click();
+    }
+
+    function status(containerId, msg, isErr) {
+      const el = document.getElementById(`${containerId}-imgstatus`);
+      if (!el) return;
+      if (!msg) { el.style.display = 'none'; el.textContent = ''; return; }
+      el.style.display = 'block';
+      el.textContent = msg;
+      el.style.color = isErr ? '#e07070' : 'var(--muted)';
+    }
+
+    function onFile(containerId, file) {
+      const s = state[containerId];
+      if (!file) return;
+      if (!OK_TYPES.includes(file.type)) { status(containerId, 'Use JPG, PNG, GIF or WebP.', true); return; }
+      if (file.size > MAX_BYTES) { status(containerId, 'Image must be under 5 MB.', true); return; }
+      clearUrlField(containerId);
+      s.url = null;
+      s.file = file;
+      if (s.objectUrl) URL.revokeObjectURL(s.objectUrl);
+      s.objectUrl = URL.createObjectURL(file);
+      showPreview(containerId, s.objectUrl);
+      status(containerId, '');
+    }
+
+    function onUrl(containerId, url) {
+      const s = state[containerId];
+      if (!url) { if (!s.file) clearPreview(containerId); return; }
+      if (!/^https?:\/\/.+/i.test(url)) { status(containerId, 'Enter a valid http(s) image URL.', true); return; }
+      s.file = null;
+      if (s.objectUrl) { URL.revokeObjectURL(s.objectUrl); s.objectUrl = null; }
+      s.url = url;
+      showPreview(containerId, url);
+      status(containerId, '');
+    }
+
+    function showPreview(containerId, src) {
+      const p = document.getElementById(`${containerId}-imgpreview`);
+      p.innerHTML = `<div class="img-preview"><img src="${src}" alt="preview" onerror="ImgPicker.previewError('${containerId}')"><button type="button" class="img-preview-remove" onclick="ImgPicker.remove('${containerId}')">✕</button></div>`;
+    }
+
+    function previewError(containerId) {
+      status(containerId, 'Could not load that image.', true);
+      clearPreview(containerId);
+      state[containerId].url = null;
+    }
+
+    function clearPreview(containerId) {
+      const p = document.getElementById(`${containerId}-imgpreview`);
+      if (p) p.innerHTML = '';
+    }
+
+    function clearUrlField(containerId) {
+      const u = document.getElementById(`${containerId}-imgurl`);
+      if (u) u.value = '';
+    }
+
+    function remove(containerId) {
+      const s = state[containerId];
+      if (s.objectUrl) { URL.revokeObjectURL(s.objectUrl); }
+      state[containerId] = { file: null, url: null, objectUrl: null };
+      clearPreview(containerId);
+      clearUrlField(containerId);
+      const f = document.getElementById(`${containerId}-imgfile`);
+      if (f) f.value = '';
+      status(containerId, '');
+    }
+
+    // Returns a public URL (string) or null. Uploads pending file to storage.
+    async function resolve(containerId) {
+      const s = state[containerId];
+      if (!s) return null;
+      if (s.url) return s.url;
+      if (!s.file) return null;
+      if (!currentUser) return null;
+      status(containerId, 'Uploading image…');
+      const ext = (s.file.name.split('.').pop() || 'png').toLowerCase().replace(/[^a-z0-9]/g, '') || 'png';
+      const path = `${currentUser.id}/${Date.now()}-${Math.random().toString(36).slice(2, 8)}.${ext}`;
+      const { error } = await sb.storage.from('forum-images').upload(path, s.file, { upsert: false, contentType: s.file.type });
+      if (error) { status(containerId, 'Upload failed: ' + (error.message || 'error'), true); throw error; }
+      const { data } = sb.storage.from('forum-images').getPublicUrl(path);
+      status(containerId, '');
+      return data.publicUrl;
+    }
+
+    function reset(containerId) { remove(containerId); }
+
+    return { create, pickFile, remove, resolve, reset, previewError };
+  })();
+  window.ImgPicker = ImgPicker;
+
+  // Lightbox for viewing posted images
+  function openLightbox(src) {
+    let lb = document.getElementById('img-lightbox');
+    if (!lb) {
+      lb = document.createElement('div');
+      lb.id = 'img-lightbox';
+      lb.className = 'img-lightbox';
+      lb.onclick = () => lb.classList.remove('open');
+      lb.innerHTML = '<img alt="">';
+      document.body.appendChild(lb);
+    }
+    lb.querySelector('img').src = src;
+    lb.classList.add('open');
+  }
+  window.openLightbox = openLightbox;
+
   function renderThread(t, list) {
     const username = t.author_username || 'Anonymous';
     const myVote = userVotes[t.id] || 0;
@@ -444,6 +613,19 @@ body.light-mode .forum-title{color:#1e2d4a;}
         <span>💬 ${t.reply_count}</span>
         <span>🕐 ${agoStr}</span>
       </div>`;
+
+    // Thumbnail image preview on card
+    if (t.image_url) {
+      const imgRow = document.createElement('div');
+      imgRow.className = 'reply-image';
+      imgRow.style.cssText = 'margin-top:10px;';
+      const im = document.createElement('img');
+      im.src = t.image_url; im.alt = 'thread image'; im.loading = 'lazy';
+      im.style.cssText = 'max-height:200px;';
+      im.onclick = e => { e.preventDefault(); e.stopPropagation(); openLightbox(t.image_url); };
+      imgRow.appendChild(im);
+      a.appendChild(imgRow);
+    }
 
     // Tags (outside the <a> so clicks filter instead of opening thread)
     if (Array.isArray(t.tags) && t.tags.length) {
@@ -541,6 +723,7 @@ body.light-mode .forum-title{color:#1e2d4a;}
   function handleNewThread() {
     if (!currentUser) { window.location.href = '/login'; return; }
     document.getElementById('new-thread-modal').classList.add('open');
+    ImgPicker.create('thread-img-attach');
   }
 
   function closeModal() {
@@ -550,6 +733,7 @@ body.light-mode .forum-title{color:#1e2d4a;}
     document.getElementById('tag-input').value = '';
     pendingTags = [];
     renderPendingTags();
+    ImgPicker.reset('thread-img-attach');
     ['title-error','body-error','thread-post-error'].forEach(id => document.getElementById(id).style.display = 'none');
   }
 
@@ -567,11 +751,15 @@ body.light-mode .forum-title{color:#1e2d4a;}
     const btn = document.getElementById('submit-thread-btn');
     btn.disabled = true; btn.textContent = 'Posting…';
 
+    let imageUrl = null;
+    try { imageUrl = await ImgPicker.resolve('thread-img-attach'); }
+    catch (e) { btn.disabled = false; btn.innerHTML = 'Post thread →'; return; }
+
     const { data: profile } = await sb.from('profiles').select('username').eq('id', currentUser.id).single();
     const username = profile?.username || 'Anonymous';
 
     const { data, error } = await sb.from('forum_threads').insert({
-      title, body, category: cat, tags: pendingTags, user_id: currentUser.id, author_username: username
+      title, body, category: cat, tags: pendingTags, image_url: imageUrl, user_id: currentUser.id, author_username: username
     }).select('id').single();
 
     if (error) {
