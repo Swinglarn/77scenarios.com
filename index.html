@@ -907,6 +907,7 @@
     <div class="type-badge" id="type-badge"></div>
     <div class="type-name" id="type-name"></div>
     <div class="type-tagline" id="type-tagline"></div>
+    <div id="save-status" style="font-size:0.9rem;margin:4px 0 0;min-height:1.2em;"></div>
     <p class="type-description" id="type-description"></p>
     <div class="traits-grid" id="traits-grid"></div>
     <div class="sep"></div>
@@ -1991,16 +1992,43 @@ function shareResult() {
 
   // Auto-save result when results screen is shown
   window._sbSaveResult = async function(type, sc) {
-    const { data: { session } } = await sb.auth.getSession();
-    if (!session) return;
-    await sb.from('results').insert({
-      user_id: session.user.id,
-      personality_type: type,
-      ei_e: sc.E||0, ei_i: sc.I||0,
-      sn_s: sc.S||0, sn_n: sc.N||0,
-      tf_t: sc.T||0, tf_f: sc.F||0,
-      jp_j: sc.J||0, jp_p: sc.P||0,
-    });
+    const statusEl = () => document.getElementById('save-status');
+    const setStatus = (msg, color) => { const el = statusEl(); if (el) { el.textContent = msg; el.style.color = color || 'var(--muted, #b5ada6)'; } };
+    try {
+      if (!type) { console.warn('[save] no personality type, skipping'); return; }
+      let { data: { session } } = await sb.auth.getSession();
+      if (!session) {
+        await new Promise(r => setTimeout(r, 400));
+        ({ data: { session } } = await sb.auth.getSession());
+      }
+      if (!session) {
+        setStatus('Sign in to save this result to your profile.', '');
+        console.info('[save] not signed in, result not saved');
+        return;
+      }
+
+      setStatus('Saving to your profile…', '');
+      const { error } = await sb.from('results').insert({
+        user_id: session.user.id,
+        personality_type: type,
+        ei_e: sc.E||0, ei_i: sc.I||0,
+        sn_s: sc.S||0, sn_n: sc.N||0,
+        tf_t: sc.T||0, tf_f: sc.F||0,
+        jp_j: sc.J||0, jp_p: sc.P||0,
+      });
+      if (error) {
+        window._lastSaveError = error;
+        console.error('[save] result insert failed:', error.message || error, error);
+        setStatus('Could not save result. ' + (error.message || ''), '#e07070');
+      } else {
+        console.info('[save] result saved');
+        setStatus('Saved to your profile ✓', 'var(--gold, #c9a84c)');
+      }
+    } catch (e) {
+      window._lastSaveError = e;
+      console.error('[save] result save threw:', e);
+      setStatus('Could not save result.', '#e07070');
+    }
   };
 
 })();
