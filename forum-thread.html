@@ -242,13 +242,16 @@ body.light-mode .img-status{color:#4a6080;}
 
     const [{ data: t, error }, { data: votes }] = await Promise.all([
       sb.from('forum_threads').select('*').eq('id', threadId).single(),
-      currentUser ? sb.from('forum_votes').select('reply_id, vote').eq('user_id', currentUser.id).not('reply_id', 'is', null) : Promise.resolve({ data: [] })
+      currentUser ? sb.from('forum_votes').select('thread_id, reply_id, vote').eq('user_id', currentUser.id) : Promise.resolve({ data: [] })
     ]);
 
     if (error || !t) { renderNotFound(); return; }
     thread = t;
 
-    if (votes) votes.forEach(v => { userVotes[v.reply_id] = v.vote; });
+    if (votes) votes.forEach(v => {
+      if (v.reply_id) userVotes[v.reply_id] = v.vote;
+      if (v.thread_id) userVotes[v.thread_id] = v.vote;
+    });
 
     document.title = `${t.title} - 77 Scenarios Forum`;
     document.getElementById('page-h1').textContent = t.title;
@@ -472,13 +475,17 @@ body.light-mode .img-status{color:#4a6080;}
           <span class="thread-author-name">${escHtml(username)}</span>
           <span title="${dateStr}">${dateStr}</span>
           <span>💬 ${t.reply_count} ${t.reply_count === 1 ? 'reply' : 'replies'}</span>
-          <span>▲ ${t.vote_score}</span>
+          <span style="display:inline-flex;align-items:center;gap:6px;">
+            <button class="vote-btn up ${userVotes[t.id]===1?'active':''}" id="tvote-up" onclick="handleThreadVote(1)" style="font-size:12px;padding:2px 6px;" title="Upvote thread">▲</button>
+            <span id="thread-vote-score" style="color:var(--cream);min-width:20px;text-align:center;">${t.vote_score}</span>
+            <button class="vote-btn down ${userVotes[t.id]===-1?'active':''}" id="tvote-down" onclick="handleThreadVote(-1)" style="font-size:12px;padding:2px 6px;" title="Downvote thread">▼</button>
+          </span>
           ${currentUser && currentUser.id === t.user_id ? `<button class="reply-action-btn" style="margin-left:8px;" onclick="deleteThread('${t.id}')">Delete thread</button>` : ''}
         </div>
       </div>
       ${Array.isArray(t.tags) && t.tags.length ? `<div class="thread-tags r">${t.tags.map(tg => `<a class="tag-chip" href="/forum?tag=${encodeURIComponent(tg)}">#${escHtml(tg)}</a>`).join('')}</div>` : ''}
       <div class="post-body r">${escHtml(t.body)}</div>
-      ${t.image_url ? `<div class="post-image r"><img src="${escHtml(t.image_url)}" alt="thread image" loading="lazy" onclick="openLightbox(this.src)"></div>` : ''}
+      ${t.image_url ? `<div class="post-image r" id="thread-post-img"><img src="${escHtml(t.image_url)}" alt="thread image" loading="lazy" onclick="openLightbox(this.src)" onerror="document.getElementById('thread-post-img').style.display='none';console.warn('Thread image failed to load (check Supabase Storage bucket is public):',' ${escHtml(t.image_url)}')"></div>` : ''}
       <div class="replies-label r" id="replies-label">Replies</div>
       <div class="reply-list r" id="reply-list"></div>
       <div id="reply-form-wrap" class="r"></div>
@@ -523,7 +530,7 @@ body.light-mode .img-status{color:#4a6080;}
         </div>
         ${r.is_deleted
           ? '<div class="reply-deleted">This reply has been deleted.</div>'
-          : `<div class="reply-body">${escHtml(r.body)}</div>${r.image_url ? `<div class="reply-image"><img src="${escHtml(r.image_url)}" alt="reply image" loading="lazy" onclick="openLightbox(this.src)"></div>` : ''}`}
+          : `<div class="reply-body">${escHtml(r.body)}</div>${r.image_url ? `<div class="reply-image" id="rimg-${r.id}"><img src="${escHtml(r.image_url)}" alt="reply image" loading="lazy" onclick="openLightbox(this.src)" onerror="var p=document.getElementById('rimg-${r.id}');if(p)p.style.display='none';"></div>` : ''}`}
         ${isOwn && !r.is_deleted ? `<div class="reply-actions"><button class="reply-action-btn" onclick="deleteReply('${r.id}')">Delete</button></div>` : ''}
       `;
 
@@ -537,27 +544,85 @@ body.light-mode .img-status{color:#4a6080;}
 
   async function handleReplyVote(replyId, v) {
     if (!currentUser) { window.location.href = '/login'; return; }
+    // Guard against concurrent double-clicks
+    const btns = document.querySelectorAll(`.vote-btn[data-rid="${replyId}"]`);
+    if (btns.length && btns[0].dataset.voting) return;
+    btns.forEach(b => b.dataset.voting = '1');
+
     const existing = userVotes[replyId];
+    const scoreEl = document.getElementById(`rvs-${replyId}`);
+    const currentScore = parseInt(scoreEl?.textContent || '0');
 
-    if (existing === v) {
-      await sb.from('forum_votes').delete().eq('user_id', currentUser.id).eq('reply_id', replyId);
-      delete userVotes[replyId];
-    } else {
+    // Optimistic update
+    const newVote = existing === v ? null : v;
+    let scoreDelta = 0;
+    if (existing === v) { scoreDelta = -v; delete userVotes[replyId]; }
+    else { scoreDelta = v - (existing || 0); userVotes[replyId] = v; }
+    if (scoreEl) scoreEl.textContent = currentScore + scoreDelta;
+    btns.forEach(btn => btn.classList.toggle('active', userVotes[replyId] === parseInt(btn.dataset.v)));
+
+    try {
       if (existing) await sb.from('forum_votes').delete().eq('user_id', currentUser.id).eq('reply_id', replyId);
-      const { error } = await sb.from('forum_votes').insert({ user_id: currentUser.id, reply_id: replyId, vote: v });
-      if (error) { console.error('Vote error:', errStr(error)); return; }
-      userVotes[replyId] = v;
-    }
-
-    const { data } = await sb.from('forum_replies').select('vote_score').eq('id', replyId).single();
-    if (data) {
-      const el = document.getElementById(`rvs-${replyId}`);
-      if (el) el.textContent = data.vote_score;
-      document.querySelectorAll(`.vote-btn[data-rid="${replyId}"]`).forEach(btn => {
-        btn.classList.toggle('active', userVotes[replyId] === parseInt(btn.dataset.v));
-      });
+      if (newVote !== null) {
+        const { error } = await sb.from('forum_votes').insert({ user_id: currentUser.id, reply_id: replyId, vote: newVote });
+        if (error) throw error;
+      }
+      // Sync actual score from DB (handles server-side trigger)
+      const { data } = await sb.from('forum_replies').select('vote_score').eq('id', replyId).single();
+      if (data && scoreEl) scoreEl.textContent = data.vote_score;
+    } catch (e) {
+      // Revert optimistic update on error
+      if (existing) userVotes[replyId] = existing; else delete userVotes[replyId];
+      if (scoreEl) scoreEl.textContent = currentScore;
+      btns.forEach(btn => btn.classList.toggle('active', userVotes[replyId] === parseInt(btn.dataset.v)));
+      console.error('Reply vote error:', errStr(e));
+    } finally {
+      btns.forEach(b => delete b.dataset.voting);
     }
   }
+
+  async function handleThreadVote(v) {
+    if (!currentUser) { window.location.href = '/login'; return; }
+    const upBtn = document.getElementById('tvote-up');
+    const downBtn = document.getElementById('tvote-down');
+    const scoreEl = document.getElementById('thread-vote-score');
+    if (upBtn?.dataset.voting) return;
+    [upBtn, downBtn].forEach(b => b && (b.dataset.voting = '1'));
+
+    const tid = thread.id;
+    const existing = userVotes[tid];
+    const currentScore = parseInt(scoreEl?.textContent || '0');
+
+    // Optimistic update
+    const newVote = existing === v ? null : v;
+    let scoreDelta = 0;
+    if (existing === v) { scoreDelta = -v; delete userVotes[tid]; }
+    else { scoreDelta = v - (existing || 0); userVotes[tid] = v; }
+    if (scoreEl) scoreEl.textContent = currentScore + scoreDelta;
+    if (upBtn) upBtn.classList.toggle('active', userVotes[tid] === 1);
+    if (downBtn) downBtn.classList.toggle('active', userVotes[tid] === -1);
+
+    try {
+      if (existing) await sb.from('forum_votes').delete().eq('user_id', currentUser.id).eq('thread_id', tid);
+      if (newVote !== null) {
+        const { error } = await sb.from('forum_votes').insert({ user_id: currentUser.id, thread_id: tid, vote: newVote });
+        if (error) throw error;
+      }
+      // Sync actual score from DB
+      const { data } = await sb.from('forum_threads').select('vote_score').eq('id', tid).single();
+      if (data && scoreEl) scoreEl.textContent = data.vote_score;
+    } catch (e) {
+      // Revert on error
+      if (existing) userVotes[tid] = existing; else delete userVotes[tid];
+      if (scoreEl) scoreEl.textContent = currentScore;
+      if (upBtn) upBtn.classList.toggle('active', userVotes[tid] === 1);
+      if (downBtn) downBtn.classList.toggle('active', userVotes[tid] === -1);
+      console.error('Thread vote error:', errStr(e));
+    } finally {
+      [upBtn, downBtn].forEach(b => b && delete b.dataset.voting);
+    }
+  }
+  window.handleThreadVote = handleThreadVote;
 
   function renderReplyForm() {
     const wrap = document.getElementById('reply-form-wrap');

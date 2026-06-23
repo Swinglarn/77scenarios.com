@@ -661,39 +661,48 @@ body.light-mode .img-status{color:#4a6080;}
     if (!currentUser) { window.location.href = '/login'; return; }
     const isThread = threadId !== null;
     const key = isThread ? threadId : replyId;
+
+    // Guard against concurrent double-clicks
+    const btns = isThread
+      ? document.querySelectorAll(`.vote-btn[data-id="${key}"]`)
+      : document.querySelectorAll(`.vote-btn[data-rid="${key}"]`);
+    if (btns.length && btns[0].dataset.voting) return;
+    btns.forEach(b => b.dataset.voting = '1');
+
     const existing = userVotes[key];
+    const scoreEl = isThread ? document.getElementById(`vs-${key}`) : null;
+    const currentScore = parseInt(scoreEl?.textContent || '0');
 
-    if (existing === v) {
-      // Remove vote
+    // Optimistic update — instant feedback before DB round-trip
+    const newVote = existing === v ? null : v;
+    let scoreDelta = 0;
+    if (existing === v) { scoreDelta = -v; delete userVotes[key]; }
+    else { scoreDelta = v - (existing || 0); userVotes[key] = v; }
+    if (scoreEl) scoreEl.textContent = currentScore + scoreDelta;
+    btns.forEach(btn => btn.classList.toggle('active', userVotes[key] === parseInt(btn.dataset.v)));
+
+    try {
       const col = isThread ? 'thread_id' : 'reply_id';
-      await sb.from('forum_votes').delete().eq('user_id', currentUser.id).eq(col, key);
-      delete userVotes[key];
-    } else {
-      if (existing) {
-        // Remove old vote first
-        const col = isThread ? 'thread_id' : 'reply_id';
-        await sb.from('forum_votes').delete().eq('user_id', currentUser.id).eq(col, key);
+      if (existing) await sb.from('forum_votes').delete().eq('user_id', currentUser.id).eq(col, key);
+      if (newVote !== null) {
+        const payload = { user_id: currentUser.id, vote: newVote };
+        if (isThread) payload.thread_id = key; else payload.reply_id = key;
+        const { error } = await sb.from('forum_votes').insert(payload);
+        if (error) throw error;
       }
-      // Add new vote
-      const payload = { user_id: currentUser.id, vote: v };
-      if (isThread) payload.thread_id = threadId; else payload.reply_id = replyId;
-      const { error } = await sb.from('forum_votes').insert(payload);
-      if (error) { console.error('Vote error:', errStr(error)); return; }
-      userVotes[key] = v;
-    }
-
-    // Refresh score display
-    if (isThread) {
-      const { data } = await sb.from('forum_threads').select('vote_score').eq('id', threadId).single();
-      if (data) {
-        const el = document.getElementById(`vs-${threadId}`);
-        if (el) el.textContent = data.vote_score;
-        // Update button states
-        document.querySelectorAll(`.vote-btn[data-id="${threadId}"]`).forEach(btn => {
-          const bv = parseInt(btn.dataset.v);
-          btn.classList.toggle('active', userVotes[threadId] === bv);
-        });
+      // Sync actual score from DB (handles server-side trigger recomputation)
+      if (isThread) {
+        const { data } = await sb.from('forum_threads').select('vote_score').eq('id', key).single();
+        if (data && scoreEl) scoreEl.textContent = data.vote_score;
       }
+    } catch (e) {
+      // Revert optimistic update on error
+      if (existing) userVotes[key] = existing; else delete userVotes[key];
+      if (scoreEl) scoreEl.textContent = currentScore;
+      btns.forEach(btn => btn.classList.toggle('active', userVotes[key] === parseInt(btn.dataset.v)));
+      console.error('Vote error:', errStr(e));
+    } finally {
+      btns.forEach(b => delete b.dataset.voting);
     }
   }
 
