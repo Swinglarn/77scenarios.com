@@ -658,7 +658,7 @@ body.light-mode .img-status{color:#4a6080;}
     const replyUsername = profile?.username || 'Anonymous';
 
     const { error } = await sb.from('forum_replies').insert({
-      thread_id: threadId, user_id: currentUser.id, body, author_username: replyUsername, image_url: imageUrl
+      thread_id: threadId, user_id: currentUser.id, body: body || null, author_username: replyUsername, image_url: imageUrl
     });
 
     if (error) {
