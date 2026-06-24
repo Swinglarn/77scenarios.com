@@ -106,19 +106,19 @@
       <div class="cc-icon">✉</div>
       <div class="cc-title">General</div>
       <div class="cc-desc">Preguntas sobre la prueba, los tipos o el sitio.</div>
-      <a href="mailto:77scenarios@gmail.com" class="cc-email">77scenarios@gmail.com</a>
+      <a href="mailto:77scenarios@webbitar.com" class="cc-email">77scenarios@webbitar.com</a>
     </div>
     <div class="contact-card">
       <div class="cc-icon">&#9900;</div>
       <div class="cc-title">Privacidad y datos</div>
       <div class="cc-desc">Acceso a datos, solicitudes de eliminación y consultas de GDPR.</div>
-      <a href="mailto:77scenarios@gmail.com" class="cc-email">77scenarios@gmail.com</a>
+      <a href="mailto:privacy@webbitar.com" class="cc-email">privacy@webbitar.com</a>
     </div>
     <div class="contact-card">
       <div class="cc-icon">&#9670;</div>
       <div class="cc-title">Comercial</div>
       <div class="cc-desc">Asociaciones, licencias, prensa y publicidad.</div>
-      <a href="mailto:77scenarios@gmail.com" class="cc-email">77scenarios@gmail.com</a>
+      <a href="mailto:77scenarios@webbitar.com" class="cc-email">77scenarios@webbitar.com</a>
     </div>
   </div>
 
@@ -206,7 +206,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
   // Fallback: open mailto
   const sub = encodeURIComponent(`[77 Scenarios Contact] ${topic}`);
   const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nTopic: ${topic}\n\n${message}`);
-  window.location.href = `mailto:77scenarios@gmail.com?subject=${sub}&body=${body}`;
+  window.location.href = `mailto:77scenarios@webbitar.com?subject=${sub}&body=${body}`;
   btn.textContent = 'Enviar mensaje \u2192';
   btn.disabled = false;
 });
