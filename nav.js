@@ -889,7 +889,7 @@
       '  </div>',
       '</div>',
       '<div class="footer-bottom">',
-      '  <span class="footer-copy">&copy; ' + year + ' 77 Scenarios. ' + t.copy + '</span>',
+      '  <span class="footer-copy">&copy; ' + year + ' 77 Scenarios. ' + t.copy + ' &middot; <a href="https://webbitar.com" target="_blank" style="color:inherit;text-decoration:none;opacity:0.8;">Hosted &amp; owned by Webbitar</a></span>',
       '  <span class="footer-bottom-links"><a href="' + prefix + '/privacy">' + t.priv + '</a> &middot; <a href="' + prefix + '/terms">' + t.trm + '</a></span>',
       '</div>'
     ].join('');
