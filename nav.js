@@ -588,6 +588,7 @@
     '': [
       { href: '/',                    label: 'Take the Test'  },
       { href: '/types',               label: '16 Types'       },
+      { href: '/rarity',              label: 'Rarity'         },
       { href: '/letters',             label: '8 Letters'      },
       { href: '/cognitive-functions', label: 'Functions'      },
       { href: '/compatibility',       label: 'Compatibility'  },
@@ -761,6 +762,7 @@
       cta: 'Take the test →',
       explore: 'Explore',
       types: '16 Types',
+      rarity: 'Type Rarity',
       letters: '8 Letters',
       fns: 'Functions',
       compat: 'Compatibility',
@@ -868,6 +870,7 @@
       '    <div class="footer-col">',
       '      <div class="footer-col-head">' + t.explore + '</div>',
       '      <a href="' + prefix + '/types">' + t.types + '</a>',
+      (t.rarity ? '      <a href="' + prefix + '/rarity">' + t.rarity + '</a>' : ''),
       '      <a href="' + prefix + '/letters">' + t.letters + '</a>',
       '      <a href="' + prefix + '/cognitive-functions">' + t.fns + '</a>',
       '      <a href="' + prefix + '/compatibility">' + t.compat + '</a>',
