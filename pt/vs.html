@@ -897,7 +897,7 @@ const fnMeta = {
 /* ============================================================
    DATA
    ============================================================ */
-var vsData = {};
+/* vsData is loaded from /data/vs-db.js (declared there) */
   // Externalized to /data/vs-db.js
 
 /* ============================================================
@@ -1011,7 +1011,10 @@ function renderPage(data) {
 
   // Silently correct URL if user landed on a mirror slug (e.g. /vs/enfp-enfj -> /vs/enfj-enfp)
   const canonicalSlug = `${data.typeA.toLowerCase()}-${data.typeB.toLowerCase()}`;
-  if (slug !== canonicalSlug) {
+  const _p = window.location.pathname.split('/').filter(Boolean);
+  const _vi = _p.indexOf('vs');
+  const currentSlug = (_vi !== -1 ? _p[_vi + 1] : _p[1]) || '';
+  if (currentSlug && currentSlug !== canonicalSlug) {
     window.history.replaceState(null, '', `/pt/vs/${canonicalSlug}`);
   }
 

@@ -175,10 +175,67 @@ function slug(n){return n.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-
 /* ── RENDER ── */
 function getPathSlug(){
   const parts=location.pathname.split('/').filter(Boolean);
-  // expects /character/slug
-  if(parts[0]==='character'&&parts[1])return parts[1];
+  // expects /character/slug or /ja/character/slug
+  const charIdx = parts.indexOf('character');
+  if(charIdx!==-1 && parts[charIdx+1]) return parts[charIdx+1];
   return null;
 }
+
+/* Cognitive-function metadata (restored — was referenced but undefined) */
+const fnStack={
+  INTJ:{fns:['Ni','Te','Fi','Se'],labels:['Dominant','Auxiliary','Tertiary','Inferior']},
+  INTP:{fns:['Ti','Ne','Si','Fe'],labels:['Dominant','Auxiliary','Tertiary','Inferior']},
+  ENTJ:{fns:['Te','Ni','Se','Fi'],labels:['Dominant','Auxiliary','Tertiary','Inferior']},
+  ENTP:{fns:['Ne','Ti','Fe','Si'],labels:['Dominant','Auxiliary','Tertiary','Inferior']},
+  INFJ:{fns:['Ni','Fe','Ti','Se'],labels:['Dominant','Auxiliary','Tertiary','Inferior']},
+  INFP:{fns:['Fi','Ne','Si','Te'],labels:['Dominant','Auxiliary','Tertiary','Inferior']},
+  ENFJ:{fns:['Fe','Ni','Se','Ti'],labels:['Dominant','Auxiliary','Tertiary','Inferior']},
+  ENFP:{fns:['Ne','Fi','Te','Si'],labels:['Dominant','Auxiliary','Tertiary','Inferior']},
+  ISTJ:{fns:['Si','Te','Fi','Ne'],labels:['Dominant','Auxiliary','Tertiary','Inferior']},
+  ISFJ:{fns:['Si','Fe','Ti','Ne'],labels:['Dominant','Auxiliary','Tertiary','Inferior']},
+  ESTJ:{fns:['Te','Si','Ne','Fi'],labels:['Dominant','Auxiliary','Tertiary','Inferior']},
+  ESFJ:{fns:['Fe','Si','Ne','Ti'],labels:['Dominant','Auxiliary','Tertiary','Inferior']},
+  ISTP:{fns:['Ti','Se','Ni','Fe'],labels:['Dominant','Auxiliary','Tertiary','Inferior']},
+  ISFP:{fns:['Fi','Se','Ni','Te'],labels:['Dominant','Auxiliary','Tertiary','Inferior']},
+  ESTP:{fns:['Se','Ti','Fe','Ni'],labels:['Dominant','Auxiliary','Tertiary','Inferior']},
+  ESFP:{fns:['Se','Fi','Te','Ni'],labels:['Dominant','Auxiliary','Tertiary','Inferior']}
+};
+const fnFullName={
+  Ni:'Introverted Intuition',Ne:'Extraverted Intuition',
+  Si:'Introverted Sensing',Se:'Extraverted Sensing',
+  Ti:'Introverted Thinking',Te:'Extraverted Thinking',
+  Fi:'Introverted Feeling',Fe:'Extraverted Feeling'
+};
+const fnDesc={
+  Ni:'Pattern recognition beneath the surface. Synthesises disparate inputs into a singular, long-range vision or conviction.',
+  Ne:'Possibility generation. Connects unrelated ideas, sees multiple angles, and thrives on what could be rather than what is.',
+  Si:'Accumulated experience as a reference library. Notices what changed, what was promised, what the precedent established.',
+  Se:'Full engagement with the immediate physical world. Reads the room, responds to what is actually happening right now.',
+  Ti:'Internal logical architecture. Builds precise frameworks to understand how things actually work, independent of consensus.',
+  Te:'Systematic external organisation. Moves from conclusion to plan to execution; measures effectiveness by results.',
+  Fi:'Deep personal value framework. Judges from within, holds firm convictions about what is authentic and what is not.',
+  Fe:'Social attunement. Reads emotional tone, manages group harmony, and is energised by genuine human connection.'
+};
+
+/* type descriptions (restored) */
+const typeDesc={
+  INTJ:'Strategic, independent, and driven by a long-range internal vision. INTJs build systems, solve problems at scale, and trust their own judgment above all else. They are rare and often misunderstood - appearing cold when they are simply focused.',
+  INTP:'Precise, conceptual, and endlessly curious about how things actually work. INTPs build internal logical frameworks and are uncomfortable committing to conclusions before they have been fully examined. Their intelligence is quiet but unusually deep.',
+  ENTJ:'Decisive, commanding, and oriented toward large-scale impact. ENTJs see inefficiency and immediately move to correct it. They lead by default, not by desire - the role simply fits the way they process the world.',
+  ENTP:'Restless, argumentative, and allergic to boredom. ENTPs generate ideas faster than most people can process them, and are most alive when debating, improvising, or building something no one has seen before.',
+  INFJ:'Visionary and private. INFJs have an unusually clear sense of where things are heading, and quietly orient themselves and others toward it. Their empathy is real but operates from insight, not emotion alone.',
+  INFP:'Values-driven and deeply internal. INFPs hold firm ethical convictions that are entirely their own and rarely up for debate. They are not passive - their gentleness conceals a strong will about what matters.',
+  ENFJ:'Warm, purposeful, and naturally attuned to what others need to become. ENFJs lead through relationship. They rarely operate without a vision of the collective good they are working toward.',
+  ENFP:'Energetic, expressive, and deeply idealistic. ENFPs see possibility everywhere and in everyone. Their challenge is focus - their enthusiasm is real but broad.',
+  ISTJ:'Reliable, thorough, and committed to established standards. ISTJs do what they said they would do, on time, correctly. They are the backbone of any institution that actually functions.',
+  ISFJ:'Loyal, attentive, and quietly devoted to the people they care about. ISFJs notice what others miss and remember everything that mattered. Their care is expressed through action, not words.',
+  ESTJ:'Organised, decisive, and built for execution. ESTJs get things done - correctly, efficiently, and on schedule. They have little patience for process without outcome.',
+  ESFJ:'Conscientious, warm, and motivated by harmony. ESFJs work hard to make sure everyone is included, comfortable, and heard. Community and responsibility are central to who they are.',
+  ISTP:'Analytical, self-contained, and extraordinarily competent with physical systems. ISTPs figure out how things work and then use that knowledge with quiet precision.',
+  ISFP:'Gentle, present, and led entirely by personal values. ISFPs move through the world on their own terms, with a quiet intensity that rarely announces itself.',
+  ESTP:'Action-oriented, pragmatic, and fully alive in the present moment. ESTPs read situations fast and respond faster. Theory bores them; results define them.',
+  ESFP:'Spontaneous, warm, and genuinely delighted by people and experience. ESFPs bring energy into every room and take care of the humans in it without making it complicated.'
+};
 
 function renderPage(){
   const ps=getPathSlug();

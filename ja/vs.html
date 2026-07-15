@@ -897,7 +897,7 @@ const fnMeta = {
 /* ============================================================
    DATA
    ============================================================ */
-var vsData = {};
+/* vsData is loaded from /data/vs-db.js (declared there) */
   // Externalized to /data/vs-db.js
 
 /* ============================================================
@@ -1057,7 +1057,10 @@ function renderPage(data) {
 
   // Silently correct URL if user landed on a mirror slug (e.g. /vs/enfp-enfj -> /vs/enfj-enfp)
   const canonicalSlug = `${data.typeA.toLowerCase()}-${data.typeB.toLowerCase()}`;
-  if (slug !== canonicalSlug) {
+  const _p = window.location.pathname.split('/').filter(Boolean);
+  const _vi = _p.indexOf('vs');
+  const currentSlug = (_vi !== -1 ? _p[_vi + 1] : _p[1]) || '';
+  if (currentSlug && currentSlug !== canonicalSlug) {
     window.history.replaceState(null, '', `/ja/vs/${canonicalSlug}`);
   }
 
@@ -1339,7 +1342,7 @@ function renderIndex() {
    ============================================================ */
 (function init() {
   const parts = window.location.pathname.split('/').filter(Boolean);
-  const slug = parts[1] || '';
+  const vsIdx = parts.indexOf('vs'); const slug = (vsIdx !== -1 ? parts[vsIdx + 1] : parts[1]) || '';
   // Try canonical slug, then reversed (e.g. intj-infp stored as infp-intj)
   const reversedSlug = slug.split('-').length === 2 ? slug.split('-').reverse().join('-') : '';
   const data = vsData[slug] || vsData[reversedSlug] || null;

@@ -17,7 +17,25 @@
     {
       "source": "/compatibility/:pair",
       "destination": "/compatibility-pair"
-    }
+    },
+
+    { "source": "/es/character/:slug", "destination": "/es/character" },
+    { "source": "/es/types/:slug", "destination": "/es/type" },
+    { "source": "/es/letters/:slug", "destination": "/es/letter" },
+    { "source": "/es/vs/:slug", "destination": "/es/vs" },
+    { "source": "/es/compatibility/:pair", "destination": "/es/compatibility-pair" },
+
+    { "source": "/ja/character/:slug", "destination": "/ja/character" },
+    { "source": "/ja/types/:slug", "destination": "/ja/type" },
+    { "source": "/ja/letters/:slug", "destination": "/ja/letter" },
+    { "source": "/ja/vs/:slug", "destination": "/ja/vs" },
+    { "source": "/ja/compatibility/:pair", "destination": "/ja/compatibility-pair" },
+
+    { "source": "/pt/character/:slug", "destination": "/pt/character" },
+    { "source": "/pt/types/:slug", "destination": "/pt/type" },
+    { "source": "/pt/letters/:slug", "destination": "/pt/letter" },
+    { "source": "/pt/vs/:slug", "destination": "/pt/vs" },
+    { "source": "/pt/compatibility/:pair", "destination": "/pt/compatibility-pair" }
   ],
   "headers": [
     {
