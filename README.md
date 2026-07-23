@@ -20,6 +20,57 @@ robots.txt      → Search engine crawl rules
 
 ---
 
+## Build tooling: pre-rendering
+
+The template routes `/vs/:slug`, `/compatibility/:pair`, `/types/:slug` and
+`/letters/:slug` used to build their content in the browser with JavaScript, so
+the raw server response was an empty shell. Crawlers and no-JS users saw almost
+nothing, which got the site flagged for low value content. `scripts/prerender.mjs`
+fixes this by rendering each route with a headless browser and writing the fully
+built HTML to static files (`vs/<slug>.html`, `compatibility/<pair>.html`,
+`types/<slug>.html`, `letters/<slug>.html`). It also bakes the full character
+grid into `archive.html` and regenerates `sitemap.xml` from the files on disk.
+
+These generated files are committed to the repo. Vercel has no build step, so
+you re-run the script locally whenever the underlying data changes and commit
+the result.
+
+```bash
+# one time
+npm install            # installs the headless browser (puppeteer)
+
+# regenerate all pre-rendered pages + sitemap
+npm run prerender
+
+# regenerate only the sitemap from the files on disk
+npm run sitemap
+```
+
+How it stays correct:
+
+- Slugs are read from the data itself (`data/vs-db.js`, `data/compat-db.js`, the
+  `types` and `letters` objects) and cross-checked against `sitemap.xml`. A
+  mismatch fails the build.
+- Each template's `render()` returns early when it sees a `data-prerendered`
+  root, so the baked content is not rebuilt on top of itself. Interactive parts
+  (the vs quiz, the archive filters and modal, reveal animations, the page
+  transition overlay) still run on the client exactly as before.
+- Reveal elements are gated behind a `js` class on `<html>`, so they are fully
+  visible in the raw HTML but still animate for visitors with JavaScript on.
+
+Verify a build without deploying:
+
+```bash
+node scripts/serve.mjs           # local server that mimics Vercel routing (port 8800)
+node scripts/verify.mjs          # Googlebot-UA word counts, HTTP status, meta, JSON-LD
+```
+
+The `/ja`, `/pt` and `/es` language variants are currently untranslated. They
+are excluded from the sitemap and carry a `noindex` tag (`scripts/noindex-langs.mjs`)
+until real translations exist. The pages are kept, not deleted.
+
+---
+
 ## Deploying to GitHub + Vercel
 
 ### Step 1 — Create a GitHub repository

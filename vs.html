@@ -1151,6 +1151,15 @@ function renderIndex() {
   const data = vsData[slug] || vsData[reversedSlug] || null;
   const root = document.getElementById('vs-root');
 
+  // Pre-rendered guard: content is already baked into the page. Skip the
+  // innerHTML/meta injection and only re-attach the interactive quiz.
+  if (root && root.getAttribute('data-prerendered')) {
+    if (data) {
+      try { mountQuiz(data.quiz, data.typeA, data.typeB, document.getElementById('quiz-mount')); } catch (e) {}
+    }
+    return;
+  }
+
   if (!slug) {
     renderIndex();
     return;

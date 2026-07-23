@@ -1,0 +1,14 @@
+{
+  "name": "77scenarios-prerender",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Local build tooling for 77scenarios.com. Pre-renders the client-side template routes into static HTML for crawlers and no-JS users, then regenerates the sitemap from disk. Output is committed to the repo; Vercel has no build step.",
+  "scripts": {
+    "prerender": "node scripts/prerender.mjs",
+    "sitemap": "node scripts/prerender.mjs --sitemap-only"
+  },
+  "devDependencies": {
+    "puppeteer": "^24.10.0"
+  }
+}
