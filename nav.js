@@ -1485,4 +1485,194 @@
     window.location.href = href;
   }, true); // capture phase
 
+  // ── ANIMATED BACKGROUND ──────────────────────────────────────────────────────
+  // Cosmic backdrop, dark mode only. The page paints exactly as before; video is
+  // only fetched once the page is loaded and idle, so LCP / Core Web Vitals are
+  // untouched. The three clips run as one continuous playlist: each crossfades
+  // into the next ~1.4s before it ends, so there is never a visible loop seam.
+  (function() {
+    var CLIPS  = ['/bg/bg-nightsky.mp4', '/bg/bg-milkyway.mp4', '/bg/bg-galaxy.mp4'];
+    var POSTER = '/bg/bg-poster.jpg';
+    var FADE   = 1200;  // crossfade duration, ms
+    var LEAD   = 1.4;   // seconds before a clip ends to start the crossfade
+
+    var mqMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var conn     = navigator.connection || {};
+    var saveData = conn.saveData === true;
+
+    var stage, veil, layers = [], active = 0, idx = 0;
+    var moving = false, started = false, posterShown = false;
+
+    function isLight() { return document.body.classList.contains('light-mode'); }
+
+    function buildCSS() {
+      if (document.getElementById('bgfx-css')) return;
+      var s = document.createElement('style');
+      s.id = 'bgfx-css';
+      s.textContent = [
+        // body must be transparent or its own background paints over the backdrop.
+        // html keeps its colour, so the page looks identical before video loads.
+        'body:not(.light-mode){background:transparent !important;}',
+        '#bgfx{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;background:#0c0e10;contain:layout style paint;}',
+        '#bgfx .bgfx-media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%;opacity:0;transition:opacity ' + FADE + 'ms linear;will-change:opacity;backface-visibility:hidden;transform:translateZ(0);}',
+        '#bgfx .bgfx-media.on{opacity:.35;}',
+        // Atmospheric veil. Tuned by measuring the brightest frame pixel against
+        // the dimmest body text and the gold accent: at these values even the
+        // worst case clears WCAG AA (4.5:1) everywhere on the page.
+        '#bgfx .bgfx-veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,14,16,.60) 0%,rgba(12,14,16,.46) 42%,rgba(12,14,16,.72) 100%);}',
+        '#bgfx .bgfx-vig{position:absolute;inset:0;background:radial-gradient(125% 95% at 50% 40%,transparent 42%,rgba(12,14,16,.60) 100%);}',
+        // light mode keeps its clean white page
+        'body.light-mode #bgfx{display:none !important;}',
+        '@media (max-width:720px){#bgfx .bgfx-media.on{opacity:.33;}}'
+      ].join('');
+      document.head.appendChild(s);
+    }
+
+    function buildDOM() {
+      stage = document.createElement('div');
+      stage.id = 'bgfx';
+      stage.setAttribute('aria-hidden', 'true');
+      for (var i = 0; i < 2; i++) {
+        var v = document.createElement('video');
+        v.className = 'bgfx-media';
+        v.muted = true; v.defaultMuted = true; v.setAttribute('muted', '');
+        v.playsInline = true;
+        v.setAttribute('playsinline', ''); v.setAttribute('webkit-playsinline', '');
+        v.preload = 'none';
+        v.loop = false;
+        v.tabIndex = -1;
+        // Driven by media events, not rAF: timeupdate keeps firing in throttled
+        // tabs, and 'ended' is the safety net so playback can never stall on a
+        // frozen frame if the crossfade was missed.
+        v.addEventListener('timeupdate', function() { maybeAdvance(this); });
+        v.addEventListener('ended', function() { if (this === layers[active] && !moving) advance(); });
+        stage.appendChild(v);
+        layers.push(v);
+      }
+      veil = document.createElement('div'); veil.className = 'bgfx-veil'; stage.appendChild(veil);
+      var vig = document.createElement('div'); vig.className = 'bgfx-vig'; stage.appendChild(vig);
+      document.body.appendChild(stage);
+    }
+
+    // Static fallback: reduced-motion users, or when autoplay is refused
+    // (iOS Low Power Mode). Still adds colour, just no movement.
+    function showPoster() {
+      if (posterShown || !stage) return;
+      posterShown = true;
+      var p = document.createElement('div');
+      p.className = 'bgfx-media';
+      p.style.backgroundImage = 'url(' + POSTER + ')';
+      p.style.backgroundSize = 'cover';
+      p.style.backgroundPosition = '50% 45%';
+      stage.insertBefore(p, veil);
+      requestAnimationFrame(function() { p.classList.add('on'); });
+    }
+
+    function pauseAll() {
+      for (var i = 0; i < layers.length; i++) { try { layers[i].pause(); } catch (e) {} }
+    }
+
+    function resume() {
+      if (!started || isLight() || document.hidden) return;
+      var c = layers[active];
+      // If the clip finished while the tab was hidden, move on instead of
+      // restarting it from the top.
+      if (c.ended) { advance(); return; }
+      var p = c.play(); if (p && p.catch) p.catch(function() {});
+    }
+
+    // Stagger downloads: the next clip is fetched only once the current one is
+    // playing, so we never pull all three at the same time.
+    function preloadNext() {
+      var nxt = layers[1 - active];
+      var src = CLIPS[(idx + 1) % CLIPS.length];
+      if (nxt.getAttribute('src') !== src) {
+        nxt.preload = 'auto';
+        nxt.setAttribute('src', src);
+        nxt.load();
+      }
+    }
+
+    function advance() {
+      if (moving) return;
+      moving = true;
+      var cur = layers[active], nxt = layers[1 - active];
+      var go = function() {
+        try { nxt.currentTime = 0; } catch (e) {}
+        var p = nxt.play(); if (p && p.catch) p.catch(function() {});
+        void nxt.offsetWidth;
+        nxt.classList.add('on');
+        cur.classList.remove('on');
+        setTimeout(function() {
+          try { cur.pause(); } catch (e) {}
+          active = 1 - active;
+          idx = (idx + 1) % CLIPS.length;
+          moving = false;
+          preloadNext();
+        }, FADE + 60);
+      };
+      if (nxt.readyState >= 3) go();
+      else nxt.addEventListener('canplay', go, { once: true });
+    }
+
+    function maybeAdvance(v) {
+      if (moving || v !== layers[active]) return;
+      if (v.duration && isFinite(v.duration) && (v.duration - v.currentTime) <= LEAD) advance();
+    }
+
+    function start() {
+      if (started || isLight()) return;
+      started = true;
+      var first = layers[0];
+      first.preload = 'auto';
+      first.setAttribute('src', CLIPS[0]);
+      first.addEventListener('canplay', function() {
+        if (isLight()) return;
+        var p = first.play();
+        if (p && p.catch) p.catch(function() { showPoster(); });
+        void first.offsetWidth;
+        first.classList.add('on');
+        preloadNext();
+      }, { once: true });
+      first.addEventListener('error', showPoster, { once: true });
+      first.load();
+    }
+
+    function watchTheme() {
+      if (!window.MutationObserver) return;
+      new MutationObserver(function() {
+        if (isLight()) pauseAll();
+        else if (!started) { if (!saveData && !mqMotion.matches) start(); }
+        else resume();
+      }).observe(document.body, { attributes: true, attributeFilter: ['class'] });
+    }
+
+    function boot() {
+      if (!document.body) return;
+      buildCSS();
+      buildDOM();
+      watchTheme();
+
+      document.addEventListener('visibilitychange', function() {
+        if (document.hidden) pauseAll(); else resume();
+      });
+
+      if (isLight()) return;   // light mode: clean white page, nothing to load
+      if (saveData) return;    // Save-Data on: stay on the plain dark background
+      if (mqMotion.matches) { showPoster(); return; }
+
+      // Defer the video until after load + idle so it never competes with
+      // content, fonts or ads for bandwidth, and never affects LCP.
+      var kick = function() {
+        if (window.requestIdleCallback) requestIdleCallback(start, { timeout: 2500 });
+        else setTimeout(start, 900);
+      };
+      if (document.readyState === 'complete') kick();
+      else window.addEventListener('load', kick, { once: true });
+    }
+
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+    else boot();
+  })();
+
 })();
