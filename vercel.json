@@ -93,6 +93,12 @@
   ],
   "redirects": [
     {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.77scenarios.com" }],
+      "destination": "https://77scenarios.com/$1",
+      "permanent": true
+    },
+    {
       "source": "/store",
       "destination": "https://store.77scenarios.com",
       "permanent": true
