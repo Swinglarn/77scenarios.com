@@ -1203,8 +1203,18 @@
     'enfj-enfp','enfj-infp','entj-entp','esfj-infp','esfp-intp','enfj-isfp'
   ];
 
+  // Strip accents and the handful of letters NFD does not decompose, so
+  // "Beyonce" matches "Beyoncé" and "Zlatan Ibrahimovic" matches the real
+  // spelling. Must stay identical to the slug() in archive.html, otherwise
+  // search links land on a redirect instead of the canonical page.
+  function fold(n) {
+    return n.normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+      .replace(/\u0142/g,'l').replace(/\u00f8/g,'o').replace(/\u00e6/g,'ae')
+      .replace(/\u0111/g,'d').replace(/\u00df/g,'ss').toLowerCase();
+  }
+
   function slugSrch(n) {
-    return n.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+    return fold(n).replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
   }
 
   function buildStaticIndex() {
@@ -1233,9 +1243,12 @@
     if (_srchIdx !== null) { cb(); return; }
     var idx = buildStaticIndex();
     fetch(prefix + '/archive').then(function(r){ return r.text(); }).then(function(html) {
-      var re = /\{name:`([^`]+)`,ctx:`([^`]+)`,type:'([A-Z]{4})'/g, m;
+      // ctx is quoted with either a backtick or a single quote in the data, so
+      // capture the opening quote and back-reference it. Matching only one
+      // style silently dropped 108 characters from search.
+      var re = /\{name:`([^`]+)`,ctx:(['`])(.*?)\2,type:'([A-Z]{4})'/g, m;
       while ((m = re.exec(html)) !== null) {
-        idx.push({title:m[1], sub:m[3]+' · '+m[2], url:'/character/'+slugSrch(m[1]), cat:'character'});
+        idx.push({title:m[1], sub:m[4]+' · '+m[3], url:'/character/'+slugSrch(m[1]), cat:'character'});
       }
       _srchIdx = idx; cb();
     }).catch(function(){ _srchIdx = idx; cb(); });
@@ -1243,11 +1256,13 @@
 
   function runSearch(q) {
     if (!q || !_srchIdx) return [];
-    var ql = q.toLowerCase().trim();
+    var ql = fold(q).trim();
     if (!ql) return [];
     var out = [];
     _srchIdx.forEach(function(item) {
-      var tl = item.title.toLowerCase(), sl = item.sub.toLowerCase();
+      // folded forms are cached on the item, computed once per session
+      if (item._t === undefined) { item._t = fold(item.title); item._s = fold(item.sub); }
+      var tl = item._t, sl = item._s;
       var sc = 0;
       if (tl === ql) sc = 100;
       else if (tl.startsWith(ql)) sc = 85;

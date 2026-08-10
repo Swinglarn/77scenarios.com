@@ -874,9 +874,7 @@ kw:['Rick Sanchez MBTI','Rick and Morty personality type','ENTP character']},
 desc:`Morty Smith is ISFP. He is dragged across the multiverse on adventures he did not choose, watches things that would destroy most people, and emerges from each one with his core intact - not because he is resilient in the ISTP sense but because the Fi dominant has a foundation that the experiences keep failing to remove. He is scared constantly and acts anyway, not from courage but from the ISFP's constitutive feature: what matters is what is right, right now, for the person in front of him. His anger at Rick is always genuine, his forgiveness is always genuine, and neither cancels the other. By the later seasons he has become genuinely dangerous - the ISFP who absorbed enough damage to learn what weapons look like - but the original decency never left. It just knows more now.`,
 kw:['Morty Smith MBTI','Rick and Morty ISFP','ISFP animated character']},
 
-{name:`Bojack Horseman`,ctx:`BoJack Horseman`,type:'ENFP',cat:'Fiction',
-desc:`BoJack Horseman is ENFP whose development arrested at the moment his mother told him he was not special enough to justify her love. Every self-destructive pattern in the show flows from an ENFP who received the message early that his authentic self was insufficient, and has been performing and self-medicating around that wound ever since. His warmth is real. His connection to Todd, Diane, Princess Carolyn is genuine ENFP warmth breaking through the cynicism he has built as armour. The tragedy is that he can see himself with total clarity: "I need you to tell me that I'm a good person." He knows. The ENFP shadow is not blindness - it is knowing exactly what is wrong and doing it anyway, because the alternative requires trusting that change is possible.`,
-kw:['BoJack Horseman MBTI','BoJack personality type','ENFP self-destruction']},
+
 
 {name:`Diane Nguyen`,ctx:`BoJack Horseman`,type:'INFP',cat:'Fiction',
 desc:`Diane Nguyen is INFP. She writes about injustice because she cannot stop feeling it, which is the gift and the curse of the dominant Fi: the world's suffering is not abstract, it is personal and constant and impossible to look away from. Her arc across BoJack Horseman is the INFP's hardest lesson - that you cannot save everyone, that you cannot write your way into being okay, and that helping yourself is not the same as giving up on the things that matter. Her move to Houston, her antidepressants, her happiness with Guy: none of it means the world stopped being wrong. It means she found a way to be in it anyway. That is what INFP growth actually looks like, and the show is brave enough to let it look ordinary.`,
@@ -1702,7 +1700,7 @@ desc:`Lisa Simpson is INTJ. She is eight years old, lives in Springfield, and ha
 kw:['Lisa Simpson MBTI','Simpsons personality type','INTJ animated character']},
 
 {name:`Marge Simpson`,ctx:'The Simpsons',type:'ISFJ',cat:'Fiction',
-desc:`Marge is ISFJ. She is the load-bearing wall of the family: consistent, warm, and willing to absorb enormous amounts of chaos to keep the household stable. Her rare moments of rebellion - the gambling episode, the painting - show a rich interior life that the role of wife and mother does not have space for.`,
+desc:`Marge Simpson is ISFJ. Matt Groening drew her in James L. Brooks's outer office in 1987 and named her after his own mother, Margaret. She first appeared on The Tracey Ullman Show on 19 April 1987 and has been voiced by Julie Kavner ever since. The blue tower of hair is borrowed partly from Bride of Frankenstein and partly from his mother's sixties beehive, and it makes her identifiable in silhouette. She holds the household together, and the show has spent thirty-five years quietly noting what that costs her.`,
 kw:['Marge Simpson MBTI','Simpsons personality type','ISFJ animated character']},
 
 // ── TV - SOUTH PARK / FAMILY GUY ─────────────────────────────────
@@ -1711,7 +1709,7 @@ desc:`Cartman is ENTJ without ethics. He is the most strategically intelligent c
 kw:['Eric Cartman MBTI','South Park personality type','ENTJ villain character']},
 
 {name:`Stewie Griffin`,ctx:'Family Guy',type:'ENTJ',cat:'Fiction',
-desc:`Stewie is ENTJ operating from a comprehensive framework of world domination that he executes with genuinely impressive strategic competence. His relationship with Brian is the ENTJ's deepest: the one person who takes him seriously as an intellectual equal. His recent turn toward vulnerability is the ENTJ learning that the vision needs to include other people.`,
+desc:`Stewie Griffin is ENTJ. Seth MacFarlane created, designed and voices him, and gave a one-year-old the vocabulary of a Rex Harrison performance and the ambitions of a Bond villain. He debuted on 31 January 1999 in Family Guy's first episode, spent several seasons attempting matricide and world domination with elaborate engineering, and gradually became something stranger and funnier: a small megalomaniac whose closest relationship is with the family dog. MacFarlane won an Emmy for the voice in the show's first year.`,
 kw:['Stewie Griffin MBTI','Family Guy personality type','ENTJ infant character']},
 
 // ── TV - COMMUNITY / 30 ROCK ─────────────────────────────────────
@@ -1720,11 +1718,11 @@ desc:`Abed Nadir is INTP. He processes social reality through the Ti framework o
 kw:['Abed Nadir MBTI','Community personality type','INTP TV character']},
 
 {name:`Jeff Winger`,ctx:'Community',type:'ENTP',cat:'Fiction',
-desc:`Jeff is ENTP who has spent his entire life using charm and argumentation to avoid being responsible for anything. Greendale forces him into genuine relationships, and the show is about an ENTP discovering that the life he built to avoid commitment is lonelier than commitment would have been.`,
+desc:`Jeff Winger is ENTP. He is the disbarred lawyer at the centre of Community, played by Joel McHale across six seasons, who lost his licence because his Columbia bachelor's degree turned out to be an invention. He arrives at Greendale to earn a real one, fakes a Spanish study group to get close to Britta Perry, and accidentally acquires six friends he spends the rest of the series pretending not to need. Dan Harmon based him on himself, and specifically on the arrogance and emotional distance he had before he learned the value of other people.`,
 kw:['Jeff Winger MBTI','Community personality type','ENTP TV character']},
 
 {name:`Liz Lemon`,ctx:'30 Rock',type:'INTP',cat:'Fiction',
-desc:`Liz Lemon is INTP. She is the most competent person at TGS and the least socially functional. Her relationships fail because she retreats into systems thinking at the exact moment emotional availability is required. Her arc is an INTP learning that the cheese cake and the sweatpants are not actually the problem.`,
+desc:`Liz Lemon is INTP. Created and played by Tina Fey across seven seasons of 30 Rock, she is the head writer of a struggling NBC sketch show, sandwiched between a corporate executive who wants to optimise her and a star who wants to be driven to the airport. Fey based her on herself roughly five or six years earlier, in her own Saturday Night Live years, and won a Primetime Emmy, two Golden Globes, four SAG awards and a TCA award for the role - the first person to take that particular set for a single performance.`,
 kw:['Liz Lemon MBTI','30 Rock personality type','INTP female character']},
 
 {name:`Jack Donaghy`,ctx:'30 Rock',type:'ENTJ',cat:'Fiction',
@@ -1786,7 +1784,7 @@ kw:['Toph Beifong MBTI','Avatar personality type','ESTP earthbender character']}
 
 // ── TV - PEAKY BLINDERS / OZARK ───────────────────────────────────
 {name:`Tommy Shelby`,ctx:'Peaky Blinders',type:'INTJ',cat:'Fiction',
-desc:`Tommy Shelby is INTJ. He rebuilt himself after the war around a comprehensive vision of power and security, and has been executing it with remorseless patience ever since. His emotional life is almost entirely suppressed - grief expressed as strategy, love expressed as protection. He plans ten moves ahead and experiences the present as an obstacle to the plan.`,
+desc:`Tommy Shelby is INTJ. Steven Knight's Peaky Blinders opens in Birmingham in 1919 with a bookmaker who was a sergeant major in the Birmingham Rifles, dug tunnels under the German lines at the Somme, and came back with a Distinguished Conduct Medal, a Military Medal and a set of injuries nobody could see. Played by Cillian Murphy across six series, he takes a Small Heath street gang and turns it into a legitimate company and then a seat in Parliament, and the opium is the only thing that ever gets the war out of his head.`,
 kw:['Tommy Shelby MBTI','Peaky Blinders personality type','INTJ TV character']},
 
 {name:`Marty Byrde`,ctx:'Ozark',type:'INTJ',cat:'Fiction',
@@ -1794,7 +1792,7 @@ desc:`Marty Byrde is INTJ. He solves one impossible problem by creating a slight
 kw:['Marty Byrde MBTI','Ozark personality type','INTJ TV character']},
 
 {name:`Wendy Byrde`,ctx:'Ozark',type:'ENTJ',cat:'Fiction',
-desc:`Wendy Byrde is ENTJ. She is the more naturally dominant of the pair - Marty solves, Wendy commands. Her escalation across the series is an ENTJ discovering that the appetite for control, once given full permission, does not stop at a reasonable place. She ends up somewhere neither she nor the audience fully expected.`,
+desc:`Wendy Byrde is ENTJ. Played by Laura Linney across four seasons of Ozark, she begins as the wife who agreed to the money laundering and ends as the one running it. She was a political consultant before the children, having worked Barack Obama's Illinois Senate campaigns and Bobby Rush's congressional races, and the show's real subject is what happens when that skill set is pointed at a cartel instead of an electorate. By the time she has her own brother killed to protect the operation, she is no longer anybody's accomplice.`,
 kw:['Wendy Byrde MBTI','Ozark personality type','ENTJ TV character']},
 
 // ── TV - MR. ROBOT ────────────────────────────────────────────────
@@ -1809,7 +1807,7 @@ kw:['Frasier Crane MBTI','Frasier personality type','ENTP TV character']},
 
 // ── TV - MODERN FAMILY / ARRESTED DEVELOPMENT ────────────────────
 {name:`Phil Dunphy`,ctx:'Modern Family',type:'ENFP',cat:'Fiction',
-desc:`Phil Dunphy is ENFP. He is genuinely enthusiastic about everything - real estate, magic, his children - and expresses his love through a continuous stream of ideas and gestures. His goofiness is not a defence mechanism but authentic warmth. He is the ENFP who never developed cynicism, which is either a gift or a limitation depending on the situation.`,
+desc:`Phil Dunphy is ENFP. Ty Burrell played him across eleven seasons of Modern Family and won two Emmys for it. He is a realtor, a magician, a former Fresno State cheerleader and the author of an unpublished body of wisdom he calls Phil's-osophy. He practises what he terms peerenting, swears exclusively in food, and has been saying he will fix that step since 2009. The show's quiet argument is that he is a much better father than anyone in it gives him credit for.`,
 kw:['Phil Dunphy MBTI','Modern Family personality type','ENFP TV character']},
 
 {name:`Michael Bluth`,ctx:'Arrested Development',type:'ISTJ',cat:'Fiction',
@@ -1818,7 +1816,7 @@ kw:['Michael Bluth MBTI','Arrested Development personality type','ISTJ TV charac
 
 // ── TV - ARCHER ───────────────────────────────────────────────────
 {name:`Sterling Archer`,ctx:'Archer',type:'ESTP',cat:'Fiction',
-desc:`Sterling Archer is ESTP at full destructive expression. He is the best field agent at ISIS and the worst colleague in any context. His mother is Malory, which explains everything. His competence and his damage are inseparable: both come from a childhood spent learning that performance was the only language available.`,
+desc:`Sterling Archer is ESTP. Sterling Malory Archer, codename Duchess, is the alcoholic and spectacularly self-absorbed field agent at the centre of Adam Reed's animated series Archer, voiced by H. Jon Benjamin since the 2009 pilot. He works for a New York spy agency run by his own mother, Malory, was raised by the family valet until he was five, and has never been given a straight answer about his father. He is also, irritatingly for everyone around him, extremely good at the job.`,
 kw:['Sterling Archer MBTI','Archer personality type','ESTP spy character']},
 
 // ── THE WITCHER ───────────────────────────────────────────────────
@@ -1832,23 +1830,23 @@ kw:['Ciri MBTI','The Witcher personality type','ISFP character']},
 
 // ── VIDEO GAMES ───────────────────────────────────────────────────
 {name:`Solid Snake`,ctx:'Metal Gear Solid series',type:'ISTP',cat:'Fiction',
-desc:`Solid Snake is ISTP. He is defined by physical and tactical mastery, operates alone by preference, and is emotionally laconic in exactly the way that makes his rare moments of vulnerability devastating. His relationship with Big Boss - father, enemy, mirror - is the ISTP's core wound: competence given to you by someone whose shadow you can never fully escape.`,
+desc:`Solid Snake is ISTP. Hideo Kojima created him for Konami in 1987, and the Metal Gear series has spent nearly forty years explaining that almost nothing about him is his own. His real name is David. He is one of three clones produced by a project called Les Enfants Terribles, engineered from Big Boss's genetic material to manufacture a perfect soldier, and Liquid Snake is his twin. He infiltrates Shadow Moses, finds out what he is, and keeps working, and by Metal Gear Solid 4 the engineering has aged him into an old man in his forties.`,
 kw:['Solid Snake MBTI','Metal Gear personality type','ISTP video game character']},
 
 {name:`Lara Croft`,ctx:'Tomb Raider series',type:'ISTP',cat:'Fiction',
-desc:`Lara Croft is ISTP. She is physically exceptional, problem-solves in real time, and has a directness about danger that comes from genuine competence rather than recklessness. The reboot trilogy is interesting because it traces how the ISTP's natural self-sufficiency develops: from fragile survivor to someone who has chosen what she is.`,
+desc:`Lara Croft is ISTP. Designed by Toby Gard at Core Design in Derby and released in Tomb Raider in 1996, she became the most recognised female character in video games - a Guinness record she still holds, alongside more than 2,300 magazine covers. The original backstory made her an earl's daughter who survived a Himalayan plane crash at twenty-one and walked away from her inheritance. The 2013 reboot threw that out and rebuilt her as a UCL archaeology student who becomes lethal because an island gives her no other option. Both versions solve problems the same way: hands, tools, and no discussion.`,
 kw:['Lara Croft MBTI','Tomb Raider personality type','ISTP female video game character']},
 
 {name:`Cloud Strife`,ctx:'Final Fantasy VII',type:'INFP',cat:'Fiction',
-desc:`Cloud Strife is INFP buried under borrowed identity. He constructed a persona from someone else's memories to survive the trauma of his own inadequacy, and the game is the story of peeling that back. His compassion - for Aerith, for the Planet - is always more present than his sword, even when he is pretending otherwise.`,
+desc:`Cloud Strife is INFP. The protagonist of Final Fantasy VII, released by Square in 1997 and designed by Tetsuya Nomura, he introduces himself as a former SOLDIER First Class working as a mercenary for an eco-terrorist cell. Almost none of it is true. He was an infantryman who never made SOLDIER, and the identity he is presenting was assembled by his own mind out of his dead friend Zack Fair after Shinra's experiments broke it. Critics still describe him as one of the earliest genuinely unreliable narrators in games.`,
 kw:['Cloud Strife MBTI','Final Fantasy VII personality type','INFP video game character']},
 
 {name:`Sephiroth`,ctx:'Final Fantasy VII',type:'INTJ',cat:'Fiction',
-desc:`Sephiroth is INTJ. He built a comprehensive model of the universe - his destiny, humanity's purpose, the Planet's fate - and executes it with complete conviction. His fall from revered hero to catastrophic villain is the INTJ shadow: a framework built on false premises that cannot be revised because revision would require the entire architecture to collapse.`,
+desc:`Sephiroth is INTJ. Designed by Tetsuya Nomura as a deliberate contrast to Cloud and named after the sephirot of the Kabbalistic Tree of Life, he was Shinra's most powerful SOLDIER before he found the records explaining what he was. Shinra had injected him with cells from an extraterrestrial organism called Jenova while he was still a foetus. He burned Nibelheim to the ground, disappeared, and returned with a plan to wound the planet badly enough that its healing energy would gather in one place, where he could absorb it and become a god.`,
 kw:['Sephiroth MBTI','Final Fantasy VII personality type','INTJ villain video game']},
 
 {name:`Nathan Drake`,ctx:'Uncharted series',type:'ESTP',cat:'Fiction',
-desc:`Nate Drake is ESTP. He improvises his way through impossible situations, reads physical environments instantaneously, and turns danger into entertainment through a combination of skill and charm. His self-mythologising - the Drake connection, the stories he tells himself - is the ESTP making the adventure larger than it is because he needs it to be.`,
+desc:`Nathan Drake is ESTP. The lead of Naughty Dog's Uncharted series since Drake's Fortune in 2007, voiced and performance-captured by Nolan North, he is a treasure hunter who claims descent from Francis Drake and wears his ancestor's ring with the motto sic parvis magna, greatness from small beginnings. The claim turns out to be invented, and so is the surname; he was born Morgan. Four games of climbing, falling, shooting and improvising later, A Thief's End retires him. Tom Holland played him in the 2022 film.`,
 kw:['Nathan Drake MBTI','Uncharted personality type','ESTP adventurer character']},
 
 {name:`Ezio Auditore`,ctx:`Assassin's Creed II`,type:'ESFP',cat:'Fiction',
@@ -1856,19 +1854,19 @@ desc:`Ezio Auditore is ESFP. He began as a charming Florentine nobleman and beca
 kw:["Ezio Auditore MBTI","Assassin's Creed personality type","ESFP video game character"]},
 
 {name:`Leon S. Kennedy`,ctx:'Resident Evil series',type:'ISTJ',cat:'Fiction',
-desc:`Leon S. Kennedy is ISTJ. His duty comes before his fear, his training before his feelings, and his commitment to the people he is protecting before his own survival. Across every Resident Evil game, he enters a nightmare and does his job with methodical precision. His deadpan competence under horror is the ISTJ at full expression.`,
+desc:`Leon S. Kennedy is ISTJ. Capcom introduced him in Resident Evil 2 in 1998 as a rookie police officer arriving late for his first shift in Raccoon City, on the night the city stopped being a city. He does the job anyway. Twenty-five years and several titles later he is a government special agent, sent alone into a Spanish village in Resident Evil 4 to retrieve the president's daughter, and the constant across all of it is a man who was handed a procedure and has been executing it under impossible conditions ever since.`,
 kw:['Leon Kennedy MBTI','Resident Evil personality type','ISTJ video game character']},
 
 {name:`Trevor Philips`,ctx:'GTA V',type:'ENTP',cat:'Fiction',
-desc:`Trevor Philips is ENTP without the charm or the ethics. He is genuinely smart, genuinely unpredictable, and fuelled by a grievance engine that never stops. His violence is conceptual as much as physical - he makes arguments with his fists. His relationship with Michael is the ENTP who cannot forgive the person who got out.`,
+desc:`Trevor Philips is ENTP. Rockstar North's most disliked and most defended creation, played by Steven Ogg in Grand Theft Auto V in 2013, he is a discharged Canadian military pilot running a meth and weapons operation out of a trailer in the desert. Dan Houser described him as driven by desire and resentment. What makes him work is not the violence but the intelligence underneath it: Trevor is the only one of the three protagonists who has thought clearly about what they all actually are, and the only one who refuses to pretend otherwise.`,
 kw:['Trevor Philips MBTI','GTA V personality type','ENTP video game character']},
 
 {name:`John Marston`,ctx:'Red Dead Redemption',type:'ISTJ',cat:'Fiction',
-desc:`John Marston is ISTJ. He is trying to pay his debts, protect his family, and do what is required of him - even when what is required of him is deeply wrong. His tragedy is that the system he is trying to satisfy will never be satisfied. He does his duty to the end. The end is not kind.`,
+desc:`John Marston is ISTJ. The protagonist of Red Dead Redemption, released by Rockstar in 2010 and voiced by Rob Wiethoff, he was orphaned at birth, nearly lynched for stealing at twelve, and raised into an outlaw gang by Dutch van der Linde. By 1911 he has a wife, a son and a ranch, and federal agents take his family hostage to force him to hunt down the men he used to ride with. He does the job exactly as instructed, and it does not save him.`,
 kw:['John Marston MBTI','Red Dead Redemption personality type','ISTJ video game character']},
 
 {name:`2B`,ctx:'NieR: Automata',type:'INFJ',cat:'Fiction',
-desc:`2B is INFJ. She was built to maintain discipline and execute orders, and performs that function with total competence - while quietly refusing the emotional numbness it requires. Her relationship with 9S is the INFJ's most characteristic situation: a bond that deepens precisely because it should not, and cannot be severed because it is already too real.`,
+desc:`2B is INFJ. YoRHa No. 2 Type B is a combat android in Nier: Automata, PlatinumGames' 2017 collaboration with the director Yoko Taro, which has now sold more than ten million copies. She fights alongside a scanner unit called 9S and is prohibited, like all YoRHa androids, from having emotions. Her real designation is 2E: executioner. She has been assigned to kill 9S every time he discovers the truth about humanity, and she has done it many times, and he has always known.`,
 kw:['2B NieR MBTI','NieR Automata personality type','INFJ android character']},
 
 {name:`Aloy`,ctx:'Horizon Zero Dawn',type:'ISTJ',cat:'Fiction',
@@ -1876,11 +1874,11 @@ desc:`Aloy is ISTJ. She approaches the post-apocalyptic world with systematic cu
 kw:['Aloy MBTI','Horizon Zero Dawn personality type','ISTJ female video game character']},
 
 {name:`Princess Zelda`,ctx:'The Legend of Zelda series',type:'INFJ',cat:'Fiction',
-desc:`Zelda is INFJ. She carries the burden of foresight - she sees the darkness coming before anyone else does - and acts on it quietly, through preparation and sacrifice rather than confrontation. Her sealing of Ganondorf, her disguises, her long games across lifetimes are INFJ strategy: she works with the grain of history rather than against it.`,
+desc:`Princess Zelda is INFJ. Shigeru Miyamoto named her after Zelda Fitzgerald and put her in the 1986 original, where she scattered the Triforce of Wisdom rather than let Ganon take it - which is, on inspection, an act rather than a rescue. Across nearly forty years she has been Sheik, she has been the pirate Tetra, she held Calamity Ganon alone for a hundred years in Breath of the Wild, and in Tears of the Kingdom she turned herself into a dragon and gave up her own mind to restore the Master Sword.`,
 kw:['Princess Zelda MBTI','Legend of Zelda personality type','INFJ video game character']},
 
 {name:`Commander Shepard`,ctx:'Mass Effect series',type:'ENTJ',cat:'Fiction',
-desc:`Shepard is ENTJ. Regardless of player choices, the character's structural role is commander: assembling the team, making the call, owning the outcome. The Paragon path is ENTJ idealism applied to galactic diplomacy. The Renegade path is ENTJ pragmatism applied without mercy. Both are the same type. The Reapers never stood a chance.`,
+desc:`Commander Shepard is ENTJ. The player character of BioWare's Mass Effect trilogy, released between 2007 and 2013, Shepard is an N7 marine who becomes the first human Spectre, dies at the start of the second game, is rebuilt, and ends the third by deciding the fate of every civilisation in the galaxy. Almost everything about them is customisable - gender, face, name, class, service record - but the role is not. Shepard is written as the person who assembles an impossible coalition and holds it together by force of will, which is a job description more than a personality.`,
 kw:['Commander Shepard MBTI','Mass Effect personality type','ENTJ video game character']},
 
 {name:`Agent 47`,ctx:'Hitman series',type:'ISTP',cat:'Fiction',
@@ -1935,7 +1933,7 @@ desc:`Catherine the Great is ENTJ. She seized power in a coup, modernised Russia
 kw:['Catherine the Great MBTI','Catherine the Great personality type','ENTJ empress']},
 
 {name:`Queen Victoria`,ctx:'British monarch 1837-1901',type:'ISTJ',cat:'Historical',wiki:'Queen_Victoria',
-desc:`Queen Victoria is ISTJ. She defined the moral character of an entire era through consistent personal example: duty, family, mourning observed to the point of excess. Her grief at Albert's death was the ISTJ's most extreme expression - the loss of the person who organised her interior life - and she never fully recovered from it.`,
+desc:`Queen Victoria is ISTJ. Born at Kensington Palace in 1819 and raised under a suffocating protocol her mother's household called the Kensington System, she inherited the throne at eighteen and held it for 63 years and 216 days. She married Albert in 1840, had nine children, and when he died of typhoid in 1861 she wore black for the remaining forty years of her life and withdrew so completely that Britain briefly developed a republican movement. She also kept a journal almost every day, and the volume of her correspondence is close to unmanageable.`,
 kw:['Queen Victoria MBTI','Queen Victoria personality type','ISTJ British monarch']},
 
 {name:`Henry VIII`,ctx:'King of England',type:'ESTP',cat:'Historical',wiki:'Henry_VIII',
@@ -1955,7 +1953,7 @@ desc:`Voltaire is ENTP. He wrote seventy volumes of satirical, philosophical, an
 kw:['Voltaire MBTI','Voltaire personality type','ENTP Enlightenment philosopher']},
 
 {name:`Simone de Beauvoir`,ctx:'French existentialist philosopher and author',type:'INTJ',cat:'Historical',wiki:'Simone_de_Beauvoir',
-desc:`Beauvoir is INTJ. The Second Sex is a comprehensive analysis of how femininity is constructed rather than natural - a systematic dismantling of a framework using the tools of that framework's own logic. Her personal life was lived as a philosophical experiment in freedom, with all the consistency and occasional coldness that implies.`,
+desc:`Simone de Beauvoir is INTJ. Born in Paris in 1908, she passed the agregation in philosophy in 1929 at twenty-one, the youngest ever to do so, placing second to Jean-Paul Sartre - the beginning of a partnership that lasted fifty-one years without marriage. The Second Sex, published in 1949, did something no philosophical work had done before: it treated women's situation as a systematic construction rather than a natural fact, and compressed the argument into one line that has outlived most of the century's philosophy. She wrote novels too, and won the Prix Goncourt for one of them.`,
 kw:['Simone de Beauvoir MBTI','de Beauvoir personality type','INTJ feminist philosopher']},
 
 {name:`Ada Lovelace`,ctx:'English mathematician, first computer programmer',type:'INTJ',cat:'Historical',wiki:'Ada_Lovelace',
@@ -1967,7 +1965,7 @@ desc:`Rosa Parks is ISFJ. Her refusal to give up her seat on the Montgomery bus 
 kw:['Rosa Parks MBTI','Rosa Parks personality type','ISFJ civil rights figure']},
 
 {name:`Malcolm X`,ctx:'American civil rights leader',type:'ENTJ',cat:'Historical',wiki:'Malcolm_X',
-desc:`Malcolm X is ENTJ. He rebuilt himself completely - from street criminal to Nation of Islam minister to independent internationalist - each time constructing a more comprehensive framework for the same core conviction: Black dignity is non-negotiable. His willingness to revise his positions when the evidence demanded it is the ENTJ's intellectual honesty.`,
+desc:`Malcolm X is ENTJ. Born Malcolm Little in Omaha in 1925, orphaned in effect by six, imprisoned at twenty for burglary, he converted to the Nation of Islam in a cell and walked out in 1952 into the most consequential organising career of his generation. He took the Nation from roughly 1,200 members to somewhere between 50,000 and 100,000, broke with it in 1964, remade his position entirely after the hajj, and was assassinated in Harlem in February 1965 at thirty-nine. The Autobiography, written with Alex Haley, appeared the same year and has never gone out of print.`,
 kw:['Malcolm X MBTI','Malcolm X personality type','ENTJ civil rights leader']},
 
 {name:`Simón Bolívar`,ctx:'South American revolutionary leader',type:'ENTJ',cat:'Historical',wiki:'Simón_Bolívar',
@@ -1975,7 +1973,7 @@ desc:`Bolívar is ENTJ. He liberated six South American countries from Spanish r
 kw:['Simon Bolivar MBTI','Bolivar personality type','ENTJ South American revolutionary']},
 
 {name:`Sun Tzu`,ctx:'Chinese military strategist',type:'INTJ',cat:'Historical',wiki:'Sun_Tzu',
-desc:`Sun Tzu is INTJ. The Art of War is a comprehensive systematic framework for conflict - not as a guide to violence but to the conditions under which violence becomes unnecessary. Its enduring relevance is the INTJ quality: the principles are sufficiently abstracted from their specific context that they apply everywhere.`,
+desc:`Sun Tzu is INTJ. Born Sun Wu and known by an honorific that simply means Master Sun, he is traditionally placed in the sixth century BC as a general in the service of King Helu of Wu, and credited with The Art of War - thirteen short chapters that have outlived every state involved in them. Whether he existed at all is genuinely disputed; the earliest parts of the text probably postdate his supposed lifetime by a century. What survives is the reasoning: win before fighting, know both sides, and treat war as an expense to be minimised rather than a stage to perform on.`,
 kw:['Sun Tzu MBTI','Sun Tzu personality type','INTJ military strategist']},
 
 {name:`Florence Nightingale`,ctx:'British nurse and social reformer',type:'INTJ',cat:'Historical',wiki:'Florence_Nightingale',
@@ -1983,7 +1981,7 @@ desc:`Florence Nightingale is INTJ. She did not become famous for bedside manner
 kw:['Florence Nightingale MBTI','Nightingale personality type','INTJ nursing reformer']},
 
 {name:`Ho Chi Minh`,ctx:'Vietnamese revolutionary leader',type:'INTJ',cat:'Historical',wiki:'Ho_Chi_Minh',
-desc:`Ho Chi Minh is INTJ. He spent decades building the ideological and organisational framework for Vietnamese independence, moving between countries, adapting to every context, and maintaining his long-term vision regardless of the immediate setback. His patience was strategic: he intended to outlast every opponent.`,
+desc:`Ho Chi Minh is INTJ. Born Nguyen Sinh Cung in 1890 in rural Nghe An province, he left Vietnam in 1911 as a galley hand and spent three decades abroad - Marseille, Brazil, New York, a London hotel kitchen, Paris, Moscow, Canton - assembling the political machinery for an independence he would not declare until 1945. Almost everything he is remembered for was built in exile, under dozens of names, decades before there was anything to show for it. That is the INTJ pattern at its most extreme: a single long-range objective, pursued through whatever instrument the decade happened to offer.`,
 kw:['Ho Chi Minh MBTI','Ho Chi Minh personality type','INTJ revolutionary leader']},
 
 {name:`Niccolò Machiavelli`,ctx:'Italian Renaissance political philosopher',type:'INTJ',cat:'Historical',wiki:'Niccolò_Machiavelli',
@@ -1996,23 +1994,23 @@ desc:`Bob Marley is INFP. His music is a direct expression of a spiritual and po
 kw:['Bob Marley MBTI','Bob Marley personality type','INFP reggae musician']},
 
 {name:`Janis Joplin`,ctx:'American rock and blues singer',type:'ENFP',cat:'Music',wiki:'Janis_Joplin',
-desc:`Joplin is ENFP. Her voice was total commitment - there was no distance between her and the song. Her social vulnerability and her stage power came from the same place: she could not perform anything she did not feel. Her self-destruction is the ENFP shadow: the interior life that creates the art is also the one that cannot survive without support.`,
+desc:`Janis Joplin is ENFP. Born in Port Arthur, Texas in 1943 to a Texaco engineer and a college registrar, she was mocked out of that town so thoroughly that she later said her schoolmates laughed her out of the state. She found Bessie Smith and Lead Belly on other people's record players, joined Big Brother and the Holding Company in June 1966, and broke open at Monterey the following summer. She was dead of a heroin overdose at twenty-seven, three days after recording Mercedes Benz, with Pearl unfinished.`,
 kw:['Janis Joplin MBTI','Joplin personality type','ENFP rock singer']},
 
 {name:`Stevie Wonder`,ctx:'American singer-songwriter',type:'ENFP',cat:'Music',wiki:'Stevie_Wonder',
-desc:`Stevie Wonder is ENFP. His discography is almost incomprehensibly varied - soul, funk, jazz, pop, gospel - because he follows the idea wherever it goes. His activism and his music are expressions of the same vision: the world can be more beautiful than it currently is, and he is going to demonstrate that through song.`,
+desc:`Stevie Wonder is ENFP. Stevland Hardaway Judkins, born six weeks premature in Saginaw in 1950 and blinded in the incubator, signed to Motown at eleven and topped the Hot 100 at thirteen with Fingertips, still the youngest artist ever to do it. On his twenty-first birthday he let the contract lapse and renegotiated for creative control, then made Music of My Mind, Talking Book, Innervisions, Fulfillingness' First Finale and Songs in the Key of Life in four years. He holds twenty-five Grammys, more than any other solo artist.`,
 kw:['Stevie Wonder MBTI','Stevie Wonder personality type','ENFP Motown musician']},
 
 {name:`Tina Turner`,ctx:'American rock and soul singer',type:'ESTP',cat:'Music',wiki:'Tina_Turner',
-desc:`Tina Turner is ESTP. Her stage presence is pure physical and emotional dominance - she performs at an intensity that most performers cannot sustain and she has been doing it since the 1960s. Her survival of her relationship with Ike Turner is an ESTP act: she assessed the situation, built her resources quietly, and left.`,
+desc:`Tina Turner is ESTP. Born Anna Mae Bullock in Brownsville, Tennessee in 1939 and raised in Nutbush, she talked her way onto a stage in East St Louis in the fifties and spent the next two decades as the most physically extraordinary performer in American music and a woman being beaten by her husband. She walked out in Dallas in 1976 with almost nothing, gave up everything in the divorce except her name, and at forty-four released Private Dancer and sold ten million copies. She died in Switzerland in 2023.`,
 kw:['Tina Turner MBTI','Tina Turner personality type','ESTP rock soul singer']},
 
 {name:`Madonna`,ctx:'American pop singer and cultural icon',type:'ENTJ',cat:'Music',wiki:'Madonna_(entertainer)',
-desc:`Madonna is ENTJ. She has reinvented herself every five years for forty years not from identity anxiety but from a comprehensive understanding of the cultural landscape and a refusal to be defined by what she did last. Her controversies are strategic as much as genuine: she understood provocation as a form of control.`,
+desc:`Madonna is ENTJ. Madonna Louise Ciccone arrived in New York in 1978 with almost nothing, studied under Martha Graham, and released her first single in 1982. What followed was less a career than a forty-year campaign of controlled reinvention: Like a Virgin, the Blond Ambition tour, the Sex book, Ray of Light. In 1992 she signed a deal with Time Warner that gave her a sixty million dollar advance and the highest royalty rate in the industry, and used it to run her own label. She is the best-selling female artist in history and the first woman to take a billion dollars from touring.`,
 kw:['Madonna MBTI','Madonna personality type','ENTJ pop icon']},
 
 {name:`Stevie Nicks`,ctx:'American singer-songwriter, Fleetwood Mac',type:'ENFP',cat:'Music',wiki:'Stevie_Nicks',
-desc:`Stevie Nicks is ENFP. Her lyrics inhabit a mythic personal landscape - witches, landslides, thunder - that is entirely consistent across fifty years of work because it is genuinely hers. Her relationship with Lindsey Buckingham, the Mac, the audience is the ENFP's central problem: she loves most fully when the situation is most unstable.`,
+desc:`Stevie Nicks is ENFP. Stephanie Lynn Nicks joined Fleetwood Mac on the last day of 1974 as half of a package deal, wrote Rhiannon and Landslide for the first album and Dreams for the second, and watched Rumours turn the collapse of every relationship in the band into the best-selling record of its era. Her solo debut Bella Donna went to number one in 1981. She survived cocaine, then eight years lost to the Klonopin prescribed to keep her off it, and became the first woman inducted into the Rock and Roll Hall of Fame twice.`,
 kw:['Stevie Nicks MBTI','Stevie Nicks personality type','ENFP Fleetwood Mac singer']},
 
 {name:`Frank Ocean`,ctx:'American R&B singer-songwriter',type:'INFP',cat:'Music',wiki:'Frank_Ocean',
@@ -2020,23 +2018,23 @@ desc:`Frank Ocean is INFP. He waited four years between Channel Orange and Blond
 kw:['Frank Ocean MBTI','Frank Ocean personality type','INFP R&B artist']},
 
 {name:`Tyler, the Creator`,ctx:'American rapper and producer',type:'ENTP',cat:'Music',wiki:'Tyler,_the_Creator',
-desc:`Tyler the Creator is ENTP. He treats genre, persona, and public expectation as arguments to be dismantled and rebuilt. Each album is a new framework. His early shock content and his later vulnerability are both ENTP: he was always making a point, the point just changed as he grew. Golf Wang, Odd Future, the Grammy speech - all the same person arguing.`,
+desc:`Tyler the Creator is ENTP. His career has been a continuous argument about what hip-hop is allowed to be, conducted through increasingly elaborate persona construction and sonic reinvention. Goblin was the argument at its most confrontational; Flower Boy was the ENTP dropping the argument long enough to say something true; Igor was the ENTP discovering that the emotional register they had been avoiding was the most productive one available. His fashion, his label, his collaborations: all Ne-Ti applied to the music industry as a system to be understood, subverted, and rebuilt according to his own specifications. He has been right about where things were going more often than not.`,
 kw:['Tyler the Creator MBTI','Tyler the Creator personality type','ENTP rapper producer']},
 
 {name:`Whitney Houston`,ctx:'American singer and actress',type:'ESFP',cat:'Music',wiki:'Whitney_Houston',
-desc:`Whitney Houston is ESFP. Her voice was total physical and emotional expression - she could not sing something she did not inhabit. Her performances are ESFP at their most transcendent: complete presence, no distance between singer and song. Her personal struggles are inseparable from the same quality: she felt everything at full intensity, always.`,
+desc:`Whitney Houston is ESFP. Born in Newark in 1963 to the gospel singer Cissy Houston, cousin to Dionne Warwick, she sang her first solo in church at twelve and signed to Arista at nineteen. Her 1985 debut is still the best-selling solo debut album ever made. In 1988 she became the first artist to place seven consecutive singles at number one. Her recording of I Will Always Love You remains the best-selling single by any female artist. She died on 11 February 2012, at forty-eight, having sold more than two hundred million records.`,
 kw:['Whitney Houston MBTI','Whitney Houston personality type','ESFP pop singer']},
 
 {name:`Sting`,ctx:'British musician, The Police',type:'INFJ',cat:'Music',wiki:'Sting_(musician)',
-desc:`Sting is INFJ. His work with The Police and his solo career share an unusual quality: the songs are emotionally intense but formally controlled, which is the INFJ synthesis. His activism - rainforest preservation, human rights - comes from a vision that predates the press coverage. He has always known what he thinks is true.`,
+desc:`Sting is INFJ. Gordon Sumner was born in Wallsend in 1951, the son of a milkman, and taught at a first school in Cramlington before music became viable. A bandleader in a jazz group named him after a black and yellow jumper that made him look like a wasp, and he never legally changed it. With The Police he wrote Every Breath You Take, which BMI has called the most-played song in radio history, then dissolved the biggest band in the world and hired jazz musicians. He has seventeen Grammys and a Colombian tree frog named after him.`,
 kw:['Sting MBTI','Sting personality type','INFJ musician The Police']},
 
 {name:`The Weeknd`,ctx:'Canadian R&B singer-songwriter',type:'INFP',cat:'Music',wiki:'The_Weeknd',
-desc:`The Weeknd is INFP. His early trilogy - House of Balloons, Thursday, Echoes of Silence - mapped a specific interior landscape with unusual honesty: pleasure, numbness, and the void between them. His later commercial work retained the aesthetic while expanding the audience. He operates entirely from a private world that the music makes momentarily accessible.`,
+desc:`The Weeknd is INFP. Abel Tesfaye was born in Toronto in 1990 to Ethiopian immigrants, raised in Scarborough by his mother and grandmother, and dropped out of high school at seventeen, leaving home on a weekend - which is where the name came from. He uploaded songs anonymously to YouTube, refused to show his face or give interviews, and released three mixtapes in 2011 that changed what R&B sounded like. Blinding Lights is now the best-performing song in the history of the Billboard Hot 100.`,
 kw:['The Weeknd MBTI','The Weeknd personality type','INFP R&B artist']},
 
 {name:`Lorde`,ctx:'New Zealand singer-songwriter',type:'INFJ',cat:'Music',wiki:'Lorde',
-desc:`Lorde is INFJ. Pure Heroine announced, at sixteen, a comprehensive aesthetic and philosophical vision that has remained consistent across three albums. Her writing is pattern-recognition applied to adolescence, fame, and loss - she identifies the shape of an experience before she can fully live it. Her reclusive tendencies between albums are the INFJ recharging the vision.`,
+desc:`Lorde is INFJ. Ella Yelich-O'Connor was signed by Universal at thirteen after a radio appearance in Auckland, self-released The Love Club EP on SoundCloud at sixteen, and watched Royals spend nine weeks at number one on the Billboard Hot 100 and win Song of the Year. She has released four albums in twelve years, each separated by a long silence and each sounding almost nothing like the last. The name came from a fascination with aristocracy, with an e added to make it less masculine.`,
 kw:['Lorde MBTI','Lorde personality type','INFJ singer-songwriter']},
 
 // ── SCIENCE / PHILOSOPHY ──────────────────────────────────────────
@@ -2045,7 +2043,7 @@ desc:`Thomas Edison is ENTP. He was not primarily a theorist but a relentless id
 kw:['Thomas Edison MBTI','Edison personality type','ENTP inventor']},
 
 {name:`Tim Cook`,ctx:'CEO of Apple',type:'ISFJ',cat:'Business',wiki:'Tim_Cook',
-desc:`Tim Cook is ISFJ. He succeeded Steve Jobs not by being Jobs but by being his complement: methodical, precise, process-driven, and loyal to the institutional values Jobs created. His supply chain mastery is ISFJ in its essence - comprehensive attention to the existing system, optimised without drama. His advocacy for human rights and privacy is principled and consistent.`,
+desc:`Tim Cook is ISFJ. Born in Mobile, Alabama in 1960, he spent twelve years at IBM before Steve Jobs recruited him in March 1998 to run Apple's operations, where he closed the factories and warehouses and cut inventory from months to days. He became chief executive on 24 August 2011, six weeks before Jobs died, and took the company from a market value of 348 billion dollars to well over two trillion. In April 2026 Apple announced he will hand over to John Ternus on 1 September and become executive chairman.`,
 kw:['Tim Cook MBTI','Tim Cook personality type','ISFJ Apple CEO']},
 
 {name:`Sam Altman`,ctx:'CEO of OpenAI',type:'INTJ',cat:'Business',wiki:'Sam_Altman',
@@ -2053,7 +2051,7 @@ desc:`Sam Altman is INTJ. He has a comprehensive long-term thesis about artifici
 kw:['Sam Altman MBTI','Sam Altman personality type','INTJ OpenAI CEO']},
 
 {name:`Peter Thiel`,ctx:'PayPal co-founder, venture capitalist',type:'INTJ',cat:'Business',wiki:'Peter_Thiel',
-desc:`Peter Thiel is INTJ. Zero to One is an INTJ manifesto: competition is for losers, secrets are undervalued, and the only businesses worth building are monopolies based on genuine insight. His contrarian positions - on higher education, on Silicon Valley consensus - are not posturing but the INTJ's systematic distrust of received wisdom.`,
+desc:`Peter Thiel is INTJ. Born in Frankfurt in 1967 and raised partly in Namibia before settling in California, he took a philosophy degree and a law degree at Stanford, spent a short unhappy stretch as a securities lawyer, and co-founded the company that became PayPal in 1998. In 2004 he put five hundred thousand dollars into Facebook for a tenth of it. He co-founded Palantir and Founders Fund, pays young people to leave university, and secretly financed the lawsuit that destroyed Gawker. Almost everything he does follows from one contrarian premise held for decades.`,
 kw:['Peter Thiel MBTI','Peter Thiel personality type','INTJ venture capitalist PayPal']},
 
 {name:`Hannah Arendt`,ctx:'German-American political philosopher',type:'INTP',cat:'Science',wiki:'Hannah_Arendt',
@@ -2069,7 +2067,7 @@ desc:`Grace Hopper is ENTJ. She invented the compiler, coined the term "debuggin
 kw:['Grace Hopper MBTI','Grace Hopper personality type','ENTJ computer scientist']},
 
 {name:`Jean-Paul Sartre`,ctx:'French existentialist philosopher',type:'ENTP',cat:'Science',wiki:'Jean-Paul_Sartre',
-desc:`Sartre is ENTP. He wrote plays, novels, philosophy, and political journalism simultaneously, moved between positions that horrified one set of people and delighted another, and maintained complete confidence in whichever framework he was currently inhabiting. His famous refusal of the Nobel Prize was ENTP at maximum: even prestige is an argument to be made against.`,
+desc:`Jean-Paul Sartre is ENTP. Born in Paris in 1905, he came first in the 1929 agregation ahead of Simone de Beauvoir, spent nine months as a German prisoner of war, and published Being and Nothingness in 1943 under occupation. He argued that existence precedes essence - that there is no human nature to fall back on and no excuse available - and he made the case in philosophy, novels, plays, journalism and political activism at once. In 1964 he was awarded the Nobel Prize in Literature and turned it down.`,
 kw:['Jean-Paul Sartre MBTI','Sartre personality type','ENTP existentialist philosopher']},
 
 {name:`Alan Watts`,ctx:'British philosopher and writer',type:'ENFP',cat:'Science',wiki:'Alan_Watts',
@@ -2086,7 +2084,7 @@ desc:`Maradona is ESFP. He played with joy, instinct, and a physical relationshi
 kw:['Maradona MBTI','Diego Maradona personality type','ESFP Argentine footballer']},
 
 {name:`Ronaldinho`,ctx:'Brazilian footballer',type:'ESFP',cat:'Sport',wiki:'Ronaldinho',
-desc:`Ronaldinho is ESFP. He played football with visible, genuine delight - the smile was not performance but expression. He was the most technically gifted player of his era and the most obviously joyful, which suggests the two qualities are related. He played for the pleasure of it, and the pleasure made him extraordinary.`,
+desc:`Ronaldinho is ESFP. Ronaldo de Assis Moreira, born in Porto Alegre in 1980, won the World Cup with Brazil at twenty-two, the Champions League with Barcelona at twenty-six, the Ballon d'Or in 2005, and world player of the year twice. He is the only Barcelona player besides Maradona to be applauded by Real Madrid's own supporters at the Bernabeu. He played, by universal agreement, as though the point of the game were enjoyment rather than results, and his decline came almost as fast as the peak did.`,
 kw:['Ronaldinho MBTI','Ronaldinho personality type','ESFP Brazilian footballer']},
 
 {name:`Zinedine Zidane`,ctx:'French footballer',type:'ISFP',cat:'Sport',wiki:'Zinedine_Zidane',
@@ -2094,11 +2092,11 @@ desc:`Zidane is ISFP. His football was aesthetic rather than mechanical - his ro
 kw:['Zidane MBTI','Zinedine Zidane personality type','ISFP French footballer']},
 
 {name:`Magic Johnson`,ctx:'NBA basketball player',type:'ESFP',cat:'Sport',wiki:'Magic_Johnson',
-desc:`Magic Johnson is ESFP. His nickname was not metaphorical - he made basketball a performance art. He played point guard at 6'9 because the situation called for it and he could. His public response to his HIV diagnosis in 1991 was ESFP: immediate, personal, and without the defensive delay most public figures would have taken.`,
+desc:`Magic Johnson is ESFP. Earvin Johnson Jr was given the nickname at fifteen, by a local sportswriter, after a high school triple-double. At twenty he beat Larry Bird in the 1979 NCAA final, went first in the draft, and then started game six of the 1980 finals at centre because Kareem Abdul-Jabbar was injured, putting up 42 points as a rookie. Five championships and three MVPs later he announced he had HIV and retired at thirty-two, at a moment when that announcement was widely understood as a death sentence. He is still here, running a business empire.`,
 kw:['Magic Johnson MBTI','Magic Johnson personality type','ESFP NBA player']},
 
 {name:`Shaquille O'Neal`,ctx:'NBA basketball player',type:'ESFP',cat:'Sport',wiki:"Shaquille_O'Neal",
-desc:`Shaq is ESFP. He was physically dominant, entertainingly self-aware, and never let the job of being the best centre in basketball interfere with the job of enjoying himself. His rapping, his acting, his ongoing entertainment career are not distractions from his athletic identity - they are expressions of the same quality that made him great: full presence, maximum expression.`,
+desc:`Shaquille O'Neal is ESFP. Seven foot one and 325 pounds, taken first in the 1992 draft out of LSU, he won Rookie of the Year, then the 2000 MVP, then three straight championships with the Lakers taking Finals MVP in every one of them, then a fourth ring in Miami in 2006. He led the league in field goal percentage ten times and could not reliably make a free throw. He also released a platinum rap album, and has spent his retirement being the funniest man on American sports television.`,
 kw:["Shaquille O'Neal MBTI","Shaq personality type","ESFP NBA player"]},
 
 {name:`Floyd Mayweather`,ctx:'Professional boxer',type:'INTJ',cat:'Sport',wiki:'Floyd_Mayweather_Jr.',
@@ -2119,7 +2117,7 @@ kw:['Larry Bird MBTI','Larry Bird personality type','ISTJ NBA player']},
 
 // ── MORE FILM / TV ────────────────────────────────────────────────
 {name:`Marty McFly`,ctx:'Back to the Future',type:'ESFP',cat:'Fiction',
-desc:`Marty McFly is ESFP. He acts before he thinks, is motivated by social approval to the point of self-sabotage, and navigates time travel through charm and improvisation rather than planning. His growth across three films is the ESFP learning that the present moment is the only one worth protecting.`,
+desc:`Marty McFly is ESFP. Martin Seamus McFly, played by Michael J. Fox across the Back to the Future trilogy, is a seventeen-year-old guitarist from Hill Valley whose band gets cut from the Battle of the Bands audition in the first ten minutes and who is thrown thirty years into the past before the hour is up. He solves none of it by planning. He improvises through 1955, 2015 and 1885 on reflexes, nerve and an ability to read a room in about four seconds. Empire once ranked him the twelfth greatest film character of all time.`,
 kw:['Marty McFly MBTI','Back to the Future personality type','ESFP movie character']},
 
 {name:`Doc Brown`,ctx:'Back to the Future',type:'ENTP',cat:'Fiction',
@@ -2147,11 +2145,11 @@ desc:`Peter Pan is ESTP. He lives in absolute present tense - Neverland is the E
 kw:['Peter Pan MBTI','Peter Pan personality type','ESTP fictional character']},
 
 {name:`Long John Silver`,ctx:'Treasure Island by Robert Louis Stevenson',type:'ENTP',cat:'Fiction',
-desc:`Long John Silver is ENTP. He has a comprehensive situational intelligence that allows him to be genuinely helpful and genuinely dangerous in the same conversation. He adapts his persona to whoever needs to be managed. His affection for Jim Hawkins is real - the ENTP's genuine warmth for the person smart enough to almost see through them.`,
+desc:`Long John Silver is ENTP. Robert Louis Stevenson put him in Treasure Island in 1883 as the ship's cook, one-legged, with a parrot on his shoulder named after his old captain, and in doing so invented most of what people now picture when they hear the word pirate. He is the most dangerous man on the Hispaniola and the most likeable, and he switches sides roughly whenever the arithmetic changes. Stevenson's real trick is that Jim Hawkins keeps liking him anyway, and so does the reader.`,
 kw:['Long John Silver MBTI','Treasure Island personality type','ENTP pirate character']},
 
 {name:`Tom Sawyer`,ctx:'The Adventures of Tom Sawyer by Mark Twain',type:'ESTP',cat:'Fiction',
-desc:`Tom Sawyer is ESTP. The whitewashing fence scene is the ESTP in miniature: he turns a punishment into a social performance and makes other kids pay him for the privilege of doing his work. His adventures are motivated by a desire for the experience rather than the outcome. He is Twain's most affectionate portrait.`,
+desc:`Tom Sawyer is ESTP. Mark Twain published The Adventures of Tom Sawyer in 1876, set in a Mississippi river town in the 1840s, and gave literature its most durable portrait of a boy who works out what people want and charges them for it. The whitewashing scene, in which he persuades the neighbourhood to pay him for the privilege of doing his punishment, is the single most quoted illustration of applied social leverage in American fiction. Twain said he built him out of three real boys, one of whom was himself.`,
 kw:['Tom Sawyer MBTI','Tom Sawyer personality type','ESTP literary character']},
 
 {name:`Huckleberry Finn`,ctx:'Adventures of Huckleberry Finn by Mark Twain',type:'ISFP',cat:'Fiction',
@@ -2254,9 +2252,7 @@ kw:['Kimmy Schmidt MBTI','Unbreakable Kimmy Schmidt personality','ENFP optimist 
 {name:`Jay-Z`,ctx:`Rapper and entrepreneur`,type:'INTJ',cat:'Music',
 desc:`Jay-Z is INTJ. He used hip-hop as a launch platform for a business and investment portfolio that extends far beyond music - Roc-A-Fella, Roc Nation, Tidal, Armand de Brignac, his sports agency, his art collection - each move a Ni projection of where value will accumulate next, executed with Te precision. His retirement and un-retirement from rap were strategic: he understood that scarcity increases value and returned only when the project was large enough to justify it. 4:44 is the INTJ making the private framework public for the first time: the financial arguments, the infidelity, the generational wealth discussion - all delivered with the analytical directness of someone who has decided the honesty costs less than the alternative.`,
 kw:['Jay-Z MBTI','Jay-Z personality type','INTJ rapper entrepreneur']},
-{name:`Tyler the Creator`,ctx:`Rapper and producer`,type:'ENTP',cat:'Music',
-desc:`Tyler the Creator is ENTP. His career has been a continuous argument about what hip-hop is allowed to be, conducted through increasingly elaborate persona construction and sonic reinvention. Goblin was the argument at its most confrontational; Flower Boy was the ENTP dropping the argument long enough to say something true; Igor was the ENTP discovering that the emotional register they had been avoiding was the most productive one available. His fashion, his label, his collaborations: all Ne-Ti applied to the music industry as a system to be understood, subverted, and rebuilt according to his own specifications. He has been right about where things were going more often than not.`,
-kw:['Tyler the Creator MBTI','Tyler personality type','ENTP musician rapper']},
+
 {name:`Harry Styles`,ctx:`Musician`,type:'ENFP',cat:'Music',
 desc:`Harry Styles is ENFP. He has built a solo career on the premise that complete authenticity - about gender expression, about sexuality, about which musical influences he follows - is the correct strategy, and it has been, because the ENFP who commits to the genuine version of themselves produces something that resonates at a level that calculated positioning cannot reach. His Wembley concerts feel like celebrations because he performs as if everyone in the room is in on something together, which is the ENFP collective experience made stadium-scale. His fashion choices are not statements but expressions: I feel like wearing this, and I do not need your framework for why.`,
 kw:['Harry Styles MBTI','Harry Styles personality type','ENFP musician pop star']},
