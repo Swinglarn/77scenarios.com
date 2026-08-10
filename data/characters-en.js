@@ -1911,11 +1911,11 @@ desc:`Alice is ENFP. She enters Wonderland through curiosity and navigates it th
 kw:["Alice in Wonderland MBTI","Alice character personality type","ENFP literary character"]},
 
 {name:`Willy Wonka`,ctx:'Charlie and the Chocolate Factory by Roald Dahl',type:'ENTP',cat:'Fiction',
-desc:`Willy Wonka is ENTP. The factory is an externally realised interior world: strange, rule-governed, and entirely his. His tour of it is structured as a series of tests, each of which is really an argument about what kind of person deserves to inherit something wonderful. He gives the factory to Charlie because Charlie is the only one who didn't try to optimise it.`,
+desc:`Willy Wonka is ENTP. Roald Dahl invented him in 1964 as the proprietor of the greatest chocolate factory on earth, who closed it entirely after rival firms sent in spies to steal his recipes, and reopened it years later staffed by a workforce nobody had ever seen. Then he hid five golden tickets in bars sold worldwide and let the world tear itself apart looking for them. The tour that follows is not a tour. It is an elimination process, and only one of the five children is ever going to pass it.`,
 kw:['Willy Wonka MBTI','Charlie Chocolate Factory personality type','ENTP eccentric character']},
 
 {name:`Scout Finch`,ctx:'To Kill a Mockingbird by Harper Lee',type:'ENFP',cat:'Fiction',
-desc:`Scout Finch is ENFP. She sees injustice with the clarity of a child who has not yet been told not to notice it, and says what she sees with the directness of someone who has not yet learned the cost of saying it. Her admiration for Atticus is not idolatry but recognition: she already shares his values, she just hasn't found the words yet.`,
+desc:`Scout Finch is ENFP. Jean Louise Finch is six when To Kill a Mockingbird opens in Maycomb, Alabama, and the novel is narrated by the adult she became, looking back at what she did not understand at the time. Harper Lee published it on 11 July 1960 and it won the Pulitzer the following year. Scout fights boys, refuses dresses, asks the questions nobody wants asked, and breaks up a lynch mob without knowing that is what she is doing, by talking to one of the men about his son.`,
 kw:['Scout Finch MBTI','To Kill a Mockingbird personality type','ENFP literary character']},
 
 
@@ -1961,7 +1961,7 @@ desc:`Ada Lovelace is INTJ. She saw what Babbage's Analytical Engine could becom
 kw:['Ada Lovelace MBTI','Ada Lovelace personality type','INTJ mathematician computer pioneer']},
 
 {name:`Rosa Parks`,ctx:'American civil rights activist',type:'ISFJ',cat:'Historical',wiki:'Rosa_Parks',
-desc:`Rosa Parks is ISFJ. Her refusal to give up her seat on the Montgomery bus in 1955 was not a spontaneous act but the culmination of years of deliberate civil rights work. She was a trained activist, a chapter secretary, and a woman with deep convictions quietly held. The ISFJ's act of resistance is total when it finally comes - and it does not make a speech about it.`,
+desc:`Rosa Parks is ISFJ. She had been secretary of the Montgomery NAACP since December 1943 and had spent the summer of 1955 training at the Highlander Folk School in Tennessee, so when she stayed in her seat on 1 December 1955 she knew exactly what she was doing. The boycott that followed ran 381 days. She lost her job the following January, her husband lost his, and she left Alabama for Detroit in 1957 with ulcers, insomnia and no work.`,
 kw:['Rosa Parks MBTI','Rosa Parks personality type','ISFJ civil rights figure']},
 
 {name:`Malcolm X`,ctx:'American civil rights leader',type:'ENTJ',cat:'Historical',wiki:'Malcolm_X',
@@ -1969,7 +1969,7 @@ desc:`Malcolm X is ENTJ. Born Malcolm Little in Omaha in 1925, orphaned in effec
 kw:['Malcolm X MBTI','Malcolm X personality type','ENTJ civil rights leader']},
 
 {name:`Simón Bolívar`,ctx:'South American revolutionary leader',type:'ENTJ',cat:'Historical',wiki:'Simón_Bolívar',
-desc:`Bolívar is ENTJ. He liberated six South American countries from Spanish rule through a combination of military genius, political vision, and a personal magnetism that held coalitions together by force of will. His dream of a unified Gran Colombia failed not from lack of vision but from the ENTJ's classic limitation: he could build the structure but not the trust that holds it together without him.`,
+desc:`Simón Bolívar is ENTJ. Born in Caracas in 1783 to a wealthy criollo family and orphaned by nine, he swore an oath on Monte Sacro in Rome in August 1805 that he would not rest until he had broken Spain's hold on America, and then spent twenty-five years doing it. He liberated Venezuela, Colombia, Ecuador, Panama, Peru and the country that took his name, built them into a single republic called Gran Colombia, and watched it come apart before he died of tuberculosis in 1830, aged forty-seven.`,
 kw:['Simon Bolivar MBTI','Bolivar personality type','ENTJ South American revolutionary']},
 
 {name:`Sun Tzu`,ctx:'Chinese military strategist',type:'INTJ',cat:'Historical',wiki:'Sun_Tzu',
@@ -2047,7 +2047,7 @@ desc:`Tim Cook is ISFJ. Born in Mobile, Alabama in 1960, he spent twelve years a
 kw:['Tim Cook MBTI','Tim Cook personality type','ISFJ Apple CEO']},
 
 {name:`Sam Altman`,ctx:'CEO of OpenAI',type:'INTJ',cat:'Business',wiki:'Sam_Altman',
-desc:`Sam Altman is INTJ. He has a comprehensive long-term thesis about artificial general intelligence and has positioned OpenAI within it with unusual clarity. His public communication is measured and his private strategy is opaque, which is the INTJ mode. The events of November 2023 - the board firing and the reinstatement - showed an INTJ who had built sufficient institutional loyalty to survive a direct attack.`,
+desc:`Sam Altman is INTJ. Born in Chicago in 1985, he dropped out of Stanford at nineteen to build Loopt, ran Y Combinator from 2014, and co-founded OpenAI in 2015 as a non-profit with Elon Musk and Greg Brockman. ChatGPT launched in December 2022 and passed a million signups in five days. In November 2023 his own board removed him for not being consistently candid, more than seven hundred of the company's seven hundred and seventy employees threatened to walk out, and he was back within four days.`,
 kw:['Sam Altman MBTI','Sam Altman personality type','INTJ OpenAI CEO']},
 
 {name:`Peter Thiel`,ctx:'PayPal co-founder, venture capitalist',type:'INTJ',cat:'Business',wiki:'Peter_Thiel',
@@ -2080,7 +2080,7 @@ desc:`Tom Brady is INTJ. Drafted 199th overall in 2000, he spent twenty-three ye
 kw:['Tom Brady MBTI','Tom Brady personality type','INTJ NFL quarterback']},
 
 {name:`Diego Maradona`,ctx:'Argentine footballer',type:'ESFP',cat:'Sport',wiki:'Diego_Maradona',
-desc:`Maradona is ESFP. He played with joy, instinct, and a physical relationship with the ball that no tactical framework could contain. The Hand of God goal and the Goal of the Century in the same match is a perfect ESFP document: he cheated with one and then produced the most beautiful thing football had ever seen with the other, and was completely comfortable with both.`,
+desc:`Diego Maradona is ESFP. Born in 1960 and raised in Villa Fiorito, a shantytown on the southern edge of Buenos Aires, he made his professional debut ten days before his sixteenth birthday and spent the next twenty years being the best and least governable footballer alive. In four minutes against England in 1986 he scored with his hand and then dribbled sixty metres past five men, and both goals are equally famous. He took Napoli, a club that had never won anything, to two Serie A titles. He died in 2020, at sixty.`,
 kw:['Maradona MBTI','Diego Maradona personality type','ESFP Argentine footballer']},
 
 {name:`Ronaldinho`,ctx:'Brazilian footballer',type:'ESFP',cat:'Sport',wiki:'Ronaldinho',
@@ -2088,7 +2088,7 @@ desc:`Ronaldinho is ESFP. Ronaldo de Assis Moreira, born in Porto Alegre in 1980
 kw:['Ronaldinho MBTI','Ronaldinho personality type','ESFP Brazilian footballer']},
 
 {name:`Zinedine Zidane`,ctx:'French footballer',type:'ISFP',cat:'Sport',wiki:'Zinedine_Zidane',
-desc:`Zidane is ISFP. His football was aesthetic rather than mechanical - his roulette turn, his volley in the Champions League final, the Marseille turn - and expressed a physical intelligence that analysts could describe but never fully explain. His headbutt in his final World Cup final was ISFP: when the interior life is violated directly enough, the response bypasses all calculation.`,
+desc:`Zinedine Zidane is ISFP. Born in 1972 on the La Castellane estate in Marseille to Algerian Berber parents from Kabylia, he scored twice with his head in the 1998 World Cup final, hit the left-foot volley that decided the 2002 Champions League final, and in his last professional act headbutted Marco Materazzi in the chest in the 2006 final and was sent off. He was given the Golden Ball as player of that tournament anyway. He took fourteen red cards across his career and says twelve of them followed provocation.`,
 kw:['Zidane MBTI','Zinedine Zidane personality type','ISFP French footballer']},
 
 {name:`Magic Johnson`,ctx:'NBA basketball player',type:'ESFP',cat:'Sport',wiki:'Magic_Johnson',
@@ -2104,15 +2104,15 @@ desc:`Mayweather is INTJ. His defensive style - widely criticised as boring - is
 kw:['Floyd Mayweather MBTI','Mayweather personality type','INTJ boxer']},
 
 {name:`Giannis Antetokounmpo`,ctx:'NBA basketball player',type:'ISFP',cat:'Sport',wiki:'Giannis_Antetokounmpo',
-desc:`Giannis is ISFP. His ascent from a teenager selling watches on the streets of Athens to NBA MVP is a story of talent meeting total commitment, but what is most striking is his emotional directness. He plays with visible feeling, cries without embarrassment, and leads the Bucks through personal example rather than authority. His 2021 Finals run was an ISFP completing the thing they started.`,
+desc:`Giannis Antetokounmpo is ISFP. Born in Athens in 1994 to Nigerian parents who could not get work permits, he was stateless in his own birth country for eighteen years and sold watches and sunglasses on the street with his brother to help the family eat. He received Greek citizenship on 9 May 2013 and was drafted fifteenth overall that June. He won back-to-back MVPs in 2019 and 2020, Defensive Player of the Year in the same season, and closed out the 2021 finals with fifty points.`,
 kw:['Giannis MBTI','Giannis Antetokounmpo personality type','ISFP NBA player']},
 
 {name:`Zlatan Ibrahimović`,ctx:'Swedish footballer',type:'ESTP',cat:'Sport',wiki:'Zlatan_Ibrahimović',
-desc:`Zlatan is ESTP. His famous third-person self-references are not delusion but performance - he understands that the Zlatan persona is an asset and manages it accordingly. His goals are always the most audacious option available. He joined LA Galaxy at 36 and scored 53 goals in two seasons because he read that situation as the one that made the most sense for the story.`,
-kw:['Zlatan MBTI','Zlatan Ibrahimovic personality type','ESTP footballer']},
+desc:`Zlatan Ibrahimović is ESTP. Born in Malmo in 1981 to a Bosniak father and a Croat mother and raised on the Rosengard estate, he won 34 trophies across Malmo, Ajax, Juventus, Inter, Barcelona, Milan, Paris Saint-Germain, Manchester United and LA Galaxy, scored 62 goals for Sweden to become their all-time leading scorer, and in 2012 hit a 35-yard bicycle kick against England that won the Puskas Award. Offered a trial at Arsenal at seventeen, he replied that Zlatan does not do auditions.`,
+kw:['Zlatan MBTI','Zlatan Ibrahimović personality type','ESTP footballer']},
 
 {name:`Larry Bird`,ctx:'NBA basketball player and coach',type:'ISTJ',cat:'Sport',wiki:'Larry_Bird',
-desc:`Larry Bird is ISTJ. He was not the most athletic player in the NBA by any measure, and he was the best player in the NBA for a decade. He won through preparation, spatial awareness, and a mastery of the game's details so complete that he could see situations three passes ahead. His trash talk was not impulsive but strategic: he studied opponents and deployed what hurt most.`,
+desc:`Larry Bird is ISTJ. Born in West Baden Springs, Indiana in 1956 and raised in French Lick by a mother working several jobs to keep six children fed, he walked away from Indiana University after less than a month because the place was too big, went home, worked for the municipality, and enrolled at Indiana State instead. He lost the 1979 final to Magic Johnson and spent the next decade splitting the 1980s with him: three championships, three consecutive MVPs, and the most disciplined jump shot of his era.`,
 kw:['Larry Bird MBTI','Larry Bird personality type','ISTJ NBA player']},
 
 // ── MORE FILM / TV ────────────────────────────────────────────────
@@ -2121,7 +2121,7 @@ desc:`Marty McFly is ESFP. Martin Seamus McFly, played by Michael J. Fox across 
 kw:['Marty McFly MBTI','Back to the Future personality type','ESFP movie character']},
 
 {name:`Doc Brown`,ctx:'Back to the Future',type:'ENTP',cat:'Fiction',
-desc:`Doc Brown is ENTP. He builds a time machine in a parking lot because the idea demands it. His enthusiasm for his own ideas is total and his ability to anticipate their consequences is limited, which is why Marty keeps having to fix the timeline. His friendship with Marty is genuine: the ENTP's deepest affection for the person who keeps them tethered.`,
+desc:`Doc Brown is ENTP. Emmett Lathrop Brown, born in 1920 into a wealthy Hill Valley family whose name was originally Von Braun, spent thirty years and his entire inheritance chasing an idea he got in November 1955 while falling off a toilet and hitting his head. The idea was the flux capacitor. By 1985 the mansion has burned down, he is living in its garage, and he has put a time machine into a DeLorean because, as he explains, if you are going to build a time machine into a car you may as well do it with some style.`,
 kw:['Doc Brown MBTI','Back to the Future personality type','ENTP scientist character']},
 
 {name:`Amélie Poulain`,ctx:'Amélie (2001)',type:'INFP',cat:'Fiction',
@@ -2141,7 +2141,7 @@ desc:`Odysseus is ENTP. His epithet in ancient Greek is polytropos - of many tur
 kw:['Odysseus MBTI','Odysseus personality type','ENTP Greek hero character']},
 
 {name:`Peter Pan`,ctx:'Peter Pan by J.M. Barrie',type:'ESTP',cat:'Fiction',
-desc:`Peter Pan is ESTP. He lives in absolute present tense - Neverland is the ESTP's ideal environment. His inability to grow up is not a limitation but a choice: commitment, memory, and consequence are the enemies of pure experience. His cruelty to the Lost Boys and to Hook comes from the same place as his charm: he is entirely in the moment and the moment has no mercy.`,
+desc:`Peter Pan is ESTP. J.M. Barrie's boy who will not grow up first reached the stage in 1904 and the page as Peter and Wendy in 1911, and the century since has spent a lot of time deciding whether he is a fantasy or a warning. He leads the Lost Boys, fights Captain Hook, keeps a fairy, and cannot hold onto a memory for more than a few weeks - including memories of people who loved him. Barrie left the copyright to Great Ormond Street Hospital, which is why the character is still funding sick children.`,
 kw:['Peter Pan MBTI','Peter Pan personality type','ESTP fictional character']},
 
 {name:`Long John Silver`,ctx:'Treasure Island by Robert Louis Stevenson',type:'ENTP',cat:'Fiction',
@@ -2446,7 +2446,7 @@ kw:['John Coltrane MBTI','Coltrane personality type','INFP jazz musician spiritu
 desc:`Joni Mitchell is INFP. Blue is among the most honest albums ever made - a direct transmission from an interior emotional state with almost no distance between feeling and song. Her own description: "I came closer to unmasking myself than I ever had before." Her later work - Court and Spark, Hejira, Mingus - follows the same interior compass into increasingly complex harmonic territory, not from ambition but from the INFP's most reliable instruction: the work should express what is true, regardless of whether the audience is ready for it. Her resistance to streaming, her battles with appropriation, her refusal to simplify: all the same person, same compass, across fifty years.`,
 kw:['Joni Mitchell MBTI','Joni Mitchell personality type','INFP singer-songwriter musician']},
 {name:`Louis Armstrong`,ctx:`Musician`,type:'ESFP',cat:'Music',
-desc:`Louis Armstrong is ESFP. He is the most generous presence in the history of jazz - every performance given fully to the audience, every note played with warmth and physical joy. His technical genius was real and he wore it lightly, which is the ESFP's gift: making the extraordinary look like the natural expression of someone who is glad to be there.`,
+desc:`Louis Armstrong is ESFP. Born in the New Orleans neighbourhood called the Battlefield in 1901, he left school at eleven and was sent to the Colored Waifs' Home after firing a blank pistol on New Year's Eve 1912, which is where somebody put a cornet in his hands. The Hot Five and Hot Seven recordings he made from 1925 turned jazz from an ensemble music into a soloist's art. He popularised scat singing, took Hello Dolly to number one at sixty-two, and told a reporter in 1957 that the president had no guts.`,
 kw:['Louis Armstrong MBTI','Louis Armstrong personality type','ESFP jazz musician performer']},
 {name:`Agatha Christie`,ctx:`Author`,type:'ISTJ',cat:'Historical',
 desc:`Agatha Christie is ISTJ. She wrote 66 detective novels with methodical consistency over five decades, built two of the most enduring characters in crime fiction, and approached the puzzle structure of the genre with the ISTJ's satisfaction in systems that work. Her mysterious eleven-day disappearance remains one of the most intriguing exceptions to her orderly professional existence.`,
@@ -2469,7 +2469,7 @@ kw:['Duke Leto Atreides MBTI','Dune character personality type','ENFJ fictional 
 desc:`The Baron is ENTJ without conscience. His intelligence is strategic and comprehensive, his patience is extraordinary, and his plans are built across generations. He is not cruel for pleasure but calculated in his cruelty. His downfall is the ENTJ's classic blind spot: he models everyone around him as controllable variables and fails to account for the one person whose motivation he genuinely cannot compute.`,
 kw:['Baron Harkonnen MBTI','Dune villain personality type','ENTJ villain character']},
 {name:`Duncan Idaho`,ctx:`Dune (Frank Herbert)`,type:'ISFP',cat:'Fiction',
-desc:`Duncan Idaho is ISFP. His loyalty is absolute and personal - not to the House but to Leto, not to a principle but to a man. He acts from feeling rather than strategy, fights from instinct rather than doctrine, and across every iteration of his existence through the series, the core quality that persists is the same: an irreducible fidelity to the people he has chosen to love.`,
+desc:`Duncan Idaho is ISFP. A Swordmaster of the Ginaz in House Atreides' service, he dies in the first Dune novel covering Paul and Jessica's escape, taking nineteen Sardaukar with him. That should be the end of it. Instead the Tleilaxu grow his body back as a ghola called Hayt, and he becomes the only character to appear in all six of Frank Herbert's novels, serving Leto II across a reign of three and a half thousand years and eventually mattering to humanity's future more than anyone expected of a swordsman.`,
 kw:['Duncan Idaho MBTI','Dune character personality','ISFP loyal character']},
 {name:`Gurney Halleck`,ctx:`Dune (Frank Herbert)`,type:'ISTJ',cat:'Fiction',
 desc:`Gurney Halleck is ISTJ. He is defined by duty, competence, and a loyalty that does not require ideological agreement to be total. He serves the Atreides because that is the commitment he made, and the commitment does not expire with Duke Leto's death. His relationship with Paul is the ISTJ's most revealing bond: he trains him, follows him into the desert, eventually mistakes him for an enemy and nearly kills him, and reconciles because the loyalty was always to the person rather than the position. His baliset is not a hobby but the ISTJ's most private expression: the interior life that the duty does not have room for, played in the quiet moments between missions.`,
@@ -2478,7 +2478,7 @@ kw:['Gurney Halleck MBTI','Dune character personality type','ISTJ fictional char
 desc:`Alia Atreides is INTJ - born pre-awakened, carrying the memories of every ancestral life simultaneously, governed by a framework so comprehensive it overwhelmed her before she had finished growing into it. Her tragedy is the INTJ's most extreme expression: the architecture is complete before the person is, and the architecture has its own imperatives that the person cannot override. Her possession by the Baron Harkonnen is the INTJ's shadow made literal: the framework runs the person rather than the person running the framework, and the result is the most intelligent and the most dangerous inhabitant of the Dune universe.`,
 kw:['Alia Atreides MBTI','Dune character personality type','INTJ character analysis']},
 {name:`Stilgar`,ctx:`Dune (Frank Herbert)`,type:'ISTJ',cat:'Fiction',
-desc:`Stilgar is ISTJ. He leads through tradition, earned authority, and an absolute commitment to the survival of his people. His rules are not arbitrary - they are the accumulated wisdom of generations of Fremen who learned exactly what it costs to be soft in the desert. His transformation from Paul's commander to Paul's worshipper is an ISTJ's crisis: the system that defined him was replaced by a person, and he could not hold both.`,
+desc:`Stilgar is ISTJ. The naib of Sietch Tabr, he takes in Paul Atreides and Lady Jessica after the Harkonnens destroy their house, and in doing so hands over the leadership of his own people to a fifteen-year-old offworlder because the tradition says he must. He never stops being the man who does what the custom requires. That is his greatness in the first novel and his tragedy in the later ones, when the custom has become a religion and the religion has become an empire.`,
 kw:['Stilgar MBTI','Dune Fremen leader personality','ISTJ character Dune']},
 {name:`Chani`,ctx:`Dune (Frank Herbert)`,type:'ISTP',cat:'Fiction',
 desc:`Chani is ISTP. She does not believe in Paul's prophecy - not because she is unobservant but because she is the opposite: too observant to accept a convenient story without pressure-testing it against what she actually sees. Her scepticism is Ti doing what it does: the pattern must hold against scrutiny before she acts on it. Her love for Paul is real and expressed entirely through action rather than declaration - she fights beside him, she teaches him, she stays - which is the ISTP's complete emotional vocabulary. Her departure at the end of Dune Part Two, walking into the desert rather than accepting the Jihad that Paul has chosen, is the ISTP who will not endorse what the analysis does not support.`,
@@ -2487,10 +2487,10 @@ kw:['Chani Dune MBTI','Dune character personality type','ISTP female character']
 desc:`Feyd-Rautha Harkonnen is ESTP. He enters every arena - the gladiatorial pit, the political court, the final duel - as a performance he intends to dominate, reading his opponent in real time and making adjustments that happen too fast for calculation. His pleasure in combat is genuine rather than sadistic: he is most alive in the moment of maximum physical consequence, which is the ESTP's most honest condition. His beauty is strategic - the Baron deploys him as a weapon - but his enjoyment of the fight is his own. His death at Paul's hands is the ESTP meeting someone whose speed matches his own.`,
 kw:['Feyd-Rautha MBTI','Dune Harkonnen personality type','ESTP villain character']},
 {name:`Leto II`,ctx:`Dune (Frank Herbert)`,type:'INFJ',cat:'Fiction',
-desc:`Leto II is the INFJ archetype taken to a cosmic extreme. He has seen all possible futures, chosen the one path that leads to humanity's survival, and accepted that the cost is becoming something no longer recognisably human. His Golden Path is the INFJ mission made literal: a vision so total, pursued with such absolute commitment, that the person who holds it is consumed by it entirely.`,
+desc:`Leto II is INFJ. The son of Paul Atreides and Chani, awakened in the womb by spice and born already carrying the memories of every ancestor he has, he looked into the same futures his father saw and found the one path where humanity survives. Paul refused it. Leto took it, fusing his body with sandtrout to become something that is no longer human, and ruled for roughly three and a half thousand years as a tyranny so total that when it finally ended, humanity scattered beyond anyone's ability to find it again.`,
 kw:['Leto II MBTI','God Emperor Dune personality type','INFJ visionary character']},
 {name:`Princess Irulan`,ctx:`Dune (Frank Herbert)`,type:'INFJ',cat:'Fiction',
-desc:`Irulan is INFJ. She is the historian, the witness, the person who understands what is happening around her with unusual clarity and is structurally prevented from affecting it. Her position - wife to the Emperor she loves without being loved - is the INFJ condition made political: deep comprehension of a pattern, no power to change it, and the discipline to record it faithfully anyway.`,
+desc:`Princess Irulan is INFJ. The eldest daughter of Padishah Emperor Shaddam IV, Bene Gesserit trained and destined for Reverend Mother, she is the voice you actually read Dune in - every chapter opens with an epigraph she wrote, and she barely appears in person until the end. Paul Atreides marries her as a political instrument and never touches her, telling her plainly that Chani will bear his heirs. She spends the rest of her life writing the definitive account of a man who would not look at her.`,
 kw:['Princess Irulan MBTI','Dune character personality','INFJ princess character']},
 // ── GAME OF THRONES ADDITIONAL ───────────────────────────────────────────────
 {name:`Ned Stark`,ctx:`Game of Thrones`,type:'ISFJ',cat:'Fiction',
@@ -2832,11 +2832,11 @@ desc:`Teal'c is ISTJ. He spent decades as First Prime of Apophis because the Si-
 kw:["Teal'c MBTI","Teal'c personality type",'ISTJ Stargate character','Tealc SG1 MBTI']},
 
 {name:`George Hammond`,ctx:`Stargate SG-1`,type:'ISFJ',cat:'Fiction',
-desc:`George Hammond is ISFJ. He runs the SGC like a family he is responsible for rather than a military unit he commands. The Si-Fe combination produces the specific quality of the specific general who knows every team member's specific situation and manages the institution around their wellbeing without ever making the management visible. His relationship with his granddaughters is the interior's most honest statement about what the framework has always been in service of.`,
+desc:`George Hammond is ISFJ. Don S. Davis played the general commanding Stargate Command through the first seven seasons of Stargate SG-1, and the show's quiet argument is that the programme survives because of him. He is a widower with two granddaughters, Kayla and Tessa, whose photographs sit on his desk, and his job consists largely of standing between his people and the Pentagon. He was promoted to lieutenant general at the start of the eighth season and retired before the series ended.`,
 kw:['George Hammond MBTI','Hammond personality type','ISFJ Stargate character','General Hammond SG1']},
 
 {name:`Janet Fraiser`,ctx:`Stargate SG-1`,type:'ISFJ',cat:'Fiction',
-desc:`Janet Fraiser is ISFJ. She runs the SGC infirmary with the ISFJ's most complete institutional commitment: the specific patient's specific situation is always primary, the specific protocol is the instrument, and the wellbeing of the specific person always outweighs the administrative convenience. Her death in Season 7 is the most devastating available statement about what it costs to maintain the primary designation in a combat zone.`,
+desc:`Janet Fraiser is ISFJ. Teryl Rothery played the chief medical officer of Stargate Command from the first season, treating a base whose personnel come home with injuries no medical textbook covers, and alien refugees nobody else will take. She adopted an orphaned child from a world the Goa'uld had exterminated. She was killed by a staff weapon blast in the seventh season episode Heroes, because the producers thought the show was ending and believed a death in the main cast was owed.`,
 kw:['Janet Fraiser MBTI','Janet Fraiser personality type','ISFJ Stargate character','Dr Fraiser SG1']},
 
 {name:`Jonas Quinn`,ctx:`Stargate SG-1`,type:'ENFJ',cat:'Fiction',
@@ -2844,7 +2844,7 @@ desc:`Jonas Quinn is ENFJ. He joins SG-1 with the specific quality of the ENFJ i
 kw:['Jonas Quinn MBTI','Jonas Quinn personality type','ENFJ Stargate character','Jonas SG1 personality']},
 
 {name:`Cameron Mitchell`,ctx:`Stargate SG-1`,type:'ESFP',cat:'Fiction',
-desc:`Cameron Mitchell is ESFP. He arrives at the SGC having hero-worshipped SG-1 from a distance and spends Season 9 discovering that leading the actual team is more complicated than the legend. The Se-Fi combination produces his infectious enthusiasm for every specific mission's specific present-tense configuration, his genuine warmth for every specific team member, and his slightly bewildered response to the specific Vala situation.`,
+desc:`Cameron Mitchell is ESFP. Ben Browder joined Stargate SG-1 in its ninth season as the lieutenant colonel handed command of the most famous team in the programme and told to put it back together, which meant walking into a room of people who had been doing this for eight years and asking them to come back. He is an air force pilot rather than a scientist or a career special forces operator, and the show plays that difference straight: he leads by being present, likeable and completely unbothered by his own lack of seniority.`,
 kw:['Cameron Mitchell MBTI','Cam Mitchell personality type','ESFP Stargate character','Mitchell SG1 MBTI']},
 
 {name:`Vala Mal Doran`,ctx:`Stargate SG-1`,type:'ENTP',cat:'Fiction',
@@ -2852,15 +2852,15 @@ desc:`Vala Mal Doran is ENTP. She is a con artist who joins the most honest avai
 kw:['Vala Mal Doran MBTI','Vala personality type','ENTP Stargate character','Vala SG1 MBTI']},
 
 {name:`Ba'al`,ctx:`Stargate SG-1`,type:'ENTJ',cat:'Fiction',
-desc:`Ba'al is ENTJ. He is the Goa'uld System Lord who survives longest because he is the only one running the specific institutional analysis of the available situation rather than operating from ego alone. The Ni-Te combination produces his strategic patience, his willingness to shift alliances when the assessment requires it, and his specific sardonic quality when dealing with O'Neill. He cloned himself rather than face elimination. The ENTJ builds contingencies.`,
+desc:`Ba'al is ENTJ. Played by Cliff Simon from Stargate SG-1's fifth season to its tenth, introduced in Summit, he became the longest-running villain in the franchise by being the only System Lord who treated godhood as a business rather than a delusion. When the Jaffa rebellion destroyed the Goa'uld power base, every other System Lord died fighting for territory. Ba'al came to Earth, set himself up as a businessman, took over the Trust, and made copies of himself with stolen Asgard cloning technology.`,
 kw:["Ba'al MBTI","Ba'al personality type",'ENTJ Stargate villain','Baal SG1 MBTI']},
 
 {name:`Apophis`,ctx:`Stargate SG-1`,type:'ENTJ',cat:'Fiction',
-desc:`Apophis is ENTJ. He is the primary antagonist of the early seasons because his institutional ambition and strategic competence make him the most credible available threat in the Goa'uld hierarchy. The Ni-Te combination produces his long-range campaigns and his specific quality of never fully believing he has been defeated. His treatment of Sha're is the inferior Fi absent: the relationship is entirely instrumental.`,
+desc:`Apophis is ENTJ. Peter Williams played him as the Goa'uld System Lord who walks through the gate in the pilot of Stargate SG-1, takes an airman, and turns a secret programme into a war. He is not a monster in the usual television sense. He is an administrator of an interstellar empire who happens to be worshipped as a god, and what makes him effective is that he treats conquest as logistics: fleets, vassals, territory, succession. He is killed and returns often enough that the show made it a running feature, and he was finally finished in season five.`,
 kw:['Apophis MBTI','Apophis personality type','ENTJ Stargate villain','Apophis SG1']},
 
 {name:`Bra'tac`,ctx:`Stargate SG-1`,type:'ISTP',cat:'Fiction',
-desc:`Bra'tac is ISTP. He trained Teal'c, led the Jaffa rebellion from the inside for decades, and operates from the warrior's most primary available framework: the accurate assessment of what the specific situation requires applied to the specific body's specific capability. The Ti-Se combination produces his tactical genius, his specific dry humor, and his capacity for sustained institutional loyalty to the specific principle of Jaffa freedom rather than to any specific institutional arrangement.`,
+desc:`Bra'tac is ISTP. Tony Amendola played him across nine seasons of Stargate SG-1 as the Jaffa master who was once Apophis' First Prime and who became the first of his people to work out that the gods they served were parasites in stolen bodies. He is the one who put that doubt into Teal'c. It made him an outcast among the Jaffa for most of his life, and it made him, eventually, the man who led them to victory over the Goa'uld.`,
 kw:["Bra'tac MBTI","Bra'tac personality type",'ISTP Stargate character','Bratac SG1 personality']},
 
 {name:`Jacob Carter`,ctx:`Stargate SG-1`,type:'ESTJ',cat:'Fiction',
@@ -2868,7 +2868,7 @@ desc:`Jacob Carter is ESTJ. He is the Air Force general whose career was built o
 kw:['Jacob Carter MBTI','Jacob Carter personality type','ESTJ Stargate character','Jacob Carter SG1']},
 
 {name:`Martouf`,ctx:`Stargate SG-1`,type:'INFJ',cat:'Fiction',
-desc:`Martouf is INFJ. He carries Jolinar's love for Sam through the Tok'ra host relationship with the INFJ's most complete quality: the specific primary designation, held through the specific institutional complexities of the specific symbiote relationship, expressed through the specific quality of the specific care that the specific Ni synthesis about Sam's specific situation produces. His death is the most honest available statement about what the inferior Se produces when the institutional management fails.`,
+desc:`Martouf is INFJ. JR Bourne played the Tok'ra operative who hosts the symbiote Lantash and who arrives in Stargate SG-1 carrying a grief nobody else can share: his mate Jolinar of Malkshur died inside Samantha Carter, and Carter kept her memories. So he is looking at a woman who remembers loving him and is not the person who did. He is then turned into a za'tarc, programmed to kill the President, and Carter is the one who has to shoot him.`,
 kw:['Martouf MBTI','Martouf personality type','INFJ Stargate character','Martouf Lantash SG1']},
 
 {name:`Carl XVI Gustaf`,ctx:`King of Sweden since 1973`,type:'ISTJ',cat:'Politics',

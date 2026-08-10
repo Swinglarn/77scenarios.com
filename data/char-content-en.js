@@ -10611,3 +10611,717 @@ var charContent={
 </div>`
     }
   });
+
+
+  // ── Rewritten pages: full biography (who), journey, mistype and letter
+  // breakdown. Assigned after the block above so these entries win.
+  Object.assign(charContent, {
+    'zinedine-zidane':{
+      whoHeading:`Who Is Zinedine Zidane?`,
+      who:`<p>Zinedine Yazid Zidane was born on 23 June 1972 in La Castellane, a working-class estate in the sixteenth arrondissement of Marseille. His parents Smail and Malika were Algerian Berbers from Kabylia who came to France in 1953; his father worked as a warehouseman and a security guard. He has consistently credited the strictness of that upbringing, and his father in particular, as the thing that shaped him.</p>
+<p>He turned professional at Cannes in 1989, moved to Bordeaux in 1992, and joined Juventus in 1996, where he won two Serie A titles and reached two Champions League finals. In 1998 he took both FIFA World Player of the Year and the Ballon d'Or. Real Madrid signed him in 2001 for 77.5 million euros, a world record at the time, and in the 2002 Champions League final he scored the left-foot volley off a looping cross that is routinely named among the best goals ever struck. He was FIFA World Player of the Year again in 2003.</p>
+<h3>What happened in the 2006 World Cup final?</h3>
+<p>He had come out of international retirement at thirty-four to play the tournament. In the final against Italy he scored a Panenka penalty off the underside of the bar, and then in the 110th minute he turned and drove his head into Marco Materazzi's chest and was sent off. Italy won the shootout 5-3. He was still voted the tournament's best player. He later explained that Materazzi had insulted his sister, and in 2010 said he would rather die than apologise for it. His playing career finished there: 108 caps, the 1998 World Cup won with two headers from corners in the final, Euro 2000 won with a golden goal penalty in the semi-final. As a manager he took over Real Madrid in January 2016 and won the Champions League three years running, in 2016, 2017 and 2018, the first coach ever to do it, before returning for a second spell and then taking the France job in 2026.</p>`,
+      journey:`<p>Zidane is dominant Fi in a sport that almost never produces it at the top level, and it explains both halves of him. His football was governed by an internal sense of how the game should look - the roulette, the first touch, the deliberate slowness in traffic - and he played that way whether or not it was the efficient option. Teammates described it as imagination; what it actually is, is a private aesthetic standard being applied under pressure.</p>
+<p>The auxiliary Se is the execution, and it is why the standard was achievable rather than merely held. His control of the ball in tight space was among the finest ever seen, entirely physical, entirely present-tense. Fi decides what is worth doing and Se delivers it in real time, which is why his best moments look like decisions rather than reflexes.</p>
+<h3>Why did Zidane headbutt Materazzi?</h3>
+<p>Because dominant Fi does not negotiate about the things it holds, and because inferior Te means there is no functioning cost-benefit calculation available in the moment. Fourteen red cards, twelve of them by his own account after provocation, is not a coincidence. Insult something he considers untouchable and the response is immediate, total and indifferent to consequence, including a World Cup final with eleven minutes left. The tertiary Ni is visible in the management career, where he turned out to have an unusual feel for the shape of a season and a squad, and won three European Cups in a row by managing people rather than systems.</p>`,
+      mistype:`<p>INFP is sometimes suggested because of the interiority and the famous reticence. But Zidane's medium was entirely physical and immediate, and his intelligence expressed itself through the body rather than through language or ideas. Se in second position is what separates him: he read and acted on the concrete situation in front of him faster than almost anyone, which is not what an Ne auxiliary produces.</p>
+<p>ISTP comes up because of the technical mastery and the calm exterior. The distinction is what drives the decisions. A Ti-dominant player analyses the situation for the most effective solution. Zidane consistently chose the option that satisfied something in him rather than the option that was optimal, and his most famous act was a value judgement taken at the maximum possible cost. Fi first.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>He was famously reluctant in front of a microphone for a player of that stature, gave little away, and carried himself on the pitch with a stillness that read as detachment. Whatever was going on happened internally and surfaced only when it had to.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">S</span><span class="letter-word">Sensing</span></div>
+  <p>His genius was touch, balance and control in confined space. The roulette turn is pure physical intelligence, and his defining goals - the volley in Glasgow, the two headers in Paris - were acts of technique executed in an instant rather than plans carried out.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">F</span><span class="letter-word">Feeling</span></div>
+  <p>The internal standard was absolute and it governed everything, including the moments it destroyed. He has never disowned the headbutt, only regretted what it cost the team, which tells you the value it defended was not up for revision.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">P</span><span class="letter-word">Perceiving</span></div>
+  <p>He played by feel rather than by instruction and was never a tactically obedient footballer. Even as a coach his method was famously light on system and heavy on reading the room, adjusting to what a squad needed rather than imposing a fixed structure.</p>
+</div>`
+    },
+    'doc-brown':{
+      whoHeading:`Who Is Doc Brown?`,
+      who:`<p>Emmett Lathrop Brown is the inventor at the centre of the Back to the Future trilogy, played by Christopher Lloyd across all three films. Lloyd was forty-six during filming and playing a man of sixty-five. Doc was born in 1920 into a wealthy Hill Valley family of German descent whose surname was originally Von Braun, and in 1955 he was still living in the family mansion.</p>
+<p>The origin of everything is a slip in a bathroom. By his own account, in November 1955 he was standing on a toilet hanging a clock, fell, struck his head, and saw the flux capacitor - the component that makes time travel possible. He then spent thirty years and the entire family fortune building it. By 1985 the mansion has burned down and he lives in the garage that survived, surrounded by the wreckage of three decades of work on one idea.</p>
+<h3>What happens to Doc Brown in the trilogy?</h3>
+<p>He fits the time machine into a DeLorean, which requires 1.21 gigawatts of power, initially supplied by plutonium he obtained from Libyan nationalists by giving them a casing full of pinball machine parts. They catch up with him in the opening act and shoot him. Marty, sent to 1955 by the same incident, spends the first film trying to get home and quietly trying to save his friend's life thirty years early. The third film strands Doc in 1885, where he falls in love with a schoolteacher named Clara Clayton, marries her, has two sons called Jules and Verne, and builds a time machine out of a steam locomotive. His exclamation, Great Scott, entered the language, and the character has been cited as the direct ancestor of Rick Sanchez in Rick and Morty.</p>`,
+      journey:`<p>Doc is dominant Ne rendered as a life. The flux capacitor arrives as a flash while he is unconscious on a bathroom floor, and he then spends thirty years pursuing it with no evidence that it will work and no fallback if it does not. That is Ne generating a possibility and refusing to release it, and the film is honest about the cost: the fortune gone, the house gone, the reputation in Hill Valley as the local madman.</p>
+<p>The auxiliary Ti is what makes him a scientist rather than an eccentric. The blackboard explanations are real reasoning. He works out the physics of the temporal displacement, the power requirement, the consequences of a paradox, and his warnings to Marty about the space-time continuum are the only structural thinking anyone in the trilogy does. Ne supplies the idea and Ti works out whether it holds.</p>
+<h3>Why does Doc Brown care so much about Marty?</h3>
+<p>Tertiary Fe, arriving late and hitting hard. Doc has no family in 1985 and no standing in the town, and his friendship with a teenager he met when the boy broke into his lab is the only close relationship in his life. It is why the letter matters, why the bulletproof vest matters, and why the third film hinges on Marty refusing to leave him in 1885. The inferior Si is what keeps causing the disasters: he is superb at reasoning forward from an idea and consistently poor at remembering the practical, accumulated details, which is how you end up stealing plutonium from terrorists without a plan for what happens when they notice.</p>`,
+      mistype:`<p>INTP is the usual alternative, and the lone-inventor-in-a-garage image supports it. The difference is the energy. Doc thinks out loud, at volume, at anyone available, and his method of working through a problem is to explain it to a seventeen-year-old with a blackboard. An INTP would refine the framework internally; Doc broadcasts the whole process and needs an audience to have it.</p>
+<p>ENFP is occasionally suggested because of the warmth and the enthusiasm. The distinction is the second function. ENFP pairs Ne with Fi, producing someone whose choices are anchored by personal values. Doc's decisions are governed by reasoning about consequences, and his affection for Marty arrives as an unmanaged eruption rather than as a settled principle, which puts feeling third rather than second.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">E</span><span class="letter-word">Extraverted</span></div>
+  <p>He cannot think quietly. Every idea is delivered at volume, complete with diagrams, to whoever is standing there, and the trilogy's exposition works because its scientist genuinely needs to explain himself to somebody in order to finish the thought.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>Thirty years and an entire fortune spent on a possibility glimpsed during a concussion. He is not extrapolating from evidence; he is chasing something that does not exist yet and treating the absence of proof as a temporary condition.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">T</span><span class="letter-word">Thinking</span></div>
+  <p>His warnings about the space-time continuum are the trilogy's only rigorous thinking, and he applies the logic even when it hurts - insisting that Marty must not learn his own future, and burning the letter's implications through to their conclusion before acting.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">P</span><span class="letter-word">Perceiving</span></div>
+  <p>The plans are improvised right up to the moment of execution and frequently after it. He builds a time machine before working out a safe fuel source, and the trilogy's tension repeatedly comes from a brilliant man discovering the practical detail he did not think about.</p>
+</div>`
+    },
+    'louis-armstrong':{
+      whoHeading:`Who Was Louis Armstrong?`,
+      who:`<p>Louis Armstrong was born on 4 August 1901 in New Orleans and died on 6 July 1971 in New York City. He grew up in serious poverty in a rough district known as the Battlefield, on Rampart Street, and left school at eleven. On 31 December 1912 he fired a blank from his stepfather's pistol in the street, was arrested, and was sent to the Colored Waifs' Home, where a teacher named Peter Davis taught him the cornet. It is not an exaggeration to say that the arrest made the career.</p>
+<p>Around 1922 he followed his mentor King Oliver to Chicago and played second cornet in Oliver's Creole Jazz Band, cutting his first studio sides in April 1923. In 1924 he moved to New York for Fletcher Henderson's orchestra and switched to trumpet, and his influence on the players around him, Coleman Hawkins among them, was immediate.</p>
+<h3>Why is Louis Armstrong so important to jazz?</h3>
+<p>The Hot Five and Hot Seven sessions, which began in November 1925 and produced twenty-four records in twelve months. Before them, jazz was largely collective ensemble playing. Armstrong improvised on the harmonic structure of a tune rather than decorating its melody, and he did it in extended solos that carried his own personality, and in doing so he converted the music into a soloist's art form. Every jazz improviser since works inside a frame he built. He also popularised scat singing on Heebie Jeebies in 1926, by the well-worn account after dropping the lyric sheet mid-take. Later he became a genuinely global figure, touring Africa, Europe and Asia under State Department sponsorship as Ambassador Satch, took Hello Dolly to number one in 1964 at sixty-two years and nine months, the oldest person ever to do it, and recorded What a Wonderful World, which spent a month at the top of the British charts. In 1957, after Little Rock, he told an interviewer that Governor Faubus was a plowboy, that Eisenhower had no guts and was two-faced, and that the government could go to hell over how it was treating his people in the South. He cancelled a State Department tour of the Soviet Union over it, and the FBI opened a file.</p>`,
+      journey:`<p>Armstrong is dominant Se as musical method. Improvisation of that kind is not composition performed quickly; it is a response to the actual sonic situation in the room, made in real time and unrepeatable. The reason the Hot Five sides still sound alive a century later is that you are hearing a man reacting to what has just happened rather than executing something decided beforehand.</p>
+<p>The auxiliary Fi is why the innovation was expressive rather than merely technical. He put his own personality into the solo, deliberately, and that was the actual break with what came before. Fi supplies a private standard of what is worth playing, and his was warmth: he was capable of enormous technical display and consistently chose feeling over difficulty, which is why other trumpeters found him so hard to copy.</p>
+<h3>Why did Louis Armstrong speak out in 1957?</h3>
+<p>Because auxiliary Fi will hold silence for decades and then break it completely, without any strategic calculation attached. Armstrong had spent his career being criticised by younger Black musicians for the smiling, accommodating stage manner, and he had not answered. Then Little Rock happened and he said exactly what he thought about the president of the United States to a reporter, torpedoed a State Department tour, and accepted the consequences. It cost him bookings and earned him an FBI file. The tertiary Te is visible in how thoroughly he built and ran his own career across five decades, and the inferior Ni in the fact that this was a man who lived and worked in the moment and rarely appeared to be managing a legacy at all.</p>`,
+      mistype:`<p>ENFP is sometimes suggested because of the enormous warmth and the sense of a performer connecting with everyone. The distinction is where the invention happens. An Ne-dominant musician generates conceptual possibilities and would be restlessly changing idiom. Armstrong stayed inside a form he had largely defined and produced infinite variation within it, in the moment, physically - which is Se.</p>
+<p>ESFJ comes up because of the geniality and the way he worked a crowd. But Fe in the auxiliary position would mean adjusting to what the room wanted. Armstrong played what he wanted and the room came with him, and when a genuine values question arrived in 1957 he took a position that a great many people did not want to hear. Fi second, not Fe.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">E</span><span class="letter-word">Extraverted</span></div>
+  <p>He worked essentially without stopping for fifty years, on stage or on the road, in bands and in front of crowds on four continents. The performing was not the price of the art, it was where the art happened.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">S</span><span class="letter-word">Sensing</span></div>
+  <p>His instrument was breath and lip, and his innovation lived in the physical act of playing. The improvisation is a real-time response to sound occurring around him, which is why recordings of the same tune on different nights are genuinely different pieces of music.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">F</span><span class="letter-word">Feeling</span></div>
+  <p>He chose warmth over display, every time, in a form that would have rewarded showing off. And when the accumulated silence broke in 1957 it broke on a matter of principle, publicly, at a cost he made no attempt to avoid.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">P</span><span class="letter-word">Perceiving</span></div>
+  <p>His method was open by definition. Nothing was fixed in advance, the solo was assembled as it went, and the career itself unfolded through opportunities taken as they arrived rather than through any plan he ever described.</p>
+</div>`
+    },
+    'willy-wonka':{
+      whoHeading:`Who Is Willy Wonka?`,
+      who:`<p>Willy Wonka is the eccentric founder and owner of the Wonka Chocolate Factory in Roald Dahl's 1964 novel Charlie and the Chocolate Factory. His confectionery is the best in the world and his methods are secret, and at some point before the story begins that secrecy became a crisis: rival manufacturers planted spies among his workers to steal the recipes, and Wonka responded by shutting the factory down completely and dismissing every employee.</p>
+<p>It reopened without anyone visibly going in or out. The workforce turned out to be the Oompa-Loompas, whom he had brought from elsewhere and who live entirely inside the building. He then announced that five golden tickets had been hidden in Wonka Bars sold anywhere in the world, and that the finders would tour the factory and receive a lifetime supply of chocolate, with one of them getting a further prize he did not specify.</p>
+<h3>What is the golden ticket contest really for?</h3>
+<p>Succession. Wonka is much older than he looks and has nobody to leave the factory to, and he will not hand the Oompa-Loompas to someone who might mistreat them. The tour is a test, and each of the four children who fail is eliminated by their own defining appetite: greed, gum, television, indulgence. Charlie Bucket wins by being the only one who does not grab at anything. Gene Wilder's 1971 performance remains the definitive screen version; Johnny Depp's 2005 interpretation divided critics sharply, and Timothee Chalamet's 2023 prequel drew mixed notices as well.</p>`,
+      journey:`<p>Wonka is dominant Ne with no supervision whatsoever. The factory is not a business, it is an idea generator with a production line attached: everlasting gobstoppers, hair toffee, chewing gum that is a three-course dinner, a lift that goes sideways. Most of these are commercially useless and several are actively dangerous, and he keeps making them because the interesting question is whether they can exist rather than whether anyone wants them.</p>
+<p>The auxiliary Ti is why the factory works at all. Somebody has to have solved the actual engineering, and Wonka is the only person in the building who understands any of it. His explanations are precise, internally consistent and completely indifferent to whether his guests can follow them, which is Ti explaining a system to itself with an audience present by accident.</p>
+<h3>Why is Willy Wonka so cruel to the children?</h3>
+<p>Because tertiary Fe reads people perfectly and does not particularly care what they feel. Wonka knows exactly what will tempt each child - he built the room that catches them - and he lets each one walk into it while offering a warning too mild to work. He is not sadistic so much as running an experiment in which the subjects' distress is not a variable he weighted. The inferior Si is the whole backstory: the spies, the closure, the paranoid secrecy, the refusal to keep human employees. He was wounded once by something concrete, and rather than adapt he rebuilt his entire world so the specific past event could not recur.</p>`,
+      mistype:`<p>ENFP is the most common alternative, given the whimsy and the theatricality. But an Fi auxiliary would produce a warmth toward the children that Wonka conspicuously lacks. He watches four of them destroyed by their own natures with a running commentary and no evident distress, and his selection of Charlie is a judgement about suitability rather than an act of affection. Ti sits second.</p>
+<p>INTP is occasionally suggested because of the reclusiveness and the inventing. But the factory is a performance and he needs it witnessed. The golden ticket contest is a global piece of theatre, the tour is staged for effect, and he arrives through a door with an audience waiting. The energy runs outward even from a man who has not left the building in years.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">E</span><span class="letter-word">Extraverted</span></div>
+  <p>The whole succession plan is a spectacle broadcast to the entire world. He could have chosen an heir quietly; instead he manufactured a global frenzy and then performed a guided tour for an audience, complete with musical numbers from the staff.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>His inventions exist because they might be possible rather than because anyone needs them. Chewing gum that delivers a three-course meal is not a product, it is a hypothesis, and he is prepared to keep working on it after it has demonstrably turned a guest into a blueberry.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">T</span><span class="letter-word">Thinking</span></div>
+  <p>He assesses each child on a single criterion and applies it without softening. Even the warnings he issues are technically accurate and deliberately insufficient, which is the behaviour of someone running a test rather than supervising children.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">P</span><span class="letter-word">Perceiving</span></div>
+  <p>The tour has no fixed route and he changes it constantly, following whichever room has caught his attention. His factory is organised around openness to whatever occurs next, which is delightful to read about and would be intolerable to work in.</p>
+</div>`
+    },
+    'cameron-mitchell':{
+      whoHeading:`Who Is Cameron Mitchell?`,
+      who:`<p>Lieutenant Colonel Cameron Mitchell is a member of Stargate SG-1, played by Ben Browder from the show's ninth season onward. Stargate SG-1 was created by Brad Wright and Jonathan Glassner from the 1994 film, premiered on Showtime on 27 July 1997 and ran to 2007, moving to the Sci Fi Channel in 2002. Its premise is a military team travelling to other planets through an alien ring.</p>
+<p>Mitchell arrives at a difficult moment for the series. The original team has effectively dispersed, and he is assigned as SG-1's new commanding officer with the job of reassembling it - which puts him in the position of a new officer trying to recruit veterans who have every reason to say no. Browder was cast after the producers met him at science fiction conventions, having previously discussed other roles in the franchise with him.</p>
+<h3>What is Cameron Mitchell's background?</h3>
+<p>He is a career air force pilot, and the show is deliberate about the contrast this creates. The team he inherits contains a scientist, an alien warrior and a former special operations colonel; Mitchell's expertise is flying, and his qualification for the command is that he asked for it. He earned the right to ask through combat service, and the character is written as somebody who wanted this specific posting badly and said so, rather than as an officer working through a career path. That enthusiasm - genuine, undisguised, occasionally embarrassing to the people around him - is the character's whole engine.</p>`,
+      journey:`<p>Mitchell is dominant Se in a leadership role, which produces a very particular kind of officer. He is not a planner and he is not a theorist. He is superb in the moment: reading a firefight, improvising a route out, making a call with incomplete information because a call has to be made now. The show gives him command of a team that already contains two people better than him at thinking ahead, and his contribution is that he is the best of them at the present tense.</p>
+<p>The auxiliary Fi is why the recruitment works. Mitchell's approach to reassembling SG-1 is not authority, argument or orders; it is telling each of them, plainly, what the team meant to him and why he wants it. He is transparently sincere in a way that military drama usually treats as naive, and the show's decision to let it succeed is what makes the character likeable rather than presumptuous.</p>
+<h3>Why does Cameron Mitchell want SG-1 so badly?</h3>
+<p>Because Fi attaches to specific things and does not let go of them, and because he decided years earlier that this was the posting he wanted. It is a personal conviction rather than a career calculation, which is exactly why it embarrasses the veterans he is asking - they have been treating it as a job. The tertiary Te shows in how competently he actually runs the team once assembled, and the inferior Ni in his consistent difficulty with the long game: he is at his weakest in the political and strategic material the later seasons pile on, and at his best the moment somebody starts shooting.</p>`,
+      mistype:`<p>ESTP is the most common alternative for a pilot who improvises under fire, and the tactical instincts genuinely fit. The difference is the auxiliary. Se with Ti produces a cool operator who reads situations for leverage. Mitchell's decisions are consistently driven by personal loyalty and personal enthusiasm, and he is straightforwardly emotional about the team in a way a Ti-auxiliary officer would find unnecessary.</p>
+<p>ENFJ is occasionally suggested because he spends his introduction persuading people. But he does not persuade by reading what each person needs and shaping the appeal to it, which is what Fe does. He persuades by saying what he personally feels and letting it land, which is Fi expressed outward by someone who happens to be an extravert.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">E</span><span class="letter-word">Extraverted</span></div>
+  <p>He talks his way into everything, including the command itself. His method for solving almost any problem begins with going and finding a person, and he is visibly energised by the team in a way the more self-contained members of it are not.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">S</span><span class="letter-word">Sensing</span></div>
+  <p>He is a pilot, and it shows in how he thinks: spatial, immediate, physical. His value in the field is real-time reading of a situation that is changing faster than anyone can plan for, and he is noticeably less comfortable in a briefing room.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">F</span><span class="letter-word">Feeling</span></div>
+  <p>His reasons are personal and he states them out loud. The whole ninth season premise depends on a man walking up to people far more experienced than him and telling them sincerely why this matters to him, which is not how officers in this genre usually behave.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">P</span><span class="letter-word">Perceiving</span></div>
+  <p>He adapts rather than directs. Handed a team that does not want to exist and a mission structure that keeps changing, he improvises his way to a working arrangement instead of imposing one, and the flexibility is why the reassembled team holds together.</p>
+</div>`
+    },
+    'apophis':{
+      whoHeading:`Who Is Apophis?`,
+      who:`<p>Apophis is the principal antagonist of the early seasons of Stargate SG-1, played by Peter Williams. The series was created by Brad Wright and Jonathan Glassner from the 1994 film, ran from 27 July 1997 to 2007 on Showtime and later the Sci Fi Channel, and follows a military team using an alien ring to travel to other worlds.</p>
+<p>He is introduced in the pilot in the most economical way possible: the gate opens, he comes through with armoured soldiers, kills people and takes an airman, and the American military's quiet mothballed research project becomes an active war. He is a Goa'uld System Lord, one of a class of parasitic beings who take human hosts, present themselves as gods to the populations they rule, and hold territory across a large stretch of the galaxy.</p>
+<h3>Why does Apophis matter to Stargate SG-1?</h3>
+<p>Because he establishes the shape of the entire threat. The Goa'uld are not a swarm or a force of nature; they are an empire with politics, rivals, vassals and a succession problem, and Apophis is the one who demonstrates that. His conflicts are as often with other System Lords as with Earth, and the show's early strategy for its heroes is to exploit that. He was killed in the fifth season, but the Goa'uld remained the central antagonist through the eighth, which is a fair measure of how much of the series' mythology he carried.</p>`,
+      journey:`<p>Apophis is dominant Te on an imperial scale. His response to any obstacle is organisational: raise a fleet, install a governor, subjugate a world, restructure the command. He is not driven by rage and he does not brood. He allocates. What makes him frightening in a way a more theatrical villain would not be is that he treats the extermination of a planet as a resourcing decision and moves straight on to the next agenda item.</p>
+<p>The auxiliary Ni is why the campaigns cohere. He is playing a very long game against the other System Lords as much as against Earth, and his moves consistently turn out to have been positioning for something several steps ahead. The god-persona is part of that: a governing structure built on worship is enormously efficient, and he maintains it with complete discipline because it works, not because he needs it.</p>
+<h3>Why does Apophis keep coming back?</h3>
+<p>The show turned it into a joke, but it fits the type exactly. Te with Ni builds redundancy into everything, because a plan that depends on the planner surviving is a badly designed plan. Apophis returns because he prepared for his own removal, repeatedly, and each return is less a resurrection than a contingency executing. The tertiary Se accounts for the theatre - the voice, the armour, the deliberate physical presence that makes the god claim land - and the inferior Fi for the one real weakness the series exploits, which is that his sense of his own supremacy is a genuine personal conviction and can therefore be provoked, flattered and used against him.</p>`,
+      mistype:`<p>INTJ is the most common alternative, on the strength of the long-range scheming. The distinction is where he operates. An INTJ builds privately and prefers to act through instruments at a remove. Apophis is relentlessly public: he arrives in person, addresses populations directly, commands from the front of his own fleet, and rules through visible authority. The organisation is the primary instrument, which puts Te first.</p>
+<p>ESTP is occasionally suggested because of the physical menace and the appetite for direct confrontation. But he is not improvising. Every appearance is a stage in a campaign decided long beforehand, and his defeats consistently come from the plan being disrupted rather than from him losing a fight. The presence is real and it serves a strategy.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">E</span><span class="letter-word">Extraverted</span></div>
+  <p>He rules by being seen. The armour, the ceremonial arrivals, the direct address to conquered populations - his entire method of government depends on physical presence in front of an audience, and he never delegates that part of it.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>His campaigns are long and his real opponents are usually the other System Lords rather than the humans in front of him. Individual episodes turn out, seasons later, to have been positioning moves in a contest for the whole empire.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">T</span><span class="letter-word">Thinking</span></div>
+  <p>Populations, hosts and subordinates are all resources to be allocated, and he says so plainly. There is no cruelty for its own sake in him, which is precisely what makes him unsettling: the calculation genuinely does not include anyone's suffering as a term.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">J</span><span class="letter-word">Judging</span></div>
+  <p>Everything is structure - a hierarchy of vassals, a fleet, a succession, a religion with rules. He does not raid or improvise, he administers, and even his repeated returns are the product of contingencies arranged in advance.</p>
+</div>`
+    },
+    'scout-finch':{
+      whoHeading:`Who Is Scout Finch?`,
+      who:`<p>Jean Louise Finch, called Scout, is the narrator of Harper Lee's To Kill a Mockingbird, published on 11 July 1960 and awarded the Pulitzer Prize in 1961. She is six years old when the novel opens and eight when it closes, and the story is set in the fictional town of Maycomb, Alabama, between 1933 and 1935, in the Depression.</p>
+<p>The narration is double. The voice belongs to a grown woman recalling her childhood, so the reader consistently understands more than the child did at the time, and the gap between the two is where most of the book's power sits. Scout lives with her widowed father Atticus, a lawyer, and her older brother Jem. Their summers are shared with a visiting boy called Charles Baker Harris, known as Dill, and much of their attention goes to the reclusive neighbour Arthur Radley, whom they call Boo and initially treat as a monster. Harper Lee's own father was a lawyer, and the novel draws heavily on the people she grew up among.</p>
+<h3>What does Scout understand about the Tom Robinson trial?</h3>
+<p>More than she can articulate and less than the adult narrating knows. She watches from the coloured balcony as her father defends a Black man against a charge everyone in the courtroom can see is false, and she sees him convicted anyway. It is the point where her assumption that people are basically decent stops working. Earlier, outside the jail, she walks into a mob that has come for Tom Robinson and, entirely without strategy, starts talking to Mr Cunningham about his son and his entailment - and the mob disperses, because a man cannot stay part of a mob while a child is asking after his family by name. She has no idea what she has done.</p>`,
+      journey:`<p>Scout is dominant Ne, and Lee uses it as the novel's engine. The child's question - but why - is what drives every chapter forward, and Scout asks it relentlessly, of Atticus, of Calpurnia, of her teacher, of anyone who offers her a rule. She generates possibilities constantly: about Boo Radley, about what the adults are really doing, about why Maycomb works the way it does. It is also why she cannot be socialised into the town's assumptions, because assumptions require you to stop asking.</p>
+<p>The auxiliary Fi is why the questions have moral weight rather than just curiosity. Scout has an internal sense of fairness that predates any of the arguments she is given, and she reacts to violations of it physically, usually by hitting somebody. Atticus's teaching is not the installation of a conscience; it is an attempt to give an already fierce one better tools.</p>
+<h3>Why does the mob scene work?</h3>
+<p>Because Ne and Fi together produce a child who is incapable of seeing a crowd instead of individuals. Scout does not recognise the mob as a mob. She sees Mr Cunningham, a man she knows, whose son she goes to school with, and she talks to him about the things she associates with him. Fe would have read the situation and adapted; Fi simply proceeds from the personal connection as though the situation were not there. The tertiary Te is visible in how thoroughly she argues once she gets going, and the inferior Si in her total impatience with tradition, ritual and how things have always been done in Maycomb, which is the whole basis of her conflict with Aunt Alexandra.</p>`,
+      mistype:`<p>ESTP is sometimes suggested because she is physical, fights readily and is drawn to whatever is happening. But her fights are always about something said - an insult to her father, a claim she considers false - rather than about the physical situation, and her real medium is questions rather than action. The energy goes into ideas about people, which is Ne.</p>
+<p>ENTP comes up because of the relentless questioning and the argumentativeness. The difference is the auxiliary. Ne with Ti would produce a child who enjoys the argument for its own sake and can be talked round by a better one. Scout cannot be argued out of what she thinks is unfair, and her responses to Maycomb's reasoning are moral rather than logical. Fi second.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">E</span><span class="letter-word">Extraverted</span></div>
+  <p>She is outdoors, in the street, in other people's yards, in the courthouse balcony. Almost nothing in the novel happens to her alone, and her way of understanding anything is to go and be in the middle of it and ask whoever is there.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>The Boo Radley mythology is an entire imaginative structure built by three children out of almost no evidence, and Scout is its most committed theorist. Her instinct with any fact is to ask what is behind it, which is exactly what Maycomb would prefer she did not do.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">F</span><span class="letter-word">Feeling</span></div>
+  <p>Her sense of fairness arrives before any argument for it and is defended physically. She hits people who insult her father, and the novel's central lesson - climbing inside someone's skin and walking around in it - is offered to a child who already cares intensely and needs help aiming it.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">P</span><span class="letter-word">Perceiving</span></div>
+  <p>She resists every attempt to settle her into a form: the dresses, the manners, the ladies' missionary circle, the version of a Southern girl her aunt keeps proposing. Her whole disposition is to keep the question open, which is the same trait that makes her a good narrator and an impossible pupil.</p>
+</div>`
+    },
+    'zlatan-ibrahimovic':{
+      whoHeading:`Who Is Zlatan Ibrahimović?`,
+      who:`<p>Zlatan Ibrahimović was born on 3 October 1981 in Malmo, Sweden, to Sefik Ibrahimovic, a Bosniak Muslim who had emigrated in 1977, and Jurka Gravic, a Catholic Croat. He grew up on the Rosengard estate in difficult circumstances; social services became involved with the family when he was nine. He has written about all of it, at length and without much softening, in his autobiography I Am Zlatan Ibrahimović, co-written with David Lagercrantz.</p>
+<p>The club career is close to absurd in its scope. Malmo from 1999, then Ajax in 2001 where he won two Eredivisie titles, Juventus in 2004, Inter in 2006 where he won three consecutive Serie A titles and was top scorer, Barcelona in 2009, Milan, then Paris Saint-Germain from 2012 where he scored 156 goals in 180 matches and won four straight league titles, then Manchester United, LA Galaxy, and finally Milan again until he retired at the end of the 2022-23 season. Thirty-four trophies in total, including five Serie A titles and four in Ligue 1.</p>
+<h3>What is Zlatan Ibrahimović best known for?</h3>
+<p>The bicycle kick, and the talking. On 14 November 2012 against England he scored four, the last of them a 35-yard overhead kick with his back to goal after the keeper had come out, which took the Puskas Award the following year. For Sweden he won 122 caps and scored 62 goals, more than anyone else in the country's history, across two World Cups and four European Championships. He is at least as famous for the way he speaks about himself, frequently in the third person, and his answer to Arsenal's offer of a trial at seventeen - that Zlatan does not do auditions - is the line that defined the persona.</p>`,
+      journey:`<p>Ibrahimovic is dominant Se operating at the outer edge of what a body can do. The goals that define him are not tap-ins; they are acrobatic solutions arrived at in the fraction of a second where the situation existed. The overhead kick against England is the extreme case: the ball is behind him, the keeper is out, and the correct answer only exists for about a tenth of a second, and he sees and takes it. Se does not calculate that. It perceives it.</p>
+<p>The auxiliary Ti is why he is not simply an athlete. His finishing is technically inventive in a way that suggests a genuine analytical relationship with the physics of the thing - the angles, the spin, the improbable body shapes - and he has always been articulate about what he is doing on the pitch, in cold mechanical terms, even while being ridiculous about everything else.</p>
+<h3>Is Zlatan Ibrahimović's arrogance real?</h3>
+<p>Partly, and the tertiary Fe explains the rest. The third-person declarations are a performance he has full control of, and he deploys them with an accurate read of what an audience will find funny, quotable and useful to him. It is a constructed public instrument built by someone who understands crowds, not an unmediated overflow of ego. The inferior Ni is the thing the persona covers: he moved club roughly every two or three years for two decades, chasing whichever situation looked best in the present, and the one trophy that never arrived - a Champions League title - is the one that required a long settled project rather than a series of brilliant immediate answers.</p>`,
+      mistype:`<p>ENTJ is sometimes proposed because of the self-assurance and the way he takes command of any dressing room he enters. But he does not build. He arrives, dominates the present situation and moves on, and the career is a sequence of intense short tenures rather than any structure he assembled. Te would have produced a long project somewhere; Se produced nine clubs.</p>
+<p>ESFP comes up because of the showmanship and the personality. The distinction is the auxiliary. Se with Fi produces a player whose choices follow an internal emotional standard. Ibrahimovic's choices are consistently strategic and unsentimental - he left clubs, countries and managers whenever the calculation changed, and the persona itself is a piece of engineering rather than an expression of feeling.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">E</span><span class="letter-word">Extraverted</span></div>
+  <p>He takes over the room and does it deliberately. Nine major clubs in four countries and a personality that arrives before he does, and by his own repeated account the pressure of a hostile crowd is the condition in which he plays best.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">S</span><span class="letter-word">Sensing</span></div>
+  <p>His signature goals are physical solutions to problems that existed for a fraction of a second. The overhead kick from 35 yards is not planned or practised, it is perceived, and it is the purest example in modern football of a body reading a situation faster than a mind could describe it.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">T</span><span class="letter-word">Thinking</span></div>
+  <p>The career decisions are cold. He moved between fierce rivals without apparent difficulty, left situations the moment they stopped serving him, and talks about his own value in frankly transactional terms. Sentiment has never appeared to be a factor.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">P</span><span class="letter-word">Perceiving</span></div>
+  <p>Nine clubs, four countries, no long project anywhere. He optimised continuously for the best available present rather than committing to a structure, which is why the trophy list is enormous and why the one that needed years in the same place never came.</p>
+</div>`
+    }
+  });
+
+
+  // ── Rewritten pages: full biography (who), journey, mistype and letter
+  // breakdown. Assigned after the block above so these entries win.
+  Object.assign(charContent, {
+    'diego-maradona':{
+      whoHeading:`Who Was Diego Maradona?`,
+      who:`<p>Diego Armando Maradona was born on 30 October 1960 at the Policlinico Evita in Lanus, Buenos Aires, and grew up in Villa Fiorito, a shantytown on the city's southern outskirts, in serious poverty. He debuted for Argentinos Juniors on 20 October 1976, the youngest player in the history of the Argentine first division at the time, and scored 115 goals in 167 games for them. Boca Juniors bought him in 1981 for four million dollars and he won the league that year. Barcelona took him for a world record five million pounds after the 1982 World Cup, and it went badly - injuries, incidents, and a departure after two seasons.</p>
+<p>Napoli signed him in July 1984 for a new record of 6.9 million pounds, and that is where the myth was built. He won them two Serie A titles, in 1986-87 and 1989-90, at a club that had never won one, in a league dominated by the wealthy north, and he remained their all-time leading scorer until 2017. He was banned for fifteen months after testing positive for cocaine in 1991, and later played for Sevilla, Newell's Old Boys and Boca again.</p>
+<h3>What did Maradona do at the 1986 World Cup?</h3>
+<p>He won it more or less by himself: five goals, five assists, the Golden Ball, and a quarter-final against England that produced the two most discussed goals in the sport's history four minutes apart. The first he punched in with his left fist and called the Hand of God. The second was a sixty-metre run past five players that FIFA voters later named the greatest World Cup goal ever scored. He captained Argentina to the final again in 1990 and lost to West Germany. In 1994 he played two matches and failed a test for ephedrine, which ended his international career at 91 caps and 34 goals. He managed Argentina from 2008 to 2010 and several clubs afterwards, and he was still in charge of Gimnasia de La Plata when he died on 25 November 2020, aged sixty. He shared the FIFA Player of the Century award with Pele.</p>`,
+      journey:`<p>Maradona is dominant Se at a level the sport has produced perhaps twice. The second goal against England is not a plan; it is a continuous sixty-metre sequence of decisions made at full speed with the ball never leaving his control, each one responding to a defender who has just moved. There is no version of that goal that involves thinking ahead. It is pure real-time perception, executed by a body that had been solving those problems in Villa Fiorito since he was eight.</p>
+<p>The auxiliary Fi is why Napoli and not Barcelona. He was given a wealthy, successful club in Spain and could not make it work; he was given a poor club in a city the rest of Italy looked down on and gave them the only two championships they have ever won. The identification was total and it was personal - he understood exactly what he was doing for those people because he had come from the equivalent - and Fi supplies that kind of attachment without any strategic reasoning attached.</p>
+<h3>Why did Maradona's life go so badly wrong?</h3>
+<p>The inferior Ni, and there is no gentler way to put it. The cocaine, the weight, the sequence of catastrophes across four decades - each of them is a present-tense decision made without the future being real. He was surrounded by people who profited from him being exactly as he was, and the one function that might have registered where it all led was the weakest thing in his stack. The tertiary Te shows only in flashes: he could organise a dressing room, and as a manager he could occasionally get more out of a squad than anyone expected, but the discipline never came from inside.</p>`,
+      mistype:`<p>ESTP is the standard alternative for a player of that improvisational brilliance. The difference is what governs it. Se with Ti produces a cool competitor who reads a game for exploitable weakness. Maradona's football was emotional and demonstrative, driven by what he felt about the opponent, the crowd and the occasion, and his most famous act was an act of defiance he immediately framed in national and personal terms rather than tactical ones.</p>
+<p>ENFP is occasionally suggested because of the charisma and the volatility. But there is nothing conceptual about him. His intelligence was entirely embodied, and away from a football pitch he had no equivalent inventiveness in how he thought or spoke. The genius lived in his feet and in the moment, which is Se leading with Fi behind it.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">E</span><span class="letter-word">Extraverted</span></div>
+  <p>He needed the stadium, the city and the crowd, and he fed on hostility as readily as on adoration. Napoli worked because 70,000 people made him the centre of everything every week, and his worst periods were the ones where that attention was withdrawn.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">S</span><span class="letter-word">Sensing</span></div>
+  <p>His control of a ball in a crowd is the most complete example of physical intelligence football has recorded. The England goal is sixty metres of continuous real-time problem-solving with no plan available at any point in it.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">F</span><span class="letter-word">Feeling</span></div>
+  <p>He chose Napoli and then belonged to it completely. His loyalties and his grudges were personal, permanent and worn in public, and he explained the Hand of God in terms of history and country rather than as a piece of gamesmanship.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">P</span><span class="letter-word">Perceiving</span></div>
+  <p>Nothing about his career or his life was managed. He responded to what was in front of him, brilliantly on the pitch and disastrously off it, and the absence of any structure to fall back on is what turned the second half of his life into the story it became.</p>
+</div>`
+    },
+    'giannis-antetokounmpo':{
+      whoHeading:`Who Is Giannis Antetokounmpo?`,
+      who:`<p>Giannis Sina Ugo Antetokounmpo was born on 6 December 1994 in Athens, to Nigerian immigrants - his father had played football, his mother had been a high jumper. They grew up in the Sepolia neighbourhood, and because their parents could not obtain work permits, Giannis and his older brother Thanasis hawked watches, handbags and sunglasses in the street to bring money in.</p>
+<p>Greek nationality law follows descent rather than birthplace, so despite being born in Athens he was stateless for the first eighteen years of his life. He was granted Greek citizenship on 9 May 2013, weeks before the draft, and Milwaukee took him fifteenth overall on 28 April that year. He chose number 34 because his parents were born in 1963 and 1964. Because a great many people could not pronounce the surname, he became the Greek Freak almost immediately.</p>
+<h3>What has Giannis Antetokounmpo achieved?</h3>
+<p>In 2016-17 he became the first player in NBA history to finish in the top twenty in all five major statistical categories, and took Most Improved Player. He then won the MVP award in 2019 and again in 2020, one of only three players to do it twice before turning twenty-six, alongside Kareem Abdul-Jabbar and LeBron James. In 2020 he also took Defensive Player of the Year in the same season, which only Michael Jordan and Hakeem Olajuwon had managed. In 2021 he led Milwaukee to their first championship in fifty years and scored fifty points in the closing game against Phoenix, taking Finals MVP by unanimous vote. In July 2026 he was traded to Miami, ending thirteen years with the Bucks.</p>`,
+      journey:`<p>Giannis is dominant Fi playing a sport that rarely rewards it publicly. His stated reasons for everything are personal and unstrategic: the family, the promise made to his father, the specific city he did not want to leave. The famous press conference answer about the previous season not being a failure, because there is no failure in sport, only good days and bad days, is a values statement delivered under pressure by somebody who was not trying to say anything clever.</p>
+<p>The auxiliary Se is the engine of the game itself. The Euro step from the free throw line, the transition drives, the block at the rim in game four of the 2021 finals - all of it is immediate physical reading and response at a size the sport had not previously had to deal with. Fi decides what he is doing this for, and Se does it.</p>
+<h3>How did Giannis Antetokounmpo get so much better?</h3>
+<p>The tertiary Ni, arriving gradually, which is unusual and is the whole story of his development. He entered the league raw, and the improvement curve across a decade was not the normal athletic maturation - it was a player who developed an increasingly clear internal picture of what he needed to become and then went after it in specific pieces. The inferior Te is what he had to build from nothing, and you can see him doing it: the free throw routine, the conditioning programme, the deliberate expansion of the game year by year. None of it came naturally, and all of it got done.</p>`,
+      mistype:`<p>ESFP is the most common alternative, and the physical dominance and evident joy in playing make it a fair read. The difference is where the energy sits. Giannis is notably private, deflects attention onto teammates, and is visibly uncomfortable with the celebrity apparatus. He recharges away from crowds rather than in them, which is what puts Fi first and Se second rather than the reverse.</p>
+<p>ISTP comes up because of the athleticism and the economical way he speaks. But his decisions are consistently governed by feeling rather than by analysis: loyalty to a small-market franchise, family as the stated reason for nearly everything, and a public emotional register that a Ti-dominant player would keep well hidden.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>He is guarded in a role that offers enormous incentives not to be. The endorsements are modest for a player of his standing, the personal life stays out of view, and he consistently redirects credit toward teammates and family rather than occupying the attention himself.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">S</span><span class="letter-word">Sensing</span></div>
+  <p>His game is physical improvisation at close range: the long Euro step, the drive from the logo, the recovery block. He solves the situation in front of him with his body faster than anyone that size has, and the reading is immediate rather than schematic.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">F</span><span class="letter-word">Feeling</span></div>
+  <p>Every explanation he gives is personal. The number on the jersey, the reason for staying in Milwaukee, the framing of a lost season as a bad day rather than a failure - these come from an internal standard he applies to himself rather than from anything the situation demanded.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">P</span><span class="letter-word">Perceiving</span></div>
+  <p>He adapts rather than dictates. His game has been rebuilt repeatedly, season by season, in response to how defences chose to guard him, and the flexibility is the reason a raw fifteenth pick became a two-time MVP rather than a physical curiosity.</p>
+</div>`
+    },
+    'princess-irulan':{
+      whoHeading:`Who Is Princess Irulan?`,
+      who:`<p>Princess Irulan Corrino is the eldest daughter of Shaddam IV, the eighty-first Padishah Emperor, and Anirul, a Bene Gesserit of Hidden Rank. She has four younger sisters and no brothers, which makes her hand the most valuable political object in the Imperium. She received deep Bene Gesserit training and was intended to become a Reverend Mother, though she never underwent the spice agony that the rank requires. Lady Jessica's assessment of her is unkind and probably accurate: too proud to push herself as far as her capabilities would have allowed.</p>
+<p>Her function in Frank Herbert's novel is structural. Every chapter of Dune opens with an epigraph attributed to her - a fragment of history, a manual, a philosophical aside, a passage from one of her many books about Muad'Dib - so the reader has been listening to her for hundreds of pages before she walks on. She appears in person only near the end, when Paul demands her hand as the price of the Imperial throne.</p>
+<h3>What happens to Princess Irulan?</h3>
+<p>She gets the title and nothing else. Paul marries her to legitimise his claim and tells her openly that Chani, his Fremen concubine, will bear his children and hold his affection. Irulan's response over the following years is twofold and entirely characteristic: she becomes the great chronicler of his reign, and she secretly administers contraceptives to Chani under Bene Gesserit orders, damaging her fertility. After Chani dies in childbirth in Dune Messiah, Irulan breaks with the Bene Gesserit and gives her loyalty to House Atreides and to Paul's children. She has been played on screen by Virginia Madsen in 1984, Julie Cox in the 2000-2003 miniseries, and Florence Pugh in the recent films.</p>`,
+      journey:`<p>Irulan is dominant Ni given no outlet except the page. She can see the whole shape of what Paul is - the empire, the jihad, the historical weight of it - more clearly than almost anyone in the book, and her position gives her no power to act on any of it. So she writes. The epigraphs are an Ni-dominant intelligence doing the only thing available to it: constructing the definitive interpretation of events she is forbidden to influence.</p>
+<p>The auxiliary Fe explains the rest of her behaviour, including the ugly part. Fe orients toward relationship and belonging, and Irulan is placed in a marriage that formally gives her everything and actually gives her nothing. The contraceptives are what happens when that function is starved: an attempt to secure a position through the only lever available, done on someone else's orders, and understood by her to be squalid even while she is doing it.</p>
+<h3>Why does Irulan change sides?</h3>
+<p>Because Fe eventually attaches to the people actually in front of her rather than to the institution that trained her. After Chani's death she has every reason to go back to the Sisterhood and instead stays, raising Paul's twins and defending the family that humiliated her for years. The tertiary Ti is visible in the epigraphs themselves, which are analytically sharp and often quietly critical of their subject. The inferior Se is why she is politically ineffective throughout: she understands everything and can act on almost none of it, and by the time she is willing to move directly the moment has always passed.</p>`,
+      mistype:`<p>INTJ is the most common alternative, given the historical intelligence and the long view. The difference is the auxiliary. INTJ implements through Te, building structures to deliver the vision, and Irulan builds nothing. Her medium is writing addressed to future readers and her interventions are relational rather than organisational, which points to Fe in second position.</p>
+<p>INFP is occasionally suggested because of the interiority and the sense of a woman whose real life is private. But her attention is consistently outward and social - the court, the marriage, the Sisterhood, the readership - and her crisis is about her position among people rather than about being untrue to herself. Ni leads, and Fe is what it is starved of.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>She is present in the novel for hundreds of pages before she appears in a room. Her entire presence is textual, and the character is constructed so that her interior life reaches the reader long before her body reaches the plot.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>The epigraphs are written from a vantage point years after the events, framing them as history while they are still happening. She thinks in patterns, consequences and long arcs, which is why her commentary carries more weight than anything she is permitted to do.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">F</span><span class="letter-word">Feeling</span></div>
+  <p>Her defining wound is relational rather than political. She is given the title of empress and no place in anyone's affection, and both her worst act and her final redemption are attempts to secure a position among people who did not want her there.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">J</span><span class="letter-word">Judging</span></div>
+  <p>She organises. Faced with a life she cannot control she produces a systematic body of work - histories, manuals, commentaries - imposing order on events through documentation when no other form of order is available to her.</p>
+</div>`
+    },
+    'simon-bolivar':{
+      whoHeading:`Who Was Simón Bolívar?`,
+      who:`<p>Simón Bolívar was born on 24 July 1783 in Caracas into a prominent criollo family, and lost both parents to tuberculosis early - his father in January 1786, when Simón was two, his mother in July 1792. He was raised largely apart from his siblings by an enslaved woman named Hipolita, under guardians who showed rather more interest in his inheritance than in him. He was educated by a remarkable group of Venezuelan intellectuals, Simón Rodriguez and Andres Bello among them.</p>
+<p>On 18 August 1805, during a European tour, he stood on Monte Sacro in Rome and swore that he would not rest in body or soul until he had broken the chains binding America to the will of Spain. He was twenty-two. It is the kind of statement most young men make and forget, and he organised the rest of his life around it.</p>
+<h3>What did Simón Bolívar actually achieve?</h3>
+<p>On 14 May 1813 he launched the Admirable Campaign out of New Granada into Venezuela, and reached Caracas on 6 August, where the city gave him the title El Libertador. Exiled to Jamaica in 1815, he wrote the Jamaica Letter setting out his political vision for the continent. In 1819 he took an army across the Andes - a crossing that killed a substantial part of his force - and destroyed the Spanish at Boyaca, which secured New Granada. He then united Venezuela, New Granada, Ecuador and Panama into Gran Colombia and served as its president from 17 December 1819. Peru was liberated in 1824 and Bolivia in 1825, the latter named after him. By 1830 the republic was disintegrating and so was he: successively stripped of office, deeply disillusioned with what independence had actually produced, he resigned the presidency and died of tuberculosis on 17 December 1830 at Santa Marta, aged forty-seven.</p>`,
+      journey:`<p>Bolívar is dominant Te with a continent as its object. The oath on Monte Sacro is often quoted as romantic, and it was, but what followed was twenty-five years of the least romantic work imaginable: raising armies, securing finance, negotiating with Haiti and Britain, writing constitutions, appointing governors, restructuring commands after each defeat. He lost repeatedly and was exiled twice, and each time he rebuilt the apparatus rather than the sentiment.</p>
+<p>The auxiliary Ni is why the objective kept expanding. He did not want Venezuela free, he wanted a single continental republic, and he was arguing for it in the Jamaica Letter years before he had the military position to attempt any of it. The Andes crossing is the clearest expression of both functions at once: a strategically brilliant idea nobody thought survivable, executed by an organiser who accepted the casualty rate because the campaign's shape required it.</p>
+<h3>Why did Gran Colombia fail?</h3>
+<p>Because Te builds what it can command and Ni sees a unity that the ground would not support. Bolívar's republic was an enormous, geographically fractured territory of regional elites with no shared institutions, and his response to its centrifugal politics was to concentrate more authority in himself - which produced exactly the accusations of dictatorship that finished him. The tertiary Se accounts for the personal courage and the extraordinary physical endurance of the campaigns, and the inferior Fi surfaces at the very end, in the famous bitterness of his last months, when a man who had defined himself entirely by an objective was left with the objective in pieces and nothing else underneath it.</p>`,
+      mistype:`<p>INTJ is sometimes argued because of the constitutional writing and the long-range vision. But Bolívar worked in public and at the front. He commanded armies personally, addressed populations directly, governed visibly, and generated his political thought as an intervention in an ongoing argument rather than as a private synthesis. The organisation is the primary instrument, which puts Te first.</p>
+<p>ENTP comes up because of the sheer inventiveness of the campaigns and the volume of writing. The distinction is closure. An Ne-dominant leader would keep generating alternative arrangements; Bolívar fixed on one continental design and pursued it past the point where the evidence had turned against it, which is Ni supporting Te rather than Ne leading.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">E</span><span class="letter-word">Extraverted</span></div>
+  <p>He led from the front and governed in the open, addressing congresses, armies and populations directly. Even his exiles were spent writing to the world rather than withdrawing from it, and the Jamaica Letter is an argument aimed at an audience.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>He was never fighting for the province in front of him. From at least 1815 he was arguing for a unified continental republic, an entity that did not exist and had no precedent, and he made military decisions on the basis of that future rather than the present map.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">T</span><span class="letter-word">Thinking</span></div>
+  <p>The Decree of War to the Death and the Andes crossing were both assessed on what they would deliver rather than on what they would cost. He allocated men, allies and his own reputation with a coldness that his admirers and his enemies both remarked on.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">J</span><span class="letter-word">Judging</span></div>
+  <p>He built institutions constantly: a republic, constitutions, presidencies, administrative structures for territories that had been at war a month earlier. His instinct with any liberated region was to organise it immediately, and his response to instability was always more structure.</p>
+</div>`
+    },
+    'sam-altman':{
+      whoHeading:`Who Is Sam Altman?`,
+      who:`<p>Samuel Altman was born on 22 April 1985 in Chicago and grew up in Clayton, Missouri. He studied computer science at Stanford for two years and left in 2005 without finishing. At nineteen he co-founded Loopt, a location-sharing app that raised more than thirty million dollars, never found real traction, and was acquired by Green Dot for 43.4 million in March 2012.</p>
+<p>He joined Y Combinator as a partner in 2011 and took over as president in February 2014 from his mentor Paul Graham, with a stated ambition to fund around a thousand companies a year and to push the accelerator toward hard technology rather than consumer apps. In 2015 he co-founded OpenAI as a non-profit alongside Elon Musk, Greg Brockman and others, on an initial billion dollars in pledges of which about 130 million had actually arrived by 2019. He became its chief executive in 2019.</p>
+<h3>What happened to Sam Altman in November 2023?</h3>
+<p>ChatGPT had launched in December 2022 and crossed a million signups in five days, and Altman had become the most recognisable person in the industry. On 17 November 2023 OpenAI's board fired him, saying he had not been consistently candid in his communications with them. What followed was one of the strangest corporate weeks on record: over 700 of the company's roughly 770 employees signed a letter threatening to resign unless the board went and Altman came back, Microsoft announced it would hire him to run a new AI group, and by 21 November he and Brockman had returned with a reconstituted board. Beyond OpenAI he co-founded the venture firm Hydrazine Capital, chairs the fusion company Helion Energy, and co-founded Tools for Humanity, whose Worldcoin project scans irises to establish proof of personhood and has been investigated or suspended by regulators in France, the United Kingdom, Bavaria, South Korea, Spain, Portugal and Hong Kong. He has argued for universal basic income for years, proposing in 2021 that AI could fund 13,500 dollars a year for every American adult within a decade.</p>`,
+      journey:`<p>Altman is dominant Ni operating on a single very large forecast. His entire career is organised around a conviction about where technology is going that he formed early and has never appeared to revise: that a small number of transformative technologies will matter enormously and that everything else is noise. The Y Combinator pivot toward hard technology, the fusion company, the nuclear fission SPAC, OpenAI itself - these are not a portfolio, they are one thesis expressed four ways.</p>
+<p>The auxiliary Te is the mechanism, and it is unusually visible in his case because he keeps building the same kind of thing: an organisation with a stated mission, an unusual governance structure, and himself at the centre of it. He is not a researcher and does not claim to be. His contribution is capital allocation, recruitment and institutional design, which is Te doing what Te does with a vision it has been handed.</p>
+<h3>Why did OpenAI's employees back Sam Altman?</h3>
+<p>Because the tertiary Fi in an INTJ produces intense personal loyalty in a small circle, and because he had spent years building precisely that. The 2023 crisis is the clearest data point in his public record: a board with formal authority removed him and the organisation itself refused the removal, which means the actual structure of power was relational rather than constitutional. The inferior Se is the standing criticism, and it is the same one levelled at the whole industry - a leader operating on a decade-long forecast is systematically less attentive to what the technology is doing to people this year, and the Worldcoin regulatory record is the most concrete illustration of it.</p>`,
+      mistype:`<p>ENTJ is the most common alternative, given how much of the job is running an organisation. The difference is where he is comfortable. Altman is a persistent essayist and forecaster who works out his positions in writing and then builds toward them, and his public manner is notably low-key for someone in his position. The vision precedes and directs the organisation rather than emerging from it.</p>
+<p>ENTP comes up because of the range of ventures and the appetite for the unproven. But the ventures are not divergent, they are the same bet placed in different sectors - compute, energy, identity - and he has held the underlying thesis with unusual consistency for two decades. Ne would have produced more variety and less conviction.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>He works out his positions in long written essays and arrives at public appearances with them already settled. For the most visible figure in a very loud industry, his manner is deliberately flat, and the persuasion happens in small rooms rather than on stages.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>Everything he funds is a bet on a state of the world that does not exist yet. Fusion power, artificial general intelligence, universal basic income funded by machine productivity - none of these are extrapolations from current evidence, and he commits capital to them anyway.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">T</span><span class="letter-word">Thinking</span></div>
+  <p>He restructured a non-profit into a capped-profit hybrid because the mission required capital, and defends the arrangement on those grounds rather than on principle. The reasoning is consistently instrumental, and he is willing to state conclusions that make his own allies uncomfortable.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">J</span><span class="letter-word">Judging</span></div>
+  <p>Each thesis becomes an institution with a charter, a governance model and a funding structure. He does not leave his views as opinions; he incorporates them, and the 2023 crisis was fundamentally a fight about which structure actually held the authority.</p>
+</div>`
+    },
+    'janet-fraiser':{
+      whoHeading:`Who Is Janet Fraiser?`,
+      who:`<p>Doctor Janet Fraiser is the chief medical officer of Stargate Command in Stargate SG-1, played by Teryl Rothery. She first appears in the first-season episode The Broca Divide as a captain, and is promoted to major in the third season. She was a regular presence through the first seven seasons, and returned in the ninth in a different capacity.</p>
+<p>Her job is unusually broad. She is responsible for the health of every SG team and the base's entire staff, which means treating injuries, infections and physiological effects that have no precedent in any medical literature, on a schedule she does not control. She also treats alien refugees and, on occasion, Goa'uld symbiotes, which puts her in the position of caring for something the rest of the base regards as an enemy.</p>
+<h3>What happens to Janet Fraiser?</h3>
+<p>In the first season's Singularity she adopts Cassandra, a child who is the only survivor of a world the System Lord Nirrti wiped out, and raises her. In the seventh-season episode Heroes she is killed by a staff weapon blast while treating a wounded man in the field. The producers made the decision believing that the seventh season would be the series finale and that a death among the regular cast was necessary for it to land. The episode is generally regarded as one of the strongest the show made. She appeared once more in the ninth season, in Ripple Effect, as a version of herself from an alternate universe.</p>`,
+      journey:`<p>Fraiser is dominant Si in the role where it is most valuable and least dramatic. Her competence is the accumulated body of medical knowledge applied with precision to situations that keep exceeding it - she is the person who has read the file, knows the patient's history, remembers the reaction the last alien pathogen produced, and can therefore recognise the moment something is wrong before anyone else does. Nothing about that is showy, and the base does not function without it.</p>
+<p>The auxiliary Fe is why the character registers as warm rather than clinical. She manages the emotional state of the room as deliberately as the physical state of the patient, and her authority over senior officers - she can and does order colonels out of her infirmary - is exercised through care rather than rank. Si with Fe produces exactly the kind of doctor people trust with things they will not say to a superior officer.</p>
+<h3>Why does Janet Fraiser adopt Cassandra?</h3>
+<p>Because the same pairing, given a child who has lost an entire world, produces only one possible answer. It is not a plot device: the show has established that Fraiser's response to suffering in front of her is to take responsibility for it, and adopting the sole survivor of a genocide is that instinct at full extension. The tertiary Ti is what makes her formidable in an argument with command, since her objections are technically precise and difficult to overrule. The inferior Ne is the vulnerability the show finally uses: she is superb at the situation she is in and does not naturally imagine the one where a field triage goes wrong, which is where the seventh season leaves her.</p>`,
+      mistype:`<p>ISTJ is the most common alternative, since she is disciplined, procedural and military. The difference is the auxiliary. Si with Te produces a doctor who runs the infirmary as a system and is blunt about people. Fraiser's authority is consistently exercised relationally - she reads what a patient needs, adjusts her manner to it, and is the person the team's most closed-off members actually talk to.</p>
+<p>ESFJ comes up because of the evident warmth and the caretaking. But she is not energised by the social field; she works long solitary hours, is deeply private about her own life, and the show gives her very little of the outward sociability an Fe-dominant character would need. The care runs on top of a private, meticulous, accumulated expertise.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>Her own life is almost entirely offscreen. She works, she raises her daughter, and the series tells us remarkably little else across seven seasons, which is consistent with a character whose energy goes inward and whose disclosures are rationed.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">S</span><span class="letter-word">Sensing</span></div>
+  <p>She works from the chart, the history and the specific physical evidence in front of her, and her value to the base is that she notices the concrete detail that does not fit. In a show full of speculation, she is the one dealing with what is actually on the table.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">F</span><span class="letter-word">Feeling</span></div>
+  <p>She treats patients rather than cases, and her decisions about refugees, symbiotes and orphaned children are made on the basis of who needs help rather than on what the mission requires. Adopting Cassandra is the clearest instance and it is entirely in character.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">J</span><span class="letter-word">Judging</span></div>
+  <p>She runs the infirmary on protocol and enforces it against officers who outrank her considerably. Her authority comes from having decided what the standard is and refusing to move it, which is why nobody argues with her twice.</p>
+</div>`
+    },
+    'leto-ii':{
+      whoHeading:`Who Is Leto II Atreides?`,
+      who:`<p>Leto II Atreides is the son of Paul Atreides and Chani, and the twin brother of Ghanima. Both were awakened in the womb by exposure to spice, which means they were born pre-born: conscious, prescient, and carrying the full ancestral memories of everyone in their genetic line. Growing up as a child with several thousand adult lifetimes in your head is presented in Children of Dune as roughly as dangerous as it sounds, and the risk of being possessed by one of those ancestral personalities is the central threat of his early life.</p>
+<p>Captured by Fremen outlaws, he undergoes a spice trance and sees the branching futures available to humanity. Almost all of them end. One does not, and it is the one his father had glimpsed and refused to walk because of what it required. Leto accepts it, and to survive what it demands he physically fuses with a school of sandtrout, the larval form of the sandworm, gaining enormous strength and near-invulnerability at the cost of ever being human again.</p>
+<h3>What is the Golden Path?</h3>
+<p>It is a plan to make humanity impossible to extinguish. Leto's reasoning is that any species that can be seen whole by a single prescient intelligence can be destroyed by one, and that humanity's survival therefore requires it to become permanently unpredictable and permanently dispersed. His method is to become the thing people must escape: he rules for around three and a half thousand years as a god-emperor whose peace is absolute and suffocating, deliberately concentrating everything so that when the tyranny finally ends the human species will explode outward in every direction at once and never again be gatherable. His sister Ghanima stays human and continues the Atreides line while he becomes the instrument.</p>`,
+      journey:`<p>Leto II is Ni carried to a limit no other character in fiction really approaches. Dominant Ni collapses an enormous amount of data into a single organising conviction about where things must go, and Leto has literal access to every possible future and every past life, and still arrives at exactly one answer. The Golden Path is not a preference. It is what the function produces when it is given complete information.</p>
+<p>The auxiliary Fe is the part people miss, and it is what separates him from a tyrant. Everything he does is done for humanity, at his own total expense - he gives up his body, his humanity, any possibility of love, and three and a half thousand years of continuous existence, in order to secure the survival of a species that will remember him as a monster. Fe orients the vision toward people, and his version of that is the largest and coldest act of care in the genre.</p>
+<h3>Why did Paul refuse the Golden Path and Leto accept it?</h3>
+<p>Because Paul's stack could not pay the price and Leto's could. Paul is written as the man who sees the path and finds that his own humanity - his love for Chani, his horror at what he would become - is the thing he will not trade. Leto has the same perception and an Fe that measures the cost against everyone rather than against himself, and so he trades it. The tertiary Ti is visible in how rigorously he argues his own case across God Emperor of Dune, and the inferior Se in the tragedy underneath the whole reign: he becomes a body that can no longer feel most of what a body is for, and he is fully aware of exactly what he has given up for every one of those thirty-five centuries.</p>`,
+      mistype:`<p>INTJ is the obvious alternative, and it fits the strategic ruthlessness perfectly well. The distinction is what the vision is for. An Ni-Te tyrant builds an order because the order is correct. Leto's entire justification is the survival and flourishing of people, argued in explicitly human terms, and his method is to make himself the object of universal hatred so that humanity gains something from escaping him. The orientation is toward people even when the treatment of them is appalling.</p>
+<p>ENTJ comes up because of the scale of the imperial machine. But he governs from near-total isolation, rarely appears, and works through a small number of intermediaries across millennia. The vision was fixed in a trance in a desert long before any structure existed, and everything since has been implementation of a private perception.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>He rules an empire while being almost entirely inaccessible, and his real activity is internal: the ancestral memories, the ongoing prescient vision, the arguments he conducts with himself. Thirty-five centuries of the most solitary existence anyone in the genre has been given.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>He acts on a future so distant that no one alive will see it resolved, and he holds to it for thousands of years without deviation. The Golden Path is a single synthesis that governs every decision he makes for longer than recorded human history.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">F</span><span class="letter-word">Feeling</span></div>
+  <p>The purpose is other people. He accepts the loss of his body, his humanity and any possibility of being loved in exchange for the survival of a species that will curse his name, and he never once frames the objective in terms of order or correctness rather than in terms of humanity itself.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">J</span><span class="letter-word">Judging</span></div>
+  <p>He decides, irreversibly, at fourteen, and then executes for three and a half millennia without reopening the question. There is no other character in fiction who closes a decision that completely or holds it that long.</p>
+</div>`
+    },
+    'larry-bird':{
+      whoHeading:`Who Is Larry Bird?`,
+      who:`<p>Larry Joe Bird was born on 7 December 1956 in West Baden Springs, Indiana, and grew up in French Lick, where his mother worked multiple jobs to support six children. His father, a Korean War veteran, took his own life in February 1975 while Larry was still at high school. He averaged 31 points and 21 rebounds as a senior at Springs Valley High, accepted a scholarship to Indiana University under Bob Knight, and left within a month, overwhelmed by the size of the place. He went home, worked municipal jobs, and enrolled at Indiana State in 1975.</p>
+<p>There he averaged 30.3 points and 13.3 rebounds over three seasons and took the Sycamores to an undefeated regular season and the 1979 NCAA final against Magic Johnson's Michigan State. Indiana State lost 75-64, in what was then the highest-rated college basketball broadcast ever, and Bird took the Naismith College Player of the Year award. Boston had drafted him sixth overall in 1978 and he returned for his final college year first; when he signed on 8 June 1979 it was for five years and 3.25 million dollars, the largest rookie contract in the history of American sport, and the league changed its draft rules because of it.</p>
+<h3>What did Larry Bird achieve with the Celtics?</h3>
+<p>He turned a bad team into a 61-win one in his rookie season and took Rookie of the Year. With Kevin McHale and Robert Parish alongside him he won championships in 1981, 1984 and 1986, taking Finals MVP in 1984 and 1986, and he won three consecutive league MVPs from 1984 to 1986 - a run only Bill Russell and Wilt Chamberlain had managed. He scored a franchise-record 60 points against Atlanta on 12 March 1985. He was the first player to shoot 50 percent from the field, 40 from three and 90 from the line in a season while meeting the minimums, and he did it twice, and he won the three-point contest three years running. Michael Jordan called him the greatest trash-talker and mind-game player of all time. Chronic back problems, which began when he injured himself shovelling crushed rock to build his mother a driveway, forced his retirement on 18 August 1992. He then coached the Pacers to a 147-67 record and Coach of the Year in 1998, and later ran their basketball operations, becoming the only person to have won MVP, Coach of the Year and Executive of the Year.</p>`,
+      journey:`<p>Bird is dominant Si, and it explains the thing about him that is otherwise inexplicable: a man of ordinary athleticism was the best player in the world. His game was built entirely out of accumulated, repeated, stored detail - the exact release point, the angles off the glass, where a specific opponent's feet go when he closes out. He practised three-pointers with his eyes closed. That is not a stunt, it is a Si-dominant confirming that the motion has been stored precisely enough to run without visual input.</p>
+<p>The auxiliary Te is why the knowledge produced wins rather than merely form. He was relentless about applying it: he would tell an opponent exactly where he was about to score from, then score from there, which is Te using stored information as a weapon. His trash talk is famous as personality, and it was really a delivery mechanism for a very accurate scouting report.</p>
+<h3>Why did Larry Bird leave Indiana University?</h3>
+<p>Because Si does not adapt quickly to a wholly unfamiliar environment, and a boy from French Lick dropped into a campus of thirty thousand had no accumulated reference for any of it. He went home rather than push through, worked for the town, and re-entered the game somewhere small enough to hold. The tertiary Fi is the private, unspoken core the public never got much of - the Boston loyalty, the reticence, the fact that his rivalry with Magic Johnson quietly became one of the great friendships in the sport without either of them saying much about it. The inferior Ne is why the back injury ended things: his greatness depended on a body that could execute stored technique exactly, and once it could not, there was no improvisational version of him to fall back on.</p>`,
+      mistype:`<p>ISTP is sometimes suggested because of the shot-making and the cold competitiveness. The difference is the source of the skill. Ti-Se produces an improviser who solves the situation in front of him in the moment. Bird's excellence was preparation made physical - the same shot, from the same spot, refined over thousands of repetitions - and he was explicit that he knew what an opponent would do because he had already watched him do it.</p>
+<p>ESTJ comes up because of the trash talk and the visible command of a game. But he was famously withdrawn away from the floor, uncomfortable with the celebrity apparatus, and notably reticent in public for a player of that stature. The talking was aimed at opponents on a basketball court, not at the world.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>He left a major university because it was too big, went home to French Lick, and stayed identifiably that person for the rest of his life. The public persona was minimal, the interviews were short, and the contrast with Johnson's Los Angeles was as much temperamental as geographic.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">S</span><span class="letter-word">Sensing</span></div>
+  <p>His game was made of stored physical detail: the release, the footwork, the angles, the specific tendencies of specific opponents. Practising shots with his eyes closed is the purest illustration of a body that had recorded the motion exactly.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">T</span><span class="letter-word">Thinking</span></div>
+  <p>He told opponents precisely how he was going to beat them and then did it, which is analysis deployed as psychological warfare. The competitiveness was impersonal in the way that mattered: he studied you, and the studying was the insult.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">J</span><span class="letter-word">Judging</span></div>
+  <p>Everything ran on structure and repetition - the practice routine, the shot regimen, the same team for thirteen years, and a second career in coaching and management that he approached with exactly the same methodical seriousness.</p>
+</div>`
+    }
+  });
+
+
+  // ── Rewritten pages: full biography (who), journey, mistype and letter
+  // breakdown. Assigned after the block above so these entries win.
+  Object.assign(charContent, {
+    'peter-pan':{
+      whoHeading:`Who Is Peter Pan?`,
+      who:`<p>Peter Pan is the creation of the Scottish writer J.M. Barrie. The character appeared on stage in 1904 and in novel form as Peter and Wendy in 1911, and the premise has not needed restating since: he is a boy who refuses to grow up. He lives in Neverland, leads a band of Lost Boys, is accompanied by the fairy Tinker Bell, and is in permanent conflict with the pirate Captain Hook.</p>
+<p>The engine of the story is Wendy Darling, whom he brings to Neverland to be a mother to the Lost Boys and who eventually chooses to go home and grow up. That choice is the point. Barrie is not simply celebrating eternal childhood; he is showing what it costs, and the most quietly devastating detail in the book is how little Peter retains. He forgets Hook. He forgets Tinker Bell. He comes back for Wendy years later and does not understand why she has changed.</p>
+<h3>Why does Great Ormond Street Hospital own Peter Pan?</h3>
+<p>Barrie gave the copyright to the children's hospital in London in 1929, and it has generated income for them ever since - an arrangement so unusual that the UK Parliament later granted the hospital a perpetual right to royalties from the work. The character himself has been reinterpreted continuously, from Mary Martin's stage musical to Disney's 1953 animation to the 2003 live-action film and beyond, and each version tends to reveal what its era thinks about childhood, innocence and the refusal to leave it.</p>`,
+      journey:`<p>Peter is dominant Se with nothing behind it to hold experience in place. He lives entirely in the immediate physical present - the flight, the fight, the game, the current adventure - and he is superb at it. Nobody in Neverland is faster, braver or better in a crisis. The trouble is that the same disposition, running without any developed capacity to store or project, means there is no continuity between one present and the next.</p>
+<p>The auxiliary Ti is why he is not simply a wild child. He is a tactician: he studies Hook, exploits the crocodile, organises the Lost Boys with real command, and his tricks are constructed rather than lucky. The duel with Hook is won by reading the man and using what he finds, and Barrie is careful to show that Peter thinks about how to win before he wins.</p>
+<h3>Why can't Peter Pan grow up?</h3>
+<p>Because inferior Ni is the thing that would let him experience himself as continuous over time, and he has none. Growing up is not a decision he refuses so much as a process he cannot participate in, since it requires holding a past and imagining a future and he does neither. The forgetting is the tell: he does not remember Hook after killing him, and he returns for Wendy without registering that years have passed. The tertiary Fe is what makes it heartbreaking rather than merely strange - he clearly wants to be loved, arranges an entire household to have a mother in it, and cannot retain any of the people who provide it.</p>`,
+      mistype:`<p>ENFP is sometimes suggested because of the imagination and the exuberance. But Peter does not generate ideas, he generates action. Neverland already exists; he plays in it. His inventiveness is entirely situational and physical, and he shows no interest in possibility for its own sake, which is Se rather than Ne.</p>
+<p>ESFP comes up because of the charm and the emotional volatility. The difference is the auxiliary. Se with Fi produces a character with a settled internal sense of what matters that persists across time - and persistence is exactly what Peter lacks. His judgements are made in the moment on tactical grounds, and his feelings, while genuine, evaporate with the situation that produced them.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">E</span><span class="letter-word">Extraverted</span></div>
+  <p>He assembles a following wherever he goes. The Lost Boys, the Darlings, an audience for every feat - he needs to be watched doing things, and his crowing is a demand for witnesses as much as an expression of triumph.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">S</span><span class="letter-word">Sensing</span></div>
+  <p>Flight, swordplay, the physical business of Neverland: everything that makes him extraordinary is bodily and immediate. He is never more himself than mid-action, and never less than when asked to consider something that is not in front of him.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">T</span><span class="letter-word">Thinking</span></div>
+  <p>His approach to Hook is analytical: find the weakness, exploit the crocodile, take the advantage. He is also casually callous in a way the story does not soften, thinning the ranks of the Lost Boys when they start to grow, which is a decision made on rules rather than on feeling.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">P</span><span class="letter-word">Perceiving</span></div>
+  <p>Nothing is ever settled. He commits to no arrangement, retains no obligation, and treats each day as unconnected to the last, which is what makes him so free and what makes him impossible for anyone to keep.</p>
+</div>`
+    },
+    'duncan-idaho':{
+      whoHeading:`Who Is Duncan Idaho?`,
+      who:`<p>Duncan Idaho is one of Duke Leto Atreides' three closest retainers in Frank Herbert's Dune, alongside the warrior-troubadour Gurney Halleck and the Mentat Thufir Hawat. He is a Swordmaster of the Ginaz, which is the highest formal qualification in personal combat the Imperium offers, and Leto sends him to establish relations with the Fremen - a mission that leaves him with a genuine dual loyalty, to the Atreides and to Stilgar's sietch.</p>
+<p>When the Harkonnens and the Emperor's Sardaukar take Arrakeen, Duncan dies covering Paul and Lady Jessica's escape, killing nineteen Sardaukar before he falls. In a novel where almost everyone is calculating, it is the least calculated act in the book.</p>
+<h3>How does Duncan Idaho keep coming back?</h3>
+<p>The Tleilaxu recover his corpse and grow a ghola from it - a body regrown from the original cells, its memories initially absent. He returns in Dune Messiah as Hayt, delivered to Paul as a gift that is really a weapon, conditioned to trigger at a moment of the Tleilaxu's choosing. What breaks the conditioning is his original personality reasserting itself, which is the series' most direct statement about what survives death in a person. From there he becomes the constant of the whole saga: ghola after ghola, serving Leto II through a reign of thirty-five centuries and eventually becoming central to the story's resolution. He is the only character present in all six of Herbert's novels. On screen he has been played by Richard Jordan in 1984, James Watson and Edward Atterton in the miniseries, and Jason Momoa in the recent films.</p>`,
+      journey:`<p>Duncan is dominant Fi in a book full of strategists, and that is precisely why he matters. Everyone around him - Leto, Jessica, Hawat, Paul - is calculating consequences several moves out. Duncan simply has a set of loyalties he will not violate, and he acts on them directly. His death is not tactically optimal. It is what he was always going to do, because the alternative was unavailable to him from the inside.</p>
+<p>The auxiliary Se is what makes the loyalty consequential rather than merely admirable. He is one of the deadliest fighters in the Imperium, and his response to a threat is immediate and physical. Nineteen Sardaukar is an absurd number, and the reason he manages it is that Fi has already settled the question of whether to fight, so nothing slows the Se down.</p>
+<h3>Why is Duncan Idaho the character who survives the whole saga?</h3>
+<p>Because Herbert needed one fixed human point across thirty-five centuries, and dominant Fi is the only function that produces that kind of constancy. The gholas are a thought experiment about identity: rebuild the body, remove the memories, and see what returns. What returns is the loyalty, every time, before the memories do. The tertiary Ni develops across the later novels into a genuine grasp of what Leto II is doing and why it is monstrous and necessary, and the inferior Te is the reason he never becomes a ruler - he can execute anything and organise nothing, and his value to every Atreides who owns him is that he does not want the job.</p>`,
+      mistype:`<p>ISTP is the most common alternative for a swordmaster of that calibre. The distinction is what governs the fighting. Ti-Se produces a combatant who reads the situation analytically and finds the most effective solution. Duncan's decisions are consistently made on the basis of what he owes to whom, and his most famous act is a piece of pure self-expenditure that no analysis would have recommended.</p>
+<p>ESFP is occasionally suggested because of the warmth and the physical presence. But he is a private, self-contained figure who works alone, keeps his own counsel, and is repeatedly described as carrying something interior that he does not discuss. Fi leads and Se serves it, rather than the other way round.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>He is the quietest of the Atreides retainers. Gurney sings and Hawat calculates aloud; Duncan does the work and says little about it, and the ghola sequences depend on a man whose most important qualities were never spoken in the first place.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">S</span><span class="letter-word">Sensing</span></div>
+  <p>His entire expertise is physical and immediate. Ginaz training is the most demanding form of embodied skill in the Imperium, and his contribution at every point in six novels is what he can do with a body in a room.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">F</span><span class="letter-word">Feeling</span></div>
+  <p>Loyalty is not a policy for him, it is the structure of the person. It survives death, memory-wiping and Tleilaxu conditioning, which is Herbert's way of saying that the values sit deeper in this character than anything else does.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">P</span><span class="letter-word">Perceiving</span></div>
+  <p>He responds rather than plans. Across six novels he is repeatedly dropped into situations designed by other people and works out what to do from inside them, and he never once attempts to shape the larger course of events himself.</p>
+</div>`
+    },
+    'rosa-parks':{
+      whoHeading:`Who Was Rosa Parks?`,
+      who:`<p>Rosa Louise McCauley Parks was born on 4 February 1913 in Tuskegee, Alabama, and died on 24 October 2005 in Detroit, aged ninety-two. The version of her taught to schoolchildren - a tired seamstress who spontaneously refused to move - is wrong in every particular that matters. She had been attending Montgomery NAACP meetings since 1943 and was elected chapter secretary in December of that year, taking the role, as she put it, because she was the only woman there and they needed a secretary. In the summer of 1955 she attended the Highlander Folk School in Monteagle, Tennessee, an activist training centre, where she was mentored by the organiser Septima Clark and later said she had experienced one of the few periods of her life without racial hostility.</p>
+<p>On 1 December 1955 at half past five in the evening she boarded a bus driven by James F. Blake. When the white section filled, Blake ordered the Black passengers in the middle row to give up their seats. Parks stayed where she was. Asked whether she was going to stand, she said no, and when told she would be arrested, she said he was welcome to do that.</p>
+<h3>What happened to Rosa Parks after the boycott?</h3>
+<p>The Montgomery bus boycott began on 5 December 1955 and ran for 381 days, ending on 20 December 1956 after the Supreme Court held segregated buses unconstitutional in Browder v. Gayle. Parks paid for it. She was fired from her seamstress job at Montgomery Fair in January 1956; her husband Raymond lost his position at Maxwell Air Force Base shortly after. She developed chronic insomnia, stomach ulcers and heart trouble, and in August 1957, out of work and unsafe, the couple left Alabama for Detroit. She worked on John Conyers' 1964 congressional campaign, persuading Martin Luther King Jr to appear alongside him, and when he won he hired her, and she spent years in his Detroit office dealing with constituents on housing, welfare and job discrimination. She received the Spingarn Medal in 1979, the Presidential Medal of Freedom in 1996, the Congressional Gold Medal in 1999, and in 2013 became the first Black American honoured with a statue in National Statuary Hall.</p>`,
+      journey:`<p>Parks is dominant Si, and it is what made her the right person for that seat. Si holds the accumulated record in precise detail, and hers went back decades - the specific incidents, the specific drivers, the specific humiliations, all of it retained rather than absorbed. This was not a woman reacting to one bad evening. She was holding an exact internal account of what the arrangement was and had been, and when the moment came, the refusal came out of that record rather than out of the moment.</p>
+<p>The auxiliary Fe is why she was chosen and why it worked. Activists had considered Claudette Colvin, arrested for the same thing in March 1955 at fifteen, and Mary Louise Smith, and judged neither a suitable test case. Parks was the secretary of the chapter, known and respected across the community, and the movement's assessment was fundamentally about how she would land with people. She was the one whose standing could carry it, and she knew that was the calculation.</p>
+<h3>Was Rosa Parks tired that day?</h3>
+<p>She said explicitly that the only thing she was tired of was giving in. The myth of spontaneity persists because it is more comfortable than the truth, which is that a trained organiser made a considered decision to be arrested. The tertiary Ti is visible in how precisely she understood the legal ground she was standing on, and the inferior Ne in the shape of her life afterwards: she was superb at holding a position and enduring what followed, and much less equipped to see the twenty years of unemployment, illness and obscurity that the position would cost her.</p>`,
+      mistype:`<p>ISTJ is the most common alternative, given the discipline and the exactness. The difference is the auxiliary. Si with Te produces someone who works through structures and results and is blunt about people. Parks worked through relationships and standing - her value to the movement was precisely that the community trusted her - and her decades in Conyers' office were spent on individual constituents' problems rather than on policy machinery.</p>
+<p>INFJ is occasionally suggested because of the moral clarity and the sense of a larger purpose. But her method was not visionary. It was the patient accumulation of a documented record and the willingness to act on it at a specific moment, which is Si first. She was not describing a future; she was refusing to keep participating in a present she had catalogued in detail.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>She was a secretary, not an orator. The role she occupied for over a decade was the one that involves minutes, records and correspondence, and she spent the rest of her life uncomfortable with the symbolic version of herself that the country had constructed.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">S</span><span class="letter-word">Sensing</span></div>
+  <p>Her authority came from the accumulated specifics: years of documented incidents, the exact provisions of the municipal code, the practical details of who had been arrested for what. She had the record, and the record is what she acted from.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">F</span><span class="letter-word">Feeling</span></div>
+  <p>The whole strategy turned on how a community would respond to her, and she understood that. Her later work for Conyers was individual casework - housing, welfare, discrimination - handled one person at a time for decades after the cameras had moved on.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">J</span><span class="letter-word">Judging</span></div>
+  <p>She decided and did not move. Not on the bus, not through 381 days of boycott, not through the job losses and the illness and the departure from Alabama. The position was settled before she took it and it was never reopened.</p>
+</div>`
+    },
+    'ba-al':{
+      whoHeading:`Who Is Ba'al?`,
+      who:`<p>Ba'al is a Goa'uld System Lord in Stargate SG-1, played by Cliff Simon across seasons five to ten and the subsequent films. He is named after the Canaanite deity, in keeping with the show's premise that the Goa'uld supplied the originals for most of Earth's ancient gods. He is introduced in the fifth-season episode Summit and recurs until the end of the series, which makes him the longest-running antagonist in Stargate history.</p>
+<p>What distinguishes him from the other System Lords is tone. The rest of them are magnificent and humourless, ruling through terror and the absolute conviction of their own divinity. Ba'al is dry, amused and conspicuously modern in his manner, and Simon has said the character was the most interesting he ever played precisely because he was able to keep diversifying him. Underneath the sardonic surface he is the most competent administrator the Goa'uld produced.</p>
+<h3>What happens to Ba'al?</h3>
+<p>When the Jaffa rebellion collapses the Goa'uld power structure, the other System Lords fight over the wreckage and lose. Ba'al leaves. He comes to Earth, establishes himself as a businessman, and takes control of the Trust, a rogue human organisation - which is to say that having lost an interstellar empire he immediately began building a terrestrial one out of the available materials. He also acquires Asgard cloning technology and produces a series of duplicates of himself, so that eliminating him becomes a genuinely difficult problem: clones appear across Ex Deus Machina, Stronghold, Off the Grid, The Quest, Dominion and Continuum. The original is finally killed in 1939 in an altered timeline, and the death of the last clone brings both Ba'al and the System Lords to an end.</p>`,
+      journey:`<p>Ba'al is dominant Te wearing a god costume it does not believe in. Every other Goa'uld requires worship as a psychological necessity. Ba'al maintains the divine apparatus because it is an efficient governing structure, and drops it the moment something better is available - which is exactly what happens when he arrives on Earth and reaches immediately for a corporation instead. The objective was never to be worshipped. It was to control things.</p>
+<p>The auxiliary Ni is why he survives everyone. He is the only System Lord who sees the rebellion coming as a structural inevitability rather than as an insult, and who is therefore positioned for the world that follows it. The cloning is the same faculty applied to himself: a leader who genuinely models the future does not leave his entire enterprise dependent on one body.</p>
+<h3>Why is Ba'al the last System Lord standing?</h3>
+<p>Because the tertiary Se gives him something none of the others have, which is a functioning relationship with the present. He reads a room, adapts his register, negotiates when negotiating is cheaper than fighting, and is perfectly willing to be temporarily humiliated if the position improves afterwards. The inferior Fi is the crack, and the show uses it: for all the pragmatism, his sense of his own supremacy is a real personal conviction rather than a pose, and he can be goaded through it. The clones eventually turn out to have a related problem, since a copy that begins diverging from the original starts acquiring interests of its own.</p>`,
+      mistype:`<p>INTJ is the most common alternative, given the long-range positioning and the willingness to work from concealment. But Ba'al is a governor rather than a schemer. He runs territories, fleets, vassals and eventually a human corporation, and he does it in person and in public. The organisation is his primary instrument at every stage, which puts Te first with the strategic vision serving it.</p>
+<p>ENTP comes up because he is the wittiest character in the Goa'uld hierarchy and enjoys an argument. The difference is closure. An Ne-dominant villain would generate schemes and abandon them; Ba'al pursues one continuous project - control, by whatever structure is currently available - across ten seasons and two films without ever losing the thread.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">E</span><span class="letter-word">Extraverted</span></div>
+  <p>He negotiates, addresses, presides and performs. Where other System Lords issue commands from a throne, Ba'al turns up, talks, and works the situation directly, and his takeover of the Trust is a piece of straightforward interpersonal manoeuvring.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>He is always positioned for the next configuration rather than the current one. He saw the end of the Goa'uld empire before it happened and had an exit prepared, and the clones are a contingency built for a future in which he personally does not survive.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">T</span><span class="letter-word">Thinking</span></div>
+  <p>Divinity is a tool to him and he treats it as one. He tortures when it is useful and negotiates when it is cheaper, and the choice between the two is made on efficiency rather than on temperament, which is what makes him more unsettling than the theatrical villains around him.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">J</span><span class="letter-word">Judging</span></div>
+  <p>Structure follows him everywhere. An empire, then a criminal syndicate, then a business, each properly organised with a hierarchy and a chain of authority. He does not improvise a position; he builds one, and then he builds the backup.</p>
+</div>`
+    },
+    'bra-tac':{
+      whoHeading:`Who Is Bra'tac?`,
+      who:`<p>Master Bra'tac is a Jaffa warrior in Stargate SG-1, played by Tony Amendola, appearing across seasons one to three and five to ten. He served as First Prime to Apophis - the highest position a Jaffa could hold, commanding the forces of a System Lord - and it was from inside that position that he reached the conclusion the entire Jaffa people had been built not to reach: that the Goa'uld are not gods but parasites, and that everything organised around their divinity is a lie.</p>
+<p>Having worked it out, he was one of the first Jaffa to say so, and it cost him. He spent much of his life as an outcast among his own people, holding a position that made him unusable to the System Lords and unwelcome among those who still served them. He is also the man who put the doubt into Teal'c, which makes him the origin point of the show's entire Jaffa storyline.</p>
+<h3>What does Bra'tac do in the Jaffa rebellion?</h3>
+<p>He becomes its senior figure. The rebellion is a long project rather than an uprising, and Bra'tac's role across the later seasons is to hold together a coalition of warriors who have been raised for absolute obedience and are now being asked to govern themselves. He and Teal'c lose their symbiotes after a rebel Jaffa summit is sabotaged - which for a Jaffa is a life-threatening event, since the symbiote is their immune system - and survive on the drug tretonin. In the end they lead the Jaffa to victory over the Goa'uld, which is a payoff the series had been building toward since the first season.</p>`,
+      journey:`<p>Bra'tac is dominant Ti applied to a question nobody was permitted to ask. Every Jaffa is raised inside a closed system in which the Goa'uld are gods and the evidence is arranged accordingly. Bra'tac looked at the same evidence everyone else had - the symbiote, the technology, the behaviour - and worked out that the framework did not hold. That is Ti doing exactly what it does: taking a system apart to see whether it is internally consistent, and following the answer regardless of what it costs socially.</p>
+<p>The auxiliary Se is why he is not merely a dissident philosopher. He is a formidable fighter well into extreme old age, entirely comfortable in a firefight, and his teaching method with Teal'c and later with younger Jaffa is physical and demonstrative rather than doctrinal. The conclusion was reached by reasoning; everything after it is executed with his hands.</p>
+<h3>Why does Bra'tac matter so much to Teal'c?</h3>
+<p>Because tertiary Ni gives him the long view of what the Jaffa could become, and because the inferior Fe means he can only ever hand it over in fragments. Bra'tac is not warm. He is exacting, sardonic and sparing with approval, and the relationship works because Teal'c understands what the rare approval means. The show is careful about this: the affection between them is enormous and almost entirely unspoken, expressed through a hand on a shoulder and the word brother used perhaps a handful of times in nine years.</p>`,
+      mistype:`<p>ISTJ is the most obvious alternative for an old warrior in a tradition-bound military culture. But Bra'tac's defining act is the rejection of tradition. An Si-dominant Jaffa would be the most devout servant in the fleet, because the accumulated record is precisely what the Goa'uld religion consists of. He dismantled it instead, from first principles, which is Ti.</p>
+<p>INTJ is occasionally suggested because of the strategic patience across decades. The difference is that his method is hands-on and situational rather than architectural. He does not build an organisation and direct it; he fights, teaches, adapts, and holds a coalition together by being physically present in it, which is Ti with Se rather than Ni with Te.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>He held a heretical conclusion privately for years before it was safe to voice, and he remains self-contained even as the rebellion's senior figure. He does not seek followers; people come to him, and he is faintly impatient about it.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">S</span><span class="letter-word">Sensing</span></div>
+  <p>He remains a physically dangerous man into old age and teaches by demonstration rather than lecture. His authority in a room of Jaffa warriors rests on what he can still do with a staff weapon, and he is entirely aware of that.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">T</span><span class="letter-word">Thinking</span></div>
+  <p>He reasoned his way out of a religion that had shaped his entire species, using only evidence available to everyone else, and then accepted exile as the price of the conclusion. The logic mattered more to him than belonging, and it cost him most of a life.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">P</span><span class="letter-word">Perceiving</span></div>
+  <p>The rebellion has no master plan and he does not pretend otherwise. He works with whatever alliance, weapon or opening presents itself, over decades, adapting continuously, which is why it eventually succeeds where a rigid campaign would have been crushed early.</p>
+</div>`
+    },
+    'martouf':{
+      whoHeading:`Who Is Martouf?`,
+      who:`<p>Martouf is a member of the Tok'ra in Stargate SG-1, played by JR Bourne across the show's early seasons. The Tok'ra are Goa'uld who reject the practice of taking hosts by force; their symbiotes and hosts share a body by consent, as genuine partners. Martouf's symbiote is called Lantash, and the two of them are effectively a single character with two voices, which the show uses well.</p>
+<p>His importance to the story comes from a relationship that ended before he appears. He was the mate of Jolinar of Malkshur, another Tok'ra, for over a century. Jolinar's final host was Samantha Carter - briefly, and against Carter's will, and Jolinar died there. What Carter is left with is a residue of Jolinar's memories and feelings, which means that when Martouf meets her she recognises him with an intimacy that belongs to someone else. Jack O'Neill, in the way of the show, calls him Marty.</p>
+<h3>How does Martouf die?</h3>
+<p>He is made into a za'tarc. The Goa'uld develop a technique for capturing a person, implanting a compulsion to carry out an assassination, and wiping any memory of the procedure, so the victim has no idea what has been done to them and passes every honest denial. Martouf is programmed to kill the President of the United States, and when the conditioning triggers, Samantha Carter is the person who has to put him down with a zat gun. Lantash survives the host's death and is later transferred in an emergency into Lieutenant Kevin Elliot. It is one of the bleakest things the series does to a recurring character, and it is done to the gentlest one.</p>`,
+      journey:`<p>Martouf is dominant Ni carrying a life that has already been read to its end. A Tok'ra host lives with a symbiote that holds centuries of memory, and Martouf's relationship with time is correspondingly long: he thinks in terms of the war against the Goa'uld as a project spanning generations, and he is patient in a way that visibly frustrates the humans he works with. He is also, from his first appearance, a man who knows how his own story goes and is proceeding through it anyway.</p>
+<p>The auxiliary Fe is what makes him the emotional centre of every episode he is in. His attention is on other people almost to a fault - on Carter, on the alliance, on holding together a relationship between two species that keep failing to trust each other. He is the Tok'ra who does the work of being liked, because somebody has to, and because he genuinely cares whether it holds.</p>
+<h3>Why is Martouf's relationship with Samantha Carter so painful?</h3>
+<p>Because it is Fe presented with a connection it cannot have and cannot stop reaching for. Carter has Jolinar's memories of a century with him. She is not Jolinar, does not love him, and cannot honestly tell him the feelings are hers. He knows all of this and keeps showing up anyway. The tertiary Ti is visible in how carefully he reasons about the alliance and its risks, and the inferior Se in the manner of his death: the one thing this stack handles worst is a sudden physical event with no interior warning, and the za'tarc conditioning is precisely a compulsion installed below the level where any amount of insight could find it.</p>`,
+      mistype:`<p>INFP is the most common alternative, given the gentleness and the obvious depth of feeling. The difference is direction. An Fi-dominant character measures situations against a private standard and withdraws when it is violated. Martouf's attention runs outward continuously - to Carter, to the alliance, to the war - and his distress is consistently about connection and its failure rather than about personal integrity.</p>
+<p>ISFJ is occasionally suggested because of the loyalty and the sense of duty. But he is not working from accumulated procedure or precedent. He operates on a long-range view of a war that will outlast him and makes decisions on the basis of where it leads, which is Ni first rather than Si.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>He carries the loss quietly and never makes it anyone else's problem, least of all Carter's. The most significant relationship in his life is one he cannot discuss with the only person who has any access to it, and he simply lives with that.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>He thinks in centuries because he shares a body with something that has lived them. His arguments for the Tok'ra approach are always about where a course of action leads over generations, which is why they land badly on people planning a mission for next Tuesday.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">F</span><span class="letter-word">Feeling</span></div>
+  <p>He does the relational work that the alliance depends on and that nobody else on his side is willing to do. His whole function in the series is to be the Tok'ra who is reachable, and it is genuine rather than diplomatic.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">J</span><span class="letter-word">Judging</span></div>
+  <p>He is committed and settled - to the Tok'ra cause, to the alliance, to a version of a relationship that will never be returned. Once he has taken a position he holds it, and the tragedy is that the thing that finally moved him was installed in his head without his knowledge.</p>
+</div>`
+    },
+    'stilgar':{
+      whoHeading:`Who Is Stilgar?`,
+      who:`<p>Stilgar is the naib - the leader - of Sietch Tabr, one of the Fremen communities living in the deep desert of Arrakis, in Frank Herbert's Dune. He is the most important Fremen character in the novel and the point of contact between the Atreides and the people who actually know how to survive on the planet. Duke Leto had already sent Duncan Idaho to establish relations with him, and Duncan came away with a genuine dual loyalty to both men.</p>
+<p>When Paul and Jessica flee into the desert after the Harkonnen attack, Stilgar's tribe takes them in. His first meeting with them is one of the book's best small scenes: he spits on the ground in front of Jessica, which reads to an offworlder as an insult and is in fact an enormous compliment, since on Arrakis water given away is the most valuable thing a person can offer.</p>
+<h3>What happens to Stilgar in the Dune novels?</h3>
+<p>He becomes the instrument of the thing he made possible. Under Fremen custom Paul must eventually challenge him for leadership of the sietch, and the fact that Paul finds a way around it does not change what has happened: Stilgar's authority passes to Muad'Dib, and the Fremen become the army of a jihad that spreads across the known universe. In Dune Messiah he remains Paul's staunchest supporter and protector. By Children of Dune he is fiercely loyal to Paul's twins and increasingly troubled by the regent Alia's descent into madness, and Duncan Idaho eventually manoeuvres Stilgar into killing him precisely in order to force him into open rebellion against her. He has been played by Everett McGill in 1984, Uwe Ochsenknecht and Steven Berkoff in the miniseries, and Javier Bardem in the recent films.</p>`,
+      journey:`<p>Stilgar is dominant Si in a culture where Si is the survival mechanism. Fremen life runs on accumulated, exact, inherited practice: how much water a body holds, how to walk without rhythm so the worms do not come, what the customs require in every situation. Stilgar carries all of it, and his authority rests on the fact that he carries it more completely and more reliably than anyone else. He is not conservative by temperament so much as by function - in that environment, the accumulated record is the difference between living and not.</p>
+<p>The auxiliary Te is what makes him a leader rather than an elder. He organises, decides and enforces. The sietch runs, the raids work, the water discipline holds, and when the Fremen become an army it is because Stilgar's administrative competence scaled up faster than anyone in the Imperium expected.</p>
+<h3>Why does Stilgar hand his people to Paul?</h3>
+<p>Because the custom says so, and for a dominant Si the custom is not a preference. That is exactly what makes it tragic: the same fidelity that kept his people alive for generations is what delivers them to a messiah and a holy war. His tertiary Fi is where the cost registers - the growing private unease across Messiah and Children of Dune, held silently and for years, as he watches what has been done with the loyalty he gave. The inferior Ne is why he could not see it coming. The one thing this stack cannot do is generate the unprecedented scenario, and the arrival of a boy who fits every prophecy was precisely that.</p>`,
+      mistype:`<p>ISFJ is the most common alternative, given the depth of loyalty and the care for his people. The difference is the auxiliary. Si with Fe leads through relationship and attunement. Stilgar leads through decision and enforcement - he settles disputes, allocates water, orders raids, and is comfortable with the harshness that Fremen law requires. The care is real and it is expressed through administration rather than through warmth.</p>
+<p>ESTJ comes up because of the command presence. But he is a markedly internal figure: watchful, sparing with speech, and given long silences in every adaptation. His authority comes from what he has stored rather than from any outward drive to organise the world, which puts Si ahead of Te.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>He watches far more than he speaks, and the adaptations all give him the same quality: a man who has already decided and is waiting to see whether he needs to say so. His doubts across the later novels are held privately for years.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">S</span><span class="letter-word">Sensing</span></div>
+  <p>His expertise is the concrete detail of desert survival - water discipline, stillsuit maintenance, the rhythm of a walk, the exact protocols of the sietch. On Arrakis that knowledge is not tradition for its own sake, it is the entire basis of staying alive.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">T</span><span class="letter-word">Thinking</span></div>
+  <p>He applies Fremen law without softening it, including its harshest provisions, and he is prepared to accept a challenge to his own leadership because the rule requires it. The decisions are made on what the code demands rather than on what he would prefer.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">J</span><span class="letter-word">Judging</span></div>
+  <p>Everything about him is settled and ordered: the sietch, the customs, the hierarchy, his own place in it. He wants the question closed, which is why the arrival of a prophecy that reorganises everything is so destabilising to him even as he submits to it.</p>
+</div>`
+    },
+    'george-hammond':{
+      whoHeading:`Who Is General George Hammond?`,
+      who:`<p>Major General George S. Hammond commands Stargate Command through the first seven seasons of Stargate SG-1, played by Don S. Davis. He runs a facility buried under a mountain in Colorado whose staff routinely leave the planet and come back with injuries, alien pathogens, refugees and diplomatic crises, and whose existence is classified above almost everything else in the American government.</p>
+<p>The personal details the show gives him are few and used carefully. He is a widower - his wife died of cancer - and he has two granddaughters, Kayla and Tessa, whose photographs are on his desk and who are the reason a number of his decisions land the way they do. He was promoted to lieutenant general at the beginning of the eighth season and moved to a role in Washington before eventually retiring. Don S. Davis died of a heart attack on 29 June 2008, aged sixty-five.</p>
+<h3>What does General Hammond actually do?</h3>
+<p>He absorbs pressure. The recurring structure of the series is that SG-1 does something necessary and unauthorised, and Hammond is the man who has to explain it upward while making sure it does not stop happening. He repeatedly puts his own career between his people and the politicians, senators and NID officers who would prefer the programme run differently, and he does it without ever making a speech about it. He is also the one who authorises the rescue mission that regulations do not permit, over and over, for seven seasons, which is the running joke and also the point.</p>`,
+      journey:`<p>Hammond is dominant Si in the role where it is least visible and most necessary. He is a career officer with decades of accumulated institutional knowledge - the regulations, the precedents, the people, who owes whom what in Washington - and his effectiveness comes entirely from that store. When he protects the programme, he does it by knowing exactly which rule applies, which one can be interpreted, and who can be called.</p>
+<p>The auxiliary Fe is why he is loved rather than merely respected. He runs the base as a community: he knows his people, notices when one of them is struggling, and treats the base's morale as a thing he is personally responsible for. The single most characteristic Hammond decision is the one where he authorises an unsanctioned rescue because leaving somebody behind is not survivable for the group, whatever the regulation says.</p>
+<h3>Why does Hammond always approve the rescue?</h3>
+<p>Because Si tells him what the cost will be and Fe tells him the cost is worth paying. He is never naive about it - he knows exactly what a court martial looks like and what the Pentagon will do - and he authorises it anyway, because a command where people are abandoned stops being a command he can hold together. The tertiary Ti is visible in how precisely he argues his corner with hostile oversight, and the inferior Ne in his one real limitation: he is superb at protecting the institution he has and much less comfortable with the wholesale reinvention that the programme kept demanding, which is part of why the series eventually moved him upstairs.</p>`,
+      mistype:`<p>ISTJ is the most common alternative for a career general, and the procedural competence supports it. The difference is the auxiliary. Si with Te produces a commander who drives results through structures and is blunt with subordinates. Hammond's authority is exercised relationally: he manages people, reads morale, and his most important decisions are about what a group of human beings can be asked to carry.</p>
+<p>ESFJ comes up because of the warmth and the paternal manner. But he is a reserved man in a large chair, most comfortable in a briefing room with four people in it, and the show gives him almost no social life outside the base. The care is auxiliary, running on top of a private and deeply detailed sense of how the institution works.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>He is a contained presence in a job full of noise. He listens through briefings, speaks last, and his personal life exists in the series as two photographs on a desk. The authority comes from stillness rather than from volume.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">S</span><span class="letter-word">Sensing</span></div>
+  <p>Decades of accumulated institutional detail are his actual weapon: the regulations, the precedents, the personnel files, the political history. When he saves the programme it is usually because he knows a specific concrete thing that his opponent does not.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">F</span><span class="letter-word">Feeling</span></div>
+  <p>He runs the base as a group of people rather than as an asset. The rescue authorisations, the attention to individual officers, the granddaughters on the desk - the show consistently frames his judgement as being about what human beings can bear.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">J</span><span class="letter-word">Judging</span></div>
+  <p>He decides and the decision holds. Briefings end with an answer, missions are approved or refused, and once he has committed to backing his people he does not waver under pressure from anyone above him, which across seven seasons is a considerable amount of pressure.</p>
+</div>`
+    }
+  });

@@ -6,52 +6,28 @@ is generated from the type and reads identically across every character sharing 
 | Slot | Source | Pages with real content |
 |---|---|---|
 | The Verdict | `people[].desc` in `data/characters-en.js` | 766 |
-| Who They Are | generated boilerplate, or `charContent[slug].who` | 42 |
-| The Journey | `charContent[slug].journey` | 568 |
-| Letter by Letter | `charContent[slug].letters` | 399 |
-| Why Not Another Type? | `charContent[slug].mistype` | 568 |
+| Who They Are | generated boilerplate, or `charContent[slug].who` | 66 |
+| The Journey | `charContent[slug].journey` | 592 |
+| Letter by Letter | `charContent[slug].letters` | 423 |
+| Why Not Another Type? | `charContent[slug].mistype` | 592 |
 
 Where a slot has no data the page falls back to a template with the character's
 name slotted into generic function-stack prose, so it says nothing specific about
 that character at all. Those are the worst pages and they are listed first.
 
-**Rewritten so far (42):** Marge Simpson, Stewie Griffin, Jeff Winger, Liz Lemon, Tommy Shelby, Wendy Byrde, Phil Dunphy, Sterling Archer, Solid Snake, Lara Croft, Cloud Strife, Sephiroth, Nathan Drake, Leon S. Kennedy, Trevor Philips, John Marston, 2B, Princess Zelda, Commander Shepard, Queen Victoria, Simone de Beauvoir, Malcolm X, Sun Tzu, Ho Chi Minh, Janis Joplin, Stevie Wonder, Tina Turner, Madonna, Stevie Nicks, Whitney Houston, Sting, The Weeknd, Lorde, Tim Cook, Peter Thiel, Jean-Paul Sartre, Ronaldinho, Magic Johnson, Shaquille O'Neal, Marty McFly, Long John Silver, Tom Sawyer.
+**Rewritten so far (66):** Marge Simpson, Stewie Griffin, Jeff Winger, Liz Lemon, Tommy Shelby, Wendy Byrde, Phil Dunphy, Sterling Archer, Solid Snake, Lara Croft, Cloud Strife, Sephiroth, Nathan Drake, Leon S. Kennedy, Trevor Philips, John Marston, 2B, Princess Zelda, Commander Shepard, Willy Wonka, Scout Finch, Queen Victoria, Simone de Beauvoir, Rosa Parks, Malcolm X, Simón Bolívar, Sun Tzu, Ho Chi Minh, Janis Joplin, Stevie Wonder, Tina Turner, Madonna, Stevie Nicks, Whitney Houston, Sting, The Weeknd, Lorde, Tim Cook, Sam Altman, Peter Thiel, Jean-Paul Sartre, Diego Maradona, Ronaldinho, Zinedine Zidane, Magic Johnson, Shaquille O'Neal, Giannis Antetokounmpo, Zlatan Ibrahimović, Larry Bird, Marty McFly, Doc Brown, Peter Pan, Long John Silver, Tom Sawyer, Louis Armstrong, Duncan Idaho, Stilgar, Leto II, Princess Irulan, George Hammond, Janet Fraiser, Cameron Mitchell, Ba'al, Apophis, Bra'tac, Martouf.
 Each got a researched biography in place of the boilerplate, a new journey,
 mistype and letter breakdown, a longer Verdict, and question-form subheadings.
 
 Run `node scripts/sync-character-pages.mjs <slug>...` after editing the data files,
 or the static English pages will not change.
 
-## Tier 1 - fully generic (125 pages)
+## Tier 1 - fully generic (101 pages)
 
 Ranked worst first by how little the Verdict says.
 
 | Character | Source | Type | Verdict words | Journey | Mistype | Letters |
 |---|---|---|---|---|---|---|
-| Zinedine Zidane | French footballer | ISFP | 61 | - | - | - |
-| Doc Brown | Back to the Future | ENTP | 62 | - | - | - |
-| Louis Armstrong | Musician | ESFP | 62 | - | - | - |
-| Willy Wonka | Charlie and the Chocolate Factory by Roald Dahl | ENTP | 63 | - | - | - |
-| Cameron Mitchell | Stargate SG-1 | ESFP | 63 | - | - | - |
-| Apophis | Stargate SG-1 | ENTJ | 63 | - | - | - |
-| Scout Finch | To Kill a Mockingbird by Harper Lee | ENFP | 64 | - | - | - |
-| Zlatan Ibrahimović | Swedish footballer | ESTP | 64 | - | - | - |
-| Diego Maradona | Argentine footballer | ESFP | 65 | - | - | - |
-| Giannis Antetokounmpo | NBA basketball player | ISFP | 65 | - | - | - |
-| Princess Irulan | Dune (Frank Herbert) | INFJ | 65 | - | - | - |
-| Simón Bolívar | South American revolutionary leader | ENTJ | 66 | - | - | - |
-| Sam Altman | CEO of OpenAI | INTJ | 66 | - | - | - |
-| Janet Fraiser | Stargate SG-1 | ISFJ | 66 | - | - | - |
-| Leto II | Dune (Frank Herbert) | INFJ | 67 | - | - | - |
-| Larry Bird | NBA basketball player and coach | ISTJ | 68 | - | - | - |
-| Peter Pan | Peter Pan by J.M. Barrie | ESTP | 68 | - | - | - |
-| Duncan Idaho | Dune (Frank Herbert) | ISFP | 68 | - | - | - |
-| Rosa Parks | American civil rights activist | ISFJ | 69 | - | - | - |
-| Ba'al | Stargate SG-1 | ENTJ | 70 | - | - | - |
-| Bra'tac | Stargate SG-1 | ISTP | 72 | - | - | - |
-| Martouf | Stargate SG-1 | INFJ | 73 | - | - | - |
-| Stilgar | Dune (Frank Herbert) | ISTJ | 74 | - | - | - |
-| George Hammond | Stargate SG-1 | ISFJ | 74 | - | - | - |
 | Jonas Quinn | Stargate SG-1 | ENFJ | 77 | - | - | - |
 | Jacob Carter | Stargate SG-1 | ESTJ | 77 | - | - | - |
 | M (Judi Dench) | James Bond film series | ENTJ | 85 | - | - | - |
@@ -211,6 +187,6 @@ Ranked worst first by how little the Verdict says.
 
 _...and 192 more._
 
-## Tier 3 - all slots written (326 pages)
+## Tier 3 - all slots written (350 pages)
 
 No action needed.
