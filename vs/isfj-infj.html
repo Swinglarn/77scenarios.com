@@ -13,11 +13,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://77scenarios.com/og-image.png">
   <link rel="canonical" id="canonical-url" href="https://77scenarios.com/vs/isfj-infj">
-<link rel="alternate" hreflang="en" href="https://77scenarios.com/vs">
-<link rel="alternate" hreflang="es" href="https://77scenarios.com/es/vs">
-<link rel="alternate" hreflang="pt-BR" href="https://77scenarios.com/pt/vs">
-<link rel="alternate" hreflang="ja" href="https://77scenarios.com/ja/vs">
-<link rel="alternate" hreflang="x-default" href="https://77scenarios.com/vs">
+
+
+
+
+
   <link rel="icon" href="/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -1088,6 +1088,22 @@ function renderPage(data) {
   const root = document.getElementById('vs-root');
 
   // SEO
+  // Trim to whole sentences under the ~160 chars Google renders. Applied here
+  // so the meta, og, twitter and schema copies below all stay in step.
+  data.metaDesc = (function clip(s, max) {
+    const t = String(s).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+    if (t.length <= max) return t;
+    let out = '';
+    for (const part of t.match(/[^.!?]+[.!?]+(\s|$)/g) || []) {
+      if ((out + part).trim().length > max) break;
+      out += part;
+    }
+    out = out.trim();
+    if (out.length >= 60) return out;
+    const cut = t.slice(0, max);
+    return cut.slice(0, cut.lastIndexOf(' ')).replace(/[,;:\-\s]+$/, '') + '…';
+  })(data.metaDesc, 155);
+
   const titleText = `${data.typeA} vs ${data.typeB}: The Real Difference | 77 Scenarios`;
   document.getElementById('page-title').textContent = titleText;
   document.getElementById('page-desc').setAttribute('content', data.metaDesc);
@@ -1100,6 +1116,13 @@ function renderPage(data) {
     document.head.appendChild(canonical);
   }
   canonical.href = `https://77scenarios.com/vs/${data.typeA.toLowerCase()}-${data.typeB.toLowerCase()}`;
+
+  // The hreflang set in <head> belongs to the /vs hub. Left in place on a pair
+  // page it declares the English version of this page to be /vs, contradicting
+  // the canonical above, and points at /es|/pt|/ja hubs that are noindexed and
+  // have no pair pages. There is no translated equivalent of a pair page, so
+  // the correct markup on this route is no alternates at all.
+  document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((el) => el.remove());
 
   // Silently correct URL if user landed on a mirror slug (e.g. /vs/enfp-enfj -> /vs/enfj-enfp)
   const currentSlug = (window.location.pathname.split('/').filter(Boolean)[1] || '').toLowerCase();

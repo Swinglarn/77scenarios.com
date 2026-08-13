@@ -188,6 +188,23 @@ const matrix=[
   [1,1,1,2,2,4,5,3,3,3,5,4,4,4,4,3],
 ];
 const scoreLabels={1:'Think This One Through',2:'Could Work, Not Ideal',3:'One-Sided or Uneven',4:'Good Chance It Works',5:'Often an Ideal Match'};
+
+/* Trim to whole sentences under `max`. A blind slice(0,n) cuts mid-word and
+   leaves the snippet reading as broken text, which invites Google to discard
+   the description and write its own. Falls back to a word boundary. */
+function clip(s,max){
+  const t=String(s).replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim();
+  if(t.length<=max) return t;
+  let out='';
+  for(const part of t.match(/[^.!?]+[.!?]+(\s|$)/g)||[]){
+    if((out+part).trim().length>max) break;
+    out+=part;
+  }
+  out=out.trim();
+  if(out.length>=60) return out;
+  const cut=t.slice(0,max);
+  return cut.slice(0,cut.lastIndexOf(' ')).replace(/[,;:\-\s]+$/,'')+'…';
+}
 /* pairDesc & pairingData are loaded externally from /data/compat-db.js (cached immutable). */
 
 function getPairingData(a,b){
@@ -223,8 +240,10 @@ function render(){
   const score=getScore(a,b),isSame=a===b,desc=getDesc(a,b)||'',slug=canonicalSlug(a,b);
   const canonical=`https://77scenarios.com/compatibility/${slug}`;
   const pairLabel=isSame?`${a} + ${a}`:`${a} & ${b}`;
-  const title=isSame?`${a} + ${a} Myers-Briggs Compatibility | 77 Scenarios`:`${a} and ${b} Myers-Briggs Compatibility: ${scoreLabels[score]} | 77 Scenarios`;
-  const metaDesc=`${pairLabel} Myers-Briggs compatibility: ${scoreLabels[score]}. ${desc.slice(0,130)} Find out how these two personality types relate in relationships.`;
+  // Titles deliberately withhold the verdict: putting "Could Work, Not Ideal"
+  // in the title answers the query in the SERP and kills the click.
+  const title=`${isSame?`${a} + ${a}`:`${a} and ${b}`} Compatibility: The Real Dynamic | 77 Scenarios`;
+  const metaDesc=clip(`${pairLabel} compatibility: ${desc}`,155);
   document.title=title;
   const bcPair=document.getElementById('bc-pair'); if(bcPair) bcPair.textContent=pairLabel;
   document.getElementById('page-title').textContent=title;
@@ -243,7 +262,7 @@ function render(){
 
   // FAQ schema
   const faqItems=[
-    {q:`Are ${a} and ${b} compatible?`,a:`${pairLabel}: ${scoreLabels[score]}. ${desc.slice(0,200)}`},
+    {q:`Are ${a} and ${b} compatible?`,a:`${pairLabel}: ${scoreLabels[score]}. ${clip(desc,200)}`},
     {q:`What do ${a} and ${b} have in common?`,a:`${a} (${typeData[a].name}) and ${b} (${b===a?typeData[a].name:typeData[b].name}) share certain cognitive and relational tendencies. ${desc}`},
     {q:`Can ${a} and ${b} have a successful relationship?`,a:`${score>=4?`Yes  -  ${pairLabel} is one of the more naturally compatible MBTI pairings. `:(score>=3?`With effort, ${pairLabel} can work. `:`${pairLabel} faces real structural differences. `)}${desc.slice(0,150)}`},
   ];
@@ -353,7 +372,7 @@ function render(){
       <div class="faq-list">
         <div class="faq-item">
           <div class="faq-q">Are ${a} and ${isSame?a:b} Myers-Briggs types compatible?</div>
-          <div class="faq-a">${scoreLabels[score]}: ${desc.slice(0,200)}</div>
+          <div class="faq-a">${scoreLabels[score]}: ${clip(desc,200)}</div>
         </div>
         <div class="faq-item">
           <div class="faq-q">What makes ${a} and ${isSame?a:b} attract each other?</div>

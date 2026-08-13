@@ -394,7 +394,9 @@ function render(){
   const t=(pathMatch?pathMatch[1]:p.get('t')||'INTJ').toUpperCase();
   const d=types[t];
   if(!d){document.getElementById('content').innerHTML='<p style="color:var(--muted)">Type not found.</p>';return;}
-  document.title=`${t} Personality Type: ${d.name}  -  MBTI Traits, Strengths & Compatibility | 77 Scenarios`;
+  // Kept under ~60 chars so Google shows it whole. The longer keyword string
+  // this replaced was cut at "Streng…", losing every term after the nickname.
+  document.title=`${t} Personality Type: ${d.name} | 77 Scenarios`;
 
   // Read optional score params (e.g. ei=72E, sn=65N, tf=81T, jp=60J)
   const scoreKeys = ['ei','sn','tf','jp'];
@@ -431,7 +433,8 @@ function render(){
   }
 
   // Dynamic SEO
-  const desc=`The ${t} Myers-Briggs personality type (${d.name}): ${d.tagline}. Discover ${t} cognitive functions, key strengths, blind spots, famous ${t} people, and best compatibility matches.`;
+  // Max 157 chars across all 16 types, so nothing is cut in the SERP.
+  const desc=`${t} (${d.name}): ${d.tagline}. Cognitive functions, strengths, blind spots, famous ${t}s and the matches that actually work.`;
   let dm=document.querySelector('meta[name="description"]');
   if(!dm){dm=document.createElement('meta');dm.name='description';document.head.appendChild(dm);}
   dm.content=desc;

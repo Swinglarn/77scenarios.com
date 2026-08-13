@@ -243,7 +243,22 @@ function render(){
 
   // Dynamic SEO
   const keyPhrases={E:'introvert vs extrovert, extraversion definition, what is extraversion',I:'introversion definition, introvert meaning, what is introversion',S:'sensing personality, what is sensing MBTI, sensing vs intuition',N:'intuition personality type, what is intuition MBTI, sensing vs intuition',T:'thinking personality type, MBTI thinking meaning, thinking vs feeling',F:'feeling personality type, MBTI feeling meaning, thinking vs feeling',J:'judging personality type, MBTI judging meaning, judging vs perceiving',P:'perceiving personality type, MBTI perceiving meaning, judging vs perceiving'};
-  const seoDesc=`What does ${l} (${d.name}) mean in Myers-Briggs? ${d.p1.slice(0,160).replace(/<[^>]+>/g,'')}...`;
+  // Whole sentences only. The old slice(0,160)+'...' cut mid-word.
+  const clip=(s,max)=>{
+    const t=String(s).replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim();
+    if(t.length<=max) return t;
+    let out='';
+    for(const part of t.match(/[^.!?]+[.!?]+(\s|$)/g)||[]){
+      if((out+part).trim().length>max) break;
+      out+=part;
+    }
+    out=out.trim();
+    if(out.length>=60) return out;
+    const cut=t.slice(0,max);
+    return cut.slice(0,cut.lastIndexOf(' ')).replace(/[,;:\-\s]+$/,'')+'…';
+  };
+  const lead=`What does ${l} (${d.name}) mean in Myers-Briggs? `;
+  const seoDesc=lead+clip(d.p1,157-lead.length);
   let dm=document.querySelector('meta[name="description"]');
   if(!dm){dm=document.createElement('meta');dm.name='description';document.head.appendChild(dm);}
   dm.content=seoDesc;

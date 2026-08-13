@@ -15,8 +15,8 @@
 //    Letter by Letter   <- charContent[slug].letters  (unhides section)
 //    Why Not Another Type? <- charContent[slug].mistype
 //
-//  plus the <title>-adjacent meta description and og:description,
-//  which are the first 150 characters of desc.
+//  plus the SEO block: <title>, og:title, meta description, og:description
+//  and the Article schema's headline + description.
 //
 //  Everything else on the page (hero, function stack, type profile,
 //  related characters) is left exactly as it is.
@@ -52,10 +52,66 @@ const charContent = new Function(read('data/char-content-en.js') + '\nreturn cha
 const bySlug = new Map();
 for (const p of people) if (!bySlug.has(slugify(p.name))) bySlug.set(slugify(p.name), p);
 
-// Truncate to the same shape the original build used: 150 chars + ellipsis.
-function metaDesc(desc) {
-  const t = desc.replace(/\s+/g, ' ').trim();
-  return t.length <= 150 ? t : t.slice(0, 150) + '…';
+const TYPES = ['INFJ','INFP','INTJ','INTP','ISFJ','ISFP','ISTJ','ISTP',
+               'ENFJ','ENFP','ENTJ','ENTP','ESFJ','ESFP','ESTJ','ESTP'];
+
+// Trim to whole sentences under `max`; failing that, to the last clause
+// boundary; only then to a word. The build this replaces did a flat
+// slice(0,150), which cut mid-word on all 777 pages ("...detachment t…") -
+// a snippet that reads as broken, which is an invitation for Google to throw
+// the description away and compose its own from the body copy.
+function metaDesc(desc, max = 155) {
+  const t = String(desc).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+  if (t.length <= max) return t;
+  let out = '';
+  for (const part of t.match(/[^.!?]+[.!?]+(\s|$)/g) || []) {
+    if ((out + part).trim().length > max) break;
+    out += part;
+  }
+  out = out.trim();
+  if (out.length >= max * 0.55) return out;
+  const head = t.slice(0, max - 1);
+  const clause = Math.max(head.lastIndexOf(', '), head.lastIndexOf('; '),
+                          head.lastIndexOf(' - '), head.lastIndexOf(': '));
+  const at = clause >= max * 0.5 ? clause : head.lastIndexOf(' ');
+  return head.slice(0, at).replace(/[,;:\-\s]+$/, '') + '…';
+}
+
+// "Tony Stark / Iron Man" -> "Tony Stark", to buy title budget when needed.
+const shortName = (n) => n.split(' / ')[0].trim();
+
+// The type the character is most often mistyped as. charContent[].mistype
+// phrases this a dozen different ways ("the common alternative is X", "is
+// sometimes typed X", "the most common argument against Y"), so rather than
+// matching the sentence, take the first four-letter type in the passage that
+// is not the character's own.
+function altType(slug, own) {
+  const m = charContent[slug] && charContent[slug].mistype;
+  if (!m) return null;
+  const found = (m.replace(/<[^>]+>/g, '').match(/\b[EI][NS][TF][JP]\b/g) || [])
+    .filter((x) => TYPES.includes(x) && x !== own);
+  return found[0] || null;
+}
+
+// The old title, "<Name> MBTI Personality Type (<TYPE>) · 77 Scenarios",
+// answered the query outright, so the result had nothing left to offer a
+// searcher who had already read it. These keep the type - dropping it would
+// cost relevance on "<name> <type>" queries - but pair it with the reason to
+// open the page. First variant that fits 60 chars wins.
+function buildTitle(p, slug) {
+  const alt = altType(slug, p.type);
+  const full = p.name, short = shortName(p.name);
+  const c = [];
+  if (alt) {
+    c.push(`${full} MBTI: ${p.type}, Not ${alt} · 77 Scenarios`);
+    c.push(`${short} MBTI: ${p.type}, Not ${alt} · 77 Scenarios`);
+    c.push(`${short} MBTI: ${p.type}, Not ${alt}`);
+  }
+  c.push(`${full} MBTI: The Case for ${p.type} · 77 Scenarios`);
+  c.push(`${short} MBTI: The Case for ${p.type} · 77 Scenarios`);
+  c.push(`${short} MBTI: The Case for ${p.type}`);
+  c.push(`${short} MBTI Type: ${p.type}`);
+  return c.find((x) => x.length <= 60) || c[c.length - 1];
 }
 const attr = (s) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 // desc is plain text, so it has to be escaped before going into the page.
@@ -84,7 +140,10 @@ if (!only.length && !args.includes('--all')) {
   console.error('name the slugs to sync, or pass --all to rewrite every page with data.');
   process.exit(1);
 }
-const slugs = only.length ? only : Object.keys(charContent).filter((s) => bySlug.has(s));
+// Driven off the character data, not charContent: title and description come
+// from people[], so every character with a page needs a pass, including the
+// ~50 that have no charContent sections yet.
+const slugs = only.length ? only : [...bySlug.keys()];
 
 for (const slug of slugs) {
   const p = bySlug.get(slug);
@@ -132,6 +191,36 @@ for (const slug of slugs) {
     else problems.push(slug + ': meta ' + id + ' not found');
   }
   done.push('meta');
+
+  // ── <title> + og:title ──
+  const ttl = attr(buildTitle(p, slug));
+  {
+    const tre = /(<title id="page-title">)[^<]*(<\/title>)/;
+    if (tre.test(html)) html = html.replace(tre, '$1' + ttl + '$2');
+    else problems.push(slug + ': title not found');
+    const ore = /(<meta id="og-title"[^>]*content=")[^"]*(")/;
+    if (ore.test(html)) html = html.replace(ore, '$1' + ttl + '$2');
+    else problems.push(slug + ': meta og-title not found');
+    done.push('title');
+  }
+
+  // ── Article schema: headline + description ──
+  // The Person node above it also has a "description" (the ctx string), so
+  // this has to be anchored on the Article node rather than replaced globally.
+  {
+    const jsonStr = (s) => JSON.stringify(s).slice(1, -1);
+    // The value matchers must span \" - eight descriptions quote the character
+    // ("Why so serious?"), and a plain [^"]* stops dead on the escaped quote
+    // and leaves the tail of the old value behind, which is invalid JSON.
+    const q = '(?:[^"\\\\]|\\\\.)*';
+    const re = new RegExp('("@type":"Article","@id":"[^"]*","headline":")' + q +
+                          '(","description":")' + q + '(")');
+    if (re.test(html)) {
+      html = html.replace(re, '$1' + jsonStr(`${p.name} - ${p.type} Personality Type Analysis`) +
+                               '$2' + jsonStr(metaDesc(p.desc)) + '$3');
+      done.push('schema');
+    } else problems.push(slug + ': Article schema not found');
+  }
 
   // ── Who They Are ──
   if (cc.who) {
