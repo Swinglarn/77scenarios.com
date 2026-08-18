@@ -14390,3 +14390,1193 @@ var charContent={
 </div>`
     }
   });
+
+
+  // ── Rewritten pages: full biography (who), journey, mistype and letter
+  // breakdown. Assigned after the block above so these entries win.
+  Object.assign(charContent, {
+    'rasputin':{
+      whoHeading:`Who Was Rasputin?`,
+      who:`<p>Grigori Yefimovich Rasputin was born around 1869 in Pokrovskoye, a village in Siberia, to a peasant family, and had no formal education. In his late twenties he underwent some kind of religious crisis, left for a period of wandering, and returned as a strannik - a self-appointed holy man of a type Russia produced regularly and the official church regarded with suspicion. He reached St Petersburg around 1903 and was introduced into aristocratic circles fascinated by mysticism.</p>
+<p>What gave him access to the imperial family was a medical fact nobody outside it knew. The heir, Alexei, had haemophilia, and the condition was concealed as a matter of state security. Rasputin was able, repeatedly, to calm the boy during crises when the court physicians could not, and whatever the mechanism - the modern suggestion is that his insistence on rest and his refusal of aspirin, then being administered as a painkiller, may genuinely have helped - the effect on the Empress Alexandra was total.</p>
+<h3>Why was Rasputin murdered?</h3>
+<p>Because by 1916 he was widely believed to be directing appointments. Nicholas II had taken personal command at the front in 1915, leaving Alexandra effectively governing, and she consulted Rasputin - a drunken, sexually notorious peasant, in the view of everyone else - about ministers. The rumours about him and the Empress were almost certainly false and were politically fatal regardless. On the night of 30 December 1916 he was killed at the Moika Palace by a group including Prince Felix Yusupov and the Grand Duke Dmitri Pavlovich. The famous story of poison failing, then shooting, then drowning is largely embellishment from Yusupov's own memoir. The conspirators believed his removal would restore the dynasty's credibility; the February Revolution came fifteen months later.</p>`,
+      journey:`<p>Rasputin is dominant Fe, and it is the only thing that explains an illiterate peasant reaching the inner rooms of an empire. He read people with extraordinary accuracy and gave them precisely what they were missing - attention, absolution, a sense of being genuinely seen by someone with no stake in court politics. Aristocratic women who had spent their lives being flattered found a man who spoke to them bluntly, and the Empress found the only person in Russia who could reassure her about her son.</p>
+<p>The auxiliary Ni is why he was more than a charming fraud. He appears to have genuinely believed in the peasant faith he preached, held a consistent and unfashionable position against the war, and made predictions about the fate of the dynasty that his defenders have made much of since. Whether any of it was prophecy is unanswerable; that he operated on a settled inner conviction rather than moment to moment is fairly clear from how little he adjusted his behaviour to survive.</p>
+<h3>Why couldn't Rasputin behave?</h3>
+<p>Because tertiary Se was completely ungoverned and inferior Ti gave him no framework to restrain it with. The drinking, the women, the public scenes - he made no serious attempt to conceal any of it, and the gap between the holy man and the conduct was the specific thing his enemies used. An Fe-dominant with a developed thinking function would have understood that the position required a performance and maintained one. He simply did not appear to grasp that his behaviour was a strategic problem, right up to the night four men decided to solve it for him.</p>`,
+      mistype:`<p>ENFP is sometimes suggested because of the wildness and the apparent spontaneity. The difference is what he was doing with people. An Ne-dominant would be generating ideas and possibilities; Rasputin's whole instrument was direct emotional engagement with individuals in a room, and his influence came entirely from what he did to the person in front of him.</p>
+<p>INFJ is occasionally proposed because of the mysticism and the prophetic claims. But he was relentlessly outward and could not tolerate being alone - the taverns, the crowds of petitioners, the constant company. The convictions are real and they sit second, powering a man whose energy came entirely from other people.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">E</span><span class="letter-word">Extraverted</span></div>
+  <p>He worked rooms - salons, taverns, the imperial nursery - and was never alone by choice. His entire power was interpersonal, exercised face to face, and it evaporated the moment he was away from the people it acted on.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>He operated on a settled inner conviction about faith, war and the fate of the dynasty rather than on the politics of the week, and he held positions - opposing the war above all - that were directly against his own interest at court.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">F</span><span class="letter-word">Feeling</span></div>
+  <p>He read what each person in front of him needed and supplied it with uncanny precision. A frightened mother, a bored aristocrat, a guilty penitent - his gift was knowing what would land, and it took him from a Siberian village to the Alexander Palace.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">J</span><span class="letter-word">Judging</span></div>
+  <p>Once he had a position he did not move off it - about the war, about his own role, about the family he had attached himself to - and he did not adapt his conduct to the enormous political pressure it generated. The rigidity is what killed him.</p>
+</div>`
+    },
+    'novak-djokovic':{
+      whoHeading:`Who Is Novak Djokovic?`,
+      who:`<p>Novak Djokovic was born on 22 May 1987 in Belgrade. He started playing at four, and his formative years coincided with the NATO bombing of Serbia in 1999 - the family sheltered at night and trained during the day, reportedly seeking out courts that had already been hit, on the logic that the same target would not be struck again. He moved to a tennis academy in Munich at twelve.</p>
+<p>He turned professional in 2003 and won his first major at the Australian Open in 2008, breaking into a period that Federer and Nadal had between them owned. The transformation came in 2010, when he was diagnosed with gluten intolerance and rebuilt his diet, conditioning and recovery from the ground up; 2011 is one of the great single seasons in the sport's history, and everything after it is a career constructed on that reengineering.</p>
+<h3>What are Djokovic's records?</h3>
+<p>Twenty-four Grand Slam singles titles, more than any other man, and more total weeks at world number one than any player of either sex has managed. He is the only man to have won each of the four majors at least three times, and he holds a winning head-to-head record against both Federer and Nadal, which is the statistic his defenders reach for and his detractors avoid. In January 2022 he arrived in Melbourne to defend the Australian Open title without a Covid vaccination, was detained, and after a two-week legal fight was deported without playing. He has never softened the position, and it cost him a tournament he has won ten times.</p>`,
+      journey:`<p>Djokovic is dominant Ni, and the 2010 rebuild is the clearest evidence. Confronted with a body that kept failing in long matches, he did not train harder; he formed a complete model of what was wrong and reorganised diet, sleep, breathing, recovery and mental preparation around it simultaneously. That is Ni producing one integrated picture and then changing everything at once, rather than adjusting variables one at a time.</p>
+<p>The auxiliary Te is the execution, and it has been ruthless. He built a team, a schedule, a training regime and a physical method - the flexibility, the return of serve, the sliding on hard courts - engineered specifically to beat the two players standing in front of him, and then beat both more often than they beat him.</p>
+<h3>Why does Djokovic hold unpopular positions?</h3>
+<p>Because tertiary Fi in an INTJ is private, absolute and does not price in public opinion, and his has repeatedly put him on the wrong side of a crowd. The Australian deportation is the clearest instance: he had more to lose than anyone in the sport and did not move. It is the same faculty that made him a worse crowd favourite than his rivals for most of his career - not coldness, but a settled internal position that he has never been willing to trade for affection. The inferior Se is why the great crises of his career are physical and momentary rather than strategic: the retirements, the default at the 2020 US Open for hitting a line judge with a ball, the occasional collapses in matches he was controlling.</p>`,
+      mistype:`<p>ISTJ is sometimes suggested because of the discipline and the routine. The difference is that his routines are the output of a redesign rather than an inherited method. He tore up how he ate, trained and recovered on the strength of a new model, which is the opposite of what an Si-dominant does with a working system.</p>
+<p>ISTP is occasionally proposed for the physical genius and the composure. But the flexibility, the return position and the sliding are engineered rather than instinctive - built deliberately, over years, to solve two specific opponents - and he is the least improvisational of the great players of his era.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>He is a private man in a sport that rewards charm, and has been open about how much of his mental work happens alone. The public persona has changed several times over twenty years, which is what it looks like when the real thing is kept elsewhere.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>The 2010 reconstruction was total and simultaneous - diet, sleep, breathing, recovery, psychology - because he had a single integrated picture of what was wrong rather than a list of problems to work through.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">T</span><span class="letter-word">Thinking</span></div>
+  <p>He built a game specifically to defeat the two best players alive and succeeded against both. Every element of it - the return position, the flexibility work, the scheduling - is instrumental, and none of it was chosen for how it would look.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">J</span><span class="letter-word">Judging</span></div>
+  <p>Twenty years of a career executed to a plan, with records pursued deliberately and stated as objectives in advance. He is the only one of the great three who has been open about counting, and he counted his way to the top of every list.</p>
+</div>`
+    },
+    'the-phantom':{
+      whoHeading:`Who Is the Phantom of the Opera?`,
+      who:`<p>The Phantom, whose name in Leroux's novel is Erik, is the central figure of The Phantom of the Opera, published as a serial in 1909 and as a book in 1910. He was born with a severe facial deformity, and Leroux is explicit about what it did: his mother would not kiss him and gave him his first mask. He was exhibited in fairgrounds, travelled through Persia where he worked as an assassin and illusionist for the court, and eventually helped build the Palais Garnier - which is how he came to know its structure well enough to live inside it.</p>
+<p>He occupies the fifth cellar of the opera house, beside the underground lake, and he is a genuine polymath: composer, architect, engineer, ventriloquist and designer of the traps and mirrors that make him seem supernatural to everyone above.</p>
+<h3>What does the Phantom want?</h3>
+<p>To be loved without being seen, which is not available. He identifies a young chorus singer, Christine Daaé, teaches her in secret from behind a wall, and allows her to believe he is the Angel of Music her dead father promised to send - because a disembodied voice can be adored and a face cannot. He forces the opera management to cast her, drops the chandelier when they refuse, and eventually abducts her to the cellars. The ending is the whole point: given absolute power over her, and having demanded she choose between marrying him and letting him destroy the opera house, he is undone by her kissing him voluntarily - the first physical kindness of his life - and releases her to the man she loves. He dies shortly afterwards.</p>`,
+      journey:`<p>The Phantom is dominant Fi, and the character is what that function becomes when it has been denied every ordinary outlet since infancy. His interior life is enormous, entirely private, and completely unmediated by any experience of how feelings are supposed to be expressed - because he has never had a relationship in which to learn. What comes out is therefore uncalibrated: adoration that is indistinguishable from possession, and rage that arrives at full volume with no intermediate settings.</p>
+<p>The auxiliary Ne is why he is a genius rather than merely a recluse. Music, architecture, engineering, illusion, ventriloquism - he generates in every direction, and the traps and mirrors of the cellars are a mind that cannot stop inventing, applied to the only space it is permitted to occupy.</p>
+<h3>Why does the Phantom let Christine go?</h3>
+<p>Because the kiss gives him, once, the thing his whole apparatus was built to obtain, and Fi immediately recognises that obtaining it by force would not be the same thing. It is a values judgement made in a second and it costs him everything. The tertiary Si is the wound he cannot revise - the mother, the mask, the fairground - held with perfect clarity for a lifetime. The inferior Te is why none of the schemes work: he can build a labyrinth and cannot manage a relationship, and every plan he makes for getting what he wants is a plan for compelling it.</p>`,
+      mistype:`<p>INTJ is the most common alternative, given the engineering, the long-range scheming and the control of the opera house. The difference is what the schemes are for. An Ni-Te character builds toward an objective; the Phantom builds toward a feeling, and his plans are consistently irrational in service of it - dropping a chandelier to get a soprano cast is not strategy, it is an emotion with a mechanism attached.</p>
+<p>INFJ is sometimes suggested because of the manipulation of Christine's beliefs and the sense of a vision. But he is not oriented toward people; he has no read on how he lands on anyone, which is why the Angel of Music deception is his only workable social technique. Fi first, with no functioning Fe anywhere in the stack.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>He lives five floors beneath a building full of people, behind a mask, communicating through walls and mirrors. The most extreme depiction of interiority in nineteenth-century popular fiction is a man who has literally built a private world under a public one.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>Composer, architect, engineer, illusionist, ventriloquist. He generates constantly and across unrelated domains, and the traps and mirrors are an inventive mind with nowhere else to put itself.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">F</span><span class="letter-word">Feeling</span></div>
+  <p>Everything he does is driven by a private feeling he cannot express in any proportionate way. The final decision - releasing her because she kissed him willingly - is a values judgement that overturns the entire plot in one moment.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">P</span><span class="letter-word">Perceiving</span></div>
+  <p>His plans are improvised escalations rather than designs: a threat, then a chandelier, then an abduction, then an ultimatum. He has no capacity to organise a course of action that might actually get him what he wants.</p>
+</div>`
+    },
+    'lewis-hamilton':{
+      whoHeading:`Who Is Lewis Hamilton?`,
+      who:`<p>Lewis Carl Davidson Hamilton was born on 7 January 1985 in Stevenage. His father Anthony worked several jobs at once to fund the karting, and the family had no motorsport background and no money in the sport's terms. At an awards evening in 1995, aged ten, Hamilton approached Ron Dennis, the head of McLaren, told him he wanted to drive for his team one day, and was told to call back in nine years. McLaren signed him to their young driver programme in 1998, when he was thirteen - the youngest driver ever contracted by a Formula One team.</p>
+<p>He debuted for McLaren in 2007 and finished a point off the championship in his first season, then won it in 2008. He moved to Mercedes for 2013, a decision widely described at the time as a mistake, and won six more titles there between 2014 and 2020.</p>
+<h3>What are Hamilton's records?</h3>
+<p>Seven world drivers' championships, level with Michael Schumacher and more than anyone else. More race wins than any driver in the sport's history, and more pole positions - the latter by a margin that is unlikely to be approached. He is the only Black driver ever to compete in Formula One, and has been open throughout his career about the racism he encountered in karting and since. In 2020 he established the Hamilton Commission with the Royal Academy of Engineering to investigate why British motorsport recruits so few Black engineers, and its report led to the Mission 44 foundation. He is vegan, has a substantial life in fashion and music, and moved to Ferrari for the 2025 season after twelve years at Mercedes.</p>`,
+      journey:`<p>Hamilton is dominant Ni, and the ten-year-old with the autograph book is the most literal illustration of it any athlete has provided. He was not hoping. He had a specific picture of where he was going and walked across a room to inform the person who would have to be involved, and the picture turned out to be accurate. The 2013 move to Mercedes is the adult version: leaving the team that had raised him for one that had not won anything, on a read about where the sport's next regulation cycle would leave the engine manufacturers, against near-universal advice.</p>
+<p>The auxiliary Te is the working method. He is known within the sport for the precision of his engineering feedback and for building a car around what he tells the team, and the Mercedes era was a machine assembled and refined over years rather than a run of good fortune.</p>
+<h3>Why did Hamilton start the Commission?</h3>
+<p>Because tertiary Fi holds something personal and unarguable, and because Te's instinct with a conviction is to build the instrument. He had spent a career as the only Black driver in the paddock, and his response was not a statement but a research programme with an engineering academy attached, followed by a foundation. The inferior Se is the recurring weakness in the racing itself: for all the strategic intelligence, his worst moments have been immediate ones - a start gone wrong, a collision in a corner, a race lost in a second rather than in a plan.</p>`,
+      mistype:`<p>ENTJ is sometimes suggested because of the public presence and the campaigning. But he is a notably guarded person who has spoken about depression and isolation, and his method is to arrive with a settled position rather than to work a room toward one. The public work is downstream of private conclusions.</p>
+<p>ISFP is occasionally proposed because of the fashion, the music and the evident aesthetic seriousness. The difference is how he makes decisions: the team changes, the technical feedback and the long strategic arc of the career are all governed by a projection about where things are heading, not by what feels right in the moment.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>He has been open about isolation and depression across a career spent in one of the most public sports there is, and his decisions - the Mercedes move, the Ferrari move - are arrived at privately and announced rather than negotiated in public.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>He told Ron Dennis at ten where he was going, and left McLaren for a team that had won nothing on a read about the next engine regulations. Both were forecasts acted on well before the evidence supported them.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">T</span><span class="letter-word">Thinking</span></div>
+  <p>His reputation inside the sport rests on engineering feedback of unusual precision, and his response to racism in motorsport was a commissioned research report and a foundation rather than a speech.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">J</span><span class="letter-word">Judging</span></div>
+  <p>A twenty-year plan formed in childhood and executed to completion, with each move decided in advance and committed to fully. He does not keep his options open; he picks the destination and drives at it.</p>
+</div>`
+    },
+    'p-g-wodehouse':{
+      whoHeading:`Who Was P.G. Wodehouse?`,
+      who:`<p>Pelham Grenville Wodehouse was born on 15 October 1881 in Guildford and died on 14 February 1975 on Long Island, aged ninety-three. He spent his childhood largely apart from his parents, who were in Hong Kong, and was educated at Dulwich College, which he loved and wrote about with more warmth than he ever managed for a real person.</p>
+<p>He produced over ninety books in a career spanning seven decades. The Jeeves and Wooster stories - an amiable, wealthy imbecile and the valet who extracts him from the consequences - and the Blandings Castle novels, with Lord Emsworth and his prize pig, are the enduring ones. He also had a substantial second career on Broadway, writing lyrics with Jerome Kern and books with Guy Bolton for the Princess Theatre musicals, which changed how American musical comedy was constructed.</p>
+<h3>What happened with the Berlin broadcasts?</h3>
+<p>He was living at Le Touquet in France in 1940, did not leave in time, and was interned by the Germans - first in Belgium, then at Tost in Upper Silesia. Released in 1941 shortly before his sixtieth birthday, he was taken to Berlin and made five broadcasts to America describing his internment in exactly the comic register he wrote everything else in. There was no propaganda content and no political statement of any kind, which is the point: he appeared not to have registered that speaking on German radio during a war was in itself the act. The reaction in Britain was ferocious. He was never charged with anything, and George Orwell's 1945 essay In Defence of P.G. Wodehouse argued that the broadcasts showed political naivety rather than sympathy. He settled in America, took citizenship in 1955, and never returned to England. He was knighted six weeks before his death.</p>`,
+      journey:`<p>Wodehouse is dominant Ne, and the prose is the evidence. His sentences work by unexpected connection - a simile that arrives from four fields away and lands exactly - and he could sustain it for seventy years without the machinery showing. The plots are the same faculty applied structurally: engagements, impostures, stolen pigs and misdelivered letters, all colliding on a schedule of almost mathematical precision.</p>
+<p>The auxiliary Fi is why the books are kind. There is a settled personal position underneath the entire output, which is that his characters are not to be humiliated. Nobody in Wodehouse is genuinely cruel and nobody is genuinely hurt, and that is a deliberate and maintained choice about what he was willing to write rather than a limitation.</p>
+<h3>How could he not see what the broadcasts would do?</h3>
+<p>Because inferior Si supplies the accumulated sense of context and consequence, and his was close to absent. He had spent forty years constructing a world with no history in it, and he appears to have processed his internment as material rather than as politics. The tertiary Te kept him productive to an extraordinary degree - a book a year for decades, delivered - and gave him nothing at all with which to assess a situation. Orwell's judgement, that this was a man who had never had a political thought in his life and could not have started in 1941, is probably exactly right.</p>`,
+      mistype:`<p>ENTP is the most common alternative, given the verbal invention and the intricate plotting. The difference is the auxiliary. Ne with Ti produces satire - a writer taking the world apart to show what is wrong with it. Wodehouse's comedy has no target and no argument; it is built on an affection for his own characters that he protected for seventy years, which is Fi.</p>
+<p>ISFP is occasionally suggested because of the retiring personal manner and the almost complete absence of a public self. But the work is relentlessly generative and outward-facing, produced at volume for a mass audience, and he wrote for Broadway as readily as for the page.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">E</span><span class="letter-word">Extraverted</span></div>
+  <p>He wrote for the largest available audience in every medium he could reach - novels, serials, stage musicals, Hollywood - and collaborated easily and constantly with lyricists, composers and co-writers across two continents.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>His comedy is made of unexpected connection: the simile from nowhere, the plot in which nine unrelated deceptions converge in a drawing room at the same minute. Nothing in the books is observed; it is all invented and then engineered.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">F</span><span class="letter-word">Feeling</span></div>
+  <p>He refused to let his characters be humiliated, for seventy years and ninety books. It is a fixed private standard about what he was prepared to write, and it is the reason the world he built is habitable rather than merely clever.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">P</span><span class="letter-word">Perceiving</span></div>
+  <p>He worked continuously and never closed anything: the same characters revisited for decades, no final novel, no summing up. The same openness left him without any framework for judging the situation he walked into in 1941.</p>
+</div>`
+    },
+    'mark-twain':{
+      whoHeading:`Who Was Mark Twain?`,
+      who:`<p>Samuel Langhorne Clemens was born on 30 November 1835 in Florida, Missouri, and grew up in Hannibal on the Mississippi, which became the model for Tom Sawyer's St Petersburg. He worked as a printer's apprentice, then trained as a steamboat pilot on the river, a job he described as the best he ever had and which ended when the Civil War closed traffic. The pen name comes from the river: mark twain is the call for two fathoms, safe water.</p>
+<p>He made his name with humorous sketches and travel writing - The Innocents Abroad in 1869 was a bestseller - and then wrote The Adventures of Tom Sawyer in 1876 and Adventures of Huckleberry Finn in 1884. Hemingway's judgement, that all modern American literature comes from Huckleberry Finn, is the most quoted sentence about it, and the book's use of vernacular speech rather than literary English is why.</p>
+<h3>What happened to Twain's money?</h3>
+<p>He invested enormous sums in the Paige typesetting machine, an ingenious and impossibly complex device that was overtaken by the Linotype, and it ruined him. He was not legally obliged to repay his creditors in full after the bankruptcy and did it anyway, undertaking a lecture tour around the world in 1895 and 1896 to earn the money, in his sixties. The later years were dark: his daughter Susy died of meningitis while he was abroad, his wife Olivia died in 1904 and his daughter Jean in 1909, and the writing turned bitter and metaphysical - The Mysterious Stranger, the Letters from the Earth, the unpublished material his estate withheld for decades. He died on 21 April 1910.</p>`,
+      journey:`<p>Twain is dominant Ne, and the career shape gives it away: printer, riverboat pilot, silver prospector, journalist, travel writer, novelist, lecturer, publisher, inventor and investor. He kept generating, and his best writing has the same quality - a voice that moves by association, doubles back, digresses and arrives at the point from an angle nobody expected.</p>
+<p>The auxiliary Ti is why the humour has teeth. His method is to take a piece of received wisdom, examine it seriously, and follow it until it falls apart - which is how the Huckleberry Finn raft sequence works, with a boy reasoning his way through the conventional morality he has been taught about slavery and concluding, in the novel's most famous line, that he will go to hell instead. That is a logical demolition delivered in a child's voice.</p>
+<h3>Why did the late work turn so dark?</h3>
+<p>Because tertiary Fe was where the losses landed and there was nothing above it to absorb them. Susy, Olivia and Jean died within fifteen years, and the writing turned from satire against institutions to something much colder about the species itself. The inferior Si is the whole financial catastrophe: he backed a mechanically dazzling machine without any accumulated sense of what production, cost and competition would actually do to it, and then repaid the debts through sheer output, which is the only remedy this stack has.</p>`,
+      mistype:`<p>ENFP is sometimes suggested because of the warmth and the enormous public affection. The difference is the auxiliary. Ne with Fi produces a moralist writing from conviction; Twain's method is analytical demolition - he takes an argument seriously in order to destroy it - and his most powerful moral moments are reached by reasoning rather than asserted.</p>
+<p>ENTJ is occasionally proposed because of the publishing house and the business ventures. But the ventures were enthusiasms rather than strategy, and most of them failed. He generated and moved on, and the one thing he executed with real discipline was a lecture tour undertaken to clear debts he had created by not executing anything else.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">E</span><span class="letter-word">Extraverted</span></div>
+  <p>He was one of the great platform performers of his century and toured the world lecturing in his sixties to pay off a debt. The voice on the page is a speaking voice, and it was developed in front of paying audiences.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>Printer, pilot, prospector, journalist, novelist, publisher, inventor. He kept finding the next thing, and his prose moves the same way - by association and digression, arriving at the point from a direction nobody set up.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">T</span><span class="letter-word">Thinking</span></div>
+  <p>His satire works by taking a received idea seriously enough to follow it to its collapse. Huck's decision on the raft is a boy reasoning his way through everything he has been taught and concluding, correctly, that the teaching is wrong.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">P</span><span class="letter-word">Perceiving</span></div>
+  <p>He abandoned Huckleberry Finn mid-manuscript for years and came back to it, ran several careers at once, and left an autobiography he instructed should not be published in full for a century. Nothing about his working life was closed.</p>
+</div>`
+    },
+    'martin-luther':{
+      whoHeading:`Who Was Martin Luther?`,
+      who:`<p>Martin Luther was born on 10 November 1483 at Eisleben and died there on 18 February 1546. He was studying law when a terrifying thunderstorm in 1505 led him to vow to become a monk, and he entered an Augustinian monastery against his father's furious objection. He was ordained, took a doctorate, and became professor of biblical studies at the new University of Wittenberg.</p>
+<p>His theological crisis was personal before it was public. He was tormented by the question of how a person could ever be righteous enough for God, and arrived, reading Paul, at the conclusion that righteousness is given rather than earned - justification by faith. Everything that followed proceeds from that.</p>
+<h3>What did Luther actually do?</h3>
+<p>On 31 October 1517 he sent his Ninety-five Theses against the sale of indulgences to his archbishop, and by tradition posted them on the door of the Castle Church at Wittenberg. Printing did the rest: they were across Germany within weeks and across Europe within months, which is not what an academic disputation was supposed to do. Summoned before the Diet of Worms in April 1521 and ordered to recant, he refused - the famous formulation about being unable to do otherwise is probably a later embellishment, but the refusal is not. Excommunicated and outlawed, he was hidden by his prince at the Wartburg castle, where he translated the New Testament into German in roughly eleven weeks, producing a text that shaped the modern German language much as the King James Bible shaped English. He married Katharina von Bora, a former nun, in 1525, and their household became the model for Protestant clerical family life. In 1543 he published On the Jews and Their Lies, which calls for the burning of synagogues and the expulsion of Jews from German lands, and which was reprinted by the Nazis four centuries later. It is his, and it belongs in any account of him.</p>`,
+      journey:`<p>Luther is dominant Ni, and the tell is that the whole Reformation proceeds from one perception that arrived whole. He did not accumulate objections to church practice and reach a position; he had a single organising insight about grace, and every subsequent argument - indulgences, papal authority, the sacraments, the priesthood of all believers - is that insight applied outward. He said afterwards that he had not set out to break anything, and the record supports him: he had found something true and could not stop stating it.</p>
+<p>The auxiliary Fe is why it became a mass movement rather than an academic dispute. He wrote in German, for ordinary people, in a plain vigorous idiom nobody had used for theology, and the translation of the Bible is the ultimate expression of it - the conviction that this material belongs to the ploughboy rather than to the clerks. He also wrote hymns for congregations to sing, which is Fe supplying a whole population with something to do with the idea.</p>
+<h3>How does the antisemitism fit?</h3>
+<p>Uncomfortably, and not as an aberration. Fe attaches to a community and defines it, and in his last years Luther's definition hardened into something murderous toward those outside it. He had earlier written more sympathetically about Jews, in the expectation that a reformed church would convert them; when it did not happen, the tertiary Ti constructed an elaborate justification and the writing turned to expulsion and burning. The inferior Se is the rest of the biography - the extraordinary physical complaints, the rages, the coarseness that shocked even his allies, and a body he treated as an enemy for most of his life.</p>`,
+      mistype:`<p>INTJ is the most common alternative, given the systematic theology and the willingness to defy an institution alone. The difference is the audience. An Ni-Te reformer builds a structure; Luther wrote catechisms, hymns and a vernacular Bible aimed at ordinary people, and his central innovation is that everyone should have direct access rather than that the institution should be redesigned.</p>
+<p>ENFJ is occasionally suggested because of the enormous public impact. But the founding conviction was reached alone across years of private torment, and he was by temperament a scholar who found the public role thrust on him by a printing press he had not anticipated.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>The crisis that produced the Reformation was a private struggle in a monastery cell about his own salvation. He was a professor in a small town, and the public figure arrived because a document escaped rather than because he sought a platform.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>One insight about grace, arrived at whole, and then applied to indulgences, authority, the sacraments and the priesthood in turn. He did not build the position up from objections; he derived the objections from the position.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">F</span><span class="letter-word">Feeling</span></div>
+  <p>He translated the Bible into German so that ordinary people could read it, wrote hymns for them to sing, and argued in the vernacular. The whole programme is about who is allowed access, which is a question about people rather than about doctrine.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">J</span><span class="letter-word">Judging</span></div>
+  <p>Told to recant before the Emperor with his life at stake, he refused, and never revisited it. Every position he took was closed and held, including the ones that curdled - which is why his late writing on the Jews is as immovable as his early writing on grace.</p>
+</div>`
+    },
+    'toni-morrison':{
+      whoHeading:`Who Was Toni Morrison?`,
+      who:`<p>Chloe Ardelia Wofford was born on 18 February 1931 in Lorain, Ohio, into a working-class Black family; her father had witnessed a lynching in Georgia before moving north, and her mother sang and told the folktales that turn up transfigured in the novels. She took a BA at Howard in 1953 and an MA at Cornell in 1955, with a thesis on Woolf and Faulkner and the theme of alienation. She died on 5 August 2019, aged eighty-eight.</p>
+<p>Before she was a novelist she was an editor. She joined Random House in 1966 and became the first Black woman senior editor in its fiction department, and what she did there matters as much as the novels: she published Toni Cade Bambara, Angela Davis, Huey Newton, Gayl Jones and Muhammad Ali's autobiography, and edited The Black Book in 1974, an anthology of the material record of Black American life.</p>
+<h3>What happened with Beloved?</h3>
+<p>Published in 1987, it was a bestseller for twenty-five weeks and then won neither the National Book Award nor the National Book Critics Circle Award. On 24 January 1988 the New York Times published a statement signed by forty-eight Black writers and critics, observing that despite her international stature she had yet to receive the national recognition her work deserved. Two months later Beloved won the Pulitzer Prize for Fiction. In 1993 she received the Nobel Prize in Literature, cited for novels of visionary force and poetic import that give life to an essential aspect of American reality, and became the first Black woman of any nationality to win it. Her acceptance speech contains the line that we die, and that may be the meaning of life, but we do language, and that may be the measure of our lives.</p>`,
+      journey:`<p>Morrison is dominant Ni, and Beloved is the clearest case. She took a documented historical fact - an enslaved woman who killed her own child rather than see her returned to slavery - and built from it not a historical novel but a single sustained perception about what slavery does to the capacity to love, expressed through a house, a ghost and a woman who cannot put down the past. The book does not accumulate toward its meaning; the meaning is present from the first page and the narrative is its container.</p>
+<p>The auxiliary Fe is the thing she stated most directly herself. Her subject is a community and her orientation is entirely toward the people inside it: her stated project, repeated across forty years, was to write without the white gaze - to produce novels in which Black readers are the assumed audience rather than the observed subject. That is a decision about who a book is for, made once and held for a whole career.</p>
+<h3>What did she mean by refusing the white gaze?</h3>
+<p>That the reader she was writing to was not a stranger requiring explanation. She declined to translate, gloss or contextualise, and the effect is that the novels do not perform Blackness for an outside observer - they simply proceed. The tertiary Ti is the formal control underneath: these are structurally intricate books, with fractured chronology and shifting narrators handled with total precision. The inferior Se is why she came to fiction at thirty-nine and wrote at night around a job and two children; the physical practicalities of a writing life were the last thing to be arranged, and she arranged them anyway.</p>`,
+      mistype:`<p>INFP is the most common alternative, given the lyricism and the moral seriousness. The difference is the orientation of the work. An Fi-dominant novelist writes outward from a private truth; Morrison's novels are addressed to a community, and her most quoted statements are about audience - who is being written for and who is being written past. That is Fe in the auxiliary position.</p>
+<p>INTJ is occasionally suggested because of the structural control and the critical work in Playing in the Dark. But the analysis is always in service of what literature does to and for people, and her career as an editor was spent building other writers rather than a body of theory.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>She wrote at four in the morning, around a full-time job and two children, for years before anyone knew she was a novelist. The public figure arrived decades after the practice, and the practice was always solitary.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>Beloved takes one historical fact and builds an entire perception about what slavery does to love, rendered through a haunting rather than through documentation. The meaning is present before the plot and the plot exists to carry it.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">F</span><span class="letter-word">Feeling</span></div>
+  <p>Her stated project for forty years was to write without the white gaze - a decision about which readers are assumed and which are not. As an editor she spent a decade putting other Black writers into print, which is the same instinct with a different instrument.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">J</span><span class="letter-word">Judging</span></div>
+  <p>Eleven novels, a body of criticism, and a governing principle stated early and never revised. She decided what her work was for before most people had read a word of it, and the position did not move across half a century.</p>
+</div>`
+    }
+  });
+
+
+  // ── Rewritten pages: full biography (who), journey, mistype and letter
+  // breakdown. Assigned after the block above so these entries win.
+  Object.assign(charContent, {
+    'neymar-jr':{
+      whoHeading:`Who Is Neymar?`,
+      who:`<p>Neymar da Silva Santos Júnior was born on 5 February 1992 in Mogi das Cruzes, São Paulo. He came through at Santos, the club Pelé played for, and was a national figure in Brazil before he was twenty - a player of extraordinary technical invention, quick feet and showmanship, in a country that has produced more of those than anywhere else and still found him remarkable.</p>
+<p>Barcelona signed him in 2013, and the front three of Messi, Suárez and Neymar scored 122 goals between them in 2014-15, a season that ended in a treble. In August 2017 Paris Saint-Germain triggered his release clause for 222 million euros, more than doubling the previous world record, and the fee has not been approached since.</p>
+<h3>What has Neymar actually achieved?</h3>
+<p>A great deal, and less than the talent suggested. He is Brazil's all-time leading scorer, passing Pelé's mark, won the Champions League and two La Liga titles with Barcelona, multiple French league titles with Paris, an Olympic gold medal at Rio in 2016 - scoring the winning penalty in the final on home soil, which mattered enormously in Brazil after the 2014 semi-final - and a Copa América. The Ballon d'Or never came. The recurring themes of his career are injuries, several of them serious and several of them the result of being fouled constantly, and a persistent argument about diving and theatricality that followed him from the 2018 World Cup onward. He returned to Santos in 2025.</p>`,
+      journey:`<p>Neymar is dominant Se in the Brazilian tradition, and at his best he is one of the most watchable players who has ever lived. The dribbling is not planned; it is a continuous real-time read of where a defender's weight is, executed faster than the defender can update. His game has no schematic element at all, which is why he is so difficult to coach against and so difficult to build a system around.</p>
+<p>The auxiliary Fi is why the Barcelona exit happened. The football reasoning against leaving a team he had just won everything with, to join a weaker league, was overwhelming; the personal reasoning - that he would always be the second man in Messi's team and wanted somewhere that was his - was not a calculation, it was a values position. He has been fairly open about it, and it is the most consequential decision of his career.</p>
+<h3>Why is Neymar's reputation so contested?</h3>
+<p>Because tertiary Te has never been strong enough to organise the career around the talent, and inferior Ni means the long-range cost of any given month is not vivid to him. The injuries are partly bad luck and partly a body that was not managed; the theatrical reaction to fouls was an immediate emotional response that hardened into a reputation; and the pattern across a decade is a player who responded superbly to the present moment and repeatedly failed to build toward anything beyond it. He is Brazil's leading scorer and the argument about him is still whether he became what he was.</p>`,
+      mistype:`<p>ESTP is the standard alternative for a dribbler of that quality. The difference is what drives the choices. Se with Ti produces a cold reader of situations looking for exploitable weakness; Neymar's football is expressive and his career decisions have been consistently emotional rather than strategic, including the one that defined it.</p>
+<p>ENFP is occasionally suggested because of the flamboyance and the visible enjoyment. But there is nothing conceptual about him. The invention is entirely embodied and situational, and away from the ball there is no equivalent inventiveness in how he approaches anything.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">E</span><span class="letter-word">Extraverted</span></div>
+  <p>He plays to the crowd and needs one, and his career has been conducted as a public performance on and off the pitch. The move to Paris was partly a move toward being the centre of attention rather than a component of somebody else's team.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">S</span><span class="letter-word">Sensing</span></div>
+  <p>His genius is entirely physical and immediate - the feet, the balance, the read of a defender's weight in the instant before it shifts. Nothing about his game is schematic, which is why it has never fitted comfortably into any system.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">F</span><span class="letter-word">Feeling</span></div>
+  <p>He left the best team in the world because he did not want to be second in it, which is a personal judgement rather than a football one. The reactions that damaged his reputation are the same faculty, unfiltered, in real time.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">P</span><span class="letter-word">Perceiving</span></div>
+  <p>The career has no visible design. Enormous ability applied to whatever the present offered, with the physical maintenance and the long arc handled by nobody in particular, and the result is a record that is very good and was supposed to be historic.</p>
+</div>`
+    },
+    'w-e-b-du-bois':{
+      whoHeading:`Who Was W.E.B. Du Bois?`,
+      who:`<p>William Edward Burghardt Du Bois was born on 23 February 1868 in Great Barrington, Massachusetts, and died on 27 August 1963 in Accra, Ghana, aged ninety-five. In 1895 he became the first African American to earn a doctorate from Harvard.</p>
+<p>The Philadelphia Negro, published in 1899, is the work that should be better known. He spent 1896 and 1897 doing the fieldwork himself, house by house, in the city's Seventh Ward, and produced the first empirical case study of a Black community in the United States - a founding document of American sociology written by a man the discipline then spent decades not crediting.</p>
+<h3>What is double consciousness?</h3>
+<p>His term, from The Souls of Black Folk in 1903: the sense of always looking at oneself through the eyes of others, of measuring one's soul by the tape of a world that looks on in contempt and pity. It is the single most influential concept in African American thought and it arrived in a collection of fourteen essays that also introduced the talented tenth, his argument that an educated Black elite would lead the way to full rights. That book made him the principal opponent of Booker T. Washington, whose Atlanta Compromise accepted segregation in exchange for economic opportunity and vocational training; Du Bois rejected the bargain outright and demanded full civil rights and higher education. He co-founded the NAACP in 1909, edited its magazine The Crisis from 1910 and built it to a circulation of 100,000 by 1920, organised Pan-African Congresses across decades, moved steadily toward socialism, and emigrated to Ghana in 1961 at ninety-three. He died the night before the March on Washington, and his death was announced to the crowd from the podium.</p>`,
+      journey:`<p>Du Bois is dominant Ni, and the giveaway is that his arguments arrive decades early and are then proved. Double consciousness is a total account of a psychological condition, produced in 1903, that scholarship spent a century catching up to. His prediction that the problem of the twentieth century would be the problem of the colour line was made in 1900. He is consistently working from a complete perception rather than from an accumulation of evidence.</p>
+<p>The auxiliary Te is what he built to carry it. Not just books: a discipline-founding empirical study, a national organisation, a magazine with a mass circulation, a series of international congresses. Ni supplies the analysis and Te constructs the institutions that make it operative, and the NAACP is still there.</p>
+<h3>Why did Du Bois leave the United States?</h3>
+<p>Because tertiary Fi held a position that hardened over sixty years of being right and being ignored. He had spent his life arguing for full inclusion and had watched the country resist it through two world wars, and his turn toward socialism and eventually toward Ghana was a private verdict about where he was willing to spend the last of his life. The inferior Se is visible in the perennial criticism made of him even by allies - a certain remoteness, an impatience with ordinary people, the fact that the talented tenth is an argument made by a man with a Harvard doctorate about who should lead. He renounced his American citizenship and died an African.</p>`,
+      mistype:`<p>ENTJ is sometimes suggested because of the NAACP, the magazine and the congresses. But he was a scholar first and by temperament, most comfortable with research and writing, and repeatedly at odds with the organisations he helped create. The institutions were instruments for an analysis formed privately, not a domain he was at home leading.</p>
+<p>INFJ is occasionally proposed because of the moral force and the psychological insight of Souls. The difference is method: he made his case with census data, door-to-door surveys and statistics as readily as with prose, and his instinct with a conviction was to build the organisation. Te in second position rather than Fe.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>He was a scholar by disposition, described by allies as reserved and often difficult, and the great work of his life was conducted alone with data and a pen. Even the organisations he founded he tended to fall out with.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>He named double consciousness in 1903 and the colour line as the century's central problem in 1900, and both were complete formulations rather than tentative observations. He saw the shape of the thing and then went to collect the evidence.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">T</span><span class="letter-word">Thinking</span></div>
+  <p>He answered Booker T. Washington's accommodation with an argument rather than an appeal, and he built his case on empirical fieldwork at a time when nobody had thought to gather it. The Philadelphia Negro is a statistical demolition.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">J</span><span class="letter-word">Judging</span></div>
+  <p>A doctorate, a discipline-founding study, a national organisation, a magazine, a series of international congresses, and a position held and extended across seventy years. He closed things, and several of them are still running.</p>
+</div>`
+    },
+    'mick-jagger':{
+      whoHeading:`Who Is Mick Jagger?`,
+      who:`<p>Sir Michael Philip Jagger was born on 26 July 1943 in Dartford, Kent, the son of a physical education teacher - a detail that stops being trivial when you watch him work a stadium. He and Keith Richards had been at primary school together and lost touch; the meeting that started the Rolling Stones happened on the platform at Dartford railway station in October 1961, when Richards noticed the Chuck Berry and Muddy Waters records Jagger was carrying. Jagger was studying at the London School of Economics at the time and left.</p>
+<p>The band formed in 1962 and has been going ever since, which is the longest continuous run in rock. Jagger and Richards wrote almost all of it, and the working relationship between them - collaborative, competitive and frequently poisonous - is the engine of the whole catalogue.</p>
+<h3>What is Jagger actually good at?</h3>
+<p>Two things people tend to treat separately. The first is physical: the stage presence is not charisma in the vague sense, it is athletic performance, sustained for two hours, developed and maintained deliberately for sixty years. The second is commercial. He is widely credited within the industry with turning the Stones from a band into a business - taking control of the touring operation, the sponsorship deals and the rights, and building the model that stadium acts have used since. He was knighted in 2003, which Richards found funny and did not entirely forgive.</p>`,
+      journey:`<p>Jagger is dominant Se, and the stage is the evidence. What he does out there is a continuous real-time read of a crowd of eighty thousand people, executed through a body he has maintained with genuine discipline for six decades. It is not a performance he learned once; it adapts nightly to a room, which is what the function does.</p>
+<p>The auxiliary Ti is the part that surprises people who only see the strutting. He is analytical, financially astute and famously cool-headed, and the LSE year was not a detour - the man who negotiated the Stones' business is recognisably the same one who was studying economics. Se supplies the instrument and Ti works out what to do with it.</p>
+<h3>Why has the band survived sixty years?</h3>
+<p>Largely because Jagger's tertiary Fe is functional enough to manage a relationship that should have ended in about 1975. He and Richards have spent decades in a state of mutual irritation, and the band has continued because somebody kept making the arrangements work - the tours, the truces, the division of labour. The inferior Ni is where he is weakest and he knows it: the solo albums, the film ventures and the periodic attempts to be something other than the frontman of the Rolling Stones have mostly not worked, because the long-range reinvention is the one move this stack does not have.</p>`,
+      mistype:`<p>ESFP is the most common alternative, and for a frontman of that flamboyance it is the obvious guess. The difference is the auxiliary. Se with Fi produces a performer driven by personal feeling; Jagger is famously guarded, unsentimental and businesslike, and the contrast with Richards - who is the Fi in that partnership - is the clearest illustration available.</p>
+<p>ENTJ is occasionally suggested because he built the commercial operation. But he is not a builder by disposition; he is a performer who applied a sharp analytical mind to the business around him because nobody else was going to. The stage came first and the company was assembled to serve it.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">E</span><span class="letter-word">Extraverted</span></div>
+  <p>He has spent sixty years in front of the largest crowds available and shows no sign of finding it depleting. The stadium is the natural environment rather than the price of the job, and the solo years without it are the least interesting part of his record.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">S</span><span class="letter-word">Sensing</span></div>
+  <p>The performance is athletic and physical, developed and maintained deliberately into his eighties. He reads a crowd in real time and adjusts, which is why the show has never calcified into a routine.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">T</span><span class="letter-word">Thinking</span></div>
+  <p>He is the reason the Stones own their business. Cool, calculating and unsentimental about contracts, sponsorships and rights, he built the stadium touring model that the entire industry adopted afterwards.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">P</span><span class="letter-word">Perceiving</span></div>
+  <p>Sixty years without a settled plan, adapting to whatever each decade required, and a band held together by continuous improvisation rather than by any agreement anyone could point to.</p>
+</div>`
+    },
+    'steve-bannon':{
+      whoHeading:`Who Is Steve Bannon?`,
+      who:`<p>Stephen Kevin Bannon was born on 27 November 1953 in Norfolk, Virginia, into an Irish Catholic, Democratic, working-class family. He served as a naval officer, took an MBA at Harvard Business School, and worked at Goldman Sachs in mergers and acquisitions before leaving to start his own media-focused investment bank. He then moved into film, producing and directing a series of documentaries with an increasingly explicit political programme.</p>
+<p>He joined the board of Breitbart News and became its executive chairman after Andrew Breitbart's death in 2012, and rebuilt it into the most influential outlet on the American nationalist right - describing it, in a much-quoted line, as a platform for the alt-right.</p>
+<h3>What did Bannon do in the White House?</h3>
+<p>He took over the Trump campaign as chief executive in August 2016, at a point when most observers considered it finished, and the campaign won. He became chief strategist and senior counsellor in the White House in January 2017, was briefly given a seat on the National Security Council principals committee, and was pushed out in August 2017 after seven months. Since then he has run the War Room podcast and remained a significant organising voice, including in support of the effort to overturn the 2020 election result. He was charged with fraud over the We Build the Wall fundraising campaign and pardoned by Trump before the case was tried. He was convicted of two counts of contempt of Congress for defying a subpoena from the House committee investigating January 6th, and served a four-month federal sentence in 2024.</p>`,
+      journey:`<p>Bannon is dominant Ne, and it is what makes him consequential rather than merely loud. His actual skill is the reframe: taking a political question everyone is arguing about on established terms and restating it on terms that suit him. Recasting the 2016 election as a referendum on globalism rather than on a candidate's fitness is the clearest instance, and it worked well enough that both parties have been arguing inside his framing ever since.</p>
+<p>The auxiliary Ti is why the positions hold together. There is a genuine and internally consistent worldview underneath - about national sovereignty, financial capitalism, elite institutions and civilisational conflict - and he can state it, defend it and follow it into unpopular conclusions. Whether it is correct is a separate question from whether it is coherent, and it is coherent.</p>
+<h3>Why does Bannon keep getting removed?</h3>
+<p>Because tertiary Fe is unmanaged and inferior Si supplies no institutional caution at all. He was out of the White House in seven months largely because he could not stop talking to journalists and could not subordinate himself to anyone, and the same pattern recurs across every organisation he has been part of. An Ne-Ti operator generates and provokes; the accumulated discipline required to hold a formal position inside a structure is the function this stack has least of, and his career is a sequence of enormous influence exercised from outside institutions he has been ejected from.</p>`,
+      mistype:`<p>ENTJ is sometimes suggested because of the campaign management and the organisational ambition. But he does not build durable structures and does not hold positions inside them. His influence is exercised through media, argument and the reframing of a debate, and he has been removed from nearly every institutional role he has held.</p>
+<p>INTJ is occasionally proposed because of the long-range ideological framework. The difference is that he is relentlessly outward and generative - a daily broadcast, a constant stream of positions, an appetite for the fight itself - rather than a strategist working privately toward a fixed objective.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">E</span><span class="letter-word">Extraverted</span></div>
+  <p>He broadcasts daily, talks to anyone, and processes his positions in public at volume. His power has always come from a microphone and an audience rather than from an office, which is fortunate given how briefly he holds offices.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>His contribution to 2016 was a reframing rather than a tactic - restating the election as a question about globalism and sovereignty - and American politics has been arguing inside that frame since.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">T</span><span class="letter-word">Thinking</span></div>
+  <p>The worldview is internally consistent and he can defend it in argument, following it into conclusions that cost him allies. He treats politics as a contest of frameworks rather than of personalities, including when the personality is his employer's.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">P</span><span class="letter-word">Perceiving</span></div>
+  <p>Navy, banking, film, media, campaign, White House, podcast, prison. Nothing is consolidated and no position is held long, and his effectiveness has consistently been greater from outside a structure than within one.</p>
+</div>`
+    },
+    'ricky-gervais':{
+      whoHeading:`Who Is Ricky Gervais?`,
+      who:`<p>Ricky Dene Gervais was born on 25 June 1961 in Reading, the youngest of four in a working-class family. He was in a new wave pop duo called Seona Dancing in the early 1980s, managed the band Suede briefly, and spent years as head of speech at the London radio station XFM, where he hired Stephen Merchant as his assistant. He was thirty-nine when The Office was first broadcast.</p>
+<p>The Office, co-written and co-directed with Merchant, ran for two series of six episodes and a two-part Christmas special between 2001 and 2003. Its innovation was to build comedy out of embarrassment rather than jokes - the mockumentary format, the long pause, the camera holding on a face after a remark has landed badly - and it has been remade in more than ten countries, most successfully in the United States.</p>
+<h3>What else has Gervais done?</h3>
+<p>Extras followed in 2005, about a background actor, and Derek in 2012, which divided critics sharply. After Life, made for Netflix from 2019, is about a man whose wife has died and is by some distance his most emotionally direct work. He has done substantial stand-up, appeared in films, and hosted the Golden Globes five times, where the act is entirely built on insulting an audience of extremely powerful people to their faces while they are obliged to sit there. He is an outspoken atheist and animal rights campaigner, and his material on transgender people in recent specials has drawn sustained criticism, which he has answered by arguing that offence is not an argument.</p>`,
+      journey:`<p>Gervais is dominant Ne, and The Office is what the function produces when it is pointed at a form rather than at a joke. The premise is a reframe: what if a sitcom had no punchlines and the comedy came from the space after somebody embarrassed themselves? That is a structural idea, not a set of gags, and executing it required a documentary format, non-actors' rhythms and a willingness to let a scene sit in silence far longer than television had allowed.</p>
+<p>The auxiliary Ti is why he ended it. Twelve episodes and a special, at the peak of its success, on the reasoning that the character had nowhere further to go and that continuing would degrade the thing. That is an analytical judgement about a structure, made against enormous commercial pressure, and it is the decision that made his reputation as much as the show did.</p>
+<h3>Why does Gervais court offence?</h3>
+<p>Because tertiary Fe reads a room with precision and inferior Si supplies no instinct for the accumulated consequences. He knows exactly what will land badly - that is the craft of the Golden Globes monologues, which are engineered to the syllable - and he consistently underestimates the durability of the reaction. His stated position is that a joke's target and its subject are different things and that offence taken is not an argument, which is a Ti proposition, and it is also the response of someone who has never had much feel for the long tail of an argument he started.</p>`,
+      mistype:`<p>ENFP is sometimes suggested because of After Life and the animal welfare work, which show real sincerity. The difference is the auxiliary. Ne with Fi produces a comedian arguing from conviction; Gervais's positions are argued as propositions, he enjoys the debate as a contest, and he is far more interested in whether an argument is valid than in whether it is kind.</p>
+<p>ESTP is occasionally proposed because of the confrontational stage presence. But his weapon is the idea rather than the moment - a reframed premise, a constructed argument, a format nobody had tried - and his best work was made in a writing partnership over long periods rather than improvised in a room.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">E</span><span class="letter-word">Extraverted</span></div>
+  <p>He performs, provokes and argues in public continuously, and the Golden Globes act only exists because he wants to be in the room saying it. He works out his positions out loud, at an audience, and enjoys the response either way.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>The Office is a structural idea rather than a joke - comedy built from embarrassment and silence instead of punchlines - and executing it required inventing a whole set of conventions that television has used ever since.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">T</span><span class="letter-word">Thinking</span></div>
+  <p>He ended his most successful show after twelve episodes on a judgement about the structure, against every commercial argument. His defence of his own material is a proposition about how jokes work rather than an appeal for sympathy.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">P</span><span class="letter-word">Perceiving</span></div>
+  <p>Radio, pop music, band management, sitcom, stand-up, film, awards hosting, a drama about grief. He keeps opening new forms and closing old ones early, and nothing in the career reads as a plan.</p>
+</div>`
+    },
+    'malcolm-gladwell':{
+      whoHeading:`Who Is Malcolm Gladwell?`,
+      who:`<p>Malcolm Timothy Gladwell was born on 3 September 1963 in Fareham, Hampshire, to Graham Gladwell, an English mathematics professor, and Joyce Gladwell, a Jamaican psychotherapist and writer. The family moved to rural Ontario when he was six. He studied history at the University of Toronto, worked for the American Spectator and then spent ten years at the Washington Post covering business and science, and joined The New Yorker as a staff writer in 1996, where he has been ever since.</p>
+<p>The Tipping Point in 2000, Blink in 2005 and Outliers in 2008 established the form he is identified with: take a body of academic research, find the counterintuitive claim inside it, and build a book out of narrative case studies that make it stick.</p>
+<h3>What is the criticism of Gladwell?</h3>
+<p>That the stories are better than the evidence. The ten-thousand-hour rule from Outliers is the standard example: it derives from Anders Ericsson's research on deliberate practice, and Ericsson himself objected that Gladwell's version distorted it - the number was an average, not a threshold, and the quality of practice mattered more than the quantity. Similar objections have been made about Blink, where the argument for rapid intuitive judgement sits awkwardly beside the well-documented cases where snap judgement fails. Steven Pinker's review of What the Dog Saw made the general version of the complaint. Gladwell's own position has been consistent: he is a storyteller and a populariser rather than a scientist, and his job is to make people curious about research rather than to adjudicate it. He also hosts the Revisionist History podcast and co-founded Pushkin Industries.</p>`,
+      journey:`<p>Gladwell is dominant Ne, and his entire method is the function made into a job. He reads across fields nobody connects - epidemiology and shoe sales, aviation crashes and Korean cultural deference, hockey birth months and Canadian junior leagues - and finds the structural resemblance. The Tipping Point is a book about social change built on a metaphor from disease transmission, and the reason it worked is that nobody had put those two things in the same sentence.</p>
+<p>The auxiliary Fi is why the books have a moral shape rather than being merely clever. There is a consistent position underneath all of them, which is that success is far less individual than people believe and far more a matter of circumstance, timing and inherited advantage. Outliers is fundamentally an argument against the self-made myth, and he believes it.</p>
+<h3>Is the criticism fair?</h3>
+<p>Substantially, and the function stack explains why it will not change anything. Ne finds the connection and is not naturally interested in the distance between suggestive and demonstrated, and tertiary Te will build a compelling structure out of what has been found rather than a cautious one. The inferior Si is the specific gap: the accumulated methodological caveat, the sample size, the failed replication - the unglamorous apparatus that a specialist attaches automatically - is exactly what this stack skips. He is not being dishonest. He is doing a different job than the one his critics want him to be doing, and he says so.</p>`,
+      mistype:`<p>ENTP is the most common alternative, given the counterintuitive arguments and the appetite for overturning conventional wisdom. The difference is the auxiliary. Ne with Ti tests a claim for whether it holds; Gladwell's books are organised around what a finding means for how we should think about people, and he consistently chooses the version of a study that carries the better moral rather than the tighter one.</p>
+<p>ENFJ is occasionally suggested because of the enormous popular reach. But he is not calibrating to an audience's needs; he is transmitting what he personally finds fascinating, and the reach is a consequence of an unusual talent for narrative rather than an orientation toward the reader.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">E</span><span class="letter-word">Extraverted</span></div>
+  <p>He is a journalist, a speaker and a podcaster, and his work is made by going out and talking to people. The method requires interviews, conferences and constant contact with researchers, and he has built a company around producing more of it.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>His signature move is connecting fields nobody has connected - epidemics and fashion, cockpit hierarchy and national culture, birth dates and athletic careers. The books are built from resemblances rather than from evidence chains.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">F</span><span class="letter-word">Feeling</span></div>
+  <p>Every book carries the same conviction: that individual success is mostly circumstance, and that the stories societies tell about merit are wrong. Outliers is a moral argument wearing the clothes of a research summary.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">P</span><span class="letter-word">Perceiving</span></div>
+  <p>He leaves questions open and moves on, revisiting his own conclusions in a podcast rather than defending them. The criticism that the arguments are suggestive rather than settled is accurate and does not appear to trouble him.</p>
+</div>`
+    },
+    'miss-marple':{
+      whoHeading:`Who Is Miss Marple?`,
+      who:`<p>Jane Marple is one of Agatha Christie's two great detectives, appearing in twelve novels and twenty short stories. She was introduced in a short story in 1927 and in novel form in The Murder at the Vicarage in 1930, and Christie based her partly on her own grandmother's friends - elderly women who, in her account, always expected the worst of everybody and were almost invariably right.</p>
+<p>She lives in St Mary Mead, an English village, is unmarried, elderly throughout, and knits. She has no official standing, no scientific method and no interest in acquiring either. Policemen and suspects consistently underestimate her, which is her most reliable advantage.</p>
+<h3>How does Miss Marple solve crimes?</h3>
+<p>By analogy. Confronted with a suspect, she recalls somebody from the village who behaved in a comparable way, and reasons from the earlier case to the present one: this man reminds her of the organist who was so plausible about the choir funds, this young woman of a housemaid who was so devoted and so untruthful. It sounds like anecdote and it is actually a database - decades of closely observed human behaviour in a small population, indexed by pattern rather than by person. Her stated position is that human nature is much the same everywhere, and that a village simply lets you see it at close range. The police find the method absurd until it produces the murderer, which it does every time.</p>`,
+      journey:`<p>Miss Marple is dominant Si in its purest detective form, and the village parallel is the function operating out loud. Si stores concrete experience in detail and retrieves it by resemblance, and Christie's innovation was to make that a legitimate investigative method rather than a comic mannerism. The village is not a limitation on her knowledge of the world; it is her sample, observed over a lifetime with an attention nobody else has applied to it.</p>
+<p>The auxiliary Fe is what makes the observations possible. She reads people continuously, and the elderly, harmless, slightly fussy manner is a genuine part of her and also enormously useful, because people say things in front of her that they would not say in front of a detective. Fe supplies the accurate read of what somebody is feeling and why they are lying about it.</p>
+<h3>Why do people underestimate her?</h3>
+<p>Because she presents as exactly what an Si-Fe elderly woman looks like from outside - domestic, gossipy, concerned with village trivia - and the tertiary Ti underneath is invisible until she starts reasoning. Her deductions are logically tight, and she is entirely capable of following a chain of implication to a conclusion she finds distressing. The inferior Ne is her one weakness, and Christie uses it: she is superb at recognising a pattern she has seen before and considerably less good at the genuinely unprecedented, which is why the cases that trouble her are the ones with no village equivalent.</p>`,
+      mistype:`<p>INTJ is occasionally suggested because of the deductive success and the unsentimental view of humanity. The difference is where the conclusions come from. She does not build a theory of the crime and test it; she recognises a person, from an enormous stored catalogue of people, and reasons from what that kind of person did last time.</p>
+<p>INFJ is sometimes proposed because of the psychological insight. But her insight is not intuitive in the sense of arriving whole; it is comparative, empirical and grounded in specific remembered cases, and she can always say exactly who the suspect reminds her of and why.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>She observes far more than she participates, sits quietly in rooms with her knitting while other people talk, and does her actual reasoning alone. The conclusions are presented only when they are finished.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">S</span><span class="letter-word">Sensing</span></div>
+  <p>Her whole method is stored concrete detail: specific people, specific incidents, specific small dishonesties observed over decades in one village and retrieved by resemblance when a new case matches an old one.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">F</span><span class="letter-word">Feeling</span></div>
+  <p>She reads what people feel and why they are concealing it, and her manner - warm, harmless, interested - is both genuine and the reason witnesses talk in front of her. The insight is relational before it is logical.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">J</span><span class="letter-word">Judging</span></div>
+  <p>She arrives at a settled conclusion and states it plainly, and she is not moved off it by authority, indignation or the fact that nobody wants to hear it. Once she knows, the matter is closed.</p>
+</div>`
+    },
+    'wayne-gretzky':{
+      whoHeading:`Who Is Wayne Gretzky?`,
+      who:`<p>Wayne Douglas Gretzky was born on 26 January 1961 in Brantford, Ontario. His father Walter built a rink in the back garden and coached him on it, and the drills he was given were about anticipation rather than skating or shooting - the famous instruction to go to where the puck is going, not where it has been, is Walter's.</p>
+<p>He was physically unremarkable by professional hockey standards: not large, not notably fast, and easy to knock over in a sport organised substantially around knocking people over. He was nevertheless the best player who has ever played it, by a margin that no other sport can really match.</p>
+<h3>What are Gretzky's records?</h3>
+<p>Sixty-one NHL records. He is the leading scorer in the sport's history, and his 1,963 assists alone exceed the total points of any other player who has ever played - meaning that if he had never scored a goal he would still lead the all-time scoring list. He is the only player to record more than 200 points in a season and did it four times. He won four Stanley Cups with Edmonton. On 9 August 1988 the Oilers traded him to Los Angeles for money and players; he wept at the press conference, an MP moved to have Parliament block the deal, and the whole thing was treated in Canada as something between a bereavement and a national scandal. The trade also did more than anything else to establish hockey in the American sun belt.</p>`,
+      journey:`<p>Gretzky is dominant Fi, which is an unusual reading for an athlete and the only one that accounts for how he played. His game was not built on physical dominance because he had none available. It was built on a private, internal model of where the game was going, and he has consistently described it in terms of feel rather than analysis - he did not calculate the puck's trajectory, he knew where it would be. That is a perception he trusted absolutely without being able to justify it, which is what a dominant judging function that runs on internal certainty produces.</p>
+<p>The auxiliary Ne is the creativity that made him unguardable. He used the space behind the opposing net as an office, which nobody had done, and generated passes that did not exist as options until he made them. Fi supplies the conviction about where the play should go and Ne supplies the route nobody else has seen.</p>
+<h3>Why did the trade hurt so much?</h3>
+<p>Because Fi attaches without qualification and does not have a professional register to fall back on. He cried at a press conference in front of a country, which no athlete of that stature was supposed to do in 1988, and the reason it became a national event is that everyone could see it was not performed. His tertiary Si is the reason the ritual and the routine mattered so much to him, and his inferior Te is the honest weakness of the second career: he was an unsuccessful head coach in Phoenix, and organising other people to execute a system turned out to be a different skill entirely from knowing, himself, where to be.</p>`,
+      mistype:`<p>ISFP is the most common alternative, given the quiet manner and the feel-based game. The difference is what he was perceiving. An Se-auxiliary player reads the physical situation as it is; Gretzky read the situation as it was about to be, and his entire advantage was operating two seconds ahead of a present he was frequently not even looking at.</p>
+<p>INTJ is occasionally suggested because of the anticipation, which looks strategic. But he could never explain it analytically and consistently declined to, and his descriptions are about instinct and feel rather than about pattern recognition. There is no model he could hand to anyone, which is why the coaching did not work.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>He was reserved and unshowy in an era of large personalities, and remained so through a career of unprecedented attention. The most emotional moment of his public life was involuntary and he was visibly mortified by it.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>He played where the puck was going. He also invented the use of the space behind the net as an attacking position, and generated passing options that did not exist until he saw them, which is invention rather than execution.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">F</span><span class="letter-word">Feeling</span></div>
+  <p>He described his own game in terms of feel and never in terms of calculation, and trusted the perception absolutely. The tears at the trade were the same faculty with the professional surface removed.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">P</span><span class="letter-word">Perceiving</span></div>
+  <p>His game was improvisational at its core - a player who read what was developing and responded, rather than executing a system - and the coaching career later demonstrated how little of it he could convert into a plan for anyone else.</p>
+</div>`
+    }
+  });
+
+
+  // ── Rewritten pages: full biography (who), journey, mistype and letter
+  // breakdown. Assigned after the block above so these entries win.
+  Object.assign(charContent, {
+    'tyler-the-creator':{
+      whoHeading:`Who Is Tyler, the Creator?`,
+      who:`<p>Tyler Gregory Okonma was born on 6 March 1991 in Ladera Heights, California. He taught himself to produce, and in 2007 founded Odd Future - a loose collective of teenagers from Los Angeles that also produced Frank Ocean, Earl Sweatshirt and Syd - by assembling people off a message board. He designed the artwork, directed the videos and produced the records himself from the start, which is the through-line of everything since.</p>
+<p>The early material was engineered to provoke. Bastard in 2009 and Goblin in 2011 are full of deliberately grotesque content, and the response was what he had aimed at: he was barred from entering the United Kingdom for several years on the basis of his lyrics.</p>
+<h3>How did Tyler's music change?</h3>
+<p>Flower Boy in 2017 is the break. The production turned lush and melodic, the jazz and soul influences came forward, and the lyrics were read almost universally as an oblique coming out - a substantially different artist to the one who had built a career on shock. Igor followed in 2019 and won Best Rap Album at the 2020 Grammys, and his response in the press room was the most quoted thing he has said: that while he was grateful, being placed in the rap or urban category always felt like a politer way of saying a racial slur, because it is where Black artists get sorted regardless of what the record sounds like. Call Me If You Get Lost took the same award in 2022, and Chromakopia followed in 2024. He also runs the clothing line Golf Wang and the Camp Flog Gnaw festival.</p>`,
+      journey:`<p>Tyler is dominant Ne, and the career is a sequence of complete reinventions with the same person underneath. Every record is a different premise - a character, a concept, an alter ego, a genre - and he does not develop a style so much as keep proposing new ones. The early shock material and the late lush soul records are the same faculty pointed at different questions: what happens if I do this, and what happens if I do the opposite.</p>
+<p>The auxiliary Ti is why the reinventions work rather than scattering. He produces, arranges and directs everything himself, and the records are structurally tight - Igor in particular is built as a single sustained piece with a governing sonic logic. He is a genuine technician, self-taught, and the control extends to the artwork, the videos, the merchandise and the festival.</p>
+<h3>Why did he criticise his own Grammy?</h3>
+<p>Because tertiary Fe reads exactly what a categorisation communicates and inferior Si supplies no instinct to be tactful about it in the moment. He had just won, was standing in a press room, and said the true thing rather than the gracious one: that the rap category functions as a sorting mechanism for Black artists whatever the music actually sounds like. It was not a calculated intervention. It was an accurate observation delivered without any weighing of consequence, which is what this stack does when it is handed a microphone.</p>`,
+      mistype:`<p>ENFP is sometimes suggested because of the emotional openness of the later records. The difference is the auxiliary. Ne with Fi produces an artist whose changes follow a personal value; Tyler's changes follow a structural question about what a record could be, and his instinct with any material is to build and control the whole apparatus rather than to express something already settled.</p>
+<p>ESTP is occasionally proposed because of the provocation and the physical energy of the performances. But the provocations are conceptual - designed to test a boundary and see what the reaction reveals - rather than reactions to what is in front of him, and his real work is done alone in production.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">E</span><span class="letter-word">Extraverted</span></div>
+  <p>He built a collective out of a message board at sixteen, runs a festival, fronts a clothing label, and has conducted his entire career in public and at volume. The provocations only work with an audience present to react.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>Each album is a new premise rather than a development - a character, a concept, a different genre entirely. He does not refine a style; he keeps asking what else a record could be and then building that instead.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">T</span><span class="letter-word">Thinking</span></div>
+  <p>He produces, arranges, directs and designs everything, and the records are structurally rigorous underneath the surface strangeness. The Grammy remark was an argument about how categories work, delivered as analysis rather than as complaint.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">P</span><span class="letter-word">Perceiving</span></div>
+  <p>Nothing is settled. He has changed sound, persona and subject matter roughly every two years for fifteen years, and abandoned the thing that made him famous the moment it stopped being interesting to him.</p>
+</div>`
+    },
+    'steph-curry':{
+      whoHeading:`Who Is Steph Curry?`,
+      who:`<p>Wardell Stephen Curry II was born on 14 March 1988 in Akron, Ohio, the son of Dell Curry, who spent sixteen years in the NBA as a shooter. Despite the pedigree he was recruited by nobody who mattered - he was small, slight and did not look like a professional athlete - and went to Davidson College in North Carolina, where in 2008 he took a team nobody had heard of to the regional final of the NCAA tournament and became the most watched player in college basketball for a month.</p>
+<p>Golden State drafted him seventh overall in 2009. The first several seasons were dominated by ankle injuries serious enough that his career was genuinely in question, and the rebuild of his lower body is the unglamorous foundation of everything afterwards.</p>
+<h3>How did Curry change basketball?</h3>
+<p>By making a shot that was previously a low-percentage gamble into the most efficient thing on the floor. He shoots from distances that were not considered part of the game, off the dribble, at a volume and accuracy nobody had approached, and the effect was to stretch defences so far that the space inside them changed shape. Every level of the sport now shoots more threes because of him, including levels where it is probably a bad idea. He has four championships, two MVP awards - the 2016 one unanimous, the first in the league's history - and he holds the all-time record for three-pointers made by a distance that will not be closed soon. He also won an Olympic gold in Paris in 2024, and the semi-final and final performances there were the best of his international career.</p>`,
+      journey:`<p>Curry is dominant Fi, and the tell is that he built a game nobody was asking for. Told repeatedly that he was too small, he did not become a different player; he refined the one thing he could do until the sport had to reorganise itself around it. That is not a strategic response to a market gap - it is a private conviction about what he was, held through a period when the evidence was against him and his ankles were failing.</p>
+<p>The auxiliary Se is the shooting itself. What he does is a physical act of extraordinary refinement executed in traffic, at speed, off balance, with a release faster than anyone has managed. It is entirely embodied, and the reason it cannot be taught is that the perception and the motion are the same event.</p>
+<h3>Why is Curry so unusual for a superstar?</h3>
+<p>Because tertiary Ni and inferior Te leave him without the apparatus most players of that stature build. He is not a strategist, not a franchise politician, and has spent his whole career at one club with the same core - which is loyalty rather than leverage. His public manner is genuinely low-key in a sport that rewards the opposite, and the closest thing he has to a signature gesture is a shrug. The values are private, the expression is physical, and there is very little management of image anywhere in it.</p>`,
+      mistype:`<p>ISTP is the most common alternative, and for an athlete of that technical precision it is reasonable. The difference is what drives it. Ti-Se produces a player solving the defensive situation analytically; Curry's game came from refusing to become the player everyone told him to be, which is a values position, and he has described it in those terms consistently.</p>
+<p>ESFP is occasionally suggested because of the flair and the crowd response. But he is a reserved figure off the court, uncomfortable with the celebrity apparatus, and visibly recharges away from it. The performance is a by-product of the shooting rather than the point of it.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>He is quiet and unshowy in a sport built on personality, has stayed with one franchise for his whole career, and keeps his private life private. The public persona is thin because there is not much of one.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">S</span><span class="letter-word">Sensing</span></div>
+  <p>The shot is a physical act refined to a tolerance nobody has matched - the release speed, the balance, the ability to do it off the dribble at range. It is embodied knowledge rather than a system, which is why nobody has copied it successfully.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">F</span><span class="letter-word">Feeling</span></div>
+  <p>He was told by every major programme that he was the wrong shape for the sport and built a game around being exactly what he was instead. The conviction was private, held against the evidence, and it eventually changed how basketball is played.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">P</span><span class="letter-word">Perceiving</span></div>
+  <p>His game is improvisational at its core - shots taken from wherever the moment allows rather than from positions a system has designed - and his career has none of the deliberate franchise-shopping that players of his stature usually engage in.</p>
+</div>`
+    },
+    'slavoj-zizek':{
+      whoHeading:`Who Is Slavoj Žižek?`,
+      who:`<p>Slavoj Žižek was born on 21 March 1949 in Ljubljana, then Yugoslavia. He took doctorates in philosophy and in psychoanalysis, the second in Paris, and worked for years outside the academy in Slovenia because his politics made a university post unavailable. In 1990, in the first multi-party elections of the new Slovenia, he ran for the presidency and finished fifth.</p>
+<p>The book that made him internationally was The Sublime Object of Ideology in 1989, which reads Lacanian psychoanalysis and Hegel together and applies the result to how ideology actually functions - not as a set of beliefs people hold, but as something embedded in what they do regardless of what they believe.</p>
+<h3>What is Žižek actually known for?</h3>
+<p>The method as much as the argument. He explains Lacan through Hitchcock and Kieślowski, ideology through Coca-Cola advertising, Hegel through jokes and the design of European toilets, and the effect is that a general reader can follow continental philosophy they would otherwise never approach. He is also a genuine physical presence: the sniffing, the constant tugging at his shirt, the speech pattern that seems perpetually about to derail. The criticism is substantial - that he recycles the same anecdotes and arguments across dozens of books, that the provocations substitute for rigour, and that the volume of output has come at the cost of care. He debated Jordan Peterson in Toronto in 2019 to an audience larger than either philosophy or psychology usually attracts.</p>`,
+      journey:`<p>Žižek is dominant Ne, and it explains both the appeal and the complaint. His actual talent is connection: taking a piece of high theory and a piece of popular culture that have no business being in the same paragraph and demonstrating that they illuminate each other. He does not build a system, he generates readings, and the readings arrive faster than any editorial process could organise them.</p>
+<p>The auxiliary Ti is why it is philosophy rather than performance. Underneath the jokes there is a consistent theoretical apparatus - the Lacanian real, the Hegelian negation, an account of ideology as material practice - and he can deploy it rigorously when he chooses to. The people who dismiss him as a clown have generally not read the theoretical books.</p>
+<h3>Is the criticism of Žižek fair?</h3>
+<p>Yes, and it is the standard cost of this stack at this output. Ne generates endlessly and inferior Si supplies no accumulated sense of what has already been said, which is precisely why the same anecdotes recur across books written years apart - he is not recycling cynically, he is generating the same connection again because it is the connection his mind makes. The tertiary Fe is the performance: he reads a room extremely well, knows exactly which provocation will land, and has built a public career on it that his more careful colleagues find undignified and cannot match.</p>`,
+      mistype:`<p>ENFP is occasionally suggested because of the enormous energy and the political commitment. The difference is the auxiliary. Ne with Fi argues from conviction; Žižek's method is analytical demolition, and he takes pleasure in dismantling positions held by people he broadly agrees with, which is a Ti disposition rather than a values-driven one.</p>
+<p>INTP is sometimes proposed because of the theoretical depth. But he is relentlessly outward - lectures, documentaries, newspaper columns, debates, films about films - and visibly energised by an audience. The theory is real and it is delivered from a stage.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">E</span><span class="letter-word">Extraverted</span></div>
+  <p>He lectures, debates, appears in documentaries and writes columns at a rate that suggests he is incapable of holding a thought privately. The physical performance - the sniffing, the hands - is what an idea looks like escaping him in real time.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>His signature move is the connection nobody would make: Lacan through Hitchcock, ideology through a soft drink advert, Hegel through a joke about lavatories. The readings are the content, and they arrive faster than he can edit them.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">T</span><span class="letter-word">Thinking</span></div>
+  <p>There is a consistent theoretical apparatus underneath, and he applies it against allies as readily as opponents. He is at his most characteristic when demolishing a position that everyone in the room assumed he shared.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">P</span><span class="letter-word">Perceiving</span></div>
+  <p>Dozens of books, none of them final, several of them substantially repeating each other. He does not close arguments or consolidate a system; he keeps producing, and the repetition is the byproduct of never stopping to check.</p>
+</div>`
+    },
+    'thomas-aquinas':{
+      whoHeading:`Who Was Thomas Aquinas?`,
+      who:`<p>Thomas Aquinas was born around 1225 at Roccasecca, in the Kingdom of Sicily, into an aristocratic family, and died on 7 March 1274. His family intended him for a prestigious abbacy, and when he joined the Dominicans - a mendicant order that begged for its living - his brothers intercepted him and held him at the family castle for roughly a year to break the decision. It did not.</p>
+<p>He studied under Albert the Great at Cologne and Paris. His fellow students, seeing a large, heavy, silent man who said almost nothing in class, called him the dumb ox; Albert's response has outlived every one of them, that they called him a dumb ox but the bellowing of this ox would be heard throughout the world.</p>
+<h3>What did Aquinas actually do?</h3>
+<p>He reconciled Aristotle with Christian theology, which was the central intellectual problem of his century. Aristotle had re-entered Europe through Arabic translation and commentary and looked, to many churchmen, straightforwardly incompatible with revelation - a philosophy of a self-sufficient natural world. Aquinas built a synthesis in which reason and faith address the same reality by different routes and cannot ultimately contradict each other, and set it out in the Summa Theologiae, an enormous structured work of questions, objections, answers and replies to objections. The Five Ways, his arguments for God's existence, are the most famous passage. Then, on 6 December 1273, something happened to him during Mass. He stopped writing, leaving the Summa unfinished, and told his secretary that compared to what he had seen, everything he had written seemed like straw. He died three months later. He was canonised in 1323 and named a Doctor of the Church.</p>`,
+      journey:`<p>Aquinas is dominant Ti in its most systematic historical form. The Summa's structure is the function made visible: state the question, present the strongest objections to your own position, answer, then reply to each objection in turn. He does not argue by assertion or authority; he builds, and he insists on stating the opposing case at full strength before addressing it - a discipline that most polemicists then and now cannot manage.</p>
+<p>The auxiliary Ne is the reach. He works across Aristotle, Augustine, Jewish and Islamic commentators, scripture, natural philosophy and law, and connects them into one framework. Ti supplies the architecture and Ne supplies the material from every direction it can reach.</p>
+<h3>What happened in December 1273?</h3>
+<p>Nobody knows, and the honest answer is more interesting than the pious one. He experienced something during Mass - a vision, by traditional account, and possibly a stroke or breakdown by others - and simply stopped. A man who had produced millions of words abandoned the greatest work of his life mid-sentence and said the whole thing was straw. Tertiary Si is what had sustained the enormous accumulation, and inferior Fe is where the event landed: an emotional experience of overwhelming force, arriving in the least developed part of the stack, and it took the system apart. He never wrote again.</p>`,
+      mistype:`<p>INTJ is the most common alternative, given the scale of the synthesis and the systematic architecture. The difference is what the system is for. An Ni-Te theologian builds toward a conclusion and constructs an apparatus to deliver it; Aquinas's method is to keep opening questions, and the Summa is a machine for examining objections rather than for closing them. It was also left unfinished.</p>
+<p>ISTJ is occasionally suggested because of the exhaustive detail and the scholastic method. But he was not conserving a tradition - he was importing a pagan philosopher his own church regarded with deep suspicion and rebuilding theology around him, which is Ne opening a framework rather than Si defending one.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>He was so silent in class that his fellow students thought him slow. The work is enormous and the man behind it barely speaks in the historical record except through it.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>He connected Aristotle, scripture, Augustine and the Arabic commentators into a single framework that had not existed before. The synthesis required seeing a compatibility that his contemporaries were certain was not there.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">T</span><span class="letter-word">Thinking</span></div>
+  <p>The Summa states the strongest objections to his own position before answering them, as a matter of method. He argued for God's existence in five separate ways because he was interested in whether the arguments held, not in whether people were convinced.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">P</span><span class="letter-word">Perceiving</span></div>
+  <p>The greatest work of his life is unfinished, abandoned mid-argument, and he made no attempt to complete it. The whole structure was open by design, and he walked away from it without apparent difficulty.</p>
+</div>`
+    },
+    'maya-angelou':{
+      whoHeading:`Who Was Maya Angelou?`,
+      who:`<p>Marguerite Annie Johnson was born on 4 April 1928 in St Louis and died on 28 May 2014 in Winston-Salem, aged eighty-six. The founding event of her life is the one she wrote about in I Know Why the Caged Bird Sings: at seven she was raped by her mother's boyfriend, testified against him, and he was killed shortly afterwards - probably by her uncles. She concluded that her voice had caused a death and became mute for nearly five years, during which a teacher named Bertha Flowers brought her back through poetry.</p>
+<p>The working life that followed is almost implausible in its range. Dancer and calypso performer. The first Black female cable car conductor in San Francisco. Cast member of a touring production of Porgy and Bess. Journalist in Cairo and then in Accra, where she was part of the community of African American expatriates around Ghanaian independence.</p>
+<h3>What is Maya Angelou best known for?</h3>
+<p>I Know Why the Caged Bird Sings, published in 1969, which made an autobiography of a Black girl's childhood in the segregated South into a literary event and has been both taught and banned continuously ever since. She wrote six further volumes of autobiography, several volumes of poetry, and screenplays. She worked with Martin Luther King Jr as northern coordinator for the Southern Christian Leadership Conference and knew Malcolm X well; both were assassinated, King on her birthday, and she did not celebrate it for years afterwards. On 20 January 1993 she read On the Pulse of Morning at Bill Clinton's inauguration, the first poet to read at one since Robert Frost in 1961. She received the Presidential Medal of Freedom in 2011.</p>`,
+      journey:`<p>Angelou is dominant Fe, and the five silent years are the strangest possible illustration of it. A seven-year-old concludes that speech itself is dangerous because of what her words did to another person - that is a child whose entire moral universe is relational, working out the consequence of her own effect on others and taking the most extreme available precaution. The recovery came through being read to, and the career that followed was fifty years of using the voice deliberately.</p>
+<p>The auxiliary Ni is why the autobiographies are literature rather than memoir. Each volume is organised around a governing perception about what a life reveals - about race, about womanhood, about the specific machinery of being made to feel small - and the events are selected and shaped to carry it. She was explicit that she considered the books a form of literature rather than a record.</p>
+<h3>Why did she write about the rape?</h3>
+<p>Because Fe understands what a disclosure does for other people, and she said so directly. Her position was that a person who survives something and describes it accurately gives permission to everyone still silent about the same thing, and she wrote the passage knowing exactly what it would cost her in privacy. The tertiary Se is the performance - the dancing, the singing, the extraordinary reading voice, the physical command of a stage at any age - and the inferior Ti is the thing critics occasionally raised: her poetry is aimed at an audience rather than at a page, and reads better spoken than analysed.</p>`,
+      mistype:`<p>ENFP is the most common alternative, given the range of the working life and the evident energy. The difference is the auxiliary. Ne with Fi produces someone generating in many directions from a private conviction; Angelou's work is consistently addressed - to a reader, to a nation at an inauguration, to a girl who has not told anyone - and shaped by what it will do to the person receiving it.</p>
+<p>INFJ is occasionally suggested because of the depth and the sense of a governing vision. But she was relentlessly outward: performing, organising, teaching, speaking, campaigning. The vision is in second position, powering a life spent in front of people.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">E</span><span class="letter-word">Extraverted</span></div>
+  <p>Dancer, singer, actress, journalist, organiser, lecturer and reader of a poem to a nation. She worked in front of people for sixty years, and her writing carries a speaking voice because it was formed in performance.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>Each autobiography is built around a governing idea rather than a chronology, with the events selected to carry it. She insisted the books were literature rather than record, and shaped them accordingly.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">F</span><span class="letter-word">Feeling</span></div>
+  <p>She fell silent at seven because of what she believed her words had done to another person, and spent the following six decades using her voice on the same reasoning in reverse. Everything she wrote was written for somebody.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">J</span><span class="letter-word">Judging</span></div>
+  <p>Seven volumes of autobiography structured as a single project across four decades, plus a working discipline she described precisely - a hotel room, early mornings, a legal pad. The output was organised and delivered rather than accumulated.</p>
+</div>`
+    },
+    'nicki-minaj':{
+      whoHeading:`Who Is Nicki Minaj?`,
+      who:`<p>Onika Tanya Maraj was born on 8 December 1982 in Saint James, Port of Spain, Trinidad and Tobago, and moved to Queens, New York, at five. She attended LaGuardia High School, the performing arts school, studying acting, and spent years working service jobs while recording mixtapes - Playtime Is Over in 2007, Sucka Free in 2008, Beam Me Up Scotty in 2009 - which is where the alter egos began.</p>
+<p>The moment that changed everything was a guest appearance. Her verse on Monster, from Kanye West's My Beautiful Dark Twisted Fantasy in 2010, was on a track with West, Jay-Z, Rick Ross and Bon Iver, and the general critical verdict was that she had taken it from all of them. Pink Friday came out the same year and went to number one.</p>
+<h3>What are Nicki Minaj's records?</h3>
+<p>She has more entries on the Billboard Hot 100 than any other female rapper, by a considerable distance, and was for a long period the only woman consistently operating at that commercial level in a genre that had structurally excluded them. The alter egos - Roman Zolanski, Harajuku Barbie, Nicki Lewinsky - are a genuine technical device rather than a gimmick: she switches voice, accent, register and persona mid-verse, and the flexibility is the thing other rappers cite. She has also built businesses across fragrance, fashion and endorsements, and her public disputes with other artists have been conducted with a strategic intensity that suggests they are not entirely spontaneous.</p>`,
+      journey:`<p>Minaj is dominant Te, and the career is an operation rather than a series of records. She entered a genre with almost no room for women at the top, identified exactly what would be required to occupy that position, and executed it: the mixtape grind, the guest verses that forced the industry to acknowledge her, the pop crossover that funded the rap credibility, and the business apparatus around all of it. Very little of it looks accidental.</p>
+<p>The auxiliary Ni is why the moves were early rather than reactive. The alter egos, the visual construction, the decision to chase pop radio while retaining technical rap credibility - each was a bet on where the industry was heading that she made before it was obvious, and the position she built was defensible precisely because nobody else had assembled it.</p>
+<h3>Why does she fight so publicly?</h3>
+<p>Because tertiary Se is a formidable instrument and inferior Fi takes offence personally and permanently. The disputes are simultaneously strategic - attention is currency and she understands that - and genuinely wounded, and the two are hard to separate from outside. Te decides that a challenge must be answered; Fi supplies a grievance that does not expire. The result is a public record of conflicts that have occasionally served her and occasionally cost her, conducted with an intensity that suggests both things are true at once.</p>`,
+      mistype:`<p>ESTP is sometimes suggested because of the combativeness and the performance instinct. The difference is planning. An Se-dominant artist reads the moment and exploits it; Minaj's career is a constructed position built over fifteen years, with the crossover, the personas and the business arms sequenced deliberately.</p>
+<p>ENFP is occasionally proposed because of the theatricality and the vocal invention. But the personas serve a strategy rather than an impulse - they broadened what she could be marketed as while proving technical range - and her decisions are consistently organisational rather than exploratory.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">E</span><span class="letter-word">Extraverted</span></div>
+  <p>She built her position through features, collaborations, television, endorsements and a permanent public presence. The career was made in other people's rooms first, and she took each one.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>The pop crossover, the alter egos and the visual construction were bets on where the industry was going, made before the evidence. She assembled a position that had not existed for a woman in that genre and then held it.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">T</span><span class="letter-word">Thinking</span></div>
+  <p>She operates the business - the deals, the sequencing, the calculated features - with an unsentimental clarity, and she answers challenges because leaving one unanswered has a cost she has evidently calculated.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">J</span><span class="letter-word">Judging</span></div>
+  <p>Fifteen years of deliberate construction: mixtapes, then the verse that forced the door, then the album, then the crossover, then the businesses. Each stage completed before the next, and the position defended once built.</p>
+</div>`
+    },
+    'm-gustave':{
+      whoHeading:`Who Is M. Gustave?`,
+      who:`<p>Monsieur Gustave H. is the central character of Wes Anderson's The Grand Budapest Hotel, released in 2014 and played by Ralph Fiennes in what is generally regarded as the performance of his career. He is the concierge of a grand hotel in the fictional Republic of Zubrowka, somewhere in a central Europe that is unmistakably about to be overrun, in the years between the wars.</p>
+<p>His professional method is total. He knows every guest's preferences, manages every crisis invisibly, drenches himself in a cologne called L'Air de Panache, and conducts affairs with the elderly, wealthy, insecure women who stay at the hotel - which the film treats as neither sordid nor comic but as an extension of the same service. One of them, Madame D., dies and leaves him a priceless painting, and her family frame him for her murder.</p>
+<h3>What happens to M. Gustave?</h3>
+<p>He takes Zero Moustafa, an immigrant lobby boy with no family and no papers, as his protégé, and the relationship becomes the actual subject of the film. He escapes prison, recovers the painting, clears himself, and inherits the hotel. Then, on a train, soldiers demand Zero's papers, and Gustave - who has already been dragged off a train once for the same reason - intervenes on his behalf. They take him outside and shoot him. Zero's narration, decades later, contains the film's thesis: that Gustave's world had vanished long before he entered it, but that he sustained the illusion with a marvellous grace.</p>`,
+      journey:`<p>Gustave is dominant Fe, and the concierge role is that function given a job description. His entire competence is the reading and management of other people's emotional states - anticipating what a guest needs before they know, defusing crises, supplying reassurance, remembering everything about everyone. It is not obsequiousness. He genuinely believes that maintaining these standards is what keeps a civilisation from becoming something else, and the film agrees with him.</p>
+<p>The auxiliary Ni is why the character has weight rather than being merely a comic creation. He can see what is coming. The poetry, the manners and the rituals are performed with increasing desperation across the film precisely because he understands they are the last of something, and the tension between his fastidiousness and the historical situation is the entire joke and the entire tragedy.</p>
+<h3>Why does Gustave die the way he does?</h3>
+<p>Because Fe attaches to a specific person and will spend everything on them, and because he had done it once before and survived. The first train scene establishes exactly what these soldiers are; the second one is him stepping in front of them for Zero with full knowledge. Tertiary Se is the physical courage and the theatrical presence that make it possible, and inferior Ti is the reason it is not a calculation - he does not weigh the odds, he responds to what is happening to somebody he loves. Zero's assessment is that he was one of them, meaning the vanished world, and that he sustained the illusion beautifully. It is the kindest possible obituary and it is also accurate.</p>`,
+      mistype:`<p>ENFP is sometimes suggested because of the flamboyance and the verbal invention. The difference is the auxiliary. Ne with Fi produces someone generating possibilities from a private value; Gustave's entire apparatus is directed at other people's states - what a guest needs, what a room requires, what a frightened boy should be told - which is Fe leading.</p>
+<p>ESFJ is occasionally proposed because of the service and the social precision. But he is not maintaining an established order; he is sustaining one that has already ended, knowingly, because he has judged that the alternative is worse. That is a vision rather than a convention.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">E</span><span class="letter-word">Extraverted</span></div>
+  <p>He runs a hotel by being everywhere in it, speaking to everyone, and holding an entire staff and clientele in his head simultaneously. There is no private Gustave in the film, and the one glimpse of him alone is in a prison cell.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>He knows the world he is maintaining has already gone. The manners and the poetry become more insistent as the film darkens because he is performing a vanished thing deliberately rather than failing to notice its absence.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">F</span><span class="letter-word">Feeling</span></div>
+  <p>Everything he does is calibrated to another person - the guest, the staff, the boy. He takes in a refugee with no papers, trains him, leaves him everything, and finally steps in front of soldiers for him.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">J</span><span class="letter-word">Judging</span></div>
+  <p>The hotel runs on his standards, applied without exception, and he is unwavering about them under conditions that make them absurd. He decided what he was going to be a long time ago and did not adjust it for the century.</p>
+</div>`
+    },
+    'nina-simone':{
+      whoHeading:`Who Was Nina Simone?`,
+      who:`<p>Eunice Kathleen Waymon was born on 21 February 1933 in Tryon, North Carolina, and died on 21 April 2003 at Carry-le-Rouet in France, aged seventy. She began playing piano at three or four, was recognised locally as a prodigy, and was educated toward a classical career - valedictorian of her high school, then a summer at Juilliard in 1950 studying under Carl Friedberg specifically to prepare for the Curtis Institute audition.</p>
+<p>Curtis rejected her. She believed for the rest of her life that this was because she was Black; the institute disputed it. Whatever the truth, the rejection redirected everything: the concert career ended before it started, and she took a job at the Midtown Bar and Grill in Atlantic City in 1954 to pay for private lessons, where the owner told her she would have to sing as well as play. She took the name Nina Simone - Nina from a boyfriend, Simone from the actress Simone Signoret - so that her mother, who disapproved of secular music, would not find out what she was doing.</p>
+<h3>What made Nina Simone political?</h3>
+<p>1963. The murder of Medgar Evers and the bombing of the 16th Street Baptist Church in Birmingham produced Mississippi Goddam, which she described as her first civil rights song, and which she wrote in about an hour. Radio stations in the South returned copies snapped in half. Four Women followed, about colourism and the categories imposed on Black women, and was banned by some stations for being offensive to the people it was defending. She believed the industry punished her for the political material, and after King's assassination in 1968 she left the United States in 1970, spending years in Barbados, Liberia, the Netherlands and finally France. She was diagnosed with bipolar disorder in the late 1980s while living in Nijmegen. Two days before her death, the Curtis Institute awarded her the honorary degree it had refused her fifty-three years earlier.</p>`,
+      journey:`<p>Simone is dominant Ni, and it is audible in the music before it is visible in the biography. She was the only performer of her era who could play a Bach fugue as the introduction to a blues and make it structurally coherent, and her arrangements consistently proceed from a single organising idea about what a song actually is rather than from a genre convention. Nobody could categorise her because she was not working inside a category; she had a conception and imposed it on whatever material was to hand.</p>
+<p>The auxiliary Te is the execution and the refusal to accommodate. She controlled her arrangements, silenced audiences who talked, walked off stages, and constructed a body of work in which the classical training, the gospel, the jazz and the protest material are all instruments of one project. Mississippi Goddam is a show tune, deliberately - she says so in the recording - and the incongruity is engineered.</p>
+<h3>Why did she leave America?</h3>
+<p>Because tertiary Fi holds a wound absolutely and Te concluded there was nothing left to build here. The Curtis rejection, the industry's response to the political records, King's death and a marriage to a manager she later described as abusive accumulated into a settled verdict about the country, and she acted on it completely - not a tour abroad but an exit, for the remaining three decades of her life. The inferior Se is the hardest part of the record: an untreated and then poorly managed bipolar disorder, a body and a career neither of which anyone was looking after, and years in which the performances were unpredictable because nobody had put a structure around her.</p>`,
+      mistype:`<p>INFP is the most common alternative, given the emotional intensity and the sense of a wounded interior. The difference is method. An Fi-dominant performer works outward from personal feeling; Simone constructed arrangements, imposed conceptions on material and controlled her performances with a precision that was frequently experienced as coldness by the people working with her.</p>
+<p>ENFJ is occasionally suggested because of the command of an audience and the civil rights work. But she was famously indifferent to whether a room liked her, silenced audiences rather than warming them, and her political material was written to state a position rather than to move a crowd toward one.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>She trained for a career - solo concert piano - that is among the most solitary in music, and remained a private and largely unreachable figure. The stage presence was formidable and it was not warmth.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>She heard what a song could be rather than what it was, which is why a Bach fugue could open a blues and hold. The arrangements proceed from a conception rather than from any genre's conventions, and nobody has successfully imitated it.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">T</span><span class="letter-word">Thinking</span></div>
+  <p>She wrote Mississippi Goddam as a show tune on purpose and said so on the record, because the incongruity made the argument. She controlled her arrangements, silenced audiences and accepted the professional cost of both.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">J</span><span class="letter-word">Judging</span></div>
+  <p>She arrived at settled verdicts and executed them completely - about the industry, about the country, about her own material. Leaving America was not a gesture; it was a decision she made once and lived inside for thirty years.</p>
+</div>`
+    }
+  });
+
+
+  // ── Rewritten pages: full biography (who), journey, mistype and letter
+  // breakdown. Assigned after the block above so these entries win.
+  Object.assign(charContent, {
+    'albus-severus-potter':{
+      whoHeading:`Who Is Albus Severus Potter?`,
+      who:`<p>Albus Severus Potter is the central character of Harry Potter and the Cursed Child, the stage play that opened in London in 2016, scripted by Jack Thorne from a story developed with J.K. Rowling and John Tiffany. He is the second son of Harry and Ginny Potter, named for Albus Dumbledore and Severus Snape, and the play opens on the same platform where the last novel ended.</p>
+<p>Everything about him is a disappointment to a world expecting a sequel. He is sorted into Slytherin. He is not good at magic. He cannot fly. He is not popular, is visibly unhappy, and is aware that everyone he meets is measuring him against his father and finding the arithmetic disappointing.</p>
+<h3>What does Albus do in Cursed Child?</h3>
+<p>He and Scorpius Malfoy - his only friend, the son of Draco, rumoured across the school to be Voldemort's child - steal a Time-Turner and go back to save Cedric Diggory, who died in the Triwizard Tournament decades earlier. The reasoning is Albus's: his father let Cedric die, his father is celebrated anyway, and undoing it would prove something. It goes catastrophically wrong in the way time travel always does, producing alternate presents that are considerably worse, including one in which Voldemort won. The play's actual subject is not the plot but the conversation Harry and Albus cannot have, and the line that lands hardest is Harry admitting that sometimes he wishes Albus were not his son.</p>`,
+      journey:`<p>Albus is dominant Fi in the least forgiving possible circumstances. He has an intense private sense of who he is and no way to make it legible to anyone, least of all to a father whose entire public identity is the opposite of his. The Slytherin sorting is not a rebellion, it is an accurate reading of somebody the school has misclassified, and the play is careful about that: he is not a bad boy, he is a boy nobody has correctly identified.</p>
+<p>The auxiliary Ne is why the plan is so terrible. He generates a possibility - undo Cedric's death - and follows it without any capacity to model what changing the past would do, because the possibility is emotionally satisfying and the consequences are abstract. Fi decides that the injustice is unbearable and Ne supplies a route to it that no adult would have entertained for a second.</p>
+<h3>Why does Albus become friends with Scorpius?</h3>
+<p>Because Fi recognises another person operating from the same position, and because it does not care what anyone thinks about it. Scorpius is the least advisable friend in the school - suspected of being Voldemort's son, shunned by everyone - and Albus attaches to him immediately, permanently, and against enormous social pressure. It is the healthiest thing in the play and the clearest evidence of the type. The tertiary Si is why he cannot let go of a grievance about events he did not witness, and the inferior Te is why the plan has no operational thinking in it at all.</p>`,
+      mistype:`<p>INFJ is sometimes suggested because of the intensity and the sense of a boy carrying something large. The difference is direction. An Ni-Fe adolescent would be reading the room and adapting; Albus is conspicuously bad at reading rooms and consistently acts on a private verdict regardless of how it lands.</p>
+<p>ISFP is occasionally proposed because of the withdrawal and the sensitivity. But he is not grounded in the present at all - he is preoccupied with a past he did not live through and a future he cannot picture, and the whole plot is driven by a boy generating an idea rather than responding to what is in front of him.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>He is isolated by disposition as much as by circumstance, has one friend by choice, and carries the whole of his grievance internally for years before it comes out as an action rather than a conversation.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>His response to an unbearable situation is to generate an entirely hypothetical solution involving time travel. He is not fixing his life; he is rewriting a past he has only heard about, which is a boy living several steps away from the present.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">F</span><span class="letter-word">Feeling</span></div>
+  <p>Everything he does proceeds from a private sense of injustice - about Cedric, about his father, about himself - that he cannot articulate and will not abandon. The friendship with Scorpius is chosen on the same basis and defended against everyone.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">P</span><span class="letter-word">Perceiving</span></div>
+  <p>The plan is improvised, unresearched and catastrophic, and he keeps adapting it as each attempt makes things worse rather than stopping. There is no point in the play where he has thought anything through.</p>
+</div>`
+    },
+    'kimmy-schmidt':{
+      whoHeading:`Who Is Kimmy Schmidt?`,
+      who:`<p>Kimmy Schmidt is the protagonist of Unbreakable Kimmy Schmidt, created by Tina Fey and Robert Carlock and played by Ellie Kemper, which ran from 2015 to 2019. The premise is delivered in the first two minutes: she was abducted at fourteen by the Reverend Richard Wayne Gary Wayne, held in an underground bunker in Durnsville, Indiana with three other women, told that a nuclear apocalypse had destroyed the world, and released fifteen years later when the police found them.</p>
+<p>Rather than go home to Indiana and be the mole woman for the rest of her life, she gets on a bus to New York with a light-up backpack and no qualifications, and takes a job as a nanny for a wealthy Manhattan family. She is twenty-nine and her frame of reference stopped in the late 1990s.</p>
+<h3>Is Kimmy Schmidt actually a comedy about trauma?</h3>
+<p>Yes, and the show is unusually honest about it. The relentless optimism is played for laughs and is also explicitly a survival mechanism - her ten-seconds rule is something she developed underground to get through being turned by a crank on a wheel. The series repeatedly lets the mechanism fail: she has rage she cannot access, cannot form a functional romantic relationship, and spends a season in therapy discovering that being unbreakable is not the same as being all right. Her landlady Lillian, her roommate Titus and her employer Jacqueline form the found family, and the show's final act sends her back to face the Reverend at trial.</p>`,
+      journey:`<p>Kimmy is dominant Ne, and the show's central joke is that this is what saved her. Fifteen years in a windowless room did not break her because her mind was never in the room - she generated, imagined, reframed and kept producing possible futures, and the same faculty makes her chaotically inventive in New York. Her solutions to problems are consistently things nobody else would have considered, and about a third of them work.</p>
+<p>The auxiliary Fi is why the optimism is not stupidity. She has a fixed internal sense of what is right, and it is what makes her stand up to people who are much better equipped than she is - the Reverend, her employers, a legal system that would prefer she went away. The naivety is real and the moral clarity underneath it is not naive at all.</p>
+<h3>Why can't Kimmy be angry?</h3>
+<p>Because tertiary Te and inferior Si are where the damage sits. She has no accumulated framework for processing what happened - fifteen years of missing development, no vocabulary, no model of what a normal reaction would even look like - and the rage that should be there arrives as a physical symptom instead, which the show plays as a running gag until it stops being funny. The ten-second rule is a superb coping mechanism and a terrible long-term strategy, because it is designed to get you through the next ten seconds rather than to let you look at the fifteen years.</p>`,
+      mistype:`<p>ESFP is sometimes suggested because of the physical comedy and the visible enthusiasm. The difference is what she engages with. An Se-dominant survivor would be grounded in the immediate physical world; Kimmy is consistently operating on an imagined version of a situation, which is why she is so frequently wrong about what is actually happening in a room and so good at inventing a way out of it.</p>
+<p>ENFJ is occasionally proposed because of the warmth and the instinct to help everyone. But she reads rooms badly and is regularly oblivious to what people around her need, and her interventions come from her own sense of what ought to happen rather than from an accurate reading of anyone.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">E</span><span class="letter-word">Extraverted</span></div>
+  <p>Released from fifteen years of isolation, she immediately moves to the most crowded city available and builds a found family within a week. Her energy is generated by contact, and the show is careful to show how much she needs it.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>Her mind was never in the bunker. She survived by generating possibilities and she solves problems in New York the same way, with schemes nobody else would consider and an ability to reframe almost anything into something survivable.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">F</span><span class="letter-word">Feeling</span></div>
+  <p>Underneath the relentless cheer is an unmoving sense of what is right, and it is what makes her confront the Reverend, her employers and anyone else who has decided she is not a person. The optimism is a technique; the values are not.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">P</span><span class="letter-word">Perceiving</span></div>
+  <p>No plan, no qualifications, no strategy - she gets on a bus and improvises a life. It works remarkably well and it is also why she keeps postponing the one thing that requires sitting still and looking backwards.</p>
+</div>`
+    },
+    'paddington-bear':{
+      whoHeading:`Who Is Paddington Bear?`,
+      who:`<p>Paddington first appeared in A Bear Called Paddington, published by Michael Bond in 1958. He comes from Darkest Peru, was raised by his Aunt Lucy, and stowed away on a ship after she went into the Home for Retired Bears in Lima. The Brown family find him at Paddington Station sitting on a battered suitcase with a label round his neck: please look after this bear, thank you.</p>
+<p>Bond has said the image came from wartime newsreel of evacuee children waiting at railway stations with labels tied to their coats, and the whole character is built on that - a small displaced person arriving alone in a country that could receive him well or badly. The Browns take him home to 32 Windsor Gardens. He keeps a marmalade sandwich under his hat for emergencies, and the hat itself belonged to his uncle.</p>
+<h3>What is the hard stare?</h3>
+<p>Aunt Lucy taught him. When somebody behaves badly - rudely, dishonestly, unkindly - Paddington gives them a long, level, disappointed look, and it is remarkably effective on adults who have been getting away with things for years. It is the character's only weapon and it is entirely moral. The Paul King films of 2014, 2017 and 2024 built on exactly this, and Paddington 2 in particular - in which he is wrongly imprisoned and reforms an entire prison largely through good manners and marmalade - is one of the few adaptations that improved on the source.</p>`,
+      journey:`<p>Paddington is dominant Si, and it is what makes a polite bear into a character rather than a mascot. He remembers everything: what Aunt Lucy told him, what somebody promised last week, how a thing is properly done, what each of the Browns likes. His whole method is the faithful application of accumulated instruction from a person who is no longer present, and the marmalade sandwich under the hat is Si as a life philosophy - be prepared, keep the useful thing where you can reach it.</p>
+<p>The auxiliary Fe is why the stories work. He attends to people continuously - noticing that Mr Brown is unhappy, that Mrs Bird is worried, that the shopkeeper is being cheated - and his interventions are aimed at what somebody needs rather than at what he wants. The hard stare is Fe with the politeness removed for a moment: a direct communication of disappointment to a person who has failed a standard.</p>
+<h3>Why does Paddington cause so much chaos?</h3>
+<p>Because inferior Ne means he cannot anticipate the unprecedented, and almost everything in London is unprecedented to a bear from Peru. He applies remembered procedure faithfully to a situation the procedure was never designed for, and the result is a flooded bathroom or a wrecked shop window. It is never carelessness; it is a highly conscientious creature doing exactly what he was told in a context nobody told him about. The tertiary Ti is what he uses to work out how something is meant to function, usually about four minutes after it has stopped functioning.</p>`,
+      mistype:`<p>ISFP is sometimes suggested because of the gentleness and the evident inner life. The difference is what governs him. An Fi-dominant bear would act from personal conviction; Paddington acts from what Aunt Lucy taught him and from what the people around him need, and he is visibly distressed when he has let somebody down rather than when he has betrayed himself.</p>
+<p>INFP is occasionally proposed because of the sincerity. But his frame of reference is entirely concrete and remembered - the instructions, the recipes, the manners, the specific promises - rather than idealistic, and he is at his most confident when applying something he has been taught.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>He is quiet, watchful and easily overwhelmed by crowds, and his most characteristic moment is a long silent look rather than a speech. The interior life - the letters to Aunt Lucy, the careful reflection - is where the character actually lives.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">S</span><span class="letter-word">Sensing</span></div>
+  <p>Marmalade sandwich under the hat, in case. He operates on stored, concrete, practical knowledge - what he was taught, what he has seen work, what somebody said three chapters ago - and remembers all of it exactly.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">F</span><span class="letter-word">Feeling</span></div>
+  <p>He notices when people are unhappy and does something about it, usually at cost to himself. The hard stare is a moral instrument aimed at somebody who has treated another person badly, and it is the only aggression he has.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">J</span><span class="letter-word">Judging</span></div>
+  <p>He has firm standards and applies them without exception, to duchesses and to shopkeepers alike. Aunt Lucy's instructions are not guidelines, and the entire comic engine of the books is a bear following the rules exactly in a country that does not.</p>
+</div>`
+    },
+    'nora-durst':{
+      whoHeading:`Who Is Nora Durst?`,
+      who:`<p>Nora Durst is a central character of The Leftovers, HBO's series from Damon Lindelof and Tom Perrotta, played by Carrie Coon. The premise of the show is the Sudden Departure: two percent of the world's population vanished simultaneously and without explanation, and the series is about the three years afterwards. Nora's loss is the most complete of anyone's - she was in the kitchen, her husband and her two young children were at the table, and then she was alone in the room.</p>
+<p>The show introduces her as the most functional bereaved person in Mapleton, which turns out to be the disguise. She works for the Department of Sudden Departure, travelling to interview families who have lost people and administering a standardised questionnaire of 121 items designed to detect fraudulent benefit claims.</p>
+<h3>What does Nora Durst actually do?</h3>
+<p>She maintains a system where a life used to be. She keeps buying her children's brands of cereal and throwing them away. She pays sex workers to shoot her while she is wearing a vest, which she does not explain and which the show declines to explain for her - the closest reading being that a survivable physical impact is the only sensation she can still locate. She begins a relationship with Kevin Garvey, adopts a baby, and in the final season pays an enormous amount of money to enter a machine that its inventors claim will send her to wherever the departed went. The last episode is her account, decades later, of what happened, and the series ends on whether Kevin believes her.</p>`,
+      journey:`<p>Nora is dominant Si, and it is why she is the most devastating character in the show. Si holds the accumulated record in exact detail, and hers is a household: the cereal brands, the routines, the specific arrangement of a Saturday morning. When the people are removed, the record does not go with them, and she is left maintaining the structure of a life whose contents have been deleted. The questionnaire job is the same faculty professionalised - she catalogues other people's losses in standardised form because that is what she can do with a loss.</p>
+<p>The auxiliary Te is the functioning. She is competent, organised and formidable in a room, and her ability to hold a job that requires interrogating grieving strangers is genuinely remarkable. Te is what lets her operate at all, and it is also what makes her so difficult to help, because the machinery keeps running and everyone assumes the person inside it is fine.</p>
+<h3>Why does she pay to be shot?</h3>
+<p>Because tertiary Fi has nowhere to go and inferior Ne cannot imagine a different life. She has feelings of a magnitude she has no method for, and Si-Te has no mechanism for processing them - only for recording and managing. What is left is a physical event, controlled, repeatable and survivable, that produces a sensation she can locate. It is not a death wish, which is what makes it so much worse. The machine at the end of the series is the same instinct at scale: a woman who cannot conceive of a future here paying to be delivered to the only place the record points to.</p>`,
+      mistype:`<p>ISFJ is the most common alternative, given the caretaking history and the emotional depth. The difference is the auxiliary. Si with Fe manages through attunement to other people; Nora manages through procedure - a questionnaire, a job, a schedule, a controlled experiment involving a bulletproof vest - and her interpersonal manner is blunt to the point of cruelty when she is under pressure.</p>
+<p>INTJ is occasionally suggested because of the intelligence and the eventual willingness to do something extraordinary. But she is not working from a vision. She is holding onto a specific remembered world and processing evidence about it, and the machine is the last item on a list rather than the culmination of a plan.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>She explains nothing to anyone. The most important things she does across four seasons - the cereal, the vest, the machine - are done alone and unaccounted for, and the final episode is the first time she tells anybody what happened.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">S</span><span class="letter-word">Sensing</span></div>
+  <p>Her grief is made of concrete particulars: brands, routines, the arrangement of a kitchen, a 121-item questionnaire. She holds the exact texture of a vanished life and keeps reproducing its details because they are what she has.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">T</span><span class="letter-word">Thinking</span></div>
+  <p>She interrogates grieving families for a living and is good at it. Her manner is direct, unsentimental and frequently brutal, and she assesses even her own catastrophe as something to be investigated rather than felt through.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">J</span><span class="letter-word">Judging</span></div>
+  <p>Everything is managed - the job, the house, the schedule, the controlled shooting, the decision about the machine. She closes questions rather than living inside them, and the series' final act is her closing the largest one available.</p>
+</div>`
+    },
+    'michel-foucault':{
+      whoHeading:`Who Was Michel Foucault?`,
+      who:`<p>Paul-Michel Foucault was born on 15 October 1926 in Poitiers and died in Paris on 25 June 1984, aged fifty-seven, of an AIDS-related illness - the first major public figure in France to do so. He was elected to a chair at the Collège de France in 1970, which he held for the rest of his life under a title he devised himself: professor of the history of systems of thought.</p>
+<p>His major books are Madness and Civilization in 1961, The Birth of the Clinic in 1963, The Order of Things in 1966, The Archaeology of Knowledge in 1969, Discipline and Punish in 1975 and the three volumes of The History of Sexuality from 1976. Each takes an institution or a category that seems natural - madness, illness, criminality, sexuality - and demonstrates that it was constructed at a specific historical moment for specific reasons.</p>
+<h3>What is Foucault's central idea?</h3>
+<p>That power and knowledge are the same operation. The conventional picture has power as something that represses a truth that exists independently; Foucault's argument is that systems of power produce the categories through which we understand anything at all, including ourselves. Discipline and Punish is the clearest demonstration: it opens with the public torture and execution of a would-be regicide in 1757, moves to a timetabled prison regime eighty years later, and argues that the shift is not a story of growing humanity but of a technique that works better - producing subjects who monitor themselves. Bentham's panopticon, a prison designed so that inmates can always be seen and never know when they are being watched, becomes his model for how modern societies operate generally. He was also politically active, founding a prisons information group in 1971 to let prisoners speak about conditions themselves.</p>`,
+      journey:`<p>Foucault is dominant Ti, and his method is the function applied to history. He takes a category everyone treats as self-evident and disassembles it: what is madness, actually, and when did it start meaning this, and what had to be true for that meaning to be possible? He is not arguing that madness does not exist. He is asking what work the concept does, which is a question about internal logic rather than about facts, and it is why his books frustrate historians and delight philosophers.</p>
+<p>The auxiliary Ne is the range. Asylums, hospitals, prisons, schools, barracks, confession, sexuality, the human sciences - he keeps finding the same structure in domains nobody had connected, and the argument works because the resemblance is genuine rather than asserted.</p>
+<h3>Why is Foucault so contested?</h3>
+<p>Because Ti follows a framework to its conclusions and inferior Fe supplies no instinct for how that lands. If the categories through which we understand ourselves are products of power, then the grounds for saying anything is simply better become unstable, and critics from Habermas onward have argued that his position leaves no place to stand. Tertiary Si is what makes the books formidable anyway - the archival work is real and enormous, and he is citing documents his opponents have not read. The historians' complaint is that he sometimes bends the evidence to the structure, and that complaint has substance.</p>`,
+      mistype:`<p>INTJ is the most common alternative, given the systematic sweep and the enormous influence. The difference is closure. An Ni-Te thinker converges and builds; Foucault changed his method repeatedly - archaeology, then genealogy, then an entirely different project on the care of the self in the last volumes - and explicitly refused to be pinned to a position, saying more than once that he did not want to be the same person he had been.</p>
+<p>INFJ is occasionally suggested because of the moral weight of the subject matter. But he consistently declined to make the humanist argument his readers wanted, and the discomfort of his work is precisely that it analyses without offering a place from which to condemn.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>The work was made in archives, alone, over years, and the public activism came later and separately. He was an intensely private man who resisted biographical interpretation of his writing throughout his life.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>He found the same structure in asylums, clinics, prisons, schools and confessionals, and connected institutions nobody had put in the same book. The panopticon works as an idea because he saw it as a general principle rather than a building.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">T</span><span class="letter-word">Thinking</span></div>
+  <p>He disassembles categories that everyone treats as natural, and follows the analysis into a position that leaves nothing comfortable standing. He refused to supply the moral conclusion his readers wanted because the argument did not license one.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">P</span><span class="letter-word">Perceiving</span></div>
+  <p>He changed method three times and abandoned a planned six-volume project to start a different one. He said repeatedly that he wrote in order to no longer be the person who had begun the book, which is a working principle rather than a remark.</p>
+</div>`
+    },
+    'rachel-carson':{
+      whoHeading:`Who Was Rachel Carson?`,
+      who:`<p>Rachel Louise Carson was born on 27 May 1907 and died on 14 April 1964, aged fifty-six. She joined the US Bureau of Fisheries in the mid-1930s writing radio scripts, and in 1936 became only the second woman the bureau had hired into a full-time professional post, as a junior aquatic biologist. By 1949 she was chief editor of publications.</p>
+<p>The Sea Around Us, published on 2 July 1951, spent eighty-six weeks on the New York Times bestseller list and won the National Book Award, and the money let her leave government service in 1952 to write full time. She was, at that point, a celebrated nature writer rather than a controversialist.</p>
+<h3>What happened when Silent Spring was published?</h3>
+<p>An organised campaign. The book, published on 27 September 1962, argued that synthetic pesticides - DDT above all - were accumulating through food chains with consequences nobody was measuring, and that the agencies promoting agriculture could not be trusted to regulate them. Velsicol threatened legal action against Houghton Mifflin to stop publication. The attacks on her were substantially personal and substantially sexist: a former Secretary of Agriculture reportedly suggested that as an unmarried woman she was probably a communist, and critics warned that following her would take the country back to the Dark Ages. She was diagnosed with breast cancer in March 1960 and knew by December that it had metastasised, and she concealed the illness precisely so that the industry could not present her as an unreliable hysteric. She testified before President Kennedy's Science Advisory Committee, whose report on 15 May 1963 largely vindicated her, and before a Senate subcommittee. She died the following April. DDT was phased out in the United States in 1972, and the EPA - created in 1970 - resolved exactly the conflict of interest she had identified.</p>`,
+      journey:`<p>Carson is dominant Ni, and Silent Spring is what that function produces when it is given a mass of unconnected data. Individual studies on pesticide effects existed and were being read by specialists who saw individual results. She saw the system - a chemical applied here appears in a bird there, concentrates as it moves up, and the silence of a spring morning is the visible end of a process nobody had assembled. The book's opening chapter is a fable about a town where nothing sings, which is the perception stated before any of the evidence.</p>
+<p>The auxiliary Fe is why it changed anything. She wrote for the general reader in prose of real beauty, and she made an argument that a person could feel rather than merely follow. The scientific case had been available for years and had moved nobody; Carson wrote it in a way that made a public understand what was being done to them and act on it.</p>
+<h3>Why did she hide the cancer?</h3>
+<p>Because Fe read exactly how it would be used, and she was right. A woman making an argument about poison, dying of a disease the argument implicated, would have been reduced to a personal motive within a week. So she testified before Congress while metastatic, in a wig, and said nothing. The tertiary Ti is the rigour that made the book unanswerable on the science - fifty-five pages of references, every claim sourced, because she knew exactly what would be attempted. The inferior Se is the cost: she spent the last four years of her life in a public fight she was physically unable to sustain, and she sustained it anyway.</p>`,
+      mistype:`<p>INTJ is the most common alternative, given the strategic care and the systematic argument. The difference is what the book is for and how it is written. An Ni-Te scientist would have built the case for the agencies and the specialists; Carson wrote for the public, in literary prose, with an opening chapter that is a fable. The instrument is emotional recognition, deployed deliberately.</p>
+<p>ISFJ is occasionally suggested because of the meticulous documentation and the years of patient civil service. But the achievement was a synthesis nobody else had made from evidence everyone else had seen, and she staked everything on a conclusion that ran ahead of the consensus.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>She was a quiet government editor and nature writer who did the decisive work alone, and she found the public battle that followed genuinely draining. She concealed her illness rather than share it with anyone who might have helped her carry it.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>She assembled a systemic picture from studies that specialists had read individually without connecting. The opening fable about a silent town states the whole conclusion before a single piece of evidence is offered, because she saw it first.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">F</span><span class="letter-word">Feeling</span></div>
+  <p>She wrote for ordinary readers in prose designed to make them feel what was at stake, because she judged correctly that the scientific case alone had already failed to move anyone. The audience was the strategy.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">J</span><span class="letter-word">Judging</span></div>
+  <p>Fifty-five pages of references, assembled in anticipation of exactly the attack that came, and a position she did not modify under threat of litigation or personal abuse. She testified before Congress while dying and did not soften a word.</p>
+</div>`
+    },
+    'simone-biles':{
+      whoHeading:`Who Is Simone Biles?`,
+      who:`<p>Simone Arianne Biles was born on 14 March 1997 in Columbus, Ohio. Her mother struggled with addiction and she and her sister were eventually adopted by her maternal grandfather and his wife, whom she calls her parents. She started gymnastics at six, on a day-care field trip.</p>
+<p>She is the most decorated gymnast of all time by every available measure, with more world and Olympic gold medals than anyone has won. Five elements across four apparatus are named after her in the Code of Points, meaning she competed a skill nobody had performed before and the sport entered it under her name - and the scoring body has been repeatedly accused of undervaluing them to discourage other gymnasts from attempting things that could kill them.</p>
+<h3>What happened at the Tokyo Olympics?</h3>
+<p>She withdrew from the team final and then from four individual finals with what gymnasts call the twisties: a sudden loss of the internal sense of where your body is in the air. In a sport where athletes are inverted several metres up and land on their necks if they misjudge, this is not nerves - it is the specific failure that paralyses people. She was called a quitter in a great deal of public commentary. She returned to competition and at Paris in 2024 won three more golds. She is also one of the hundreds of gymnasts abused by the USA Gymnastics team doctor Larry Nassar, and in September 2021 she testified before the Senate Judiciary Committee about the FBI's failure to act on the reports, saying that she blamed Nassar and also an entire system that had enabled him.</p>`,
+      journey:`<p>Biles is dominant Fi, and Tokyo is the clearest demonstration any athlete has given of it. The external pressure was as large as it gets - a team depending on her, a country expecting golds, sponsors, a narrative already written - and she made a decision on the basis of an internal reading that nobody else could verify. That is Fi doing exactly what it does: arriving at a private verdict about what is right and acting on it against every external argument.</p>
+<p>The auxiliary Se is the gymnastics itself. Air awareness is the most extreme form of physical present-tense perception there is, and hers is why five skills carry her name - she could do things in the air that nobody had established were possible. It is also why the twisties were so frightening: the function that made her the greatest was the one that stopped reporting.</p>
+<h3>Why did she keep competing after the abuse?</h3>
+<p>Because tertiary Ni gave her a reason that was not about medals. She has been explicit that she continued in part so that USA Gymnastics could not close the chapter while a survivor was still in the gym - that her presence forced an accounting that would otherwise have been quietly filed. That is a long-range purpose held privately and pursued at real cost. The inferior Te is why the fight had to be conducted through testimony and public statement rather than through the institutions: the organisations that should have acted had already demonstrated they would not.</p>`,
+      mistype:`<p>ESFP is the most common alternative for a performer of that charisma and physical brilliance. The difference is where the decisions come from. An Se-dominant athlete is driven by the moment and the crowd; Biles withdrew from the biggest moment available on the strength of a private judgement, and she is markedly reserved off the floor for someone with her profile.</p>
+<p>ISTP is occasionally suggested because of the technical mastery and the composure. But her decisions are consistently governed by feeling rather than analysis - the withdrawal, the testimony, the choice to keep competing - and she has described all three in explicitly personal terms rather than tactical ones.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>She is guarded and self-contained away from competition, and the decisions that defined her were arrived at internally and announced rather than discussed. Tokyo was a conclusion she reached by herself and then had to explain to the world.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">S</span><span class="letter-word">Sensing</span></div>
+  <p>Her gift is air awareness - the most immediate physical perception in any sport - refined to a degree that produced five skills nobody had done before. When that perception failed in Tokyo, there was nothing else to fall back on.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">F</span><span class="letter-word">Feeling</span></div>
+  <p>She withdrew from an Olympic final against every external pressure because an internal judgement said she must, and she testified about the abuse in explicitly personal terms. Both decisions were made on conviction and neither was negotiable.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">P</span><span class="letter-word">Perceiving</span></div>
+  <p>She kept her options open about retirement for years, returned on her own timetable rather than the sport's, and has consistently declined to commit to a plan anyone else had drawn up for her.</p>
+</div>`
+    },
+    'rumi':{
+      whoHeading:`Who Was Rumi?`,
+      who:`<p>Jalal al-Din Muhammad Rumi was born in 1207 in what is now Afghanistan or Tajikistan, and died on 17 December 1273 in Konya, in present-day Turkey. His family fled westward ahead of the Mongol advance, and he inherited his father's position as a teacher and jurist - a serious, orthodox, well-regarded scholar with a school and a following, and by every account no poetry in him at all.</p>
+<p>Around 1244 he met Shams of Tabriz, a wandering dervish, and the meeting is the hinge of his entire life. The accounts differ wildly but agree on the effect: Rumi abandoned his teaching, spent months in seclusion with Shams, and returned transformed and unrecognisable to the people who depended on him. His students and family resented the stranger who had taken him.</p>
+<h3>What did Rumi write?</h3>
+<p>Shams disappeared, probably in 1248 and possibly murdered by Rumi's own disciples, and the loss produced the poetry. The Divan-e Shams-e Tabrizi is attributed to Shams rather than to himself, which is either an act of enormous humility or a statement about who the poems belong to. The Masnavi, roughly 25,000 couplets, is his major work and is regarded across the Persian-speaking world as one of the summits of the literature. After his death his followers founded the Mevlevi order, whose devotional practice - a turning dance performed as a form of prayer - gave the world the whirling dervishes. He is now among the best-selling poets in the United States, largely through versions by Coleman Barks, who does not read Persian and works from earlier translations; scholars have noted, consistently, that these versions strip out the Quranic references and the specifically Islamic frame, producing a Rumi who is spiritual in a way that suits a Western reader and is not quite the poet who existed.</p>`,
+      journey:`<p>Rumi is dominant Fi, and the Shams encounter is what it looks like when that function is finally given something it recognises. A man with a career, a household, a school and a reputation abandoned all of it for an internal certainty he could not have justified to anyone - and did not try to. The people around him experienced it as a catastrophe and a betrayal, which is generally how dominant Fi looks from outside when it finally moves.</p>
+<p>The auxiliary Ne is the poetry itself. The Masnavi proceeds by association - a story becomes a parable becomes an image becomes a digression that turns out to be the point - and its structure has frustrated systematisers for eight centuries. He is not building an argument about God; he is circling something using every image that will approach it, and the reed flute, the sun, the drunkenness and the beloved are all attempts at the same unsayable thing.</p>
+<h3>Why does the Western Rumi feel different?</h3>
+<p>Because the translations have removed the frame. Rumi was a Muslim jurist whose poetry is saturated with the Quran, and the popular English versions largely omit that, leaving the longing and discarding the tradition it was expressed inside. The result reads as generic spirituality, which is exactly what a Western market wanted. It is a real distortion and it is also, awkwardly, the reason he is read at all outside Persian. His tertiary Si is visible in how deeply the traditional material is embedded in the original work, and his inferior Te in the fact that he built no system, no doctrine and no order - the Mevlevi were founded by other people, after he died.</p>`,
+      mistype:`<p>INFJ is the most common alternative, given the mysticism and the enormous influence. The difference is the auxiliary. Ni with Fe produces teaching aimed at an audience; Rumi's poems are addressed to a beloved and to himself, they resist systematisation, and he founded nothing. The order was assembled posthumously by followers organising what he had left.</p>
+<p>ENFP is occasionally suggested because of the ecstatic register and the sheer volume. But the transformation happened in months of seclusion, the poetry came out of solitude and grief, and his response to losing Shams was withdrawal into composition rather than outward evangelism.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>The change happened in seclusion, and the enormous body of verse was produced in the years after a loss he did not discuss publicly. He abandoned a public teaching role for something entirely interior.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>The Masnavi moves by association - story into parable into image into digression - and refuses to resolve into doctrine. He approaches one thing from thousands of directions rather than defining it once.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">F</span><span class="letter-word">Feeling</span></div>
+  <p>He gave up a career, a reputation and a household for a personal certainty he never justified, and then attributed his own collected poems to the man he had lost. Every decision of his later life was made on internal conviction alone.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">P</span><span class="letter-word">Perceiving</span></div>
+  <p>He built no system, no order and no doctrine. The Mevlevi were founded after his death by followers organising what he had left behind, and the poetry itself resists every attempt to arrange it into a teaching.</p>
+</div>`
+    }
+  });
+
+
+  // ── Rewritten pages: full biography (who), journey, mistype and letter
+  // breakdown. Assigned after the block above so these entries win.
+  Object.assign(charContent, {
+    'marlin':{
+      whoHeading:`Who Is Marlin?`,
+      who:`<p>Marlin is the protagonist of Pixar's Finding Nemo, released in 2003 and voiced by Albert Brooks. He is a clownfish, and the film's first three minutes establish everything: he and his mate Coral are looking at their new anemone and their four hundred eggs, a barracuda attacks, and Marlin wakes up to find Coral gone and a single damaged egg remaining. He names it Nemo, which Coral had wanted.</p>
+<p>What follows is a portrait of a specific kind of parent. He is not neurotic in a general way - he is precisely, procedurally cautious about a particular set of dangers he has personally seen kill his family, and he manages Nemo's life accordingly: the checked routes, the rehearsed rules, the constant supervision, the reluctance to let a fish with one small fin go to school at all.</p>
+<h3>What is Finding Nemo actually about?</h3>
+<p>A parent learning that safety and life are not the same thing. Nemo, pushed into rebellion by the smothering, swims out to touch a boat and is taken by a diver, and Marlin crosses an ocean to get him back - through sharks, jellyfish, a whale and the East Australian Current - with Dory, a fish with no short-term memory who is his exact temperamental opposite. The line that lands is hers: he told Nemo nothing would ever happen to him, and if nothing ever happens to him, then nothing will ever happen to him. The film's other joke is structural - he is a clownfish who cannot tell a joke, and people keep expecting him to.</p>`,
+      journey:`<p>Marlin is dominant Si, and the opening scene is the function being installed by force. Si stores concrete experience in exact detail and uses it as the reference for everything afterwards, and Marlin's stored experience is a barracuda and an empty anemone. His caution is not irrational; it is the completely rational output of a catastrophic dataset with a sample size of one, applied for the rest of his life.</p>
+<p>The auxiliary Te is how it expresses itself. He does not worry vaguely, he organises: rules, routes, timings, checks, a procedure for every foreseeable situation. He is the parent with a system, and the system is genuinely competent - it just cannot cope with the fact that the thing it is protecting is a person who has to be allowed to go somewhere.</p>
+<h3>Why does Dory work as his opposite?</h3>
+<p>Because she is everything his inferior Ne is not. She cannot hold the past, cannot anticipate consequences, and improvises everything, which makes her useless as a planner and indispensable as a companion - she is the only creature in the ocean who can propose a course of action Marlin's stack would never generate. Just keep swimming is not advice he could ever have produced. His tertiary Fi is the private, unspoken, absolute love that drives the whole crossing, and he does not say any of it out loud until the very end.</p>`,
+      mistype:`<p>ISFJ is the most common alternative, given the protectiveness and the devotion. The difference is the auxiliary. Si with Fe manages through attunement to what somebody feels; Marlin manages through rules and procedures, and the film's central failure is that he never once reads what Nemo actually needs from him until it is far too late.</p>
+<p>INFJ is occasionally suggested because of the depth of the grief. But he is not operating on any vision of the future - he is defending against a specific remembered event, and his inability to imagine any outcome other than the one he has already lived through is the whole problem.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>He lives alone with his son in an anemone, avoids the wider reef, and carries the loss of Coral entirely privately for years. The journey forces him into company he would never have chosen.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">S</span><span class="letter-word">Sensing</span></div>
+  <p>His world is made of specific remembered dangers and specific practical precautions - the route, the current, the drop-off, the boat. He is precise about physical reality and precise about exactly which parts of it have killed his family.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">T</span><span class="letter-word">Thinking</span></div>
+  <p>His parenting is a risk-management system: rules, checks, procedures, contingencies. It is competent, defensible and completely unable to account for the one variable that matters, which is what it is doing to the child.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">J</span><span class="letter-word">Judging</span></div>
+  <p>Everything is settled in advance and nothing is left open. Once he decides to cross the ocean he does not stop, deviate or reconsider, which is the same rigidity that made him impossible to live with turned toward something worth doing.</p>
+</div>`
+    },
+    'bob-marley':{
+      whoHeading:`Who Was Bob Marley?`,
+      who:`<p>Robert Nesta Marley was born on 6 February 1945 in Nine Mile, Saint Ann Parish, Jamaica, to a Black Jamaican mother and a white English father who was largely absent, and died in Miami on 11 May 1981, aged thirty-six. He grew up in Trench Town in Kingston and formed the Wailers with Peter Tosh and Bunny Wailer in the early 1960s.</p>
+<p>Catch a Fire in 1973 was the record that took reggae out of Jamaica, and Exodus in 1977 - written largely in London while he was recovering from the shooting - is the one Time magazine later named album of the century. He was a Rastafari, and the faith is not incidental to the music: the theology, the politics and the songs are the same material.</p>
+<h3>What happened at the Smile Jamaica concert?</h3>
+<p>On 3 December 1976, two days before a free concert Marley had agreed to play in an attempt to ease the political violence tearing Kingston apart, gunmen entered his house at 56 Hope Road and opened fire. He was hit in the chest and the arm; his wife Rita was shot in the head and survived; his manager Don Taylor was seriously wounded. He played the concert two days later, wounded, and when asked why, said that the people trying to make the world worse were not taking a day off, so how could he. In April 1978 he returned from exile for the One Love Peace Concert and brought Michael Manley and Edward Seaga - the leaders of the two warring parties - onto the stage and held their hands together above his head. In 1980 he played the independence celebrations for Zimbabwe. A melanoma had been found under a toenail in 1977; amputation was advised and he declined it, and the cancer eventually spread to his lungs and brain.</p>`,
+      journey:`<p>Marley is dominant Fi, and the decision to play while bleeding is the clearest statement of it available. There was no strategic case for going on stage two days after being shot in a country where the shooters were still at large. There was an internal position about what he was for, and it did not negotiate with the circumstances. Every major choice of his life has the same shape: arrived at privately, acted on completely, explained afterwards in a single sentence if at all.</p>
+<p>The auxiliary Ne is the songwriting. His lyrics move by image and association - the burning fire, the exodus, the redemption song, the rain that falls on everyone - and their political content works precisely because it is not delivered as argument. He is not making a case for anything; he is producing images that turn out to contain one.</p>
+<h3>Why did he refuse the amputation?</h3>
+<p>Because Fi held a religious conviction about the integrity of the body and would not trade it, and because tertiary Si had bound him to a set of practices he had committed to years before. It killed him at thirty-six. The inferior Te is the same story in a different register: an artist who built no apparatus around himself, whose business affairs were chaotic, and whose estate spent decades in litigation because the man had made no arrangements at all. He was operating on conviction, and conviction supplies no administration.</p>`,
+      mistype:`<p>ENFP is the most common alternative, given the enormous public warmth and the stadiums. The difference is where the energy comes from. He was a private, watchful, somewhat withdrawn man off stage by most accounts, and the convictions were formed alone and in faith rather than generated in company.</p>
+<p>INFJ is occasionally suggested because of the prophetic register and the peace concert. But he was not orienting toward an audience's needs; he was stating what he believed and letting it land where it landed, and the Peace Concert gesture was a personal act of witness rather than a piece of political stagecraft.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>He was reserved and self-contained away from performance, and his faith was practised rather than preached at people. The convictions that governed his life were arrived at privately and announced only through the work.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>The songs work in images rather than arguments - exodus, fire, redemption, rain - and their politics arrive through metaphor. He is producing pictures that turn out to contain a position rather than setting out a case.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">F</span><span class="letter-word">Feeling</span></div>
+  <p>He played a concert two days after being shot because the people making the world worse were not resting. He refused an amputation on religious grounds and died at thirty-six. Both were private verdicts, and neither was up for discussion.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">P</span><span class="letter-word">Perceiving</span></div>
+  <p>He left no will, no structure and no arrangements, and his estate was litigated for decades. The life was lived on conviction and improvisation, and the administrative apparatus that a career of that size required was never built.</p>
+</div>`
+    },
+    'mycroft-holmes':{
+      whoHeading:`Who Is Mycroft Holmes?`,
+      who:`<p>Mycroft Holmes is Sherlock's elder brother by seven years, appearing in a small number of Conan Doyle stories - most importantly The Greek Interpreter, where Sherlock introduces him, and The Bruce-Partington Plans. Sherlock's assessment is the character's entire premise: that Mycroft possesses greater faculties of observation and deduction than he does, and that if the art of detection began and ended in reasoning from an armchair, his brother would be the greatest criminal agent who ever lived.</p>
+<p>He does not, because he cannot be bothered. He has no ambition and no energy, will not go out to verify his own conclusions, and would rather be thought wrong than take the trouble to prove himself right. He is physically large and immobile, and his life runs on a fixed circuit between his lodgings, Whitehall and the Diogenes Club.</p>
+<h3>What does Mycroft actually do?</h3>
+<p>He audits the government. His stated function is that of a clearing house: the departments each hold their own information, and Mycroft holds all of it simultaneously, so a minister with a question involving the navy, India, Canada and the bimetallic question can put it to one man and get an answer that nobody else in the country could assemble. Sherlock's summary is that Mycroft occasionally is the British government. The Diogenes Club, which he co-founded, is for the most unsociable men in London: no member may take the least notice of any other, and speaking is forbidden outside the Stranger's Room.</p>`,
+      journey:`<p>Mycroft is dominant Ni without the auxiliary being made to work for a living, and that is exactly what makes him interesting. He synthesises - takes an enormous quantity of disconnected information and produces the single conclusion it supports - and he does it faster and better than Sherlock. The difference between the brothers is not perception, it is what happens afterwards, and Conan Doyle is making a genuinely sharp point about how much of any achievement is legwork.</p>
+<p>The auxiliary Te does exist and it is doing something remarkable: he has built himself a governmental position that requires no movement at all. The clearing-house role is Te designing a system in which the conclusions can be delivered without the deliverer ever leaving a chair, and it is arguably a more efficient use of the same faculties than his brother's.</p>
+<h3>Why won't Mycroft leave his chair?</h3>
+<p>Because the inferior Se is close to non-functional and he has arranged his entire life around never needing it. Going out, looking at things, handling objects, being in the physical situation - the whole apparatus of Sherlock's practice is precisely what Mycroft's stack is worst at, and he has built a career in which somebody else does it. The tertiary Fi is visible in the one thing that moves him: he does come out, twice in the canon, and both times it is for his brother.</p>`,
+      mistype:`<p>INTP is sometimes suggested because of the intellectual detachment and the apparent lack of drive. The difference is what he does with the conclusion. An INTP would keep turning the framework over for its own interest; Mycroft produces a settled answer, delivers it to the government, and considers the matter closed. He is not exploring, he is deciding.</p>
+<p>ISTJ is occasionally proposed because of the fixed routine and the institutional role. But his value is synthesis across domains that have no procedural connection - navy, colonies, currency - and the whole point of him is that he sees the pattern nobody has assembled rather than that he remembers the file.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">I</span><span class="letter-word">Introverted</span></div>
+  <p>He co-founded a club where speaking is forbidden, for men who cannot tolerate company. His entire existence runs between three buildings, and Watson is startled to learn Sherlock has a brother at all.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>He holds every department's information at once and produces the conclusion that no individual department could reach. The faculty is pure synthesis, and Sherlock concedes it is better than his own.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">T</span><span class="letter-word">Thinking</span></div>
+  <p>He would rather be thought wrong than go out and prove himself right, which is an entirely unsentimental assessment of what proof is worth to him. His advice to ministers is impersonal, unhedged and correct.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">J</span><span class="letter-word">Judging</span></div>
+  <p>His life is a closed system: three locations, a fixed schedule, a defined role, no deviation. He has designed an existence in which every question arrives at a chair and leaves it answered.</p>
+</div>`
+    },
+    'emmanuel-macron':{
+      whoHeading:`Who Is Emmanuel Macron?`,
+      who:`<p>Emmanuel Jean-Michel Frédéric Macron was born on 21 December 1977 in Amiens, to two doctors. He studied philosophy at Nanterre, worked as an assistant to the philosopher Paul Ricoeur, went to Sciences Po and then to the École nationale d'administration, and became an inspector of finances. He left the civil service for Rothschild in 2008 and made a considerable amount of money, notably on Nestlé's acquisition of Pfizer's infant nutrition business.</p>
+<p>He met Brigitte Auzière when he was fifteen and she was his drama teacher, twenty-four years older and married with three children. They married in 2007. It is the fact about him that the French press could never leave alone and that he has never shown the slightest interest in explaining.</p>
+<h3>How did Macron become president?</h3>
+<p>By building a vehicle rather than joining one. He was appointed economy minister under François Hollande in 2014, founded his own movement, En Marche, in April 2016, and resigned from the government that August to run. Neither of the two parties that had governed France for sixty years made the second round. He beat Marine Le Pen in May 2017 with 66 percent and beat her again in 2022, becoming the first French president to be re-elected in twenty years. His presidency has been defined by resistance: the gilets jaunes protests from late 2018, and the pension reform of 2023 raising the retirement age, forced through using article 49.3 without a vote. In June 2024 he responded to a European election defeat by dissolving the National Assembly, and the resulting parliament left him without a working majority.</p>`,
+      journey:`<p>Macron is dominant Te, and the route to the presidency is the function in its purest political form. Presented with a system in which power ran through two established parties, he did not work his way up either. He assessed what the office actually required - a movement, a funding structure, a candidate, a machine - and built it from nothing in twelve months. Te does not accept that the existing channels are the only channels; it asks what the objective needs and constructs it.</p>
+<p>The auxiliary Ni is why the timing worked. He read the exhaustion of the French party system before anyone else was prepared to act on it, and his entire gamble depended on a forecast that both traditional parties would collapse simultaneously - which they did, on schedule, in his favour.</p>
+<h3>Why is Macron so unpopular in France?</h3>
+<p>Because Te drives decisions through and inferior Fi has almost no register for how that feels to the person on the receiving end. The pension reform was pushed through without a parliamentary vote because he had concluded it was necessary and the arithmetic did not permit one; the gilets jaunes began over a fuel tax that was defensible on paper and landed as contempt. His tertiary Se supplies the considerable personal presence and the appetite for confrontation - he goes into hostile crowds and argues - but the recurring criticism, that he is Jupiterian and does not listen, is a fair description of what this stack looks like from below.</p>`,
+      mistype:`<p>INTJ is sometimes suggested because of the intellectual formation and the strategic patience. But he is relentlessly outward: campaigning, debating, arguing with hecklers in market squares, running a movement built entirely on personal contact. The vision is real and it is in second position behind an operator.</p>
+<p>ENTP is occasionally proposed because of the political improvisation and the willingness to break the system. The difference is closure. En Marche was not an experiment, it was an instrument built for a specific objective on a specific timetable, and he has governed by forcing decisions to conclusions rather than by keeping options open.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">E</span><span class="letter-word">Extraverted</span></div>
+  <p>He built a national movement out of door-to-door conversations, debates for hours in hostile rooms, and has never avoided a confrontation with a crowd. The energy is generated by the argument rather than depleted by it.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>He staked everything on a forecast that both established parties would collapse at the same election, and resigned a ministerial post to bet on it. The read was made well before the evidence would have justified it.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">T</span><span class="letter-word">Thinking</span></div>
+  <p>He forced through a pension reform without a parliamentary vote because he had concluded the arithmetic required it. The reasoning is consistently structural, and the political cost is treated as a variable rather than as a signal.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">J</span><span class="letter-word">Judging</span></div>
+  <p>A movement, a campaign, a presidency and a reform programme, each built and driven to a conclusion. Even the 2024 dissolution was a decision taken alone and executed immediately, whatever it cost.</p>
+</div>`
+    },
+    'vin-diesel-dominic-toretto':{
+      whoHeading:`Who Is Vin Diesel?`,
+      who:`<p>Mark Sinclair was born on 18 July 1967 in Alameda County, California, and raised in Greenwich Village by his mother and his stepfather Irving Vincent, an acting teacher and theatre manager. He has never met his biological father and has consistently declined to categorise his own ethnicity, describing himself as a person of colour without specifying further - a position that shaped his early career, because casting directors did not know what to do with him. He worked as a bouncer in New York and took the name Vin Diesel there.</p>
+<p>Unable to get parts, he made a short film himself in 1995 called Multi-Facial, about a mixed-race actor being turned down for not being any one thing clearly enough. Steven Spielberg saw it, and wrote a role for him in Saving Private Ryan.</p>
+<h3>What is Dominic Toretto?</h3>
+<p>The character he has played since The Fast and the Furious in 2001, and the vehicle for the largest idea in the franchise. Dom is a street racer and career criminal whose organising principle is the crew - the people at his table, the barbecue, the grace said before the meal, the repeated insistence that you do not turn your back on family. It began as a genre convention and became genuinely load-bearing, and the reason is Paul Walker. Walker played Brian O'Conner from the first film and died in a car crash in November 2013 during production of the seventh. Furious 7 ends with a sequence written to retire the character rather than kill him, and the franchise has treated the loss as real ever since. Diesel has been open that the two of them were close, named his daughter Pauline, and that the thing the films are about stopped being fictional for him.</p>`,
+      journey:`<p>Diesel is dominant Fe, which is not the obvious reading of a man who is mostly photographed scowling next to a car. But look at what he actually built. The franchise's entire proposition is belonging - a group of people who are not related choosing each other and behaving as though the choice were binding - and he has protected that idea across two decades and eleven films, against every commercial argument for making them straightforwardly about heists. Fe orients toward the group and its bonds, and he made a billion-dollar action series about exactly that.</p>
+<p>The auxiliary Si is why it works rather than being sentimental. The films run on ritual: the same barbecue, the same grace, the same Corona, the same phrase. Si maintains a set of practices and repeats them precisely, and the repetition is what makes an audience feel the thing rather than be told it.</p>
+<h3>Why does the family theme land?</h3>
+<p>Because it comes from somewhere. A man who never met his father, was raised by a stepfather who chose him, and could not get work because nobody could categorise him, made his career about a group of people who decide to belong to each other regardless of what they are. The tertiary Ne is the willingness to take the franchise somewhere absurd - to space, eventually - and the inferior Ti is the standing criticism, that the films long ago stopped making internal sense and that he does not appear to consider this a problem. He is not optimising for coherence. He is optimising for the feeling at the table.</p>`,
+      mistype:`<p>ESTP is the most common alternative for an action star, and the physical presence supports it. The difference is what drives the choices. An Se-dominant performer works the immediate moment; Diesel has spent twenty years protecting a thematic commitment across a franchise, which is a sustained relational project rather than a series of situations.</p>
+<p>ISFP is occasionally suggested because of the guardedness and the evident sincerity. But he is a producer, a franchise architect and a public custodian of an idea, working continuously through and for a group. The energy runs toward people.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">E</span><span class="letter-word">Extraverted</span></div>
+  <p>He built and holds together an ensemble across two decades, produces the films himself, and conducts a great deal of his relationship with the audience directly. The whole enterprise is organised around a group rather than a star turn.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">S</span><span class="letter-word">Sensing</span></div>
+  <p>The franchise runs on repeated concrete ritual: the same table, the same grace, the same drink, the same phrase. The emotional weight is carried by specific recurring physical detail rather than by anything anyone says.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">F</span><span class="letter-word">Feeling</span></div>
+  <p>He made a billion-dollar action series about belonging, and after Paul Walker's death he treated the loss as the franchise's own rather than as a production problem. The commitment to the theme is personal and it predates the money.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">J</span><span class="letter-word">Judging</span></div>
+  <p>Twenty years of a single sustained project with a fixed thematic centre, protected against every argument for changing it. He decided what the films were about early and has not permitted them to be about anything else.</p>
+</div>`
+    },
+    'yennefer-of-vengerberg':{
+      whoHeading:`Who Is Yennefer of Vengerberg?`,
+      who:`<p>Yennefer is a sorceress in Andrzej Sapkowski's Witcher novels, the CD Projekt Red games and the Netflix adaptation. She was born with a curvature of the spine and is a quarter-elf, in a world where both facts mark a person out, and her early life is written as unrelieved: a father who beat her, a mother who did not intervene, and an attempted suicide before she was sold to the magical academy at Aretuza.</p>
+<p>The price is the detail that defines her. Tissaia de Vries bought her from her stepfather for four marks. Sapkowski's point is not subtle and does not need to be.</p>
+<h3>What did Yennefer give up?</h3>
+<p>At Aretuza she underwent the transformation that sorceresses submit to - a process that rebuilds the body into the conventional beauty the profession requires, and which leaves the practitioner sterile. She emerged extraordinarily powerful and extraordinarily beautiful and unable to have children, and the pursuit of a reversal is the through-line of her entire arc across novels, games and adaptation. Her relationship with Geralt of Rivia begins with a djinn - his last wish binds their fates together, and neither of them can subsequently establish how much of what they feel is theirs, which is a genuinely interesting problem to give two characters. She becomes, with Geralt, the adoptive mother of Ciri, and the found family is where the arc actually resolves.</p>`,
+      journey:`<p>Yennefer is dominant Te, and the transformation is the function making a decision most people would find monstrous. Presented with a body that had determined her entire life, she assessed what she wanted, established what it would cost, and paid it - permanently and knowingly. That is not vanity. It is an operator identifying the obstacle to an objective and removing it, and the fact that the obstacle was her own capacity to bear children is exactly why the character is not comfortable.</p>
+<p>The auxiliary Ni is why she is more than ambitious. She plays a very long game in a world where mages live for centuries, and she is consistently positioning for configurations that have not arrived - political, magical and personal. Her interventions in the wars and the councils are made on a read of where power will sit rather than where it currently does.</p>
+<h3>Why does she want a child so badly?</h3>
+<p>Because tertiary Fi holds the one thing that Te cannot deliver, and she has spent a lifetime discovering that. She acquired power, beauty, standing and influence by making a trade, and the trade turns out to have removed the only thing she cannot acquire by any means available to her. The inferior Se is where she is least controlled - the volatility, the affairs, the physical recklessness - and Ciri is the resolution the books are actually building toward: not a cure, but a daughter obtained the way everything else in her life was, by choosing and then refusing to let go.</p>`,
+      mistype:`<p>INTJ is the most common alternative, given the strategic depth and the guardedness. The difference is where she operates. Yennefer is a court sorceress, a council member and a political actor who works in rooms full of powerful people and dominates them; she does not build from a distance. The organisation and the personal command are the primary instruments.</p>
+<p>ENTP is occasionally suggested because of the wit and the improvisational magic. But she converges rather than explores - one objective pursued across decades, with everything else subordinated to it - and her plans are executed rather than played with.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">E</span><span class="letter-word">Extraverted</span></div>
+  <p>She operates in courts, councils and negotiations, and her power is exercised on people in rooms. She is a formidable presence by design, and the presence is part of the instrument rather than incidental to it.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>She plays for positions that will exist in decades, in a world where she has centuries. Her political and magical manoeuvring is consistently aimed at a configuration nobody else has anticipated.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">T</span><span class="letter-word">Thinking</span></div>
+  <p>She assessed her own body as an obstacle and paid a permanent, irreversible price to remove it. Every major decision she makes is a cost-benefit calculation carried out clearly, including the ones that damage her.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">J</span><span class="letter-word">Judging</span></div>
+  <p>She decides and then executes without revisiting. The transformation, the pursuit of a cure, the claim on Ciri - each is a settled position held across decades against considerable resistance from everyone including Geralt.</p>
+</div>`
+    },
+    'roald-dahl':{
+      whoHeading:`Who Was Roald Dahl?`,
+      who:`<p>Roald Dahl was born on 13 September 1916 in Cardiff to Norwegian parents and died in Oxford on 23 November 1990, aged seventy-four. When he was three his sister Astri died of appendicitis and his father Harald died of pneumonia shortly afterwards - two bereavements in a matter of weeks, which is the kind of opening that turns up transfigured in almost everything he wrote.</p>
+<p>He was at Repton from 1929 to 1934, and Cadbury, whose factory was nearby, sent boxes of experimental chocolate bars to the school for the boys to test and score. He has said plainly that this is where Charlie and the Chocolate Factory began. He joined the RAF in November 1939, and on 19 September 1940 crash-landed a Gloster Gladiator in the Libyan desert, fracturing his skull and losing his sight temporarily. He flew again afterwards and finished with five confirmed victories.</p>
+<h3>What did Dahl write, and what should be said about him?</h3>
+<p>Both things belong here. He wrote macabre adult short stories for Collier's, the New Yorker and Playboy - taut, cruel and built around reversals - and won three Edgar Awards. The children's books came later: James and the Giant Peach, Charlie and the Chocolate Factory, Fantastic Mr Fox, The Twits, The BFG, The Witches, Matilda. They have sold more than three hundred million copies. His life contained two events he wrote about rarely and which shaped him enormously: in December 1960 his four-month-old son Theo was hit by a taxi in New York and developed hydrocephalus, and Dahl helped develop the Wade-Dahl-Till valve that went on to treat around three thousand children; in November 1962 his seven-year-old daughter Olivia died of measles encephalitis, after which he campaigned for immunisation for the rest of his life. He was also, repeatedly and on the record, antisemitic - in a 1983 book review and again in a 1990 interview - and his family published an apology on his official website in 2020.</p>`,
+      journey:`<p>Dahl is dominant Ne, and the children's books are the function given permission. A peach the size of a house. A factory with a chocolate river and a workforce nobody has seen. A grandmother who is a witch, a fox who tunnels into three farms, a giant who collects dreams in jars. He does not develop premises, he generates them, and the reason the books have lasted is that the invention is genuinely inexhaustible rather than decorative.</p>
+<p>The auxiliary Ti is why they are structurally hard. Dahl's stories are engineered like his adult ones: every element pays off, the cruelty follows rules, and the children who are punished are punished by their own defining appetite with a precision that reads as fairness to a child audience. He worked out the mechanism and then executed it exactly.</p>
+<h3>How should the antisemitism be handled?</h3>
+<p>By stating it. He said in 1983 that Jews had gone from being pitied victims to barbarous murderers, and in 1990 that Jewish people controlled the media, and these were not slips - they were positions he repeated and did not retract. The tertiary Fe explains the shape of it: an unmanaged feeling function generating fierce loyalties and fierce enmities without much regulation, and he was by many accounts difficult, combative and cruel in person as well as on the page. The inferior Si is why nothing accumulated into a reconsideration. His family's 2020 apology is the closest thing to one that exists, and it came thirty years after his death.</p>`,
+      mistype:`<p>ENFP is sometimes suggested because of the imaginative warmth and the evident love of childhood. The difference is the auxiliary. Ne with Fi produces work anchored by a personal moral position; Dahl's stories run on mechanism and reversal, the morality is structural rather than felt, and his own conduct repeatedly failed the standards his books appear to endorse.</p>
+<p>ENTJ is occasionally proposed because he built a formidable commercial operation around the work. But he built nothing beyond his own desk in any real sense - the invention came first and the businesses followed the books, and his working life was a series of enthusiasms rather than a constructed enterprise.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">E</span><span class="letter-word">Extraverted</span></div>
+  <p>He was a conversationalist, a raconteur and a considerable public presence, and by many accounts an exhausting one. The stories were tested out loud on children before they were written down.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">N</span><span class="letter-word">Intuitive</span></div>
+  <p>A giant peach, a chocolate river, dreams in jars, a witch's convention. He generated premises at a rate that sustained an entire second career after the adult stories, and none of them are variations on each other.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">T</span><span class="letter-word">Thinking</span></div>
+  <p>The books are engineered. The cruelty follows consistent rules, every setup pays off, and the punishments fit the appetite exactly - which is why children find them satisfying rather than frightening. It is the short-story mechanic applied to a nursery.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">P</span><span class="letter-word">Perceiving</span></div>
+  <p>Pilot, intelligence officer, screenwriter, adult short-story writer, children's author, medical-device collaborator. He kept opening new things and rarely consolidated any of them, and his positions - including the worst ones - were never revisited.</p>
+</div>`
+    },
+    'rihanna':{
+      whoHeading:`Who Is Rihanna?`,
+      who:`<p>Robyn Rihanna Fenty was born on 20 February 1988 in Saint Michael, Barbados. She was discovered on the island at fifteen by the producer Evan Rogers, flew to New York, and auditioned for Jay-Z at Def Jam at sixteen; the story is that he refused to let her leave the building until the contract was signed.</p>
+<p>What followed was an unusually relentless release schedule - seven albums between 2005 and 2012, at a rate the industry had largely abandoned - producing fourteen number one singles on the Billboard Hot 100 and a run of reinventions across pop, dancehall, EDM and R&B. Anti, in 2016, is the record critics generally rank highest, and it is also the last one.</p>
+<h3>What is Fenty?</h3>
+<p>The second career, and the larger one. Fenty Beauty launched in September 2017 with forty foundation shades at a time when major cosmetics brands routinely offered a dozen, most of them light. The deepest shades sold out first, which was the point being made: the market had always existed and the industry had simply not served it. Competitors were reformulating within a year, and the phrase the Fenty effect entered the trade press. Savage X Fenty followed in lingerie with a similar approach to sizing and casting. She became the wealthiest female musician in the world on the strength of the businesses rather than the music, was named a National Hero of Barbados in 2021, and headlined the Super Bowl halftime show in 2023 while visibly pregnant, which is the most Rihanna decision available.</p>`,
+      journey:`<p>Rihanna is dominant Se, and it explains both the music and the business. Her records are physical before they are conceptual - built on rhythm, texture and delivery rather than on narrative - and she moved between genres by reading what was happening in a room rather than by developing a thesis. She was never the technically best singer in the top ten and was consistently the most present.</p>
+<p>The auxiliary Ti is the Fenty insight, and it is a genuinely analytical one. Forty shades is not a gesture; it is the correct answer to a question the industry had been getting wrong for decades, and the sell-out pattern proved it empirically within days. She identified a structural inefficiency, built the product that resolved it, and let the market demonstrate the argument for her.</p>
+<h3>Why did she stop making music?</h3>
+<p>Because Se responds to what is in front of it, and what is in front of her is a company. There is no evidence of a strategic decision to retire from music, and she has repeatedly said the album is coming; there is simply a person whose attention is fully engaged by something present and immediate. The tertiary Fe is why the brands work - the casting, the tone, the reading of who has been left out - and the inferior Ni is why the album has been imminent for a decade. Long-range personal planning is the weakest thing in the stack, and it does not need to be strong when everything else is working.</p>`,
+      mistype:`<p>ESFP is the most common alternative, and for a pop star of that magnetism it is the standard guess. The difference is the auxiliary. Se with Fi produces an artist whose choices follow a personal standard; Rihanna's defining move was a cold, correct analysis of a market failure, and her business decisions read as unsentimental throughout.</p>
+<p>ENTJ is occasionally suggested because of the scale of what she has built. But she did not plan a beauty empire; she responded to something she noticed, built it, and let it grow. The strategy is real and it is downstream of an immediate observation rather than of a long-range design.</p>`,
+      letters:`<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">E</span><span class="letter-word">Extraverted</span></div>
+  <p>She is a performer, a brand founder and a public figure who works through direct presence - the show, the campaign, the appearance. Her instinct with anything is to put it in front of people and read the response.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">S</span><span class="letter-word">Sensing</span></div>
+  <p>Her music is physical rather than conceptual, built on rhythm and delivery, and her business is about products people put on their skin. Everything she has succeeded at is immediate, tangible and encountered directly.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">T</span><span class="letter-word">Thinking</span></div>
+  <p>Forty shades was an argument, and she let the sales data make it rather than the press release. The whole Fenty proposition is a cool analysis of what an industry had been getting wrong and what it would cost to be right.</p>
+</div>
+<div class="letter-block">
+  <div class="letter-display"><span class="letter-big">P</span><span class="letter-word">Perceiving</span></div>
+  <p>Seven albums in eight years and then nothing for a decade, with an album perpetually about to arrive. Nothing about her career has been scheduled; she moves to whatever is currently absorbing her and the rest waits.</p>
+</div>`
+    }
+  });

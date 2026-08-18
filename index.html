@@ -143,6 +143,21 @@
   .fn-body { flex: 1; }
   .fn-pos { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
   .fn-desc { font-size: 13px; line-height: 1.6; color: #cdc7c0; }
+  /* evidence: the scenarios that produced the result */
+  .ev-dim { margin-bottom: 30px; }
+  .ev-dim:last-child { margin-bottom: 0; }
+  .ev-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 6px; flex-wrap: wrap; }
+  .ev-name { font-family: 'Cormorant Garamond', serif; font-size: 23px; font-weight: 300; color: var(--cream); line-height: 1.2; }
+  .ev-pct { font-size: 12px; letter-spacing: 0.1em; color: var(--gold); }
+  .ev-verdict { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--border); border-radius: 999px; padding: 3px 10px; }
+  .ev-dim.tight .ev-verdict { color: var(--gold); border-color: var(--gold-dim); }
+  .ev-count { font-size: 13px; line-height: 1.7; color: var(--muted); margin-bottom: 16px; max-width: 540px; }
+  .ev-list { display: flex; flex-direction: column; gap: 10px; }
+  .ev-item { background: var(--surface); border: 1px solid var(--border); border-left: 2px solid var(--gold-dim); border-radius: 12px; padding: 14px 18px; }
+  .ev-scene { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 7px; }
+  .ev-choice { font-size: 14px; line-height: 1.65; color: #cdc7c0; font-weight: 300; }
+  .ev-fn { font-size: 11px; letter-spacing: 0.08em; color: var(--gold); margin-top: 9px; }
+  @media (max-width: 580px) { .ev-name { font-size: 20px; } }
   /* two column cards */
   .rb-twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .rb-card { border: 1px solid var(--border); border-radius: 14px; padding: 22px; background: var(--surface); }
@@ -919,6 +934,13 @@
       <div id="spectrum-bars"></div>
     </div>
 
+    <!-- EVIDENCE: the scenarios that produced this result -->
+    <div class="rb-block" id="evidence-block" style="display:none;">
+      <div class="rb-label">Why you came out this way</div>
+      <p class="rb-sub" id="evidence-sub"></p>
+      <div id="evidence-dims"></div>
+    </div>
+
     <!-- RARITY -->
     <div class="rb-block" id="rarity-block">
       <div class="rb-stat"><span class="rb-num" id="rarity-num"></span><span class="rb-cap" id="rarity-cap"></span></div>
@@ -1012,12 +1034,20 @@
         <div style="font-size:14px;color:#ede8df;">Saved. Your result has been stored.</div>
       </div>
       <div id="eb6" style="display:none;font-size:13px;color:#e07070;margin-top:12px;"></div>
+      <!-- Shown when an ad blocker has hidden the form controls above. The
+           result screen looks for this element by id; it was referenced but
+           never actually added to the page, so the branch threw instead of
+           explaining why the form had disappeared. -->
+      <div id="eb7" style="display:none;font-size:13px;color:#b5ada6;line-height:1.6;margin-top:12px;">
+        Your ad blocker is hiding part of this form. Disable it for this page to save your result by email, or
+        <a href="/signup" style="color:#c9a84c;">create an account</a> and it will save to your profile automatically.
+      </div>
     </div>
   </div>
 
 
 <!-- BURST OVERLAY -->
-<div id="screen-burst">>
+<div id="screen-burst">
     <div class="burst-flash" id="burst-flash"></div>
     <div class="burst-intro" id="burst-intro">
       <div class="burst-eyebrow">Quick round</div>
@@ -1739,13 +1769,14 @@ function showResultsActual() {
 
   document.getElementById('progress-fill').style.width = '100%';
   const deepLink = document.getElementById('type-deep-link');
-  if (deepLink) { deepLink.href = `/types/${type.toLowerCase()}`; deepLink.textContent = `${type} deep dive →`; }
+  if (deepLink) { deepLink.href = `${LANG_PREFIX}/types/${type.toLowerCase()}`; deepLink.textContent = `${type} deep dive →`; }
   const archLink = document.getElementById('archive-type-link');
-  if (archLink) { archLink.href = `/archive?q=${type}`; archLink.textContent = `${type} characters →`; }
+  if (archLink) { archLink.href = `${LANG_PREFIX}/archive?q=${type}`; archLink.textContent = `${type} characters →`; }
   const compatLink = document.getElementById('compat-link');
-  if (compatLink) compatLink.href = `/compatibility`;
+  if (compatLink) compatLink.href = `${LANG_PREFIX}/compatibility`;
   const fnLink = document.getElementById('functions-link');
-  if (fnLink) fnLink.href = `/functions?t=${type}`;
+  if (fnLink) fnLink.href = `${LANG_PREFIX}/functions?t=${type}`;
+  renderEvidence(type);
   renderTypeDetail(type);
   showScreen('screen-result');
   setTimeout(() => document.querySelectorAll('.spectrum-fill').forEach(el => el.style.width = el.dataset.target+'%'), 200);
@@ -1756,6 +1787,268 @@ function showResultsActual() {
     }
   }, 300);
   if (window._sbSaveResult) window._sbSaveResult(type, scores);
+}
+
+/* ── EVIDENCE ──────────────────────────────────────────────────
+   Every scenario carries the dimension it tests (dim) and the pair of
+   cognitive functions its two answers credit (fn), and history[i] lines up
+   with orderedQuestions[i]. So the result can be traced back to the actual
+   choices that produced it, which is the one thing a Likert test cannot do.
+   ───────────────────────────────────────────────────────────── */
+/* Evidence-block copy. Kept in one map so the i18n build can translate it:
+   these live inside a <script>, which the markup scanner skips by design. */
+const EV_TEXT = {
+  dimE: 'Extroversion', dimI: 'Introversion',
+  dimS: 'Sensing',      dimN: 'Intuition',
+  dimT: 'Thinking',     dimF: 'Feeling',
+  dimJ: 'Judging',      dimP: 'Perceiving',
+  verdictClear: 'Clear', verdictSlight: 'Slight lean', verdictTight: 'Too close to call',
+  count: '{n} of your {total} {dim} scenarios pointed to {name}.',
+  flipOne: 'Changing a single answer would flip it.',
+  flipMany: 'Changing {n} answers would flip it.',
+  countEven: 'Your {dim} answers split almost evenly. {name} came out ahead on which cognitive functions your choices credited, not on raw count.',
+  sub: 'You were never asked to rate yourself. Each of the {n} scenarios tested one dimension. Here is what you actually chose.',
+  subTight: 'You were never asked to rate yourself. Each of the {n} scenarios tested one dimension, and {k} of them came down to a handful of answers. Here is what you actually chose.',
+  credited: 'Credited {fn}'
+};
+const evT = (key, vars) => String(EV_TEXT[key] || '').replace(/\{(\w+)\}/g, (m, k) => (vars && vars[k] != null ? vars[k] : m));
+
+/* Path prefix for links built at runtime. Empty on the English site; the
+   i18n build sets it to "/es", "/ja" and so on. Markup hrefs are rewritten
+   by the build, but these are assigned by script and would otherwise send a
+   reader from /ja straight back into the English pages. */
+const LANG_PREFIX = '';
+
+const EV_DIMS = [
+  { key:'EI', a:'E', b:'I' },
+  { key:'SN', a:'S', b:'N' },
+  { key:'TF', a:'T', b:'F' },
+  { key:'JP', a:'J', b:'P' }
+];
+
+/* Does this cognitive function actually argue for that pole? Attitude (the
+   second letter) carries E/I; the first letter carries S/N and T/F; and J/P
+   rides on which kind of function a type extraverts. */
+function fnSupports(fn, pole) {
+  if (!fn || fn.length !== 2) return false;
+  const family = fn[0], attitude = fn[1];
+  switch (pole) {
+    case 'E': return attitude === 'e';
+    case 'I': return attitude === 'i';
+    case 'S': return family === 'S';
+    case 'N': return family === 'N';
+    case 'T': return family === 'T';
+    case 'F': return family === 'F';
+    case 'J': return fn === 'Te' || fn === 'Fe';
+    case 'P': return fn === 'Se' || fn === 'Ne';
+  }
+  return false;
+}
+
+function buildEvidence(type) {
+  if (!Array.isArray(history) || !Array.isArray(orderedQuestions)) return null;
+  if (!history.length || history.length > orderedQuestions.length) return null;
+
+  // Bucket each answered scenario under the dimension it tested.
+  const byDim = {};
+  history.forEach((h, i) => {
+    const q = orderedQuestions[i];
+    if (!q || !q.dim || !h) return;
+    const pole = h.letter;
+    const fn = q.fn ? q.fn.split('/')[h.choice === 'A' ? 0 : 1] : null;
+    (byDim[q.dim] = byDim[q.dim] || []).push({
+      scene: q.scene, text: h.choice === 'A' ? q.a : q.b, pole, fn
+    });
+  });
+
+  const bs = getBlendedScores();
+  const stack = (typeExtra[type] && typeExtra[type].stack) || [];
+  const out = [];
+
+  for (const d of EV_DIMS) {
+    const rows = byDim[d.key] || [];
+    if (!rows.length) continue;
+    // The winner is taken from the blended score, so this always agrees with
+    // the four letters and the spectrum bars above.
+    const total = bs[d.a] + bs[d.b];
+    const aWins = bs[d.a] >= bs[d.b];
+    const pct = total === 0 ? 50 : Math.round(((aWins ? bs[d.a] : bs[d.b]) / total) * 100);
+    const pole = aWins ? d.a : d.b;
+    const name = EV_TEXT['dim' + (aWins ? d.a : d.b)];
+
+    const picked = rows.filter(r => r.pole === pole);
+    const verdict = pct >= 66 ? EV_TEXT.verdictClear : pct >= 56 ? EV_TEXT.verdictSlight : EV_TEXT.verdictTight;
+
+    // A scenario's fn pair is not tied to its dim: a TF scenario can credit
+    // Fe on the answer that scores T, because the function feeds the
+    // secondary pole instead. Naming that function here would read as a flat
+    // contradiction ("pointed to Thinking, credited Fe"), so the function is
+    // only ever shown on answers where it genuinely backs the pole.
+    const supported = picked.filter(r => fnSupports(r.fn, pole));
+    const rank = (r) => {
+      const i = r.fn ? stack.indexOf(r.fn) : -1;
+      return i === -1 ? 99 : i;
+    };
+    const sorted = supported.slice().sort((x, y) => rank(x) - rank(y));
+    // One per distinct function first. Sorting alone puts the dominant
+    // function in all three slots, which reads as the same card three times.
+    const seen = new Set(), ranked = [];
+    for (const r of sorted) {
+      if (seen.has(r.fn)) continue;
+      seen.add(r.fn); ranked.push(r);
+      if (ranked.length === 3) break;
+    }
+    for (const r of sorted) {
+      if (ranked.length === 3) break;
+      if (!ranked.includes(r)) ranked.push(r);
+    }
+    // Backfill from the remaining answers, with no function attributed.
+    for (const r of picked) {
+      if (ranked.length === 3) break;
+      if (!ranked.includes(r)) ranked.push({ ...r, fn: null });
+    }
+
+    let count;
+    if (picked.length > rows.length / 2) {
+      count = evT('count', { n: picked.length, total: rows.length, dim: d.key, name });
+      if (verdict === EV_TEXT.verdictTight) {
+        const flip = Math.floor((picked.length - (rows.length - picked.length)) / 2) + 1;
+        count += ' ' + (flip === 1 ? EV_TEXT.flipOne : evT('flipMany', { n: flip }));
+      }
+    } else {
+      // Raw count went the other way and the function weighting decided it.
+      count = evT('countEven', { dim: d.key, name });
+    }
+
+    out.push({ name, pct, verdict, count, tight: verdict === EV_TEXT.verdictTight, items: ranked });
+  }
+  return out.length ? out : null;
+}
+
+function renderEvidence(type) {
+  const block = document.getElementById('evidence-block');
+  if (!block) return;
+  const ev = buildEvidence(type);
+  if (!ev) { block.style.display = 'none'; return; }
+
+  const esc = (s) => String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const tight = ev.filter(e => e.tight).length;
+
+  const sub = document.getElementById('evidence-sub');
+  if (sub) {
+    sub.textContent = tight
+      ? evT('subTight', { n: history.length, k: tight })
+      : evT('sub', { n: history.length });
+  }
+
+  document.getElementById('evidence-dims').innerHTML = ev.map(e => `
+    <div class="ev-dim${e.tight ? ' tight' : ''}">
+      <div class="ev-head">
+        <span class="ev-name">${esc(e.name)}</span>
+        <span class="ev-pct">${e.pct}%</span>
+        <span class="ev-verdict">${esc(e.verdict)}</span>
+      </div>
+      <p class="ev-count">${esc(e.count)}</p>
+      <div class="ev-list">
+        ${e.items.map(it => `
+          <div class="ev-item">
+            <div class="ev-scene">${esc(it.scene)}</div>
+            <div class="ev-choice">${esc(it.text)}</div>
+            ${it.fn ? `<div class="ev-fn">${esc(evT('credited', { fn: it.fn }))}${fnInfo[it.fn] ? ' &middot; ' + esc(fnInfo[it.fn].split('.')[0]) : ''}</div>` : ''}
+          </div>`).join('')}
+      </div>
+    </div>`).join('');
+  block.style.display = '';
+}
+
+const FN_FULL = {
+  Se: 'Extraverted Sensing',  Si: 'Introverted Sensing',
+  Ne: 'Extraverted Intuition', Ni: 'Introverted Intuition',
+  Te: 'Extraverted Thinking',  Ti: 'Introverted Thinking',
+  Fe: 'Extraverted Feeling',   Fi: 'Introverted Feeling'
+};
+const MODE_LABEL = { myth: 'Mythical scenarios', normal: 'Everyday scenarios', both: 'Both worlds' };
+const AXIS_LABEL = {
+  EI: 'Extroversion vs Introversion', SN: 'Sensing vs Intuition',
+  TF: 'Thinking vs Feeling',          JP: 'Judging vs Perceiving'
+};
+const OPP_LETTER = { E:'I', I:'E', S:'N', N:'S', T:'F', F:'T', J:'P', P:'J' };
+
+/* The result, in the exact shape the send-result-email function expects
+   (name, tagline, rarity, description, spectrum, stack, moments, neighbours).
+   That template was already written and has never been used: saveResult never
+   sent a `details` object, so every email so far fell through to the plain
+   fallback branch. `evidence` rides along for the profile page; the email
+   function ignores keys it does not know. */
+function computeResultModel(type) {
+  const d = typeData[type] || {}, ex = typeExtra[type] || {};
+  const bs = getBlendedScores();
+
+  // typeExtra stores a range ("2-4%"); the email wants a single number, and
+  // compares it against 4 to decide the "one of the rarest types" prefix.
+  const nums = String(ex.rarity || '').match(/\d+/g);
+  const rarity = nums && nums.length
+    ? Math.round(nums.reduce((a, b) => a + Number(b), 0) / nums.length) : null;
+
+  const DIMS = [{key:'EI',a:'E',b:'I'}, {key:'SN',a:'S',b:'N'},
+                {key:'TF',a:'T',b:'F'}, {key:'JP',a:'J',b:'P'}];
+  const spectrum = DIMS.map((x) => {
+    const total = bs[x.a] + bs[x.b], aWins = bs[x.a] >= bs[x.b];
+    const pct = total === 0 ? 50 : Math.round(((aWins ? bs[x.a] : bs[x.b]) / total) * 100);
+    return { label: aWins ? x.a : x.b, loseLabel: aWins ? x.b : x.a, pct };
+  });
+
+  const stack = (ex.stack || []).map((fn, i) => ({
+    rank: fnPos[i] || '', name: FN_FULL[fn] || fn, fn,
+    desc: fnInfo[fn] || '', count: (fnScores && fnScores[fn]) || 0
+  }));
+
+  // One moment per dimension, closest call first: those are the ones a reader
+  // actually learns something from.
+  const ev = buildEvidence(type) || [];
+  const moments = ev.slice().sort((x, y) => x.pct - y.pct).map((e) => {
+    const it = (e.items || [])[0];
+    if (!it) return null;
+    return {
+      scene: it.scene, choice: it.text, fn: it.fn || null,
+      fnName: it.fn ? (FN_FULL[it.fn] || it.fn) : null,
+      fnDesc: it.fn && fnInfo[it.fn] ? fnInfo[it.fn].replace(/\.\s*$/, '') : null
+    };
+  }).filter(Boolean).slice(0, 4);
+
+  // The two narrowest dimensions are the types you were nearest to being.
+  const neighbours = spectrum.map((s, idx) => ({ s, idx }))
+    .sort((x, y) => x.s.pct - y.s.pct).slice(0, 2)
+    .map(({ s, idx }) => {
+      const nb = type.slice(0, idx) + (OPP_LETTER[type[idx]] || type[idx]) + type.slice(idx + 1);
+      // Alphabetical hits the prerendered file for most pairs. The handful it
+      // does not are still served: /vs/:slug rewrites to the template, which
+      // renders the pair and rewrites the URL to its canonical form.
+      const pair = [type, nb].sort();
+      return {
+        href: `/vs/${pair[0].toLowerCase()}-${pair[1].toLowerCase()}`,
+        axisLabel: AXIS_LABEL[DIMS[idx].key], pct: s.pct, type, neighbour: nb
+      };
+    });
+
+  return {
+    v: 1, name: d.name || '', tagline: d.tagline || '', description: d.description || '',
+    rarity, mode: testMode, modeLabel: MODE_LABEL[testMode] || '',
+    answered: Array.isArray(history) ? history.length : 0,
+    spectrum, stack, moments, neighbours, evidence: ev
+  };
+}
+
+/* One shape for everything that gets persisted, so the profile card, the
+   result email and the results row cannot drift apart. Scores are the blended
+   ones the spectrum bars show; the raw `scores` object still carries the
+   0.7/0.3 weighting and would print different percentages elsewhere. */
+function buildResultPayload(type) {
+  let details = null;
+  try { details = computeResultModel(type); } catch (e) { console.warn('[result] model failed', e); }
+  window._resultModel = details;
+  return { type: type, scores: getBlendedScores(), details: details };
 }
 
 function renderTypeDetail(type) {
@@ -1784,7 +2077,7 @@ function renderTypeDetail(type) {
   // characters
   document.getElementById('chars-sub').textContent = `Real and fictional people across the archive who match the ${type} profile.`;
   const cl = document.getElementById('chars-link');
-  cl.href = `/archive?q=${type}`;
+  cl.href = `${LANG_PREFIX}/archive?q=${type}`;
   cl.textContent = `See ${type} characters →`;
   // wear your type: handle is the slugified type name (e.g. "The Mediator" gives the-mediator)
   const handle = typeData[type].name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
@@ -1835,7 +2128,8 @@ async function saveResult() {
   btn.textContent = 'Saving...';
 
   try {
-    const bs = getBlendedScores(); // must be called here — bs is local to showResultsActual()
+    const payload = buildResultPayload(getType());
+    const bs = payload.scores; // blended, matching the spectrum bars on screen
     const res = await fetch(`${SUPA_URL}/rest/v1/subscribers`, {
       method: 'POST',
       headers: {
@@ -1871,7 +2165,10 @@ async function saveResult() {
             ei_e: bs.E||scores.E, ei_i: bs.I||scores.I,
             sn_s: bs.S||scores.S, sn_n: bs.N||scores.N,
             tf_t: bs.T||scores.T, tf_f: bs.F||scores.F,
-            jp_j: bs.J||scores.J, jp_p: bs.P||scores.P
+            jp_j: bs.J||scores.J, jp_p: bs.P||scores.P,
+            // Unlocks the full email template: rarity, description, spectrum,
+            // function stack and the scenarios that decided the result.
+            details: payload.details
           }
         })
       }).catch(() => {}); // swallow silently — email is best-effort
@@ -2011,13 +2308,21 @@ function shareResult() {
       }
 
       setStatus('Saving to your profile…', '');
+      // Blended scores, matching the spectrum bars and the emailed copy. The
+      // raw `scores` passed in here carry the 0.7/0.3 weighting, so saving
+      // those made the profile card disagree with the email for the same test.
+      const payload = (typeof buildResultPayload === 'function')
+        ? buildResultPayload(type)
+        : { scores: sc, details: null };
+      const s = payload.scores || sc;
       const { error } = await sb.from('results').insert({
         user_id: session.user.id,
         personality_type: type,
-        ei_e: sc.E||0, ei_i: sc.I||0,
-        sn_s: sc.S||0, sn_n: sc.N||0,
-        tf_t: sc.T||0, tf_f: sc.F||0,
-        jp_j: sc.J||0, jp_p: sc.P||0,
+        ei_e: s.E||0, ei_i: s.I||0,
+        sn_s: s.S||0, sn_n: s.N||0,
+        tf_t: s.T||0, tf_f: s.F||0,
+        jp_j: s.J||0, jp_p: s.P||0,
+        details: payload.details,
       });
       if (error) {
         window._lastSaveError = error;

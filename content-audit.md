@@ -6,68 +6,28 @@ is generated from the type and reads identically across every character sharing 
 | Slot | Source | Pages with real content |
 |---|---|---|
 | The Verdict | `people[].desc` in `data/characters-en.js` | 766 |
-| Who They Are | generated boilerplate, or `charContent[slug].who` | 169 |
-| The Journey | `charContent[slug].journey` | 640 |
-| Letter by Letter | `charContent[slug].letters` | 526 |
-| Why Not Another Type? | `charContent[slug].mistype` | 640 |
+| Who They Are | generated boilerplate, or `charContent[slug].who` | 209 |
+| The Journey | `charContent[slug].journey` | 680 |
+| Letter by Letter | `charContent[slug].letters` | 566 |
+| Why Not Another Type? | `charContent[slug].mistype` | 680 |
 
 Where a slot has no data the page falls back to a template with the character's
 name slotted into generic function-stack prose, so it says nothing specific about
 that character at all. Those are the worst pages and they are listed first.
 
-**Rewritten so far (169):** Joan Watson, Prince, Bruce Springsteen, Drake, Radiohead / Thom Yorke, Ariana Grande, Pablo Neruda, Marcel Proust, Michelangelo, Rembrandt, Joseph Stalin, Winston Churchill, Justin Trudeau, Xi Jinping, Sheryl Sandberg, Richard Branson, Neil Armstrong, Michio Kaku, Jane Goodall, Pelé, Ayrton Senna, Rafael Nadal, Dave Chappelle, Chris Rock, Peter Singer, Yuval Noah Harari, Jane Eyre, Lolita narrator Humbert Humbert, Ignatius J. Reilly, Robinson Crusoe, Sancho Panza, Kevin Garvey, Cousin Greg, St. Francis of Assisi, Lao Tzu, Walt Disney, Nikola Tesla, P.T. Barnum, Moana, Mulan, Hercules, M (Judi Dench), Llewyn Davis, Marge Simpson, Stewie Griffin, Jeff Winger, Liz Lemon, Jake Peralta, Tommy Shelby, Wendy Byrde, Frasier Crane, Phil Dunphy, Sterling Archer, Solid Snake, Lara Croft, Cloud Strife, Sephiroth, Nathan Drake, Ezio Auditore, Leon S. Kennedy, Trevor Philips, John Marston, 2B, Aloy, Princess Zelda, Commander Shepard, Victor Frankenstein, Willy Wonka, Scout Finch, Queen Victoria, Henry VIII, Elizabeth I, Galileo Galilei, Voltaire, Simone de Beauvoir, Ada Lovelace, Rosa Parks, Malcolm X, Simón Bolívar, Sun Tzu, Ho Chi Minh, Janis Joplin, Stevie Wonder, Tina Turner, Madonna, Stevie Nicks, Whitney Houston, Sting, The Weeknd, Lorde, Tim Cook, Sam Altman, Peter Thiel, Hannah Arendt, Grace Hopper, Jean-Paul Sartre, Alan Watts, Diego Maradona, Ronaldinho, Zinedine Zidane, Magic Johnson, Shaquille O'Neal, Floyd Mayweather, Giannis Antetokounmpo, Zlatan Ibrahimović, Larry Bird, Marty McFly, Doc Brown, Holly Golightly, Achilles, Peter Pan, Long John Silver, Tom Sawyer, Boyd Crowder, Carrie Mathison, Peter Quill, Sonny Corleone, Fredo Corleone, G.O.B. Bluth, Thierry Henry, Otto von Bismarck, Jack Kerouac, Simone Weil, Margaret Mead, Joseph Campbell, Pablo Picasso, Jean-Michel Basquiat, Georgia O'Keeffe, Spike Lee, Pedro Almodovar, Ingmar Bergman, Werner Herzog, Jordan Peele, Franklin D. Roosevelt, Mikhail Gorbachev, Richard Nixon, Ludwig Wittgenstein, Irene Adler, William Wallace, Eowyn, Bilbo Baggins, O-Ren Ishii, Louis Armstrong, Arthur Conan Doyle, Lady Jessica, Duncan Idaho, Alia Atreides, Stilgar, Leto II, Princess Irulan, Betty Draper, Johnny Silverhand, GLaDOS, Antigone, James Dean, Audrey Hepburn, Niko Bellic, Frédéric Chopin, Nora Helmer, Empress Wu Zetian, George Hammond, Janet Fraiser, Jonas Quinn, Cameron Mitchell, Ba'al, Apophis, Bra'tac, Jacob Carter, Martouf.
+**Rewritten so far (209):** Joan Watson, Albus Severus Potter, Rihanna, Prince, Mick Jagger, Bruce Springsteen, Drake, Nicki Minaj, Radiohead / Thom Yorke, Ariana Grande, Mark Twain, Pablo Neruda, Marcel Proust, Michelangelo, Rembrandt, Joseph Stalin, Winston Churchill, Martin Luther, Justin Trudeau, Emmanuel Macron, Xi Jinping, Steve Bannon, Sheryl Sandberg, Richard Branson, Neil Armstrong, Michio Kaku, Jane Goodall, Simone Biles, Novak Djokovic, Pelé, Ayrton Senna, Neymar Jr., Rafael Nadal, Wayne Gretzky, Steph Curry, Ricky Gervais, Dave Chappelle, Chris Rock, Slavoj Žižek, Peter Singer, Yuval Noah Harari, Malcolm Gladwell, Jane Eyre, Miss Marple, Lolita narrator Humbert Humbert, Ignatius J. Reilly, Robinson Crusoe, Sancho Panza, Nora Durst, Kevin Garvey, Cousin Greg, St. Francis of Assisi, Thomas Aquinas, Rumi, Lao Tzu, Walt Disney, Nikola Tesla, P.T. Barnum, Moana, Mulan, Hercules, Marlin, M (Judi Dench), Vin Diesel / Dominic Toretto, Llewyn Davis, The Phantom, Marge Simpson, Stewie Griffin, Jeff Winger, Liz Lemon, Jake Peralta, Tommy Shelby, Wendy Byrde, Frasier Crane, Phil Dunphy, Sterling Archer, Yennefer of Vengerberg, Solid Snake, Lara Croft, Cloud Strife, Sephiroth, Nathan Drake, Ezio Auditore, Leon S. Kennedy, Trevor Philips, John Marston, 2B, Aloy, Princess Zelda, Commander Shepard, Victor Frankenstein, Willy Wonka, Scout Finch, Queen Victoria, Henry VIII, Elizabeth I, Galileo Galilei, Voltaire, Simone de Beauvoir, Ada Lovelace, Rosa Parks, Malcolm X, Simón Bolívar, Sun Tzu, Ho Chi Minh, Bob Marley, Janis Joplin, Stevie Wonder, Tina Turner, Madonna, Stevie Nicks, Tyler, the Creator, Whitney Houston, Sting, The Weeknd, Lorde, Tim Cook, Sam Altman, Peter Thiel, Hannah Arendt, Grace Hopper, Jean-Paul Sartre, Alan Watts, Diego Maradona, Ronaldinho, Zinedine Zidane, Magic Johnson, Shaquille O'Neal, Floyd Mayweather, Giannis Antetokounmpo, Zlatan Ibrahimović, Larry Bird, Marty McFly, Doc Brown, Holly Golightly, Achilles, Peter Pan, Long John Silver, Tom Sawyer, Boyd Crowder, Carrie Mathison, Peter Quill, Sonny Corleone, Fredo Corleone, G.O.B. Bluth, Kimmy Schmidt, Lewis Hamilton, Thierry Henry, Michel Foucault, Otto von Bismarck, Maya Angelou, Toni Morrison, Jack Kerouac, Simone Weil, W.E.B. Du Bois, Margaret Mead, Joseph Campbell, Pablo Picasso, Jean-Michel Basquiat, Georgia O'Keeffe, Spike Lee, Pedro Almodovar, Ingmar Bergman, Werner Herzog, Jordan Peele, Franklin D. Roosevelt, Mikhail Gorbachev, Richard Nixon, Rachel Carson, Ludwig Wittgenstein, Roald Dahl, Mycroft Holmes, Irene Adler, William Wallace, Eowyn, Bilbo Baggins, O-Ren Ishii, Paddington Bear, M. Gustave, Nina Simone, Louis Armstrong, Arthur Conan Doyle, Lady Jessica, Duncan Idaho, Alia Atreides, Stilgar, Leto II, Princess Irulan, Betty Draper, Johnny Silverhand, GLaDOS, Antigone, James Dean, Audrey Hepburn, Niko Bellic, Frédéric Chopin, Nora Helmer, Empress Wu Zetian, Rasputin, P.G. Wodehouse, George Hammond, Janet Fraiser, Jonas Quinn, Cameron Mitchell, Ba'al, Apophis, Bra'tac, Jacob Carter, Martouf.
 Each got a researched biography in place of the boilerplate, a new journey,
 mistype and letter breakdown, a longer Verdict, and question-form subheadings.
 
 Run `node scripts/sync-character-pages.mjs <slug>...` after editing the data files,
 or the static English pages will not change.
 
-## Tier 1 - fully generic (53 pages)
+## Tier 1 - fully generic (13 pages)
 
 Ranked worst first by how little the Verdict says.
 
 | Character | Source | Type | Verdict words | Journey | Mistype | Letters |
 |---|---|---|---|---|---|---|
-| Rasputin | Imperial Russian mystic | ENFJ | 105 | - | - | - |
-| Novak Djokovic | Professional tennis player | INTJ | 106 | - | - | - |
-| The Phantom | Phantom of the Opera | INFP | 106 | - | - | - |
-| Lewis Hamilton | Formula 1 driver | INTJ | 106 | - | - | - |
-| P.G. Wodehouse | English comic novelist | ENFP | 106 | - | - | - |
-| Mark Twain | American author and humorist | ENTP | 107 | - | - | - |
-| Martin Luther | Protestant reformer, theologian | INFJ | 107 | - | - | - |
-| Neymar Jr. | Brazilian footballer | ESFP | 107 | - | - | - |
-| Toni Morrison | Author | INFJ | 107 | - | - | - |
-| W.E.B. Du Bois | Sociologist and activist | INTJ | 107 | - | - | - |
-| Mick Jagger | Singer, The Rolling Stones | ESTP | 108 | - | - | - |
-| Steve Bannon | Political strategist | ENTP | 108 | - | - | - |
-| Ricky Gervais | Comedian, writer, actor | ENTP | 108 | - | - | - |
-| Malcolm Gladwell | Canadian journalist and author | ENFP | 109 | - | - | - |
-| Miss Marple | Agatha Christie novels | ISFJ | 109 | - | - | - |
-| Tyler, the Creator | American rapper and producer | ENTP | 109 | - | - | - |
-| Wayne Gretzky | Professional ice hockey player | INFP | 110 | - | - | - |
-| Steph Curry | NBA basketball player | ISFP | 110 | - | - | - |
-| Slavoj Žižek | Slovenian philosopher | ENTP | 110 | - | - | - |
-| Thomas Aquinas | Catholic theologian and philosopher | INTP | 110 | - | - | - |
-| Maya Angelou | Author and poet | ENFJ | 110 | - | - | - |
-| Nicki Minaj | Rapper | ENTJ | 111 | - | - | - |
-| M. Gustave | The Grand Budapest Hotel | ENFJ | 111 | - | - | - |
-| Nina Simone | Musician | INTJ | 111 | - | - | - |
-| Albus Severus Potter | Harry Potter (Cursed Child) | INFP | 112 | - | - | - |
-| Kimmy Schmidt | Unbreakable Kimmy Schmidt | ENFP | 112 | - | - | - |
-| Paddington Bear | Paddington films | ISFJ | 112 | - | - | - |
-| Nora Durst | The Leftovers | ISTJ | 113 | - | - | - |
-| Michel Foucault | Philosopher and historian | INTP | 113 | - | - | - |
-| Rachel Carson | Marine biologist and author | INFJ | 113 | - | - | - |
-| Simone Biles | Olympic gymnast | ISFP | 115 | - | - | - |
-| Rumi | Persian poet and Sufi mystic | INFP | 115 | - | - | - |
-| Marlin | Finding Nemo | ISTJ | 115 | - | - | - |
-| Bob Marley | Jamaican reggae singer-songwriter | INFP | 116 | - | - | - |
-| Mycroft Holmes | Sherlock Holmes stories | INTJ | 116 | - | - | - |
-| Emmanuel Macron | President of France | ENTJ | 117 | - | - | - |
-| Vin Diesel / Dominic Toretto | Fast and Furious franchise | ESFJ | 117 | - | - | - |
-| Yennefer of Vengerberg | The Witcher | ENTJ | 117 | - | - | - |
-| Roald Dahl | Author | ENTP | 117 | - | - | - |
-| Rihanna | Singer, songwriter, entrepreneur | ESTP | 119 | - | - | - |
 | Michael Phelps | Olympic swimmer | ISTJ | 119 | - | - | - |
 | Théoden King | Lord of the Rings | ISTJ | 120 | - | - | - |
 | Gabriel García Márquez | Colombian novelist | INFP | 120 | - | - | - |
@@ -139,6 +99,6 @@ Ranked worst first by how little the Verdict says.
 
 _...and 137 more._
 
-## Tier 3 - all slots written (453 pages)
+## Tier 3 - all slots written (493 pages)
 
 No action needed.

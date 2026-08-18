@@ -117,6 +117,24 @@
   .result-card{background:#131820;border:1px solid #2a3848;border-radius:12px;padding:24px 28px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:inset 0 1px 0 rgba(255,255,255,0.04),0 2px 8px rgba(0,0,0,0.35);transition:border-color 0.2s,box-shadow 0.2s;}
   .result-card:hover{border-color:var(--gold-dim);box-shadow:inset 0 1px 0 rgba(255,255,255,0.07),0 8px 24px rgba(0,0,0,0.5);}
   .result-type{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--gold);letter-spacing:0.05em;}
+  /* saved evidence: the scenarios behind the result. Full width inside the
+     flex card, so it drops onto its own row under the bars. */
+  .result-why{flex-basis:100%;width:100%;margin-top:18px;border-top:1px solid var(--border);padding-top:16px;}
+  .result-why summary{cursor:pointer;list-style:none;font-size:0.78rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);}
+  .result-why summary::-webkit-details-marker{display:none;}
+  .result-why summary::after{content:' +';color:var(--gold-dim);}
+  .result-why[open] summary::after{content:' –';}
+  .rw-dim{margin-top:16px;}
+  .rw-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;}
+  .rw-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--cream);}
+  .rw-pct{font-size:0.78rem;color:var(--gold);letter-spacing:0.08em;}
+  .rw-verdict{font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:2px 9px;}
+  .rw-dim.tight .rw-verdict{color:var(--gold);border-color:var(--gold-dim);}
+  .rw-count{font-size:0.82rem;line-height:1.65;color:var(--muted);margin-top:5px;}
+  .rw-item{background:var(--bg);border:1px solid var(--border);border-left:2px solid var(--gold-dim);border-radius:10px;padding:11px 14px;margin-top:9px;}
+  .rw-scene{font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+  .rw-choice{font-size:0.88rem;line-height:1.6;color:var(--cream);}
+  .rw-fn{font-size:0.72rem;color:var(--gold);margin-top:6px;letter-spacing:0.05em;}
   .result-meta{color:var(--muted);font-size:0.94rem;margin-top:4px;}
   .result-bars{display:flex;flex-direction:column;gap:8px;min-width:160px;}
   .bar-row{display:flex;align-items:center;gap:8px;font-size:1rem;color:var(--muted);}
@@ -147,6 +165,20 @@
   body.light-mode .result-meta{color:#4a6080;}
   body.light-mode .bar-row{color:#4a6080;}
   body.light-mode .bar-letters{color:#4a6080;}
+  /* light mode turns .result-card white, so the evidence block has to follow;
+     it is not covered by the generic "* inside .box" rule further down. */
+  body.light-mode .result-why{border-top-color:#d0d7e3;}
+  body.light-mode .rw-name{color:#1e2d4a;}
+  body.light-mode .rw-count{color:#4a6080;}
+  body.light-mode .rw-scene{color:#4a6080;}
+  body.light-mode .rw-choice{color:#1e2d4a;}
+  body.light-mode .rw-verdict{color:#4a6080;border-color:#c0cad8;}
+  body.light-mode .rw-item{background:#f4f7fb;border-color:#d0d7e3;border-left-color:#c9a84c;}
+  /* The site's usual gold reads at 2.29:1 on white. These are small labels, so
+     they take the darker gold (4.88:1) rather than the accent tone. */
+  body.light-mode .result-why summary,
+  body.light-mode .rw-fn{color:#8a6d2e;}
+  body.light-mode .rw-dim.tight .rw-verdict{color:#8a6d2e;border-color:#c9a84c;}
 </style>
 <script src="/nav.js" defer></script>
 </head>
@@ -271,7 +303,39 @@ function renderCard(r) {
         <a class="result-cta-btn" href="/compatibility">Compatibility →</a>
         <a class="result-cta-btn" href="/">Retake test →</a>
       </div>
+      ${renderWhy(r, t)}
     </div>`;
+}
+
+// Results saved before the test recorded its reasoning have no details, so the
+// disclosure is simply omitted rather than rendered empty.
+function renderWhy(r, t) {
+  const d = r && r.details;
+  const ev = d && Array.isArray(d.evidence) ? d.evidence : null;
+  if (!ev || !ev.length) return '';
+  const esc = (s) => String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const meta = [d.modeLabel, d.answered ? d.answered + ' scenarios' : null]
+    .filter(Boolean).join(' · ');
+  return `
+    <details class="result-why">
+      <summary>Why you came out ${esc(t)}${meta ? ' &nbsp;·&nbsp; ' + esc(meta) : ''}</summary>
+      ${ev.map(e => `
+        <div class="rw-dim${e.tight ? ' tight' : ''}">
+          <div class="rw-head">
+            <span class="rw-name">${esc(e.name)}</span>
+            <span class="rw-pct">${esc(e.pct)}%</span>
+            <span class="rw-verdict">${esc(e.verdict)}</span>
+          </div>
+          <div class="rw-count">${esc(e.count)}</div>
+          ${(e.items || []).slice(0, 2).map(it => `
+            <div class="rw-item">
+              <div class="rw-scene">${esc(it.scene)}</div>
+              <div class="rw-choice">${esc(it.text)}</div>
+              ${it.fn ? `<div class="rw-fn">Credited ${esc(it.fn)}</div>` : ''}
+            </div>`).join('')}
+        </div>`).join('')}
+    </details>`;
 }
 
 async function load() {

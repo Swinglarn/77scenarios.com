@@ -3,31 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>77 Scenarios - Free Scenario-Based Personality Test</title>
-<meta name="description" content="77 real situations. No self-rating. You make choices - the pattern reveals your Myers-Briggs personality type.">
+<title>77 Scenarios · シナリオで診断する無料の性格テスト</title>
+<meta name="description" content="77の現実の場面。自己評価はなし。あなたが選び、その傾向がマイヤーズ・ブリッグスの性格タイプを明らかにします。">
 <meta name="keywords" content="personality type test, MBTI test, Myers-Briggs test, free personality quiz, 16 personality types, what personality type am I, scenario based personality test, introvert extrovert test, personality test online">
 <meta name="robots" content="noindex, follow">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://77scenarios.com/og-image.png">
 <meta name="twitter:image" content="https://77scenarios.com/og-image.png">
-<meta property="og:title" content="77 Scenarios Free Scenario-Based Personality Test">
-<meta property="og:description" content="77 real scenarios. No self-rating. Just choices. Find your Myers-Briggs personality type the honest way.">
+<meta property="og:title" content="77 Scenarios · シナリオで診断する無料の性格テスト">
+<meta property="og:description" content="77の現実のシナリオ。自己評価はなし。あるのは選択だけ。ごまかしのない形で自分のMBTIタイプを知る。">
 <meta property="og:url" content="https://77scenarios.com/ja/">
 <meta property="og:site_name" content="77 Scenarios">
 <meta name="twitter:card" content="summary_large_image">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9210546368748348" crossorigin="anonymous"></script>
-<meta name="twitter:title" content="77 Scenarios What Kind of Person Are You, Really?">
-<meta name="twitter:description" content="A personality test that puts you in real situations instead of asking you to rate yourself. 77 scenarios. 16 possible types.">
+<meta name="twitter:title" content="77 Scenarios · あなたは本当はどんな人間か">
+<meta name="twitter:description" content="自己評価を求める代わりに、現実の場面にあなたを置く性格テスト。77のシナリオ。16の可能なタイプ。">
 <link rel="canonical" href="https://77scenarios.com/ja/">
 <link rel="alternate" hreflang="en" href="https://77scenarios.com/">
 <link rel="alternate" hreflang="es" href="https://77scenarios.com/es/">
-<link rel="alternate" hreflang="pt-BR" href="https://77scenarios.com/pt/">
 <link rel="alternate" hreflang="ja" href="https://77scenarios.com/ja/">
 <link rel="alternate" hreflang="x-default" href="https://77scenarios.com/">
 <meta name="google-adsense-account" content="ca-pub-9210546368748348">
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"77 Scenarios","url":"https://77scenarios.com/ja/","description":"Scenario-based MBTI personality test and character archive.","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://77scenarios.com/archive?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"77 Scenarios Personality Test","description":"A scenario-based Myers-Briggs personality type test using 77 real situations instead of self-rating questions.","url":"https://77scenarios.com/ja/","applicationCategory":"LifestyleApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"77 Scenarios","url":"https://77scenarios.com","description":"Scenario-based MBTI personality test and character archive.","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://77scenarios.com/archive?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"77 Scenarios Personality Test","description":"A scenario-based Myers-Briggs personality type test using 77 real situations instead of self-rating questions.","url":"https://77scenarios.com","applicationCategory":"LifestyleApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
@@ -126,42 +125,72 @@
   .spectrum-name { font-size: 11px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
   .spectrum-pct { font-size: 12px; color: var(--gold); font-weight: 500; min-width: 36px; text-align: right; }
   .sep { width: 100%; height: 1px; background: var(--border); margin: 36px 0; }
+  /* result detail blocks */
+  .rb-block { margin-bottom: 48px; max-width: 620px; }
+  .rb-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  .rb-sub { font-size: 13px; line-height: 1.7; color: var(--muted); margin-bottom: 22px; max-width: 540px; }
+  .rb-stat { display: flex; align-items: baseline; gap: 12px; margin-bottom: 10px; }
+  .rb-num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 44px; font-weight: 300; color: var(--gold); line-height: 1; }
+  .rb-cap { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+  .rb-line { font-size: 14px; line-height: 1.75; color: #cdc7c0; max-width: 540px; }
+  /* function stack */
+  .fnstack { display: flex; flex-direction: column; gap: 10px; }
+  .fn-row { display: flex; align-items: center; gap: 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 18px; }
+  .fn-glyph { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; color: var(--gold); width: 42px; flex-shrink: 0; }
+  .fn-row.dom .fn-glyph { color: var(--gold); }
+  .fn-row:not(.dom) .fn-glyph { color: var(--gold-dim); }
+  .fn-body { flex: 1; }
+  .fn-pos { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+  .fn-desc { font-size: 13px; line-height: 1.6; color: #cdc7c0; }
+  /* evidence: the scenarios that produced the result */
+  .ev-dim { margin-bottom: 30px; }
+  .ev-dim:last-child { margin-bottom: 0; }
+  .ev-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 6px; flex-wrap: wrap; }
+  .ev-name { font-family: 'Cormorant Garamond', serif; font-size: 23px; font-weight: 300; color: var(--cream); line-height: 1.2; }
+  .ev-pct { font-size: 12px; letter-spacing: 0.1em; color: var(--gold); }
+  .ev-verdict { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--border); border-radius: 999px; padding: 3px 10px; }
+  .ev-dim.tight .ev-verdict { color: var(--gold); border-color: var(--gold-dim); }
+  .ev-count { font-size: 13px; line-height: 1.7; color: var(--muted); margin-bottom: 16px; max-width: 540px; }
+  .ev-list { display: flex; flex-direction: column; gap: 10px; }
+  .ev-item { background: var(--surface); border: 1px solid var(--border); border-left: 2px solid var(--gold-dim); border-radius: 12px; padding: 14px 18px; }
+  .ev-scene { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 7px; }
+  .ev-choice { font-size: 14px; line-height: 1.65; color: #cdc7c0; font-weight: 300; }
+  .ev-fn { font-size: 11px; letter-spacing: 0.08em; color: var(--gold); margin-top: 9px; }
+  @media (max-width: 580px) { .ev-name { font-size: 20px; } }
+  /* two column cards */
+  .rb-twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .rb-card { border: 1px solid var(--border); border-radius: 14px; padding: 22px; background: var(--surface); }
+  .rb-card-best { border-color: rgba(201,168,76,0.3); }
+  .rb-card-h { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 12px; color: var(--gold); }
+  .rb-card-stress .rb-card-h { color: var(--muted); }
+  .rb-card p { font-size: 13.5px; line-height: 1.7; color: #cdc7c0; }
+  /* lists */
+  .rb-list { list-style: none; padding: 0; margin: 0; }
+  .rb-list li { font-size: 13.5px; line-height: 1.55; color: #cdc7c0; padding: 8px 0 8px 24px; position: relative; border-bottom: 1px solid var(--border); }
+  .rb-list li:last-child { border-bottom: none; }
+  .rb-list-plus li::before { content: '+'; position: absolute; left: 0; color: var(--gold); font-weight: 500; }
+  .rb-list-minus li::before { content: '−'; position: absolute; left: 0; color: var(--muted); font-weight: 500; }
+  /* compatibility chips */
+  .rb-compat { display: flex; flex-wrap: wrap; gap: 10px; }
+  .rb-compat a { display: inline-flex; flex-direction: column; gap: 2px; text-decoration: none; border: 1px solid var(--border); border-radius: 12px; padding: 12px 18px; transition: all 0.2s ease; background: var(--surface); }
+  .rb-compat a:hover { border-color: var(--gold-dim); transform: translateY(-2px); }
+  .rb-compat .rc-type { font-size: 14px; letter-spacing: 0.1em; color: var(--cream); font-weight: 500; }
+  .rb-compat .rc-name { font-size: 11px; color: var(--muted); }
+  .rb-charlink { font-size: 13px; color: var(--gold); text-decoration: none; letter-spacing: 0.04em; transition: color 0.2s ease; }
+  .rb-charlink:hover { color: var(--cream); }
+  /* wear your type strip: subtle, brand-styled */
+  .rb-shop { display: flex; align-items: center; justify-content: space-between; gap: 20px; max-width: 620px; margin-bottom: 48px; padding: 24px 26px; border: 1px solid var(--border); border-radius: 16px; background: linear-gradient(135deg, rgba(201,168,76,0.05), rgba(138,109,46,0.02)); text-decoration: none; transition: all 0.25s ease; }
+  .rb-shop:hover { border-color: var(--gold-dim); background: linear-gradient(135deg, rgba(201,168,76,0.09), rgba(138,109,46,0.04)); transform: translateY(-2px); }
+  .rb-shop-eyebrow { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+  .rb-shop-name { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 24px; font-weight: 300; color: var(--cream); margin-bottom: 6px; }
+  .rb-shop-sub { font-size: 12.5px; line-height: 1.6; color: var(--muted); max-width: 340px; }
+  .rb-shop-cta { flex-shrink: 0; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); white-space: nowrap; }
+  @media (max-width: 480px) { .rb-shop { flex-direction: column; align-items: flex-start; gap: 14px; } }
+  @media (max-width: 560px) { .rb-twocol { grid-template-columns: 1fr; } .rb-num { font-size: 36px; } }
+  body.light-mode .rb-line, body.light-mode .fn-desc, body.light-mode .rb-card p, body.light-mode .rb-list li { color: #1e2d4a; }
   .result-actions { display: flex; gap: 16px; flex-wrap: wrap; }
   .btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--muted); font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid var(--border); border-radius: 60px; padding: 14px 28px; cursor: pointer; transition: all 0.2s ease; }
   .btn-secondary:hover { border-color: var(--muted); color: var(--cream); }
-  /* ── PERSONALIZED RESULT INSIGHTS ── */
-  .insight-block { margin-bottom: 44px; }
-  .insight-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
-  .rarity-pill { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); letter-spacing: 0.04em; background: var(--surface); border: 1px solid var(--border); border-radius: 30px; padding: 8px 16px; margin-bottom: 8px; }
-  .rarity-pill b { color: var(--gold); font-weight: 500; }
-  .clarity-note { font-size: 14px; line-height: 1.75; color: #cdc7c0; margin-bottom: 20px; }
-  .clarity-note b { color: var(--cream); font-weight: 500; }
-  .neighbour-card { display: flex; align-items: center; justify-content: space-between; gap: 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; margin-bottom: 14px; text-decoration: none; transition: all 0.2s ease; }
-  .neighbour-card:hover { border-color: var(--gold-dim); background: var(--surface2); }
-  .neighbour-left { display: flex; flex-direction: column; gap: 5px; }
-  .neighbour-axis { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); }
-  .neighbour-text { font-size: 13px; color: var(--muted); line-height: 1.55; }
-  .neighbour-text b { color: var(--cream); font-weight: 500; }
-  .neighbour-arrow { flex-shrink: 0; color: var(--muted); font-size: 16px; transition: color 0.2s ease; }
-  .neighbour-card:hover .neighbour-arrow { color: var(--gold); }
-  .fn-row { display: flex; gap: 16px; align-items: flex-start; padding: 18px 0; border-bottom: 1px solid var(--border); }
-  .fn-row:last-child { border-bottom: none; }
-  .fn-rank { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); width: 72px; flex-shrink: 0; padding-top: 4px; }
-  .fn-body { flex: 1; }
-  .fn-name { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 21px; color: var(--cream); margin-bottom: 4px; }
-  .fn-name span { color: var(--gold); font-style: normal; font-size: 12px; letter-spacing: 0.05em; margin-left: 8px; font-family: 'DM Sans', sans-serif; }
-  .fn-desc { font-size: 13px; line-height: 1.6; color: var(--muted); }
-  .fn-count { font-size: 11px; color: var(--gold-dim); margin-top: 7px; letter-spacing: 0.03em; }
-  .moment-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 22px 24px; margin-bottom: 16px; }
-  .moment-scene { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
-  .moment-choice { font-size: 15px; line-height: 1.7; color: var(--cream); font-weight: 300; font-style: italic; margin-bottom: 14px; }
-  .moment-read { font-size: 13px; line-height: 1.65; color: var(--muted); padding-top: 14px; border-top: 1px solid var(--border); }
-  .moment-read b { color: var(--gold); font-weight: 500; }
-  .insight-divider { width: 100%; height: 1px; background: var(--border); margin: 8px 0 44px; }
-  body.light-mode .rarity-pill, body.light-mode .neighbour-card, body.light-mode .moment-card { background: #ffffff !important; border-color: #d0d7e3 !important; }
-  body.light-mode .clarity-note, body.light-mode .clarity-note b, body.light-mode .neighbour-text b, body.light-mode .fn-name, body.light-mode .moment-choice { color: #1e2d4a !important; }
-  body.light-mode .neighbour-text, body.light-mode .fn-desc, body.light-mode .moment-read, body.light-mode .fn-rank, body.light-mode .insight-label { color: #4a5568 !important; }
-
   @media (max-width: 480px) { .splash-meta { gap: 20px; } .answer-card { padding: 16px 18px; } .result-actions { flex-direction: column; } .btn-primary, .btn-secondary { width: 100%; justify-content: center; } }
 
   /* ── TABLET (max 768px) ── */
@@ -570,7 +599,7 @@
 #t-overlay{position:fixed;inset:0;z-index:9999;pointer-events:none;background:#0c0e10;opacity:1;}
 </style>
 <body>
-<h1 class="sr-only">77 Scenarios - Free Scenario-Based Personality Test</h1>
+<h1 class="sr-only">77 Scenarios · シナリオで診断する無料の性格テスト</h1>
 <div id="t-overlay"></div>
 <div class="glow glow-1"></div>
 <div class="glow glow-2"></div>
@@ -580,16 +609,16 @@
   <!-- SPLASH -->
   <div class="screen active" id="screen-splash">
     <div class="splash-eyebrow">77 Scenarios</div>
-    <div class="splash-title">状況から紐解く<br><em>性格</em>診断テスト</div>
-    <p class="splash-subtitle">多くの性格診断テストは、自分自身の評価を求めます。しかし、自己評価には偏りが生じます。<br><br>77 Scenariosは、あなたを現実的なシチュエーションに置き、その選択を観察します。自己分析も、誘導尋問もありません。77のシチュエーションと、あなたの直感だけです。</p>
+    <div class="splash-title">シナリオで測る<br><em>性格</em> 診断。</div>
+    <p class="splash-subtitle">たいていの性格テストは自己評価を求めます。しかし自己評価は嘘をつきます。<br><br>77 Scenariosはあなたを現実の場面に置き、何を選ぶかを見ています。自己評価も誘導尋問もありません。あるのは77のシナリオとあなたの直感だけです。</p>
     <div class="splash-meta">
       <div class="meta-item"><div class="meta-num">77</div><div class="meta-label">シナリオ</div></div>
       <div class="divider"></div>
-      <div class="meta-item"><div class="meta-num">~20</div><div class="meta-label">所要時間（分）</div></div>
+      <div class="meta-item"><div class="meta-num">~20</div><div class="meta-label">分</div></div>
       <div class="divider"></div>
-      <div class="meta-item"><div class="meta-num">16</div><div class="meta-label">診断タイプ数</div></div>
+      <div class="meta-item"><div class="meta-num">16</div><div class="meta-label">可能なタイプ</div></div>
     </div>
-    <button class="btn-primary" onclick="showScreen('screen-mode')">テストを開始する <span class="arrow">→</span></button>
+    <button class="btn-primary" onclick="showScreen('screen-mode')">はじめる <span class="arrow">→</span></button>
   </div>
 
 
@@ -600,27 +629,27 @@
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         戻る
       </button>
-      <div class="mode-eyebrow">開始する前に</div>
-      <div class="mode-title">あなたの<br><em>世界</em>を選んでください。</div>
-      <p class="mode-subtitle">同じ質問でも、異なる世界観で体験することができます。あなたが入り込みたい世界を選んでください。</p>
+      <div class="mode-eyebrow">はじめる前に</div>
+      <div class="mode-title">あなたの<br><em>世界を選ぶ。</em></div>
+      <p class="mode-subtitle">同じ問いも、違う世界で問うことができます。自分が置かれたい世界を選んでください。</p>
       <div class="mode-cards">
         <button class="mode-card" onclick="selectMode('myth')">
           <div class="mode-card-icon">⚔</div>
-          <div class="mode-card-name">神話の世界</div>
-          <div class="mode-card-desc">古代の街道。予言。滅亡に瀕した王国。あなたは常に、自分自身よりも大きな何かの中に身を置くことになります。</div>
-          <div class="mode-card-example">「夜明けとともに街は陥落する。あなたには一晩の猶予がある。」</div>
+          <div class="mode-card-name">神話</div>
+          <div class="mode-card-desc">古い街道。予言。滅びの淵にある王国。あなたはいつも自分より大きな何かの只中にいます。</div>
+          <div class="mode-card-example">「街は夜明けに落ちる。残された時間は一晩。」</div>
         </button>
         <button class="mode-card" onclick="selectMode('normal')">
           <div class="mode-card-icon">☕</div>
-          <div class="mode-card-name">日常の世界</div>
-          <div class="mode-card-desc">空港。オフィス。最悪な一週間と、素晴らしい知らせ。平凡に見えて、決して平凡ではない日常の瞬間。</div>
-          <div class="mode-card-example">「フライトがキャンセルされた。あなたには6時間の時間がある。」</div>
+          <div class="mode-card-name">日常</div>
+          <div class="mode-card-desc">空港。オフィス。ひどい一週間と良い知らせ。ありふれていないと後でわかる、ありふれた瞬間。</div>
+          <div class="mode-card-example">「あなたの便は欠航になった。残された時間は六時間。」</div>
         </button>
         <button class="mode-card mode-card-both" onclick="selectMode('both')">
           <div class="mode-card-icon">◎</div>
-          <div class="mode-card-name">両方の世界</div>
-          <div class="mode-card-desc">どちらか一つに絞りたくない方へ。どのような世界でも変わらない本質があります。</div>
-          <div class="mode-card-example">「半分は神話、半分は日常。すべてがあなた自身。」</div>
+          <div class="mode-card-name">ふたつの世界</div>
+          <div class="mode-card-desc">選びたくない。どの世界でも変わらない事柄もあります。</div>
+          <div class="mode-card-example">「半分は神話。半分は人生。まるごとあなた。」</div>
         </button>
       </div>
     </div>
@@ -632,9 +661,9 @@
   <!-- DEMOGRAPHICS SCREEN -->
   <div class="screen" id="screen-demo">
     <div class="demo-wrap">
-      <div class="demo-eyebrow">匿名・回答は任意</div>
-      <div class="demo-title">統計データの分析に<br>ご協力ください</div>
-      <p class="demo-subtitle">私たちは、様々なグループにおける性格タイプの統計データを集計・公開しています。回答は完全に匿名であり、個人情報と紐付けられることはありません。</p>
+      <div class="demo-eyebrow">匿名 · 任意</div>
+      <div class="demo-title">データの理解に<br>ご協力 <em>ください。</em></div>
+      <p class="demo-subtitle">さまざまな集団における性格タイプの統計を、集計した形で公開しています。回答は匿名で、あなたの身元と結び付けられることは決してありません。</p>
 
       <div class="demo-fields">
 
@@ -646,7 +675,7 @@
             <button class="demo-opt" data-group="age" data-val="25_34">25 - 34</button>
             <button class="demo-opt" data-group="age" data-val="35_44">35 - 44</button>
             <button class="demo-opt" data-group="age" data-val="45_54">45 - 54</button>
-            <button class="demo-opt" data-group="age" data-val="55_plus">55歳以上</button>
+            <button class="demo-opt" data-group="age" data-val="55_plus">55+</button>
           </div>
         </div>
 
@@ -668,7 +697,7 @@
               <option value="algeria">アルジェリア</option>
               <option value="andorra">アンドラ</option>
               <option value="angola">アンゴラ</option>
-              <option value="antigua_and_barbuda">Antigua and Barbuda</option>
+              <option value="antigua_and_barbuda">アンティグア・バーブーダ</option>
               <option value="argentina">アルゼンチン</option>
               <option value="armenia">アルメニア</option>
               <option value="australia">オーストラリア</option>
@@ -684,7 +713,7 @@
               <option value="benin">ベナン</option>
               <option value="bhutan">ブータン</option>
               <option value="bolivia">ボリビア</option>
-              <option value="bosnia_and_herzegovina">Bosnia and Herzegovina</option>
+              <option value="bosnia_and_herzegovina">ボスニア・ヘルツェゴビナ</option>
               <option value="botswana">ボツワナ</option>
               <option value="brazil">ブラジル</option>
               <option value="brunei">ブルネイ</option>
@@ -701,13 +730,13 @@
               <option value="china">中国</option>
               <option value="colombia">コロンビア</option>
               <option value="comoros">コモロ</option>
-              <option value="congo_democratic_republic">コンゴ民主共和国</option>
-              <option value="congo_republic">コンゴ共和国</option>
+              <option value="congo_democratic_republic">コンゴ民主共和国(キンシャサ)</option>
+              <option value="congo_republic">コンゴ共和国(ブラザビル)</option>
               <option value="costa_rica">コスタリカ</option>
               <option value="croatia">クロアチア</option>
               <option value="cuba">キューバ</option>
               <option value="cyprus">キプロス</option>
-              <option value="czech_republic">チェコ共和国</option>
+              <option value="czech_republic">チェコ</option>
               <option value="denmark">デンマーク</option>
               <option value="djibouti">ジブチ</option>
               <option value="dominica">ドミニカ国</option>
@@ -732,7 +761,7 @@
               <option value="grenada">グレナダ</option>
               <option value="guatemala">グアテマラ</option>
               <option value="guinea">ギニア</option>
-              <option value="guinea_bissau">Guinea-Bissau</option>
+              <option value="guinea_bissau">ギニアビサウ</option>
               <option value="guyana">ガイアナ</option>
               <option value="haiti">ハイチ</option>
               <option value="honduras">ホンジュラス</option>
@@ -794,7 +823,7 @@
               <option value="oman">オマーン</option>
               <option value="pakistan">パキスタン</option>
               <option value="palau">パラオ</option>
-              <option value="palestine">パレスチナ</option>
+              <option value="palestine">パレスチナ自治区</option>
               <option value="panama">パナマ</option>
               <option value="papua_new_guinea">パプアニューギニア</option>
               <option value="paraguay">パラグアイ</option>
@@ -806,12 +835,12 @@
               <option value="romania">ルーマニア</option>
               <option value="russia">ロシア</option>
               <option value="rwanda">ルワンダ</option>
-              <option value="saint_kitts_and_nevis">Saint Kitts and Nevis</option>
+              <option value="saint_kitts_and_nevis">セントクリストファー・ネーヴィス</option>
               <option value="saint_lucia">セントルシア</option>
-              <option value="saint_vincent_and_the_grenadines">Saint Vincent and the Grenadines</option>
+              <option value="saint_vincent_and_the_grenadines">セントビンセント及びグレナディーン諸島</option>
               <option value="samoa">サモア</option>
               <option value="san_marino">サンマリノ</option>
-              <option value="sao_tome_and_principe">Sao Tome and Principe</option>
+              <option value="sao_tome_and_principe">サントメ・プリンシペ</option>
               <option value="saudi_arabia">サウジアラビア</option>
               <option value="senegal">セネガル</option>
               <option value="serbia">セルビア</option>
@@ -836,10 +865,10 @@
               <option value="tajikistan">タジキスタン</option>
               <option value="tanzania">タンザニア</option>
               <option value="thailand">タイ</option>
-              <option value="timor_leste">Timor-Leste</option>
+              <option value="timor_leste">東ティモール</option>
               <option value="togo">トーゴ</option>
               <option value="tonga">トンガ</option>
-              <option value="trinidad_and_tobago">Trinidad and Tobago</option>
+              <option value="trinidad_and_tobago">トリニダード・トバゴ</option>
               <option value="tunisia">チュニジア</option>
               <option value="turkey">トルコ</option>
               <option value="turkmenistan">トルクメニスタン</option>
@@ -866,7 +895,7 @@
       </div>
 
       <div class="demo-actions">
-        <button class="btn-primary" id="demo-submit-btn" onclick="submitDemographics()">診断結果を見る <span class="arrow">→</span></button>
+        <button class="btn-primary" id="demo-submit-btn" onclick="submitDemographics()">結果を見る <span class="arrow">→</span></button>
         <button class="btn-secondary" id="demo-skip-btn" onclick="skipDemographics()" style="display:none;">スキップ</button>
       </div>
       <div id="demo-status" style="display:none;text-align:center;color:var(--gold);font-size:0.9rem;margin-top:16px;"></div>
@@ -881,12 +910,12 @@
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         戻る
       </button>
-      <div class="q-counter">質問 <span id="q-num">1</span> / <span id="q-total">77</span></div>
+      <div class="q-counter">第 <span id="q-num">1</span> 問 <span id="q-total">77</span></div>
     </div>
     <div class="scenario-scene" id="q-scene"></div>
     <div class="scenario-text" id="q-text"></div>
     <div class="answers" id="answers-container"></div>
-    <div class="kbd-hint" id="kbd-hint">選択肢の <kbd>1</kbd> または <kbd>2</kbd> を押して決定</div>
+    <div class="kbd-hint" id="kbd-hint">押す <kbd>1</kbd> または <kbd>2</kbd> で選択</div>
   </div>
 
   <!-- RESULTS -->
@@ -895,79 +924,138 @@
     <div class="type-badge" id="type-badge"></div>
     <div class="type-name" id="type-name"></div>
     <div class="type-tagline" id="type-tagline"></div>
+    <div id="save-status" style="font-size:0.9rem;margin:4px 0 0;min-height:1.2em;"></div>
     <p class="type-description" id="type-description"></p>
     <div class="traits-grid" id="traits-grid"></div>
-    <div id="rarity-line"></div>
     <div class="sep"></div>
     <div class="spectrum-section">
-      <div class="spectrum-label">あなたのスペクトル</div>
+      <div class="spectrum-label">あなたのスペクトラム</div>
       <div id="spectrum-bars"></div>
     </div>
 
-    <!-- PERSONALIZED INSIGHTS (populated by renderInsights) -->
-    <div id="insight-clarity" class="insight-block" style="display:none;">
-      <div class="insight-label">あなたのタイプの明確度</div>
-      <div class="clarity-note" id="clarity-note"></div>
-      <div id="clarity-neighbours"></div>
+    <!-- EVIDENCE: the scenarios that produced this result -->
+    <div class="rb-block" id="evidence-block" style="display:none;">
+      <div class="rb-label">なぜこの結果になったのか</div>
+      <p class="rb-sub" id="evidence-sub"></p>
+      <div id="evidence-dims"></div>
     </div>
 
-    <div id="insight-functions" class="insight-block" style="display:none;">
-      <div class="insight-label">あなたの脳の配線（認知機能）</div>
-      <div id="fn-stack"></div>
-      <a href="/ja/cognitive-functions" class="btn-secondary" style="text-decoration:none;margin-top:20px;">認知機能とは？ →</a>
+    <!-- RARITY -->
+    <div class="rb-block" id="rarity-block">
+      <div class="rb-stat"><span class="rb-num" id="rarity-num"></span><span class="rb-cap" id="rarity-cap"></span></div>
+      <p class="rb-line" id="rarity-line"></p>
     </div>
 
-    <div id="insight-moments" class="insight-block" style="display:none;">
-      <div class="insight-label">あなたの決定的な瞬間</div>
-      <div class="clarity-note" id="moment-intro" style="margin-bottom:22px;"></div>
-      <div id="moment-list"></div>
+    <!-- COGNITIVE FUNCTIONS -->
+    <div class="rb-block">
+      <div class="rb-label">あなたの心の配線</div>
+      <p class="rb-sub">思考の働く順番です。最初のものが最も自然に動き、最後のものが成長の余地となります。</p>
+      <div class="fnstack" id="fnstack"></div>
     </div>
 
-    <div class="insight-divider"></div>
+    <!-- AT BEST / UNDER STRESS -->
+    <div class="rb-block">
+      <div class="rb-twocol">
+        <div class="rb-card rb-card-best">
+          <div class="rb-card-h">最も良い状態のとき</div>
+          <p id="best-text"></p>
+        </div>
+        <div class="rb-card rb-card-stress">
+          <div class="rb-card-h">ストレス下では</div>
+          <p id="stress-text"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- STRENGTHS / BLIND SPOTS -->
+    <div class="rb-block">
+      <div class="rb-twocol">
+        <div>
+          <div class="rb-label">強み</div>
+          <ul class="rb-list rb-list-plus" id="strengths-list"></ul>
+        </div>
+        <div>
+          <div class="rb-label">盲点</div>
+          <ul class="rb-list rb-list-minus" id="blindspots-list"></ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMPATIBILITY -->
+    <div class="rb-block">
+      <div class="rb-label">相性の良い相手</div>
+      <p class="rb-sub">あなたの結果と噛み合いやすいタイプです。どれでも触れると力学が見られます。</p>
+      <div class="rb-compat" id="compat-types"></div>
+    </div>
+
+    <!-- CHARACTERS -->
+    <div class="rb-block">
+      <div class="rb-label">同じタイプの人物</div>
+      <p class="rb-sub" id="chars-sub"></p>
+      <a class="rb-charlink" id="chars-link" href="/ja/archive">すべての <span id="chars-count"></span> 人物を見る →</a>
+    </div>
+
+    <!-- WEAR YOUR TYPE -->
+    <a class="rb-shop" id="shop-strip" href="#" target="_blank" rel="noopener">
+      <div class="rb-shop-left">
+        <div class="rb-shop-eyebrow">タイプを身にまとう</div>
+        <div class="rb-shop-name" id="shop-name"></div>
+        <div class="rb-shop-sub">上質な生地に、静かな金の箔押し。Seventy-Sevenコレクションより。</div>
+      </div>
+      <div class="rb-shop-cta">コレクションを見る →</div>
+    </a>
 
     <div class="result-actions">
-      <button class="btn-primary" onclick="retakeTest()">テストを再受診する <span class="arrow">→</span></button>
-      <button class="btn-secondary" onclick="shareResult()">結果をシェアする</button>
-      <a id="type-deep-link" href="/ja/types" class="btn-secondary" style="text-decoration:none;">詳細解説 →</a>
-      <a id="functions-link" href="/ja/functions" class="btn-secondary" style="text-decoration:none;">機能を探求する →</a>
-      <a id="archive-type-link" href="/ja/archive" class="btn-secondary" style="text-decoration:none;">キャラクターアーカイブ →</a>
-      <a id="compat-link" href="/ja/compatibility" class="btn-secondary" style="text-decoration:none;">相性診断 →</a>
+      <button class="btn-primary" onclick="retakeTest()">もう一度受ける <span class="arrow">→</span></button>
+      <button class="btn-secondary" onclick="shareResult()">結果を共有</button>
+      <a id="type-deep-link" href="/ja/types" class="btn-secondary" style="text-decoration:none;">詳しく見る →</a>
+      <a id="functions-link" href="/ja/functions" class="btn-secondary" style="text-decoration:none;">機能を見る →</a>
+      <a id="archive-type-link" href="/ja/archive" class="btn-secondary" style="text-decoration:none;">人物 →</a>
+      <a id="compat-link" href="/ja/compatibility" class="btn-secondary" style="text-decoration:none;">相性 →</a>
     </div>
 
     <div id="eb1" style="margin-top:40px;background:#13161a;border:1px solid #252a30;border-radius:16px;padding:32px;">
       <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#c9a84c;margin-bottom:10px;">結果を保存する</div>
-      <p style="font-size:14px;color:#b5ada6;line-height:1.6;margin-bottom:8px;">メールアドレスを入力すると、診断された性格タイプを保存し、いつでも再確認できるようになります。</p>
-      <p style="font-size:12px;color:#b5ada6;line-height:1.6;margin-bottom:20px;">広告ブロッカーをお使いですか？ フォーム全体を表示するには、このページで広告ブロッカーを無効にする必要がある場合があります。</p>
+      <p style="font-size:14px;color:#b5ada6;line-height:1.6;margin-bottom:8px;">メールアドレスを入力すると、タイプを保存していつでも見返せます。</p>
+      <p style="font-size:12px;color:#b5ada6;line-height:1.6;margin-bottom:20px;">広告ブロッカーをお使いですか。フォーム全体を表示するには、このページで無効にする必要があるかもしれません。</p>
       <div id="eb2">
         <form onsubmit="event.preventDefault();saveResult();" style="margin:0;">
           <input type="email" id="eb3" style="width:100%;background:#0c0e10;border:1px solid #252a30;border-radius:10px;padding:14px 18px;font-family:'DM Sans',sans-serif;font-size:16px;color:#ede8df;outline:none;margin-bottom:16px;" placeholder="your@email.com" autocomplete="email">
         <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:20px;">
           <input type="checkbox" id="eb4" style="flex-shrink:0;width:16px;height:16px;margin-top:2px;accent-color:#c9a84c;cursor:pointer;">
-          <label for="eb4" style="font-size:12px;color:#b5ada6;line-height:1.6;cursor:pointer;">メールアドレスと診断結果が保存されることに同意します。削除依頼は <span style="color:#c9a84c;">noreply&#64;77scenarios&#46;com</span> までご連絡ください。</label>
+          <label for="eb4" style="font-size:12px;color:#b5ada6;line-height:1.6;cursor:pointer;">メールアドレスと結果が保存されることに同意します。削除をご希望の場合の連絡先&#58; <span style="color:#c9a84c;">noreply&#64;77scenarios&#46;com</span></label>
         </div>
         <button type="submit" class="btn-save">結果を保存</button>
         </form>
       </div>
       <div id="eb5" style="display:none;">
         <div style="font-size:28px;color:#c9a84c;margin-bottom:10px;">✓</div>
-        <div style="font-size:14px;color:#ede8df;">✓ 保存されました。診断結果が保存されました。</div>
+        <div style="font-size:14px;color:#ede8df;">保存しました。結果は保存されています。</div>
       </div>
       <div id="eb6" style="display:none;font-size:13px;color:#e07070;margin-top:12px;"></div>
+      <!-- Shown when an ad blocker has hidden the form controls above. The
+           result screen looks for this element by id; it was referenced but
+           never actually added to the page, so the branch threw instead of
+           explaining why the form had disappeared. -->
+      <div id="eb7" style="display:none;font-size:13px;color:#b5ada6;line-height:1.6;margin-top:12px;">
+        広告ブロッカーがこのフォームの一部を隠しています。メールで結果を保存するには、このページで無効にしてください。または
+        <a href="/ja/signup" style="color:#c9a84c;">アカウントを作成する</a> と、プロフィールに自動的に保存されます。
+      </div>
     </div>
   </div>
 
 
 <!-- BURST OVERLAY -->
-<div id="screen-burst">>
+<div id="screen-burst">
     <div class="burst-flash" id="burst-flash"></div>
     <div class="burst-intro" id="burst-intro">
       <div class="burst-eyebrow">クイックラウンド</div>
-      <div class="burst-heading">深く考えず、<br>直感で選んでください。</div>
-      <div class="burst-sub">10組の対比。最初の直感だけで選択。</div>
-      <button class="burst-start-btn" onclick="startBurst()">スタート</button>
+      <div class="burst-heading">考えないで。<br>選ぶだけ。</div>
+      <div class="burst-sub">十組。最初の直感だけで。</div>
+      <button class="burst-start-btn" onclick="startBurst()">はじめる</button>
     </div>
     <div class="burst-question-wrap" id="burst-qwrap">
-      <div class="burst-counter" id="burst-counter">1 / 10</div>
+      <div class="burst-counter" id="burst-counter">10問中1問</div>
       <div class="burst-timer-ring">
         <svg viewBox="0 0 48 48">
           <circle class="burst-timer-bg" cx="24" cy="24" r="22"/>
@@ -986,198 +1074,2006 @@
 </div>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const questionsNormal = [
-  {dim:'EI',scene:'帰宅',fn:'Se/Ni',text:"あなたは2週間、出張や長時間のフライト、ホテルの不味いコーヒーといった慌ただしい旅から戻ってきたところです。荷物を持って玄関の前に立っています。家の中には明かりがついています。",a:"立ち止まることなくドアを開け、中にいる人に声をかける。",b:"荷物を一旦置き、日常が再び始まる前の静寂な瞬間を少しだけ味わう。"},
-  {dim:'EI',scene:'最後の夜',fn:'Fe/Fi',text:"親しい友人グループが新しい都市や仕事へと別れ別れになる前夜です。全員でテーブルを囲んでいますが、このような時間は二度と訪れません。",a:"テーブルを回り、夜が明ける前に一人一人に言いたいことを伝える。",b:"その場に留まる。ここにどうしても言葉を伝えたい相手が一人いて、すでにその隣に座っている。"},
-  {dim:'EI',scene:'社内パーティー',fn:'Se/Ni',text:"会社の大規模な年末パーティーが開かれています。フリードリンク、大音量の音楽、どこを見ても顔見知り程度の同僚ばかりです。あなたは会場のドアをくぐります。",a:"まっすぐ中へ入る。飲み物を手に入れ、話しかける相手を見つける。これを楽しみにしていた。",b:"まずはドリンクを手に取り、状況が見える良い場所を見つける。会話に加わる前に、会場に誰がいるか把握したい。"},
-  {dim:'EI',scene:'通勤時間',fn:'Se/Si',text:"あなたは2年間、この通勤ルート（同じ道路、同じ時間）を繰り返してきました。ヘッドフォンを装着し、これから40分の時間が目の前にあります。",a:"誰かに電話をかける。40分の時間を持て余している。",b:"音楽やポッドキャストを流し、自分の思考の世界に入る。これは一日のうちで唯一の本当の静かな時間である。"},
-  {dim:'EI',scene:'サプライズ',fn:'Se/Ti',text:"帰宅すると、家の中が人であふれかえっています。友人たちや、何年も会っていなかった人たちまで。誰かがあなたに知らせず、彼らを呼び集めたのです。",a:"バッグを置いて、「何か飲む？」と皆に声をかける。",b:"コートを脱ぐ前に、「一体何が起きているんだ？」と状況を尋ねる。"},
-  {dim:'EI',scene:'長期プロジェクト',fn:'Fe/Fi',text:"長期にわたる困難な仕事プロジェクトに関わり始めて3ヶ月が経ちました。労働時間は長く、終わりはまだ遠い先です。",a:"あなたを支えているのはチームです。毎日彼らに会うこと、グループチャット、共有されたフラストレーション。他者の存在が活力になります。",b:"チームの支えは必要ありません。原動力は仕事そのものです。自分が直面している課題、やり遂げようとしていること。それだけがあなたを突き動かします。"},
-  {dim:'EI',scene:'昇進',fn:'Se/Ni',text:"ミーティングの前、マネージャーに廊下へ呼び出され、あなたが昇進したことを静かに告げられました。そして、「ミーティングで今発表するか、それとも当面は二人だけの秘密にするか？」と尋ねられます。",a:"今すぐ発表するよう求める。その場にいる全員に知ってほしい。",b:"今は伏せておくよう伝える。適切なタイミングで、一人ずつ自分の口から伝えたい。"},
-  {dim:'EI',scene:'近所の人',fn:'Fe/Te',text:"駐車場で近所の人にばったり会いました。あなたには買い物の袋があり、次に行くべき場所があります。彼らは立ち止まり、挨拶をしてきました。",a:"しっかりと立ち止まって話す。「久しぶりですね」と声をかけ、数分の時間を割く。",b:"挨拶をし、手短に近況を交わして、そのまま先を急ぐ。後できちんと話す機会を作る。"},
-  {dim:'EI',scene:'空港',fn:'Fe/Fi',text:"あなたは空港で愛する人に別れを告げています。搭乗ゲートが閉まろうとしており、言うべきことはすべて伝えました。彼らは背を向けて歩き出します。",a:"後ろから呼び止める。もう一つだけ。伝えたいことは常に尽きない。",b:"そのまま行かせる。見えなくなるまで見守り、それからその場を立ち去る。"},
-  {dim:'EI',scene:'近況確認',fn:'Fe/Fi',text:"しばらく話していなかった友人のことが、何の前触れもなく頭に浮かびました。特別な理由はありません。",a:"電話をかける。彼らの声を聞きたい。",b:"手短にテキストメッセージを送る。ただ、彼らのことを考えていたと伝えるために。"},
-  {dim:'EI',scene:'新しい街',fn:'Se/Si',text:"新しい都市に来て3日目。同僚が今夜の大規模な社交イベントにあなたを招待してくれました。そこには誰も知り合いがおらず、あなたはまだ現地の様子に慣れていません。",a:"参加する。人に出会うことこそが、その土地に慣れるための方法だからだ。",b:"辞退する。まだ生活が落ち着いておらず、他者と関わる前に自分の時間と空間を確保したい。"},
-  {dim:'EI',scene:'久しぶりの近況報告',fn:'Si/Fi',text:"古い友人が「最近どう？」と尋ねてきました。最後に会ってから長い時間が経っており、話したいことが山ほどあります。",a:"最初から順を追って話し、何も省略しない。",b:"手短な近況を伝える。真実でありつつも軽い内容に留め、本音のストーリーは本当に適切なタイミングまで取っておく。"},
-  {dim:'EI',scene:'良いニュース',fn:'Fe/Ni',text:"人生を変えるような素晴らしい知らせの電話を受けました。あなたがずっと待ち望んでいた種類の内容です。",a:"電話を切った瞬間、すぐに誰かに電話をかける。今すぐ誰かにこのニュースを伝えたい。",b:"電話を切り、静かに座る。誰かに言葉を発する前に、まずは一人でそのニュースを噛み締めたい。"},
-  {dim:'EI',scene:'海外からのオファー',fn:'Fe/Fi',text:"海外からの仕事のオファーの回答期限が深夜12時に迫っています。一日中考え抜きましたが、手にはスマホがあります。最も影響を受ける人々は、電話一本で連絡がつく距離にいます。",a:"彼らに電話をする。影響を受ける人々の意見を聞かずには決断できない。",b:"スマホを置き、一人で決断を下す。これはあなた自身の決断だ。"},
-  {dim:'EI',scene:'つらい一日',fn:'Fe/Fi',text:"身近な人が最悪の一日を過ごし、落ち込んでいます。彼らはソファに腰掛け、多くを語ろうとしません。",a:"隣に寄り添う。身の回りの世話など、些細なできることを見つけ、相手との間の温度を温かく保つ。",b:"ただ近くに静かに座る。何かをしようとせず、ただそこに寄り添う。"},
-  {dim:'EI',scene:'主役の席',fn:'Fe/Fi',text:"友人グループがあなたのための大規模な誕生日のディナーを開いてくれています。誰かが立ち上がって乾杯の音頭を取り、「他に何か言いたい人はいる？」と皆に問いかけます。",a:"立ち上がって発言する。",b:"座ったままでいる。"},
-  {dim:'EI',scene:'チームワーク',fn:'Fe/Ti',text:"プロジェクトが最終段階に入り、あなたの担当部分は予定より早く完了しました。チームが苦戦している渦中に飛び込んで手助けするか、時間を活用して自分の専門領域をさらに深めるか選択できます。",a:"手助けに飛び込む。物事の中心に身を置いている時にこそ、最も良い仕事ができる。",b:"自分の仕事の追求に専念する。それこそが最終的に最も価値のある貢献になる。"},
-  {dim:'EI',scene:'最悪の一週間',fn:'Fe/Si',text:"心身ともに疲れ果てた一週間が終わりました。金曜日の夜、特に何の予定も入っていません。",a:"友人に連絡する。会話や温もり、日常から離れたどこか別の場所が必要だ。",b:"お風呂を沸かしてドアを閉める。他者と関われる状態になる前に、一人になる時間が必要だ。"},
-  {dim:'EI',scene:'バーベキュー',fn:'Se/Ni',text:"土曜日の夏の日。特に予定はありません。友人から「みんなで公園にいるからおいでよ」とテキストが届きます。",a:"上着を掴んですぐに向かう。土曜日はまさにそのためにある。",b:"一週間ずっと、この予定のない休日を楽しみにしていた。「後で行けたら行く」と伝える。"},
-  {dim:'EI',scene:'悲報',fn:'Fe/Si',text:"共通の友人の家族が亡くなりました。あなたは彼と1年以上会っていません。メッセージを送ることもできますが、直接会いに行くこともできます。",a:"直接会いに行く。このような報せは、顔を合わせずに済ませるべきではない。",b:"メッセージを送る。大切なのは哀悼の意が伝わることであり、距離や対面かどうかは問題ではない。"},
-  {dim:'SN',scene:'ディナーテーブル',fn:'Si/Ni',text:"あなたはディナーに参加しています。右側の人々は、今後15年のテクノロジーの仕組みを一変させる可能性のある議論をしています。左側では、あなたの親しい友人ジェイコブが先週末にしでかした、誰もが噂している出来事について話しています。",a:"左を向く。",b:"右を向く。"},
-  {dim:'SN',scene:'質問',fn:'Se/Ni',text:"あなたが仕事の最中、6歳の子供が立ち止まって「どうして空は青いの？」と尋ねてきました。",a:"光が大気中で散乱するからだよ。青い光は他の光よりも強く散乱するんだ。",b:"「あなたは何色だったらいいと思う？」と尋ね返す。"},
-  {dim:'SN',scene:'病院',fn:'Si/Ni',text:"病院のベッドで目が覚めました。ここに来た記憶がありません。看護師が入ってきます。",a:"「何が起きたんですか？ いつ？ 容態は？」と尋ねる。",b:"まずは自分の手をじっと見つめる。"},
-  {dim:'SN',scene:'ウォルター・ホワイト',fn:'Ti/Ni',text:"あなたは『ブレイキング・バッド』を誰かと一緒に見ています。主人公ウォルターが、ジェーンが窒息しかけているのを黙って見殺しにするシーンです。一緒に見ている人が「なぜ助けなかったんだろう？」とあなたに尋ねます。",a:"助けられなかったんだよ。彼女はジェシーを破滅させようとしていたから、ウォルターは大切な二人の間で選択を迫られたんだ。",b:"あの瞬間、彼は『間違いを犯す普通の男』であることをやめたんだ。それ以降のすべての行動は、彼が冷酷な人間へと変貌した結果だよ。"},
-  {dim:'SN',scene:'写真',fn:'Si/Ni',text:"10年前の自分の写真を見つけました。誰かから「何が見える？」と尋ねられます。",a:"若さ、当時の服、撮影場所、その特定の年のこと。",b:"これから自分の身に何が起こるかまだ知らない人間。その表情からそれが読み取れる。"},
-  {dim:'SN',scene:'紛失したスマホ',fn:'Se/Ni',text:"見知らぬ都市にいます。スマホの充電が切れてしまいました。地図も、言葉も、インターネットも使えません。",a:"目印になる建物を見つける。見覚えのある場所から方向を立て直す。",b:"直感で良さそうな方向を選び、歩き出す。"},
-  {dim:'SN',scene:'バーでの緊迫',fn:'Se/Ni',text:"バーにいます。店の隅にいる見知らぬ二人が今にも殴り合いを始めそうです。あと30秒以内に何かが起こるでしょう。",a:"非常口、カウンターの上のボトル、自分とドアの間に誰がいるかを把握する。",b:"まだ一言も発していない男を注視する。本当に警戒すべきなのは彼だ。"},
-  {dim:'SN',scene:'交渉資料',fn:'Si/Ni',text:"これから交渉を行う相手に関するファイルを渡されました。時間力は20分です。",a:"1ページ目から読み始める。経歴、歴史、これまでのすべての取引実績を追う。",b:"相手の「敗北の記録」までスキップする。そこにこそ本質的な情報が隠されている。"},
-  {dim:'SN',scene:'先駆者',fn:'Si/Ni',text:"その分野の第一人者と1時間だけ話す機会を得ました。最初の質問を投げかけます。",a:"「具体的にどうやって今の地位を築いたのですか？」",b:"「この業界はこれからどこに向かっていくと思いますか？」"},
-  {dim:'SN',scene:'討論の行方',fn:'Ti/Ni',text:"近くで二人が議論をしています。一人はより優れた『事実（データ）』を持っており、もう一人はより優れた『要点（論点）』を語っています。",a:"事実を支持する。",b:"要点を支持する。"},
-  {dim:'SN',scene:'宝くじ',fn:'Te/Ni',text:"人生を変えるほどの莫大な大金が当たりました。最初の思考は？",a:"税金、銀行口座、誰に連絡すべきかなど、整理すべき実務的な手続きについて。",b:"これが何を意味するのか。これまでの人生のステージが終わったという感覚について。"},
-  {dim:'SN',scene:'山頂アタック',fn:'Se/Ni',text:"ベースキャンプであなたが最初に目を覚ましました。山頂アタックまであと2時間です。",a:"装備と天候のコンディションを念入りにチェックする。",b:"外に座り、山を静かに見つめる。"},
-  {dim:'SN',scene:'プレゼンへの疑問',fn:'Ti/Ni',text:"同僚が強力な論理を展開し、会議室の全員が納得したようですが、あなただけは納得していません。",a:"彼が提示した具体的な主張やデータに疑問を投げかける。",b:"その主張の根底にある『前提』そのものに疑問を投げかける。"},
-  {dim:'SN',scene:'大改革の提案',fn:'Te/Ni',text:"誰かが大規模なアイデアを提案し、周囲はすぐに実行に移そうとしていますが、あなたはまだ迷っています。",a:"それを実現するために、具体的に何が必要か（リソースや手順）を考える。",b:"これがそもそも『なすべき正しいこと』なのかどうかを考える。"},
-  {dim:'SN',scene:'ドキュメンタリー',fn:'Si/Ni',text:"40年前に起きた出来事についてのドキュメンタリーを見ています。友人が、なぜそんなものに興味があるのか尋ねてきました。",a:"単に物語として面白いからだ。",b:"それが、今まさに起こっている出来事を説明してくれるからだ。"},
-  {dim:'SN',scene:'幸運の定義',fn:'Ti/Ni',text:"誰かから「運を信じるか？」と尋ねられました。",a:"信じる。",b:"信じないが、物事の「パターン（法則）」は信じる。"},
-  {dim:'SN',scene:'廃屋',fn:'Se/Ni',text:"何年も放置されていた空き家に入ります。あなたが最初の侵入者です。",a:"部屋から部屋へと探索を進める。",b:"何かに触れる前に、まずはその場にじっと佇む。"},
-  {dim:'SN',scene:'オフグリッド生活',fn:'Si/Ni',text:"インフラから完全に切り離された（オフグリッド）生活を1年間送ってきた人が戻ってきました。1つだけ質問できます。",a:"「実務的に最も困難だったことは何ですか？」",b:"「なぜそれをやろうと思ったのですか？」"},
-  {dim:'SN',scene:'世紀の発見',fn:'Ti/Ni',text:"科学界における重大な新発見がニュースを賑わせており、友人がどう思うか尋ねてきました。",a:"彼らが具体的に『何を発見したのか』に興味を持つ。",b:"その発見が将来的に『何を変えるのか』に興味を持つ。"},
-  {dim:'SN',scene:'珍しい職業',fn:'Si/Ni',text:"パーティーで、聞いたこともない非常に珍しい仕事をしている人物に出会いました。",a:"「普段、具体的にどのような一日を過ごしているのですか？」と尋ねる。",b:"「どうやってその仕事に就くことになったのですか？」と尋ねる。"},
-  {dim:'TF',scene:'火災の街角',fn:'Fi/Te',text:"街の一画が炎に包まれています。あなたの右側には、人類のエネルギー生産効率を100倍にし、貧困を終わらせ、宇宙旅行を可能にし、新たな黄金時代を切り開く技術の設計図が置かれた建物があります。左側には、10分前に子供の悲鳴が聞こえたアパートがあります（その後は何も聞こえません）。どちらか片方しか救う時間がありません。",a:"左（アパート）へ向かう。",b:"右（設計図）へ向かう。"},
-  {dim:'TF',scene:'手柄の争い',fn:'Te/Fe',text:"二人の同僚が、ある成果についてどちらが功績を認められるべきかで対立しています。双方に言い分があり、あなたに見解を求められました。",a:"タイムラインと記録書類の提出を求める。客観的事実の中に真実があるはずだ。",b:"それぞれがその件について語る様子を観察する。彼らの振る舞いの中にすでに答えはある。"},
-  {dim:'TF',scene:'例外の適用',fn:'Te/Fi',text:"誰かから、規定の『例外』を適用してほしいと頼まれました。ルールには明確な存在理由がありますが、彼らの状況は本当に困難なものです。",a:"厳格にルールを維持する。一人に対して例外を作れば、そのルールは全員にとって無意味なものになる。",b:"例外を認める。ルールは人を助けるために存在するのであり、ここで適用することは本末転倒だ。"},
-  {dim:'TF',scene:'同僚の苦境',fn:'Te/Fe',text:"親しい同僚が勤務時間中につらい個人的な報せを受け、明らかに動揺して仕事が手につかない状態です。",a:"何が必要か、次に取るべき具体的なステップは何かを尋ねる。",b:"ただそばに座る。誰かが寄り添ってくれていると実感してもらう。"},
-  {dim:'TF',scene:'フィードバック',fn:'Te/Fe',text:"相手にとって耳の痛いフィードバックを伝えなければなりません。彼らの成果は基準に達していません。",a:"遠回しにせず、その場ですぐに率直に伝える。",b:"タイミングと伝える言葉を慎重に選ぶ。"},
-  {dim:'TF',scene:'二人の候補者',fn:'Te/Fe',text:"採用選考の最終段階で、優秀な二人の候補者が残りました。一人は圧倒的な才能を持っていますが個人プレーを好みます。もう一人は技術的には少し劣りますが、周囲のメンバーの能力を引き出す才能があります。",a:"一人目（才能）を採用する。個人の実力こそがすべてだ。",b:"二人目（協調）を採用する。協力し合えないチームはいずれ機能しなくなる。"},
-  {dim:'TF',scene:'忠告',fn:'Te/Fe',text:"友人が後悔するであろう決断を下そうとしています。彼らはあなたに意見を求めていません。",a:"自分の考えを明確に伝える。優しすぎる忠告は、忠告としての役割を果たさない。",b:"適切なタイミングと言葉を選ぶ。伝え方が悪い忠告は、ただ拒絶されるだけだ。"},
-  {dim:'TF',scene:'チームの亀裂',fn:'Te/Fe',text:"チームの二人のメンバーが衝突しています。それは数週間続いており、グループ全体に悪影響を及ぼしています。",a:"二人を同席させ、彼らの対立がチームにどれだけの損失を与えているかを率直に伝える。",b:"まずは個別に話を聞く。それぞれの立場や視点を理解したい。"},
-  {dim:'TF',scene:'功労者の推薦',fn:'Ti/Fi',text:"プロジェクトが成功裏に終わりました。マネージャーから「誰が最も貢献したか」尋ねられました。一人は目立つ成果を上げました。もう一人は目立たないところで全体を支えていましたが、誰も気づいていません。",a:"目立つ成果を上げた人物を推薦する。評価は隠れた努力ではなく、目に見える結果に伴うべきだ。",b:"陰で全体を支えた人物を推薦する。彼がどれだけの犠牲を払ったかを知っているのはあなただけだ。"},
-  {dim:'TF',scene:'謝罪と許し',fn:'Ti/Fi',text:"あなたを深く傷つけた人物が、関係を修復したいと望んでいます。彼らが変わったことは明らかです。問題は、彼らのしたことをあなたが水に流せるかどうかです。",a:"関係を再開することはできるが、以前と同じには戻らない。起きた事実は消えない。",b:"完全に水に流す。過去の貸し借り（ ledger ）をいつまでも抱え続けること自体が関係を蝕む。"},
-  {dim:'TF',scene:'失敗プロジェクトの報告',fn:'Te/Fe',text:"あなたが関わっているプロジェクトの失敗は明らかですが、まだ誰もそれを口にしていません。マネージャーに呼び出され、率直な意見を求められました。",a:"ありのままの事実を伝える。言わずに引き延ばすほど、全員の損失が大きくなる。",b:"関係者の感情を配慮する。何を言うかだけでなく、どのように伝えるかが重要だ。"},
-  {dim:'TF',scene:'介護資金',fn:'Te/Fi',text:"父親が高額な介護ケアを必要としています。あなたにはその資金がありますが、それを使えば子供の教育資金として貯めていた分がすべて消えてしまいます。",a:"子供たち（未来）を優先する。",b:"父親（恩義）を優先する。"},
-  {dim:'TF',scene:'重大な秘密',fn:'Fe/Fi',text:"大親友の夫が浮気している決定的な証拠を掴みました。しかし、彼女は妊娠3ヶ月で、二人はちょうど新しい家の購入手続きを進めているところです。",a:"彼女に伝える。彼女には真実を知る権利がある。",b:"今は何も言わない。これからの彼女の状況を考えれば、今伝えるべきではない。"},
-  {dim:'TF',scene:'遺言書',fn:'Ti/Fi',text:"親族が不平等な遺産配分の遺言を残しました。配分の少ない人物の方が、明らかに多くの世話をしていました。遺言書は法的かつ明確に作成されています。",a:"書かれている通りに従う。財産は本人が望むように処分されるべきだ。",b:"配分の少なかった人物に対し、彼らのこれまでの尽力が見届けられていたことを伝える方法を模索する。"},
-  {dim:'TF',scene:'息子の過ち',fn:'Te/Fe',text:"10代の息子が、他人の子供が退学処分になるような問題を起こしたと告白してきました。その子は無実であり、あなたの息子は恐怖で怯えています。",a:"正直に名乗り出るよう息子に伝える。",b:"一緒にどう解決するか考えようと伝える。"},
-  {dim:'TF',scene:'勝負の手段',fn:'Te/Fi',text:"尊敬する相手と、どうしても手に入れたいものを競っています。効果は絶大ですが、自分自身が誇りに思えないようなグレーな手段を使うことができます。",a:"それを使用する。勝つことこそが目的だ。",b:"使用しない。良心を犠牲にしてまで勝つ価値はない。"},
-  {dim:'TF',scene:'葛藤する友人',fn:'Fi/Fe',text:"親友が離婚以来、ひどく酒に溺れていますが、本人はそのことについて一切話そうとしません。",a:"相手が自分から話し出すのを待つ。",b:"自分からその話題を切り出す。"},
-  {dim:'TF',scene:'会社の調査',fn:'Ti/Fe',text:"会社が公的機関の調査を受けています。上司から、あなたの陳述書から特定の詳細を省くよう頼まれました。彼は10年間、あなたに良くしてくれた人物です。",a:"すべての真実をありのままに話す。",b:"上司に頼まれた詳細を伏せておく。"},
-  {dim:'TF',scene:'後輩のミス',fn:'Te/Fe',text:"あなたが2年間指導してきた後輩が、チーム全員の前で深刻なミスを犯しました。うっかりミスではなく、根本的な部分での勘違いです。",a:"その場で全員の前でミスを明確に指摘し、正す。他のメンバーもいずれ同じ状況に直面するからだ。",b:"後で個別に呼び出して指導する。大切なのは学びの機会であり、見せしめにすることではない。"},
-  {dim:'JP',scene:'ロードトリップ',fn:'Te/Ne',text:"友人とロードトリップに出かけます。目的地への期限はなく、二人だけの旅です。",a:"出発前にあらかじめルートを計画しておく。",b:"とにかく車に乗り込み、走りながらルートを決める。"},
-  {dim:'JP',scene:'締め切り',fn:'Te/Ni',text:"3週間後に提出するプロジェクトがあります。開始するのに必要なものは揃っていますが、今後さらに新しい情報が入る可能性もあります。",a:"今すぐ始める。最も避けたいのは、時間が足りなくなることだ。",b:"数日待つ。不完全な情報で進めるのは、作業の無駄になる可能性がある。"},
-  {dim:'JP',scene:'引き継ぎ',fn:'Si/Ne',text:"進行中のプロジェクトを途中で引き継ぐことになりました。前任者からの詳細な引き継ぎメモが残されています。",a:"作業を始める前にすべてを熟読する。前任者の意図を完璧に理解したい。",b:"すぐに作業を開始し、疑問が生じた都度メモを参照する。計画を理解する最良の方法は、実際に動かすことだ。"},
-  {dim:'JP',scene:'ディナーパーティー',fn:'Te/Ne',text:"3週間後、8人のゲストを招いてディナーを主催します。",a:"今日から計画を立て始める。この規模のディナーは直前では準備できない。",b:"経験上、最も素晴らしいパーティーには余白が必要だと知っている。直前になってから準備する。"},
-  {dim:'JP',scene:'平行線の議論',fn:'Te/Ne',text:"1時間続いている対立の渦中にいます。議論は平行線をたどっていますが、あなたには次の予定があります。",a:"解決するまでその場を離れない。未解決のモヤモヤを抱えたままにしたくない。",b:"一旦打ち切る。これ以上続けても意味がないので、日を改めて再開する。"},
-  {dim:'JP',scene:'散歩の予定',fn:'Te/Ne',text:"午後の時間が空いており、長い散歩に出かけたい気分です。約束の時間はありません。",a:"出発する前におおよその目的地を決めておく。",b:"直感で方向を決めて、とにかく歩き出す。"},
-  {dim:'JP',scene:'余命宣告',fn:'Te/Ne',text:"余命6ヶ月であると告げられました。翌朝、目が覚めます。",a:"やるべきことの「リスト」を作成する。",b:"誰かに電話して「どこかに行かないか」と誘う。"},
-  {dim:'JP',scene:'新しい近道',fn:'Si/Se',text:"目的地に向かう途中、通ったことのないルートを発見しました。こちらの方が早いかもしれません。",a:"まずは地図で確認する。どのような道か把握してから進みたい。",b:"とにかく進んでみる。正しい選択だったかはすぐに分かるだろう。"},
-  {dim:'JP',scene:'新しい趣味',fn:'Si/Ne',text:"予備知識のまったくない新しい趣味を始めます。",a:"始める前に、関連する知識を徹底的に調べる。",b:"とにかく始めてみて、やりながら学ぶ。"},
-  {dim:'JP',scene:'旅行の荷造り',fn:'Si/Se',text:"明日から1週間の旅行に出かけます。",a:"今夜のうちに荷造りを完了させる。バッグの中のすべての持ち物に明確な意図がある。",b:"明日の朝に荷造りをする。必要なものは大体頭に入っている。"},
-  {dim:'JP',scene:'人員の欠員',fn:'Te/Ni',text:"チームの重要なメンバーが抜けました。社内からの候補者が一人いますが、完全に適任とは言えません。",a:"彼をそのポジションに採用する。欠員による損失は毎週増大していく。",b:"完全に適任な人物が現れるまで待つ。"},
-  {dim:'JP',scene:'二つの選択',fn:'Te/Ne',text:"マンションの頭金にするか、あるいは3年間計画してきた起業の資金にするか、十分な貯金があります。金曜日までに決断しなければなりません。",a:"マンションを購入する。まずは安定が第一だ。",b:"起業する。挑戦しなければ絶対に後悔する。"},
-  {dim:'JP',scene:'競合の出現',fn:'Si/Ne',text:"起業して3ヶ月。強力な競合他社が先週、全く同じプロダクトをローンチしたことが判明しました。5人のチームメンバーがあなたの指示を待っています。",a:"次の行動を起こす前に、一旦立ち止まって全体を再評価する。",b:"とにかく開発を続ける。ここで立ち止まることこそが本当の敗北だ。"},
-  {dim:'JP',scene:'最後の決断',fn:'Si/Ni',text:"明日、回復の見込みがないと医師に宣告された親の延命治療を停止します。あなたは今夜、病院の廊下に腰掛けています。",a:"もう一度だけ、すべてのカルテや医療レポートに目を通す。",b:"家に帰って眠る。決断はすでに下している。"},
-  {dim:'JP',scene:'見知らぬ病室',fn:'Te/Se',text:"見知らぬ国の、見覚えのない病院のベッドで目が覚めました。身分証もスマホもなく、部屋には誰もいません。",a:"誰かが来て情報を得られるまで、その場でじっと待つ。",b:"立ち上がり、手がかりを探しに外へ出る。"},
-  {dim:'JP',scene:'シャバの風',fn:'Ne/Fi',text:"4年間の刑期を終えて刑務所から出所しました。自由の身となった最初の夜です。明日の予定は何もありません。",a:"今週の計画を立てる。もう1日たりとも無駄にはしない。",b:"ただ外に座って、しばらくぼんやりと過ごす。"},
-  {dim:'JP',scene:'より良いアプローチ',fn:'Si/Ne',text:"計画の途中で、誰かが明らかに優れた新しいアプローチを提案してきました。",a:"合意された計画を変更するには、極めて強力な理由が必要だ。単なる変更はコストを増大させる。",b:"提案を詳しく聞く。最初に決めたことが何であれ、より良い計画は採用されるべきだ。"},
-  {dim:'JP',scene:'未読メール',fn:'Te/Ne',text:"未読メールが200件溜まっています。",a:"自分にはそんなことは絶対に起こり得ない。",b:"それがどうした？"},
+  {
+    "dim": "EI",
+    "scene": "帰宅",
+    "fn": "Se/Ni",
+    "text": "あなたは2週間、出張や長時間のフライト、ホテルの不味いコーヒーといった慌ただしい旅から戻ってきたところです。荷物を持って玄関の前に立っています。家の中には明かりがついています。",
+    "a": "立ち止まることなくドアを開け、中にいる人に声をかける。",
+    "b": "荷物を一旦置き、日常が再び始まる前の静寂な瞬間を少しだけ味わう。"
+  },
+  {
+    "dim": "EI",
+    "scene": "最後の夜",
+    "fn": "Fe/Fi",
+    "text": "親しい友人グループが新しい都市や仕事へと別れ別れになる前夜です。全員でテーブルを囲んでいますが、このような時間は二度と訪れません。",
+    "a": "テーブルを回り、夜が明ける前に一人一人に言いたいことを伝える。",
+    "b": "その場に留まる。ここにどうしても言葉を伝えたい相手が一人いて、すでにその隣に座っている。"
+  },
+  {
+    "dim": "EI",
+    "scene": "社内パーティー",
+    "fn": "Se/Ni",
+    "text": "会社の大規模な年末パーティーが開かれています。フリードリンク、大音量の音楽、どこを見ても顔見知り程度の同僚ばかりです。あなたは会場のドアをくぐります。",
+    "a": "まっすぐ中へ入る。飲み物を手に入れ、話しかける相手を見つける。これを楽しみにしていた。",
+    "b": "まずはドリンクを手に取り、状況が見える良い場所を見つける。会話に加わる前に、会場に誰がいるか把握したい。"
+  },
+  {
+    "dim": "EI",
+    "scene": "通勤時間",
+    "fn": "Se/Si",
+    "text": "あなたは2年間、この通勤ルート（同じ道路、同じ時間）を繰り返してきました。ヘッドフォンを装着し、これから40分の時間が目の前にあります。",
+    "a": "誰かに電話をかける。40分の時間を持て余している。",
+    "b": "音楽やポッドキャストを流し、自分の思考の世界に入る。これは一日のうちで唯一の本当の静かな時間である。"
+  },
+  {
+    "dim": "EI",
+    "scene": "サプライズ",
+    "fn": "Se/Ti",
+    "text": "帰宅すると、家の中が人であふれかえっています。友人たちや、何年も会っていなかった人たちまで。誰かがあなたに知らせず、彼らを呼び集めたのです。",
+    "a": "バッグを置いて、「何か飲む？」と皆に声をかける。",
+    "b": "コートを脱ぐ前に、「一体何が起きているんだ？」と状況を尋ねる。"
+  },
+  {
+    "dim": "EI",
+    "scene": "長期プロジェクト",
+    "fn": "Fe/Fi",
+    "text": "長期にわたる困難な仕事プロジェクトに関わり始めて3ヶ月が経ちました。労働時間は長く、終わりはまだ遠い先です。",
+    "a": "あなたを支えているのはチームです。毎日彼らに会うこと、グループチャット、共有されたフラストレーション。他者の存在が活力になります。",
+    "b": "チームの支えは必要ありません。原動力は仕事そのものです。自分が直面している課題、やり遂げようとしていること。それだけがあなたを突き動かします。"
+  },
+  {
+    "dim": "EI",
+    "scene": "昇進",
+    "fn": "Se/Ni",
+    "text": "ミーティングの前、マネージャーに廊下へ呼び出され、あなたが昇進したことを静かに告げられました。そして、「ミーティングで今発表するか、それとも当面は二人だけの秘密にするか？」と尋ねられます。",
+    "a": "今すぐ発表するよう求める。その場にいる全員に知ってほしい。",
+    "b": "今は伏せておくよう伝える。適切なタイミングで、一人ずつ自分の口から伝えたい。"
+  },
+  {
+    "dim": "EI",
+    "scene": "近所の人",
+    "fn": "Fe/Te",
+    "text": "駐車場で近所の人にばったり会いました。あなたには買い物の袋があり、次に行くべき場所があります。彼らは立ち止まり、挨拶をしてきました。",
+    "a": "しっかりと立ち止まって話す。「久しぶりですね」と声をかけ、数分の時間を割く。",
+    "b": "挨拶をし、手短に近況を交わして、そのまま先を急ぐ。後できちんと話す機会を作る。"
+  },
+  {
+    "dim": "EI",
+    "scene": "空港",
+    "fn": "Fe/Fi",
+    "text": "あなたは空港で愛する人に別れを告げています。搭乗ゲートが閉まろうとしており、言うべきことはすべて伝えました。彼らは背を向けて歩き出します。",
+    "a": "後ろから呼び止める。もう一つだけ。伝えたいことは常に尽きない。",
+    "b": "そのまま行かせる。見えなくなるまで見守り、それからその場を立ち去る。"
+  },
+  {
+    "dim": "EI",
+    "scene": "近況確認",
+    "fn": "Fe/Fi",
+    "text": "しばらく話していなかった友人のことが、何の前触れもなく頭に浮かびました。特別な理由はありません。",
+    "a": "電話をかける。彼らの声を聞きたい。",
+    "b": "手短にテキストメッセージを送る。ただ、彼らのことを考えていたと伝えるために。"
+  },
+  {
+    "dim": "EI",
+    "scene": "新しい街",
+    "fn": "Se/Si",
+    "text": "新しい都市に来て3日目。同僚が今夜の大規模な社交イベントにあなたを招待してくれました。そこには誰も知り合いがおらず、あなたはまだ現地の様子に慣れていません。",
+    "a": "参加する。人に出会うことこそが、その土地に慣れるための方法だからだ。",
+    "b": "辞退する。まだ生活が落ち着いておらず、他者と関わる前に自分の時間と空間を確保したい。"
+  },
+  {
+    "dim": "EI",
+    "scene": "久しぶりの近況報告",
+    "fn": "Si/Fi",
+    "text": "古い友人が「最近どう？」と尋ねてきました。最後に会ってから長い時間が経っており、話したいことが山ほどあります。",
+    "a": "最初から順を追って話し、何も省略しない。",
+    "b": "手短な近況を伝える。真実でありつつも軽い内容に留め、本音のストーリーは本当に適切なタイミングまで取っておく。"
+  },
+  {
+    "dim": "EI",
+    "scene": "良いニュース",
+    "fn": "Fe/Ni",
+    "text": "人生を変えるような素晴らしい知らせの電話を受けました。あなたがずっと待ち望んでいた種類の内容です。",
+    "a": "電話を切った瞬間、すぐに誰かに電話をかける。今すぐ誰かにこのニュースを伝えたい。",
+    "b": "電話を切り、静かに座る。誰かに言葉を発する前に、まずは一人でそのニュースを噛み締めたい。"
+  },
+  {
+    "dim": "EI",
+    "scene": "海外からのオファー",
+    "fn": "Fe/Fi",
+    "text": "海外からの仕事のオファーの回答期限が深夜12時に迫っています。一日中考え抜きましたが、手にはスマホがあります。最も影響を受ける人々は、電話一本で連絡がつく距離にいます。",
+    "a": "彼らに電話をする。影響を受ける人々の意見を聞かずには決断できない。",
+    "b": "スマホを置き、一人で決断を下す。これはあなた自身の決断だ。"
+  },
+  {
+    "dim": "EI",
+    "scene": "つらい一日",
+    "fn": "Fe/Fi",
+    "text": "身近な人が最悪の一日を過ごし、落ち込んでいます。彼らはソファに腰掛け、多くを語ろうとしません。",
+    "a": "隣に寄り添う。身の回りの世話など、些細なできることを見つけ、相手との間の温度を温かく保つ。",
+    "b": "ただ近くに静かに座る。何かをしようとせず、ただそこに寄り添う。"
+  },
+  {
+    "dim": "EI",
+    "scene": "主役の席",
+    "fn": "Fe/Fi",
+    "text": "友人グループがあなたのための大規模な誕生日のディナーを開いてくれています。誰かが立ち上がって乾杯の音頭を取り、「他に何か言いたい人はいる？」と皆に問いかけます。",
+    "a": "立ち上がって発言する。",
+    "b": "座ったままでいる。"
+  },
+  {
+    "dim": "EI",
+    "scene": "チームワーク",
+    "fn": "Fe/Ti",
+    "text": "プロジェクトが最終段階に入り、あなたの担当部分は予定より早く完了しました。チームが苦戦している渦中に飛び込んで手助けするか、時間を活用して自分の専門領域をさらに深めるか選択できます。",
+    "a": "手助けに飛び込む。物事の中心に身を置いている時にこそ、最も良い仕事ができる。",
+    "b": "自分の仕事の追求に専念する。それこそが最終的に最も価値のある貢献になる。"
+  },
+  {
+    "dim": "EI",
+    "scene": "最悪の一週間",
+    "fn": "Fe/Si",
+    "text": "心身ともに疲れ果てた一週間が終わりました。金曜日の夜、特に何の予定も入っていません。",
+    "a": "友人に連絡する。会話や温もり、日常から離れたどこか別の場所が必要だ。",
+    "b": "お風呂を沸かしてドアを閉める。他者と関われる状態になる前に、一人になる時間が必要だ。"
+  },
+  {
+    "dim": "EI",
+    "scene": "バーベキュー",
+    "fn": "Se/Ni",
+    "text": "土曜日の夏の日。特に予定はありません。友人から「みんなで公園にいるからおいでよ」とテキストが届きます。",
+    "a": "上着を掴んですぐに向かう。土曜日はまさにそのためにある。",
+    "b": "一週間ずっと、この予定のない休日を楽しみにしていた。「後で行けたら行く」と伝える。"
+  },
+  {
+    "dim": "EI",
+    "scene": "悲報",
+    "fn": "Fe/Si",
+    "text": "共通の友人の家族が亡くなりました。あなたは彼と1年以上会っていません。メッセージを送ることもできますが、直接会いに行くこともできます。",
+    "a": "直接会いに行く。このような報せは、顔を合わせずに済ませるべきではない。",
+    "b": "メッセージを送る。大切なのは哀悼の意が伝わることであり、距離や対面かどうかは問題ではない。"
+  },
+  {
+    "dim": "SN",
+    "scene": "ディナーテーブル",
+    "fn": "Si/Ni",
+    "text": "あなたはディナーに参加しています。右側の人々は、今後15年のテクノロジーの仕組みを一変させる可能性のある議論をしています。左側では、あなたの親しい友人ジェイコブが先週末にしでかした、誰もが噂している出来事について話しています。",
+    "a": "左を向く。",
+    "b": "右を向く。"
+  },
+  {
+    "dim": "SN",
+    "scene": "質問",
+    "fn": "Se/Ni",
+    "text": "あなたが仕事の最中、6歳の子供が立ち止まって「どうして空は青いの？」と尋ねてきました。",
+    "a": "光が大気中で散乱するからだよ。青い光は他の光よりも強く散乱するんだ。",
+    "b": "「あなたは何色だったらいいと思う？」と尋ね返す。"
+  },
+  {
+    "dim": "SN",
+    "scene": "病院",
+    "fn": "Si/Ni",
+    "text": "病院のベッドで目が覚めました。ここに来た記憶がありません。看護師が入ってきます。",
+    "a": "「何が起きたんですか？ いつ？ 容態は？」と尋ねる。",
+    "b": "まずは自分の手をじっと見つめる。"
+  },
+  {
+    "dim": "SN",
+    "scene": "ウォルター・ホワイト",
+    "fn": "Ti/Ni",
+    "text": "あなたは『ブレイキング・バッド』を誰かと一緒に見ています。主人公ウォルターが、ジェーンが窒息しかけているのを黙って見殺しにするシーンです。一緒に見ている人が「なぜ助けなかったんだろう？」とあなたに尋ねます。",
+    "a": "助けられなかったんだよ。彼女はジェシーを破滅させようとしていたから、ウォルターは大切な二人の間で選択を迫られたんだ。",
+    "b": "あの瞬間、彼は『間違いを犯す普通の男』であることをやめたんだ。それ以降のすべての行動は、彼が冷酷な人間へと変貌した結果だよ。"
+  },
+  {
+    "dim": "SN",
+    "scene": "写真",
+    "fn": "Si/Ni",
+    "text": "10年前の自分の写真を見つけました。誰かから「何が見える？」と尋ねられます。",
+    "a": "若さ、当時の服、撮影場所、その特定の年のこと。",
+    "b": "これから自分の身に何が起こるかまだ知らない人間。その表情からそれが読み取れる。"
+  },
+  {
+    "dim": "SN",
+    "scene": "紛失したスマホ",
+    "fn": "Se/Ni",
+    "text": "見知らぬ都市にいます。スマホの充電が切れてしまいました。地図も、言葉も、インターネットも使えません。",
+    "a": "目印になる建物を見つける。見覚えのある場所から方向を立て直す。",
+    "b": "直感で良さそうな方向を選び、歩き出す。"
+  },
+  {
+    "dim": "SN",
+    "scene": "バーでの緊迫",
+    "fn": "Se/Ni",
+    "text": "バーにいます。店の隅にいる見知らぬ二人が今にも殴り合いを始めそうです。あと30秒以内に何かが起こるでしょう。",
+    "a": "非常口、カウンターの上のボトル、自分とドアの間に誰がいるかを把握する。",
+    "b": "まだ一言も発していない男を注視する。本当に警戒すべきなのは彼だ。"
+  },
+  {
+    "dim": "SN",
+    "scene": "交渉資料",
+    "fn": "Si/Ni",
+    "text": "これから交渉を行う相手に関するファイルを渡されました。時間力は20分です。",
+    "a": "1ページ目から読み始める。経歴、歴史、これまでのすべての取引実績を追う。",
+    "b": "相手の「敗北の記録」までスキップする。そこにこそ本質的な情報が隠されている。"
+  },
+  {
+    "dim": "SN",
+    "scene": "先駆者",
+    "fn": "Si/Ni",
+    "text": "その分野の第一人者と1時間だけ話す機会を得ました。最初の質問を投げかけます。",
+    "a": "「具体的にどうやって今の地位を築いたのですか？」",
+    "b": "「この業界はこれからどこに向かっていくと思いますか？」"
+  },
+  {
+    "dim": "SN",
+    "scene": "討論の行方",
+    "fn": "Ti/Ni",
+    "text": "近くで二人が議論をしています。一人はより優れた『事実（データ）』を持っており、もう一人はより優れた『要点（論点）』を語っています。",
+    "a": "事実を支持する。",
+    "b": "要点を支持する。"
+  },
+  {
+    "dim": "SN",
+    "scene": "宝くじ",
+    "fn": "Te/Ni",
+    "text": "人生を変えるほどの莫大な大金が当たりました。最初の思考は？",
+    "a": "税金、銀行口座、誰に連絡すべきかなど、整理すべき実務的な手続きについて。",
+    "b": "これが何を意味するのか。これまでの人生のステージが終わったという感覚について。"
+  },
+  {
+    "dim": "SN",
+    "scene": "山頂アタック",
+    "fn": "Se/Ni",
+    "text": "ベースキャンプであなたが最初に目を覚ましました。山頂アタックまであと2時間です。",
+    "a": "装備と天候のコンディションを念入りにチェックする。",
+    "b": "外に座り、山を静かに見つめる。"
+  },
+  {
+    "dim": "SN",
+    "scene": "プレゼンへの疑問",
+    "fn": "Ti/Ni",
+    "text": "同僚が強力な論理を展開し、会議室の全員が納得したようですが、あなただけは納得していません。",
+    "a": "彼が提示した具体的な主張やデータに疑問を投げかける。",
+    "b": "その主張の根底にある『前提』そのものに疑問を投げかける。"
+  },
+  {
+    "dim": "SN",
+    "scene": "大改革の提案",
+    "fn": "Te/Ni",
+    "text": "誰かが大規模なアイデアを提案し、周囲はすぐに実行に移そうとしていますが、あなたはまだ迷っています。",
+    "a": "それを実現するために、具体的に何が必要か（リソースや手順）を考える。",
+    "b": "これがそもそも『なすべき正しいこと』なのかどうかを考える。"
+  },
+  {
+    "dim": "SN",
+    "scene": "ドキュメンタリー",
+    "fn": "Si/Ni",
+    "text": "40年前に起きた出来事についてのドキュメンタリーを見ています。友人が、なぜそんなものに興味があるのか尋ねてきました。",
+    "a": "単に物語として面白いからだ。",
+    "b": "それが、今まさに起こっている出来事を説明してくれるからだ。"
+  },
+  {
+    "dim": "SN",
+    "scene": "幸運の定義",
+    "fn": "Ti/Ni",
+    "text": "誰かから「運を信じるか？」と尋ねられました。",
+    "a": "信じる。",
+    "b": "信じないが、物事の「パターン（法則）」は信じる。"
+  },
+  {
+    "dim": "SN",
+    "scene": "廃屋",
+    "fn": "Se/Ni",
+    "text": "何年も放置されていた空き家に入ります。あなたが最初の侵入者です。",
+    "a": "部屋から部屋へと探索を進める。",
+    "b": "何かに触れる前に、まずはその場にじっと佇む。"
+  },
+  {
+    "dim": "SN",
+    "scene": "オフグリッド生活",
+    "fn": "Si/Ni",
+    "text": "インフラから完全に切り離された（オフグリッド）生活を1年間送ってきた人が戻ってきました。1つだけ質問できます。",
+    "a": "「実務的に最も困難だったことは何ですか？」",
+    "b": "「なぜそれをやろうと思ったのですか？」"
+  },
+  {
+    "dim": "SN",
+    "scene": "世紀の発見",
+    "fn": "Ti/Ni",
+    "text": "科学界における重大な新発見がニュースを賑わせており、友人がどう思うか尋ねてきました。",
+    "a": "彼らが具体的に『何を発見したのか』に興味を持つ。",
+    "b": "その発見が将来的に『何を変えるのか』に興味を持つ。"
+  },
+  {
+    "dim": "SN",
+    "scene": "珍しい職業",
+    "fn": "Si/Ni",
+    "text": "パーティーで、聞いたこともない非常に珍しい仕事をしている人物に出会いました。",
+    "a": "「普段、具体的にどのような一日を過ごしているのですか？」と尋ねる。",
+    "b": "「どうやってその仕事に就くことになったのですか？」と尋ねる。"
+  },
+  {
+    "dim": "TF",
+    "scene": "火災の街角",
+    "fn": "Fi/Te",
+    "text": "街の一画が炎に包まれています。あなたの右側には、人類のエネルギー生産効率を100倍にし、貧困を終わらせ、宇宙旅行を可能にし、新たな黄金時代を切り開く技術の設計図が置かれた建物があります。左側には、10分前に子供の悲鳴が聞こえたアパートがあります（その後は何も聞こえません）。どちらか片方しか救う時間がありません。",
+    "a": "左（アパート）へ向かう。",
+    "b": "右（設計図）へ向かう。"
+  },
+  {
+    "dim": "TF",
+    "scene": "手柄の争い",
+    "fn": "Te/Fe",
+    "text": "二人の同僚が、ある成果についてどちらが功績を認められるべきかで対立しています。双方に言い分があり、あなたに見解を求められました。",
+    "a": "タイムラインと記録書類の提出を求める。客観的事実の中に真実があるはずだ。",
+    "b": "それぞれがその件について語る様子を観察する。彼らの振る舞いの中にすでに答えはある。"
+  },
+  {
+    "dim": "TF",
+    "scene": "例外の適用",
+    "fn": "Te/Fi",
+    "text": "誰かから、規定の『例外』を適用してほしいと頼まれました。ルールには明確な存在理由がありますが、彼らの状況は本当に困難なものです。",
+    "a": "厳格にルールを維持する。一人に対して例外を作れば、そのルールは全員にとって無意味なものになる。",
+    "b": "例外を認める。ルールは人を助けるために存在するのであり、ここで適用することは本末転倒だ。"
+  },
+  {
+    "dim": "TF",
+    "scene": "同僚の苦境",
+    "fn": "Te/Fe",
+    "text": "親しい同僚が勤務時間中につらい個人的な報せを受け、明らかに動揺して仕事が手につかない状態です。",
+    "a": "何が必要か、次に取るべき具体的なステップは何かを尋ねる。",
+    "b": "ただそばに座る。誰かが寄り添ってくれていると実感してもらう。"
+  },
+  {
+    "dim": "TF",
+    "scene": "フィードバック",
+    "fn": "Te/Fe",
+    "text": "相手にとって耳の痛いフィードバックを伝えなければなりません。彼らの成果は基準に達していません。",
+    "a": "遠回しにせず、その場ですぐに率直に伝える。",
+    "b": "タイミングと伝える言葉を慎重に選ぶ。"
+  },
+  {
+    "dim": "TF",
+    "scene": "二人の候補者",
+    "fn": "Te/Fe",
+    "text": "採用選考の最終段階で、優秀な二人の候補者が残りました。一人は圧倒的な才能を持っていますが個人プレーを好みます。もう一人は技術的には少し劣りますが、周囲のメンバーの能力を引き出す才能があります。",
+    "a": "一人目（才能）を採用する。個人の実力こそがすべてだ。",
+    "b": "二人目（協調）を採用する。協力し合えないチームはいずれ機能しなくなる。"
+  },
+  {
+    "dim": "TF",
+    "scene": "忠告",
+    "fn": "Te/Fe",
+    "text": "友人が後悔するであろう決断を下そうとしています。彼らはあなたに意見を求めていません。",
+    "a": "自分の考えを明確に伝える。優しすぎる忠告は、忠告としての役割を果たさない。",
+    "b": "適切なタイミングと言葉を選ぶ。伝え方が悪い忠告は、ただ拒絶されるだけだ。"
+  },
+  {
+    "dim": "TF",
+    "scene": "チームの亀裂",
+    "fn": "Te/Fe",
+    "text": "チームの二人のメンバーが衝突しています。それは数週間続いており、グループ全体に悪影響を及ぼしています。",
+    "a": "二人を同席させ、彼らの対立がチームにどれだけの損失を与えているかを率直に伝える。",
+    "b": "まずは個別に話を聞く。それぞれの立場や視点を理解したい。"
+  },
+  {
+    "dim": "TF",
+    "scene": "功労者の推薦",
+    "fn": "Ti/Fi",
+    "text": "プロジェクトが成功裏に終わりました。マネージャーから「誰が最も貢献したか」尋ねられました。一人は目立つ成果を上げました。もう一人は目立たないところで全体を支えていましたが、誰も気づいていません。",
+    "a": "目立つ成果を上げた人物を推薦する。評価は隠れた努力ではなく、目に見える結果に伴うべきだ。",
+    "b": "陰で全体を支えた人物を推薦する。彼がどれだけの犠牲を払ったかを知っているのはあなただけだ。"
+  },
+  {
+    "dim": "TF",
+    "scene": "謝罪と許し",
+    "fn": "Ti/Fi",
+    "text": "あなたを深く傷つけた人物が、関係を修復したいと望んでいます。彼らが変わったことは明らかです。問題は、彼らのしたことをあなたが水に流せるかどうかです。",
+    "a": "関係を再開することはできるが、以前と同じには戻らない。起きた事実は消えない。",
+    "b": "完全に水に流す。過去の貸し借りをいつまでも抱え続けること自体が関係を蝕む。"
+  },
+  {
+    "dim": "TF",
+    "scene": "失敗プロジェクトの報告",
+    "fn": "Te/Fe",
+    "text": "あなたが関わっているプロジェクトの失敗は明らかですが、まだ誰もそれを口にしていません。マネージャーに呼び出され、率直な意見を求められました。",
+    "a": "ありのままの事実を伝える。言わずに引き延ばすほど、全員の損失が大きくなる。",
+    "b": "関係者の感情を配慮する。何を言うかだけでなく、どのように伝えるかが重要だ。"
+  },
+  {
+    "dim": "TF",
+    "scene": "介護資金",
+    "fn": "Te/Fi",
+    "text": "父親が高額な介護ケアを必要としています。あなたにはその資金がありますが、それを使えば子供の教育資金として貯めていた分がすべて消えてしまいます。",
+    "a": "子供たち（未来）を優先する。",
+    "b": "父親（恩義）を優先する。"
+  },
+  {
+    "dim": "TF",
+    "scene": "重大な秘密",
+    "fn": "Fe/Fi",
+    "text": "大親友の夫が浮気している決定的な証拠を掴みました。しかし、彼女は妊娠3ヶ月で、二人はちょうど新しい家の購入手続きを進めているところです。",
+    "a": "彼女に伝える。彼女には真実を知る権利がある。",
+    "b": "今は何も言わない。これからの彼女の状況を考えれば、今伝えるべきではない。"
+  },
+  {
+    "dim": "TF",
+    "scene": "遺言書",
+    "fn": "Ti/Fi",
+    "text": "親族が不平等な遺産配分の遺言を残しました。配分の少ない人物の方が、明らかに多くの世話をしていました。遺言書は法的かつ明確に作成されています。",
+    "a": "書かれている通りに従う。財産は本人が望むように処分されるべきだ。",
+    "b": "配分の少なかった人物に対し、彼らのこれまでの尽力が見届けられていたことを伝える方法を模索する。"
+  },
+  {
+    "dim": "TF",
+    "scene": "息子の過ち",
+    "fn": "Te/Fe",
+    "text": "10代の息子が、他人の子供が退学処分になるような問題を起こしたと告白してきました。その子は無実であり、あなたの息子は恐怖で怯えています。",
+    "a": "正直に名乗り出るよう息子に伝える。",
+    "b": "一緒にどう解決するか考えようと伝える。"
+  },
+  {
+    "dim": "TF",
+    "scene": "勝負の手段",
+    "fn": "Te/Fi",
+    "text": "尊敬する相手と、どうしても手に入れたいものを競っています。効果は絶大ですが、自分自身が誇りに思えないようなグレーな手段を使うことができます。",
+    "a": "それを使用する。勝つことこそが目的だ。",
+    "b": "使用しない。良心を犠牲にしてまで勝つ価値はない。"
+  },
+  {
+    "dim": "TF",
+    "scene": "葛藤する友人",
+    "fn": "Fi/Fe",
+    "text": "親友が離婚以来、ひどく酒に溺れていますが、本人はそのことについて一切話そうとしません。",
+    "a": "相手が自分から話し出すのを待つ。",
+    "b": "自分からその話題を切り出す。"
+  },
+  {
+    "dim": "TF",
+    "scene": "会社の調査",
+    "fn": "Ti/Fe",
+    "text": "会社が公的機関の調査を受けています。上司から、あなたの陳述書から特定の詳細を省くよう頼まれました。彼は10年間、あなたに良くしてくれた人物です。",
+    "a": "すべての真実をありのままに話す。",
+    "b": "上司に頼まれた詳細を伏せておく。"
+  },
+  {
+    "dim": "TF",
+    "scene": "後輩のミス",
+    "fn": "Te/Fe",
+    "text": "あなたが2年間指導してきた後輩が、チーム全員の前で深刻なミスを犯しました。うっかりミスではなく、根本的な部分での勘違いです。",
+    "a": "その場で全員の前でミスを明確に指摘し、正す。他のメンバーもいずれ同じ状況に直面するからだ。",
+    "b": "後で個別に呼び出して指導する。大切なのは学びの機会であり、見せしめにすることではない。"
+  },
+  {
+    "dim": "JP",
+    "scene": "ロードトリップ",
+    "fn": "Te/Ne",
+    "text": "友人とロードトリップに出かけます。目的地への期限はなく、二人だけの旅です。",
+    "a": "出発前にあらかじめルートを計画しておく。",
+    "b": "とにかく車に乗り込み、走りながらルートを決める。"
+  },
+  {
+    "dim": "JP",
+    "scene": "締め切り",
+    "fn": "Te/Ni",
+    "text": "3週間後に提出するプロジェクトがあります。開始するのに必要なものは揃っていますが、今後さらに新しい情報が入る可能性もあります。",
+    "a": "今すぐ始める。最も避けたいのは、時間が足りなくなることだ。",
+    "b": "数日待つ。不完全な情報で進めるのは、作業の無駄になる可能性がある。"
+  },
+  {
+    "dim": "JP",
+    "scene": "引き継ぎ",
+    "fn": "Si/Ne",
+    "text": "進行中のプロジェクトを途中で引き継ぐことになりました。前任者からの詳細な引き継ぎメモが残されています。",
+    "a": "作業を始める前にすべてを熟読する。前任者の意図を完璧に理解したい。",
+    "b": "すぐに作業を開始し、疑問が生じた都度メモを参照する。計画を理解する最良の方法は、実際に動かすことだ。"
+  },
+  {
+    "dim": "JP",
+    "scene": "ディナーパーティー",
+    "fn": "Te/Ne",
+    "text": "3週間後、8人のゲストを招いてディナーを主催します。",
+    "a": "今日から計画を立て始める。この規模のディナーは直前では準備できない。",
+    "b": "経験上、最も素晴らしいパーティーには余白が必要だと知っている。直前になってから準備する。"
+  },
+  {
+    "dim": "JP",
+    "scene": "平行線の議論",
+    "fn": "Te/Ne",
+    "text": "1時間続いている対立の渦中にいます。議論は平行線をたどっていますが、あなたには次の予定があります。",
+    "a": "解決するまでその場を離れない。未解決のモヤモヤを抱えたままにしたくない。",
+    "b": "一旦打ち切る。これ以上続けても意味がないので、日を改めて再開する。"
+  },
+  {
+    "dim": "JP",
+    "scene": "散歩の予定",
+    "fn": "Te/Ne",
+    "text": "午後の時間が空いており、長い散歩に出かけたい気分です。約束の時間はありません。",
+    "a": "出発する前におおよその目的地を決めておく。",
+    "b": "直感で方向を決めて、とにかく歩き出す。"
+  },
+  {
+    "dim": "JP",
+    "scene": "余命宣告",
+    "fn": "Te/Ne",
+    "text": "余命6ヶ月であると告げられました。翌朝、目が覚めます。",
+    "a": "やるべきことの「リスト」を作成する。",
+    "b": "誰かに電話して「どこかに行かないか」と誘う。"
+  },
+  {
+    "dim": "JP",
+    "scene": "新しい近道",
+    "fn": "Si/Se",
+    "text": "目的地に向かう途中、通ったことのないルートを発見しました。こちらの方が早いかもしれません。",
+    "a": "まずは地図で確認する。どのような道か把握してから進みたい。",
+    "b": "とにかく進んでみる。正しい選択だったかはすぐに分かるだろう。"
+  },
+  {
+    "dim": "JP",
+    "scene": "新しい趣味",
+    "fn": "Si/Ne",
+    "text": "予備知識のまったくない新しい趣味を始めます。",
+    "a": "始める前に、関連する知識を徹底的に調べる。",
+    "b": "とにかく始めてみて、やりながら学ぶ。"
+  },
+  {
+    "dim": "JP",
+    "scene": "旅行の荷造り",
+    "fn": "Si/Se",
+    "text": "明日から1週間の旅行に出かけます。",
+    "a": "今夜のうちに荷造りを完了させる。バッグの中のすべての持ち物に明確な意図がある。",
+    "b": "明日の朝に荷造りをする。必要なものは大体頭に入っている。"
+  },
+  {
+    "dim": "JP",
+    "scene": "人員の欠員",
+    "fn": "Te/Ni",
+    "text": "チームの重要なメンバーが抜けました。社内からの候補者が一人いますが、完全に適任とは言えません。",
+    "a": "彼をそのポジションに採用する。欠員による損失は毎週増大していく。",
+    "b": "完全に適任な人物が現れるまで待つ。"
+  },
+  {
+    "dim": "JP",
+    "scene": "二つの選択",
+    "fn": "Te/Ne",
+    "text": "マンションの頭金にするか、あるいは3年間計画してきた起業の資金にするか、十分な貯金があります。金曜日までに決断しなければなりません。",
+    "a": "マンションを購入する。まずは安定が第一だ。",
+    "b": "起業する。挑戦しなければ絶対に後悔する。"
+  },
+  {
+    "dim": "JP",
+    "scene": "競合の出現",
+    "fn": "Si/Ne",
+    "text": "起業して3ヶ月。強力な競合他社が先週、全く同じプロダクトをローンチしたことが判明しました。5人のチームメンバーがあなたの指示を待っています。",
+    "a": "次の行動を起こす前に、一旦立ち止まって全体を再評価する。",
+    "b": "とにかく開発を続ける。ここで立ち止まることこそが本当の敗北だ。"
+  },
+  {
+    "dim": "JP",
+    "scene": "最後の決断",
+    "fn": "Si/Ni",
+    "text": "明日、回復の見込みがないと医師に宣告された親の延命治療を停止します。あなたは今夜、病院の廊下に腰掛けています。",
+    "a": "もう一度だけ、すべてのカルテや医療レポートに目を通す。",
+    "b": "家に帰って眠る。決断はすでに下している。"
+  },
+  {
+    "dim": "JP",
+    "scene": "見知らぬ病室",
+    "fn": "Te/Se",
+    "text": "見知らぬ国の、見覚えのない病院のベッドで目が覚めました。身分証もスマホもなく、部屋には誰もいません。",
+    "a": "誰かが来て情報を得られるまで、その場でじっと待つ。",
+    "b": "立ち上がり、手がかりを探しに外へ出る。"
+  },
+  {
+    "dim": "JP",
+    "scene": "シャバの風",
+    "fn": "Ne/Fi",
+    "text": "4年間の刑期を終えて刑務所から出所しました。自由の身となった最初の夜です。明日の予定は何もありません。",
+    "a": "今週の計画を立てる。もう1日たりとも無駄にはしない。",
+    "b": "ただ外に座って、しばらくぼんやりと過ごす。"
+  },
+  {
+    "dim": "JP",
+    "scene": "より良いアプローチ",
+    "fn": "Si/Ne",
+    "text": "計画の途中で、誰かが明らかに優れた新しいアプローチを提案してきました。",
+    "a": "合意された計画を変更するには、極めて強力な理由が必要だ。単なる変更はコストを増大させる。",
+    "b": "提案を詳しく聞く。最初に決めたことが何であれ、より良い計画は採用されるべきだ。"
+  },
+  {
+    "dim": "JP",
+    "scene": "未読メール",
+    "fn": "Te/Ne",
+    "text": "未読メールが200件溜まっています。",
+    "a": "自分にはそんなことは絶対に起こり得ない。",
+    "b": "それがどうした？"
+  }
 ];
 
 const questionsBoth = [
-  {dim:'SN',scene:'新しい街',fn:'Si/Ne',text:"あなたは1週間の仕事のカンファレンスでイスタンブールに到着したばかりです。フライトが着陸したのは1時間前で、チェックインは午後3時までできず、午前中の時間は自由です。あなたはホテルの外へ踏み出します。",a:"旅行前に調べた情報を取り出す。ある程度の方向感覚を持って行動したい。",b:"スマホをしまい、とにかく歩く。直感で良さそうな方向を選び、街のありのままの姿に身を任せる。"},
-  {dim:'SN',scene:'事業の提案',fn:'Ti/Ne',text:"友人のマーカスが、自宅マンションの隣にある空きスペースにコーヒーショップを開く計画を説明してくれました。彼は何ヶ月もその話をしており、ついに賃貸契約を結ぶ準備が整いました。彼はあなたにどう思うか尋ねます。",a:"頭の中で計算を始める。家賃、人通り、フラットホワイトの利益率、採算を合わせるために1日に必要な客数など。",b:"その通りの並びにあって長続きしなかった他の2つの店舗のことが、なぜか頭をよぎる。まだ具体的な理由は指摘できないが、見覚えのあるパターンなので、マーカスにはもう少し詳しく調べるまで契約を保留するよう伝える。"},
-  {dim:'TF',scene:'オファー',fn:'Te/Fi',text:"リクルーターからAmazonのシニアロール（上級職）に関する電話がありました。給与は現在の40%増で、仕事内容はあなたのスキルセットに完璧に合致しており、チームは社内でも高い評価を得ています。一方で、Amazonが3年前にドイツの物流センターの労働条件を巡って調査を受けたことも知っています。違法行為は証明されませんでしたが、あなたは当時その報告書を読みました。",a:"面接を受けずに辞退する。自分が尊重できない意思決定を下す人々のために、自分の労働時間を使いたくない。",b:"面接に行く。この規模の会社なら、いたるところに問題があるものだ。上層部のすべての決定を支持しなくても、良い仕事をし、正当な対価を受け取ることはできる。"},
-  {dim:'TF',scene:'グループチャット',fn:'Fe/Fi',text:"友人グループが特定の一人に対して敵対的になっています。オスカーはグループ内の一人と2年間交際していましたが、最悪な形で破局し、今や全員がグループチャットで彼を非難しています。あなたはオスカーと親しく、皆が言っていることはあなたが目にした事実とは一致しません。しかし、誰もあなたの意見を求めていません。",a:"全体の空気に合わせる。当事者の友人は傷ついており、個人の意見よりもグループの調和を維持することの方が重要だ。",b:"自分には違った風に見えたこと、解釈しきれていない事実があることを伝える。周囲の反発を招くことは分かっているが、自分が信じていないことに賛同することはできない。"},
-  {dim:'SN',scene:'スランプ',fn:'Si/Ni',text:"あなたの小さな会社は3ヶ月連続で業績が悪化しています。売上は減少し、数件のクライアントからの連絡が途絶えており、共同経営者が集まって対策を話し合いたいと望んでいます。あなたは会議の前夜、じっくりと思考を巡らせます。",a:"月ごとの数値を遡って確認する。どのクライアントが離れたか、それぞれの期間で何が変わったか、業績が良かった時に何が違っていたか。改善策を話し合う前に、何がずれてしまったのかを正確に把握したい。",b:"詳細な分析は必要ない。ビジネスが次に進むべき方向や、しばらく欠けていたものが何かは、すでに感覚として明確に分かっている。会議は前進するためのものであり、過去の四半期を蒸し返すためではない。"},
-  {dim:'JP',scene:'採択',fn:'Te/Ne',text:"8ヶ月をかけて制作し、最も出品したかった映画祭から、あなたの短編映画が落選したという知らせを受けたばかりです。友人がすぐにメッセージを送ってきて、今後2週間以内に締め切りを迎える他の3つの映画祭があり、今夜応募の手伝いをしてくれると言ってくれました。",a:"承諾する。映画は完成しており、やるべき仕事は終わっている。落選のショックに浸るよりも、行動を続ける方が良い。",b:"まだどこにも応募する準備ができていないと伝える。少し時間を置いて気持ちを整理し、応募を続けたいのか、それともこの作品はこれで終わりにするのかを自分で決めたい。"},
-  {dim:'TF',scene:'診断結果',fn:'Fe/Fi',text:"火曜日の午後、医師から電話があり、検査結果は問題なかったと告げられました。あなたは誰にも言わず、3週間ひそかにそのことを心配し続けていました。電話を切り、しばらく車の中に座り込みます。",a:"すぐに配偶者に電話する。これまで一人でこの不安を抱えてきたが、今は誰かとこの安堵感を共有したい。",b:"しばらくそこに座ったままでいる。自分が過ごしたこの3週間という時間には何か重要な意味があるように思え、その感情が消え去る前に、それが自分に何を教えてくれたのかを理解したい。"},
-  {dim:'EI',scene:'元恋人',fn:'Fe/Fi',text:"ホームパーティーに参加し、キッチンに入ると、そこには元恋人が立っていました。二人は2年間口をきいていません。別れ方は泥沼でした。相手も顔を上げ、同時にあなたに気づきます。部屋には他にも数人がいます。",a:"挨拶をして歩み寄る。お互いにこの場にいるのだから、何も話さない方が不自然だし、5分程度の会話なら問題なくこなせる。",b:"軽く会釈をし、別の場所に移動する。心の中では平気ではないのに、平気なふりをする心の準備はできていない。"},
-  {dim:'SN',scene:'再会',fn:'Si/Ni',text:"10年ぶりに自分が育った街に戻ってきました。午後の時間は自由です。幼馴染の親友アントンが今もそこに住んでおり、街を案内してくれると提案してくれました。",a:"この街がどう変わったかを見たいとアントンに伝える。新しい場所、変化した部分、古いものの跡地に新しくできたものなど。",b:"実際に記憶に残っている場所に連れて行ってほしいとアントンに頼む。学校、公園、かつてよく歩いた道。今どうなっているかを見るのではなく、当時の感覚を味わいたい。"},
-  {dim:'SN',scene:'箱',fn:'Si/Ni',text:"亡くなった祖母のマンションを片付けていると、ベッドの下から靴箱が見つかりました。中には紐で縛られた手紙の束、いくつかの古い硬貨、見覚えのない若い男の写真、そして祖母が身につけているのを見たことがない指輪が入っていました。隣の部屋には母親がいます。",a:"それぞれの品を注意深く観察する。手紙の消印、硬貨の年代、写真の男が着ている服。これが実際に何を意味していたのかを繋ぎ合わせたい。",b:"何か行動を起こす前に、少しその場に静かに佇む。この箱の中にあるものが、祖母にとって隠し通すほど大切だったという事実そのものが、あなたの心に深く残る。"},
-  {dim:'EI',scene:'セミナー',fn:'Fe/Fi',text:"2日間にわたる業界セミナーに参加しています。セッションも悪くありませんが、最も興味深いのは休憩時間の会話です。同僚が何度も廊下でのグループディスカッションにあなたを誘い込みます。その一方で、今日の午前中のメモが山積みになっており、それらをじっくりと整理したいとも思っています。",a:"廊下に留まる。自分の知らない知識を持つ人々で溢れており、そうした会話の中にこそ本当の価値がある。",b:"メモを抱えて静かな角を見つける。新しい情報をさらに取り入れる前に、まずは聞いた内容を自分の中でしっかりと整理する必要がある。"},
-  {dim:'JP',scene:'休暇',fn:'Te/Ne',text:"2年前から浴室のリフォームが必要で、ついにそのための資金が貯まりました。しかしその時、友人グループが日本への10日間の旅行を発表し、費用を分割するためのリンクを送ってきました。その費用を払えば、貯めたお金はほぼ底をつきます。金曜日までに決断しなければなりません。",a:"お金を送金する。リフォームはもう1年待てる。あのグループで行く日本旅行を、自宅からただ眺めて指をくわえているのは御免だ。",b:"旅行には行かず、リフォームを行う。壊れたシャワーと剥がれたタイルを我慢して暮らすのはもう十分であり、自分自身の生活空間を整えることの方が旅行よりも重要だ。"},
+  {
+    "dim": "SN",
+    "scene": "The New City",
+    "fn": "Si/Ne",
+    "text": "You've just arrived in Istanbul for a week-long work conference. Your flight landed an hour ago, check-in isn't until 3pm, and you have the morning free. You step outside the hotel.",
+    "a": "You pull up what you researched before the trip. You want to move with some bearings.",
+    "b": "You put the phone away and just walk. You pick a direction that feels right and let the city show you what it is."
+  },
+  {
+    "dim": "SN",
+    "scene": "The Pitch",
+    "fn": "Ti/Ne",
+    "text": "Your friend Marcus has just walked you through his plan to open a coffee shop in the empty unit next to his flat. He's been talking about it for months and he's finally ready to sign a lease. He asks what you think.",
+    "a": "You start working through the numbers in your head. Rent, footfall, margin on a flat white, how many covers he needs per day to break even.",
+    "b": "Something about the whole setup reminds you of two other places on that street that didn't last. You can't point to one specific reason yet but the pattern is familiar, and you tell Marcus to hold off on signing anything until he looks into it more."
+  },
+  {
+    "dim": "TF",
+    "scene": "The Offer",
+    "fn": "Fi/Te",
+    "text": "A recruiter calls about a senior role at Amazon. The salary is 40% higher than what you earn now, the work is exactly your skill set, and the team has a strong reputation internally. You also know Amazon was investigated three years ago over working conditions in its German fulfilment centres. Nothing illegal was proven but you read the reports at the time.",
+    "a": "You decline without interviewing. You don't want to spend your working hours building something for people whose decisions you don't respect.",
+    "b": "You go to the interview. A company this size has problems in every corner. You can do good work and be fairly paid without endorsing every decision made above you."
+  },
+  {
+    "dim": "TF",
+    "scene": "The Group Chat",
+    "fn": "Fe/Fi",
+    "text": "Your friend group has turned on someone. Oscar dated someone in the group for two years, it ended badly, and now everyone is piling on in the group chat. You were close to Oscar and what they're saying doesn't match what you saw. No one is asking for your take.",
+    "a": "You go along with the general feeling. Your friend is hurting and keeping the group together matters more than your version of events.",
+    "b": "You say you saw things differently and that the full picture isn't being told. You know it will land badly but you can't put your name to something you don't believe."
+  },
+  {
+    "dim": "JP",
+    "scene": "The Slump",
+    "fn": "Si/Ni",
+    "text": "Your small business has had three bad months in a row. Revenue is down, a few clients have gone quiet, and your business partner wants to sit down and figure out what to do. You spend the evening before the meeting thinking it through.",
+    "a": "You go back through the numbers month by month. Which clients dropped off, what changed in each period, what you were doing differently when things were working. You want to understand exactly what shifted before you talk about fixing it.",
+    "b": "You don't need the breakdown. You already have a clear sense of where the business needs to go next and what it has been missing for a while. The meeting is about moving forward, not relitigating the last quarter."
+  },
+  {
+    "dim": "JP",
+    "scene": "The Acceptance",
+    "fn": "Ne/Fi",
+    "text": "You have just been told your short film was rejected from the festival you most wanted to get into. You spent eight months making it. A friend immediately texts saying there are three other festivals with deadlines in the next two weeks and she can help you submit tonight.",
+    "a": "You say yes. The film exists, the work is done, and keeping it moving is better than sitting with the rejection.",
+    "b": "You tell her you're not ready to send it anywhere yet. You need to sit with it for a bit and decide if you even want to keep submitting, or if this one is just done."
+  },
+  {
+    "dim": "EI",
+    "scene": "The Diagnosis",
+    "fn": "Fe/Ni",
+    "text": "Your doctor calls on a Tuesday afternoon to say the test results came back and everything is fine. You had been quietly worried about it for three weeks without telling anyone. You hang up and sit in your car for a moment.",
+    "a": "You call your spouse straight away. You have been carrying this alone and now you want to share the relief with someone.",
+    "b": "You sit there for a while. Something about the three weeks you just lived through feels important and you want to understand what it taught you before the feeling disappears."
+  },
+  {
+    "dim": "EI",
+    "scene": "The Ex",
+    "fn": "Se/Fi",
+    "text": "You are at a house party and you walk into the kitchen to find your ex standing there. You haven't spoken in two years. The split was messy. They look up and see you at the same moment. The room has a few other people in it.",
+    "a": "You say hi and walk over. You are both here, it would be stranger to say nothing, and you can handle a five minute conversation.",
+    "b": "You give a small nod and find somewhere else to be. You are not ready to perform ease you don't feel."
+  },
+  {
+    "dim": "SN",
+    "scene": "The Reunion",
+    "fn": "Ne/Si",
+    "text": "You are back in the town where you grew up for the first time in ten years. You have a free afternoon. Your childhood best friend Anton still lives there and has offered to show you around.",
+    "a": "You tell Anton you want to see what the place has become. The new parts, what's changed, what's moved in where the old things used to be.",
+    "b": "You ask Anton to take you to the places you actually remember. The school, the park, the route you used to walk. You want to feel what it was like, not see what it is now."
+  },
+  {
+    "dim": "SN",
+    "scene": "The Box",
+    "fn": "Se/Fi",
+    "text": "You are clearing out your late grandmother's flat and find a shoebox under her bed. Inside is a bundle of letters tied with string, a handful of old coins, a photograph of a young man you don't recognise, and a ring you have never seen her wear. Your mother is in the next room.",
+    "a": "You look at each object carefully. The postmarks on the letters, the dates on the coins, the clothes the man in the photo is wearing. You want to piece together what this actually was.",
+    "b": "You sit with it for a moment before you do anything. Whatever was in this box mattered to her enough to keep it hidden, and that is the part that stays with you."
+  },
+  {
+    "dim": "EI",
+    "scene": "The Seminar",
+    "fn": "Fe/Ti",
+    "text": "You are at a two-day industry seminar. The sessions are decent but the most interesting thing happening is the conversations in the breaks. A colleague keeps pulling you into group discussions in the hallway. You also have a stack of notes from this morning that you want to think through properly.",
+    "a": "You stay in the hallway. The room is full of people who know things you don't and the conversations are where the real value is.",
+    "b": "You find a quiet corner with your notes. You need to actually process what you heard before taking in anything else."
+  },
+  {
+    "dim": "EI",
+    "scene": "The Holiday",
+    "fn": "Fe/Si",
+    "text": "Your bathroom has needed renovating for two years and you finally have the money saved to do it. Then a group of friends announces a ten-day trip to Japan and sends you a link to split the cost. It would nearly wipe out what you saved. You have until Friday to decide.",
+    "a": "You send the money. The bathroom can wait another year. Japan with that group of people is not something you want to watch from home.",
+    "b": "You stay and do the renovation. You have been living with a broken shower and peeling tiles long enough and fixing your own space matters more to you than the trip."
+  }
 ];
 
 const questionsMyth = [
-  {dim:'EI',scene:'戸口',fn:'Se/Ni',text:"あなたは8ヶ月間離れていました。遠征は長く凄惨なもので、大切な人々を失いました。あなたはエドラスの自宅の前に立っています。窓のローソクにはまだ明かりが灯っています。家の中から子供たちの声が聞こえます。",a:"ドアを押し開ける。このために8ヶ月待ったのだから、もう1秒たりとも待ちたくない。",b:"そこにしばらく立ち尽くす。手はドアにかかっているが、まだ心の準備ができていない。再び彼らの父親に戻る前に、ただ一息つく時間が必要だ。"},
-  {dim:'EI',scene:'最後の晩餐',fn:'Fe/Fi',text:"あなたは最も愛する人々とともに長いテーブルを囲んでいます。ワインは美味しく、暖炉の火は暖かく、夜はゆっくりと更けていきます。誰の口からも語られていませんが、全員がこのように揃って食卓を囲むのはこれが最後であると、あなたの心の片隅は察しています。",a:"テーブルを回り、一人一人の間を移動する。夜が明ける前に、彼ら全員にどうしても伝えておきたい言葉がある。",b:"その場に留まる。あなたがここへ来た目的である人物は、すでにすぐ隣に座っている。"},
-  {dim:'EI',scene:'市場',fn:'Se/Ni',text:"あなたは夏至の日の朝、ペラルギルの市場に到着しました。街はここ数ヶ月間聞いたこともないような大音量に包まれ、すべての通りは人波で溢れ返り、三つの方向から同時に音楽が聞こえてきます。日没までは特に何の義務もありません。道中で知り合った商人が、案内を買って出てくれました。",a:"彼についていく。このような都市は、その渦中に身を投じてこそ本当の姿を見せてくれるものだ。",b:"礼を言って断り、一人で進む。自分自身の歩みでこの街を切り拓いていきたい。"},
-  {dim:'EI',scene:'砂漠の道',fn:'Se/Si',text:"砂漠を一人で歩き続けて3日目。2日目の夜に、あなたは他の旅人のキャンプに遭遇しました。焚き火はまだ燃えており、彼らはあなたを手招きしています。",a:"荷物を下ろして会話に加わる。彼らがどこから来て、どこへ向かうのかを尋ねる。2日間の静寂の後、言葉を交わせる声が存在することが嬉しい。",b:"座って火を分け合うが、基本的には沈黙を保つ。会釈と数言を交わすだけで十分であり、無理に会話で時間を埋める必要はない。"},
-  {dim:'EI',scene:'予期せぬ歓待',fn:'Se/Ti',text:"帰宅すると、すでにドアが開いていました。中に入ると、見知らぬ人々があなたの食卓を囲んでおり、あなたの知る誰かが大声で笑っています。部屋には食べ物と酒、そして人々の熱気が満ちています。",a:"バッグを置いて、「誰か腹が減っている奴はいるか？」と声をかける。",b:"コートを脱ぐ前に、「一体ここで何が起きているんだ？」と状況を尋ねる。"},
-  {dim:'EI',scene:'祝宴',fn:'Fe/Fi',text:"戦争は終わり、ダンモアの大広間が開放されました。ごちそうと暖炉の火、そして音楽が満ちており、ここ数ヶ月間笑うことのなかった人々が今や笑い声を上げています。あなたが長いテーブルについてから1時間が経ちました。ともに戦った戦友が身を乗り出し、「大丈夫か？」と尋ねてきます。",a:"大丈夫どころではないと答える。もっとワインを、もっと喧騒を、この瞬間をさらに味わいたい。",b:"大丈夫だと答える。ただ静かにこの場の温かさを眺めていたい。"},
-  {dim:'EI',scene:'翌朝',fn:'Se/Ni',text:"昨夜は盛大な祝いの夜でした。今日は誰もがのんびりと静かに過ごしており、広間には冷え切った料理と燃え尽きたキャンドルの匂いが漂っています。あなたには今日の任務はなく、どこかへ行く必要もありません。誰かが部屋のドアを叩き、一緒に過ごさないかと誘ってきました。",a:"ドアを大きく開ける。昨日は素晴らしかったが、適切な人々が同じ部屋にいれば、今日はさらに良い一日になるかもしれない。",b:"「また後で」と伝える。今は一人で静かに過ごしたい。"},
-  {dim:'EI',scene:'平原',fn:'Fe/Te',text:"あなたは目印のない広大な平原を横断しています。道はどちらの方向を見ても無人ですが、やがて遥か彼方から、一人の旅人が反対方向から歩いてくるのが見えました。",a:"立ち止まる。このような荒野での会話は、他のどんな場所で交わす言葉よりも価値がある。",b:"水や距離、前方の警告など、実用的な情報だけを交換し、そのまま歩き続ける。"},
-  {dim:'EI',scene:'旅立ち',fn:'Fe/Fi',text:"これまで共に旅をしてきた仲間たちが、辻（交差点）でそれぞれ異なる方向へと旅立とうとしています。別れの時まであと1時間あります。",a:"その時間を最大限に活かす。道中で語り合えなかったすべてのことを話す。何も言い残すことなく旅立ちたい。",b:"自分自身が静かになっていくのを感じる。残された時間は、言葉で埋めるよりも、静かに噛みしめる方が重要に思える。"},
-  {dim:'EI',scene:'試練の呼び名',fn:'Fe/Fi',text:"あなたは何年もの間、偽名を使って旅をしてきました。今夜、広間の誰かがあなたに気づき、本名を口にしました。部屋が静まり返ります。テーブルの主座にいる領主が、あなたをじっと見つめています。",a:"立ち上がる。もしこれがその瞬間であるなら、立ってそれを受け止める。",b:"じっと動かずにいる。名前を呼ばれることと、心の準備ができていることは別である。この場は待たせておけばいい。"},
-  {dim:'EI',scene:'駐屯地',fn:'Se/Si',text:"あなたは自分で選んだわけではない部隊とともに、ヘルム峡谷の要塞に2ヶ月間駐屯しています。今夜、中庭で火が焚かれ、誰かがワインの革袋を持ってきて、非番の兵士たちが集まり始めました。同室の兵士がドアから顔を出し、「お前も来いよ」と声をかけてきました。",a:"行く。2ヶ月経っても、この部隊でまだ自分がよそ者のように感じられる。今夜でそれを変えてみせる。",b:"先に行ってくれと伝える。自分は部屋に残る。"},
-  {dim:'EI',scene:'凱旋',fn:'Si/Fi',text:"あなたは非凡な冒険の旅から戻ってきました。周囲の人々が集まり、旅のすべてを知りたがっており、純粋な眼差しであなたを見つめています。",a:"最初から順を追って話し、何一つ省略しない。",b:"真実でありつつも手短な内容を伝え、本質的なストーリーは適切なタイミングまで取っておく。"},
-  {dim:'EI',scene:'選択の夜',fn:'Fe/Ni',text:"カルデンメアで築き上げたすべてを後にし、2年間の危険なカルドン遠征に参加するかどうか、決断するまでに3日間の猶予が与えられました。最初の夜、あなたは部屋のテーブルにつき、キャンドルと白紙の羊皮紙を前にしています。友人のセラは階下にいます。",a:"階下へ降りる。セラのいる場所へ行き、彼女と話す。",b:"テーブルに留まる。一人で白紙と向き合い続ける。"},
-  {dim:'EI',scene:'告白の猶予',fn:'Fe/Fi',text:"ドレヴァスの医師は、あなたの健康状態について予期せぬ事実を告げました。死の宣告ではありませんが、深刻な内容であり、これからの生活を一変させるものです。あなたは一人で市場を歩いて戻っています。家では妹のミラが結果を心配して待っています。",a:"まっすぐ家に戻る。この事実が抱えきれないほど重くなる前に、誰かの前で言葉にしなければならない。",b:"まずはしばらく歩く。彼女に告げる時の彼女の表情を見る心の準備が、まだできていない。"},
-  {dim:'EI',scene:'嵐の中の静寂',fn:'Fe/Si',text:"あなたの愛する人が精神的に崩壊しかけています。彼らは助けや解決策、あるいは答えを求めていません。ただそこに、同じ部屋のすぐ近くに、誰かがいてくれることを必要としています。",a:"さらに近づく。身の回りの世話など、些細なできることを見つけ、相手との間の温度を温かく保つ。",b:"ただ座ってそこに留まる。何かをしようとせず、ただそこに寄り添う。"},
-  {dim:'EI',scene:'戴冠式',fn:'Fe/Fi',text:"あなたは戴冠され、広間の全員があなたを見つめています。前任者は失脚し、周囲は新しい誓いと忠誠を求めています。かつての支持者の一人が身を乗り出し、「我々に何か言葉を」と皆を代表して求めてきました。",a:"立ち上がって言葉を発する。彼らに進むべき道を示す。",b:"座ったままでいる。沈黙こそが、この瞬間に最も必要な重みである。"},
-  {dim:'EI',scene:'大いなる作業',fn:'Fe/Ti',text:"要塞の補強作業が完了に向かっており、あなたの担当する石積みは予定より早く終わりました。他の職人たちが防壁の最も困難な部分で苦戦している渦中に飛び込んで手助けするか、時間を活用して自分の設計図をさらに精査するか選択できます。",a:"手助けに飛び込む。作業の中心で周囲と汗を流している時にこそ、最も良い仕事ができる。",b:"設計図の精査に専念する。自分の仕事の極限を追求することこそが、最終的に最も強固な防壁を作る。"},
-  {dim:'EI',scene:'通夜の祈り',fn:'Fe/Si',text:"心身ともに疲れ果てた長い防衛戦の一週間が終わりました。今夜は警備の当番もなく、何の義務もありません。",a:"友人のもとへ行く。会話や温もり、冷酷な戦場から離れたどこか別の対話が必要だ。",b:"部屋のドアを閉めて眠る。他者と関われる状態になる前に、完全に一人になる時間が必要だ。"},
-  {dim:'EI',scene:'旅籠の灯火',fn:'Se/Ni',text:"丘陵地帯を3週間一人で旅し続け、ようやくブリー村の旅籠に到着しました。中には6人の先客がおり、火が赤々と燃え、テーブルには温かい食事が並んでいます。宿主が「仲間に入るかね？」と尋ねてきました。",a:"彼が言い終わる前に椅子を引いて座る。3週間、自分の思考以外に何もない世界にいた。今は誰かの声がほしい。",b:"個室を取る。今夜は一人で食事をし、明日の朝になってから徐々に人間らしさを取り戻したい。"},
-  {dim:'EI',scene:'使者',fn:'Fe/Si',text:"状況を一変させるメッセージが届きました。あなたに対してではなく、あなたがよく知る、そして長い間会っていない人物に対するものです。ただ鳥を飛ばして伝えることもできますが、あなた自身が使者として赴くこともできます。",a:"自分自身で行く。このような報せは、伝えるべき顔を持った人間が直接届けるべきだ。",b:"書状を送る。重要なのは彼らが事実を知ることであり、誰がそれを届けたかや対面かどうかは問題ではない。"},
-  {dim:'SN',scene:'立ち上る煙',fn:'Se/Ni',text:"収穫祭の3日目の朝、カルデンメアの上の丘にいたあなたはそれを見ました。水車小屋の道の向こうから、一本の細い黒い煙が立ち上っています。それは湿った木や布、あるいは燃えるはずのない何かが燃えている時の煙です。あなたの弟とその家族が麓に住んでいます。",a:"駆け下りる。行けばそれが何であるか分かるはずだ。",b:"立ち止まり、観察する。方角、色、煙の立ち上り方。それから駆け下りる。"},
-  {dim:'SN',scene:'預言者',fn:'Ti/Ni',text:"山から下りてきた男が、これから起こる破滅の幻視を見たと語っています。街の半数の人々がすでに彼の言葉を信じて動き始めています。彼はあなたの前に立ち、「お前も我らと共に来るか？」と尋ねます。",a:"具体的に何を見たのかを彼に尋ねる。その主張が確かな重みに耐えうるものであると分かるまでは、一歩も動かない。",b:"すでに決断を下している。彼の言葉の根底にあるものは真実であり、理由を説明できるようになる前に、あなたは直感でそれを知っていた。"},
-  {dim:'SN',scene:'最後の村',fn:'Si/Ni',text:"進軍中にある村に入ると、そこは急いで放棄された直後でした。暖炉の火はまだ温かく、テーブルの上には食べ物が残されています。ここを通り抜けた何かが極めて迅速で、人々が慌てて逃げ出したことを示しています。あなたの部隊が到着して報告を求めるまで、あと1時間あります。",a:"一軒一軒の建物を探索する。報告をする前に、ここで具体的に何が起きたのかを正確に把握したい。",b:"これが何を意味するかはすでに分かっている。以前にもこのパターンを見たことがある。すぐに部隊を引き返し、警告を伝える。"},
-  {dim:'SN',scene:'轍の痕跡',fn:'Se/Ni',text:"ヴェドラスの峠を越える商人の護衛を引き受けて2日目。あなたは前回の商隊が立ち止まった場所に到着しました。荷馬車は消え去っていますが、地面が多くの事実を語っています。入る時の轍は深く、出る時の轍は浅い。商隊の誰とも一致しない3組のブーツの足跡。そして泥の中に半分埋もれた子供の靴。背後の商人が「何が見える？」と尋ねてきました。",a:"見えたものをありのまま説明する。轍、足跡、靴。あなたは解釈ではなく、観察のために雇われた。",b:"振り返る。商隊は急いで出発し、来た時よりも荷は軽かったこと、そしてそこにいるはずのない誰かがいたことを伝える。まだ子供の靴のことは口にしない。"},
-  {dim:'SN',scene:'無言の同伴者',fn:'Si/Ni',text:"アストリッドとともに旅をして6日目。彼女はこれまで何の問題もなく、穏やかで、快活でさえありました。しかし今朝、彼女は沈黙しています。疲れによる沈黙ではありません。食事を全く摂らず、夜明けからあなたと一度も目を合わせようとせず、道中で二度、何もない空間をじっと見つめて立ち尽くしました。国境の検問まであと3時間、彼女が持ちこたえられるか見極める必要があります。",a:"彼女に直接尋ねる。",b:"何も尋ねず、ただ彼女の様子を注視する。"},
-  {dim:'SN',scene:'失われた言語',fn:'Ti/Ni',text:"誰も読めない古代の言語で書かれたメッセージを発見しました。そこにはあなたが求める方角が記されている可能性があります。残された時間は1時間。二人の学者が異なる解法を提案しました。一人は「文字の規則（パターン）をマッピングすべきだ」と言い、もう一人は「文全体の気配（意味）を感じ取るべきだ」と言います。",a:"文字の規則を解析する。構造こそが、解読のための唯一の信頼できる入り口だ。",b:"細部に分ける前に、全体をじっと眺める。文全体の気配こそが、分析よりも多くの真実を教えてくれる。"},
-  {dim:'SN',scene:'巨匠との対話',fn:'Si/Ni',text:"長い晩餐の席で、その道の偉大な巨匠の隣に座る機会を得ました。一晩中、彼らの関心はあなたに向けられています。何を尋ねますか？",a:"具体的な作業のプロセスについて。日々の修練、失敗、誰も語らない地味な細部について。",b:"この分野が将来的にどこへ向かうと思うかについて。他の人々が見落としている本質は何か。"},
-  {dim:'SN',scene:'寓話',fn:'Ti/Ni',text:"賢者が物語を語り終え、一同にそこから何を学んだかを尋ねました。隣に座る者が、あなたが全体に向けて答える前に、あなたの個人的な考えを知りたがっています。",a:"その物語が論理的に何を主張しているかを伝える。その主張が妥当であるかを検証したい。",b:"その物語が自分の内なる世界をどこへ導いたかを伝える。文字通りの意味は本質ではない。"},
-  {dim:'SN',scene:'大書庫',fn:'Si/Ni',text:"一生かかっても読みきれないほどの膨大な蔵書を誇る大書庫に、1時間だけ一人で入ることを許されました。あなたは書架の間を歩きます。何を探しますか？",a:"明確に特定の何か。すでに深く関心を持っている主題や、ずっと抱えてきた具体的な疑問。",b:"これまで一度も考えたことのない何か。予期せぬ未知の真実に出会ってそこを去りたい。"},
-  {dim:'SN',scene:'石に突き刺さった剣',fn:'Se/Ni',text:"誰もが挑戦して失敗し、今や彼らはあなたが近づくのを見守っています。剣の柄に手をかける前に、選択肢があります。石の隙間の構造を調べて仕組みを理解するか、あるいはただ力強く引いてみるか。",a:"まずはそれを観察する。刃の角度、隙間の状態、石の材質。ここには物理的な理（ロジック）があるはずだ。",b:"分析せずに手をかける。もし動く運命にあるなら、それは動く。"},
-  {dim:'SN',scene:'説教（解釈）',fn:'Ti/Ni',text:"ハルヴェンムーアの神官は、30年間同じ説教を繰り返してきました。今夜も彼は、半ば空席の広間でそれを一言一句違わず語っています。終了後、同行者が「どう思う？」とあなたの意見を求めてきました。",a:"説教の中に論理的に矛盾する2つの主張があり、どれが正しいか検証してみたいと答える。",b:"彼は神々の話などしていないと答える。彼はもう長い間、神々について語ってはいない。"},
-  {dim:'SN',scene:'説教（本質）',fn:'Ti/Ni',text:"偉大な説法者が語り終えました。広間の全員が感動に震えています。帰り道、同行者が「どう思う？」と尋ねてきました。",a:"彼の論理展開について語る。彼が提示した主張を、自分で吟味してから受け入れたい。",b:"彼が本当に語ろうとしていたことの本質を伝える。言葉の底流で語られていた真実こそが、唯一重要である。"},
-  {dim:'SN',scene:'空の牢獄',fn:'Si/Ni',text:"あなたが処刑を命じられていた囚人は、昨夜は確かに独房にいました。しかし今朝、独房は空で、扉は外側から施錠されており、二人の衛兵は何も覚えていません。駐屯地の半数の兵士は神々の仕業だと噂しています。隊長は正午までに報告書を求めています。",a:"検証可能な事実だけを記録する。施錠された扉、衛兵の証言、タイムライン。説明できないことは一切書かない。",b:"男は消え去り、その方法は現時点では重要ではないと書く。これが単なる脱獄を超えた大いなる予兆であり、何かが迫っていると伝える。"},
-  {dim:'SN',scene:'未知の未踏地',fn:'Si/Ni',text:"数ヶ月の航海を経て、あなたの船は誰も足を踏み入れたことのない未知の陸地に到達しました。乗組員は上陸の準備を整えています。副隊長が、どのように探索を進めるか尋ねてきました。",a:"上陸し、目の前にあるものをありのままに調査する。土壌の成分、植生、水源の有無。大地がその性質を教えてくれる。",b:"海岸線の形状に何か違和感があると告げる。岩や木々ではなく、全体の輪郭が何かを暗示している。上陸する前に、沿岸を航行して全体像を把握したい。"},
-  {dim:'SN',scene:'密書の鴉',fn:'Ti/Ni',text:"あなたの最古の同盟者が、宿敵と同盟を結んだことを知らせる鴉（カラス）が到着しました。書面の上では単なる交易協定であり、直接的な脅威は一切書かれていません。賢者たちは静観を勧めていますが、あなたの内なる何かが「これは交易の話ではない」と告げています。",a:"静観する。手紙一通で動くべきではない。行動を起こすにはさらなる事実が必要だ。",b:"準備を開始する。このような動きが孤立して起こるはずがない。すでに背後でより大きなうねりが始まっている。"},
-  {dim:'SN',scene:'最後の学者',fn:'Si/Ni',text:"古代の知識を保持する最後の学者が、この街を永久に去ろうとしています。彼と話すことができる時間はわずかです。何を尋ねますか？",a:"彼がこれまでに記録した具体的な歴史や出来事の詳細について。",b:"彼が去った後、この世界にどのような空白が生まれるかについて。"},
-  {dim:'SN',scene:'帰還',fn:'Ti/Ni',text:"あなたは長年の放浪を終えて故郷の村に戻りました。かつての知り合いが「戻ってきて何を感じる？」と尋ねます。",a:"新しく建った家、変わってしまった道の配置、人々の高齢化について語る。",b:"この場所に、かつて自分が去った時と同じ形の『影』がまだ残っているという感覚について語る。"},
-  {dim:'SN',scene:'ソロモンの裁判',fn:'Ti/Ni',text:"二人の女が、一人の赤ん坊を自分の子供だと主張して対立しています。物証はなく、証言は真っ向から対立しています。あなたが決定を下さなければなりません。",a:"双方のこれまでの行動や素行、タイムラインを厳密に調査する。",b:"赤ん坊を二つに切り裂いて分け与えよと命じ、その時の女たちの反応を観察する。"},
-  {dim:'SN',scene:'船長',fn:'Se/Ni',text:"嵐の海で船が激しく揺れています。船長であるあなたは舵輪の前に立っています。",a:"波の高さ、風の向き、帆の張り具合を正確に把握し、物理的な制御に集中する。",b:"船全体の「きしみ」を感じ取る。この嵐を乗り切るために、船が今何を求めているのかを直感する。"},
-  {dim:'TF',scene:'倒れた長老',fn:'Fi/Te',text:"儀式の最中に、偉大な長老が倒れました。命に別状はありませんが重傷で、あなたの前で地面に横たわり、静かに横たわっています。全員があなたを見つめています。",a:"傷口を確認する。何よりもまず、怪我の具体的な状態を把握する必要がある。",b:"彼の手を握る。何よりもまず、誰かがそばにいるという安心感を与えるべきだ。"},
-  {dim:'TF',scene:'罪深き少年',fn:'Te/Fi',text:"穀物庫から盗みを働いたとして捕まった少年は14歳でした。この季節で3度目の犯行です。法は明白であり、3度の窃盗は『片手を失う』ことを意味します。執政官は不在で、周囲はあなたが決断を下すのを待っています。少年の母親は部屋の後方で、微動だにせず沈黙しています。",a:"法を執行する。相手が誰であろうと、3度目は3度目であり、規定は厳格に適用されるべきだ。",b:"少年を家に帰す。法がどうあろうと、14歳の少年の手を切り落とすようなことは絶対に容認できない。"},
-  {dim:'TF',scene:'二人の従者',fn:'Te/Fe',text:"あなたは二人の従者を管理しています。一人は極めて優秀な仕事をこなしますが、行く先々で周囲との関係を毒します。もう一人は平凡な能力ですが、彼の周りのすべての人間がなぜか良い動きをします。",a:"一人目（優秀）を残す。結果こそが従者の唯一の価値である。",b:"二人目（調和）を残す。協力し合えない集団はいずれ全体の機能が完全に停止する。"},
-  {dim:'TF',scene:'賢者の忠言',fn:'Te/Fe',text:"あなたが尊敬する人物が、自分を破滅させるであろう選択に向かって歩んでおり、本人はそれに全く気づいていません。そして、それを指摘できる立場にいるのはあなただけです。",a:"ありのまま率直に伝える。あまりに優しすぎる忠言は、警告としての役割を果たさない。",b:"適切な瞬間と、受け入れられやすい言葉を選ぶ。伝え方が悪い忠言は、ただ拒絶されるだけで終わる。"},
-  {dim:'TF',scene:'分裂した共同体',fn:'Te/Fe',text:"共同体の二人の長老が激しく対立し、集団は二つに分裂し、共同の作業は停滞しています。全員が、誰かがこの事態を収拾することを求めています。",a:"二人を同席させ、彼らの対立がどれほど共同体に損失を与えているかをありのまま伝える。",b:"それぞれと個別に話す。彼らが本当に求めている本質的な要求が何かを理解したい。"},
-  {dim:'TF',scene:'燃え盛る都',fn:'Fi/Te',text:"都が燃えています。あなたはできる限りのことを尽くし、今や辻（分岐点）に立っています。左側の建物には、人類の全知識を記録した最後の書物が眠っています。右側の通りからは、まだ誰かが生きているかもしれない気配が漂っています（声は聞こえません）。どちらか片方しか選べません。",a:"左（書物）へ向かう。人々には機会があったが、知識の記録にはそれがない。",b:"右（生存者）へ向かう。一人でも生きている可能性がある限り、その命を見捨てることはできない。"},
-  {dim:'TF',scene:'放蕩息子の帰還',fn:'Fi/Fe',text:"かつてあなたを深く傷つけた人物が戻ってきました。彼は明らかに悔い改め、変わり、あなたの前でただ静かに許しを待っています。",a:"彼を受け入れる。しかし、受け入れることと、すべてを過去の通りに戻すことは別である。起きた事実は消えない。",b:"彼を許す。彼の顔を見たその瞬間に、あなたはすでに彼を許すことを決めていた。"},
-  {dim:'TF',scene:'死にゆく長老',fn:'Te/Fi',text:"偉大な長老が死の床にあり、あなたに尋ねました。「歴史は私をどう記憶するだろうか？」と。あなたは真実を知っていますが、それは決して単純で輝かしいものではありません。",a:"真実をありのまま伝える。彼がそれを求め、その真実を受け止めるだけの人生を生きてきたからだ。",b:"彼の人生の最も高潔だった部分だけを語り、残りは伏せる。この期に及んで、過去の過ちを蒸し返す意味はない。"},
-  {dim:'TF',scene:'燃え盛る船',fn:'Fi/Te',text:"船が沈みつつあり、二人の人間が水中で溺れています。救助できるのは片方だけです。一人はこれまでに何百人もの命を救ってきた高名な医師です。もう一人は、あなたが全く知らない見知らぬ人物です。",a:"医師を救う。何百人もの未来の命を救う可能性を持つ命と、一人の命は、論理的な重みが異なる。",b:"近い方を救う。目の前の命の価値を、数字で推し量るようなことはできない。"},
-  {dim:'TF',scene:'大洪水',fn:'Fi/Te',text:"昨夜、川が氾濫し、街の下町が水没しました。暗くなる前に避難させられるボートの数は限られています。貧民街は人口が多く、道が狭く、困難な状況です。商業区は人口は少ないですが、要塞や穀物庫、医師たちを資金的に支えているのは彼らです。副官が決断を待っています。",a:"貧民街へ向かう。より多くの命を救うこと、それだけが唯一の正しい論理だ。",b:"商業区へ向かう。彼らがいなければ、この街は冬を越せずに結局全員が滅びることになる。"},
-  {dim:'TF',scene:'帰還兵の秘密',fn:'Fi/Fe',text:"長い戦争が終わって一人の兵士が帰還し、周囲は彼を英雄と称え、祝宴を開き、賛辞を贈っています。しかし、あなたは彼が生き延びるために戦場で何を行ったかという暗い秘密を知っています。",a:"何も言わない。彼が生き延びるために成したことは、彼と戦争の間の事柄であり、すでに終わったことだ。",b:"彼と二人だけの静かな時間を持つ。告発するためではなく、誰かがその事実を知っており、それでも彼のそばにいると伝えるために。"},
-  {dim:'TF',scene:'物証なき告発',fn:'Te/Fe',text:"村の一人の女性が、ある男を告発しました。男は否認しており、目撃者はいません。彼女が彼を訴えるのはこれが初めてではなく、村の誰もが彼の素行を疑っていますが、疑惑は証明されていません。長老はあなたに、決定的な一票を投じるよう求めました。",a:"保留（男を無罪）とする。直感がどうあろうと、確たる証拠なしに人を裁くべきではない。",b:"男を有罪とする。長年の彼の振る舞いや周囲の反応を見れば、物証がなくとも真実は明らかだ。"},
-  {dim:'TF',scene:'夜の告白',fn:'Fi/Fe',text:"友人が、誰も知らないところで自分が犯した過ちと、それによって他者を傷つけてしまった事実を打ち明けてきました。彼はアドバイスを求めておらず、ただ誰かにこの事実を伝える必要があったのです。",a:"彼が取るべき具体的な償いのステップを伝える。一人で罪を抱え続けても、何も解決しない。",b:"ただ沈黙して耳を傾け、その重みを分かち合う。彼は裁き手を求めたのではなく、ただ知ってくれる存在を求めたのだ。"},
-  {dim:'TF',scene:'敗れし宿敵',fn:'Te/Fi',text:"あなたの宿敵が地面に倒れ、敗北し、戦いは終わりました。彼はあなたを見上げています。",a:"息の根を止める。ここで終わらせる。",b:"武器を収め、その場を立ち去る。"},
-  {dim:'TF',scene:'無言の重荷',fn:'Fi/Fe',text:"あなたの身近な人が、長い間重い荷物を背負い続けています。彼は助けを求めておらず、それを望んでいないかもしれません。",a:"静観する。相手が求めていないのに手を差し伸べることは、かえって相手への圧力になり得る。",b:"対話の糸口を見つける。直接的な介入ではなく、彼が一人ではないといつでも実感できるように扉を開けておく。"},
-  {dim:'TF',scene:'大戦記の執筆',fn:'Fi/Fe',text:"あなたは大戦争の歴史書を執筆しており、人々の被った犠牲や痛みをどれほど正直に、どれほど詳細に含めるべきか選択を迫られています。",a:"客観的な事実と必要な記録だけを含める。歴史書は厳密でなければ無意味になる。",b:"すべての犠牲者の物語を含める。苦しんだ人々自身がその歴史の主役であり、単なる決定事項の記述で終わらせるべきではない。"},
-  {dim:'TF',scene:'岐路に立つ兄弟',fn:'Fi/Fe',text:"あなたの兄弟が再び酒を飲んでいるようです。彼が席に着く前に、その匂いで分かります。彼は明日、一族を代表して評議会で証言することになっており、土地、借金、母親の家など、すべてが彼の明日の振る舞いにかかっています。彼はあなたが気づいていることを知りません。彼は何の問題もないかのように、テーブル越しにあなたを見ています。",a:"はっきりと口にする。匂いに気づいていること、そして明日の証言にどれだけの重みがあるかを彼に突きつける。",b:"今夜は何も言わない。今彼を恥じ入らせても酒は抜けないし、むしろ明日の状況を悪化させるだけだ。"},
-  {dim:'JP',scene:'大いなる探索',fn:'Te/Ne',text:"あなたに偉大な探索の任務が与えられました。道のりは長く、目的地は明確ですが、そこに至るルートは誰にも分からず、前人未踏の地です。",a:"出発前に、分かっている情報（地形、距離、想定される危険）をすべて整理し、計画を立てる。",b:"とにかく出発する。進むべき道は、実際に歩く中で開かれていくものだ。"},
-  {dim:'JP',scene:'方舟',fn:'Te/Ni',text:"大洪水がこちらに向かっているという報せが届きました。しかし空はまだ晴れ渡り、地面は乾いており、現時点では何の予兆もありません。",a:"今すぐ方舟の建設を開始する。最も恐るべきは、危機が訪れた時に備えができていないことだ。",b:"まずは推移を見守る。不確かな情報で早期に動きすぎることは、限られた資源と労力を無駄にする。"},
-  {dim:'JP',scene:'受け継がれし意志',fn:'Si/Ne',text:"誰かが途中で放棄し、未完成のまま残された偉大な仕事をあなたが引き継ぐことになりました。最初の設計思想は完全には明らかではなく、前任者はすでにこの世にいません。",a:"手を動かす前に、前任者の意図を理解するために徹底的に時間を費やす。理解できない土台の上に何かを築くことはしない。",b:"残されたところからすぐに作業を始め、作業そのものに導かせる。前任者の意志を理解する最良の方法は、それを継続することだ。"},
-  {dim:'JP',scene:'王たちの祝宴',fn:'Te/Ne',text:"あなたは数ヶ月後に開催される、大陸全土から王や領主が集う大祝宴の差配を任されました。",a:"今日から準備と組織化を開始する。この規模の宴は、直前の準備では絶対に成功しない。",b:"これまでの経験から、最高の宴には余白が必要だと知っている。宴が近づいてから本格的に手配を始める。"},
-  {dim:'JP',scene:'膠着した仲裁',fn:'Te/Ne',text:"あなたは二つの共同体の間で、長く困難な仲裁を続けてきましたが、ここ数週間は全く進展がありません。そんな中、別の場所であなたを緊急に必要としている人がおり、状況は深刻であるという報せが届きました。",a:"この問題がどちらかに決着するまでは、絶対にここを離れない。未解決の事柄を置き去りにはしない。",b:"そこへ赴く。これほど膠着した仲裁はすでに終わっているも同然だ。本当のなすべき仕事は別の場所にある。"},
-  {dim:'JP',scene:'未読の書状',fn:'Te/Ne',text:"あなたは夜明けに、遅らせることのできない重大な旅に出発しようとしています。テーブルの上には昨夜届いた手紙がありますが、まだ開封する時間がなく、何が書かれているか分かりません。",a:"手紙を開ける。真実を知った上で旅立ちたい。",b:"手紙を未開封のまま懐にしまう。道中で時間を見つけた時に読むことにする。"},
-  {dim:'JP',scene:'霧散した評議会',fn:'Te/Ne',text:"あなたは領主たちの評議会に参加するために3日間かけて旅をしてきましたが、到着した途端、評議会は中止になり、全員が散り散りに戻ろうとしていることを知らされました。",a:"その徒労感に打ちひしがれる。旅路、準備、期待、そのすべてが無駄になったと感じる。",b:"行き場をなくしてその場に佇んでいる人々を見渡す。自分はとにかくここにいるし、彼らもいる。何かが始まるかもしれない。"},
-  {dim:'JP',scene:'崩れ落ちた橋',fn:'Si/Se',text:"明確なルートを持って出発し、3日が経ちました。目の前の橋が崩落しています。前進するための地図はなく、あなたを待っている人々は、あなたが遅れている理由を知る術がありません。",a:"動く前に、一旦立ち止まって最良の迂回路を計算する。無計画な寄り道は、短い停滞よりも大きな損失を招く。",b:"とにかく方向を決めて進み始める。進むことで、ここからは見えない新たな道が見つかるはずだ。"},
-  {dim:'JP',scene:'旅の支度',fn:'Si/Ne',text:"あなたは長い旅の準備をしており、何を持っていくべきか決める必要があります。持っていきたいものは、運べる量を超えています。",a:"前夜に持ち物リストを作成し、それに従って厳密に荷造りする。バッグの中のすべての品には明確な理由がある。",b:"出発する朝に荷造りをする。必要なものは大体頭に入っており、残りは道中で何とかする。"},
-  {dim:'JP',scene:'空位の玉座',fn:'Te/Ni',text:"王国は指導者を欠き、評議会は分裂しています。一人の野心家が、すでに自分が王位にあるかのように振る舞い、権力の空白を埋めようとしています。彼は、正式な決定が下される前に自分を公に支持するよう、あなたに求めてきました。",a:"彼を支持する。最悪の危機は権力の空白である。不完全であっても、今決断を下す方が、引き延ばすよりも遥かに良い。",b:"拒絶する。この玉座に就く者は、正当な手続きを経て就くべきであり、そうでなければ誰も従わない。"},
-  {dim:'JP',scene:'報われぬ堅守',fn:'Te/Se',text:"あなたは東の門を守るよう命じられ、見事に守り抜きました。しかしあなたがそこにいる間に、敵は西の門から侵入し、味方があなた抜きで敵を退けました。隊長があなたに報告を求めています。",a:"自分が成したことを報告する。与えられた任務を忠実に、完璧に遂行したと伝える。",b:"自分が逃した本質を報告する。東の門は決して本当の脅威ではなかった。なぜそれを見抜けなかったのかを理解したい。"},
-  {dim:'JP',scene:'変更された命',fn:'Si/Ne',text:"あなたは駐屯地の冬用の備蓄の半分を作り終えたところでしたが、部隊が6ヶ月後ではなく、6週間後に移転するという指令が届きました。これまで行った作業の半分は無駄になります。職人たちがあなたの指示を待っています。",a:"当初の計画通りに完成させる。途中で放棄することは、最初から行わないことよりも仕事を悪い状態のまま残すことになる。",b:"新しいタイムラインに合わせて計画を縮小する。誰も冬を過ごさない場所のために、備えを築く意味はない。"},
-  {dim:'JP',scene:'決戦前夜',fn:'Si/Ni',text:"明日は決戦の日です。裁判、儀式、あるいは取り消すことのできない重大な選択。あなたは何年もかけてこの日のために準備してきました。今夜、すべての準備は終わり、暖炉の火は小さくなっています。",a:"頭の中で、もう一度最初から手順を確認する。朝が来る前に、すべての詳細を完璧に把握しておきたい。",b:"眠る。できることはすべてやった。残されたことは明日の領分だ。"},
-  {dim:'JP',scene:'空の兵糧庫',fn:'Te/Se',text:"備蓄が待っているはずの旅籠に到着しましたが、建物は空でした。手紙も、何が起きたかの痕跡もなく、棚には何もありません。同行者は11人、食料は2日分、そして目的地まではあと4日の道のりがあります。",a:"一旦座り、手元にある資源と選択肢を正確に計算してから動き出す。",b:"とにかく歩き始める。立ち止まっていても、荷物の中身が増えるわけではない。"},
-  {dim:'JP',scene:'分岐する路',fn:'Ne/Fi',text:"仕事は完了し、あなたは二つの選択肢を提示されました。勢いがあるうちに次の任務をすぐに引き受けるか、あるいは何もしない自由な1ヶ月を過ごしてから決めるか。",a:"次の任務を引き受ける。勢い（モーメンタム）は失ってから取り戻すよりも、維持する方が遥かに容易だ。",b:"1ヶ月の猶予を取る。あなたは何年も走り続けており、自分が次に本当に何を望んでいるのかをまだ知らない。"},
-  {dim:'JP',scene:'独断の正義',fn:'Si/Ne',text:"あなたは一人の男を裁判にかけるために連行する任務を帯びています。3日間の乗馬。明確な命令。しかし現地に到着すると、逮捕を監督するはずだった者が、その場で男を殺そうとしています。裁判なし。正義なし。ただの終わり。猶予は数秒です。",a:"何もしない。計画を外れた行動を起こせば、あなた自身が問題の元凶となる。与えられた任務の枠に留まる。",b:"介入する。この計画は、このような状況を想定して作られていない。この瞬間がすべてを変えた。"},
-  {dim:'JP',scene:'今際の際',fn:'Si/Ni',text:"あなたの愛する人が死の床にあり、最期にあなたにそばにいてほしいと特に望んでいました。あなたは部屋にいます。扉の外には、彼らが20年間絶縁していた人物が到着したばかりです。",a:"部屋に留まる。彼らはあなたを求めたのだ。その意志には絶対的な意味がある。",b:"扉を開けて外へ出る。20年の歳月だ。最期の瞬間を前に、引き延ばせない対話がある。"},
-  {dim:'JP',scene:'危険な毒薬',fn:'Te/Ni',text:"子供が誤って間違った薬を飲みました。選択肢は二つ。確実に効果はあるが身体に生涯残る後遺症をもたらす薬か、あるいは完全に治癒する可能性はあるが死に至る本物のリスクを持つ薬か。親とは連絡がつかず、医師たちの意見は真っ二つです。あなたが決めなければなりません。",a:"確実な選択肢（後遺症）を選ぶ。生涯の傷は残るが、子供の命は助かる。",b:"不確実な選択肢（確率）を選ぶ。完治する可能性こそが、その子供が受け取るべき権利だ。"},
-  {dim:'JP',scene:'身代わりの告白',fn:'Te/Ne',text:"あなたの友人が、他者を守るために自分が犯していない罪を告白しようとしています。彼が守ろうとしている人物は、その事実に気づいていません。真実を知っているのは、部屋の中であなただけです。彼がまさに口を開こうとしています。",a:"立ち上がる。この場において、真実こそが唯一絶対の守るべきものである。",b:"沈黙を守る。これは彼自身が下した選択であり、あなたが介入すべき領域ではない。"},
-  {dim:'JP',scene:'測量士',fn:'Si/Ne',text:"あなたは未知の未踏の領土の地図を作成する任務を与えられました。夜明けに観測器具を持って出発します。",a:"グリッドに沿って進める。一区画ずつ、正確な測定を重ねてマッピングしていく。",b:"最も高い丘を見つけるまで歩く。まずは上空から全体の輪郭を把握する。"},
-  {dim:'JP',scene:'浸水する船体',fn:'Si/Ne',text:"あなたの船は次の港に到達できますが、それは途中で浸水を完全に修理することなく進み続けた場合のみです。ここで完全に修理するには2日かかります。積み荷は緊急のものではありませんが、港で待つ人々はその事実を知りません。",a:"船を停めて修理する。破損した船で急ぐよりも、健全な船で遅れて到着する方が遥かに良い。",b:"そのまま進む。浸水は管理可能な範囲であり、ここで2日停滞する損失の方が大きい。"},
+  {
+    "dim": "EI",
+    "scene": "The Doorstep",
+    "fn": "Se/Ni",
+    "text": "You have been gone for eight months. The campaign was long and ugly and you lost people you cared about. You are standing outside your house in Edoras. The candle in the window is still lit. You can hear your children inside.",
+    "a": "You push the door open. You have been waiting eight months for this and you are not waiting another second.",
+    "b": "You stand there for a moment. Your hand is on the door but you are not ready yet. You need just a breath before you become their father again."
+  },
+  {
+    "dim": "EI",
+    "scene": "The Last Supper",
+    "fn": "Fe/Fi",
+    "text": "You are sitting at a long table with the people you love most, and the wine is good and the fire is warm and the night is slow. Somewhere in the back of your mind you know, though no one has said it, that this is the last time all of you will sit together like this.",
+    "a": "You move around the table, person to person. There is something you need to say to each of them before the night is over.",
+    "b": "You stay. There is one person here you came for, and you are already sitting next to them."
+  },
+  {
+    "dim": "EI",
+    "scene": "The Market",
+    "fn": "Se/Si",
+    "text": "You arrive in Pelargir on the morning of the midsummer market. The city is louder than anything you have heard in months, every street packed, music coming from three directions at once. You have until sundown and no obligations. A merchant you met on the road offers to show you around.",
+    "a": "You go with him. A city like this only gives itself up if you are inside it.",
+    "b": "You thank him and go alone. You want to find your own way through it."
+  },
+  {
+    "dim": "EI",
+    "scene": "The Desert Road",
+    "fn": "Se/Si",
+    "text": "Three days of walking alone and on the second night you come across another traveller's camp. The fire is still going. They wave you over.",
+    "a": "You drop your pack and get into it. You ask where they are from, where they are going. Two days of silence and now there is a voice to talk to.",
+    "b": "You sit down and share the fire but you keep mostly to yourself. A nod and a few words. The company is enough without filling it."
+  },
+  {
+    "dim": "EI",
+    "scene": "The Unexpected Party",
+    "fn": "Se/Ti",
+    "text": "You come home and find the door already open, and inside there are strangers at your table and someone you know is laughing loudly, and the room smells of food and drink and other people.",
+    "a": "You drop your bag and ask who is hungry.",
+    "b": "You ask what is going on before you take your coat off."
+  },
+  {
+    "dim": "EI",
+    "scene": "The Feast",
+    "fn": "Fe/Fi",
+    "text": "The war is over and the great hall of Dunmore has been thrown open. There is food and fire and music and people who have not laughed in months are laughing now. You have been sitting at the long table for an hour. Someone you fought beside leans over and asks if you are alright.",
+    "a": "You tell them you are better than alright. You want more wine and more noise and more of this.",
+    "b": "You tell them you are fine."
+  },
+  {
+    "dim": "EI",
+    "scene": "The Morning After",
+    "fn": "Se/Si",
+    "text": "Last night was the celebration. Today everyone is slow and quiet and the hall smells of cold food and burnt-out candles. You have a free day, no duties, nowhere to be. Someone knocks on your door and asks if you want company.",
+    "a": "You open it wide. Yesterday was good but today could be even better if the right people are in the room.",
+    "b": "You tell them maybe later."
+  },
+  {
+    "dim": "EI",
+    "scene": "The Plains",
+    "fn": "Fe/Te",
+    "text": "You are crossing a wide plain and there are no landmarks and the road is empty in both directions, and then, far off, a lone traveller appears coming the other way.",
+    "a": "You stop. A conversation out here is worth more than it would be anywhere else.",
+    "b": "You exchange what is useful, water and distance and any warnings, and keep moving."
+  },
+  {
+    "dim": "EI",
+    "scene": "The Departure",
+    "fn": "Fe/Fi",
+    "text": "Everyone you have been travelling with is going a different direction at the crossroads. There is still an hour before you all part ways.",
+    "a": "You make the most of it. You talk about everything that did not get talked about on the road. You want to leave nothing unsaid.",
+    "b": "You find yourself going quiet. The time that is left feels more important than filling it."
+  },
+  {
+    "dim": "EI",
+    "scene": "The Temptation",
+    "fn": "Se/Fi",
+    "text": "You have been travelling under a false name for years. Tonight someone in the hall recognises you and says it aloud. The room goes quiet. The lord at the head of the table is looking at you.",
+    "a": "You stand up. If this is the moment, you meet it standing.",
+    "b": "You hold still. Being named is not the same as being ready. The room can wait."
+  },
+  {
+    "dim": "EI",
+    "scene": "The Garrison",
+    "fn": "Fe/Si",
+    "text": "You have been stationed at the fortress of Helm's Deep for two months with a unit you did not choose. Tonight there is a fire in the yard and someone has produced a skin of wine and the off-duty soldiers are starting to gather. Your bunkmate leans out the door and tells you to come.",
+    "a": "You go. Two months and you still feel like a stranger in this unit. Tonight you fix that.",
+    "b": "You tell him to go ahead without you."
+  },
+  {
+    "dim": "EI",
+    "scene": "The Homecoming",
+    "fn": "Si/Fi",
+    "text": "You have been somewhere extraordinary and now you are back, and the people around you have gathered and they want to know everything and they are looking at you with open faces.",
+    "a": "You start from the beginning and you do not leave anything out.",
+    "b": "You give them something true and short, and save the real story for later."
+  },
+  {
+    "dim": "EI",
+    "scene": "The Offer",
+    "fn": "Fe/Ni",
+    "text": "You have been given three days to decide whether to join the expedition to Rhûnost. It means two years away, real danger, and leaving behind everything you have built in Caldenmere. On the first night you are sitting at the table in your room with a candle and a blank page in front of you. Your friend Sera is downstairs.",
+    "a": "You go downstairs.",
+    "b": "You stay at the table."
+  },
+  {
+    "dim": "EI",
+    "scene": "The Diagnosis",
+    "fn": "Fe/Fi",
+    "text": "The physician in Drevath has just told you something about your health that you were not expecting. It is not a death sentence but it is serious and it changes things. You are walking back through the market alone. Your sister Mira is at home waiting to hear how it went.",
+    "a": "You go straight home. You need to say it out loud to someone before it becomes too heavy to carry.",
+    "b": "You walk for a while first. You are not ready to see her face when you tell her."
+  },
+  {
+    "dim": "EI",
+    "scene": "The Storm",
+    "fn": "Fe/Fi",
+    "text": "Someone you love is falling apart, and they are not asking for help or solutions or answers. They just need someone there, in the room, close by.",
+    "a": "You move closer. You find small things to do. You keep the space between you warm.",
+    "b": "You sit down and stay. You do not reach for anything. You are just there, in the room with them."
+  },
+  {
+    "dim": "EI",
+    "scene": "The Crowning",
+    "fn": "Fe/Fi",
+    "text": "The war is over. The crown has just been placed on your head and the great hall is silent waiting for you to speak. Thousands of eyes. The people who bled for this are in the front row.",
+    "a": "You find your voice and you fill the hall. This moment belongs to all of them and you are going to make sure they know it.",
+    "b": "You keep it short. You say what needs to be said, you name the people who carried you here, and then you step down and go to them. The crown can wait."
+  },
+  {
+    "dim": "EI",
+    "scene": "The Great Work",
+    "fn": "Fe/Ti",
+    "text": "You are deep into a great project and your section is done. You can move to where the work needs you most, out in the middle of everything, or stay and push further into what you already know.",
+    "a": "You move. You want to be where the energy is, where things are still being figured out.",
+    "b": "You stay and go deeper. The work you do best happens when you are not being pulled in every direction."
+  },
+  {
+    "dim": "EI",
+    "scene": "The Vigil",
+    "fn": "Fe/Fi",
+    "text": "It is the third night of sitting with Rowan after his wife died. The others have started coming by again, filling the house with food and low voices and the kind of company that is meant to help. Rowan has not asked for any of it. He has not asked for anything. You are the one who has been here every night.",
+    "a": "You let them in. People need people and Rowan needs more than just you right now.",
+    "b": "You meet them at the door and tell them to come back in a few days. He is not ready and you know him well enough to know it."
+  },
+  {
+    "dim": "EI",
+    "scene": "The Crossing",
+    "fn": "Se/Ni",
+    "text": "You have been travelling alone for three weeks through the hill country when you finally reach the waystation at Bree. There are six other travellers inside, a fire going, a meal on the table. The innkeeper asks if you are joining them.",
+    "a": "You pull up a chair before he finishes the sentence. Three weeks of nothing but your own thoughts and now there are voices.",
+    "b": "You take a room. You will eat alone tonight and feel human again in the morning."
+  },
+  {
+    "dim": "EI",
+    "scene": "The Messenger",
+    "fn": "Fe/Si",
+    "text": "A message arrives that changes things. Not for you. For someone you know, someone you have not seen in a long time. You could pass it on and leave it at that. Or you could go yourself.",
+    "a": "You go. News like this should not arrive without a face behind it.",
+    "b": "You send word. What matters is that they know. The distance is not the point."
+  },
+  {
+    "dim": "SN",
+    "scene": "The Smoke",
+    "fn": "Se/Ni",
+    "text": "It is the third morning of the harvest festival and you are on the hill above Caldenmere when you see it. A thin column of black smoke rising from somewhere past the mill road. The kind that comes from wet wood, or cloth, or something that was not meant to burn. Your brother is down there with his family.",
+    "a": "You run. You will know what it is when you get there.",
+    "b": "You watch it for a moment. The direction, the color, the way it is rising. Then you run."
+  },
+  {
+    "dim": "SN",
+    "scene": "The Prophet",
+    "fn": "Ti/Ni",
+    "text": "A man comes down from the mountain saying he has seen what is coming. Half the town is already moving on his word. He is standing in front of you and asking if you are with them.",
+    "a": "You ask him what exactly he saw. You will not move until the claim can bear some weight.",
+    "b": "You are already deciding. Something in what he said is true and you knew it before you could explain why."
+  },
+  {
+    "dim": "SN",
+    "scene": "The Last Village",
+    "fn": "Si/Ni",
+    "text": "You ride into a village on the road ahead and find it emptied in a hurry. Fires still warm. Food left on tables. Whatever came through here did so fast and people ran. You have an hour before your company arrives and needs a report.",
+    "a": "You go building to building. You want to know exactly what happened here before you say anything.",
+    "b": "You already know what this means. You have seen this pattern before. You ride back to warn them now."
+  },
+  {
+    "dim": "SN",
+    "scene": "The Tracks",
+    "fn": "Si/Ni",
+    "text": "You are two days into escorting a merchant through the Veldrath pass when you find the place where his last convoy stopped. The wagons are gone but the ground tells you things. Wheel ruts cut deep on the way in, shallow on the way out. Three sets of boot prints that do not match any of the convoy's crew. A child's shoe, half buried in the mud. The merchant is behind you asking what you see.",
+    "a": "You describe it to him exactly. The ruts, the prints, the shoe. He hired you to observe, not interpret.",
+    "b": "You turn around. You tell him the convoy left in a hurry, lighter than it arrived, and that someone who was not supposed to be there was. You do not mention the shoe yet."
+  },
+  {
+    "dim": "SN",
+    "scene": "The River",
+    "fn": "Se/Ni",
+    "text": "You have been travelling with Astrid for six days and she has been fine, steady, cheerful even. This morning she is quiet. Not tired-quiet. She ate nothing, she has not looked at you directly since dawn, and twice now she has stopped walking for no reason, just stopped, standing in the middle of the road staring at nothing. You are three hours from the border crossing and you need to know if she is going to make it through.",
+    "a": "You ask her directly.",
+    "b": "You do not ask."
+  },
+  {
+    "dim": "SN",
+    "scene": "The Language",
+    "fn": "Ti/Ne",
+    "text": "You have found a written message in a language no one can read and you are told it may contain the directions you need. You have an hour. Two scholars offer different methods: one wants to map the patterns, one wants to feel out the meaning.",
+    "a": "You work on the patterns. Structure is the only reliable way in.",
+    "b": "You try to read it whole before breaking it apart. The feel of it will tell you more than the analysis."
+  },
+  {
+    "dim": "SN",
+    "scene": "The Expert",
+    "fn": "Si/Ne",
+    "text": "You are sitting next to one of the great masters of their craft at a long dinner, and you have their attention for the whole evening. What do you ask about?",
+    "a": "What the work actually looks like. The hours, the failures, the parts nobody talks about.",
+    "b": "Where they think it is all going. What everyone else is missing."
+  },
+  {
+    "dim": "SN",
+    "scene": "The Parable",
+    "fn": "Si/Ne",
+    "text": "A teacher finishes a story and asks the room what they took from it. The person next to you wants to know what you think before you give your answer to the group.",
+    "a": "You tell them what the story literally argues. You want to test the claim before you follow it anywhere.",
+    "b": "You tell them where the story took you. The literal meaning is not really the point."
+  },
+  {
+    "dim": "SN",
+    "scene": "The Library",
+    "fn": "Si/Ne",
+    "text": "You are given one hour alone in a library so vast you could never read even a small part of it. You move through the shelves. You look for...",
+    "a": "Something specific. A subject you already care about, a question you have been carrying.",
+    "b": "Something you have never thought about before. You want to leave knowing something unexpected."
+  },
+  {
+    "dim": "SN",
+    "scene": "The Sword in the Stone",
+    "fn": "Se/Fi",
+    "text": "Everyone has tried and failed and they are watching you approach. Before you reach for it you have a choice: test the stone to understand the mechanism, or simply try.",
+    "a": "You study it first. The angle of the blade, the gap, the material. There is a physical answer here.",
+    "b": "You reach for it without analysis. If it is meant to move it will move."
+  },
+  {
+    "dim": "SN",
+    "scene": "The Sermon",
+    "fn": "Ti/Ni",
+    "text": "The priest of Halvenmoor has been preaching the same sermon for thirty years. Tonight he gives it again, word for word, to a half-empty hall. Afterward your companion leans over and asks what you made of it.",
+    "a": "There are two claims in there that do not hold and you want to test them before you decide what to do with any of it.",
+    "b": "He was not talking about the gods. He has not been talking about the gods for a long time."
+  },
+  {
+    "dim": "SN",
+    "scene": "The Sermon",
+    "fn": "Ti/Ni",
+    "text": "A great speaker has just finished. The room is moved. On the walk back your companion asks what you made of it.",
+    "a": "You talk through the argument. There were two claims you want to test before you decide what to do with any of it.",
+    "b": "You tell them what it was really about. Underneath the words there was something else being said and that is the part that matters."
+  },
+  {
+    "dim": "SN",
+    "scene": "The Empty Cell",
+    "fn": "Si/Ni",
+    "text": "The prisoner you were sent to execute was in his cell last night. This morning the cell is empty, the door is locked from the outside, and the two guards remember nothing. Half the garrison is already saying it was the gods. Your commander needs a report before noon.",
+    "a": "You document what you can verify. The locked door, the guards, the timeline. You will not write down what you cannot account for.",
+    "b": "You write that the man is gone and the how does not matter yet. Whatever this is, it is bigger than an escape and the garrison needs to be ready for what comes next."
+  },
+  {
+    "dim": "SN",
+    "scene": "The New Land",
+    "fn": "Se/Ni",
+    "text": "After months at sea your ship reaches land no one from your world has ever touched. The crew is ready to go ashore. Your second in command asks how you want to approach it.",
+    "a": "You go in and read it as you find it. What the ground is made of, what grows here, whether there is water. The land will tell you what it is.",
+    "b": "You tell him something feels wrong about the shoreline. Not the rocks or the trees. Something about the whole shape of it. You want to sail the coast before anyone lands."
+  },
+  {
+    "dim": "SN",
+    "scene": "The Raven",
+    "fn": "Te/Ni",
+    "text": "A raven arrives confirming that one of your oldest allies has signed a treaty with your enemy. On paper it is a trade agreement. Nothing in the letter is a direct threat. Your advisors say wait and watch. Something in you says this is not about trade.",
+    "a": "You wait. One letter is not a reason to act. You need more before you move.",
+    "b": "You start preparing. A move like this does not happen in isolation. Something larger is already in motion."
+  },
+  {
+    "dim": "SN",
+    "scene": "The Last Scholar",
+    "fn": "Ne/Si",
+    "text": "You are the last scholar in a burned archive. One chest survived. Inside are two accounts of how the kingdom fell - the official record, detailed and cross-referenced, and a single letter from someone who was there, never meant to be found, that contradicts everything. You have one night before the chest is confiscated.",
+    "a": "You copy the official record. It is the most complete account that exists and preserving it is your job.",
+    "b": "You copy the letter. Anyone can reconstruct the official story. Whatever this letter is pointing at will not survive if you do not take it."
+  },
+  {
+    "dim": "SN",
+    "scene": "The Return",
+    "fn": "Si/Ni",
+    "text": "You grew up in Annúminas and you have not been back in eleven years. The moment you ride through the gate you notice it. The market is where it always was but half the stalls are empty. The fountain in the square is dry. The people who do look at you look away quickly. Your contact is supposed to meet you at the inn by nightfall.",
+    "a": "You go to the inn and wait. You do not know enough yet to draw any conclusions.",
+    "b": "You already know something is badly wrong here. You go to the inn, but you sit facing the door."
+  },
+  {
+    "dim": "TF",
+    "scene": "The Judgment of Solomon",
+    "fn": "Te/Fe",
+    "text": "Two people stand before you and both claim the same child, and the child cannot speak for itself, and you are the one who must decide.",
+    "a": "You ask for the records. Birth, witnesses, dates. The truth is in there somewhere.",
+    "b": "You watch their faces when you say you will cut the child in two. The answer is already there."
+  },
+  {
+    "dim": "TF",
+    "scene": "The Captain",
+    "fn": "Te/Fi",
+    "text": "Your captain led you through three years of war and brought most of you home. Last month he was caught taking silver from the garrison fund. Not a lot. Enough to matter. The tribunal has asked you to speak at his hearing. You are the only one they will believe either way.",
+    "a": "You tell them what you know. The silver is the silver regardless of what came before it.",
+    "b": "You speak for the man. Three years of what he did for you has to count for something."
+  },
+  {
+    "dim": "TF",
+    "scene": "The Fallen Elder",
+    "fn": "Te/Fe",
+    "text": "A great elder collapses during a ceremony. They are alive but badly hurt, lying still on the ground in front of you. Everyone looks to you.",
+    "a": "You check the injury. You need to know what you are dealing with before anything else.",
+    "b": "You take their hand. They need to know someone is with them before anything else."
+  },
+  {
+    "dim": "TF",
+    "scene": "The Boy",
+    "fn": "Te/Fi",
+    "text": "The boy they caught stealing from the granary is fourteen. It is the third time this season. The law is clear, three strikes means losing a hand. The magistrate is away and they are looking at you to make the call. The boy's mother is in the back of the room. She has not made a sound.",
+    "a": "You apply the law. The third time is the third time regardless of who is standing in front of you.",
+    "b": "You send him home. Whatever the law says, you are not cutting off a fourteen year old's hand."
+  },
+  {
+    "dim": "TF",
+    "scene": "The Two Servants",
+    "fn": "Te/Fe",
+    "text": "You are responsible for two workers. One does work that is excellent and poisons every room they walk into. The other is average and everyone around them does better.",
+    "a": "You keep the first one. Results are the whole point.",
+    "b": "You keep the second one. A group that cannot work together eventually stops working at all."
+  },
+  {
+    "dim": "TF",
+    "scene": "The Counsel",
+    "fn": "Te/Fe",
+    "text": "A man you respect is walking toward something that will destroy him, and he cannot see it, and you are the only one in a position to say something.",
+    "a": "You tell him plainly. A warning that is softened too much is not a warning at all.",
+    "b": "You find the right moment and the right words. A warning badly delivered is a warning ignored."
+  },
+  {
+    "dim": "TF",
+    "scene": "The Divided House",
+    "fn": "Te/Fe",
+    "text": "Two elders of your community have argued badly and the group is split and the shared work is suffering and everyone is waiting for someone to do something.",
+    "a": "You go to both of them and tell them plainly what their argument is costing.",
+    "b": "You go to both of them and find out what each of them actually needs."
+  },
+  {
+    "dim": "TF",
+    "scene": "The Burning City",
+    "fn": "Ti/Fi",
+    "text": "The city is burning. You have done everything you can and you are at a crossroads. To the left is the last record of human knowledge. To the right is a street where someone may still be alive.",
+    "a": "You go left. The people had their chance and the record did not.",
+    "b": "You go right. You will not leave while there is still a chance."
+  },
+  {
+    "dim": "TF",
+    "scene": "The Prodigal Son",
+    "fn": "Ti/Fi",
+    "text": "Someone who hurt you badly has come back. They have changed and they are sorry and they are standing in front of you waiting.",
+    "a": "You let them in. But opening the door is not the same as things being as they were.",
+    "b": "You let them in. The moment you saw their face you already knew you would."
+  },
+  {
+    "dim": "TF",
+    "scene": "The Dying Elder",
+    "fn": "Ti/Fi",
+    "text": "A great elder is dying and asks you honestly: how will history remember me? You know the answer and it is not simple.",
+    "a": "You tell them the truth. They asked for it and they have earned it.",
+    "b": "You tell them what was good and let the rest go. What purpose does the rest serve now."
+  },
+  {
+    "dim": "TF",
+    "scene": "The Burning Ship",
+    "fn": "Te/Fi",
+    "text": "The ship is going down and there are two people in the water and you can only reach one of them. One is a healer who has saved hundreds. The other is someone you do not know.",
+    "a": "You reach for the healer. One life that saves hundreds is not the same as one life.",
+    "b": "You reach for the one closest to you. You cannot weigh a life in front of you against a number."
+  },
+  {
+    "dim": "TF",
+    "scene": "The Flood",
+    "fn": "Te/Fe",
+    "text": "The river broke its banks last night and the lower part of the town is flooded and underwater. You have enough boats to evacuate one street before dark. Narrow Lane is poorer, more people, harder to reach. The merchant quarter has fewer people but they are the ones who fund the garrison, the granary, the physicians. Your second is waiting for your call.",
+    "a": "You go to Narrow Lane. More people, more boats, that is the only math that matters.",
+    "b": "You go to the merchant quarter. Without what they provide, the town does not survive the winter anyway."
+  },
+  {
+    "dim": "TF",
+    "scene": "The Returned Soldier",
+    "fn": "Fi/Fe",
+    "text": "A soldier comes home after a long war and everyone calls them a hero and there are feasts and celebrations and speeches. But you know something about what they did to survive.",
+    "a": "You say nothing. What they did to survive is between them and the war. It is over now.",
+    "b": "You find a quiet moment with them. Not to accuse. Just so they know someone knows, and still stayed."
+  },
+  {
+    "dim": "TF",
+    "scene": "The Accusation",
+    "fn": "Ti/Fe",
+    "text": "A woman in your village has accused a man of rape. He denies it. There are no witnesses. She is not the first to accuse him and everyone knows it, but knowing is not the same as proof. The elder has asked you to cast the deciding vote.",
+    "a": "You vote to wait. Without proof you cannot condemn a man, whatever your gut says.",
+    "b": "You vote against him. You have watched how people move around him for years. Some things do not need witnesses."
+  },
+  {
+    "dim": "TF",
+    "scene": "The Confession",
+    "fn": "Te/Fe",
+    "text": "A friend tells you they have done something wrong, something that hurt someone else, and no one else knows. They are not asking what to do. They just needed to tell someone.",
+    "a": "You tell them what you think they should do. Carrying it alone will not make it go away.",
+    "b": "You listen and you hold it with them. They told you because they needed someone to know, not because they needed a judge."
+  },
+  {
+    "dim": "TF",
+    "scene": "The Fallen Enemy",
+    "fn": "Te/Fi",
+    "text": "Your enemy is on the ground and defeated and the battle is over and they are looking up at you.",
+    "a": "You finish it.",
+    "b": "You lower your weapon and walk away."
+  },
+  {
+    "dim": "TF",
+    "scene": "The Weight",
+    "fn": "Fi/Fe",
+    "text": "Someone close to you is carrying something heavy and has been for a long time. They have not asked for help and may not want it.",
+    "a": "You wait. If they wanted your help they would ask for it. Offering without being asked can feel like pressure.",
+    "b": "You find a way in. Not a direct challenge. Just a door left open so they know they are not alone."
+  },
+  {
+    "dim": "TF",
+    "scene": "The Chronicle",
+    "fn": "Ti/Fe",
+    "text": "You are writing the history of a great war and you must decide how much of the human cost to include, and how honestly.",
+    "a": "You include what is true and necessary. The record must be honest or it means nothing.",
+    "b": "You include all of it. The people who suffered deserve to be in the story, not just the decisions."
+  },
+  {
+    "dim": "TF",
+    "scene": "The Brother",
+    "fn": "Fi/Fe",
+    "text": "Your brother has been drinking again. You can smell it on him before he even sits down. He is supposed to testify tomorrow in front of the council on behalf of your family, and everything, the land, the debt, your mother's house, rides on how he presents himself. He does not know you know. He is looking at you across the table like everything is fine.",
+    "a": "You say it out loud. You tell him you can smell it and that he needs to hear what is at stake tomorrow.",
+    "b": "You say nothing tonight. Shaming him now will not sober him up and it will only make tomorrow worse."
+  },
+  {
+    "dim": "JP",
+    "scene": "The Quest",
+    "fn": "Te/Ne",
+    "text": "A great quest has been given to you and the road is long and the destination is clear but the way there is not known and no one has been before.",
+    "a": "You lay out what you know. The roads, the distances, the dangers. You want a shape before you move.",
+    "b": "You are already moving. The shape will come from the road itself."
+  },
+  {
+    "dim": "JP",
+    "scene": "The Ark",
+    "fn": "Te/Ni",
+    "text": "Word has come that a great flood is on its way and no one knows when. The sky is still clear and the ground is dry and there is no sign of it yet.",
+    "a": "You start building now. The worst thing is to need the structure and not have it ready.",
+    "b": "You watch the sky first. Acting too early on uncertain news wastes what you have."
+  },
+  {
+    "dim": "JP",
+    "scene": "The Commission",
+    "fn": "Si/Ne",
+    "text": "You have been asked to complete a great work that someone else began and left unfinished. The original vision is not fully clear and the person who started it is gone.",
+    "a": "You spend time understanding the original intent before you add a single thing. You will not build on a foundation you do not understand.",
+    "b": "You begin where they left off and let the work itself guide you. The best way to understand someone's vision is to continue it."
+  },
+  {
+    "dim": "JP",
+    "scene": "The Feast of Kings",
+    "fn": "Te/Ne",
+    "text": "You have been given charge of a great feast and kings and lords will come from across the land and it is many months away.",
+    "a": "You start organising today. A feast this size does not come together on short notice.",
+    "b": "You know from experience that the best feasts have room to breathe. You will pull it together closer to the time."
+  },
+  {
+    "dim": "JP",
+    "scene": "The Stalled Mediation",
+    "fn": "Te/Ne",
+    "text": "You have been leading a long and difficult mediation between two communities and nothing has moved in weeks. Word arrives that someone who urgently needs you is somewhere else and the situation is serious.",
+    "a": "You do not leave until this is resolved one way or another. You will not carry an unfinished thing.",
+    "b": "You go. A mediation this stalled is already over. The real work is somewhere else."
+  },
+  {
+    "dim": "JP",
+    "scene": "The Unread Letter",
+    "fn": "Si/Ne",
+    "text": "You are leaving at dawn on a journey that cannot be delayed. On the table is a letter that arrived last night. You have not had time to open it. You do not know what it says.",
+    "a": "You open it. You leave knowing.",
+    "b": "You pocket it unopened. You will read it when the road gives you a moment."
+  },
+  {
+    "dim": "JP",
+    "scene": "The Cancelled Council",
+    "fn": "Si/Ne",
+    "text": "You have travelled three days to attend a council of lords and when you arrive word comes that it has been cancelled and everyone is scattering.",
+    "a": "You feel the waste of it. The road, the preparation, the expectation, all of it for nothing.",
+    "b": "You look around at the people now standing with nowhere to be. You are here anyway. So are they."
+  },
+  {
+    "dim": "JP",
+    "scene": "The Collapsed Bridge",
+    "fn": "Te/Ne",
+    "text": "You are three days into a mission with a clear route. The bridge ahead is gone. There is no map for what comes next and the people waiting for you have no way of knowing why you are late.",
+    "a": "You stop and work out the best alternative before you move. A bad detour costs more than a short delay.",
+    "b": "You pick a direction and go. The road will give you options you cannot see from here."
+  },
+  {
+    "dim": "JP",
+    "scene": "The Wardrobe",
+    "fn": "Si/Se",
+    "text": "You are preparing for a long journey and you must decide what to bring and there is more you could take than you can carry.",
+    "a": "You make a list the night before and pack to it. Everything in the bag has a reason for being there.",
+    "b": "You pack the morning you leave. You know roughly what you need and you will sort the rest as you go."
+  },
+  {
+    "dim": "JP",
+    "scene": "The Empty Throne",
+    "fn": "Te/Ni",
+    "text": "The kingdom has no leader and the council is divided and someone is filling the vacuum by acting as if they already hold the seat. They are asking you to back them publicly before a formal decision is made.",
+    "a": "You back them. The vacuum is the real danger. A decision now, even an imperfect one, is better than none.",
+    "b": "You refuse. Whoever takes this seat should do it properly or not at all."
+  },
+  {
+    "dim": "JP",
+    "scene": "The Wrong Gate",
+    "fn": "Si/Ne",
+    "text": "You were sent to hold the eastern gate. You held it. But while you were there, the enemy came through the western gate instead and your allies turned them back without you. The commander asks for your report.",
+    "a": "You report what you did. You held the post you were given and you held it well.",
+    "b": "You report what you missed. The eastern gate was never the real threat and you want to understand why you did not see it."
+  },
+  {
+    "dim": "JP",
+    "scene": "The Changed Orders",
+    "fn": "Te/Ne",
+    "text": "You are halfway through building the garrison's winter stores when word comes that the regiment is being relocated in six weeks, not six months. Half the work you have done is now more than what is needed. Your crew is waiting.",
+    "a": "You finish what was planned. Stopping halfway leaves the work in a worse state than not starting.",
+    "b": "You cut the plan to fit the new timeline. There is no point building for a winter no one will spend here."
+  },
+  {
+    "dim": "JP",
+    "scene": "The Night Before",
+    "fn": "Si/Ni",
+    "text": "Tomorrow is the reckoning - a trial, a ceremony, a choice that cannot be undone, something you have spent years preparing for. Tonight the preparation is finished and the fire is low.",
+    "a": "You go through it one more time in your head. You want to know every part of it before morning comes.",
+    "b": "You sleep. You have done what you can and the rest belongs to tomorrow."
+  },
+  {
+    "dim": "JP",
+    "scene": "The Empty Granary",
+    "fn": "Si/Se",
+    "text": "You arrive at the waystation where supplies were meant to be waiting. The building is empty. No note, no sign of what happened, just bare shelves. You have eleven people, two days of food, and four days of road ahead.",
+    "a": "You sit down and work out exactly what you have and what the options are before you move.",
+    "b": "You start walking. Standing still does not change what is in the pack."
+  },
+  {
+    "dim": "JP",
+    "scene": "The Open Road",
+    "fn": "Ne/Fi",
+    "text": "The work is done and someone is offering you two paths forward: take the next assignment now while the momentum is there, or take a month with no obligations before deciding anything.",
+    "a": "You take the next assignment. Momentum is harder to rebuild than to maintain.",
+    "b": "You take the month. You have not stopped in years and you do not yet know what you actually want next."
+  },
+  {
+    "dim": "JP",
+    "scene": "The Turning",
+    "fn": "Te/Ne",
+    "text": "You were sent to bring a man to trial. Three days of riding. A clear order. But when you get there, the man who was meant to oversee the arrest is about to kill him. No trial. No justice. Just an ending. You have seconds.",
+    "a": "You do nothing. The moment you go off-plan, you are the problem. Hold the line.",
+    "b": "You step in. The plan was made without this moment in mind. This moment changes it."
+  },
+  {
+    "dim": "EI",
+    "scene": "The Deathbed",
+    "fn": "Fe/Fi",
+    "text": "Someone you love is dying and asked specifically for you to be with them at the end. You are in the room. Outside the door is someone they were estranged from for twenty years, who has just arrived.",
+    "a": "You stay. They asked for you. That has to mean something.",
+    "b": "You go to the door. Twenty years. Some things cannot wait."
+  },
+  {
+    "dim": "TF",
+    "scene": "The Antidote",
+    "fn": "Te/Fi",
+    "text": "A child has been given the wrong medicine. Two options: one that works with certainty but causes permanent damage. One that may heal them fully but carries a real risk of death. The parents cannot be reached. The healers are divided. You must decide.",
+    "a": "You choose the certain option. The damage is real but the child lives.",
+    "b": "You choose the uncertain option. That chance is theirs to have."
+  },
+  {
+    "dim": "TF",
+    "scene": "The False Confession",
+    "fn": "Ti/Fe",
+    "text": "Your friend is about to confess to something he did not do, to protect someone else. The person he is protecting does not know. You are the only person in the room who knows the truth. He is about to speak.",
+    "a": "You stand. The truth is the only thing that matters here.",
+    "b": "You say nothing. This is his choice to make, not yours."
+  },
+  {
+    "dim": "SN",
+    "scene": "The Cartographer",
+    "fn": "Si/Ni",
+    "text": "You have been given the task of mapping unknown territory. You set out at dawn with your instruments.",
+    "a": "You work in a grid. Section by section, measurement by measurement.",
+    "b": "You walk until you find the highest point. The whole shape of it from above."
+  },
+  {
+    "dim": "JP",
+    "scene": "The Leaking Hull",
+    "fn": "Te/Ne",
+    "text": "Your ship can make it to the next port but only if you push through without stopping to fix the leak properly. A full repair here takes two days. The cargo is not urgent but the people waiting for it do not know that.",
+    "a": "You stop and fix it. Arriving late on a sound ship is better than arriving fast on a damaged one.",
+    "b": "You push through. The leak is manageable and two days here costs more than it saves."
+  }
 ];
 
 
 const typeData = {
-  ISTJ:{name:"管理者",tagline:"義務、精密さ、誠実さ",description:"あなたは、実際に最も信頼できる存在です。他者が基準について語る中、あなたはそれを実践しています。物事を体系的に進め、行動する前に事実を集め、誇張することなく約束を果たし、適切にやり遂げられた仕事に深い充足感を覚えます。混沌や近道を好まず、所属するすべての組織において静かな大黒柱となることが多いでしょう。",traits:["信頼できる","几帳面","信念がある","忍耐強い","プライベート重視"]},
-  ISFJ:{name:"擁護者",tagline:"静かな気配り、強い忠誠心",description:"あなたは、他の人が見落とすような些細なことに気づきます。同僚の様子が少しおかしいことや、友人が疲れ果てていることなどです。あなたは深く思いやり、それを行動で示します。頼まれていない好意を施したり、数ヶ月前のディテールを覚えていたりします。極めて忠実で無私無欲なため、困難な時に人々が本能的に頼る存在です。",traits:["温かい","観察力がある","忠実","信頼できる","無私無欲"]},
-  INFJ:{name:"提唱者",tagline:"稀有なビジョン、静かな決意",description:"あなたは最も稀少なタイプであり、本質を読み解くのが最も難しい存在です。人々や状況のパターンを誰よりも早く見抜き、あなたの静かさを消極的と誤解する人々を驚かせるほどの強い信念を持っています。単に共感的であるだけでなく、戦略的でもあり、多くの人々に温かさを振りまくよりも、少数の人々に対して深く関わります。",traits:["洞察力がある","理想主義的","共感的","決意が固い","神秘的"]},
-  INTJ:{name:"建築家",tagline:"戦略的な思考、妥協なき基準",description:"あなたはすでに、より優れた計画を持っています。傲慢だからではなく、他の人が通り過ぎてしまうような構造的な欠陥や非効率性が自然と見えてしまうのです。自分自身に非常に高い基準を課し、何の基準も持たない人々を尊重することを難しく感じます。独立性は単なる好みではなく必須要件です。システム、ビジョン、工程、そして長期的なゲームを構築します。",traits:["戦略的","独立心","高い基準","決断力","先見の明"]},
-  ISTP:{name:"巨匠",tagline:"冷静な頭脳、器用な手先",description:"物事がうまくいかない時、あなたは部屋の中で最も冷静であり、通常は最も役に立つ存在です。理論や抽象概念よりも、観察して検証できる事実を信頼する自然な問題解決者です。実践を通して学び、意味をなさないルールに抵抗し、無駄な社交的パフォーマンスを不要と感じます。何よりも実力を尊重します。",traits:["冷静","分析的","実践的","適応力がある","器用"]},
-  ISFP:{name:"冒険家",tagline:"今を生きる、自由、深い感受性",description:"あなたは他の誰よりも感覚に寄り添って生きています。適切な瞬間の適切な音楽に深く感動し、予期せぬ場所にある美しさに足を止めます。枠にはめられることを嫌い、静かに既存のカテゴリーを拒否し、外世界に対しては柔軟に見えながらも、自身の価値観を強く抱きしめています。自分が自由を必要とするように、他者にも自由な空間を与えます。",traits:["穏やか","ありのまま","自発的","感受性が豊か","創造的"]},
-  INFP:{name:"仲介者",tagline:"深い理想、静かに燃える火",description:"あなたは、ほとんどの人が見ることのない豊かな内面世界を持っています。現状とあるべき理想のギャップを誰よりも鋭く感じ、その葛藤があなたを芸術、擁護活動、あるいはすべての物事の深みへと向かわせます。他者の善意を信じ、人間の持つ可能性を強く信頼しています。",traits:["理想主義的","共感的","創造的","思慮深い","信念がある"]},
-  INTP:{name:"論理学者",tagline:"好奇心旺盛、緻密、静かなる型破り",description:"あなたの頭脳はスイッチがオフになりません。アイデアを分解して仕組みを理解し、他の人が見過ごす矛盾点を見つけ出し、本来やるべきことよりも遥かに面白そうな疑問の迷宮に何時間も没頭します。非社交的ではなく、関わる相手を選んでいるだけです。適切な相手との適切な会話なら、何時間でも熱中します。",traits:["分析的","好奇心旺盛","緻密","独立的","型破り"]},
-  ESTP:{name:"起業家",tagline:"大胆、鋭い洞察、常に前進",description:"あなたは、他の人が本を読むように素早く、流暢に、そして記憶に残る形で状況や空気を読み取ります。人々に対する洞察力に優れ、行動することに活力を得て、リアルタイムで即興対応する時に本領を発揮します。計画は現実に直面するまでのものに過ぎず、あなたはその現実に対処するのが誰よりも得意です。決断し、動くことで物事を実現させます。",traits:["洞察力がある","大胆","エネルギッシュ","現実主義","カリスマ性"]},
-  ESFP:{name:"エンターテイナー",tagline:"躍動的、寛大、周囲を巻き込む存在",description:"あなたは単に部屋に入るだけでなく、その場の温度を上昇させます。人々に純粋な関心を持ち、最善の意味で自発的であり、他者を受け入れられていると感じさせる才能を持っています。現代においてますます稀少になりつつある「今この瞬間に完全に存在する」ことができます。人生は最適化するものではなく、体験するものだ考えています。",traits:["熱狂的","寛大","自発的","社交的","温かい"]},
-  ENFP:{name:"広報運動家",tagline:"尽きない可能性、惹きつける魅力",description:"あなたは、他の人が見捨てたようなアイデア、人々、状況の中に常に可能性を見出します。あなたの熱意は純粋で周囲に伝染し、周りの人々を自分自身が思っている以上に興味深い存在であると感じさせます。アイデアは次々と浮かびますが、継続することはより困難な課題です。最高の状態のとき、あなたほど人を惹きつける存在はいません。",traits:["創造的","熱狂的","共感的","好奇心旺盛","インスピレーションを与える"]},
-  ENTP:{name:"討論者",tagline:"鋭利、刺激的、飽くなき好奇心",description:"あなたは、他の人が美味しい食事を楽しむように、知的討論を楽しみます。それは思考を研ぎ澄まし、アイデアを試し、誰がついてこられるかを明らかにします。単に好奇心旺盛なだけでなく、懐疑的な好奇心を持ち、あらゆる前提の弱点を探ります。前人未踏の領域にいる時に最も活気づき、多くの人が安心し始める頃には退屈してしまいます。",traits:["頭の回転が速い","革新的","論客","戦略的","適応力がある"]},
-  ESTJ:{name:"幹部",tagline:"秩序、結果、説明責任",description:"あなたは物事がどのように機能すべきかについて非常に明確なビジョンを持っており、それを実現するために躊躇しません。組織的で、決断力があり、自分自身を含めて人々が約束を果たすことを求めます。他者からは要求が多いと見られることもありますが、あなたにとっては基準に対する最低限の敬意です。適切に構築するため、長期的に持続する組織を作ります。",traits:["組織的","率直","決断力","信頼できる","意欲的"]},
-  ESFJ:{name:"領事",tagline:"コミュニティ、温かさ、絶え間ない気配り",description:"あなたは所属するすべてのグループの結合組織です。誕生日を覚え、異変に気づき、誰も取り残されないように配慮します。人々が安心できるような温かさを生み出す才能を持っています。調和はあなたにとって単にあれば良いものではなく、毎日積極的に働きかけて構築するものです。",traits:["思いやりがある","社交的","忠実","組織的","寛大"]},
-  ENFJ:{name:"主人公",tagline:"目的を持ったカリスマ性",description:"あなたには説明の難しい才能があります。人々に「十分に理解されている」と感じさせると同時に、より高みを目指すよう促すことができます。権威ではなく、他者に対する純粋な信頼を通じてリードします。人を読み解くのが得意で、さらに彼らを鼓舞することに長けています。あなたの周りの人々は、あなたと出会う前よりも能力を発揮できるようになります。",traits:["カリスマ性","共感的","インスピレーションを与える","決断力","洞察力がある"]},
-  ENTJ:{name:"指揮官",tagline:"ビジョン、統制、推進力",description:"あなたは、他の人が問題に気づく前に目的地を見通しています。あなたの自信はパフォーマンスではなく、すでに頭の中で何通りものシナリオを実行し、どのシナリオが勝つかを知っていることから来ています。物事が非効率に進められるのを黙って見ていられないため、自ら率います。要求が高く、野心的であり、危機の際に最も味方にしたい存在です。",traits:["戦略的","自信に満ちている","率直","意欲的","決断力"]}
+  "ISTJ": {
+    "name": "管理者",
+    "tagline": "義務、精密さ、誠実さ",
+    "description": "あなたは、実際に最も信頼できる存在です。他者が基準について語る中、あなたはそれを実践しています。物事を体系的に進め、行動する前に事実を集め、誇張することなく約束を果たし、適切にやり遂げられた仕事に深い充足感を覚えます。混沌や近道を好まず、所属するすべての組織において静かな大黒柱となることが多いでしょう。",
+    "traits": [
+      "信頼できる",
+      "几帳面",
+      "信念がある",
+      "忍耐強い",
+      "プライベート重視"
+    ]
+  },
+  "ISFJ": {
+    "name": "擁護者",
+    "tagline": "静かな気配り、強い忠誠心",
+    "description": "あなたは、他の人が見落とすような些細なことに気づきます。同僚の様子が少しおかしいことや、友人が疲れ果てていることなどです。あなたは深く思いやり、それを行動で示します。頼まれていない好意を施したり、数ヶ月前のディテールを覚えていたりします。極めて忠実で無私無欲なため、困難な時に人々が本能的に頼る存在です。",
+    "traits": [
+      "温かい",
+      "観察力がある",
+      "忠実",
+      "信頼できる",
+      "無私無欲"
+    ]
+  },
+  "INFJ": {
+    "name": "提唱者",
+    "tagline": "稀有なビジョン、静かな決意",
+    "description": "あなたは最も稀少なタイプであり、本質を読み解くのが最も難しい存在です。人々や状況のパターンを誰よりも早く見抜き、あなたの静かさを消極的と誤解する人々を驚かせるほどの強い信念を持っています。単に共感的であるだけでなく、戦略的でもあり、多くの人々に温かさを振りまくよりも、少数の人々に対して深く関わります。",
+    "traits": [
+      "洞察力がある",
+      "理想主義的",
+      "共感的",
+      "決意が固い",
+      "神秘的"
+    ]
+  },
+  "INTJ": {
+    "name": "建築家",
+    "tagline": "戦略的な思考、妥協なき基準",
+    "description": "あなたはすでに、より優れた計画を持っています。傲慢だからではなく、他の人が通り過ぎてしまうような構造的な欠陥や非効率性が自然と見えてしまうのです。自分自身に非常に高い基準を課し、何の基準も持たない人々を尊重することを難しく感じます。独立性は単なる好みではなく必須要件です。システム、ビジョン、工程、そして長期的なゲームを構築します。",
+    "traits": [
+      "戦略的",
+      "独立心",
+      "高い基準",
+      "決断力",
+      "先見の明"
+    ]
+  },
+  "ISTP": {
+    "name": "巨匠",
+    "tagline": "冷静な頭脳、器用な手先",
+    "description": "物事がうまくいかない時、あなたは部屋の中で最も冷静であり、通常は最も役に立つ存在です。理論や抽象概念よりも、観察して検証できる事実を信頼する自然な問題解決者です。実践を通して学び、意味をなさないルールに抵抗し、無駄な社交的パフォーマンスを不要と感じます。何よりも実力を尊重します。",
+    "traits": [
+      "冷静",
+      "分析的",
+      "実践的",
+      "適応力がある",
+      "器用"
+    ]
+  },
+  "ISFP": {
+    "name": "冒険家",
+    "tagline": "今を生きる、自由、深い感受性",
+    "description": "あなたは他の誰よりも感覚に寄り添って生きています。適切な瞬間の適切な音楽に深く感動し、予期せぬ場所にある美しさに足を止めます。枠にはめられることを嫌い、静かに既存のカテゴリーを拒否し、外世界に対しては柔軟に見えながらも、自身の価値観を強く抱きしめています。自分が自由を必要とするように、他者にも自由な空間を与えます。",
+    "traits": [
+      "穏やか",
+      "ありのまま",
+      "自発的",
+      "感受性が豊か",
+      "創造的"
+    ]
+  },
+  "INFP": {
+    "name": "仲介者",
+    "tagline": "深い理想、静かに燃える火",
+    "description": "あなたは、ほとんどの人が見ることのない豊かな内面世界を持っています。現状とあるべき理想のギャップを誰よりも鋭く感じ、その葛藤があなたを芸術、擁護活動、あるいはすべての物事の深みへと向かわせます。他者の善意を信じ、人間の持つ可能性を強く信頼しています。",
+    "traits": [
+      "理想主義的",
+      "共感的",
+      "創造的",
+      "思慮深い",
+      "信念がある"
+    ]
+  },
+  "INTP": {
+    "name": "論理学者",
+    "tagline": "好奇心旺盛、緻密、静かなる型破り",
+    "description": "あなたの頭脳はスイッチがオフになりません。アイデアを分解して仕組みを理解し、他の人が見過ごす矛盾点を見つけ出し、本来やるべきことよりも遥かに面白そうな疑問の迷宮に何時間も没頭します。非社交的ではなく、関わる相手を選んでいるだけです。適切な相手との適切な会話なら、何時間でも熱中します。",
+    "traits": [
+      "分析的",
+      "好奇心旺盛",
+      "緻密",
+      "独立的",
+      "型破り"
+    ]
+  },
+  "ESTP": {
+    "name": "起業家",
+    "tagline": "大胆、鋭い洞察、常に前進",
+    "description": "あなたは、他の人が本を読むように素早く、流暢に、そして記憶に残る形で状況や空気を読み取ります。人々に対する洞察力に優れ、行動することに活力を得て、リアルタイムで即興対応する時に本領を発揮します。計画は現実に直面するまでのものに過ぎず、あなたはその現実に対処するのが誰よりも得意です。決断し、動くことで物事を実現させます。",
+    "traits": [
+      "洞察力がある",
+      "大胆",
+      "エネルギッシュ",
+      "現実主義",
+      "カリスマ性"
+    ]
+  },
+  "ESFP": {
+    "name": "エンターテイナー",
+    "tagline": "躍動的、寛大、周囲を巻き込む存在",
+    "description": "あなたは単に部屋に入るだけでなく、その場の温度を上昇させます。人々に純粋な関心を持ち、最善の意味で自発的であり、他者を受け入れられていると感じさせる才能を持っています。現代においてますます稀少になりつつある「今この瞬間に完全に存在する」ことができます。人生は最適化するものではなく、体験するものだ考えています。",
+    "traits": [
+      "熱狂的",
+      "寛大",
+      "自発的",
+      "社交的",
+      "温かい"
+    ]
+  },
+  "ENFP": {
+    "name": "広報運動家",
+    "tagline": "尽きない可能性、惹きつける魅力",
+    "description": "あなたは、他の人が見捨てたようなアイデア、人々、状況の中に常に可能性を見出します。あなたの熱意は純粋で周囲に伝染し、周りの人々を自分自身が思っている以上に興味深い存在であると感じさせます。アイデアは次々と浮かびますが、継続することはより困難な課題です。最高の状態のとき、あなたほど人を惹きつける存在はいません。",
+    "traits": [
+      "創造的",
+      "熱狂的",
+      "共感的",
+      "好奇心旺盛",
+      "インスピレーションを与える"
+    ]
+  },
+  "ENTP": {
+    "name": "討論者",
+    "tagline": "鋭利、刺激的、飽くなき好奇心",
+    "description": "あなたは、他の人が美味しい食事を楽しむように、知的討論を楽しみます。それは思考を研ぎ澄まし、アイデアを試し、誰がついてこられるかを明らかにします。単に好奇心旺盛なだけでなく、懐疑的な好奇心を持ち、あらゆる前提の弱点を探ります。前人未踏の領域にいる時に最も活気づき、多くの人が安心し始める頃には退屈してしまいます。",
+    "traits": [
+      "頭の回転が速い",
+      "革新的",
+      "論客",
+      "戦略的",
+      "適応力がある"
+    ]
+  },
+  "ESTJ": {
+    "name": "幹部",
+    "tagline": "秩序、結果、説明責任",
+    "description": "あなたは物事がどのように機能すべきかについて非常に明確なビジョンを持っており、それを実現するために躊躇しません。組織的で、決断力があり、自分自身を含めて人々が約束を果たすことを求めます。他者からは要求が多いと見られることもありますが、あなたにとっては基準に対する最低限の敬意です。適切に構築するため、長期的に持続する組織を作ります。",
+    "traits": [
+      "組織的",
+      "率直",
+      "決断力",
+      "信頼できる",
+      "意欲的"
+    ]
+  },
+  "ESFJ": {
+    "name": "領事",
+    "tagline": "コミュニティ、温かさ、絶え間ない気配り",
+    "description": "あなたは所属するすべてのグループの結合組織です。誕生日を覚え、異変に気づき、誰も取り残されないように配慮します。人々が安心できるような温かさを生み出す才能を持っています。調和はあなたにとって単にあれば良いものではなく、毎日積極的に働きかけて構築するものです。",
+    "traits": [
+      "思いやりがある",
+      "社交的",
+      "忠実",
+      "組織的",
+      "寛大"
+    ]
+  },
+  "ENFJ": {
+    "name": "主人公",
+    "tagline": "目的を持ったカリスマ性",
+    "description": "あなたには説明の難しい才能があります。人々に「十分に理解されている」と感じさせると同時に、より高みを目指すよう促すことができます。権威ではなく、他者に対する純粋な信頼を通じてリードします。人を読み解くのが得意で、さらに彼らを鼓舞することに長けています。あなたの周りの人々は、あなたと出会う前よりも能力を発揮できるようになります。",
+    "traits": [
+      "カリスマ性",
+      "共感的",
+      "インスピレーションを与える",
+      "決断力",
+      "洞察力がある"
+    ]
+  },
+  "ENTJ": {
+    "name": "指揮官",
+    "tagline": "ビジョン、統制、推進力",
+    "description": "あなたは、他の人が問題に気づく前に目的地を見通しています。あなたの自信はパフォーマンスではなく、すでに頭の中で何通りものシナリオを実行し、どのシナリオが勝つかを知っていることから来ています。物事が非効率に進められるのを黙って見ていられないため、自ら率います。要求が高く、野心的であり、危機の際に最も味方にしたい存在です。",
+    "traits": [
+      "戦略的",
+      "自信に満ちている",
+      "率直",
+      "意欲的",
+      "決断力"
+    ]
+  }
+};
+
+// Function descriptions, keyed by function code
+const fnInfo = {
+  "Si": "過去の経験を蓄えた内なる書庫。今起きていることを、これまでうまくいったやり方と照らし合わせます。",
+  "Se": "今この瞬間との直接的な接触。物理的な世界をありのままに、速く、そして濾過せずに受け取ります。",
+  "Ni": "思考の下層で働くパターン認識。理由を説明できるようになる前に、物事がどこへ向かうかを感じ取ります。",
+  "Ne": "可能性を探るスキャナー。ひとつのことが五つのことを連想させ、つながりが枝分かれし続けます。",
+  "Ti": "内側にある論理の装置。外からの意見ではなく、それ自体の一貫性によって考えを検証します。",
+  "Te": "結果に向けて外の世界を組み立てる力。実際に機能するかどうかで物事を測ります。",
+  "Fi": "価値観でできた深い内なる羅針盤。理屈で語れるようになる前から、自分にとって何が正しいかを知っています。",
+  "Fe": "その場の感情の空気に同調する力。周りが何を必要としているかを読み取り、それに応えようと動きます。"
+};
+const fnPos = [
+  "主機能",
+  "補助機能",
+  "第三機能",
+  "劣等機能"
+];
+
+// Rarity figures are widely cited population estimates and are approximate.
+const typeExtra = {
+  "ISTJ": {
+    "stack": [
+      "Si",
+      "Te",
+      "Fi",
+      "Ne"
+    ],
+    "rarity": "11-14%",
+    "rarityLine": "最も多いタイプのひとつ。規律を守り、組織を静かに支え続ける安定した人たちです。",
+    "best": "冷静で、整理されていて、完全に信頼できる存在。始めたことは終わらせ、あなたの言葉は裏を取られることなく信用されます。",
+    "stress": "硬直し、結果よりも規則にこだわり、新しいやり方を試す前に切り捨ててしまうことがあります。",
+    "strengths": [
+      "やると言ったことを実行する",
+      "他の人が読み飛ばす誤りに気づく",
+      "計画が崩れても落ち着いている",
+      "催促されなくても約束を果たす"
+    ],
+    "blindspots": [
+      "必要な場面でも変化に抵抗する",
+      "柔軟さを不注意と受け取ってしまう",
+      "ストレスを一人で抱え込みすぎる"
+    ],
+    "compat": [
+      "ESFP",
+      "ESTP",
+      "ISFJ"
+    ]
+  },
+  "ISFJ": {
+    "stack": [
+      "Si",
+      "Fe",
+      "Ti",
+      "Ne"
+    ],
+    "rarity": "9-14%",
+    "rarityLine": "最も多いタイプに入ります。ほかの誰もが忘れることを覚えている、静かに気配りする人たちです。",
+    "best": "温かく、よく見ていて、頼りになる存在。誰が苦しんでいるかに気づき、頼まれる前に動きます。",
+    "stress": "他人のために手を広げすぎ、自分の必要を押し殺し、それに誰も気づかないと静かな恨みを溜めていきます。",
+    "strengths": [
+      "その人にとって大切な細部を覚えている",
+      "騒ぎ立てずに最後までやり遂げる",
+      "まわりに安心できる空気をつくる",
+      "気分の変化を早い段階で読み取る"
+    ],
+    "blindspots": [
+      "自分自身の必要をおろそかにする",
+      "こじれるまで対立を避ける",
+      "批判を相手の意図以上に重く受け止める"
+    ],
+    "compat": [
+      "ESFP",
+      "ESTP",
+      "ISTJ"
+    ]
+  },
+  "INFJ": {
+    "stack": [
+      "Ni",
+      "Fe",
+      "Ti",
+      "Se"
+    ],
+    "rarity": "1-2%",
+    "rarityLine": "最も稀なタイプ。理想主義と静かな激しさというあなた特有の組み合わせを持つ人はほとんどいません。",
+    "best": "洞察力があり、目的意識を持っています。人が何になり得るかを見抜き、本当に大切な少数に自分を注ぎます。",
+    "stress": "完全に引きこもり、交わした会話を何度も再生し、誰も自分を本当には理解していないと思い込みます。",
+    "strengths": [
+      "人の中にあるパターンを早くから見抜く",
+      "信じるものに深く身を投じる",
+      "他人の最もつらい瞬間を受け止める",
+      "何手も先を考えている"
+    ],
+    "blindspots": [
+      "言葉にせずに察してもらおうとする",
+      "一人で抱えすぎて燃え尽きる",
+      "誰にも届かない基準を掲げる"
+    ],
+    "compat": [
+      "ENFP",
+      "ENTP",
+      "INTJ"
+    ]
+  },
+  "INTJ": {
+    "stack": [
+      "Ni",
+      "Te",
+      "Fi",
+      "Se"
+    ],
+    "rarity": "2-4%",
+    "rarityLine": "稀なタイプのひとつで、女性ではさらに稀です。長期戦を見据えた戦略家たちです。",
+    "best": "独立していて、戦略的で、決断が速い。何年経っても機能し続ける仕組みをつくります。",
+    "stress": "冷たくなり、細部を過剰に管理し、自分のものを含めて感情を雑音として切り捨てます。",
+    "strengths": [
+      "他の人が素通りする構造上の欠陥が見える",
+      "問題が起きる前に手を打っている",
+      "監督されなくても仕事が進む",
+      "自分に本物の基準を課している"
+    ],
+    "blindspots": [
+      "考えるのが遅い人を軽く扱いがち",
+      "感情という情報を過小評価する",
+      "任せるべき場面で孤立する"
+    ],
+    "compat": [
+      "ENFP",
+      "ENTP",
+      "INFJ"
+    ]
+  },
+  "ISTP": {
+    "stack": [
+      "Ti",
+      "Se",
+      "Ni",
+      "Fe"
+    ],
+    "rarity": "4-6%",
+    "rarityLine": "やや珍しいタイプ。口数は少なく、あらゆるものを直してしまう動じない解決者たちです。",
+    "best": "重圧の下でも冷静で、確かな技術があります。何かが壊れたとき、その場で最も役に立つのはあなたです。",
+    "stress": "完全に距離を置き、無謀な危険を冒すか、説明もなく姿を消します。",
+    "strengths": [
+      "全員が慌てている中で平静を保つ",
+      "手を動かしながら、速く学ぶ",
+      "機能するものへ一直線に切り込む",
+      "機械や物理的な仕組みを直感で理解する"
+    ],
+    "blindspots": [
+      "感情的な会話を避ける",
+      "気にかけていても無関心に見えることがある",
+      "良い規則にさえ抵抗する"
+    ],
+    "compat": [
+      "ESFJ",
+      "ESTJ",
+      "ISFP"
+    ]
+  },
+  "ISFP": {
+    "stack": [
+      "Fi",
+      "Se",
+      "Ni",
+      "Te"
+    ],
+    "rarity": "5-9%",
+    "rarityLine": "ほどほどに多いタイプ。感覚と価値観のそばで生きる、静かに激しい人たちです。",
+    "best": "偽りがなく、今この瞬間にいて、穏やかに創造的です。美を深く感じ、自分にとっての真実に従って生きます。",
+    "stress": "引きこもり、物事を個人的に受け取り、守るのではなく手放してしまいます。",
+    "strengths": [
+      "自分の価値観に忠実でいる",
+      "演じることなく温かさをもたらす",
+      "他の人が急いで通り過ぎる美しさに気づく",
+      "相手が必要とする距離を与える"
+    ],
+    "blindspots": [
+      "対立を完全に避ける",
+      "長期的な計画が苦手",
+      "批判を拒絶として受け取る"
+    ],
+    "compat": [
+      "ESTJ",
+      "ESFJ",
+      "ISTP"
+    ]
+  },
+  "INFP": {
+    "stack": [
+      "Fi",
+      "Ne",
+      "Si",
+      "Te"
+    ],
+    "rarity": "4-5%",
+    "rarityLine": "比較的珍しいタイプ。ほとんど誰も見ることのない豊かな内面を抱えた理想主義者たちです。",
+    "best": "想像力があり、筋を通し、静かに激しい。人を信じていて、それは本心からです。",
+    "stress": "自己批判の渦に沈み、空想へ逃げ込み、世界と理想との隔たりを鋭く感じすぎます。",
+    "strengths": [
+      "深い信念を持ち、それに従って生きている",
+      "他の人が見限った相手の可能性が見える",
+      "手がけるものすべてに独自性をもたらす",
+      "相手を疑わずにおく"
+    ],
+    "blindspots": [
+      "理想化して、あとで失望する",
+      "現実的な詰めの作業を避ける",
+      "物事を真に受けすぎる"
+    ],
+    "compat": [
+      "ENFJ",
+      "ENTJ",
+      "INFJ"
+    ]
+  },
+  "INTP": {
+    "stack": [
+      "Ti",
+      "Ne",
+      "Si",
+      "Fe"
+    ],
+    "rarity": "3-5%",
+    "rarityLine": "やや珍しいタイプ。あらゆる考えを分解してしまう、精密で落ち着かない頭脳です。",
+    "best": "好奇心が強く、厳密で、独創的。ほかの全員が受け入れた論の中に欠陥を見つけます。",
+    "stress": "考えすぎて動けなくなり、人付き合いから退き、行動する代わりに脇道で何時間も失います。",
+    "strengths": [
+      "矛盾を即座に見つける",
+      "本当の意味で独立して考える",
+      "誰の予想よりも深く掘り下げる",
+      "自分が間違っている可能性に開かれている"
+    ],
+    "blindspots": [
+      "確信を待って決断を先延ばしにする",
+      "人間的で感情的な面をおろそかにする",
+      "終わらせる数より始める数が多い"
+    ],
+    "compat": [
+      "ENTJ",
+      "ESTJ",
+      "ENFP"
+    ]
+  },
+  "ESTP": {
+    "stack": [
+      "Se",
+      "Ti",
+      "Fe",
+      "Ni"
+    ],
+    "rarity": "4-6%",
+    "rarityLine": "やや珍しいタイプ。現実を人一倍うまく捌く、大胆な即興の名手たちです。",
+    "best": "察しがよく、素早く、場に活力を与えます。ほかの人がまだ迷っているうちに場を読んで動きます。",
+    "stress": "考える前に動き、刺激を追い求め、長期的な結果を無視します。",
+    "strengths": [
+      "重圧の中でも鋭さを失わない",
+      "計画が崩れたら即興で立て直す",
+      "人を素早く読み取る",
+      "物事を動かし始める"
+    ],
+    "blindspots": [
+      "長い目で見る視点を飛ばす",
+      "じっくり考えることに苛立つことがある",
+      "周囲が不安になる危険を冒す"
+    ],
+    "compat": [
+      "ISFJ",
+      "ISTJ",
+      "ESFP"
+    ]
+  },
+  "ESFP": {
+    "stack": [
+      "Se",
+      "Fi",
+      "Te",
+      "Ni"
+    ],
+    "rarity": "4-9%",
+    "rarityLine": "ほどほどに多いタイプ。その場の温度を上げる、温かく今を生きる人たちです。",
+    "best": "気前がよく、自然体で、生き生きとしています。周りの人に見てもらえている、輪の中にいると感じさせます。",
+    "stress": "厳しい事実を避け、気晴らしを追い、居心地の悪さに留まることが苦手になります。",
+    "strengths": [
+      "相手を一瞬で歓迎された気持ちにさせる",
+      "今この瞬間を全力で生きる",
+      "本物の温かさをもたらす",
+      "その場が求めるものに合わせられる"
+    ],
+    "blindspots": [
+      "面倒な計画を避ける",
+      "批判を個人攻撃として受け取る",
+      "その場の勢いに頼りすぎることがある"
+    ],
+    "compat": [
+      "ISFJ",
+      "ISTJ",
+      "ESTP"
+    ]
+  },
+  "ENFP": {
+    "stack": [
+      "Ne",
+      "Fi",
+      "Te",
+      "Si"
+    ],
+    "rarity": "6-8%",
+    "rarityLine": "ほどほどに多いタイプ。どこにでも可能性を見出す、人を惹きつけるアイデアの人たちです。",
+    "best": "人を奮い立たせ、好奇心が強く、温かい。まわりの人に、自分が思っていたより面白い人間だと感じさせます。",
+    "stress": "あちこちの企てに散らばり、やり遂げる力を失い、何もかもを一度に強く感じすぎます。",
+    "strengths": [
+      "アイデアが尽きることなく湧いてくる",
+      "相手に信じてもらえていると感じさせる",
+      "他の人が切り離しておくものを結びつける",
+      "本物の熱意をもたらす"
+    ],
+    "blindspots": [
+      "始めたことを終わらせるのが苦手",
+      "引き受けすぎて手に負えなくなる",
+      "決まりきった作業と細部を避ける"
+    ],
+    "compat": [
+      "INFJ",
+      "INTJ",
+      "ENTP"
+    ]
+  },
+  "ENTP": {
+    "stack": [
+      "Ne",
+      "Ti",
+      "Fe",
+      "Si"
+    ],
+    "rarity": "2-5%",
+    "rarityLine": "稀なタイプのひとつ。あらゆる前提を突つく、挑発的で落ち着かない論客たちです。",
+    "best": "頭の回転が速く、発明的で、考えることに物怖じしません。どんな議論でも弱点を突いて試します。",
+    "stress": "遊びで議論をふっかけ、飽きたら企てを投げ出し、感情を非効率として切り捨てます。",
+    "strengths": [
+      "他の人が見落とす角度が見える",
+      "戦略をその場で組み替える",
+      "淀んだ議論に活気を戻す",
+      "他の考えに本当に開かれている"
+    ],
+    "blindspots": [
+      "終わる前に飽きてしまう",
+      "有益な範囲を超えて議論を続ける",
+      "口数の少ない人を押し切ってしまう"
+    ],
+    "compat": [
+      "INFJ",
+      "INTJ",
+      "ENFP"
+    ]
+  },
+  "ESTJ": {
+    "stack": [
+      "Te",
+      "Si",
+      "Ne",
+      "Fi"
+    ],
+    "rarity": "8-12%",
+    "rarityLine": "比較的多いタイプ。秩序をもたらし、責任を果たさせる組織者たちです。",
+    "best": "決断が速く、整理されていて、頼りになります。長持ちする仕組みを築き、約束したものを出します。",
+    "stress": "支配的で短気になり、計画を遅らせる意見に耳を貸さなくなります。",
+    "strengths": [
+      "混乱を機能する仕組みに変える",
+      "相手に約束を守らせる",
+      "決めて、動く",
+      "約束したものを届ける"
+    ],
+    "blindspots": [
+      "他人の感情を踏み越えてしまうことがある",
+      "自分と違うやり方に抵抗する",
+      "意見の相違を混乱と同一視する"
+    ],
+    "compat": [
+      "ISFP",
+      "ISTP",
+      "INTP"
+    ]
+  },
+  "ESFJ": {
+    "stack": [
+      "Fe",
+      "Si",
+      "Ne",
+      "Ti"
+    ],
+    "rarity": "9-13%",
+    "rarityLine": "最も多いタイプのひとつ。加わったどんな集団でも、それをつなぎ合わせる組織です。",
+    "best": "温かく、整理されていて、心から気にかけます。誰も取り残されず、すべてが回るようにします。",
+    "stress": "他人を管理しすぎ、承認を求め、どんな対立も自分の失敗として受け取ります。",
+    "strengths": [
+      "本物の温かさと居場所をつくる",
+      "相手が必要としているものを覚えていて、実際に動く",
+      "集団を滑らかに回し続ける",
+      "いつも変わらずそこにいる"
+    ],
+    "blindspots": [
+      "承認に依存する",
+      "必要な対立を避ける",
+      "与えすぎて燃え尽きる"
+    ],
+    "compat": [
+      "ISFP",
+      "ISTP",
+      "ENFJ"
+    ]
+  },
+  "ENFJ": {
+    "stack": [
+      "Fe",
+      "Ni",
+      "Se",
+      "Ti"
+    ],
+    "rarity": "2-3%",
+    "rarityLine": "稀なタイプのひとつ。見てもらえていると感じさせ、成長へ押し出すカリスマ性のある導き手たちです。",
+    "best": "人を惹きつけ、よく見ています。人を読み取り、より良い何かへと導きます。",
+    "stress": "他人に注ぎ込みすぎ、自分をおろそかにし、必要とされないと不安になります。",
+    "strengths": [
+      "相手に本当に見てもらえていると感じさせる",
+      "権威ではなく信頼で導く",
+      "その集団が何を必要としているかを感じ取る",
+      "他人の可能性を引き出す"
+    ],
+    "blindspots": [
+      "自分自身の必要をおろそかにする",
+      "他人の問題を自分のものとして背負う",
+      "自分自身のつらい感情を避ける"
+    ],
+    "compat": [
+      "INFP",
+      "ISFP",
+      "ENTJ"
+    ]
+  },
+  "ENTJ": {
+    "stack": [
+      "Te",
+      "Ni",
+      "Se",
+      "Fi"
+    ],
+    "rarity": "2-4%",
+    "rarityLine": "稀なタイプのひとつで、女性ではさらに稀です。生まれながらの指揮官たちです。",
+    "best": "戦略的で、自信があり、突き進みます。目的地が見えていて、そこへの道を自分で築きます。",
+    "stress": "高圧的で短気になり、自分のものを含めて感情を軽んじます。",
+    "strengths": [
+      "長期戦がはっきり見えている",
+      "難しい決断を速く下す",
+      "まわりに勢いを生み出す",
+      "その場で最も高い基準を保つ"
+    ],
+    "blindspots": [
+      "勝つために人を踏み越えることがある",
+      "感情という現実を過小評価する",
+      "速度を落とすのが苦手"
+    ],
+    "compat": [
+      "INFP",
+      "INTP",
+      "ENFP"
+    ]
+  }
 };
 
 // Shuffle each dimension block, then interleave so test feels varied
@@ -1540,7 +3436,7 @@ function blendedType() {
   const fnT=(fnScores.Te+fnScores.Ti)/tfTotal;
   const jpExtTotal=fnScores.Te+fnScores.Fe+fnScores.Se+fnScores.Ne||1;
   const fnJ=(fnScores.Te+fnScores.Fe)/jpExtTotal;
-  // Blend 65% dimension / 35% function
+  // Blend 85% dimension / 15% function
   const W = 0.85;
   const WF = 0.15;
   window._blend={E:dimE*W+fnE*WF,S:dimS*W+fnS*WF,T:dimT*W+fnT*WF,J:dimJ*W+fnJ*WF};
@@ -1577,7 +3473,7 @@ function showResultsActual() {
   document.getElementById('type-description').textContent = data.description;
   document.getElementById('traits-grid').innerHTML = data.traits.map(t=>`<span class="trait">${t}</span>`).join('');
 
-  const dims = [{a:'E',b:'I',la:'Extrovert',lb:'Introvert'},{a:'S',b:'N',la:'感覚型',lb:'直感型'},{a:'T',b:'F',la:'思考型',lb:'感情型'},{a:'J',b:'P',la:'判断型',lb:'知覚型'}];
+  const dims = [{a:'E',b:'I',la:'Extrovert',lb:'Introvert'},{a:'S',b:'N',la:'Sensing',lb:'Intuitive'},{a:'T',b:'F',la:'Thinking',lb:'Feeling'},{a:'J',b:'P',la:'Judging',lb:'Perceiving'}];
   const barsEl = document.getElementById('spectrum-bars');
   barsEl.innerHTML = '';
   const bs = getBlendedScores();
@@ -1594,15 +3490,16 @@ function showResultsActual() {
 
   document.getElementById('progress-fill').style.width = '100%';
   const deepLink = document.getElementById('type-deep-link');
-  if (deepLink) { deepLink.href = `/ja/types/${type.toLowerCase()}`; deepLink.textContent = `${type} 詳細解説 →`; }
+  if (deepLink) { deepLink.href = `${LANG_PREFIX}/types/${type.toLowerCase()}`; deepLink.textContent = `${type} deep dive →`; }
   const archLink = document.getElementById('archive-type-link');
-  if (archLink) { archLink.href = `/ja/archive?q=${type}`; archLink.textContent = `${type}のキャラクター一覧 →`; }
+  if (archLink) { archLink.href = `${LANG_PREFIX}/archive?q=${type}`; archLink.textContent = `${type} characters →`; }
   const compatLink = document.getElementById('compat-link');
-  if (compatLink) compatLink.href = `/ja/compatibility`;
+  if (compatLink) compatLink.href = `${LANG_PREFIX}/compatibility`;
   const fnLink = document.getElementById('functions-link');
-  if (fnLink) fnLink.href = `/ja/functions?t=${type}`;
+  if (fnLink) fnLink.href = `${LANG_PREFIX}/functions?t=${type}`;
+  renderEvidence(type);
+  renderTypeDetail(type);
   showScreen('screen-result');
-  renderInsights(type, bs);
   setTimeout(() => document.querySelectorAll('.spectrum-fill').forEach(el => el.style.width = el.dataset.target+'%'), 200);
   setTimeout(() => {
     const cb = document.getElementById('eb4');
@@ -1613,154 +3510,317 @@ function showResultsActual() {
   if (window._sbSaveResult) window._sbSaveResult(type, scores);
 }
 
-// ── PERSONALIZED RESULT INSIGHTS ──
-const FN_STACKS = {
-  ISTJ:['Si','Te','Fi','Ne'], ISFJ:['Si','Fe','Ti','Ne'], INFJ:['Ni','Fe','Ti','Se'], INTJ:['Ni','Te','Fi','Se'],
-  ISTP:['Ti','Se','Ni','Fe'], ISFP:['Fi','Se','Ni','Te'], INFP:['Fi','Ne','Si','Te'], INTP:['Ti','Ne','Si','Fe'],
-  ESTP:['Se','Ti','Fe','Ni'], ESFP:['Se','Fi','Te','Ni'], ENFP:['Ne','Fi','Te','Si'], ENTP:['Ne','Ti','Fe','Si'],
-  ESTJ:['Te','Si','Ne','Fi'], ESFJ:['Fe','Si','Ne','Ti'], ENFJ:['Fe','Ni','Se','Ti'], ENTJ:['Te','Ni','Se','Fi']
+/* ── EVIDENCE ──────────────────────────────────────────────────
+   Every scenario carries the dimension it tests (dim) and the pair of
+   cognitive functions its two answers credit (fn), and history[i] lines up
+   with orderedQuestions[i]. So the result can be traced back to the actual
+   choices that produced it, which is the one thing a Likert test cannot do.
+   ───────────────────────────────────────────────────────────── */
+/* Evidence-block copy. Kept in one map so the i18n build can translate it:
+   these live inside a <script>, which the markup scanner skips by design. */
+const EV_TEXT = {
+  "dimE": "外向",
+  "dimI": "内向",
+  "dimS": "感覚",
+  "dimN": "直観",
+  "dimT": "思考",
+  "dimF": "感情",
+  "dimJ": "判断",
+  "dimP": "知覚",
+  "verdictClear": "明確",
+  "verdictSlight": "わずかな傾き",
+  "verdictTight": "ほぼ互角",
+  "count": "{dim}の{total}問中{n}問が{name}を指しました。",
+  "flipOne": "回答が一つ変われば逆転します。",
+  "flipMany": "回答が{n}つ変われば逆転します。",
+  "countEven": "{dim}の回答はほぼ互角でした。{name}が上回ったのは、選択が積み上げた心理機能によるもので、単純な数の差ではありません。",
+  "sub": "自己評価は一度も求めていません。{n}のシナリオはそれぞれ一つの軸を測っていました。以下があなたが実際に選んだものです。",
+  "subTight": "自己評価は一度も求めていません。{n}のシナリオはそれぞれ一つの軸を測っており、そのうち{k}つはわずかな回答差で決まりました。以下があなたが実際に選んだものです。",
+  "credited": "{fn}に加算"
 };
-const FN_INFO = {
-  Se:['Extraverted Sensing','あなたは直接的かつ物理的な現在を生き、目の前にある現実に基づいて行動します'],
-  Si:['Introverted Sensing','あなたは自らの実体験、ディテール、そして過去に効果が証明されたものを信頼します'],
-  Ne:['Extraverted Intuition','あなたは可能性や関連性を追い求め、常に「これが他にどうなり得るか」を問いかけます'],
-  Ni:['Introverted Intuition','あなたは物事がどこに向かっているのか、そしてノイズの奥にある単一のパターンを察知します'],
-  Te:['Extraverted Thinking','あなたは外部の世界をシステム、計画、そして測定可能な成果へと整理します'],
-  Ti:['Introverted Thinking','あなたは精密な内的フレームワークを構築し、アイデアが論理的に整合していることを求めます'],
-  Fe:['Extraverted Feeling','あなたは部屋の感情的な雰囲気や他者の感情をほぼ自動的に読み取り、配慮します'],
-  Fi:['Introverted Feeling','あなたは独自の価値観の羅針盤と、自分自身にとって何が真実であるかに基づいて進むべき道を判断します']
-};
-const TYPE_RARITY = { ISTJ:11.6, ISFJ:13.8, INFJ:1.5, INTJ:2.1, ISTP:5.4, ISFP:8.8, INFP:4.4, INTP:3.3, ESTP:4.3, ESFP:8.5, ENFP:8.1, ENTP:3.2, ESTJ:8.7, ESFJ:12.0, ENFJ:2.5, ENTJ:1.8 };
-// Within-gender prevalence (% of each gender that is this type). Source: CAPT / MBTI Manual US data.
-const GENDER_RARITY = {
-  male:   { ISTJ:16.4, ISFJ:8.1, INFJ:1.3, INTJ:3.3, ISTP:8.5, ISFP:7.6, INFP:4.1, INTP:4.8, ESTP:5.6, ESFP:6.9, ENFP:6.4, ENTP:4.0, ESTJ:11.2, ESFJ:7.5, ENFJ:1.6, ENTJ:2.7 },
-  female: { ISTJ:6.9, ISFJ:19.4, INFJ:1.6, INTJ:0.8, ISTP:2.4, ISFP:9.9, INFP:4.6, INTP:1.7, ESTP:3.0, ESFP:10.1, ENFP:9.7, ENTP:2.4, ESTJ:6.3, ESFJ:16.9, ENFJ:3.3, ENTJ:0.9 }
-};
-const POLE_LABEL = { E:'外向型', I:'内向型', S:'感覚型', N:'直感型', T:'思考型', F:'感情型', J:'判断型', P:'知覚型' };
-const MODE_LABEL = { myth:'「神話の世界」のレンズ', normal:'「日常の世界」のシチュエーション', both:'「神話」と「日常」のミックス' };
+const evT = (key, vars) => String(EV_TEXT[key] || '').replace(/\{(\w+)\}/g, (m, k) => (vars && vars[k] != null ? vars[k] : m));
 
-// Single source of truth: builds a self-contained result model that renders
-// identically on the results screen, in the email, and on the profile.
-function computeResultModel(type) {
+/* Path prefix for links built at runtime. Empty on the English site; the
+   i18n build sets it to "/es", "/ja" and so on. Markup hrefs are rewritten
+   by the build, but these are assigned by script and would otherwise send a
+   reader from /ja straight back into the English pages. */
+const LANG_PREFIX = '/ja';
+
+const EV_DIMS = [
+  { key:'EI', a:'E', b:'I' },
+  { key:'SN', a:'S', b:'N' },
+  { key:'TF', a:'T', b:'F' },
+  { key:'JP', a:'J', b:'P' }
+];
+
+/* Does this cognitive function actually argue for that pole? Attitude (the
+   second letter) carries E/I; the first letter carries S/N and T/F; and J/P
+   rides on which kind of function a type extraverts. */
+function fnSupports(fn, pole) {
+  if (!fn || fn.length !== 2) return false;
+  const family = fn[0], attitude = fn[1];
+  switch (pole) {
+    case 'E': return attitude === 'e';
+    case 'I': return attitude === 'i';
+    case 'S': return family === 'S';
+    case 'N': return family === 'N';
+    case 'T': return family === 'T';
+    case 'F': return family === 'F';
+    case 'J': return fn === 'Te' || fn === 'Fe';
+    case 'P': return fn === 'Se' || fn === 'Ne';
+  }
+  return false;
+}
+
+function buildEvidence(type) {
+  if (!Array.isArray(history) || !Array.isArray(orderedQuestions)) return null;
+  if (!history.length || history.length > orderedQuestions.length) return null;
+
+  // Bucket each answered scenario under the dimension it tested.
+  const byDim = {};
+  history.forEach((h, i) => {
+    const q = orderedQuestions[i];
+    if (!q || !q.dim || !h) return;
+    const pole = h.letter;
+    const fn = q.fn ? q.fn.split('/')[h.choice === 'A' ? 0 : 1] : null;
+    (byDim[q.dim] = byDim[q.dim] || []).push({
+      scene: q.scene, text: h.choice === 'A' ? q.a : q.b, pole, fn
+    });
+  });
+
   const bs = getBlendedScores();
-  const td = (typeof typeData !== 'undefined' && typeData[type]) ? typeData[type] : { name:'', tagline:'', description:'' };
-  const dims = [{a:'E',b:'I',pos:0},{a:'S',b:'N',pos:1},{a:'T',b:'F',pos:2},{a:'J',b:'P',pos:3}];
-  const spectrum = dims.map(d => {
-    const va = bs[d.a]||0, vb = bs[d.b]||0, total = va+vb, aWins = va >= vb;
-    const win = aWins ? d.a : d.b, lose = aWins ? d.b : d.a;
-    return { pole:win, losePole:lose, label:POLE_LABEL[win], loseLabel:POLE_LABEL[lose], pct: total===0?50:Math.round((Math.max(va,vb)/total)*100), pos:d.pos };
+  const stack = (typeExtra[type] && typeExtra[type].stack) || [];
+  const out = [];
+
+  for (const d of EV_DIMS) {
+    const rows = byDim[d.key] || [];
+    if (!rows.length) continue;
+    // The winner is taken from the blended score, so this always agrees with
+    // the four letters and the spectrum bars above.
+    const total = bs[d.a] + bs[d.b];
+    const aWins = bs[d.a] >= bs[d.b];
+    const pct = total === 0 ? 50 : Math.round(((aWins ? bs[d.a] : bs[d.b]) / total) * 100);
+    const pole = aWins ? d.a : d.b;
+    const name = EV_TEXT['dim' + (aWins ? d.a : d.b)];
+
+    const picked = rows.filter(r => r.pole === pole);
+    const verdict = pct >= 66 ? EV_TEXT.verdictClear : pct >= 56 ? EV_TEXT.verdictSlight : EV_TEXT.verdictTight;
+
+    // A scenario's fn pair is not tied to its dim: a TF scenario can credit
+    // Fe on the answer that scores T, because the function feeds the
+    // secondary pole instead. Naming that function here would read as a flat
+    // contradiction ("pointed to Thinking, credited Fe"), so the function is
+    // only ever shown on answers where it genuinely backs the pole.
+    const supported = picked.filter(r => fnSupports(r.fn, pole));
+    const rank = (r) => {
+      const i = r.fn ? stack.indexOf(r.fn) : -1;
+      return i === -1 ? 99 : i;
+    };
+    const sorted = supported.slice().sort((x, y) => rank(x) - rank(y));
+    // One per distinct function first. Sorting alone puts the dominant
+    // function in all three slots, which reads as the same card three times.
+    const seen = new Set(), ranked = [];
+    for (const r of sorted) {
+      if (seen.has(r.fn)) continue;
+      seen.add(r.fn); ranked.push(r);
+      if (ranked.length === 3) break;
+    }
+    for (const r of sorted) {
+      if (ranked.length === 3) break;
+      if (!ranked.includes(r)) ranked.push(r);
+    }
+    // Backfill from the remaining answers, with no function attributed.
+    for (const r of picked) {
+      if (ranked.length === 3) break;
+      if (!ranked.includes(r)) ranked.push({ ...r, fn: null });
+    }
+
+    let count;
+    if (picked.length > rows.length / 2) {
+      count = evT('count', { n: picked.length, total: rows.length, dim: d.key, name });
+      if (verdict === EV_TEXT.verdictTight) {
+        const flip = Math.floor((picked.length - (rows.length - picked.length)) / 2) + 1;
+        count += ' ' + (flip === 1 ? EV_TEXT.flipOne : evT('flipMany', { n: flip }));
+      }
+    } else {
+      // Raw count went the other way and the function weighting decided it.
+      count = evT('countEven', { dim: d.key, name });
+    }
+
+    out.push({ name, pct, verdict, count, tight: verdict === EV_TEXT.verdictTight, items: ranked });
+  }
+  return out.length ? out : null;
+}
+
+function renderEvidence(type) {
+  const block = document.getElementById('evidence-block');
+  if (!block) return;
+  const ev = buildEvidence(type);
+  if (!ev) { block.style.display = 'none'; return; }
+
+  const esc = (s) => String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const tight = ev.filter(e => e.tight).length;
+
+  const sub = document.getElementById('evidence-sub');
+  if (sub) {
+    sub.textContent = tight
+      ? evT('subTight', { n: history.length, k: tight })
+      : evT('sub', { n: history.length });
+  }
+
+  document.getElementById('evidence-dims').innerHTML = ev.map(e => `
+    <div class="ev-dim${e.tight ? ' tight' : ''}">
+      <div class="ev-head">
+        <span class="ev-name">${esc(e.name)}</span>
+        <span class="ev-pct">${e.pct}%</span>
+        <span class="ev-verdict">${esc(e.verdict)}</span>
+      </div>
+      <p class="ev-count">${esc(e.count)}</p>
+      <div class="ev-list">
+        ${e.items.map(it => `
+          <div class="ev-item">
+            <div class="ev-scene">${esc(it.scene)}</div>
+            <div class="ev-choice">${esc(it.text)}</div>
+            ${it.fn ? `<div class="ev-fn">${esc(evT('credited', { fn: it.fn }))}${fnInfo[it.fn] ? ' &middot; ' + esc(fnInfo[it.fn].split('.')[0]) : ''}</div>` : ''}
+          </div>`).join('')}
+      </div>
+    </div>`).join('');
+  block.style.display = '';
+}
+
+const FN_FULL = {
+  "Se": "外向的感覚",
+  "Si": "内向的感覚",
+  "Ne": "外向的直観",
+  "Ni": "内向的直観",
+  "Te": "外向的思考",
+  "Ti": "内向的思考",
+  "Fe": "外向的感情",
+  "Fi": "内向的感情"
+};
+const MODE_LABEL = {
+  "myth": "神話のシナリオ",
+  "normal": "日常のシナリオ",
+  "both": "ふたつの世界"
+};
+const AXIS_LABEL = {
+  "EI": "外向 と 内向",
+  "SN": "感覚 と 直観",
+  "TF": "思考 と 感情",
+  "JP": "判断 と 知覚"
+};
+const OPP_LETTER = { E:'I', I:'E', S:'N', N:'S', T:'F', F:'T', J:'P', P:'J' };
+
+/* The result, in the exact shape the send-result-email function expects
+   (name, tagline, rarity, description, spectrum, stack, moments, neighbours).
+   That template was already written and has never been used: saveResult never
+   sent a `details` object, so every email so far fell through to the plain
+   fallback branch. `evidence` rides along for the profile page; the email
+   function ignores keys it does not know. */
+function computeResultModel(type) {
+  const d = typeData[type] || {}, ex = typeExtra[type] || {};
+  const bs = getBlendedScores();
+
+  // typeExtra stores a range ("2-4%"); the email wants a single number, and
+  // compares it against 4 to decide the "one of the rarest types" prefix.
+  const nums = String(ex.rarity || '').match(/\d+/g);
+  const rarity = nums && nums.length
+    ? Math.round(nums.reduce((a, b) => a + Number(b), 0) / nums.length) : null;
+
+  const DIMS = [{key:'EI',a:'E',b:'I'}, {key:'SN',a:'S',b:'N'},
+                {key:'TF',a:'T',b:'F'}, {key:'JP',a:'J',b:'P'}];
+  const spectrum = DIMS.map((x) => {
+    const total = bs[x.a] + bs[x.b], aWins = bs[x.a] >= bs[x.b];
+    const pct = total === 0 ? 50 : Math.round(((aWins ? bs[x.a] : bs[x.b]) / total) * 100);
+    return { label: aWins ? x.a : x.b, loseLabel: aWins ? x.b : x.a, pct };
   });
-  const neighbours = spectrum.filter(s => s.pct <= 58).sort((x,y)=>x.pct-y.pct).slice(0,2).map(s => {
-    const neighbour = type.split('').map((ch,i) => i === s.pos ? s.losePole : ch).join('');
-    return { type, neighbour, axisLabel:`${s.label} 対 ${s.loseLabel}`, pct:s.pct, href:`/vs/${type.toLowerCase()}-${neighbour.toLowerCase()}` };
-  });
-  const ranks = ['主機能','補助機能','代替機能','劣等機能'];
-  const stack = (FN_STACKS[type] || []).map((fn,i) => {
-    const info = FN_INFO[fn] || ['',''];
-    const count = (typeof fnScores !== 'undefined' && fnScores[fn]) ? Math.round(fnScores[fn]) : 0;
-    return { rank:ranks[i], fn, name:info[0], desc: info[1] ? info[1].charAt(0).toUpperCase()+info[1].slice(1)+'.' : '', count };
-  });
-  const mode = (typeof testMode !== 'undefined') ? testMode : 'both';
-  const gender = (typeof demoSelections !== 'undefined' && demoSelections.gender) ? demoSelections.gender : null;
-  const rarityGender = (gender && GENDER_RARITY[gender] && GENDER_RARITY[gender][type] != null) ? GENDER_RARITY[gender][type] : null;
+
+  const stack = (ex.stack || []).map((fn, i) => ({
+    rank: fnPos[i] || '', name: FN_FULL[fn] || fn, fn,
+    desc: fnInfo[fn] || '', count: (fnScores && fnScores[fn]) || 0
+  }));
+
+  // One moment per dimension, closest call first: those are the ones a reader
+  // actually learns something from.
+  const ev = buildEvidence(type) || [];
+  const moments = ev.slice().sort((x, y) => x.pct - y.pct).map((e) => {
+    const it = (e.items || [])[0];
+    if (!it) return null;
+    return {
+      scene: it.scene, choice: it.text, fn: it.fn || null,
+      fnName: it.fn ? (FN_FULL[it.fn] || it.fn) : null,
+      fnDesc: it.fn && fnInfo[it.fn] ? fnInfo[it.fn].replace(/\.\s*$/, '') : null
+    };
+  }).filter(Boolean).slice(0, 4);
+
+  // The two narrowest dimensions are the types you were nearest to being.
+  const neighbours = spectrum.map((s, idx) => ({ s, idx }))
+    .sort((x, y) => x.s.pct - y.s.pct).slice(0, 2)
+    .map(({ s, idx }) => {
+      const nb = type.slice(0, idx) + (OPP_LETTER[type[idx]] || type[idx]) + type.slice(idx + 1);
+      // Alphabetical hits the prerendered file for most pairs. The handful it
+      // does not are still served: /vs/:slug rewrites to the template, which
+      // renders the pair and rewrites the URL to its canonical form.
+      const pair = [type, nb].sort();
+      return {
+        href: `/vs/${pair[0].toLowerCase()}-${pair[1].toLowerCase()}`,
+        axisLabel: AXIS_LABEL[DIMS[idx].key], pct: s.pct, type, neighbour: nb
+      };
+    });
+
   return {
-    v: 1, type, name: td.name, tagline: td.tagline, description: td.description,
-    mode, modeLabel: MODE_LABEL[mode] || 'these scenarios',
-    rarity: (TYPE_RARITY[type] != null) ? TYPE_RARITY[type] : null,
-    gender, rarityGender,
-    spectrum, neighbours, stack, moments: computeMoments(type),
-    createdAt: new Date().toISOString()
+    v: 1, name: d.name || '', tagline: d.tagline || '', description: d.description || '',
+    rarity, mode: testMode, modeLabel: MODE_LABEL[testMode] || '',
+    answered: Array.isArray(history) ? history.length : 0,
+    spectrum, stack, moments, neighbours, evidence: ev
   };
 }
 
-function computeMoments(type) {
-  if (!Array.isArray(history) || !history.length || !Array.isArray(orderedQuestions)) return [];
-  const dimMap = { EI:0, SN:1, TF:2, JP:3 };
-  const typePoles = type.split('');
-  const stack = FN_STACKS[type] || [];
-  const cands = [];
-  history.forEach((h, idx) => {
-    const q = orderedQuestions[idx];
-    if (!q || !q.dim) return;
-    const pos = dimMap[q.dim];
-    if (pos === undefined) return;
-    const chosenPole = h.choice === 'A' ? q.dim[0] : q.dim[1];
-    if (chosenPole !== typePoles[pos]) return; // only type-confirming choices
-    const fn = q.fn ? (h.choice === 'A' ? q.fn.split('/')[0] : q.fn.split('/')[1]) : null;
-    const answer = h.choice === 'A' ? q.a : q.b;
-    const info = fn ? FN_INFO[fn] : null;
-    let w = (answer || '').length / 50;
-    const r = fn ? stack.indexOf(fn) : -1;
-    if (r === 0) w += 100; else if (r === 1) w += 60; else if (r > -1) w += 20;
-    cands.push({ pos, scene:q.scene, choice:answer, fn, fnName: info?info[0]:'', fnDesc: info?info[1]:'', weight:w });
-  });
-  const out = [];
-  [0,1,2,3].forEach(p => {
-    const best = cands.filter(c => c.pos === p).sort((a,b)=>b.weight-a.weight)[0];
-    if (best) out.push(best);
-  });
-  out.sort((a,b)=>b.weight-a.weight);
-  return out.slice(0,4).map(m => ({ scene:m.scene, choice:m.choice, fn:m.fn, fnName:m.fnName, fnDesc:m.fnDesc }));
+/* One shape for everything that gets persisted, so the profile card, the
+   result email and the results row cannot drift apart. Scores are the blended
+   ones the spectrum bars show; the raw `scores` object still carries the
+   0.7/0.3 weighting and would print different percentages elsewhere. */
+function buildResultPayload(type) {
+  let details = null;
+  try { details = computeResultModel(type); } catch (e) { console.warn('[result] model failed', e); }
+  window._resultModel = details;
+  return { type: type, scores: getBlendedScores(), details: details };
 }
 
-function renderInsights(type, bs) {
-  ['insight-clarity','insight-functions','insight-moments'].forEach(id => { const e = document.getElementById(id); if (e) e.style.display = 'none'; });
-  const rl = document.getElementById('rarity-line'); if (rl) rl.innerHTML = '';
-  let model;
-  try { model = computeResultModel(type); } catch(e) { return; }
-  window._resultModel = model;
-  try { paintRarity(model); } catch(e) {}
-  try { paintClarity(model); } catch(e) {}
-  try { paintFunctions(model); } catch(e) {}
-  try { paintMoments(model); } catch(e) {}
-}
-
-function paintRarity(model) {
-  const el = document.getElementById('rarity-line');
-  if (!el) return;
-  if (model.gender && model.rarityGender != null) {
-    const who = model.gender === 'female' ? '女性' : '男性';
-    const rare = model.rarityGender <= 2;
-    el.innerHTML = `<div class="rarity-pill">${rare ? '極めて稀少なタイプ &middot; ' : ''}${who}のわずか <b>${model.rarityGender}%</b> があなたと同じタイプです</div>`;
-    return;
-  }
-  if (model.rarity == null) return;
-  const rare = model.rarity <= 4;
-  el.innerHTML = `<div class="rarity-pill">${rare ? '極めて稀少なタイプ &middot; ' : ''}全人口の約 <b>${model.rarity}%</b> があなたと同じタイプです</div>`;
-}
-
-function paintClarity(model) {
-  const block = document.getElementById('insight-clarity');
-  if (!block || !model.spectrum.length) return;
-  const sorted = [...model.spectrum].sort((x,y)=>y.pct-x.pct);
-  const strongest = sorted[0], weakest = sorted[sorted.length-1];
-  document.getElementById('clarity-note').innerHTML =
-    `最も明確な傾向は <b>${strongest.label}</b>（${strongest.pct}%）です。最も僅差だったのは <b>${weakest.label}</b> で、${weakest.loseLabel} をわずかに上回る ${weakest.pct}% でした。この指標において、あなたは隣接する他のタイプに最もよく似ています。`;
-  const container = document.getElementById('clarity-neighbours');
-  container.innerHTML = model.neighbours.map(n =>
-    `<a class="neighbour-card" href="${n.href}"><div class="neighbour-left"><div class="neighbour-axis">${n.axisLabel} &middot; ${n.pct}%</div><div class="neighbour-text">この指標では境界線近くに位置しています。<b>${n.type}</b> と <b>${n.neighbour}</b> がどのように異なるか見てみましょう。</div></div><div class="neighbour-arrow">&rarr;</div></a>`
+function renderTypeDetail(type) {
+  const ex = typeExtra[type];
+  if (!ex) return;
+  // rarity
+  document.getElementById('rarity-num').textContent = ex.rarity;
+  document.getElementById('rarity-cap').textContent = 'of the population';
+  document.getElementById('rarity-line').textContent = ex.rarityLine;
+  // function stack
+  document.getElementById('fnstack').innerHTML = ex.stack.map((fn,i)=>
+    `<div class="fn-row${i===0?' dom':''}"><div class="fn-glyph">${fn}</div><div class="fn-body"><div class="fn-pos">${fnPos[i]} &middot; ${fn}</div><div class="fn-desc">${fnInfo[fn]}</div></div></div>`
   ).join('');
-  block.style.display = 'block';
-}
-
-function paintFunctions(model) {
-  if (!model.stack.length) return;
-  document.getElementById('fn-stack').innerHTML = model.stack.map((s,i) => {
-    const countLine = (i < 2 && s.count > 0) ? `<div class="fn-count">Fired ${s.count} time${s.count===1?'':'s'} across your scenarios</div>` : '';
-    return `<div class="fn-row"><div class="fn-rank">${s.rank}</div><div class="fn-body"><div class="fn-name">${s.name}<span>${s.fn}</span></div><div class="fn-desc">${s.desc}</div>${countLine}</div></div>`;
-  }).join('');
-  document.getElementById('insight-functions').style.display = 'block';
-}
-
-function paintMoments(model) {
-  if (!model.moments.length) return;
-  const intro = document.getElementById('moment-intro');
-  if (intro) intro.innerHTML = `あなたは <b>${model.modeLabel}</b> を通して回答しました。以下は、あなたの診断結果を形作った選択です。`;
-  document.getElementById('moment-list').innerHTML = model.moments.map(m => {
-    const read = m.fn ? `その直感は <b>${m.fnName} (${m.fn})</b> によるものです。&mdash; ${m.fnDesc}` : '';
-    return `<div class="moment-card"><div class="moment-scene">${m.scene || 'A moment'}</div><div class="moment-choice">&ldquo;${m.choice}&rdquo;</div>${read ? `<div class="moment-read">${read}</div>` : ''}</div>`;
-  }).join('');
-  document.getElementById('insight-moments').style.display = 'block';
+  // best / stress
+  document.getElementById('best-text').textContent = ex.best;
+  document.getElementById('stress-text').textContent = ex.stress;
+  // strengths / blind spots
+  document.getElementById('strengths-list').innerHTML = ex.strengths.map(s=>`<li>${s}</li>`).join('');
+  document.getElementById('blindspots-list').innerHTML = ex.blindspots.map(s=>`<li>${s}</li>`).join('');
+  // compatibility
+  const compatOrder = ['INFP','ENFP','INFJ','ENFJ','INTJ','ENTJ','INTP','ENTP','ISFP','ESFP','ISTP','ESTP','ISFJ','ESFJ','ISTJ','ESTJ'];
+  const pairSlug = (a,b) => { const ai=compatOrder.indexOf(a), bi=compatOrder.indexOf(b); return ai<=bi?`${a.toLowerCase()}-${b.toLowerCase()}`:`${b.toLowerCase()}-${a.toLowerCase()}`; };
+  document.getElementById('compat-types').innerHTML = ex.compat.map(t=>
+    `<a href="/ja/compatibility/${pairSlug(type,t)}"><span class="rc-type">${t}</span><span class="rc-name">${typeData[t]?typeData[t].name:''}</span></a>`
+  ).join('');
+  // characters
+  document.getElementById('chars-sub').textContent = `Real and fictional people across the archive who match the ${type} profile.`;
+  const cl = document.getElementById('chars-link');
+  cl.href = `${LANG_PREFIX}/archive?q=${type}`;
+  cl.textContent = `See ${type} characters →`;
+  // wear your type: handle is the slugified type name (e.g. "The Mediator" gives the-mediator)
+  const handle = typeData[type].name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+  const shop = document.getElementById('shop-strip');
+  shop.href = `https://store.77scenarios.com/collections/${handle}`;
+  document.getElementById('shop-name').textContent = `The ${type} collection`;
 }
 
 function retakeTest() {
@@ -1787,7 +3847,7 @@ async function saveResult() {
   errorEl.textContent = '';
 
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    errorEl.textContent = '有効なメールアドレスを入力してください。';
+    errorEl.textContent = 'Please enter a valid email address.';
     errorEl.style.display = 'block';
     return;
   }
@@ -1795,17 +3855,18 @@ async function saveResult() {
     const cb = document.getElementById('eb4');
     const blocked = !cb || cb.offsetParent === null || getComputedStyle(cb).display === 'none';
     errorEl.textContent = blocked
-      ? '広告ブロッカーによって確認のチェックボックスが非表示になっています。このページで広告ブロッカーを無効にしてください。'
-      : '続行するにはチェックボックスをオンにしてください。';
+      ? 'Your ad blocker is hiding the confirmation checkbox. Please disable it for this page.'
+      : 'Please tick the box to continue.';
     errorEl.style.display = 'block';
     return;
   }
 
   btn.disabled = true;
-  btn.textContent = '保存中...';
+  btn.textContent = 'Saving...';
 
   try {
-    const bs = getBlendedScores(); // must be called here — bs is local to showResultsActual()
+    const payload = buildResultPayload(getType());
+    const bs = payload.scores; // blended, matching the spectrum bars on screen
     const res = await fetch(`${SUPA_URL}/rest/v1/subscribers`, {
       method: 'POST',
       headers: {
@@ -1842,7 +3903,9 @@ async function saveResult() {
             sn_s: bs.S||scores.S, sn_n: bs.N||scores.N,
             tf_t: bs.T||scores.T, tf_f: bs.F||scores.F,
             jp_j: bs.J||scores.J, jp_p: bs.P||scores.P,
-            details: window._resultModel || null
+            // Unlocks the full email template: rarity, description, spectrum,
+            // function stack and the scenarios that decided the result.
+            details: payload.details
           }
         })
       }).catch(() => {}); // swallow silently — email is best-effort
@@ -1860,10 +3923,10 @@ async function saveResult() {
       }
     }
   } catch (e) {
-    errorEl.textContent = 'エラーが発生しました。もう一度お試しください。';
+    errorEl.textContent = 'Something went wrong. Please try again.';
     errorEl.style.display = 'block';
     btn.disabled = false;
-    btn.textContent = '結果を保存';
+    btn.textContent = 'Save result';
   }
 }
 
@@ -1932,10 +3995,10 @@ async function saveResult() {
 function shareResult() {
   const type = getType();
   const dims = [
-    {a:'E',b:'I',key:'ei',la:'外向型',lb:'内向型'},
-    {a:'S',b:'N',key:'sn',la:'感覚型',lb:'直感型'},
-    {a:'T',b:'F',key:'tf',la:'思考型',lb:'感情型'},
-    {a:'J',b:'P',key:'jp',la:'判断型',lb:'知覚型'}
+    {a:'E',b:'I',key:'ei',la:'Extroverted',lb:'Introverted'},
+    {a:'S',b:'N',key:'sn',la:'Sensing',lb:'Intuitive'},
+    {a:'T',b:'F',key:'tf',la:'Thinking',lb:'Feeling'},
+    {a:'J',b:'P',key:'jp',la:'Judging',lb:'Perceiving'}
   ];
   const params = new URLSearchParams({ t: type });
   const lines = dims.map(d => {
@@ -1946,12 +4009,12 @@ function shareResult() {
     return `${aWins ? d.a : d.b} ${pct}% ${aWins ? d.la : d.lb}`;
   });
   const url = `https://77scenarios.com/type?${params.toString()}`;
-  const text = `77 Scenariosの性格診断テストで ${type}（${typeData[type].name}）と診断されました。\n${lines.join(' · ')}`;
+  const text = `I got ${type} - ${typeData[type].name} on 77 Scenarios.\n${lines.join(' · ')}`;
   if (navigator.share) {
-    navigator.share({ title: `77 Scenariosの性格診断結果: ${type}`, text, url });
+    navigator.share({ title: `I got ${type} on 77 Scenarios`, text, url });
   } else {
     navigator.clipboard.writeText(text + '\n' + url);
-    alert('クリップボードにコピーされました！');
+    alert('Copied to clipboard!');
   }
 }
 </script>
@@ -1966,18 +4029,51 @@ function shareResult() {
 
   // Auto-save result when results screen is shown
   window._sbSaveResult = async function(type, sc) {
-    const { data: { session } } = await sb.auth.getSession();
-    if (!session) return;
-    const details = window._resultModel || (function(){ try { return computeResultModel(type); } catch(e) { return null; } })();
-    await sb.from('results').insert({
-      user_id: session.user.id,
-      personality_type: type,
-      ei_e: sc.E||0, ei_i: sc.I||0,
-      sn_s: sc.S||0, sn_n: sc.N||0,
-      tf_t: sc.T||0, tf_f: sc.F||0,
-      jp_j: sc.J||0, jp_p: sc.P||0,
-      details: details,
-    });
+    const statusEl = () => document.getElementById('save-status');
+    const setStatus = (msg, color) => { const el = statusEl(); if (el) { el.textContent = msg; el.style.color = color || 'var(--muted, #b5ada6)'; } };
+    try {
+      if (!type) { console.warn('[save] no personality type, skipping'); return; }
+      let { data: { session } } = await sb.auth.getSession();
+      if (!session) {
+        await new Promise(r => setTimeout(r, 400));
+        ({ data: { session } } = await sb.auth.getSession());
+      }
+      if (!session) {
+        setStatus('Sign in to save this result to your profile.', '');
+        console.info('[save] not signed in, result not saved');
+        return;
+      }
+
+      setStatus('Saving to your profile…', '');
+      // Blended scores, matching the spectrum bars and the emailed copy. The
+      // raw `scores` passed in here carry the 0.7/0.3 weighting, so saving
+      // those made the profile card disagree with the email for the same test.
+      const payload = (typeof buildResultPayload === 'function')
+        ? buildResultPayload(type)
+        : { scores: sc, details: null };
+      const s = payload.scores || sc;
+      const { error } = await sb.from('results').insert({
+        user_id: session.user.id,
+        personality_type: type,
+        ei_e: s.E||0, ei_i: s.I||0,
+        sn_s: s.S||0, sn_n: s.N||0,
+        tf_t: s.T||0, tf_f: s.F||0,
+        jp_j: s.J||0, jp_p: s.P||0,
+        details: payload.details,
+      });
+      if (error) {
+        window._lastSaveError = error;
+        console.error('[save] result insert failed:', error.message || error, error);
+        setStatus('Could not save result. ' + (error.message || ''), '#e07070');
+      } else {
+        console.info('[save] result saved');
+        setStatus('Saved to your profile ✓', 'var(--gold, #c9a84c)');
+      }
+    } catch (e) {
+      window._lastSaveError = e;
+      console.error('[save] result save threw:', e);
+      setStatus('Could not save result.', '#e07070');
+    }
   };
 
 })();
@@ -2004,7 +4100,7 @@ function errStr(e) {
 async function submitDemographics() {
   const btn = document.getElementById('demo-submit-btn');
   btn.disabled = true;
-  btn.textContent = '保存中…';
+  btn.textContent = 'Saving…';
   fetch('https://rttomfnfyjjssdqfzkaj.supabase.co/rest/v1/demographics', {
     method: 'POST',
     headers: {
@@ -2058,6 +4154,16 @@ document.addEventListener('DOMContentLoaded',function(){
     'body.light-mode #nav-footer .footer-cta{color:#c9a84c!important}',
     /* card UI components: navy — NOT content/prose containers */
     'body.light-mode .type-card,body.light-mode .lcard,body.light-mode .db-card,body.light-mode .fncard,body.light-mode .vs-pair-card,body.light-mode .contact-card,body.light-mode .thread-item,body.light-mode .similar-card,body.light-mode .type-pair-card,body.light-mode .famous-card,body.light-mode .score-block,body.light-mode .callout,body.light-mode .cta-box,body.light-mode .modal,body.light-mode .verdict,body.light-mode .verdict-box{background:#1e2d4a!important;border-color:#2d4168!important;box-shadow:0 4px 16px rgba(30,45,74,0.18)!important}',
+    /* save-result email box: navy in light mode */
+    'body.light-mode #eb1{background:#1e2d4a!important;border-color:#2d4168!important;box-shadow:0 4px 16px rgba(30,45,74,0.18)!important}',
+    'body.light-mode #eb1 p,body.light-mode #eb1 label,body.light-mode #eb5 div{color:#cbd4e6!important}',
+    'body.light-mode #eb1 .rb-label,body.light-mode #eb1 div[style*="c9a84c"]{color:#c9a84c!important}',
+    'body.light-mode #eb3{background:#16233f!important;border-color:#2d4168!important;color:#ffffff!important}',
+    'body.light-mode #eb3::placeholder{color:#7d8aa6!important}',
+    'body.light-mode .rb-shop{background:#1e2d4a!important;border-color:#2d4168!important}',
+    'body.light-mode .rb-shop:hover{border-color:#c9a84c!important;background:#2d4168!important}',
+    'body.light-mode .rb-shop-name{color:#ffffff!important}',
+    'body.light-mode .rb-shop-sub{color:#cbd4e6!important}',
     /* white text inside navy cards */
     'body.light-mode .type-card *,body.light-mode .lcard *,body.light-mode .db-card *,body.light-mode .fncard *,body.light-mode .vs-pair-card *,body.light-mode .contact-card *,body.light-mode .thread-item *,body.light-mode .similar-card *,body.light-mode .type-pair-card *,body.light-mode .verdict *,body.light-mode .verdict-box *,body.light-mode .score-block *,body.light-mode .callout *{color:#ffffff!important}',
     /* primary card text: bold white */

@@ -66,6 +66,25 @@ for (const [slug, entry] of Object.entries(charContent)) {
   }
 }
 
+// Second check, against the built pages. 648 of the 766 titles use the format
+// "<Name> MBTI: <TYPE>, Not <RIVAL>", which promises the reader a specific
+// comparison. If the mistype section never mentions that rival, the page does
+// not deliver what the search result offered.
+const titleGap = [];
+for (const [slug, entry] of Object.entries(charContent)) {
+  const file = path.join(ROOT, 'character', slug + '.html');
+  if (!entry.mistype || !fs.existsSync(file)) continue;
+  const page = fs.readFileSync(file, 'utf8');
+  const title = (page.match(/<title[^>]*>([\s\S]*?)<\/title>/) || [])[1] || '';
+  const rival = (title.match(new RegExp('Not (' + TYPES + ')')) || [])[1];
+  if (rival && !strip(entry.mistype).includes(rival)) titleGap.push({ slug, rival, title: title.slice(0, 55) });
+}
+
+if (titleGap.length) {
+  console.error('\nWARN - ' + titleGap.length + ' page(s) promise a comparison the mistype section does not make:');
+  for (const g of titleGap) console.error('  ' + g.slug.padEnd(30) + ' title says "Not ' + g.rival + '"');
+}
+
 if (hard.length) {
   console.error('FAIL - ' + hard.length + ' page(s) contradict their own declared type:\n');
   for (const h of hard) console.error('  ' + h.name.padEnd(28) + ' page says ' + h.page + ', journey says ' + h.says);

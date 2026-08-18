@@ -117,6 +117,10 @@ const attr = (s) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</
 // desc is plain text, so it has to be escaped before going into the page.
 // charContent values are HTML fragments and must NOT be escaped.
 const text = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+// charContent values ARE markup, so tags and real entities must survive - but a
+// bare "&" (R&B, Marks & Spencer) is invalid HTML. Escape only ampersands that
+// do not already begin a character reference.
+const frag = (s) => s.replace(/&(?!(?:[a-zA-Z][a-zA-Z0-9]{1,31}|#[0-9]{1,7}|#[xX][0-9a-fA-F]{1,6});)/g, '&amp;');
 
 // Replace the body of a section that is keyed by an id'd <h2>. The body runs
 // from the end of that heading to the blank-line + closing </div> that ends
@@ -227,20 +231,20 @@ for (const slug of slugs) {
     const re = /(<div class="section-label">Who They Are<\/div>\s*<h2>)([\s\S]*?)(<\/h2>)([\s\S]*?)(\n    <\/div>)/;
     if (re.test(html)) {
       html = html.replace(re, (m, open, oldH, close, _body, tail) =>
-        open + (cc.whoHeading || oldH) + close + '<div id="who-they-are-text">' + cc.who + '</div>' + tail);
+        open + (cc.whoHeading || oldH) + close + '<div id="who-they-are-text">' + frag(cc.who) + '</div>' + tail);
       done.push('who');
     } else problems.push(slug + ': who block not found');
   }
 
   // ── The Journey ──
   if (cc.journey) {
-    const r = replaceSection(html, 'journey-heading', null, 'journey-text', cc.journey);
+    const r = replaceSection(html, 'journey-heading', null, 'journey-text', frag(cc.journey));
     if (r.ok) { html = r.html; done.push('journey'); } else problems.push(slug + ': journey block not found');
   }
 
   // ── Why Not Another Type? ──
   if (cc.mistype) {
-    const r = replaceSection(html, 'mistype-heading', null, 'mistype-text', cc.mistype);
+    const r = replaceSection(html, 'mistype-heading', null, 'mistype-text', frag(cc.mistype));
     if (r.ok) { html = r.html; done.push('mistype'); } else problems.push(slug + ': mistype block not found');
   }
 
@@ -248,7 +252,7 @@ for (const slug of slugs) {
   if (cc.letters) {
     const heading = p.name + ': ' + p.type + ' Letter by Letter';
     html = html.replace(/(id="letters-section" style=")[^"]*(")/, '$1$2');
-    const r = replaceSection(html, 'letters-heading', heading, 'letters-text', cc.letters);
+    const r = replaceSection(html, 'letters-heading', heading, 'letters-text', frag(cc.letters));
     if (r.ok) { html = r.html; done.push('letters'); } else problems.push(slug + ': letters block not found');
   }
 
