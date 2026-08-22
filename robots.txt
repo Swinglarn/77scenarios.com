@@ -1,4 +1,28 @@
 User-agent: *
 Allow: /
 
+# Bare template routes. These exist only as rewrite targets for unknown slugs
+# (/types/:slug -> /type). Every real slug is prerendered to its own static
+# file, so reaching these directly yields a near-empty page, and they carry the
+# ad loader because the pages built from them need it. The $ anchor matters:
+# "Disallow: /type" without it would also block /types/infj.
+Disallow: /type$
+Disallow: /type.html$
+Disallow: /letter$
+Disallow: /letter.html$
+Disallow: /compatibility-pair$
+Disallow: /compatibility-pair.html$
+Disallow: /forum-thread$
+Disallow: /forum-thread.html$
+
+User-agent: Mediapartners-Google
+Disallow: /type$
+Disallow: /type.html$
+Disallow: /letter$
+Disallow: /letter.html$
+Disallow: /compatibility-pair$
+Disallow: /compatibility-pair.html$
+Disallow: /forum-thread$
+Disallow: /forum-thread.html$
+
 Sitemap: https://77scenarios.com/sitemap.xml

@@ -741,7 +741,149 @@
 <body>
 <div id="t-overlay" style="position:fixed;inset:0;background:#0c0e10;opacity:0;pointer-events:none;z-index:9999;transition:opacity 0.28s ease;"></div>
 <div class="vs-page">
-  <div id="vs-root"></div>
+  <div id="vs-root">
+  <!-- Static index for crawlers and no-JS users. renderIndex() replaces this on
+       the /vs hub, and the prerenderer replaces it on every /vs/<pair> page, so
+       it is only ever the served content on the hub. Before this the hub
+       shipped six visible words with an ad unit on it, which is exactly what
+       the AdSense low-value-content policy prohibits. -->
+  <div class="vs-page">
+    <h1>Type vs Type: every MBTI comparison</h1>
+    <p>Side-by-side comparisons of every major Myers-Briggs pairing: the cognitive functions each type leads with, where the two genuinely diverge, and which of them you are more likely to be.</p>
+      <h2>Most commonly confused</h2>
+      <ul>
+        <li><a href="/vs/infj-infp">INFJ vs INFP</a> &mdash; The Counselor and The Mediator</li>
+        <li><a href="/vs/intj-intp">INTJ vs INTP</a> &mdash; The Architect and The Thinker</li>
+        <li><a href="/vs/enfp-infp">ENFP vs INFP</a> &mdash; The Champion and The Mediator</li>
+        <li><a href="/vs/infj-intj">INFJ vs INTJ</a> &mdash; The Counselor and The Architect</li>
+        <li><a href="/vs/infj-isfj">INFJ vs ISFJ</a> &mdash; The Counselor and The Protector</li>
+        <li><a href="/vs/enfj-infj">ENFJ vs INFJ</a> &mdash; The Teacher and The Counselor</li>
+        <li><a href="/vs/entp-intp">ENTP vs INTP</a> &mdash; The Visionary and The Thinker</li>
+        <li><a href="/vs/infp-isfp">INFP vs ISFP</a> &mdash; The Mediator and The Artist</li>
+        <li><a href="/vs/infj-isfp">INFJ vs ISFP</a> &mdash; The Counselor and The Artist</li>
+        <li><a href="/vs/enfp-infj">ENFP vs INFJ</a> &mdash; The Champion and The Counselor</li>
+        <li><a href="/vs/infp-intj">INFP vs INTJ</a> &mdash; The Mediator and The Architect</li>
+        <li><a href="/vs/infp-isfj">INFP vs ISFJ</a> &mdash; The Mediator and The Protector</li>
+        <li><a href="/vs/intj-isfj">INTJ vs ISFJ</a> &mdash; The Architect and The Protector</li>
+        <li><a href="/vs/estp-isfp">ESTP vs ISFP</a> &mdash; The Dynamo and The Artist</li>
+        <li><a href="/vs/esfj-infj">ESFJ vs INFJ</a> &mdash; The Caregiver and The Counselor</li>
+      </ul>
+      <h2>Extrovert variants</h2>
+      <ul>
+        <li><a href="/vs/enfj-enfp">ENFJ vs ENFP</a> &mdash; The Teacher and The Champion</li>
+        <li><a href="/vs/enfp-entp">ENFP vs ENTP</a> &mdash; The Champion and The Visionary</li>
+        <li><a href="/vs/entj-intj">ENTJ vs INTJ</a> &mdash; The Commander and The Architect</li>
+        <li><a href="/vs/enfj-esfj">ENFJ vs ESFJ</a> &mdash; The Teacher and The Caregiver</li>
+        <li><a href="/vs/entj-estj">ENTJ vs ESTJ</a> &mdash; The Commander and The Director</li>
+        <li><a href="/vs/entp-estp">ENTP vs ESTP</a> &mdash; The Visionary and The Dynamo</li>
+        <li><a href="/vs/enfj-entj">ENFJ vs ENTJ</a> &mdash; The Teacher and The Commander</li>
+        <li><a href="/vs/entj-entp">ENTJ vs ENTP</a> &mdash; The Commander and The Visionary</li>
+        <li><a href="/vs/enfp-esfp">ENFP vs ESFP</a> &mdash; The Champion and The Performer</li>
+        <li><a href="/vs/enfj-infp">ENFJ vs INFP</a> &mdash; The Teacher and The Mediator</li>
+        <li><a href="/vs/estj-estp">ESTJ vs ESTP</a> &mdash; The Director and The Dynamo</li>
+        <li><a href="/vs/esfj-estj">ESFJ vs ESTJ</a> &mdash; The Caregiver and The Director</li>
+        <li><a href="/vs/entp-intj">ENTP vs INTJ</a> &mdash; The Visionary and The Architect</li>
+        <li><a href="/vs/entj-infp">ENTJ vs INFP</a> &mdash; The Commander and The Mediator</li>
+        <li><a href="/vs/enfj-intj">ENFJ vs INTJ</a> &mdash; The Teacher and The Architect</li>
+        <li><a href="/vs/entj-infj">ENTJ vs INFJ</a> &mdash; The Commander and The Counselor</li>
+        <li><a href="/vs/estp-infj">ESTP vs INFJ</a> &mdash; The Dynamo and The Counselor</li>
+        <li><a href="/vs/entj-isfj">ENTJ vs ISFJ</a> &mdash; The Commander and The Protector</li>
+        <li><a href="/vs/enfp-esfj">ENFP vs ESFJ</a> &mdash; The Champion and The Caregiver</li>
+        <li><a href="/vs/enfp-istp">ENFP vs ISTP</a> &mdash; The Champion and The Craftsman</li>
+        <li><a href="/vs/entp-esfj">ENTP vs ESFJ</a> &mdash; The Visionary and The Caregiver</li>
+        <li><a href="/vs/esfp-estj">ESFP vs ESTJ</a> &mdash; The Performer and The Director</li>
+        <li><a href="/vs/entj-esfp">ENTJ vs ESFP</a> &mdash; The Commander and The Performer</li>
+        <li><a href="/vs/enfp-estj">ENFP vs ESTJ</a> &mdash; The Champion and The Director</li>
+        <li><a href="/vs/enfj-estp">ENFJ vs ESTP</a> &mdash; The Teacher and The Dynamo</li>
+        <li><a href="/vs/enfj-intp">ENFJ vs INTP</a> &mdash; The Teacher and The Thinker</li>
+        <li><a href="/vs/enfj-estj">ENFJ vs ESTJ</a> &mdash; The Teacher and The Director</li>
+        <li><a href="/vs/enfj-entp">ENFJ vs ENTP</a> &mdash; The Teacher and The Visionary</li>
+        <li><a href="/vs/entp-estj">ENTP vs ESTJ</a> &mdash; The Visionary and The Director</li>
+        <li><a href="/vs/entj-intp">ENTJ vs INTP</a> &mdash; The Commander and The Thinker</li>
+        <li><a href="/vs/entj-istp">ENTJ vs ISTP</a> &mdash; The Commander and The Craftsman</li>
+        <li><a href="/vs/entj-esfj">ENTJ vs ESFJ</a> &mdash; The Commander and The Caregiver</li>
+        <li><a href="/vs/enfj-esfp">ENFJ vs ESFP</a> &mdash; The Teacher and The Performer</li>
+        <li><a href="/vs/enfp-entj">ENFP vs ENTJ</a> &mdash; The Champion and The Commander</li>
+        <li><a href="/vs/esfj-esfp">ESFJ vs ESFP</a> &mdash; The Caregiver and The Performer</li>
+        <li><a href="/vs/entj-istj">ENTJ vs ISTJ</a> &mdash; The Commander and The Inspector</li>
+        <li><a href="/vs/entj-estp">ENTJ vs ESTP</a> &mdash; The Commander and The Dynamo</li>
+        <li><a href="/vs/enfp-estp">ENFP vs ESTP</a> &mdash; The Champion and The Dynamo</li>
+        <li><a href="/vs/entp-esfp">ENTP vs ESFP</a> &mdash; The Visionary and The Performer</li>
+        <li><a href="/vs/esfj-estp">ESFJ vs ESTP</a> &mdash; The Caregiver and The Dynamo</li>
+      </ul>
+      <h2>Sensing and structure pairs</h2>
+      <ul>
+        <li><a href="/vs/isfj-isfp">ISFJ vs ISFP</a> &mdash; The Protector and The Artist</li>
+        <li><a href="/vs/esfp-isfp">ESFP vs ISFP</a> &mdash; The Performer and The Artist</li>
+        <li><a href="/vs/intp-istp">INTP vs ISTP</a> &mdash; The Thinker and The Craftsman</li>
+        <li><a href="/vs/estp-istp">ESTP vs ISTP</a> &mdash; The Dynamo and The Craftsman</li>
+        <li><a href="/vs/intj-istj">INTJ vs ISTJ</a> &mdash; The Architect and The Inspector</li>
+        <li><a href="/vs/isfj-istj">ISFJ vs ISTJ</a> &mdash; The Protector and The Inspector</li>
+        <li><a href="/vs/infj-istj">INFJ vs ISTJ</a> &mdash; The Counselor and The Inspector</li>
+        <li><a href="/vs/istj-istp">ISTJ vs ISTP</a> &mdash; The Inspector and The Craftsman</li>
+        <li><a href="/vs/estj-isfj">ESTJ vs ISFJ</a> &mdash; The Director and The Protector</li>
+        <li><a href="/vs/esfj-isfj">ESFJ vs ISFJ</a> &mdash; The Caregiver and The Protector</li>
+        <li><a href="/vs/infj-istp">INFJ vs ISTP</a> &mdash; The Counselor and The Craftsman</li>
+        <li><a href="/vs/isfj-istp">ISFJ vs ISTP</a> &mdash; The Protector and The Craftsman</li>
+        <li><a href="/vs/esfp-infj">ESFP vs INFJ</a> &mdash; The Performer and The Counselor</li>
+        <li><a href="/vs/infp-istp">INFP vs ISTP</a> &mdash; The Mediator and The Craftsman</li>
+        <li><a href="/vs/estp-isfj">ESTP vs ISFJ</a> &mdash; The Dynamo and The Protector</li>
+        <li><a href="/vs/esfj-isfp">ESFJ vs ISFP</a> &mdash; The Caregiver and The Artist</li>
+        <li><a href="/vs/esfp-isfj">ESFP vs ISFJ</a> &mdash; The Performer and The Protector</li>
+        <li><a href="/vs/estp-intj">ESTP vs INTJ</a> &mdash; The Dynamo and The Architect</li>
+        <li><a href="/vs/estj-istj">ESTJ vs ISTJ</a> &mdash; The Director and The Inspector</li>
+        <li><a href="/vs/esfp-estp">ESFP vs ESTP</a> &mdash; The Performer and The Dynamo</li>
+        <li><a href="/vs/estj-isfp">ESTJ vs ISFP</a> &mdash; The Director and The Artist</li>
+        <li><a href="/vs/intj-isfp">INTJ vs ISFP</a> &mdash; The Architect and The Artist</li>
+        <li><a href="/vs/intj-istp">INTJ vs ISTP</a> &mdash; The Architect and The Craftsman</li>
+        <li><a href="/vs/estj-intj">ESTJ vs INTJ</a> &mdash; The Director and The Architect</li>
+        <li><a href="/vs/esfp-intp">ESFP vs INTP</a> &mdash; The Performer and The Thinker</li>
+        <li><a href="/vs/isfp-istp">ISFP vs ISTP</a> &mdash; The Artist and The Craftsman</li>
+        <li><a href="/vs/esfj-istj">ESFJ vs ISTJ</a> &mdash; The Caregiver and The Inspector</li>
+        <li><a href="/vs/esfp-istj">ESFP vs ISTJ</a> &mdash; The Performer and The Inspector</li>
+        <li><a href="/vs/estp-istj">ESTP vs ISTJ</a> &mdash; The Dynamo and The Inspector</li>
+        <li><a href="/vs/estj-istp">ESTJ vs ISTP</a> &mdash; The Director and The Craftsman</li>
+        <li><a href="/vs/esfp-istp">ESFP vs ISTP</a> &mdash; The Performer and The Craftsman</li>
+      </ul>
+      <h2>Functional mirrors</h2>
+      <ul>
+        <li><a href="/vs/infp-intp">INFP vs INTP</a> &mdash; The Mediator and The Thinker</li>
+        <li><a href="/vs/enfp-intj">ENFP vs INTJ</a> &mdash; The Champion and The Architect</li>
+        <li><a href="/vs/intp-istj">INTP vs ISTJ</a> &mdash; The Thinker and The Inspector</li>
+        <li><a href="/vs/infj-intp">INFJ vs INTP</a> &mdash; The Counselor and The Thinker</li>
+        <li><a href="/vs/enfj-istp">ENFJ vs ISTP</a> &mdash; The Teacher and The Craftsman</li>
+        <li><a href="/vs/esfj-intp">ESFJ vs INTP</a> &mdash; The Caregiver and The Thinker</li>
+        <li><a href="/vs/esfp-intj">ESFP vs INTJ</a> &mdash; The Performer and The Architect</li>
+        <li><a href="/vs/estj-infp">ESTJ vs INFP</a> &mdash; The Director and The Mediator</li>
+        <li><a href="/vs/estj-infj">ESTJ vs INFJ</a> &mdash; The Director and The Counselor</li>
+        <li><a href="/vs/entp-isfj">ENTP vs ISFJ</a> &mdash; The Visionary and The Protector</li>
+        <li><a href="/vs/entj-isfp">ENTJ vs ISFP</a> &mdash; The Commander and The Artist</li>
+        <li><a href="/vs/esfj-istp">ESFJ vs ISTP</a> &mdash; The Caregiver and The Craftsman</li>
+        <li><a href="/vs/infp-istj">INFP vs ISTJ</a> &mdash; The Mediator and The Inspector</li>
+        <li><a href="/vs/enfj-isfj">ENFJ vs ISFJ</a> &mdash; The Teacher and The Protector</li>
+        <li><a href="/vs/entp-infp">ENTP vs INFP</a> &mdash; The Visionary and The Mediator</li>
+        <li><a href="/vs/esfj-intj">ESFJ vs INTJ</a> &mdash; The Caregiver and The Architect</li>
+        <li><a href="/vs/enfp-isfp">ENFP vs ISFP</a> &mdash; The Champion and The Artist</li>
+        <li><a href="/vs/entp-infj">ENTP vs INFJ</a> &mdash; The Visionary and The Counselor</li>
+        <li><a href="/vs/entp-istj">ENTP vs ISTJ</a> &mdash; The Visionary and The Inspector</li>
+        <li><a href="/vs/entp-isfp">ENTP vs ISFP</a> &mdash; The Visionary and The Artist</li>
+        <li><a href="/vs/enfj-istj">ENFJ vs ISTJ</a> &mdash; The Teacher and The Inspector</li>
+        <li><a href="/vs/esfj-infp">ESFJ vs INFP</a> &mdash; The Caregiver and The Mediator</li>
+        <li><a href="/vs/enfj-isfp">ENFJ vs ISFP</a> &mdash; The Teacher and The Artist</li>
+        <li><a href="/vs/enfp-intp">ENFP vs INTP</a> &mdash; The Champion and The Thinker</li>
+        <li><a href="/vs/enfp-isfj">ENFP vs ISFJ</a> &mdash; The Champion and The Protector</li>
+        <li><a href="/vs/enfp-istj">ENFP vs ISTJ</a> &mdash; The Champion and The Inspector</li>
+        <li><a href="/vs/entp-istp">ENTP vs ISTP</a> &mdash; The Visionary and The Craftsman</li>
+        <li><a href="/vs/intp-isfj">INTP vs ISFJ</a> &mdash; The Thinker and The Protector</li>
+        <li><a href="/vs/intp-isfp">INTP vs ISFP</a> &mdash; The Thinker and The Artist</li>
+        <li><a href="/vs/esfp-infp">ESFP vs INFP</a> &mdash; The Performer and The Mediator</li>
+        <li><a href="/vs/estp-infp">ESTP vs INFP</a> &mdash; The Dynamo and The Mediator</li>
+        <li><a href="/vs/estj-intp">ESTJ vs INTP</a> &mdash; The Director and The Thinker</li>
+        <li><a href="/vs/estp-intp">ESTP vs INTP</a> &mdash; The Dynamo and The Thinker</li>
+        <li><a href="/vs/isfp-istj">ISFP vs ISTJ</a> &mdash; The Artist and The Inspector</li>
+      </ul>
+  </div>
+</div>
 </div>
 
 <script src="/data/vs-db.js"></script>

@@ -691,7 +691,7 @@
         <div class="demo-field">
           <label class="demo-label">Nationality</label>
           <div id="opt-ethnicity">
-            <select id="country-select" onchange="demoSelections.ethnicity=this.value" style="width:100%;padding:10px 12px;background:#13161a;color:#ede8df;border:1px solid #252a30;border-radius:4px;font-size:16px;font-family:'DM Sans',sans-serif;appearance:none;-webkit-appearance:none;cursor:pointer;outline:none;">
+            <select id="country-select" onchange="demoSelections.country=this.value" style="width:100%;padding:10px 12px;background:#13161a;color:#ede8df;border:1px solid #252a30;border-radius:4px;font-size:16px;font-family:'DM Sans',sans-serif;appearance:none;-webkit-appearance:none;cursor:pointer;outline:none;">
               <option value="">Select your country...</option>
               <option value="afghanistan">Afghanistan</option>
               <option value="albania">Albania</option>
@@ -2342,7 +2342,7 @@ function shareResult() {
 })();
 
 // Demographics
-const demoSelections = {age: null, gender: null, ethnicity: null};
+const demoSelections = {age: null, gender: null, country: null};
 
 document.addEventListener('click', e => {
   const btn = e.target.closest('.demo-opt');
@@ -2376,14 +2376,24 @@ async function submitDemographics() {
       personality_type: window._resultType || '',
       age_range: demoSelections.age,
       gender: demoSelections.gender,
-      ethnicity: demoSelections.ethnicity,
+      country: demoSelections.country || null,
       test_mode: testMode,
       ei_e: scores.E||0, ei_i: scores.I||0,
       sn_s: scores.S||0, sn_n: scores.N||0,
       tf_t: scores.T||0, tf_f: scores.F||0,
       jp_j: scores.J||0, jp_p: scores.P||0
     })
-  }).catch(() => {});
+  }).then(async (res) => {
+    // fetch does not reject on 4xx, and this call used to end in .catch(()=>{}),
+    // so a rejected row failed twice over in silence. That is how every
+    // submission with a country selected was lost for months without a trace.
+    // Still non-blocking: the reader goes to their result either way.
+    if (!res.ok) {
+      let body = '';
+      try { body = await res.text(); } catch (e) {}
+      console.error('[demographics] not saved:', res.status, body.slice(0, 300));
+    }
+  }).catch((e) => console.error('[demographics] request failed:', e && e.message));
   showResultsActual();
 }
 
